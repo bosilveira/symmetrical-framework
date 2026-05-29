@@ -1,10 +1,9 @@
 # The Symmetrical Framework
 A Conformal Algebraic Geometry of the Multiplicative Line
 
+---
+
 ## The framework begins with a single elementary observation.
-
-The framework begins with a single elementary observation.
-
 The function
 
 $$f(x; \ r, \ c) \; = \; \frac{c^r \ x^{r-1}}{c^{2r}+x^{2r}}, \qquad r>0,\quad c>0,\quad x\in(0,\infty)$$
