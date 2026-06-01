@@ -5,7 +5,7 @@ A key insight into the structure of $f(x; r, c)$ comes from its relationship wit
 The identity is:
 
 $$
-\boxed{\ 2x \ f(x; r, c) = \mathrm{sech}\! \left( r \log\left(\frac{x}{c}\right) \right)}
+\boxed{\ 2x \ f(x; r, c) = \mathrm{sech} \left( r \log\left(\frac{x}{c}\right) \right)}
 $$
 
 **Derivation:**
