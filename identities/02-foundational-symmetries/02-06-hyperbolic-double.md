@@ -1,4 +1,4 @@
-### 2.6 Two-Scale Multiplicative Identity / Hyperbolic Product
+### 2.6 Two-Scale Multiplicative Identity / Hyperbolic Double Product
 
 We now investigate the product of two functions from the family that share the same shape parameter `r` but possess different scale parameters, $c_1$ and $c_2$. The result is not another function within the family, but a new function whose structure is elegantly described in terms of the geometric mean and the ratio of the two scales.
 
