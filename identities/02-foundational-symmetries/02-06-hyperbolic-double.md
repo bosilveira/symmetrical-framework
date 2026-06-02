@@ -5,7 +5,7 @@ We now investigate the product of two functions from the family that share the s
 Let $c_1, c_2 > 0$, and define their geometric mean as $C_g := \sqrt{c_1 c_2}$. The product identity is:
 
 $$
-\boxed{\; f(x;r,c_{1}) \cdot f(x;r,c_{2}) = \frac{1}{2x^2 \left[ \cosh\left(r\log\left(\frac{c_2}{c_1}\right)\right) + \cosh\left(2r\log\left(\frac{x}{C_g}\right)\right) \right]} \;}
+f(x;r,c_{1}) \cdot f(x;r,c_{2}) = \frac{1}{2x^2 \left[ \cosh\left(r\log\left(\frac{c_2}{c_1}\right)\right) + \cosh\left(2r\log\left(\frac{x}{C_g}\right)\right) \right]}
 $$
 
 **Derivation:**
@@ -66,5 +66,3 @@ Multiplying by 2 and using the definition $\mathrm{sech}(z) = 1/\cosh(z)$, we ar
 $$
 \frac{2}{\cosh(a+b) + \cosh(a-b)} = \mathrm{sech}(a) \mathrm{sech}(b)
 $$
-
----
