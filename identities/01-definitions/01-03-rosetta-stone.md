@@ -10,6 +10,8 @@ $$
 2x \ f(x; r, c) = \mathrm{sech} \left( r \log\left(\frac{x}{c}\right) \right)
 $$
 
+---
+
 **Derivation:**
 
 The identity can be proven directly from the definitions of the functions. Let the argument of the hyperbolic secant be 
