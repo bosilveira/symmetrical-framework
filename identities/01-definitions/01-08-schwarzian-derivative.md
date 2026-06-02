@@ -11,7 +11,7 @@ It is known for its invariance under Möbius transformations and plays a signifi
 For the conformal phase function $W(x)$ defined in §1.4, we find an exact and remarkably simple expression for its Schwarzian derivative:
 
 $$
-\boxed{ \left\lbrace W,x \right\rbrace = \frac{1 - 4r^2}{2x^2} }
+\left\lbrace W,x \right\rbrace = \frac{1 - 4r^2}{2x^2}
 $$
 
 **Derivation:**
