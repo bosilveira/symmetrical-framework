@@ -1,14 +1,8 @@
-## Core Definitions
+# The Symmetrical Framework
 
-The central object of study is a one-parameter family of functions given by:
+## 1. Definitions and Architectural Identities
 
-$$f(x; r, c) = \frac{c^r x^{r-1}}{c^{2r} + x^{2r}}, \quad r > 0, \quad c > 0, \quad x \in (0, \infty)$$
-
-This function family generalizes the arctangent kernel, which is recovered in the special case where `r=1`. The function is positive and infinitely differentiable on its domain. Key properties, such as multiplicative symmetry, exact integrability, and the existence of algebraic moments, have been rigorously verified through a variety of methods including direct differentiation, residue calculus, and Mellin-transform evaluation.
-
----
-
-### The Symmetrical Function
+This section lays the groundwork for the family of functions being investigated. We begin with the core algebraic definition and its immediate properties.
 
 The symmetrical function is defined as follows:
 
