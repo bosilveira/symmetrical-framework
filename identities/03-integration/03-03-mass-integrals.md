@@ -5,11 +5,11 @@ The definite integrals of the function over key intervals yield simple constants
 The key results are:
 
 $$
-\boxed{ \int_{0}^{\infty} f(x;r,c)\,\mathrm dx = \frac{\pi}{2r} }
+\int_{0}^{\infty} f(x;r,c)\ dx = \frac{\pi}{2r}
 $$
 
 $$
-\boxed{ \int_{0}^{c} f(x;r,c)\,\mathrm dx = \int_{c}^{\infty} f(x;r,c)\,\mathrm dx = \frac{\pi}{4r} }
+\int_{0}^{c} f(x;r,c)\ dx = \int_{c}^{\infty} f(x;r,c)\ dx = \frac{\pi}{4r}
 $$
 
 **Derivation:**
@@ -41,25 +41,25 @@ This shows that exactly half of the total area under the curve lies to the left 
 This can be found by subtraction:
 
 $$
-\int_{c}^{\infty}f(x;r,c)\,\mathrm dx = \int_{0}^{\infty}f\,\mathrm dx - \int_{0}^{c}f\,\mathrm dx = \frac{\pi}{2r} - \frac{\pi}{4r} = \frac{\pi}{4r}
+\int_{c}^{\infty}f(x;r,c)\ dx = \int_{0}^{\infty}f\ dx - \int_{0}^{c}f\ dx = \frac{\pi}{2r} - \frac{\pi}{4r} = \frac{\pi}{4r}
 $$
 
 As expected, the area to the right of the symmetry point is also exactly half of the total mass.
 
 **Interpretation and Connection to Symmetry:**
 
-*   **Median**: The fact that $\int_0^c f \,dx = \int_c^\infty f \,dx$ confirms that $x=c$ is the **median** of the distribution defined by the normalized function $\rho(x;r,c)$.
+*   **Median**: The fact that $\int_0^c f \ dx = \int_c^\infty f \ dx$ confirms that $x=c$ is the **median** of the distribution defined by the normalized function $\rho(x;r,c)$.
 *   **Integral Form of Möbius Symmetry**: The equality of the two half-mass integrals is the direct integral consequence of the Möbius inversion symmetry established in §2.2. An alternative proof demonstrates this beautifully:
-Let $I_2 = \int_c^\infty f(x)dx$. Perform a change of variable $x = c^2/y$, so $dx = -c^2/y^2 dy$. The limits change from $(c, \infty)$ to $(c, 0)$.
+Let $I_2 = \int_c^\infty f(x)\ dx$. Perform a change of variable $x = c^2/y$, so $dx = -c^2/y^2\ dy$. The limits change from $(c, \infty)$ to $(c, 0)$.
 
 $$
-I_2 = \int_{c}^{0} f(c^2/y) \left(-\frac{c^2}{y^2}dy\right) = \int_{0}^{c} f(c^2/y) \frac{c^2}{y^2} dy
+I_2 = \int_{c}^{0} f(c^2/y) \left(-\frac{c^2}{y^2}dy\right) = \int_{0}^{c} f(c^2/y) \frac{c^2}{y^2}\ dy
 $$
 
 From the symmetry identity (§2.2), we know $f(c^2/y) \frac{c^2}{y^2} = f(y)$. Substituting this gives:
 
 $$
-I_2 = \int_{0}^{c} f(y) dy = I_1
+I_2 = \int_{0}^{c} f(y)\ dy = I_1
 $$
 
 This confirms the half-mass equality from first principles of symmetry, beautifully illustrating the internal consistency of the framework.
