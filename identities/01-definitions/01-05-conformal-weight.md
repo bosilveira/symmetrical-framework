@@ -14,6 +14,8 @@ $$
 f(x; r, c) = \frac{1}{2\sqrt{rx}} \sqrt{W'(x)}
 $$
 
+---
+
 **Derivation:**
 
 The result is derived using the chain rule on the definition of $W(x)$, combined with the "Rosetta Stone" identity from §1.3.
