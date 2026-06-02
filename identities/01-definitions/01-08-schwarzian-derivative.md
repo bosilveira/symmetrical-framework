@@ -14,6 +14,8 @@ $$
 \left\lbrace W,x \right\rbrace = \frac{1 - 4r^2}{2x^2}
 $$
 
+---
+
 **Derivation:**
 
 The most direct way to compute this is by using the composition rule for the Schwarzian derivative. We can write $W(x)$ as a composition of two functions, $W(x) = (h \circ v)(x)$, where:
@@ -23,7 +25,7 @@ The most direct way to compute this is by using the composition rule for the Sch
 The composition rule states:
 
 $$
-\left\lbrace W,x \right\rbrace = \left\lbrace h,v \right\rbrace\,(v')^2 + \left\lbrace v,x \right\rbrace
+\left\lbrace W,x \right\rbrace = \left\lbrace h,v \right\rbrace (v')^2 + \left\lbrace v,x \right\rbrace
 $$
 
 We compute the necessary components separately:
