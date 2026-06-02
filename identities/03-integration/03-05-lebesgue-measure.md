@@ -1,11 +1,11 @@
-### 3.5 $L^n$ Norm (Integral of the $n$-th Power)
+### 3.5 $L^n$ Norm / Integral of the $n$-th Power
 
 We now calculate the definite integral of the $n$-th power of $f(x; r, c)$ over its entire domain. This corresponds to the $n$-th power of the $L^n$ norm of the function, a fundamental quantity in functional analysis.
 
 The integral has an exact solution in terms of the Euler Beta function:
 
 $$
-\boxed{\; \int_{0}^{\infty} [f(x;r,c)]^n \,\mathrm dx = \frac{c^{1-n}}{2r} B\left(\frac{(r-1)n+1}{2r}, \frac{(r+1)n-1}{2r}\right) \;}
+\int_{0}^{\infty} [f(x;r,c)]^n \ dx = \frac{c^{1-n}}{2r}\ B\left(\frac{(r-1)n+1}{2r}, \frac{(r+1)n-1}{2r}\right)
 $$
 
 **Derivation:**
@@ -13,7 +13,7 @@ $$
 The derivation relies on a key substitution that transforms the integral into the standard integral representation of the Euler Beta function.
 
 1.  **Set up the integral and the substitution**:  
-Let $I_n = \int_{0}^{\infty} [f(x;r,c)]^n \,dx$. The core algebraic structure of $f(x)$ is based on the term $(x/c)^{2r}$ in the denominator. This motivates the substitution:
+Let $I_n = \int_{0}^{\infty} [f(x;r,c)]^n \ dx$. The core algebraic structure of $f(x)$ is based on the term $(x/c)^{2r}$ in the denominator. This motivates the substitution:
 
 $$
 u = \left(\frac{x}{c}\right)^{2r}
@@ -65,7 +65,7 @@ $$
 The standard integral representation of the Euler Beta function is:
 
 $$
-B(p, q) = \int_{0}^{\infty} \frac{u^{p-1}}{(1+u)^{p+q}} du
+B(p, q) = \int_{0}^{\infty} \frac{u^{p-1}}{(1+u)^{p+q}}\ du
 $$
 
 Comparing our integral to this form, we can identify the parameters:
@@ -81,7 +81,7 @@ $$
 The integral is therefore equal to $B(p,q)$ with the parameters we just found. The final result is:
 
 $$
-I_n = \frac{c^{1-n}}{2r} B\left(\frac{(r-1)n+1}{2r}, \frac{(r+1)n-1}{2r}\right)
+I_n = \frac{c^{1-n}}{2r}\ B\left(\frac{(r-1)n+1}{2r}, \frac{(r+1)n-1}{2r}\right)
 $$
 
 For the integral to converge, the arguments of the Beta function must be positive, which imposes conditions on `n` for any given `r`.
@@ -91,10 +91,10 @@ For the integral to converge, the arguments of the Beta function must be positiv
 Let's verify this general formula for $n=1$. The prefactor becomes $c^0/(2r) = 1/(2r)$. The Beta function arguments become:
 *   $p = \frac{(r-1)(1)+1}{2r} = \frac{r}{2r} = \frac{1}{2}$
 *   $q = \frac{(r+1)(1)-1}{2r} = \frac{r}{2r} = \frac{1}{2}$
-The result is $\frac{1}{2r}B(1/2, 1/2)$. Using the well-known identity $B(1/2, 1/2) = \pi$, we get:
+The result is $\frac{1}{2r}\ B(1/2, 1/2)$. Using the well-known identity $B(1/2, 1/2) = \pi$, we get:
 
 $$
-\int_{0}^{\infty} f(x;r,c)\,\mathrm dx = \frac{\pi}{2r}
+\int_{0}^{\infty} f(x;r,c)\ dx = \frac{\pi}{2r}
 $$
 
 This perfectly matches the total mass result from §3.3, confirming the validity of the general formula.
