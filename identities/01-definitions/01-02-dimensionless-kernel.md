@@ -14,6 +14,8 @@ $$
 g(\xi; r) = \frac{\xi^{r-1}}{1 + \xi^{2r}}
 $$
 
+---
+
 **Derivation:**
 
 This result is obtained by substituting $x = c\xi$ into the core algebraic form from §1.1:
