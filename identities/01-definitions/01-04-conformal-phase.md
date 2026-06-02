@@ -5,7 +5,7 @@ Complementing the hyperbolic secant identity, there is a corresponding hyperboli
 The function $W(x)$ is defined as:
 
 $$
-W(x) := \tanh\left(r \log\left(\frac{x}{c}\right)\right) = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}}
+W(x) = \tanh\left(r \log\left(\frac{x}{c}\right)\right) = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}}
 $$
 
 ---
