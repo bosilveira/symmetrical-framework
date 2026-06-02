@@ -8,6 +8,8 @@ $$
 
 Here, $x \in (0, \infty)$ is the independent variable, while $r > 0$ and $c > 0$ are parameters that control the shape and scale of the function, respectively.
 
+---
+
 **A Note on the Derivation and Properties:**
 
 This function is presented as a foundational definition. Its properties are derived from this form. A key initial observation is its regularity:
