@@ -9,7 +9,7 @@ $$
 This function exhibits a specific kind of symmetry when expressed in the canonical logarithmic coordinate $u = \log(x/c)$, which is neither purely even nor odd, but satisfies the following elegant identity:
 
 $$
-\boxed{\; e^{u} W_{\text{susy}}(ce^{u}) + e^{-u} W_{\text{susy}}(ce^{-u}) = \frac{1}{c} \;}
+e^{u} W_{\text{susy}}(ce^{u}) + e^{-u} W_{\text{susy}}(ce^{-u}) = \frac{1}{c}
 $$
 
 **Derivation:**
