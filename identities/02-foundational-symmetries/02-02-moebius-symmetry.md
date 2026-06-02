@@ -5,7 +5,7 @@ A cornerstone of the framework is the function's perfect symmetry under a multip
 The symmetry is captured by the following exact identity:
 
 $$
-\boxed{ f\left(\frac{c^2}{x}; r, c\right) = \frac{x^2}{c^2} f(x; r, c) }
+f\left(\frac{c^2}{x}; r, c\right) = \frac{x^2}{c^2} f(x; r, c)
 $$
 
 This can be rearranged into a form that highlights how the function transforms with a specific "conformal weight":
@@ -70,4 +70,4 @@ $$
 2\left(\frac{c^2}{x}\right) f\left(\frac{c^2}{x}\right) = \mathrm{sech}(r u') = \mathrm{sech}(-ru) = \mathrm{sech}(ru) = 2x f(x)
 $$
 
-  Solving for $f(c^2/x)$ immediately recovers the identity. The factor $x^2/c^2$ is precisely the "Jacobian" term required to maintain the identity after transforming the $2x$ prefactor from one coordinate to the other.
+Solving for $f(c^2/x)$ immediately recovers the identity. The factor $x^2/c^2$ is precisely the "Jacobian" term required to maintain the identity after transforming the $2x$ prefactor from one coordinate to the other.
