@@ -1,5 +1,3 @@
-# The Symmetrical Framework
-## 1. Definitions and Architectural Identities
 ### 1.2 Dimensionless Kernel
 
 To simplify analysis and reveal the function's fundamental structure, we can introduce a dimensionless variable. Let $\xi = x/c$. This substitution allows us to separate the scale effects (governed by $c$) from the shape effects (governed by $r$).
