@@ -53,7 +53,7 @@ $$
 8.  Since $f(x; r, c)$ is strictly positive, we take the positive square root of both sides:
 
 $$
-f(x; r, c) = \sqrt{\frac{W'(x)}{4rx}} = \frac{\sqrt{W'(x)}}{2\sqrt{rx}}
+f(x; r, c) = \sqrt{\frac{W'(x)}{4rx}} = \dfrac{\sqrt{W'(x)}}{2\sqrt{rx}}
 $$
 
 This completes the derivation. The terminology "half-density" or "conformal weight" is inspired by how objects with similar square-root structures transform under coordinate changes in geometry and physics.
