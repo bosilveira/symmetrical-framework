@@ -28,6 +28,8 @@ $$
 f(x; r, c) dx = \frac{1}{2} \mathrm{sech}(ru) du
 $$
 
+---
+
 **Derivation:**
 
 This identity is a direct consequence of the "Rosetta Stone" identity from §1.3.
