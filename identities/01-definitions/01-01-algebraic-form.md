@@ -1,9 +1,3 @@
-# The Symmetrical Framework
-
-## 1. Definitions and Architectural Identities
-
-This section lays the groundwork for the family of functions being investigated. We begin with the core algebraic definition and its immediate properties.
-
 ### 1.1 Core Algebraic Form
 
 The fundamental function, denoted by $f(x; r, c)$, is defined as:
