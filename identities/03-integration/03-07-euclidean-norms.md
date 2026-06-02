@@ -1,20 +1,19 @@
-### 3.7 $L^2$ Norm Closed Forms (Special Cases of $n=2$)
+### 3.7 $L^2$ Norm Closed Forms / Special Cases of $n=2$
 
 The general $L^n$ norm integrals derived in §3.5 and §3.6 simplify beautifully for the case $n=2$. By leveraging identities of the Euler Gamma function, we can express these $L^2$ norms in terms of elementary trigonometric functions. These results are particularly important in fields like quantum mechanics and signal processing, where the $L^2$ norm often represents energy or total probability.
 
 **Case 1: Lebesgue Measure ($dx$)**
 
 $$
-\boxed{ \int_{0}^{\infty} [f(x;r,c)]^2 \,\mathrm dx = \frac{\pi}{4r^2 c \sin(\pi / 2r)}, \quad \text{for } r > \frac{1}{2} }
+\int_{0}^{\infty} [f(x;r,c)]^2 \ dx = \frac{\pi}{4r^2 c \sin(\pi / 2r)}, \quad \text{for } r > \frac{1}{2}
 $$
 
 **Case 2: Haar Measure ($dx/x$)**
 
 $$
-\boxed{ \int_{0}^{\infty} [f(x;r,c)]^2 \,\frac{\mathrm dx}{x} = \frac{\pi}{2r^2 c^2 \sin(\pi / r)}, \quad \text{for } r > 1 }
+\boxed{ \int_{0}^{\infty} [f(x;r,c)]^2 \ \frac{dx}{x} = \frac{\pi}{2r^2 c^2 \sin(\pi / r)}, \quad \text{for } r > 1 }
 $$
 
----
 **Derivation:**
 
 The core of both derivations is the conversion of the Beta function from the general formulas into a trigonometric expression via the Gamma function's reflection formula.
@@ -46,7 +45,7 @@ $$
 3.  **Assemble the Final Result**:
 
 $$
-\int_{0}^{\infty}f^2\,\mathrm dx = \frac{c^{-1}}{2r} \cdot \left[ \frac{\pi}{2r \sin(\pi/2r)} \right] = \frac{\pi}{4r^2 c \sin(\pi/2r)}
+\int_{0}^{\infty}f^2\ dx = \frac{c^{-1}}{2r} \cdot \left[ \frac{\pi}{2r \sin(\pi/2r)} \right] = \frac{\pi}{4r^2 c \sin(\pi/2r)}
 $$
 
 The convergence condition requires the Beta function arguments to be positive. $p>0$ implies $1 - 1/(2r) > 0$, which means $r > 1/2$.
@@ -66,7 +65,7 @@ $$
 3.  **Assemble the Final Result**:
 
 $$
-\int_{0}^{\infty}f^2\,\frac{\mathrm dx}{x} = \frac{c^{-2}}{2r} \cdot \left[ \frac{\pi}{r \sin(\pi/r)} \right] = \frac{\pi}{2r^2 c^2 \sin(\pi/r)}
+\int_{0}^{\infty}f^2\ \frac{dx}{x} = \frac{c^{-2}}{2r} \cdot \left[ \frac{\pi}{r \sin(\pi/r)} \right] = \frac{\pi}{2r^2 c^2 \sin(\pi/r)}
 $$
 
 The convergence condition $p>0$ implies $1 - 1/r > 0$, which means $r > 1$.
