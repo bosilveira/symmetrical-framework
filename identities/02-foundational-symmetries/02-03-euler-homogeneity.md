@@ -5,7 +5,7 @@ The function exhibits a joint scaling symmetry with respect to the variable `x` 
 The identity is:
 
 $$
-\boxed{ x\,\partial_{x}f + c\,\partial_{c}f + f = 0 }
+x\,\partial_{x}f + c\,\partial_{c}f + f = 0
 $$
 
 **Derivation:**
