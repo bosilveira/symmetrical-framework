@@ -1,11 +1,11 @@
-### 3.6 $L^n$ Norm (with Multiplicative Haar Measure)
+### 3.6 $L^n$ Norm with Multiplicative Haar Measure
 
 We now compute the $L^n$ norm of the function with respect to the multiplicative Haar measure, $dx/x$. This measure is the natural choice for functions with inherent scaling symmetry, as it corresponds to the standard Lebesgue measure in the logarithmic coordinate system ($du = dx/x$, see §1.6).
 
 The integral has a similarly compact solution in terms of the Euler Beta function, with slightly shifted arguments compared to §3.5.
 
 $$
-\boxed{ \int_{0}^{\infty} [f(x;r,c)]^n \,\frac{\mathrm dx}{x} = \frac{c^{-n}}{2r} B\left(\frac{n(r-1)}{2r}, \frac{n(r+1)}{2r}\right) }
+\int_{0}^{\infty} [f(x;r,c)]^n \ \frac{\mathrm dx}{x} = \frac{c^{-n}}{2r}\ B\left(\frac{n(r-1)}{2r}, \frac{n(r+1)}{2r}\right)
 $$
 
 **Derivation:**
@@ -42,25 +42,25 @@ $$
 Group the constants and combine the powers of `u`. The prefactor is now $\frac{c^{-n}}{2r}$. The extra $1/u$ in the measure subtracts 1 from the exponent of `u`:
 
 $$
-I_{n,H} = \frac{c^{-n}}{2r} \int_{0}^{\infty} \frac{u^{\frac{n(r-1)}{2r} - 1}}{(1+u)^n} du
+I_{n,H} = \frac{c^{-n}}{2r} \int_{0}^{\infty} \frac{u^{\frac{n(r-1)}{2r} - 1}}{(1+u)^n}\ du
 $$
 
 4.  **Identify the Euler Beta Function**:
 We compare this integral to the standard Beta function representation:
 
 $$
-B(p, q) = \int_{0}^{\infty} \frac{u^{p-1}}{(1+u)^{p+q}} du
+B(p, q) = \int_{0}^{\infty} \frac{u^{p-1}}{(1+u)^{p+q}}\ du
 $$
 
 *   From the numerator's exponent, we identify $p$:
 
 $$
 p = \frac{n(r-1)}{2r}
-
 $$
+
 *   From the denominator's exponent, we have $p+q=n$. We solve for `q`:
-$$
 
+$$
 q = n - p = n - \frac{n(r-1)}{2r} = \frac{2rn - (nr-n)}{2r} = \frac{rn+n}{2r} = \frac{n(r+1)}{2r}
 $$
 
@@ -68,7 +68,7 @@ $$
 The integral is equal to $B(p,q)$ with these new parameters. The final result is:
 
 $$
-I_{n,H} = \frac{c^{-n}}{2r} B\left(\frac{n(r-1)}{2r}, \frac{n(r+1)}{2r}\right)
+I_{n,H} = \frac{c^{-n}}{2r}\ B\left(\frac{n(r-1)}{2r}, \frac{n(r+1)}{2r}\right)
 $$
 
 **Alternative Derivation (via Logarithmic Coordinate):**
