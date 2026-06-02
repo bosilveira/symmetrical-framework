@@ -55,7 +55,7 @@ $$
 4.  **Substitute dx = x du**: Now, replace $dx$ with its equivalent in the $u$-coordinate system:
 
 $$
-f(x; r, c)\ dx = \frac{\mathrm{sech}(ru)}{2x}\ (x du)
+f(x; r, c)\ dx = \frac{\mathrm{sech}(ru)}{2x}\ (x\ du)
 $$
 
 5.  **Simplify**: The factor of $x$ cancels, yielding the final identity:
