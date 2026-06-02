@@ -8,6 +8,8 @@ $$
 W(x) := \tanh\left(r \log\left(\frac{x}{c}\right)\right) = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}}
 $$
 
+---
+
 **Derivation:**
 
 The algebraic form is derived directly from the definition of the hyperbolic tangent in terms of exponentials. Let $z = r \log(x/c)$, which implies $e^{2z} = \exp(2r \log(x/c)) = (x/c)^{2r}$.
