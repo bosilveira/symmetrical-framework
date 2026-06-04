@@ -3,8 +3,7 @@
 ## 1. Definitions and Architectural Identities
 
 This section lays the groundwork for the family of functions being investigated. We begin with the core algebraic definition and its immediate properties.
-
-The symmetrical function is defined as follows:
+The **symmetrical function** is defined as follows:
 
 $$f(x; r, c) = \frac{c^r x^{r-1}}{c^{2r} + x^{2r}}, \quad r > 0, \quad c > 0, \quad x \in (0, \infty)$$
 
