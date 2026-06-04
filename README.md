@@ -37,9 +37,13 @@ Defining the canonical phase space $(S, W) = (sech(ru), \tanh(ru))$, we obtain t
 | **Quantum Mechanics** | Reflectionless Pöschl–Teller potential $-r^{2}\mathrm{sech}^{2}(ru)$ |
 | **Mock Modular Forms** | Standard $\mathrm{sech}$ contour (Eichler) integral on $\mathbb{R}$ |
 
-## 3. Statement of Scope
+## 3. Solitonic Factorization
 
 This framework provides an exact parametrization of the **soliton cell of Sato's Universal Grassmannian**, including its degenerate (rational) and complex-continued (oscillating) boundaries. 
+
+$$
+\tau_N(x) = \det\left[\delta_{jk} + \frac{2\sqrt{r_j r_k}}{r_j+r_k}\left(\frac{x}{c}\right)^{r_j+r_k}\right]
+$$
 
 It explicitly captures:
 *   $N$-soliton solutions of the KP hierarchy (KdV, mKdV, NLS, Sine-Gordon).
