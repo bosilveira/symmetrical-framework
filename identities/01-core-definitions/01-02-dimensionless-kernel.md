@@ -5,7 +5,7 @@ To simplify analysis and reveal the function's fundamental structure, we can int
 The original function $f(x; r, c)$ can be expressed in terms of a dimensionless kernel, $g(\xi; r)$, as follows:
 
 $$
-f(x; r, c) = \frac{1}{c} g\left(\frac{x}{c}; r\right)
+f(x; r, c) = \frac{1}{c}\ g\left(\frac{x}{c}; r\right)
 $$
 
 where the kernel $g(\xi; r)$ is defined as:
