@@ -61,6 +61,7 @@ This route connects the result to the theory of analytic functions and their ser
 **Derivation:**
 
 **Step 1:** Rewrite the integral using the dimensionless kernel from §1.6. Let $k(\xi) = \xi^{r-1}/(1+\xi^{2r})$ where $\xi=x/c$. The Mellin transform is:
+
 $$
 \mathcal{M}\{f\}(s) = c^{s-1} \int_0^\infty \xi^{s-1} k(\xi) \mathrm{d}\xi = c^{s-1} \int_0^\infty \frac{\xi^{s+r-2}}{1+\xi^{2r}} \mathrm{d}\xi
 $$
