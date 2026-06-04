@@ -22,20 +22,20 @@ What follows is an extensive, numerically verified catalog of identities derived
 By analyzing the function in the additive coordinate $u = \log(x/c)$, the framework simplifies into the geometry of a unit circle:
 
 $$
-f(x; r, c) = \frac{1}{2x} sech\bigl(r\log(x/c)\bigr)
+f(x; r, c) = \frac{1}{2x} \mathrm{sech}\bigl(r\log(x/c)\bigr)
 $$
 
 Defining the canonical phase space $(S, W) = (sech(ru), \tanh(ru))$, we obtain the identity $S^2 + W^2 = 1$. The identities derived in this framework can be viewed as translations of this underlying hyperbolic geometry:
 
 | Domain | Translation under $u = \log(x/c)$ |
 | :--- | :--- |
-| **Möbius Inversion** | Parity reflection $u \mapsto -u$ of $\sech$ |
-| **Mellin Transform** | Fourier transform of $sech$ is ${sech$ (Self-duality) |
+| **Möbius Inversion** | Parity reflection $u \mapsto -u$ of $\mathrm{sech}$ |
+| **Mellin Transform** | Fourier transform of $\mathrm{sech}$ is $\mathrm{sech}$ (Self-duality) |
 | **Statistics (Cumulants)**| Maclaurin series of $\log\sec(t)$ yields Tangent numbers |
-| **Information Theory** | Shannon Entropy is the differential entropy of $sech$ + log Jacobian |
-| **Integrable Systems** | The fundamental derivative $(sech)' = -sech\tanh$ |
-| **Quantum Mechanics** | Reflectionless Pöschl–Teller potential $-r^{2}sech^{2}(ru)$ |
-| **Mock Modular Forms** | Standard $sech$ contour (Eichler) integral on $\mathbb{R}$ |
+| **Information Theory** | Shannon Entropy is the differential entropy of $\mathrm{sech}$ + log Jacobian |
+| **Integrable Systems** | The fundamental derivative $(\mathrm{sech})' = -sech\tanh$ |
+| **Quantum Mechanics** | Reflectionless Pöschl–Teller potential $-r^{2}\mathrm{sech}^{2}(ru)$ |
+| **Mock Modular Forms** | Standard $\mathrm{sech}$ contour (Eichler) integral on $\mathbb{R}$ |
 
 ## 3. Statement of Scope
 
@@ -114,20 +114,7 @@ The findings are organized into eight parts, cataloging the derivations from ele
 39. The Four Structures: Distinguishing Properties (K3, Moonshine, Torus, Zeta)
 
 ---
+
 *Methodology Note: All numerical identities in this repository are verified in `mpmath` at $\ge 50$-digit precision. Symbolic derivations are verified in `SymPy`.*
-
-# The Symmetrical Framework
-## *An Investigation into the Geometry of the Multiplicative Line*
-
-## The framework begins with a single elementary observation.
-The function
-
-$$f(x; \ r, \ c) \; = \; \frac{c^r \ x^{r-1}}{c^{2r}+x^{2r}}, \qquad r>0,\quad c>0,\quad x\in(0,\infty)$$
-
-is the unique continuous positive function on $(0,\infty)$ that **half-splits its own improper integral at $x=c$**:
-
-$$\int_0^c f \ dx \ = \ \int_c^\infty f \ dx \ = \ \frac{\pi}{4r}.$$
-
-This is the introduction. It is clean and elementary. What follows from it is not.
 
 ---
