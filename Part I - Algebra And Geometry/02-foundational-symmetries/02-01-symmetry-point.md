@@ -1,82 +1,112 @@
-### 2.1 Value, Slope, and Curvature at the Symmetry Point
+# 2.1 Properties at the Symmetry Point
 
-The behavior of the function $f(x; r, c)$ at its central symmetry point, $x=c$, provides critical insights into the entire family. The value, first derivative (slope), and second derivative (curvature) at this point are given by exact, simple expressions:
+The behavior of the function $f(x; r, c)$ and its derivatives at the central point of symmetry, $x=c$, reveals a remarkable structural invariance. The value and the first derivative at this point are constant for all possible values of the shape parameter $r$.
 
-$$
-f(c; r, c) = \frac{1}{2c}
-$$
+The value, first derivative (slope), and second derivative (curvature) at $x=c$ are given by:
 
 $$
-\left. \partial_x f(x; r, c) \right|_{x=c} = -\frac{1}{2c^2}
+\boxed{ f(c; r, c) = \frac{1}{2c} }
 $$
 
 $$
-\left. \partial_{xx} f(x; r, c) \right|_{x=c} = \frac{2-r^2}{2c^3}
-$$
-
-**Derivations:**
-
-The results are obtained by direct evaluation of the function and its derivatives at $x=c$.
-
-1.  **Value at x=c**:  
-We substitute $x=c$ directly into the core algebraic form (§1.1):
-
-$$
-f(c; r, c) = \frac{c^r c^{r-1}}{c^{2r} + c^{2r}} = \frac{c^{2r-1}}{2c^{2r}} = \frac{1}{2c}
-$$
-
-  The value at the center is remarkably independent of the shape parameter `r`.
-
-2.  **Slope at x=c**:  
-We first compute the derivative of $f(x)$ using the quotient rule. Let $u = c^r x^{r-1}$ and $v = c^{2r} + x^{2r}$. Then $u' = c^r(r-1)x^{r-2}$ and $v' = 2rx^{2r-1}$.
-    
-$$
-\partial_x f(x) = \frac{u'v - uv'}{v^2} = \frac{\left(c^r(r-1)x^{r-2}\right)\left(c^{2r}+x^{2r}\right) - \left(c^r x^{r-1}\right)\left(2rx^{2r-1}\right)}{\left(c^{2r}+x^{2r}\right)^2}
-$$
-
-Evaluating at $x=c$ causes significant simplification:
-
-$$
-\left. \partial_x f \right|_{x=c} = \frac{\left(c^r(r-1)c^{r-2}\right)\left(2c^{2r}\right) - \left(c^r c^{r-1}\right)\left(2rc^{2r-1}\right)}{\left(2c^{2r}\right)^2}
+\boxed{ \left. \frac{\mathrm{d}f}{\mathrm{d}x} \right|_{x=c} = -\frac{1}{2c^2} }
 $$
 
 $$
-= \frac{2c^{2r}(r-1)c^{2r-2} - 2r c^{2r-1}c^{2r-1}}{4c^{4r}} = \frac{2(r-1)c^{4r-2} - 2rc^{4r-2}}{4c^{4r}}
+\boxed{ \left. \frac{\mathrm{d}^2f}{\mathrm{d}x^2} \right|_{x=c} = \frac{2-r^2}{2c^3} }
+$$
+
+### Exposition
+
+The $r$-invariance of the function's value and slope at $x=c$ is a profound geometric constraint. It proves that every single function in the two-parameter family, regardless of its shape, passes through the same point $(c, 1/2c)$ and shares the exact same tangent line. The curvature is the first local property that depends on the shape parameter $r$, and its sign dictates the local convexity of the curve at its center, with a critical transition occurring at $r=\sqrt{2}$.
+
+### Derivations
+
+#### Derivation of the Value at $x=c$
+
+**Step 1:** Evaluate the core algebraic form from §1.1 at $x=c$:
+
+$$
+f(c; r, c) = \frac{c^r c^{r-1}}{c^{2r} + c^{2r}} = \frac{c^{2r-1}}{2c^{2r}}
+$$
+
+**Step 2:** Simplify the expression:
+
+$$
+f(c;r,c) = \frac{1}{2c}
+$$
+
+This result is independent of $r$.
+
+#### Derivation of the First Derivative at $x=c$
+
+**Step 1:** Compute the first derivative of $f(x)$ using the quotient rule. Let $u(x) = c^r x^{r-1}$ and $v(x) = c^{2r} + x^{2r}$. Then $u'(x) = c^r(r-1)x^{r-2}$ and $v'(x) = 2rx^{2r-1}$.
+
+$$
+\frac{\mathrm{d}f}{\mathrm{d}x} = \frac{u'(x)v(x) - u(x)v'(x)}{[v(x)]^2} = \frac{\left(c^r(r-1)x^{r-2}\right)\left(c^{2r}+x^{2r}\right) - \left(c^r x^{r-1}\right)\left(2rx^{2r-1}\right)}{\left(c^{2r}+x^{2r}\right)^2}
+$$
+
+**Step 2:** Evaluate the derivative at $x=c$:
+
+$$
+\left. \frac{\mathrm{d}f}{\mathrm{d}x} \right|_{x=c} = \frac{\left(c^r(r-1)c^{r-2}\right)\left(2c^{2r}\right) - \left(c^r c^{r-1}\right)\left(2rc^{2r-1}\right)}{\left(2c^{2r}\right)^2}
+$$
+
+Simplify the numerator:
+
+$$
+\text{Numerator} = 2c^{2r}(r-1)c^{2r-2} - 2rc^{2r-1}c^{2r-1} = 2(r-1)c^{4r-2} - 2rc^{4r-2}
 $$
 
 $$
-= \frac{(2r-2-2r)c^{4r-2}}{4c^{4r}} = \frac{-2c^{4r-2}}{4c^{4r}} = -\frac{1}{2c^2}
+= (2r-2-2r)c^{4r-2} = -2c^{4r-2}
 $$
 
-Like the value, the slope at the symmetry point is also completely independent of `r`.
-
-3.  **Curvature at x=c**:  
-While direct symbolic differentiation is possible, a more elegant approach is to use a Taylor series expansion of the "Rosetta Stone" identity (§1.3) around the symmetry point. Let $x = c+h$ for small $h$. The canonical coordinate is $u = \log(x/c) = \log(1+h/c) \approx \frac{h}{c} - \frac{h^2}{2c^2} + O(h^3)$.
-
-The identity is $f(x) = \frac{1}{2x}\mathrm{sech}(ru)$. We expand each term around $h=0$:
-*   $\frac{1}{2x} = \frac{1}{2(c+h)} = \frac{1}{2c}(1+h/c)^{-1} \approx \frac{1}{2c}\left(1 - \frac{h}{c} + \frac{h^2}{c^2}\right)$
-*   $\mathrm{sech}(ru) \approx 1 - \frac{(ru)^2}{2} \approx 1 - \frac{r^2}{2}\left(\frac{h}{c}\right)^2$
-
-Multiplying these expansions gives:
+Simplify the denominator:
 
 $$
-f(c+h) \approx \frac{1}{2c}\left(1 - \frac{h}{c} + \frac{h^2}{c^2}\right)\left(1 - \frac{r^2h^2}{2c^2}\right) \approx \frac{1}{2c}\left(1 - \frac{h}{c} + \frac{h^2}{c^2} - \frac{r^2h^2}{2c^2}\right)
+\text{Denominator} = 4c^{4r}
+$$
+
+**Step 3:** Compute the final ratio:
+
+$$
+\left. \frac{\mathrm{d}f}{\mathrm{d}x} \right|_{x=c} = \frac{-2c^{4r-2}}{4c^{4r}} = -\frac{1}{2c^2}
+$$
+
+This result is also independent of $r$.
+
+#### Derivation of the Second Derivative at $x=c$
+
+**Step 1:** Use the local Taylor series expansion from §8.2, centered at the logarithmic coordinate $u = \log(x/c) = 0$:
+
+$$
+f(x;r,c) = \frac{1}{2x} \sum_{n=0}^{\infty} \frac{E_{2n}}{(2n)!} (ru)^{2n} = \frac{1}{2x}\left( E_0 + \frac{E_2}{2!}(ru)^2 + O(u^4) \right)
+$$
+
+With $E_0=1$ and $E_2=-1$:
+
+$$
+f(x;r,c) = \frac{1}{2x}\left( 1 - \frac{r^2u^2}{2} + O(u^4) \right)
+$$
+
+**Step 2:** For small deviations from $c$, let $x = c+h$. Then $u = \log(1+h/c) \approx \frac{h}{c} - \frac{h^2}{2c^2}$. The prefactor is $\frac{1}{2x} = \frac{1}{2(c+h)} \approx \frac{1}{2c}(1 - \frac{h}{c} + \frac{h^2}{c^2})$.
+
+**Step 3:** Expand $f(c+h)$ in powers of $h$:
+
+$$
+f(c+h) \approx \frac{1}{2c}\left(1 - \frac{h}{c} + \frac{h^2}{c^2}\right) \left(1 - \frac{r^2}{2}\left(\frac{h}{c}\right)^2 \right) \approx \frac{1}{2c}\left(1 - \frac{h}{c} + h^2\left(\frac{1}{c^2} - \frac{r^2}{2c^2}\right)\right)
 $$
 
 $$
-f(c+h) \approx \frac{1}{2c} - \frac{1}{2c^2}h + \left(\frac{2-r^2}{4c^3}\right)h^2
+f(c+h) \approx \frac{1}{2c} - \frac{1}{2c^2}h + \frac{2-r^2}{4c^3}h^2 + O(h^3)
 $$
 
-Comparing this to the standard Taylor expansion, $f(c+h) \approx f(c) + f'(c)h + \frac{f''(c)}{2}h^2$, we can identify the second derivative term:
+**Step 4:** Compare this to the standard Taylor series expansion, $f(c+h) \approx f(c) + f'(c)h + \frac{f''(c)}{2}h^2$:
+By matching the coefficient of the $h^2$ term, we have:
 
 $$
 \frac{f''(c)}{2} = \frac{2-r^2}{4c^3} \quad \implies \quad f''(c) = \frac{2-r^2}{2c^3}
 $$
 
-**Significance and Interpretation:**
-
-*   **Shared Tangent Line**: The fact that both $f(c)$ and $f'(c)$ are independent of `r` is a powerful geometric constraint. It means that *every function in the family, regardless of its shape, passes through the same point* $(c, 1/2c)$ *and shares the exact same tangent line at that point*.
-*   **Curvature Transition**: The curvature at the symmetry point is the first local property that depends on `r`. Its sign reveals the local shape:
-    *   If $r < \sqrt{2}$, $\partial_{xx}f > 0$, and the function is locally convex (concave up) at $x=c$.
-    *   If $r > \sqrt{2}$, $\partial_{xx}f < 0$, and the function is locally concave (concave down) at $x=c$.
-    *   If $r = \sqrt{2}$, $\partial_{xx}f = 0$, and $x=c$ is an inflection point. This critical value marks the transition from a "U-shaped" local minimum to a "hump-shaped" local maximum.
+This completes the derivation.
