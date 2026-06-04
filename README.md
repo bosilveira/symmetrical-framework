@@ -1,7 +1,7 @@
 # The Symmetrical Framework
 *An Investigation into the Geometry of the Multiplicative Line*
 
-## 1. The Entry Point
+## 1. The Entry Point: The Symmetrical Function
 
 The framework begins with the **symmetrical function**:
 
