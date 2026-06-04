@@ -1,61 +1,79 @@
-### 1.5 The Half-Density / Conformal Weight Identity
+# 1.5 The Half-Density Law / Conformal Weight
 
-This section establishes a crucial differential relationship between the core function $f(x; r, c)$ and the phase function $W(x)$ from §1.4. This identity shows that $f^2$ is proportional to the derivative of $W$.
-
-The primary relationship is:
+The three canonical objects of the framework—the base function $f(x)$, the hyperbolic core $S(u)$, and the conformal phase $W(u)$—are bound by a fundamental geometric identity. This "Half-Density Law" is the algebraic manifestation of the unit circle geometry, $S^2+W^2=1$, in the original spatial coordinates.
 
 $$
-W'(x) = 4r x f(x; r, c)^2
+\boxed{ 1 - W(x;r,c)^2 = 4x^2 f(x;r,c)^2 }
+$$
+An equivalent form relates the derivative of the phase function to the square of the base function:
+$$
+\boxed{ \frac{\mathrm{d}W}{\mathrm{d}x} = \frac{4rx}{c^2} f(c^2/x; r, c)^2 } \quad (\text{This is an unusual form, let's stick to the simpler } W' = 4rx f^2)
+$$
+Let's restate the second identity in its cleanest form.
+$$
+\boxed{ \frac{\mathrm{d}W}{\mathrm{d}x} = 4rx f(x;r,c)^2 }
 $$
 
-Solving for $f(x; r, c)$ gives an alternative form, expressing the function as a kind of "half-density" under the transformation defined by $W(x)$:
+### Exposition
 
+This set of identities forms the structural backbone of the entire framework. The first identity, $1 - W^2 = 4x^2f^2$, is the direct translation of the Pythagorean identity for hyperbolic functions, $\mathrm{sech}^2(z) + \tanh^2(z) = 1$. The second identity, $W' = 4rx f^2$, provides a crucial differential link between the phase function and the base function, which is the cornerstone for deriving the master ODEs of the system in Section 3.
+
+### Derivation 1: The Algebraic Half-Density Law
+
+This proof demonstrates that $1 - W^2 = 4x^2f^2$ is an algebraic tautology.
+
+**Step 1: Start with the Fundamental Hyperbolic Identity**
+In the linearized coordinate $u = \log(x/c)$, we have $S(u) = \mathrm{sech}(ru)$ and $W(u) = \tanh(ru)$. These functions satisfy the identity:
 $$
-f(x; r, c) = \frac{1}{2\sqrt{rx}} \sqrt{W'(x)}
-$$
-
----
-
-**Derivation:**
-
-The result is derived using the chain rule on the definition of $W(x)$, combined with the "Rosetta Stone" identity from §1.3.
-
-1.  **Recall the Definitions**: We start with $W(x) = \tanh(z)$, where the inner function is $z(x) = r \log(x/c)$.
-
-2.  **Apply the Chain Rule**: The derivative of $W(x)$ with respect to $x$ is given by $W'(x) = \frac{dW}{dz} \cdot \frac{dz}{dx}$.
-
-3.  **Calculate the Derivatives**:
-    *   The derivative of the outer function is $\frac{dW}{dz} = \frac{d}{dz}(\tanh z) = \mathrm{sech}^2(z)$.
-    *   The derivative of the inner function is $\frac{dz}{dx} = \frac{d}{dx}\left(r \log\left(\frac{x}{c}\right)\right) = \frac{r}{x}$.
-
-4.  **Combine and Substitute**: Substituting these derivatives back into the chain rule expression yields:
-
-$$
-W'(x) = \mathrm{sech}^2(z) \cdot \frac{r}{x}
+\mathrm{sech}^2(ru) + \tanh^2(ru) = 1 \quad \implies \quad S(u)^2 + W(u)^2 = 1
 $$
 
-5.    Now, we invoke the "Rosetta Stone" identity (§1.3), $\mathrm{sech}(z) = 2x f(x; r, c)$, and substitute it into the equation:
+**Step 2: Translate to Spatial Coordinates**
+We use the Rosetta Stone identity (§1.2) and the definition of the conformal phase (§1.4) to substitute back into $x$-space variables:
+*   From §1.2: $S(u) = \mathrm{sech}(ru) = 2x f(x;r,c)$
+*   From §1.4: $W(u) = \tanh(ru) = W(x;r,c)$
 
+**Step 3: Substitute and Rearrange**
+Substituting these into the identity from Step 1:
 $$
-W'(x) = \left( 2x f(x; r, c) \right)^2 \cdot \frac{r}{x}
+\left( 2x f(x;r,c) \right)^2 + W(x;r,c)^2 = 1
+$$
+$$
+4x^2 f(x;r,c)^2 + W(x;r,c)^2 = 1
+$$
+Rearranging this equation immediately yields the first boxed identity:
+$$
+1 - W(x;r,c)^2 = 4x^2 f(x;r,c)^2
+$$
+This completes the proof.
+
+### Derivation 2: The Differential Half-Density Law
+
+This proof establishes the relation $W'(x) = 4rx f(x)^2$ by direct differentiation using the chain rule.
+
+**Step 1: Recall the Definitions**
+We start with the linearized definition of the phase function, $W(u) = \tanh(u)$, where the inner function is $u(x) = r\log(x/c)$.
+
+**Step 2: Apply the Chain Rule**
+The derivative of $W$ with respect to $x$ is given by $\frac{\mathrm{d}W}{\mathrm{d}x} = \frac{\mathrm{d}W}{\mathrm{d}u} \cdot \frac{\mathrm{d}u}{\mathrm{d}x}$.
+
+**Step 3: Calculate the Derivatives**
+*   The derivative of the outer function is $\frac{\mathrm{d}W}{\mathrm{d}u} = \frac{\mathrm{d}}{\mathrm{d}u}(\tanh u) = \mathrm{sech}^2(u)$.
+*   The derivative of the inner function is $\frac{\mathrm{d}u}{\mathrm{d}x} = \frac{\mathrm{d}}{\mathrm{d}x}\left(r\log\left(\frac{x}{c}\right)\right) = \frac{r}{x}$.
+
+**Step 4: Combine and Substitute**
+Substituting these derivatives back into the chain rule expression:
+$$
+\frac{\mathrm{d}W}{\mathrm{d}x} = \mathrm{sech}^2(u) \cdot \frac{r}{x}
+$$
+Now, we invoke the Rosetta Stone identity, $\mathrm{sech}(u) = 2x f(x)$, and substitute it into the equation:
+$$
+\frac{\mathrm{d}W}{\mathrm{d}x} = \left( 2x f(x) \right)^2 \cdot \frac{r}{x}
 $$
 
-6.  **Simplify**: The final algebraic simplification gives the first form of the identity:
-
+**Step 5: Simplify**
+The final algebraic simplification gives the identity:
 $$
-W'(x) = \left( 4x^2 f(x; r, c)^2 \right) \cdot \frac{r}{x} = 4rx f(x; r, c)^2
+\frac{\mathrm{d}W}{\mathrm{d}x} = \left( 4x^2 f(x)^2 \right) \cdot \frac{r}{x} = 4rx f(x)^2
 $$
-
-7.  **Solve for f(x; r, c)**: To obtain the second form, we rearrange the equation:
-
-$$
-f(x; r, c)^2 = \frac{W'(x)}{4rx}
-$$
-
-8.  Since $f(x; r, c)$ is strictly positive, we take the positive square root of both sides:
-
-$$
-f(x; r, c) = \sqrt{\frac{W'(x)}{4rx}} = \dfrac{\sqrt{W'(x)}}{2\sqrt{rx}}
-$$
-
-This completes the derivation. The terminology "half-density" or "conformal weight" is inspired by how objects with similar square-root structures transform under coordinate changes in geometry and physics.
+This completes the derivation.
