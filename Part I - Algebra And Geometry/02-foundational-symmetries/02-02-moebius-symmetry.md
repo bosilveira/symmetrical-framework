@@ -1,73 +1,95 @@
-### 2.2 Möbius (Inversion) Symmetry
+# 2.2 Möbius Inversion Symmetry
 
-A cornerstone of the framework is the function's perfect symmetry under a multiplicative inversion. This property is expressed as an invariance of the function's form when subjected to the Möbius transformation $x \mapsto c^2/x$, which represents an inversion about the central point `c` on a logarithmic scale.
-
-The symmetry is captured by the following exact identity:
+The function family possesses a fundamental symmetry under a multiplicative inversion transformation centered at the scale parameter $c$. This property is a direct consequence of its algebraic structure and is formally expressed as a duality under the map $x \mapsto c^2/x$.
 
 $$
-f\left(\frac{c^2}{x}; r, c\right) = \frac{x^2}{c^2} f(x; r, c)
+\boxed{ f\left(\frac{c^2}{x}; r, c\right) = \frac{x^2}{c^2} f(x; r, c) }
 $$
 
-This can be rearranged into a form that highlights how the function transforms with a specific "conformal weight":
+An equivalent form, highlighting the transformation of the measure element $f(x)\mathrm{d}x/x$, is:
 
 $$
-f\left(\frac{c^2}{x}; r, c\right) \cdot \frac{c^2}{x^2} = f(x; r, c)
+f\left(\frac{c^2}{x}; r, c\right) \frac{\mathrm{d}(c^2/x)}{c^2/x} = - f(x; r, c) \frac{\mathrm{d}x}{x}
 $$
 
-**Derivation (Direct Algebraic Proof):**
+### Exposition
 
-The identity is proven by a direct substitution of $y = c^2/x$ into the algebraic definition of the function (§1.1).
+This identity reveals that the function's value at a point $x$ and its inverted point $c^2/x$ are deeply related, differing only by a simple quadratic scaling factor. This map, $x \mapsto c^2/x$, is an involution on the multiplicative group $(\mathbb{R}_{>0}, \times)$ whose unique fixed point is $x=c$. This symmetry is the primary geometric constraint of the framework, and its translation into the linearized logarithmic space is the source of many of the framework's simplest properties.
 
-1.  **Begin with the function definition**:
+### Derivation 1: Direct Algebraic Substitution
 
-$$
-f(y; r, c) = \frac{c^r y^{r-1}}{c^{2r} + y^{2r}}
-$$
+This proof establishes the identity by substituting the transformation directly into the core algebraic definition.
 
-2.  **Substitute $y = c^2/x$**:
+**Step 1:** Let $y = c^2/x$. We evaluate $f(y; r, c)$:
 
 $$
 f\left(\frac{c^2}{x}; r, c\right) = \frac{c^r \left(\frac{c^2}{x}\right)^{r-1}}{c^{2r} + \left(\frac{c^2}{x}\right)^{2r}}
 $$
 
-3.  **Simplify the numerator and the denominator**:
-    *   Numerator: $c^r \cdot \frac{c^{2(r-1)}}{x^{r-1}} = \frac{c^{3r-2}}{x^{r-1}}$
-    *   Denominator: $c^{2r} + \frac{c^{4r}}{x^{2r}} = \frac{c^{2r}x^{2r} + c^{4r}}{x^{2r}} = \frac{c^{2r}(x^{2r} + c^{2r})}{x^{2r}}$
+**Step 2:** Simplify the numerator and denominator separately.
+*   **Numerator:** $c^r \cdot \frac{c^{2(r-1)}}{x^{r-1}} = \frac{c^{3r-2}}{x^{r-1}}$
+*   **Denominator:** $c^{2r} + \frac{c^{4r}}{x^{2r}} = \frac{c^{2r}x^{2r} + c^{4r}}{x^{2r}} = \frac{c^{2r}(x^{2r} + c^{2r})}{x^{2r}}$
 
-4.  **Reassemble the fraction**:
-
-$$
-f\left(\frac{c^2}{x}; r, c\right) = \frac{c^{3r-2}}{x^{r-1}} \cdot \frac{x^{2r}}{c^{2r}(c^{2r} + x^{2r})} = \frac{c^{3r-2} x^{2r}}{c^{2r} x^{r-1} (c^{2r} + x^{2r})}
-$$
-
-5.  **Combine the powers of $c$ and $x$**:
+**Step 3:** Reassemble the fraction:
 
 $$
-f\left(\frac{c^2}{x}; r, c\right) = \frac{c^{r-2} x^{r+1}}{c^{2r} + x^{2r}}
+f\left(\frac{c^2}{x}; r, c\right) = \frac{c^{3r-2}}{x^{r-1}} \cdot \frac{x^{2r}}{c^{2r}(c^{2r} + x^{2r})}
 $$
 
-6.  **Factor the result to isolate the original function $f(x; r, c)$**:
+**Step 4:** Combine the powers of $c$ and $x$:
 
 $$
-f\left(\frac{c^2}{x}; r, c\right) = \left(\frac{x^2}{c^2}\right) \cdot \frac{c^r x^{r-1}}{c^{2r} + x^{2r}} = \frac{x^2}{c^2} f(x; r, c)
+= \frac{c^{(3r-2)-2r} \cdot x^{2r-(r-1)}}{c^{2r} + x^{2r}} = \frac{c^{r-2} x^{r+1}}{c^{2r} + x^{2r}}
 $$
 
-This rigorously establishes the identity through direct algebraic manipulation.
-
-**Interpretation via Canonical Coordinates:**
-
-This algebraic symmetry has a beautifully simple interpretation in the logarithmic coordinate system introduced in §1.6.
-
-*   **Coordinate Transformation**: The inversion $x \mapsto c^2/x$ corresponds to a simple parity flip in the canonical coordinate $u = \log(x/c)$:
+**Step 5:** Factor the result to isolate the original function $f(x; r, c)$:
 
 $$
-u' = \log\left(\frac{c^2/x}{c}\right) = \log\left(\frac{c}{x}\right) = -\log\left(\frac{x}{c}\right) = -u
+= \left(\frac{x^2}{c^2}\right) \cdot \frac{c^r x^{r-1}}{c^{2r} + x^{2r}} = \frac{x^2}{c^2} f(x; r, c)
 $$
 
-*   **Symmetry Source**: The Rosetta Stone identity (§1.3) states that $2x f(x) = \mathrm{sech}(ru)$. The hyperbolic secant is an **even function**, meaning $\mathrm{sech}(-z) = \mathrm{sech}(z)$. This underlying evenness is the true source of the inversion symmetry. Applying the coordinate flip $u \mapsto -u$ gives:
+This completes the algebraic proof.
+
+### Derivation 2: Using the Rosetta Stone Identity
+
+This alternative proof is more geometric, revealing the symmetry as a direct consequence of the evenness of the hyperbolic secant function.
+
+**Step 1:** Recall the Rosetta Stone identity from §1.2:
 
 $$
-2\left(\frac{c^2}{x}\right) f\left(\frac{c^2}{x}\right) = \mathrm{sech}(r u') = \mathrm{sech}(-ru) = \mathrm{sech}(ru) = 2x f(x)
+2y f(y; r, c) = \mathrm{sech}\left(r\log(y/c)\right)
 $$
 
-Solving for $f(c^2/x)$ immediately recovers the identity. The factor $x^2/c^2$ is precisely the "Jacobian" term required to maintain the identity after transforming the $2x$ prefactor from one coordinate to the other.
+**Step 2:** Let $y = c^2/x$. The argument of the logarithm becomes:
+
+$$
+\log\left(\frac{c^2/x}{c}\right) = \log\left(\frac{c}{x}\right) = -\log\left(\frac{x}{c}\right)
+$$
+
+In the canonical coordinate $u = \log(x/c)$, the inversion $x \mapsto c^2/x$ is simply the parity reflection $u \mapsto -u$.
+
+**Step 3:** Substitute $y = c^2/x$ into the identity from Step 1:
+
+$$
+2\left(\frac{c^2}{x}\right) f\left(\frac{c^2}{x}; r, c\right) = \mathrm{sech}\left(-r\log\left(\frac{x}{c}\right)\right)
+$$
+
+**Step 4:** Use the even property of the hyperbolic secant, $\mathrm{sech}(-z) = \mathrm{sech}(z)$:
+
+$$
+\frac{2c^2}{x} f\left(\frac{c^2}{x}; r, c\right) = \mathrm{sech}\left(r\log\left(\frac{x}{c}\right)\right)
+$$
+
+**Step 5:** The right-hand side is, by the Rosetta Stone identity, equal to $2x f(x; r, c)$:
+
+$$
+\frac{2c^2}{x} f\left(\frac{c^2}{x}; r, c\right) = 2x f(x; r, c)
+$$
+
+**Step 6:** Solve algebraically for $f(c^2/x; r, c)$:
+
+$$
+f\left(\frac{c^2}{x}; r, c\right) = \frac{x}{2c^2} \cdot 2x f(x; r, c) = \frac{x^2}{c^2} f(x; r, c)
+$$
+
+This confirms the identity and shows that the multiplicative symmetry in $x$ is a direct reflection of the even symmetry of the hyperbolic secant in the canonical logarithmic coordinate.
