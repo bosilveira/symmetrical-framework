@@ -1,63 +1,92 @@
-### 1.7 Normalized Density and Cumulative Distribution Function (CDF)
+# 1.7 Normalized Density and the Cumulative Distribution Function (CDF)
 
-By introducing an appropriate normalization constant, the function $f(x; r, c)$ can be treated as a probability density function (PDF). This allows us to define a corresponding cumulative distribution function (CDF) and apply probabilistic interpretations.
+By introducing an appropriate normalization constant, the function $f(x; r, c)$ can be treated as a probability density function (PDF). This allows for a full probabilistic interpretation of the framework, complete with a cumulative distribution function (CDF).
 
-**Normalized Probability Density Function (PDF):**
+### Normalized Probability Density Function (PDF)
 
 The normalized PDF, denoted by $\rho(x; r, c)$, is defined as:
 
 $$
-\rho(x; r, c) = \frac{2r}{\pi} f(x; r, c)
+\boxed{ \rho(x; r, c) = \frac{2r}{\pi} f(x; r, c) }
 $$
 
-This normalization ensures that the total probability mass is unity, as will be shown in §3.3:
+This normalization ensures that the total probability mass over the domain $(0, \infty)$ is unity:
 
 $$
-\int_{0}^{\infty} \rho(x; r, c)\ dx = 1
+\int_{0}^{\infty} \rho(x; r, c) \, \mathrm{d}x = 1
 $$
 
-**Cumulative Distribution Function (CDF):**
+### Cumulative Distribution Function (CDF)
 
-The CDF, $F_{\rho}(x)$, which gives the probability that a random variable following this distribution is less than or equal to $x$, has two equivalent and useful forms:
+The CDF, $F_{\rho}(x)$, which gives the probability that a random variable following this distribution is less than or equal to $x$, has two equivalent forms:
 
 1.  **Power / Arctangent Form:**
 
 $$
-F_{\rho}(x) = \frac{2}{\pi}\ \arctan\left(\left(\frac{x}{c}\right)^r\right)
+\boxed{ F_{\rho}(x;r,c) = \frac{2}{\pi} \arctan\left(\left(\frac{x}{c}\right)^r\right) }
 $$
 
-2.  **Hyperbolic / Gudermannian Form:**
+3.  **Hyperbolic / Gudermannian Form:**
 
 $$
-F_{\rho}(x) = \frac{1}{\pi}\ \left[ \arctan\left(\sinh\left(r\log\left(\frac{x}{c}\right)\right)\right) + \frac{\pi}{2} \right]
+\boxed{ F_{\rho}(x;r,c) = \frac{1}{\pi} \left[ \arctan\left(\sinh\left(r\log\left(\frac{x}{c}\right)\right)\right) + \frac{\pi}{2} \right] }
 $$
 
 ---
+### Derivation
 
-**Derivation:**
+#### Derivation of the Normalization Constant
 
-1.  **Derivation of the CDF (Power Form)**: The CDF is found by integrating the PDF $\rho(t; r, c)$ from $0$ to $x$. Using the antiderivative of $f(x; r, c)$ that will be established in §3.1, which is $\int f(x) dx = \frac{1}{r}\ \arctan((x/c)^r)$, we have:
-
-$$
-F_{\rho}(x) = \int_{0}^{x} \rho(t; r, c) \ dt = \frac{2r}{\pi} \int_{0}^{x} f(t; r, c)\ dt
-$$
+**Step 1:** Recall the total mass integral of the base function $f(x)$ from §3.3:
 
 $$
-= \frac{2r}{\pi}\ \left[ \frac{1}{r} \arctan\left(\left(\frac{t}{c}\right)^r\right) \right]_0^x = \frac{2}{\pi}\ \left( \arctan\left(\left(\frac{x}{c}\right)^r\right) - \arctan(0) \right)
+\int_{0}^{\infty} f(x;r,c) \, \mathrm{d}x = \frac{\pi}{2r}
+$$
+
+**Step 2:** To normalize the function to have a total integral of 1, we must divide by this constant. The normalization constant is therefore the reciprocal of the total mass:
+
+$$
+\text{Normalization Constant} = \left( \frac{\pi}{2r} \right)^{-1} = \frac{2r}{\pi}
+$$
+
+This directly gives the definition of the normalized density $\rho(x;r,c)$.
+
+#### Derivation of the CDF (Power / Arctangent Form)
+
+**Step 1:** The CDF is found by integrating the PDF $\rho(t; r, c)$ from the lower bound of the domain ($0$) up to a variable $x$.
+
+$$
+F_{\rho}(x) = \int_{0}^{x} \rho(t; r, c) \, \mathrm{d}t = \frac{2r}{\pi} \int_{0}^{x} f(t; r, c) \, \mathrm{d}t
+$$
+
+**Step 2:** Use the exact antiderivative of $f(x)$ established in §3.1: $\int f(t) \mathrm{d}t = \frac{1}{r} \arctan((t/c)^r)$.
+
+$$
+F_{\rho}(x) = \frac{2r}{\pi} \left[ \frac{1}{r} \arctan\left(\left(\frac{t}{c}\right)^r\right) \right]_0^x
+$$
+
+**Step 3:** Evaluate the definite integral:
+
+$$
+F_{\rho}(x) = \frac{2}{\pi} \left( \arctan\left(\left(\frac{x}{c}\right)^r\right) - \arctan(0) \right)
 $$
 
 Since $\arctan(0) = 0$, we arrive at the first form of the CDF.
 
-2.  **Equivalence of the Two CDF Forms**: The second form is derived from the first by applying a known identity for the **Gudermannian function**, which relates the hyperbolic and trigonometric worlds. The identity is:
+#### Equivalence of the Two CDF Forms
+
+**Step 1:** The equivalence hinges on a classical identity for the **Gudermannian function**, which relates hyperbolic and trigonometric functions:
 
 $$
-2\ \arctan(e^z) = \arctan(\sinh(z)) + \frac{\pi}{2}
+2 \arctan(e^z) = \arctan(\sinh(z)) + \frac{\pi}{2}
 $$
 
-To show the equivalence, we set $z = r \log(x/c)$. This implies $e^z = (x/c)^r$. Substituting this into the identity gives:
+**Step 2:** To show the equivalence, we set the argument to our canonical logarithmic coordinate, $z = r \log(x/c)$. This implies $e^z = (x/c)^r$.
+
+**Step 3:** Substitute this into the Gudermannian identity:
 
 $$
-2\ \arctan\left(\left(\frac{x}{c}\right)^r\right) = \arctan\left(\sinh\left(r\log\left(\frac{x}{c}\right)\right)\right) + \frac{\pi}{2}
+2 \arctan\left(\left(\frac{x}{c}\right)^r\right) = \arctan\left(\sinh\left(r\log\left(\frac{x}{c}\right)\right)\right) + \frac{\pi}{2}
 $$
 
-Dividing both sides by $\pi$ exactly recovers the two expressions for $F_{\rho}(x)$, demonstrating their equivalence. The second form is particularly insightful as it expresses the CDF directly in terms of the canonical logarithmic coordinate $u = \log(x/c)$.
+**Step 4:** Dividing both sides by $\pi$ exactly recovers the two expressions for $F_{\rho}(x)$, proving their equivalence. The second form is notable for expressing the CDF directly in terms of the canonical coordinate $u = \log(x/c)$.
