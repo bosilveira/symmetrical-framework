@@ -1,58 +1,63 @@
-### 1.3 The Hyperbolic Secant Identity / The "Rosetta Stone"
+# 1.2 The Rosetta Stone Identity
 
-A key insight into the structure of 
-$f(x; r, c)$ 
-comes from its relationship with the hyperbolic secant function. This connection provides an alternative and often more powerful way to analyze its properties. We call this the "Rosetta Stone" identity because it translates the algebraic form of the function into the language of hyperbolic functions.
-
-The identity is:
+The algebraic form of the function possesses an exact isomorphism to the hyperbolic secant function when evaluated in logarithmic coordinates. This identity is the "Rosetta Stone" that translates the multiplicative geometry of the function into the additive, hyperbolic geometry of its canonical space.
 
 $$
-2x \ f(x; r, c) = \mathrm{sech} \left( r \log\left(\frac{x}{c}\right) \right)
+\boxed{ f(x;r,c) = \frac{1}{2x} \mathrm{sech}\left(r\log\left(\frac{x}{c}\right)\right) }
 $$
 
----
+### Exposition
 
-**Derivation:**
+This identity is a fundamental structural truth, not a convenient approximation. It reveals that the complex rational form of $f(x)$ is, in its native geometry, a simple hyperbolic function modulated by a scale factor $1/(2x)$. Every symmetry and integral property of the framework can be seen as a direct consequence of this isomorphism. The logarithmic argument $u = \log(x/c)$ will be established as the canonical coordinate of the system.
 
-The identity can be proven directly from the definitions of the functions. Let the argument of the hyperbolic secant be 
-$z = r \log(x/c)$
-.
+### Derivation
 
-From this definition, we have:
-$e^z = \exp(r \log(x/c)) = (x/c)^r$
-and
-$e^{-z} = \exp(-r \log(x/c)) = (c/x)^r$
+The identity is proven by direct algebraic manipulation, starting from the definition of the hyperbolic secant.
 
-Now, using the definition of the hyperbolic secant, 
-$\mathrm{sech}(z) = \frac{2}{e^z + e^{-z}}$
-, we can substitute the expressions for 
-$e^z$
-and
-$e^{-z}$
-:
+**Step 1: Define the Hyperbolic Secant**
+The hyperbolic secant function, $\mathrm{sech}(z)$, is defined in terms of the exponential function:
 
 $$
-\mathrm{sech}(z) = \frac{2}{\left(\frac{x}{c}\right)^r + \left(\frac{c}{x}\right)^r}
+\mathrm{sech}(z) = \frac{2}{e^z + e^{-z}}
 $$
 
-To simplify the denominator, we find a common denominator of 
-$c^r x^r$
-:
+**Step 2: Substitute the Canonical Logarithmic Coordinate**
+Let the argument of the function be $z = r\log(x/c)$. We can express the exponential terms as powers of $x$ and $c$:
+*   $e^z = \exp\left(r\log\left(\frac{x}{c}\right)\right) = \left(\frac{x}{c}\right)^r$
+*   $e^{-z} = \exp\left(-r\log\left(\frac{x}{c}\right)\right) = \left(\frac{c}{x}\right)^r$
+
+**Step 3: Evaluate the Secant Function**
+Substitute these power-law expressions back into the definition of $\mathrm{sech}(z)$:
 
 $$
-\mathrm{sech}(z) = \frac{2}{\frac{x^{2r} + c^{2r}}{c^r x^r}} = \frac{2 c^r x^r}{c^{2r} + x^{2r}}
+\mathrm{sech}\left(r\log\left(\frac{x}{c}\right)\right) = \frac{2}{\left(\frac{x}{c}\right)^r + \left(\frac{c}{x}\right)^r}
 $$
 
-We can then relate this expression back to the original function 
-$f(x; r, c)$
-by factoring out 
-$2x$
-:
+**Step 4: Simplify the Algebraic Expression**
+To simplify the denominator, we find a common denominator of $c^r x^r$:
 
 $$
-\frac{2 c^r x^r}{c^{2r} + x^{2r}} = 2x \cdot \frac{c^r x^{r-1}}{c^{2r} + x^{2r}} = 2x \ f(x; r, c)
+\mathrm{sech}\left(r\log\left(\frac{x}{c}\right)\right) = \frac{2}{\frac{x^{2r} + c^{2r}}{c^r x^r}} = \frac{2 c^r x^r}{c^{2r} + x^{2r}}
 $$
 
-Thus, the identity is established. It is an algebraic tautology that reveals the deep connection between our function family and hyperbolic geometry, which becomes especially apparent when analyzing the function in logarithmic coordinates.
+**Step 5: Relate to the Core Algebraic Form**
+We now relate this expression back to the original function $f(x; r, c)$ from §1.1 by factoring out a term of $2x$:
 
+$$
+\frac{2 c^r x^r}{c^{2r} + x^{2r}} = 2x \cdot \left( \frac{c^r x^{r-1}}{c^{2r} + x^{2r}} \right)
+$$
 
+The term in the parentheses is exactly the definition of $f(x;r,c)$. Therefore:
+
+$$
+\mathrm{sech}\left(r\log\left(\frac{x}{c}\right)\right) = 2x f(x;r,c)
+$$
+
+**Step 6: Final Rearrangement**
+Dividing both sides by $2x$ yields the final Rosetta Stone identity:
+
+$$
+f(x;r,c) = \frac{1}{2x} \mathrm{sech}\left(r\log\left(\frac{x}{c}\right)\right)
+$$
+
+This completes the proof.
