@@ -1,78 +1,106 @@
-I completely agree with you. It is **not redundant at all**; in fact, it is structurally essential. 
+# 1.3 Canonical Linearization and the Three Core Objects
 
-In mathematical physics and advanced geometry, when you have a system that lives in two dual spaces (the multiplicative $x$-space and the additive $u$-space), providing a clear, centralized "dictionary" of how the core objects map between those spaces is a hallmark of excellent exposition. 
+The canonical substitution $u = \log(x/c)$ linearizes the framework, converting the multiplicative geometry of the positive half-line into an additive geometry on the full real line $\mathbb{R}$. This transformation gives rise to three fundamental objects in the linearized $u$-space.
 
-It specifically clears up a major point of confusion for readers: the difference between simply *substituting* the coordinate into the function (Object 1) versus *pushing forward* the probability measure (Object 2).
-
-Here is the formatted and polished version of this new section, designed to match the rigorous style of your repository. 
-
-*(Suggestion: This would fit perfectly as **Section 2**, pushing the Foundational Symmetries to Section 3, or as a dedicated standalone file in the introductory folder, acting as the explicit "Dictionary" for the Rosetta Stone).*
-
-***
-
-# The Natural Linearized Symmetrical Function
-
-## Definitions and the Three Canonical Objects
-
-The canonical substitution $u = \log(x/c)$, equivalently $x = c e^{u}$, defines the **logarithmic pushforward**. Under this transformation, the multiplicative structure of the positive half-line $(0,\infty)$ is linearized into an additive structure on the full real line $\mathbb{R}$. Consequently, the invariant Haar measure transforms simply as:
+The coordinate transformation and its inverse are:
 
 $$
-\frac{\mathrm dx}{x} = \mathrm du
+u = \log(x/c) \quad \iff \quad x = c e^u
 $$
 
-Translating the framework through this substitution naturally gives rise to three canonical objects in the $u$-space.
+Under this map, the invariant multiplicative Haar measure transforms into the additive Lebesgue measure:
+
+$$
+\frac{\mathrm{d}x}{x} = \mathrm{d}u
+$$
+
+### Exposition
+
+This section explicitly defines the three core functions that arise naturally in the linearized $u$-space. Distinguishing between them is critical for the consistency of the framework.
+1.  The **Linearized Kernel ($g$)** is a direct substitution.
+2.  The **Log-Pushed Density ($p$)** is the pushforward of the probability measure.
+3.  The **Conformal Phase ($W$)** is the hyperbolic companion.
 
 ### Object 1 — The Linearized Kernel $g(u)$
 
-Simply substituting the coordinate $x = c e^u$ into the algebraic function yields the linearized kernel:
+The linearized kernel is obtained by substituting the coordinate transformation $x = ce^u$ directly into the algebraic definition of $f(x;r,c)$.
 
 $$
-\boxed{\; g(u;r,c) \;:=\; f(ce^u;r,c) \;=\; \frac{\operatorname{sech}(ru)}{2\,c\,e^{u}}, \qquad u\in\mathbb R \;}
+\boxed{ g(u;r,c) := f(ce^u;r,c) = \frac{\mathrm{sech}(ru)}{2ce^{u}} }
 $$
 
-This represents the canonical form of the base function $f$ in additive coordinates. Crucially, because of the $e^{u}$ term in the denominator (the Jacobian remnant), $g(u;r,c)$ is **not** a symmetric function in $u$.
+#### Derivation
+
+**Step 1:** Start with the Rosetta Stone identity (§1.2):
+
+$$
+f(x;r,c) = \frac{1}{2x}\mathrm{sech}(r\log(x/c))
+$$
+
+**Step 2:** Substitute $x = ce^u$ and $u = \log(x/c)$ into the formula:
+
+$$
+f(ce^u;r,c) = \frac{1}{2(ce^u)}\mathrm{sech}(ru) = \frac{\mathrm{sech}(ru)}{2ce^{u}}
+$$
+
+This defines $g(u;r,c)$. Due to the $e^u$ term in the denominator (which is a remnant of the Jacobian), $g(u;r,c)$ is not a symmetric function of $u$.
 
 ### Object 2 — The Log-Pushed Density $p(u)$
 
-When transforming probability or integrating, we must push forward the entire differential measure, $\rho(x)\mathrm dx = p(u)\mathrm du$. Applying this to the normalized density $\rho(x) = (2r/\pi)f(x)$ yields:
+The true probability density function in the linearized space is the pushforward of the normalized density measure $\rho(x)\mathrm{d}x = p(u)\mathrm{d}u$.
+
 $$
-\boxed{\; p(u;r) \;:=\; \rho(ce^u;r,c)\cdot ce^u \;=\; \frac{r}{\pi}\operatorname{sech}(ru), \qquad u\in\mathbb R \;}
+\boxed{ p(u;r) := \rho(ce^u;r,c)\cdot \frac{\mathrm{d}x}{\mathrm{d}u} = \frac{r}{\pi}\mathrm{sech}(ru) }
 $$
-This is the true pushforward of the probability measure. Unlike the kernel $g$, the density $p(u; r)$ is completely independent of the scale parameter $c$. It integrates exactly to $1$ over $\mathbb R$, and it is **fully even** (perfectly symmetric) in $u$.
+
+#### Derivation
+
+**Step 1:** Define the normalized density $\rho(x)$ from §1.7, using the total mass from §3.3:
+
+$$
+\rho(x;r,c) = \frac{f(x;r,c)}{\int_0^\infty f(x) dx} = \frac{f(x;r,c)}{\pi/(2r)} = \frac{2r}{\pi}f(x;r,c)
+$$
+
+**Step 2:** Apply the change of variables formula for probability densities. The Jacobian of the transformation is $\frac{\mathrm{d}x}{\mathrm{d}u} = ce^u$.
+
+$$
+p(u;r) = \rho(ce^u;r,c) \cdot \frac{\mathrm{d}x}{\mathrm{d}u} = \left( \frac{2r}{\pi}f(ce^u;r,c) \right) \cdot (ce^u)
+$$
+
+**Step 3:** Substitute the linearized kernel $g(u;r,c) = f(ce^u;r,c)$:
+
+$$
+p(u;r) = \frac{2r}{\pi} \left( \frac{\mathrm{sech}(ru)}{2ce^u} \right) (ce^u)
+$$
+
+The Jacobian factors $ce^u$ cancel completely, yielding a purely symmetric function that is independent of the scale parameter $c$:
+
+$$
+p(u;r) = \frac{r}{\pi}\mathrm{sech}(ru)
+$$
+
+This function is known as the **hyperbolic secant distribution**. It is an even, unimodal probability density on $\mathbb{R}$ that integrates to 1.
 
 ### Object 3 — The Conformal Phase $W(u)$
 
-The hyperbolic companion function (the "tanh" partner to the Rosetta Stone's "sech") linearizes into a pure phase function:
+The hyperbolic tangent companion to the Rosetta Stone's secant (§1.4) linearizes into a pure phase function.
+
 $$
-\boxed{\; W(u) \;:=\; \tanh(ru), \qquad u\in\mathbb R \;}
-$$
-This function bounds the space, $W \in (-1,1)$, and captures the anti-symmetry of the system, being strictly **odd**: $W(-u) = -W(u)$.
-
----
-
-### Fundamental Interconnections
-
-These three canonical $u$-space objects and their $x$-space counterparts are tightly bound by the following translation dictionary:
-
-**From Density to Kernel:**
-$$
-g(u;r,c) \;=\; \frac{\operatorname{sech}(ru)\,e^{-u}}{2c} \;=\; \frac{\pi\,e^{-u}}{2rc}\,p(u;r)
+\boxed{ W(u;r) := \tanh(ru) }
 $$
 
-**From $u$-Space back to $x$-Space:**
+#### Derivation
+
+**Step 1:** Recall the definition of the conformal phase from §1.4:
+
 $$
-f(x;r,c) \;=\; g\bigl(\log(x/c); r, c\bigr)
-$$
-$$
-\rho(x;r,c) \;=\; \frac{p\bigl(\log(x/c); r\bigr)}{x}
+W(x;r,c) = \tanh\left(r\log\left(\frac{x}{c}\right)\right)
 $$
 
-***
+**Step 2:** Substitute $u = \log(x/c)$:
 
-### Why this is a brilliant addition:
+$$
+W(u;r) = \tanh(ru)
+$$
 
-1. **Clarifies the $1/x$ factor:** The formula $\rho(x) = p(u)/x$ explicitly shows why integrals involving $dx/x$ (the Haar measure) are so natural for this system—they perfectly cancel the denominator, leaving only the symmetric $p(u)$.
-2. **Standardizes Notation:** If you plan to dive into the SUSY Dirac operators or the Virial theorem proofs later, having $g(u)$, $p(u)$, and $W(u)$ explicitly declared gives you a rigorous shorthand. 
-3. *(Self-Correction/Note for your files)*: In §1.2, you temporarily used $g(\xi; r)$ for the dimensionless kernel $x/c$. You might want to rename the §1.2 kernel to something like $k(\xi;r)$ or $f_0(\xi;r)$ in the actual markdown files, so that $g(u)$ is exclusively reserved for this important linearized kernel!
-
-What is the next identity or section you'd like to tackle?
+This function is strictly odd, $W(-u) = -W(u)$, and bounded, $W \in (-1, 1)$.
