@@ -1,40 +1,68 @@
-### 1.4 The Hyperbolic Tangent Companion (Phase Function)
+# 1.4 The Conformal Phase $W$
 
-Complementing the hyperbolic secant identity, there is a corresponding hyperbolic tangent function, which we denote as $W(x)$. This function acts as a "phase" or "asymmetry" function, describing the transition across the symmetry point $x=c$.
+The hyperbolic tangent function, which is complementary to the hyperbolic secant in the Rosetta Stone identity, serves as the "conformal phase" of the system. It tracks the position within the framework relative to the central point on a logarithmic scale.
 
-The function $W(x)$ is defined as:
-
-$$
-W(x) = \tanh\left(r \log\left(\frac{x}{c}\right)\right) = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}}
-$$
-
----
-
-**Derivation:**
-
-The algebraic form is derived directly from the definition of the hyperbolic tangent in terms of exponentials. Let $z = r \log(x/c)$, which implies $e^{2z} = \exp(2r \log(x/c)) = (x/c)^{2r}$.
-
-Using the identity $\tanh(z) = \frac{e^{2z} - 1}{e^{2z} + 1}$, we substitute the expression for $e^{2z}$:
+In the spatial coordinate $x$:
 
 $$
-\tanh(z) = \frac{\left(\frac{x}{c}\right)^{2r} - 1}{\left(\frac{x}{c}\right)^{2r} + 1}
+\boxed{ W(x;r,c) = \tanh\left(r\log\left(\frac{x}{c}\right)\right) = \frac{(x/c)^{2r} - 1}{(x/c)^{2r} + 1} = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}} }
 $$
 
-Multiplying the numerator and denominator by $c^{2r}$ clears the fractions and yields the final algebraic form:
+In the linearized coordinate $u = \log(x/c)$:
 
 $$
-W(x) = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}}
+\boxed{ W(u;r) = \tanh(ru) }
 $$
 
-**Significance:**
+### Exposition
 
-The function $W(x)$ provides a measure of how far $x$ is from the central point $c$ in logarithmic coordinates. Its key properties are:
-*   It passes through zero at the symmetry point: $W(c) = 0$.
-*   It approaches $-1$ as $x \to 0^+$ and $+1$ as $x \to +\infty$.
-*   It is directly related to the `sech` identity from §1.3 through the fundamental hyperbolic identity $\mathrm{sech}^2(z) + \tanh^2(z) = 1$. This implies a remarkably simple relationship between our functions:
+The function $W$ acts as an asymmetry or "phase" function. It is a monotonic mapping from the spatial domain $x \in (0, \infty)$ to the interval $(-1, 1)$. Its value provides a dimensionless measure of how far $x$ is from the central scale parameter $c$. Its properties are central to the differential structure of the framework.
+
+### Derivation of the Algebraic Form
+
+The algebraic form in $x$ is derived directly from the definition of the hyperbolic tangent in terms of exponential functions.
+
+**Step 1: Define the Hyperbolic Tangent**
+The hyperbolic tangent function, $\tanh(z)$, can be defined as:
 
 $$
-\left( 2x \, f(x; r, c) \right)^2 + \left( W(x) \right)^2 = 1
+\tanh(z) = \frac{e^{2z} - 1}{e^{2z} + 1}
 $$
 
-This shows that the pair $(2xf, W)$ effectively parameterizes a hyperbola, reinforcing the deep geometric structure of the function family.
+**Step 2: Substitute the Canonical Logarithmic Coordinate**
+Let the argument of the function be $z = r\log(x/c)$. The term $e^{2z}$ becomes:
+
+$$
+e^{2z} = \exp\left(2r\log\left(\frac{x}{c}\right)\right) = \left(\frac{x}{c}\right)^{2r}
+$$
+
+**Step 3: Evaluate the Tangent Function**
+Substitute this power-law expression back into the definition of $\tanh(z)$:
+
+$$
+\tanh\left(r\log\left(\frac{x}{c}\right)\right) = \frac{\left(\frac{x}{c}\right)^{2r} - 1}{\left(\frac{x}{c}\right)^{2r} + 1}
+$$
+
+**Step 4: Simplify the Algebraic Expression**
+To clear the fractions, we multiply the numerator and the denominator by $c^{2r}$:
+
+$$
+\tanh\left(r\log\left(\frac{x}{c}\right)\right) = \frac{(x^{2r} - c^{2r}) / c^{2r}}{(x^{2r} + c^{2r}) / c^{2r}} = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}}
+$$
+
+This yields the final algebraic form for $W(x;r,c)$.
+
+### Key Properties
+
+*   **Symmetry:** $W(x)$ is anti-symmetric with respect to the Möbius inversion $x \mapsto c^2/x$. This is most easily seen in the linearized coordinate, where $u \mapsto -u$:
+    $$
+    W(-u) = \tanh(-ru) = -\tanh(ru) = -W(u)
+    $$
+    The function is strictly **odd**.
+
+*   **Boundary Values:**
+    *   As $x \to 0^+$, $u \to -\infty$, and $W(u) \to -1$.
+    *   As $x \to c$, $u \to 0$, and $W(u) = \tanh(0) = 0$. The phase function is zero at the center of symmetry.
+    *   As $x \to +\infty$, $u \to +\infty$, and $W(u) \to +1$.
+
+*   **Monotonicity:** The derivative $W'(u) = r\,\mathrm{sech}^2(ru)$ is strictly positive for all $u \in \mathbb{R}$. Therefore, $W(u)$ is a strictly increasing function, mapping the real line monotonically to the interval $(-1, 1)$.
