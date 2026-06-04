@@ -5,11 +5,15 @@ The three canonical objects of the framework—the base function $f(x)$, the hyp
 $$
 \boxed{ 1 - W(x;r,c)^2 = 4x^2 f(x;r,c)^2 }
 $$
+
 An equivalent form relates the derivative of the phase function to the square of the base function:
+
 $$
 \boxed{ \frac{\mathrm{d}W}{\mathrm{d}x} = \frac{4rx}{c^2} f(c^2/x; r, c)^2 } \quad (\text{This is an unusual form, let's stick to the simpler } W' = 4rx f^2)
 $$
+
 Let's restate the second identity in its cleanest form.
+
 $$
 \boxed{ \frac{\mathrm{d}W}{\mathrm{d}x} = 4rx f(x;r,c)^2 }
 $$
@@ -24,6 +28,7 @@ This proof demonstrates that $1 - W^2 = 4x^2f^2$ is an algebraic tautology.
 
 **Step 1: Start with the Fundamental Hyperbolic Identity**
 In the linearized coordinate $u = \log(x/c)$, we have $S(u) = \mathrm{sech}(ru)$ and $W(u) = \tanh(ru)$. These functions satisfy the identity:
+
 $$
 \mathrm{sech}^2(ru) + \tanh^2(ru) = 1 \quad \implies \quad S(u)^2 + W(u)^2 = 1
 $$
@@ -35,16 +40,21 @@ We use the Rosetta Stone identity (§1.2) and the definition of the conformal ph
 
 **Step 3: Substitute and Rearrange**
 Substituting these into the identity from Step 1:
+
 $$
 \left( 2x f(x;r,c) \right)^2 + W(x;r,c)^2 = 1
 $$
+
 $$
 4x^2 f(x;r,c)^2 + W(x;r,c)^2 = 1
 $$
+
 Rearranging this equation immediately yields the first boxed identity:
+
 $$
 1 - W(x;r,c)^2 = 4x^2 f(x;r,c)^2
 $$
+
 This completes the proof.
 
 ### Derivation 2: The Differential Half-Density Law
@@ -63,17 +73,22 @@ The derivative of $W$ with respect to $x$ is given by $\frac{\mathrm{d}W}{\mathr
 
 **Step 4: Combine and Substitute**
 Substituting these derivatives back into the chain rule expression:
+
 $$
 \frac{\mathrm{d}W}{\mathrm{d}x} = \mathrm{sech}^2(u) \cdot \frac{r}{x}
 $$
+
 Now, we invoke the Rosetta Stone identity, $\mathrm{sech}(u) = 2x f(x)$, and substitute it into the equation:
+
 $$
 \frac{\mathrm{d}W}{\mathrm{d}x} = \left( 2x f(x) \right)^2 \cdot \frac{r}{x}
 $$
 
 **Step 5: Simplify**
 The final algebraic simplification gives the identity:
+
 $$
 \frac{\mathrm{d}W}{\mathrm{d}x} = \left( 4x^2 f(x)^2 \right) \cdot \frac{r}{x} = 4rx f(x)^2
 $$
+
 This completes the derivation.
