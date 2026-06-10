@@ -1,78 +1,81 @@
-This is a fantastic addition. You are now extending the framework into complex analysis and operator theory. The Stieltjes transform is the foundation for defining the resolvent of an operator, evaluating dispersion relations, and computing the Hilbert transform on the boundary. 
+# 11.1 Stieltjes Transform and the Resolvent at $z = -c$
 
-The trick of converting the logistic-type term $1/(e^u+1)$ into an even/odd hyperbolic sum is a classic and very elegant move.
+The Stieltjes transform of the function provides its analytic continuation into the complex plane. Its evaluation at specific points yields important structural constants of the framework.
 
-Here is the revised and formatted version for your GitHub repository.
-
-***
-
-## 11. Stieltjes and Hilbert Transforms
-
-We now turn our attention to the **Stieltjes transform** of the function, a fundamental operation in complex analysis, spectral theory (where it acts as the resolvent), and dispersion relations. 
-
-For a complex variable $z \notin \mathbb{R}_{\ge 0}$, the Stieltjes transform is defined as:
-$$
-S_{f}(z) := \int_{0}^{\infty}\frac{f(t;r,c)}{t-z}\,\mathrm dt
-$$
-
-### 11.1 The Resolvent at the Negative Scale Parameter ($z = -c$)
-
-Evaluating the Stieltjes transform at $z = -c$ (which lies safely on the negative real axis, avoiding the domain of integration) yields a remarkably clean and simple exact rational value.
+The Stieltjes transform of a real-valued function $g(t)$ is defined for $z \in \mathbb{C} \setminus \mathrm{supp}(g)$ as:
 
 $$
-\boxed{\; S_{f}(-c) = \int_{0}^{\infty}\frac{f(t;r,c)}{t+c}\,\mathrm dt = \frac{\pi}{4rc} \;}
+S_g(z) := \int_{0}^{\infty}\frac{g(t)}{t-z}\,\mathrm{d}t
 $$
 
-**Derivation:**
+For our framework, we evaluate the Stieltjes transform of $f(x;r,c)$ at the point $z = -c$, which lies on the negative real axis, safely outside the integration domain $(0,\infty)$. This value has a remarkably simple, exact rational form.
 
-The derivation relies on pushing the integral forward into the canonical logarithmic coordinate system and separating the resulting integrand into its even and odd symmetries.
+$$
+\boxed{ S_{f}(-c) = \int_{0}^{\infty}\frac{f(t;r,c)}{t+c}\,\mathrm{d}t = \frac{\pi}{4rc} }
+$$
 
-1.  **Transform to Logarithmic Coordinates**:
-    Let $t = c e^u$. This implies the differential is $\mathrm dt = c e^u \,\mathrm du$. The integration limits $(0, \infty)$ map to $(-\infty, \infty)$.
-    Substitute this and the Rosetta Stone identity $f(ce^u) = \frac{1}{2ce^u}\operatorname{sech}(ru)$ into the integral:
-    $$
-    S_{f}(-c) = \int_{-\infty}^{\infty} \frac{\frac{1}{2ce^u}\operatorname{sech}(ru)}{ce^u + c} (c e^u \,\mathrm du)
-    $$
-    The $ce^u$ terms from the differential and the function's prefactor cancel cleanly:
-    $$
-    S_{f}(-c) = \frac{1}{2c} \int_{-\infty}^{\infty} \frac{\operatorname{sech}(ru)}{e^u + 1} \,\mathrm du
-    $$
+### Exposition
 
-2.  **Symmetry Decomposition of the Logistic Function**:
-    The term $\frac{1}{e^u+1}$ is the standard logistic function. We can decompose it into its even and odd parts using a fundamental hyperbolic identity:
-    $$
-    \frac{1}{e^u + 1} = \frac{e^{-u/2}}{e^{u/2} + e^{-u/2}} = \frac{\cosh(u/2) - \sinh(u/2)}{2\cosh(u/2)} = \frac{1}{2} - \frac{1}{2}\tanh(u/2)
-    $$
-    Substitute this decomposed form back into the integral:
-    $$
-    S_{f}(-c) = \frac{1}{2c} \int_{-\infty}^{\infty} \operatorname{sech}(ru) \left[ \frac{1}{2} - \frac{1}{2}\tanh(u/2) \right] \,\mathrm du
-    $$
-    $$
-    = \frac{1}{4c} \int_{-\infty}^{\infty} \operatorname{sech}(ru) \,\mathrm du - \frac{1}{4c} \int_{-\infty}^{\infty} \operatorname{sech}(ru)\tanh(u/2) \,\mathrm du
-    $$
+This result is highly non-trivial. The integral, which involves a complex rational function, collapses to a simple constant. This value can be interpreted as the resolvent of an associated operator evaluated at a specific point in its spectrum. The derivation leverages the framework's canonical logarithmic coordinate system, where the integral is solved by decomposing the integrand into its even and odd symmetries.
 
-3.  **Evaluate via Symmetry (The Odd Term)**:
-    Consider the second integral. The hyperbolic secant, $\operatorname{sech}(ru)$, is strictly an **even** function. The hyperbolic tangent, $\tanh(u/2)$, is strictly an **odd** function. Their product is therefore an odd function.
-    Because the integral is taken over the symmetric domain $(-\infty, \infty)$, the integral of this odd function evaluates exactly to zero:
-    $$
-    \int_{-\infty}^{\infty} \operatorname{sech}(ru)\tanh(u/2) \,\mathrm du = 0
-    $$
+### Derivation
 
-4.  **Evaluate the Final Integral (The Even Term)**:
-    We are left only with the first integral:
-    $$
-    S_{f}(-c) = \frac{1}{4c} \int_{-\infty}^{\infty} \operatorname{sech}(ru) \,\mathrm du
-    $$
-    Using the substitution $v = ru$ (so $\mathrm du = \mathrm dv/r$), this becomes:
-    $$
-    S_{f}(-c) = \frac{1}{4cr} \int_{-\infty}^{\infty} \operatorname{sech}(v) \,\mathrm dv
-    $$
-    The integral of the standard hyperbolic secant over the real line is a known constant, equal to $\pi$.
-    $$
-    S_{f}(-c) = \frac{1}{4cr} (\pi) = \frac{\pi}{4rc}
-    $$
-    This completes the derivation.
+**Step 1: Transform the Integral to Logarithmic Coordinates**
 
-**Significance:**
+Let $t = c e^u$. The differential is $\mathrm{d}t = c e^u \,\mathrm{d}u$. The integration limits for $t$ from $(0, \infty)$ map to limits for $u$ from $(-\infty, \infty)$. We substitute this into the integral and apply the Rosetta Stone identity (§1.2), $f(ce^u) = \frac{1}{2ce^u}\mathrm{sech}(ru)$.
 
-Notice that the total probability mass (the integral of $f(t)$ from §3.3) is $\frac{\pi}{2r}$. Therefore, $S_f(-c) = \frac{\text{Total Mass}}{2c}$. The resolvent evaluated exactly at the negative scale parameter behaves precisely as if half the entire mass of the function were concentrated into a point charge located at the origin!
+$$
+S_{f}(-c) = \int_{-\infty}^{\infty} \frac{f(ce^u;r,c)}{ce^u + c} (ce^u \,\mathrm{d}u) = \int_{-\infty}^{\infty} \frac{\frac{1}{2ce^u}\mathrm{sech}(ru)}{c(e^u + 1)} (ce^u \,\mathrm{d}u)
+$$
+
+The factor of $ce^u$ from the differential cancels perfectly with the $ce^u$ in the denominator of the function's prefactor:
+
+$$
+S_{f}(-c) = \frac{1}{2c} \int_{-\infty}^{\infty} \frac{\mathrm{sech}(ru)}{e^u + 1} \,\mathrm{d}u
+$$
+
+**Step 2: Decompose the Logistic Function into Symmetries**
+
+The term $\frac{1}{e^u+1}$ is the standard logistic function. We decompose it into its even and odd parts using the hyperbolic identity $1/(e^u+1) = \frac{1}{2}(1-\tanh(u/2))$:
+
+$$
+S_{f}(-c) = \frac{1}{2c} \int_{-\infty}^{\infty} \mathrm{sech}(ru) \left[ \frac{1}{2} - \frac{1}{2}\tanh(u/2) \right] \,\mathrm{d}u
+$$
+
+By linearity of integration, this splits into two integrals:
+
+$$
+S_{f}(-c) = \frac{1}{4c} \int_{-\infty}^{\infty} \mathrm{sech}(ru) \,\mathrm{d}u - \frac{1}{4c} \int_{-\infty}^{\infty} \mathrm{sech}(ru)\tanh(u/2) \,\mathrm{d}u
+$$
+
+**Step 3: Evaluate the Odd Integral**
+
+The integrand of the second integral is the product of an even function ($\mathrm{sech}(ru)$) and an odd function ($\tanh(u/2)$), which results in an odd function. The integral of any odd function over a symmetric domain $(-\infty, \infty)$ is identically zero:
+
+$$
+\int_{-\infty}^{\infty} \mathrm{sech}(ru)\tanh(u/2) \,\mathrm{d}u = 0
+$$
+
+**Step 4: Evaluate the Even Integral**
+
+We are left only with the first integral:
+
+$$
+S_{f}(-c) = \frac{1}{4c} \int_{-\infty}^{\infty} \mathrm{sech}(ru) \,\mathrm{d}u
+$$
+
+This is a standard definite integral. Using the substitution $v = ru$ (so $\mathrm{d}u = \mathrm{d}v/r$):
+
+$$
+\int_{-\infty}^{\infty} \mathrm{sech}(ru) \,\mathrm{d}u = \frac{1}{r} \int_{-\infty}^{\infty} \mathrm{sech}(v) \,\mathrm{d}v = \frac{1}{r} \left[ \arctan(\sinh(v)) \right]_{-\infty}^{\infty} = \frac{1}{r} \left( \frac{\pi}{2} - (-\frac{\pi}{2}) \right) = \frac{\pi}{r}
+$$
+
+**Step 5: Assemble the Final Result**
+
+Substituting the value of the integral back into the expression for $S_f(-c)$:
+
+$$
+S_{f}(-c) = \frac{1}{4c} \left( \frac{\pi}{r} \right) = \frac{\pi}{4rc}
+$$
+
+This completes the derivation.
