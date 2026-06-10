@@ -1,57 +1,65 @@
-This is an excellent way to cap off the section on linear transforms. By explicitly stating the $r=1$ cases, you ground the highly generalized, abstract framework in classical, well-known mathematical physics results for the Cauchy/Lorentzian kernel. 
+# 10.3 Classical Transforms for the Arctangent Kernel ($r=1$)
 
-Here is the revised and formatted version for your GitHub repository, complete with a Unifying Remark to tie up Section 10.
+When the shape parameter is set to $r=1$, the function $f(x;1,c) = \frac{c}{c^2+x^2}$ reduces to the unnormalized Cauchy (or Lorentzian) distribution. In this classical regime, the generalized Fourier-type integrals collapse into well-known standard forms involving elementary and classical special functions.
 
-***
+**Fourier Cosine and Sine Transforms ($\omega>0$):**
 
-### 10.3 Classical Transforms for the Arctangent Kernel ($r=1$)
-
-When the shape parameter is strictly $r=1$, the function $f(x;1,c) = \frac{c}{c^2+x^2}$ reduces to the unnormalized Cauchy (or Lorentzian) distribution. In this classical regime, the generalized one-sided Fourier integral from §10.2 collapses into well-known standard forms involving elementary and special functions.
-
-**Fourier Cosine and Sine Transforms:**
 $$
-\boxed{\; \int_{0}^{\infty}\cos(\omega x)\,\frac{c}{c^{2}+x^{2}}\,\mathrm dx = \frac{\pi}{2}e^{-\omega c} \;}
-$$
-$$
-\boxed{\; \int_{0}^{\infty}\sin(\omega x)\,\frac{c}{c^{2}+x^{2}}\,\mathrm dx = \operatorname{Ci}(\omega c)\sin(\omega c) + \left(\frac{\pi}{2}-\operatorname{Si}(\omega c)\right)\cos(\omega c) \;}
+\boxed{ \int_{0}^{\infty}\cos(\omega x)\,\frac{c}{c^{2}+x^{2}}\,\mathrm{d}x = \frac{\pi}{2}e^{-\omega c} }
 $$
 
-**Laplace Transform:**
 $$
-\boxed{\; \mathcal L\left\{\frac{c}{c^{2}+x^{2}}\right\}(p) = \operatorname{Ci}(cp)\sin(cp) + \left(\frac{\pi}{2}-\operatorname{Si}(cp)\right)\cos(cp) \;}
-$$
-
-**Hankel / Bessel Transform (Order 0):**
-$$
-\boxed{\; \int_{0}^{\infty}\frac{c}{c^{2}+t^{2}}\,J_{0}(\omega t)\,t\,\mathrm dt = c\,K_{0}(\omega c) \;}
+\boxed{ \int_{0}^{\infty}\sin(\omega x)\,\frac{c}{c^{2}+x^{2}}\,\mathrm{d}x = \mathrm{Ci}(\omega c)\sin(\omega c) + \left(\frac{\pi}{2}-\mathrm{Si}(\omega c)\right)\cos(\omega c) }
 $$
 
-*(where $\operatorname{Ci}$ and $\operatorname{Si}$ are the Cosine and Sine integrals, $J_0$ is the Bessel function of the first kind, and $K_0$ is the modified Bessel function of the second kind).*
+**Laplace Transform ($p>0$):**
+
+$$
+\boxed{ \mathcal{L}\left\{\frac{c}{c^{2}+x^{2}}\right\}(p) = \int_0^\infty e^{-px} \frac{c}{c^2+x^2} \mathrm{d}x = \mathrm{Ci}(cp)\sin(cp) + \left(\frac{\pi}{2}-\mathrm{Si}(cp)\right)\cos(cp) }
+$$
+
+**Hankel Transform (Order 0, $\omega>0$):**
+$$
+\boxed{ \int_{0}^{\infty}\frac{c}{c^{2}+t^{2}}\,J_{0}(\omega t)\,t\,\mathrm{d}t = c\,K_{0}(\omega c) }
+$$
+
+*(where $\mathrm{Ci}$ and $\mathrm{Si}$ are the Cosine and Sine integrals, $J_0$ is the Bessel function of the first kind, and $K_0$ is the modified Bessel function of the second kind).*
 
 ---
-**Derivations:**
 
-1.  **Cosine Transform (Contour Integration):**
-    This is a staple of complex analysis. Because the integrand is an even function, the integral over $(0,\infty)$ is half the integral over $(-\infty,\infty)$. 
-    Consider the contour integral $\int_{-\infty}^{\infty} \frac{e^{i\omega x}}{x^2+c^2} \mathrm dx$ for $\omega > 0$. Closing the contour in the upper half-plane encloses a single simple pole at $x = ic$.
-    The residue is:
-    $$ \operatorname{Res}_{x=ic} \frac{e^{i\omega x}}{(x-ic)(x+ic)} = \frac{e^{i\omega(ic)}}{ic + ic} = \frac{e^{-\omega c}}{2ic} $$
-    By the residue theorem, the full integral is $2\pi i \left( \frac{e^{-\omega c}}{2ic} \right) = \frac{\pi}{c} e^{-\omega c}$.
-    Taking the real part (the cosine transform), taking half of that for the interval $(0, \infty)$, and multiplying by the numerator $c$ yields exactly $\frac{\pi}{2}e^{-\omega c}$.
+### Derivations
 
-2.  **Sine and Laplace Transforms:**
-    Both the Sine transform and the standard Laplace transform $\mathcal{L}\{f\}(p) = \int_0^\infty e^{-px} f(x) dx$ can be derived directly from the exact complex formula in §10.2. 
-    For $r=1$, the complex PFD has two poles, $z_0 = ic$ and $z_1 = -ic$. Evaluating the $E_1$ exponential integral components for these specific purely imaginary poles cleanly splits the solution into the classical Cosine Integral $\operatorname{Ci}(z) = -\int_z^\infty \frac{\cos t}{t} dt$ and the Sine Integral $\operatorname{Si}(z) = \int_0^z \frac{\sin t}{t} dt$. The geometric branch corrections from §10.2 directly yield the $\pi/2$ offset constants associated with $\operatorname{Si}(z)$. Note the remarkable structural coincidence that the Sine transform and the Laplace transform yield the exact same mathematical form for this specific kernel.
+These are all classical results from integral transform theory, summarized here for completeness.
 
-3.  **Hankel/Bessel Transform:**
-    This integral is a standard tabulated result in mathematical physics (representing, for example, the potential of a point charge near a dielectric boundary). Within this framework, it can be derived most elegantly using the Mellin-Parseval theorem. By taking the Mellin transform of $f(t) = \frac{c}{c^2+t^2}$ (which is our §5.1 form evaluated at $r=1$) and the Mellin transform of $t J_0(\omega t)$, the real-space integral over $(0,\infty)$ maps to a complex contour integral that evaluates exactly to $c K_0(\omega c)$.
+#### Derivation of the Fourier Cosine Transform
 
-***
+**Step 1:** Consider the complex integral $\oint_C \frac{e^{i\omega z}}{z^2+c^2} \mathrm{d}z$ for $\omega > 0$. We use a semicircular contour in the upper half-plane, which encloses the simple pole at $z = ic$.
 
-### Unifying Remark — §10
+**Step 2:** The residue at $z=ic$ is:
 
-This section demonstrates the crucial difference between the additive linear world ($x$-space) and the additive logarithmic world ($u$-space) for this function family. 
+$$
+\mathrm{Res}_{z=ic} \frac{e^{i\omega z}}{(z-ic)(z+ic)} = \frac{e^{i\omega(ic)}}{ic + ic} = \frac{e^{-\omega c}}{2ic}
+$$
 
-When we perform Fourier transforms in the canonical logarithmic coordinate system (§10.1), the framework acts beautifully: hyperbolic secants strictly map to hyperbolic secants, reflecting perfect self-duality and generating the algebraic simplicity of the Mellin transform. 
+**Step 3:** By the residue theorem, the contour integral is $2\pi i \cdot (\text{Res}) = 2\pi i \left( \frac{e^{-\omega c}}{2ic} \right) = \frac{\pi}{c} e^{-\omega c}$.
 
-However, when we force the function into a standard, linear one-sided Fourier transform (§10.2, §10.3), the inherent multiplicative symmetry of the function resists. The resulting integrals fracture into complex partial fractions, exponential integrals ($E_1$), Sine/Cosine integrals ($\operatorname{Si}, \operatorname{Ci}$), and Bessel functions. While these classical forms are exact and highly useful for linear differential equations, their complexity confirms that the true, native language of this function family is unambiguously the logarithmic Mellin domain.
+**Step 4:** The integral along the real axis is $\int_{-\infty}^{\infty} \frac{\cos(\omega x)+i\sin(\omega x)}{x^2+c^2} \mathrm{d}x$. Since the integrand is even, the sine part vanishes, and the cosine part is twice the integral over $(0,\infty)$.
+
+$$
+2\int_0^\infty \frac{\cos(\omega x)}{x^2+c^2}\mathrm{d}x = \frac{\pi}{c} e^{-\omega c} \implies \int_0^\infty \frac{\cos(\omega x)}{x^2+c^2}\mathrm{d}x = \frac{\pi}{2c} e^{-\omega c}
+$$
+
+**Step 5:** Multiplying by the numerator $c$ gives the final result.
+
+#### Derivation of the Fourier Sine and Laplace Transforms
+
+Both of these transforms can be derived as special cases of the general one-sided Fourier transform from §10.2. For $r=1$, the complex PFD has two poles, $z_0 = ic$ and $z_1 = -ic$.
+
+*   The Laplace transform is the one-sided Fourier transform evaluated at an imaginary frequency, $\widehat{f}(-ip)$.
+*   The Fourier sine transform is the imaginary part of the one-sided Fourier transform.
+
+The evaluation of the $E_1$ exponential integral terms at the purely imaginary poles $z=\pm ic$ reduces the expression to the classical Cosine Integral $\mathrm{Ci}(z) = -\int_z^\infty \frac{\cos t}{t} \mathrm{d}t$ and the Sine Integral $\mathrm{Si}(z) = \int_0^z \frac{\sin t}{t} \mathrm{d}t$. The branch cut correction from §10.2 directly yields the $\pi/2$ offset constant associated with $\mathrm{Si}(z)$. The structural identity between the Sine and Laplace transforms for this kernel is a well-known curiosity.
+
+#### Derivation of the Hankel Transform
+
+This integral is a standard tabulated result. Within this framework, it can be derived most elegantly using the Mellin-Parseval theorem (§6). By taking the Mellin transform of $f(t;1,c)$ and the Mellin transform of the kernel $t J_0(\omega t)$, the real-space integral over $(0,\infty)$ maps to a complex contour integral that can be shown to evaluate exactly to $c K_0(\omega c)$.
