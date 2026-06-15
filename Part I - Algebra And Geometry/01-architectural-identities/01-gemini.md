@@ -355,3 +355,355 @@ The proof is complete.
 
 **Exposition:**
 This is a cornerstone result of the framework. It shows that the total area under the curve of any function in this family is determined solely by the shape parameter $r$. The scale parameter $c$ stretches or compresses the function horizontally, but it also scales it vertically in such a way that the total area remains invariant. This implies that $2r/\pi \cdot f(x; r, c)$ is a properly normalized probability density function for any $r>0, c>0$. This connection to probability theory is a significant avenue for further exploration.
+
+The definitions and derivations of the three canonical objects are clear and correct. This linearization is the most powerful analytic technique in the framework, transforming multiplicative complexity into additive simplicity. We shall now explore the profound relationships between these three objects, which form a tightly-knit system of identities.
+
+***
+
+## 1.9 Inter-relations of the Canonical Objects
+
+The three core objects—the linearized kernel $g(u)$, the log-pushed density $p(u)$, and the conformal phase $W(u)$—are not independent. They are linked by simple algebraic and differential laws that govern the entire framework.
+
+**Theorem 1.8 (The Jacobian Relationship)**
+The linearized kernel $g(u; r, c)$ is directly proportional to the log-pushed density $p(u; r)$, with the proportionality factor containing the remnant of the change-of-measure Jacobian.
+$$
+\boxed{ g(u; r, c) = \frac{\pi}{2rc} e^{-u} p(u; r) }
+$$
+
+**Proof:**
+We begin with the definition of the log-pushed density, $p(u; r) = \frac{r}{\pi}\mathrm{sech}(ru)$. We can solve this for $\mathrm{sech}(ru)$:
+$$
+\mathrm{sech}(ru) = \frac{\pi}{r} p(u; r)
+$$
+Now, substitute this expression into the definition of the linearized kernel, $g(u; r, c) = \frac{\mathrm{sech}(ru)}{2ce^{u}}$:
+$$
+g(u; r, c) = \frac{1}{2ce^u} \left( \frac{\pi}{r} p(u; r) \right) = \frac{\pi}{2rc} e^{-u} p(u; r)
+$$
+The theorem is proven.
+
+**Exposition:**
+This theorem provides an essential clarification. The "naive" linearization of $f(x)$ to $g(u)$ by direct substitution does not yield the symmetric probability density. Instead, it yields the true density $p(u)$ multiplied by a decaying exponential $e^{-u}$. This exponential factor is precisely what remains of the $1/x$ term in the Rosetta Stone identity after the change of variables $x=ce^u$, since $1/x = 1/(ce^u) = (1/c)e^{-u}$. It is the factor that ensures the probability measure transforms correctly.
+
+***
+
+## 2.0 The Fundamental Differential Equation
+
+The relationship between the density $p(u)$ and the phase $W(u)$ is most powerfully expressed as a first-order differential equation. This equation reveals that the rate of change of the probability density at any point in the canonical space is governed by the value of the phase function at that same point.
+
+**Theorem 2.1 (The Canonical ODE)**
+The log-pushed density $p(u; r)$ and the conformal phase $W(u; r)$ satisfy the following ordinary differential equation:
+$$
+\boxed{ \frac{\mathrm{d}p}{\mathrm{d}u} = -r \cdot p(u; r) \cdot W(u; r) }
+$$
+
+**Proof:**
+We differentiate the definition of $p(u; r)$ with respect to $u$.
+$$
+p(u; r) = \frac{r}{\pi}\mathrm{sech}(ru)
+$$
+Using the chain rule, $\frac{d}{du}\mathrm{sech}(z) = -\mathrm{sech}(z)\tanh(z) \frac{dz}{du}$:
+$$
+\frac{\mathrm{d}p}{\mathrm{d}u} = \frac{r}{\pi} \left[ - \mathrm{sech}(ru) \tanh(ru) \cdot r \right]
+$$
+$$
+\frac{\mathrm{d}p}{\mathrm{d}u} = -r^2 \cdot \frac{1}{\pi} \mathrm{sech}(ru) \tanh(ru)
+$$
+We can now re-express the terms on the right-hand side using the definitions of $p(u)$ and $W(u)$.
+*   $\frac{r}{\pi}\mathrm{sech}(ru) = p(u; r)$
+*   $\tanh(ru) = W(u; r)$
+
+Substituting these back into the derivative:
+$$
+\frac{\mathrm{d}p}{\mathrm{d}u} = -r \cdot \left( \frac{r}{\pi}\mathrm{sech}(ru) \right) \cdot \tanh(ru) = -r \cdot p(u; r) \cdot W(u; r)
+$$
+The theorem is proven.
+
+**Exposition:**
+This is one of the most significant results in the framework. It establishes a dynamic relationship between the system's "magnitude" ($p$) and its "phase" ($W$). Since $p(u)$ is an even function, its derivative must be odd. The equation holds because $W(u)$ is also an odd function. At $u=0$, $W(0)=0$, which correctly implies that $p'(0)=0$, corresponding to the peak of the hyperbolic secant distribution. This ODE demonstrates that the phase $W$ acts as a "flow field" that dictates the shape of the density $p$.
+
+***
+
+## 2.1 The Pythagorean Identity
+
+The fundamental trigonometric identity $\cos^2\theta + \sin^2\theta = 1$ has a direct analogue in hyperbolic geometry: $\mathrm{sech}^2 z + \tanh^2 z = 1$. This identity translates into a powerful "conservation law" that binds the density $p(u)$ and the phase $W(u)$ together.
+
+**Theorem 2.2 (The Pythagorean Identity)**
+The density $p(u; r)$ and phase $W(u; r)$ are constrained by the following algebraic relation for all $u \in \mathbb{R}$:
+$$
+\boxed{ \left(\frac{\pi}{r}p(u;r)\right)^2 + W(u;r)^2 = 1 }
+$$
+
+**Proof:**
+We begin with the fundamental hyperbolic identity:
+$$
+\mathrm{sech}^2(ru) + \tanh^2(ru) = 1
+$$
+From the definitions of $p(u)$ and $W(u)$, we have:
+*   $\mathrm{sech}(ru) = \frac{\pi}{r} p(u; r)$
+*   $\tanh(ru) = W(u; r)$
+
+Substituting these expressions directly into the identity:
+$$
+\left(\frac{\pi}{r}p(u;r)\right)^2 + (W(u;r))^2 = 1
+$$
+The theorem is proven.
+
+**Exposition:**
+This identity forms a state-space constraint for the system. If we consider a point in the canonical space $u$, the values of the density and phase are not independent. They must lie on an ellipse defined by this equation. At the center ($u=0$), $W(0)=0$, so $p(0)$ must take its maximum value of $r/\pi$. As $u \to \pm\infty$, the density $p(u) \to 0$, forcing the phase $|W(u)| \to 1$. This identity provides a powerful tool for algebraic manipulation, as it allows us to express $p$ in terms of $W$ or vice versa:
+$$
+p(u; r) = \frac{r}{\pi} \sqrt{1 - W(u;r)^2}
+$$
+$$
+|W(u; r)| = \sqrt{1 - \left(\frac{\pi}{r}p(u;r)\right)^2}
+$$
+
+***
+
+## 2.2 The Logarithmic Derivative and The Phase
+
+Combining the results of Theorems 2.1 and 2.2 allows us to express the phase $W$ in terms of the density $p$ and its derivative, which is a common and powerful technique in physics and engineering (e.g., relating phase and amplitude of a wave).
+
+**Theorem 2.3 (Phase as Logarithmic Derivative)**
+The conformal phase $W(u; r)$ is proportional to the logarithmic derivative of the log-pushed density $p(u; r)$.
+$$
+\boxed{ W(u; r) = -\frac{1}{r} \frac{p'(u; r)}{p(u; r)} = -\frac{1}{r} \frac{d}{du} \log(p(u; r)) }
+$$
+
+**Proof:**
+This is a direct algebraic rearrangement of the Canonical ODE from Theorem 2.1.
+$$
+\frac{\mathrm{d}p}{\mathrm{d}u} = -r \cdot p(u) \cdot W(u)
+$$
+Assuming $p(u) \neq 0$ (which is true for all finite $u$), we can divide both sides by $-r \cdot p(u)$:
+$$
+W(u) = -\frac{1}{r} \frac{1}{p(u)} \frac{\mathrm{d}p}{\mathrm{d}u}
+$$
+The expression $\frac{p'(u)}{p(u)}$ is the definition of the logarithmic derivative, $\frac{d}{du}\log(p(u))$. Thus,
+$$
+W(u; r) = -\frac{1}{r} \frac{d}{du}\log(p(u;r))
+$$
+The proof is complete.
+
+**Exposition:**
+This theorem provides an operational definition of the phase function. If one knows the density function $p(u)$, one can compute its logarithmic derivative to find the corresponding phase function $W(u)$ up to the constant factor $-1/r$. This formalizes the intuition that the phase governs the *relative* rate of change of the density. This relationship is fundamental and will appear in many subsequent derivations, particularly those involving information theory and higher-order moments.
+
+The definition and properties of the Conformal Phase function $W$ are impeccably stated. This function is indeed a cornerstone of the framework, providing a normalized, dimensionless measure of logarithmic distance from the center $c$. Its direct relationship to the hyperbolic tangent is the source of its utility. We will now use this object to reveal further differential structure within the framework, this time entirely within the original spatial coordinate $x$.
+
+***
+
+## 2.3 The Spatial Pythagorean Identity
+
+Just as the linearized density $p(u)$ and phase $W(u)$ are linked by a Pythagorean identity, so too are the original function $f(x)$ and phase $W(x)$. This identity is nothing more than the Rosetta Stone viewed through the lens of the fundamental hyperbolic identity $\mathrm{sech}^2(z) + \tanh^2(z) = 1$.
+
+**Theorem 2.4 (Spatial Pythagorean Identity)**
+The function $f(x; r, c)$ and the conformal phase $W(x; r, c)$ are constrained by the following algebraic relation for all $x \in (0, \infty)$:
+$$
+\boxed{ (2x \cdot f(x; r, c))^2 + W(x; r, c)^2 = 1 }
+$$
+
+**Proof:**
+We begin with the fundamental identity for hyperbolic functions, valid for any real argument $z$:
+$$
+\mathrm{sech}^2(z) + \tanh^2(z) = 1
+$$
+Let the argument be the canonical logarithmic coordinate $z = r\log(x/c)$.
+$$
+\mathrm{sech}^2\left(r\log\left(\frac{x}{c}\right)\right) + \tanh^2\left(r\log\left(\frac{x}{c}\right)\right) = 1
+$$
+From the Rosetta Stone Identity (Section 1.2), we have:
+$$
+\mathrm{sech}\left(r\log\left(\frac{x}{c}\right)\right) = 2x f(x; r, c)
+$$
+From the definition of the Conformal Phase (Section 1.4), we have:
+$$
+W(x; r, c) = \tanh\left(r\log\left(\frac{x}{c}\right)\right)
+$$
+Substituting these two expressions directly into the hyperbolic identity yields:
+$$
+(2x f(x; r, c))^2 + (W(x; r, c))^2 = 1
+$$
+The theorem is proven.
+
+**Exposition:**
+This identity provides a powerful, coordinate-free constraint between the function's value and its phase. It demonstrates that the quantity $2xf(x)$ can be interpreted as the hyperbolic secant of the canonical coordinate, while $W(x)$ is its hyperbolic tangent. This allows for the algebraic elimination of $f(x)$ in any expression in favor of $W(x)$ and its derivatives, or vice versa, which is a potent tool for deriving new relationships.
+
+***
+
+## 2.4 The Riccati Equation for the Phase
+
+The Conformal Phase function $W(x)$ satisfies a first-order nonlinear ordinary differential equation of the Riccati type. This equation governs the evolution of the phase as a function of the spatial coordinate $x$ and is one of the deepest structural relations in the entire framework.
+
+**Theorem 2.5 (The Riccati Phase Equation)**
+The Conformal Phase $W(x; r, c)$ is a solution to the following Riccati differential equation:
+$$
+\boxed{ \frac{dW}{dx} = \frac{r}{x} (1 - W(x)^2) }
+$$
+
+**Proof:**
+We will prove this theorem using the chain rule and the properties of the linearized canonical objects. The phase function is $W(x; r, c) = \tanh(r \log(x/c))$.
+Let $u = \log(x/c)$ be the canonical coordinate. Then $W(u) = \tanh(ru)$.
+We seek the derivative of $W$ with respect to $x$. By the chain rule:
+$$
+\frac{dW}{dx} = \frac{dW}{du} \cdot \frac{du}{dx}
+$$
+First, we compute the derivatives of the components:
+$$
+\frac{dW}{du} = \frac{d}{du} \tanh(ru) = r \cdot \mathrm{sech}^2(ru)
+$$
+$$
+\frac{du}{dx} = \frac{d}{dx} \log\left(\frac{x}{c}\right) = \frac{1}{x}
+$$
+Combining these, we get:
+$$
+\frac{dW}{dx} = \left( r \cdot \mathrm{sech}^2(ru) \right) \cdot \frac{1}{x} = \frac{r}{x} \mathrm{sech}^2(ru)
+$$
+Now, we use the fundamental hyperbolic identity $\mathrm{sech}^2(z) = 1 - \tanh^2(z)$.
+$$
+\frac{dW}{dx} = \frac{r}{x} (1 - \tanh^2(ru))
+$$
+Finally, we substitute back the definition $W(u) = \tanh(ru)$, which is equivalent to $W(x) = \tanh(r\log(x/c))$:
+$$
+\frac{dW}{dx} = \frac{r}{x} (1 - W(x)^2)
+$$
+The theorem is proven.
+
+**Exposition:**
+The discovery that the phase function satisfies a Riccati equation is of profound significance. Riccati equations are ubiquitous in physics and control theory, appearing in problems of optimal control, diffusion, and quantum mechanics. Their general form is $y' = q_0(x) + q_1(x)y + q_2(x)y^2$. In our case, the equation is $W' = \frac{r}{x} - \frac{r}{x}W^2$, which is a specific instance of this class.
+
+This equation reveals that the local change in phase, $\frac{dW}{dx}$, is determined by the current value of the phase itself ($W^2$) and the logarithmic "velocity" $\frac{r}{x}$. The equation is independent of the scale parameter $c$, which is hidden inside the boundary condition $W(c)=0$. This ODE can be taken as an alternative foundational definition for the entire framework, from which the algebraic form of $W(x)$ can be recovered by solving it with the appropriate boundary condition.
+
+We can also use this result to establish a direct differential link between $W(x)$ and $f(x)$.
+
+**Corollary 2.5.1 (Phase-Amplitude Differential Relation)**
+$$
+\frac{dW}{dx} = 4rx \cdot f(x; r, c)^2
+$$
+
+**Proof:**
+From the Spatial Pythagorean Identity (Theorem 2.4), we can write $1 - W(x)^2 = (2xf(x))^2 = 4x^2f(x)^2$.
+Substituting this into the Riccati equation from Theorem 2.5:
+$$
+\frac{dW}{dx} = \frac{r}{x} (4x^2 f(x)^2) = 4rx f(x)^2
+$$
+This demonstrates that the rate of change of the phase is directly proportional to the square of the original function $f(x)$, scaled by $4rx$. This provides a remarkable link between the "phase" and "amplitude" aspects of the framework in the original spatial coordinates.
+
+The formulation of the "Half-Density Law" is precise and serves as the perfect bridge between the framework's algebraic and differential structures. These two identities, one algebraic and one differential, are indeed the cornerstone from which the system's dynamics in the spatial coordinate can be derived. We will now use these laws to establish the master differential equations that govern the function $f(x)$ and its related phase $W(x)$.
+
+***
+
+## 2.5 The Spatial Dynamic Equation
+
+While the canonical ODE (Theorem 2.1) provides a simple dynamic law in the linearized coordinate $u$, a corresponding law exists in the spatial coordinate $x$. This equation connects the function $f(x)$ to its own derivative via the conformal phase $W(x)$, acting as a coupling term.
+
+**Theorem 2.6 (The Spatial ODE)**
+The function $f(x; r, c)$ and the phase $W(x; r, c)$ are related by a first-order, non-linear ordinary differential equation:
+$$
+\boxed{ x \frac{df}{dx} + f(x) = -r f(x) W(x) }
+$$
+An equivalent compact form is:
+$$
+\boxed{ \frac{d}{dx} (x f(x)) = -r f(x) W(x) }
+$$
+
+**Proof:**
+We begin with the algebraic Half-Density Law (or Spatial Pythagorean Identity, Theorem 2.4):
+$$
+1 - W(x)^2 = 4x^2 f(x)^2
+$$
+We differentiate this identity with respect to $x$. Using the chain rule on the left side and the product rule on the right side:
+$$
+-2W(x) \frac{dW}{dx} = (8x) f(x)^2 + 4x^2 \left(2f(x)\frac{df}{dx}\right) = 8x f(x)^2 + 8x^2 f(x) \frac{df}{dx}
+$$
+Now, we substitute the differential Half-Density Law, $\frac{dW}{dx} = 4rx f(x)^2$, into the left side of the equation:
+$$
+-2W(x) \left( 4rx f(x)^2 \right) = 8x f(x)^2 + 8x^2 f(x) \frac{df}{dx}
+$$
+$$
+-8rx W(x) f(x)^2 = 8x f(x)^2 + 8x^2 f(x) \frac{df}{dx}
+$$
+Since $x \in (0, \infty)$ and $f(x)>0$, we can divide the entire equation by $8x f(x)$:
+$$
+-r W(x) f(x) = f(x) + x \frac{df}{dx}
+$$
+Rearranging gives the desired result:
+$$
+x \frac{df}{dx} + f(x) = -r f(x) W(x)
+$$
+The left-hand side is recognizable from the product rule as $\frac{d}{dx}(x f(x))$, proving the equivalent compact form.
+
+**Exposition:**
+This theorem is the spatial counterpart to the Canonical ODE, $p'(u) = -r p(u) W(u)$. It provides a dynamic relationship between the function and its phase in the original coordinates. The term $(xf)'$ represents the rate of change of the "flux" $xf$, which is dictated by the local values of both the function $f$ and the phase $W$. This ODE encapsulates the complete first-order behavior of the function $f(x)$.
+
+***
+
+## 2.6 The Master Linear Equation (Cauchy-Euler Form)
+
+The non-linear Riccati equation for the phase (Theorem 2.5) can be transformed into a simple second-order linear ordinary differential equation. This reveals the deepest and simplest layer of the framework's structure, showing that it is governed by a homogeneous Cauchy-Euler equation.
+
+**Theorem 2.7 (The Master Linear ODE)**
+There exists a function $y(x)$ from which the Conformal Phase $W(x)$ can be derived, where $y(x)$ is a solution to the Cauchy-Euler equation:
+$$
+\boxed{ x^2 \frac{d^2y}{dx^2} + x \frac{dy}{dx} - r^2 y = 0 }
+$$
+The phase $W(x)$ is recovered from the solution $y(x)$ via the transformation:
+$$
+W(x; r, c) = \frac{x}{r} \frac{y'(x)}{y(x)}
+$$
+
+**Proof:**
+We start with the Riccati equation for the phase (Theorem 2.5):
+$$
+\frac{dW}{dx} = \frac{r}{x} (1 - W^2) \quad \implies \quad \frac{dW}{dx} + \frac{r}{x} W^2 = \frac{r}{x}
+$$
+This is a first-order non-linear ODE. We introduce the substitution that linearizes Riccati equations. Let $W(x) = k(x) \frac{y'(x)}{y(x)}$. To match the terms of our equation, we choose the coefficient $k(x) = x/r$. So, we define:
+$$
+W(x) = \frac{x}{r} \frac{y'(x)}{y(x)}
+$$
+We now differentiate this expression for $W(x)$ using the product and quotient rules:
+$$
+\frac{dW}{dx} = \frac{d}{dx} \left( \frac{x}{r} \frac{y'}{y} \right) = \left(\frac{1}{r}\right)\frac{y'}{y} + \left(\frac{x}{r}\right)\left( \frac{y''y - (y')^2}{y^2} \right) = \frac{y'}{ry} + \frac{xy''}{ry} - \frac{x(y')^2}{ry^2}
+$$
+Now substitute both the expression for $W$ and for $dW/dx$ back into the Riccati equation:
+$$
+\left( \frac{y'}{ry} + \frac{xy''}{ry} - \frac{x(y')^2}{ry^2} \right) + \frac{r}{x} \left( \frac{x}{r} \frac{y'}{y} \right)^2 = \frac{r}{x}
+$$
+$$
+\frac{y'}{ry} + \frac{xy''}{ry} - \frac{x(y')^2}{ry^2} + \frac{r}{x} \left( \frac{x^2}{r^2} \frac{(y')^2}{y^2} \right) = \frac{r}{x}
+$$
+$$
+\frac{y'}{ry} + \frac{xy''}{ry} - \frac{x(y')^2}{ry^2} + \frac{x(y')^2}{ry^2} = \frac{r}{x}
+$$
+The non-linear terms involving $(y')^2$ cancel perfectly. We are left with a linear equation:
+$$
+\frac{y'}{ry} + \frac{xy''}{ry} = \frac{r}{x}
+$$
+To simplify, we multiply the entire equation by $ryx$:
+$$
+x y' + x^2 y'' = r^2 y
+$$
+Rearranging into standard form gives the homogeneous Cauchy-Euler equation:
+$$
+x^2 y'' + x y' - r^2 y = 0
+$$
+The theorem is proven.
+
+**Corollary 2.7.1 (Algebraic Form of Phase from Master Equation)**
+The general solution to the master equation is $y(x) = A x^r + B x^{-r}$. This directly implies the algebraic form of the phase function $W(x)$.
+
+**Proof:**
+The characteristic equation for the Cauchy-Euler ODE is found by substituting $y=x^m$, which gives $m(m-1)+m-r^2=0$, simplifying to $m^2=r^2$, so $m=\pm r$. The general solution is a linear combination of these two fundamental solutions: $y(x) = Ax^r + Bx^{-r}$.
+Now, we find $W(x)$ using the transformation:
+$$
+y'(x) = rAx^{r-1} - rBx^{-r-1}
+$$
+$$
+W(x) = \frac{x}{r} \frac{y'(x)}{y(x)} = \frac{x}{r} \frac{rAx^{r-1} - rBx^{-r-1}}{Ax^r + Bx^{-r}} = \frac{x(Ax^{r-1} - Bx^{-r-1})}{Ax^r + Bx^{-r}}
+$$
+$$
+W(x) = \frac{Ax^r - Bx^{-r}}{Ax^r + Bx^{-r}}
+$$
+To match this with our known form $W(x) = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}}$, we can divide the numerator and denominator by $A$ and multiply them by $x^r$:
+$$
+W(x) = \frac{x^{2r} - (B/A)}{x^{2r} + (B/A)}
+$$
+This is identical to the known algebraic form of $W(x)$ if we set the ratio of the integration constants to be $B/A = c^{2r}$. This shows how the scale parameter $c$ arises from the boundary conditions (or specific choice of solution) of the underlying linear system.
