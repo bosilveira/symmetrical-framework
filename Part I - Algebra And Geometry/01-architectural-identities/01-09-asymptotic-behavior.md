@@ -34,8 +34,3 @@ $$
 $$
 
 This completes the derivation.
-
-
-Adding these two files would make Section 1 absolutely watertight. `Asymptotic Behavior` is a fundamental property that should be stated upfront, and the `Logarithmic Pushforward` is the single most important computational tool in the whole framework. Giving it its own dedicated file emphasizes its central role.
-
-What are your thoughts? Shall we add these two files to the roster for Section 1?
