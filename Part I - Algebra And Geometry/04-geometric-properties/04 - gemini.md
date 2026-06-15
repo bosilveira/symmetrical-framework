@@ -1,0 +1,119 @@
+The detailed analysis of the framework's differential structure provides the necessary tools to investigate its geometric properties. We will now explore the function's graphical features, including extrema, inflection points, and various metric properties like arc length and the geometry of its solid of revolution.
+
+***
+
+## 6.0 Extrema and Inflection Points
+
+The shape of the function's graph is critically dependent on the parameter $r$. For $r>1$, the graph is unimodal with a single peak and two symmetric inflection points. For $r \le 1$, the function is monotonic and has no interior critical points.
+
+**Theorem 6.1 (Location of Maximum for $r>1$)**
+For $r>1$, the function $f(x; r, c)$ has a unique interior maximum at the point $(x_{\max}, f_{\max})$ where:
+$$
+\boxed{ x_{\max} = c\left(\frac{r-1}{r+1}\right)^{1/(2r)} }
+$$
+$$
+\boxed{ f_{\max} = \frac{r+1}{2rc}\left(\frac{r-1}{r+1}\right)^{(r-1)/(2r)} }
+$$
+
+**Proof:**
+This result was established in Theorem 1.4 by finding the critical point where $f'(x)=0$. The condition for a critical point is $x^{2r} = c^{2r} \frac{r-1}{r+1}$, which has a positive real solution if and only if $r>1$. Substituting this location back into the definition of $f(x)$ yields the value of the maximum.
+
+**Theorem 6.2 (Location of Inflection Points for $r>1$)**
+For $r>1$, the graph of the function has a pair of inflection points, located at the values of $x$ for which the conformal phase $W(x)$ satisfies the quadratic equation:
+$$
+2r^2 W^2 + 3rW + (2-r^2) = 0
+$$
+
+**Proof:**
+Inflection points occur where the second derivative, $f''(x)$, changes sign. We set $f''(x)=0$. Using the compact expression for the second derivative from the derivative hierarchy (Section 5.0):
+$$
+f''(x) = \frac{S\left( (2-r^2) + 3rW + 2r^2 W^2 \right)}{2x^3}
+$$
+Since $S = \mathrm{sech}(ru) > 0$ and $x>0$, the second derivative is zero only when the polynomial factor in $W$ is zero. This gives the stated quadratic equation for $W$.
+The solutions for $W$ are:
+$$
+W_{\pm} = \frac{-3r \pm \sqrt{9r^2 - 8r^2(2-r^2)}}{4r^2} = \frac{-3r \pm \sqrt{r^2(9 - 16 + 8r^2)}}{4r^2} = \frac{-3 \pm \sqrt{8r^2 - 7}}{4r}
+$$
+For these solutions to be valid phase values (i.e., $|W|<1$), the discriminant must be positive ($8r^2-7 > 0 \implies r > \sqrt{7/8}$) and the resulting values must be in the interval $(-1,1)$. A more detailed analysis shows that two real solutions for $x$ exist if and only if $r>1$.
+
+***
+
+## 6.1 Arc Length and Metric Properties
+
+While the function encloses a finite area for all $r>0$, the geometric length of its graph is infinite. The calculation of the arc length of any finite segment generally leads to complex elliptic or hyperelliptic integrals.
+
+**Definition (Arc-Length Element)**
+The differential arc-length element, $ds$, of the curve $y=f(x)$ is given by the Pythagorean theorem in infinitesimal form:
+$$
+ds = \sqrt{dx^2 + dy^2} = \sqrt{1 + (f'(x))^2} \,dx
+$$
+
+**Theorem 6.3 (Divergence of Total Arc Length)**
+The total arc length of the graph of $f(x; r, c)$ over its entire domain $(0, \infty)$ is infinite for all $r>0$.
+$$
+\boxed{ L(0,\infty) = \int_{0}^{\infty} \sqrt{1+[f'(x)]^{2}} \,dx = \infty }
+$$
+
+**Proof:**
+We analyze the asymptotic behavior of the integrand as $x\to\infty$. From the Power-Law Asymptotes (Theorem 2.9), we know $f(x) \sim c^r x^{-r-1}$ for large $x$. Therefore, the derivative behaves as $f'(x) \sim -(r+1)c^r x^{-r-2}$, which approaches 0 as $x \to \infty$.
+The integrand thus has a non-zero limit:
+$$
+\lim_{x \to \infty} \sqrt{1+[f'(x)]^{2}} = \sqrt{1 + 0^2} = 1
+$$
+Since the integrand approaches 1, the integral $\int_a^\infty \sqrt{1+(f')^2} dx$ behaves like $\int_a^\infty 1 \,dx$ for large $a$. As $\int 1 \,dx$ diverges, the total arc length integral must also diverge by the Limit Comparison Test.
+
+**Theorem 6.4 (Elliptic Nature of Arc Length for $r=1$)**
+For the specific case $r=1$, the arc-length integral $\int \sqrt{1+(f')^2} dx$ is an elliptic integral.
+
+**Proof:**
+For $r=1$, we have $f(x;1,c) = \frac{c}{c^2+x^2}$, and its derivative is $f'(x) = \frac{-2cx}{(c^2+x^2)^2}$. The arc-length integrand is:
+$$
+\sqrt{1 + \frac{4c^2x^2}{(c^2+x^2)^4}} = \frac{\sqrt{(c^2+x^2)^4 + 4c^2x^2}}{(c^2+x^2)^2}
+$$
+The integral $\int \frac{\sqrt{P_4(x)}}{(c^2+x^2)^2} dx$, where $P_4(x)$ is a quartic polynomial in $x$, falls into the definition of an elliptic integral, as it involves the square root of a quartic polynomial. Similarly, for $r=2$, the integral reduces to an elliptic integral related to the lemniscate functions.
+
+***
+
+## 6.2 Solid of Revolution Properties (The "Infinite Tulip")
+
+Revolving the graph of $y=f(x)$ around the $x$-axis generates a solid known as the "Infinite Tulip". This object has a finite volume and, for a subset of the parameter space, a finite surface area, despite being infinitely long.
+
+**Theorem 6.5 (Volume and Surface Area of the Infinite Tulip)**
+The solid of revolution generated by $y = f(x;r,c)$ for $x \in (0, \infty)$ has:
+1.  **Finite Volume** if and only if $r > 1/2$.
+2.  **Finite Surface Area** if and only if $r > 1$.
+
+**Proof:**
+**1. Volume:**
+The volume is given by the disk method: $V = \int_0^\infty \pi [f(x)]^2 dx$. To check for convergence, we examine the asymptotic behavior of the integrand $[f(x)]^2$.
+*   As $x \to \infty$: $[f(x)]^2 \sim (x^{-r-1})^2 = x^{-2r-2}$. The integral $\int^\infty x^{-2r-2} dx$ converges if $-2r-2 < -1 \implies 2r > -1 \implies r>0$.
+*   As $x \to 0^+$: $[f(x)]^2 \sim (x^{r-1})^2 = x^{2r-2}$. The integral $\int_0 x^{2r-2} dx$ converges if $2r-2 > -1 \implies 2r > 1 \implies r > 1/2$.
+The stricter condition is $r > 1/2$, so the volume is finite if and only if $r>1/2$. The exact value of the integral involves the Gamma function and can be computed via contour integration.
+
+**2. Surface Area:**
+The surface area is given by $A = \int_0^\infty 2\pi f(x) \sqrt{1+[f'(x)]^2} dx$. We analyze the asymptotic behavior of the integrand.
+*   As $x \to \infty$: The integrand behaves like $2\pi f(x) \cdot 1 \sim x^{-r-1}$. This integral converges if $-r-1 < -1 \implies r>0$.
+*   As $x \to 0^+$: For $r<2$, $f'(x) \sim x^{r-2}$ diverges, so $\sqrt{1+(f')^2} \sim |f'(x)| \sim x^{r-2}$. The integrand behaves like $2\pi f(x)|f'(x)| \sim x^{r-1} \cdot x^{r-2} = x^{2r-3}$. The integral $\int_0 x^{2r-3} dx$ converges if $2r-3 > -1 \implies 2r > 2 \implies r>1$. (For $r \ge 2$, $f'(0)$ is finite and convergence is guaranteed).
+The stricter condition is $r>1$, so the surface area is finite if and only if $r>1$.
+
+***
+
+## 6.3 Geometric Invariance and Symmetries
+
+The graph of the function possesses a rich set of geometric properties reflecting its underlying algebraic and differential structure.
+
+**Theorem 6.6 (Self-Similar Inversion of the Graph)**
+The graph of $y=f(x;r,c)$ is invariant under the transformation $T: (x, y) \to (c^2/x, (x^2/c^2)y)$.
+
+**Proof:**
+This is a direct geometric restatement of the Reciprocal Power-Law Symmetry (Theorem 1.2). Let $(x_0, y_0)$ be a point on the graph, so $y_0 = f(x_0)$. The transformed point is $(x', y') = (c^2/x_0, (x_0^2/c^2)y_0)$. We must show $y' = f(x')$.
+$$
+f(x') = f(c^2/x_0)
+$$
+By Theorem 1.2, $f(c^2/x_0) = (x_0^2/c^2) f(x_0) = (x_0^2/c^2) y_0$. This is precisely the value of $y'$, confirming the invariance.
+
+**Theorem 6.7 (Absence of a Global Envelope)**
+For a fixed scale $c$, the one-parameter family of curves generated by varying $r$ does not possess an envelope.
+
+**Proof:**
+An envelope is found by solving the system $F(x,y,r)=y-f(x;r,c)=0$ and $\frac{\partial F}{\partial r}=0$. The second condition is $\frac{\partial f}{\partial r}=0$. By explicit calculation, one can show that $\frac{\partial f}{\partial r}=0$ if and only if $\log(x/c)(c^{2r}-x^{2r})=0$. This is only satisfied when $x=c$. Because the condition for tangency only holds at a single point, $x=c$, which is common to all curves, the family does not trace out an envelope curve. Instead, all curves pivot around the common point $(c, 1/2c)$, where they are all tangent to each other.
