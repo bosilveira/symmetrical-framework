@@ -20,14 +20,16 @@ Below are concrete suggestions that stay strictly within what we have already de
 We already have the two fundamental relations that link \( f \) and the conformal phase \( W \):
 
 - **Pythagorean identity** (Half-Density Law):
-  \[
-  1 - W(x; r, c)^2 = 4x^2 f(x; r, c)^2.
-  \]
+
+\[
+1 - W(x; r, c)^2 = 4x^2 f(x; r, c)^2.
+\]
 
 - **Riccati / differential Half-Density Law**:
-  \[
-  \frac{dW}{dx} = r \frac{1 - W^2}{x} \qquad \text{or equivalently} \qquad W' = 4 r x f^2.
-  \]
+
+\[
+\frac{dW}{dx} = r \frac{1 - W^2}{x} \qquad \text{or equivalently} \qquad W' = 4 r x f^2.
+\]
 
 These two equations alone, together with the explicit algebraic expression for \( W \) in terms of powers, generate the Schwarzian, the superpotential, the value/slope/curvature at \( x = c \), and the transformation laws under all the symmetries. It would be useful to isolate them early as “the core system” and note (with cross-references) which later results follow from them by direct differentiation or substitution. This increases redundancy in a controlled way and makes the deductive structure clearer.
 
