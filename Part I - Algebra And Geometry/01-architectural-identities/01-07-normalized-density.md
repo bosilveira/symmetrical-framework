@@ -32,7 +32,6 @@ $$
 \boxed{ F_{\rho}(x;r,c) = \frac{1}{\pi} \left[ \arctan\left(\sinh\left(r\log\left(\frac{x}{c}\right)\right)\right) + \frac{\pi}{2} \right] }
 $$
 
----
 ### Derivation
 
 #### Derivation of the Normalization Constant
