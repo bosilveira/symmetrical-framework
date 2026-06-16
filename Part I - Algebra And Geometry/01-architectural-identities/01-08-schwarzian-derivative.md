@@ -23,11 +23,14 @@ This remarkable result serves as a differential "fingerprint" of the framework's
 The most direct method for computing this derivative is to use the composition rule for the Schwarzian derivative.
 
 **Step 1: Decompose the Function**
+
 We express $W(x)$ as a composition of two functions, $W(x) = (h \circ v)(x)$, where:
+
 *   Outer function: $h(v) = \tanh(v)$
 *   Inner function: $v(x) = r\log(x/c)$
 
 **Step 2: State the Composition Rule**
+
 The composition rule for the Schwarzian derivative is:
 
 $$
@@ -35,6 +38,7 @@ $$
 $$
 
 **Step 3: Compute the Component Schwarzian Derivatives**
+
 We compute the necessary components separately.
 
 *   **Schwarzian of the Outer Function ($h$):** The Schwarzian derivative of the hyperbolic tangent is a standard result:
@@ -44,10 +48,12 @@ $$
 $$
 
 *   **Schwarzian of the Inner Function ($v$):** For $v(x) = r\log(x/c)$, we first compute its derivatives:
+
     *   $v'(x) = r/x$
     *   $v''(x) = -r/x^2$
     *   $v'''(x) = 2r/x^3$
-    Now, substitute these into the definition of the Schwarzian derivative:
+
+Now, substitute these into the definition of the Schwarzian derivative:
 
 $$
 \left\lbrace v,x \right\rbrace = \frac{v'''}{v'} - \frac{3}{2}\left(\frac{v''}{v'}\right)^2 = \frac{2r/x^3}{r/x} - \frac{3}{2}\left(\frac{-r/x^2}{r/x}\right)^2
@@ -58,6 +64,7 @@ $$
 $$
 
 **Step 4: Assemble the Final Result**
+
 We substitute the components from Step 3 back into the composition rule from Step 2:
 
 $$
