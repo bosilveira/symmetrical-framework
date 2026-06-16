@@ -15,11 +15,13 @@ $$
 $$
 
 ### Exposition
+
 These asymptotic forms reveal the fundamental power-law nature of the function away from its central region. The exponents are determined solely by the shape parameter $r$. The left-tail exponent ($r-1$) and the right-tail exponent ($-r-1$) are perfectly anti-symmetric around $-1$, a direct consequence of the Möbius symmetry.
 
 ### Derivation
 
 **1. Limit as $x \to 0^{+}$ (Left Tail):**
+
 In this limit, the term $x^{2r}$ in the denominator becomes negligible compared to the constant $c^{2r}$.
 
 $$
@@ -27,6 +29,7 @@ $$
 $$
 
 **2. Limit as $x \to +\infty$ (Right Tail):**
+
 In this limit, the term $c^{2r}$ in the denominator becomes negligible compared to $x^{2r}$.
 
 $$
