@@ -17,6 +17,7 @@ $$
 ### Exposition
 
 This section explicitly defines the three core functions that arise naturally in the linearized $u$-space. Distinguishing between them is critical for the consistency of the framework.
+
 1.  The **Linearized Kernel ($g$)** is a direct substitution.
 2.  The **Log-Pushed Density ($p$)** is the pushforward of the probability measure.
 3.  The **Conformal Phase ($W$)** is the hyperbolic companion.
