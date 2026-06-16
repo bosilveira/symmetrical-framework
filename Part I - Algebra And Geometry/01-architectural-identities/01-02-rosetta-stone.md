@@ -15,6 +15,7 @@ This identity is a fundamental structural truth, not a convenient approximation.
 The identity is proven by direct algebraic manipulation, starting from the definition of the hyperbolic secant.
 
 **Step 1: Define the Hyperbolic Secant**
+
 The hyperbolic secant function, $\mathrm{sech}(z)$, is defined in terms of the exponential function:
 
 $$
@@ -22,11 +23,14 @@ $$
 $$
 
 **Step 2: Substitute the Canonical Logarithmic Coordinate**
+
 Let the argument of the function be $z = r\log(x/c)$. We can express the exponential terms as powers of $x$ and $c$:
+
 *   $e^z = \exp\left(r\log\left(\frac{x}{c}\right)\right) = \left(\frac{x}{c}\right)^r$
 *   $e^{-z} = \exp\left(-r\log\left(\frac{x}{c}\right)\right) = \left(\frac{c}{x}\right)^r$
 
 **Step 3: Evaluate the Secant Function**
+
 Substitute these power-law expressions back into the definition of $\mathrm{sech}(z)$:
 
 $$
@@ -34,6 +38,7 @@ $$
 $$
 
 **Step 4: Simplify the Algebraic Expression**
+
 To simplify the denominator, we find a common denominator of $c^r x^r$:
 
 $$
@@ -41,6 +46,7 @@ $$
 $$
 
 **Step 5: Relate to the Core Algebraic Form**
+
 We now relate this expression back to the original function $f(x; r, c)$ from §1.1 by factoring out a term of $2x$:
 
 $$
@@ -54,6 +60,7 @@ $$
 $$
 
 **Step 6: Final Rearrangement**
+
 Dividing both sides by $2x$ yields the final Rosetta Stone identity:
 
 $$
