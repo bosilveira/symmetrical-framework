@@ -17,9 +17,11 @@ This decomposition reveals the fundamentally multiplicative nature of the scale 
 The result is obtained by a direct substitution of the dimensionless variable $\xi = x/c$ into the core algebraic form from §1.1.
 
 **Step 1: Define the Dimensionless Variable**
+
 Let $\xi = x/c$, which implies the inverse substitution $x = c\xi$.
 
 **Step 2: Substitute into the Core Algebraic Form**
+
 Substitute $x = c\xi$ into the definition of $f(x;r,c)$:
 
 $$
@@ -27,11 +29,14 @@ f(c\xi; r, c) = \frac{c^{r} (c\xi)^{r-1}}{c^{2r} + (c\xi)^{2r}}
 $$
 
 **Step 3: Simplify the Numerator and Denominator**
+
 We expand the powers and group the terms involving $c$:
+
 *   **Numerator:** $c^r \cdot c^{r-1} \xi^{r-1} = c^{2r-1} \xi^{r-1}$
 *   **Denominator:** $c^{2r} + c^{2r} \xi^{2r} = c^{2r}(1 + \xi^{2r})$
 
 **Step 4: Reassemble the Fraction and Factor**
+
 Substitute the simplified numerator and denominator back into the expression:
 
 $$
@@ -45,6 +50,7 @@ f(c\xi; r, c) = \frac{1}{c} \cdot \frac{\xi^{r-1}}{1 + \xi^{2r}}
 $$
 
 **Step 5: Identify the Kernel**
+
 The remaining expression depends only on $\xi$ and $r$. We define this as the dimensionless kernel $k(\xi; r)$:
 
 $$
