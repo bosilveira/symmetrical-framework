@@ -27,6 +27,7 @@ This set of identities forms the structural backbone of the entire framework. Th
 This proof demonstrates that $1 - W^2 = 4x^2f^2$ is an algebraic tautology.
 
 **Step 1: Start with the Fundamental Hyperbolic Identity**
+
 In the linearized coordinate $u = \log(x/c)$, we have $S(u) = \mathrm{sech}(ru)$ and $W(u) = \tanh(ru)$. These functions satisfy the identity:
 
 $$
@@ -34,11 +35,14 @@ $$
 $$
 
 **Step 2: Translate to Spatial Coordinates**
+
 We use the Rosetta Stone identity (§1.2) and the definition of the conformal phase (§1.4) to substitute back into $x$-space variables:
+
 *   From §1.2: $S(u) = \mathrm{sech}(ru) = 2x f(x;r,c)$
 *   From §1.4: $W(u) = \tanh(ru) = W(x;r,c)$
 
 **Step 3: Substitute and Rearrange**
+
 Substituting these into the identity from Step 1:
 
 $$
@@ -62,16 +66,20 @@ This completes the proof.
 This proof establishes the relation $W'(x) = 4rx f(x)^2$ by direct differentiation using the chain rule.
 
 **Step 1: Recall the Definitions**
+
 We start with the linearized definition of the phase function, $W(u) = \tanh(u)$, where the inner function is $u(x) = r\log(x/c)$.
 
 **Step 2: Apply the Chain Rule**
+
 The derivative of $W$ with respect to $x$ is given by $\frac{\mathrm{d}W}{\mathrm{d}x} = \frac{\mathrm{d}W}{\mathrm{d}u} \cdot \frac{\mathrm{d}u}{\mathrm{d}x}$.
 
 **Step 3: Calculate the Derivatives**
+
 *   The derivative of the outer function is $\frac{\mathrm{d}W}{\mathrm{d}u} = \frac{\mathrm{d}}{\mathrm{d}u}(\tanh u) = \mathrm{sech}^2(u)$.
 *   The derivative of the inner function is $\frac{\mathrm{d}u}{\mathrm{d}x} = \frac{\mathrm{d}}{\mathrm{d}x}\left(r\log\left(\frac{x}{c}\right)\right) = \frac{r}{x}$.
 
 **Step 4: Combine and Substitute**
+
 Substituting these derivatives back into the chain rule expression:
 
 $$
@@ -85,6 +93,7 @@ $$
 $$
 
 **Step 5: Simplify**
+
 The final algebraic simplification gives the identity:
 
 $$
