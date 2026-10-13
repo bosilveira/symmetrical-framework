@@ -38,7 +38,7 @@ The answer is short. Apart from the zero function, a finite-size solution is one
 
 ### 1.2 Relation to known results
 
-*(a) Radial form.* For $F(z)=f(\lvert z\rvert )$ on $\mathbb R^4\setminus\lbrace 0\rbrace $ one has $\lvert z\rvert ^2\Delta F = x^2f''+3xf'$ at $x=\lvert z\rvert $. Hence (M) is equivalent to the following equation, labelled **(1.1)**:
+*(a) Radial form.* For $`F(z)=f(\lvert z\rvert )`$ on $`\mathbb R^4\setminus\lbrace 0\rbrace `$ one has $\lvert z\rvert ^2\Delta F = x^2f''+3xf'$ at $x=\lvert z\rvert $. Hence (M) is equivalent to the following equation, labelled **(1.1)**:
 
 $$
 \Delta F+\frac{1-r^2}{\lvert z\rvert ^2}F+8\mu r^2F^3=0 \quad \text{in } \mathbb R^4\setminus\lbrace 0\rbrace .
