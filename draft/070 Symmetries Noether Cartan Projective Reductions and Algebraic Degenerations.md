@@ -404,3 +404,221 @@ For anti-de Sitter space in a Poincare chart, choose the local conformal coframe
 **Verification.** For AdS $h=\ln(L/z)$, so $e^{-2h}|\nabla_0h|^2=1/L^2$. Use the four-dimensional conformal teleparallel formulas and $\mathring{\mathcal R}=-\mathbb T+\mathbb B$. For de Sitter use constant $H=1/L$ in the flat-warped formulas. These are **local frame choices** on different coordinate patches, and neither requires a gravitational field equation.
 
 They show exactly why the three labels “curvature only”, “mixed”, “torsion only” cannot be identified with dS/AdS/Minkowski: the same dS or AdS metric admits a torsion-free Levi-Civita representation and the chosen flat torsionful teleparallel representation. Minkowski in a Cartesian coframe has both curvature and torsion zero, while an accelerated Rindler zero-spin coframe can have torsion components nonzero even with vanishing Levi-Civita curvature (draft 040).
+
+## 11. The exact sl(2) elliptic/hyperbolic/parabolic trichotomy—and what it does not classify [D,V,K]
+
+Let $A$ be a **constant** real traceless two-by-two matrix:
+
+```math
+A=\begin{pmatrix}a&b\\c&-a\end{pmatrix},\qquad \det A=-a^2-bc,\qquad A^2=-\det(A)\,\mathbf1.
+```
+
+Its characteristic polynomial is $\lambda^2+\det A$. By the Cayley–Hamilton identity, the exponential is a linear combination of $\mathbf1$ and $A$ and has three distinct real cases.
+
+- **Elliptic:** $\det A=\omega^2>0$. Then $A^2=-\omega^2\mathbf1$ and
+
+```math
+e^{tA}=\cos(\omega t)\mathbf1+\frac{\sin(\omega t)}{\omega}A.
+```
+
+- **Hyperbolic:** $\det A=-\lambda^2<0$. Then $A^2=\lambda^2\mathbf1$ and
+
+```math
+e^{tA}=\cosh(\lambda t)\mathbf1+\frac{\sinh(\lambda t)}{\lambda}A.
+```
+
+- **Parabolic/nilpotent:** $\det A=0$, $A\ne0$. Then $A^2=0$ and
+
+```math
+e^{tA}=\mathbf1+tA.
+```
+
+The **zero matrix** is a separate orbit, not the nonzero nilpotent orbit. For nonconstant $A(t)$ the solution requires a path-ordered fundamental matrix; a pointwise determinant sign is insufficient to give the global solution or a monodromy classification.
+
+### 11.1 Why this trichotomy does not equal “curvature only / mixed / torsion only”
+
+All three choices above can occur for **linear ODE systems on the flat line**, where both affine curvature and torsion vanish identically. Conversely the same curved metric may be equipped with either the Levi-Civita or a chosen Weitzenbock connection without changing the associated *constant* projective coefficient matrix of an independently selected ODE.
+
+Therefore the assertion that elliptic equals Levi-Civita-only, hyperbolic equals mixed curvature/torsion, and parabolic equals Weitzenbock-only is refuted by elementary examples. These are different, equally useful classification axes.
+
+### 11.2 Riccati projectivization is the actual bridge
+
+Let $\Psi' = A(u)\Psi$ for $A(u)=\begin{pmatrix}a&b\\c&-a\end{pmatrix}$. On a chart with $\psi_2\ne0$, define $g=\psi_1/\psi_2$. Direct differentiation gives
+
+```math
+g_u=b+2ag-cg^2.
+```
+
+A constant diagonal matrix $A=\mathrm{diag}(r/2,-r/2)$ gives $g_u=rg$ and $g(u)=g_0e^{ru}$. A nilpotent matrix $A=\begin{pmatrix}0&1\\0&0\end{pmatrix}$ gives $g_u=1$ and $g=u+g_0$.
+
+For the hyperbolic exponential ratio,
+
+```math
+\{g,u\}=-r^2/2,\qquad g=e^{ru}.
+```
+
+For the parabolic ratio $g=u$, $\{g,u\}=0$. This is a **projective Schwarzian statement** about the chosen rank-two system, not a statement that one metric has nonzero torsion and the other has none.
+
+The Gudermannian identity $\mathrm{gd}(s)=2\arctan(e^s)-\pi/2$ relates particular real hyperbolic and circular coordinate functions, but is **not** a universal conjugation between arbitrary elliptic and hyperbolic matrices or their global spectra.
+
+## 12. The quartic discriminant and the sl(2) nilpotent cone are different algebraic varieties [D,V,K,C]
+
+The current repository uses the **raw binary quartic** form
+
+```math
+F(X,Z)=aX^4+bX^3Z+c_2X^2Z^2+dXZ^3+fZ^4.
+```
+
+Its raw invariants and discriminant are
+
+```math
+I_{\rm raw}=12af-3bd+c_2^2,\qquad J_{\rm raw}=72ac_2f+9bc_2d-27ad^2-27fb^2-2c_2^3,\qquad \Delta_F=(4I_{\rm raw}^3-J_{\rm raw}^2)/27.
+```
+
+In binomial/spinor coordinates $F=\psi_0X^4+4\psi_1X^3Z+6\psi_2X^2Z^2+4\psi_3XZ^3+\psi_4Z^4$, the corresponding scalings are
+
+```math
+I_{\rm raw}=12I_b,\qquad J_{\rm raw}=432J_b,\qquad \Delta_F=256(I_b^3-27J_b^2).
+```
+
+For a **binary quartic**, $\Delta_F=0$ is the algebraic locus of a repeated projective root. The **GIT null cone** $I_b=J_b=0$ is a smaller locus; its nonzero quartics have a root of multiplicity at least three. The quartic discriminant variety and the two-dimensional matrix nilpotent cone $\det A=0$ are **not canonically the same variety**.
+
+### 12.1 Three explicit root-pattern controls
+
+- A quartic with two double roots,
+
+```math
+F_1=X^2Z^2,\qquad I_{\rm raw}(F_1)=1,\qquad J_{\rm raw}(F_1)=-2,\qquad \Delta(F_1)=0.
+```
+
+- A quartic with one triple and one simple root,
+
+```math
+F_2=X^3Z,\qquad I_{\rm raw}(F_2)=J_{\rm raw}(F_2)=0,\qquad \Delta(F_2)=0.
+```
+
+- A quartic with four distinct complex roots and smooth elliptic modulus,
+
+```math
+F_3=X^4+Z^4,\qquad I_{\rm raw}(F_3)=12,\qquad J_{\rm raw}(F_3)=0,\qquad \Delta(F_3)=256,\qquad j(F_3)=1728.
+```
+
+These examples show that $\Delta=0$ neither forces four equal roots nor implies $I=J=0$, and $I=J=0$ does not force a **quadruple** root (the triple-root example suffices).
+
+A smooth elliptic curve has $j=0$ when the appropriate $I$ vanishes **but the discriminant remains nonzero**, typically $I=0,J\ne0$; the pair $I=J=0$ cannot be inserted into the smooth elliptic $j$ formula. Drafts 050 and 060 make the same distinction for Weyl Petrov quartics and Gram-squared quartics.
+
+### 12.2 Degree-three polynomial and its singular parameter are not a Jordan form
+
+For the normalized Master energy,
+
+```math
+p^2=e+z^2-z^4,\qquad I_e=1-12e,\qquad J_e=-2(1+36e),\qquad\Delta_e=-16e(1+4e)^2.
+```
+
+At $e=0$ this is a singular energy curve admitting the homoclinic separatrix $z=\mathrm{sech}(ru)$; at generic nonzero energy it is a smooth genus-one curve. This is an exact *energy-curve* degeneration. It does not mean the associated Levi-Civita or Weitzenbock connection changes from elliptic to a nilpotent matrix orbit.
+
+## 13. The double-well Duffing quartic: complete invariant correction [D,V,H320–H324]
+
+The supplied text correctly identifies the double-well energy quartic, but mixes the quartic invariant normalizations and supplies an incorrect discriminant coefficient. Let
+
+```math
+L=\frac12\dot q^2+\frac{\alpha}{2}q^2-\frac{\beta}{4}q^4,\qquad \alpha,\beta>0.
+```
+
+Its Euler–Lagrange equation and conserved energy are
+
+```math
+\ddot q-\alpha q+\beta q^3=0,\qquad E=\frac12\dot q^2-\frac{\alpha}{2}q^2+\frac{\beta}{4}q^4.
+```
+
+Therefore the quartic energy curve is
+
+```math
+\dot q^2=P_E(q)=2E+\alpha q^2-\frac{\beta}{2}q^4,\qquad F_E(X,Z)=-\frac{\beta}{2}X^4+\alpha X^2Z^2+2EZ^4.
+```
+
+### 13.1 Raw quartic invariants and discriminant
+
+**Theorem 13.1 [D,V].** In the raw coefficient normalization of §12,
+
+```math
+I_{\rm raw}=\alpha^2-12\beta E,\qquad J_{\rm raw}=-2\alpha^3-72\alpha\beta E.
+```
+
+```math
+\Delta_{\rm raw}=-16\beta E(\alpha^2+4\beta E)^2.
+```
+
+In the binomial/spinorial normalization of the attachment, the corresponding quantities are
+
+```math
+I_b=\alpha^2/12-\beta E,\qquad J_b=-\alpha^3/216-\alpha\beta E/6,\qquad I_b^3-27J_b^2=-\beta E(\alpha^2+4\beta E)^2/16.
+```
+
+**Proof, step by step.**
+
+1. The raw quartic coefficients are $a=-\beta/2$, $b=0$, $c_2=\alpha$, $d=0$, $f=2E$.
+2. Substitute into $I_{\rm raw}=12af+c_2^2$ and $J_{\rm raw}=72ac_2f-2c_2^3$.
+3. Expand $(4I_{\rm raw}^3-J_{\rm raw}^2)/27$ and factor:
+
+```math
+\Delta_{\rm raw}=-16\beta E(4\beta E+\alpha^2)^2.
+```
+
+4. Divide $I_{\rm raw}$ by 12 and $J_{\rm raw}$ by 432 for binomial normalization. The discriminant relation of §12 yields the displayed $1/16$ factor.
+
+**Correction [C]:** The attachment's equation $\Delta=-\beta^2E(\alpha^2+4\beta E)^2/4$ is **not** the classical discriminant in either of these two stated normalizations.
+
+### 13.2 Complete real energy regimes
+
+The potential is $V(q)=-\alpha q^2/2+\beta q^4/4$, with local maxima at $q=0$ and minima at
+
+```math
+q_\pm=\pm\sqrt{\alpha/\beta},\qquad E_{\min}=-\frac{\alpha^2}{4\beta}.
+```
+
+On $E_{\min}<E<0$ the quartic has four distinct real roots and admits periodic oscillations in a chosen well. At $E=0$ it has a double root at $q=0$; the homoclinic separatrix is
+
+```math
+q_{\rm sep}(t)=\pm\sqrt{\frac{2\alpha}{\beta}}\,\mathrm{sech}(\sqrt\alpha(t-t_0)).
+```
+
+At $E>0$ it has two real roots and a complex-conjugate pair, corresponding to over-barrier oscillations. At $E=E_{\min}$ the two minima are equilibria and the quartic degenerates into two double roots. These root counts and real branch choices are stronger dynamical data than the complex elliptic $j$ alone.
+
+### 13.3 Exact specialization to the original Master ODE
+
+Set
+
+```math
+\alpha=r^2,\qquad \beta=2\mu r^2,\qquad t=u=\ln(x/c),\qquad q=y=2xf_\mu.
+```
+
+Then the Duffing equation is exactly the cubic Master equation and
+
+```math
+2E=y_u^2-r^2y^2+\mu r^2y^4=\varepsilon_N.
+```
+
+With $z=\sqrt\mu y$ and $e=\mu\varepsilon_N/r^2$, its quartic becomes the normalized Master curve of §12. This is a **literal identity of differential expressions under explicitly stated parameter identifications**; using the same Duffing equation elsewhere does not identify the separate physical application with the Symmetrical Function.
+
+### 13.4 From the separatrix to a specific Pöschl–Teller linearization
+
+Vary the trajectory as $q=q_{\rm sep}+\eta$. Linearizing gives
+
+```math
+\ddot\eta-\alpha\eta+3\beta q_{\rm sep}^2\eta=0.
+```
+
+With $s=\sqrt\alpha(t-t_0)$ and $q_{\rm sep}^2=(2\alpha/\beta)\mathrm{sech}^2s$,
+
+```math
+\eta_{ss}-\eta+6\mathrm{sech}^2s\,\eta=0.
+```
+
+Equivalently the zero mode of the shifted order-two Pöschl–Teller operator is
+
+```math
+[-\partial_s^2+1-6\mathrm{sech}^2s]\eta=0.
+```
+
+This is a direct, fully verified variational ODE connection. It does not classify every Pöschl–Teller Schrödinger operator or every stochastic Kramers problem by a single quartic discriminant.
