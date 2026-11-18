@@ -59,7 +59,7 @@ For a real scalar Sturm–Liouville expression on $(a,b)$,
 the natural Hilbert space is $\mathcal H=L^2((a,b),w(x)\,dx)$. Formal symmetry is the integration-by-parts property. Self-adjointness is the *operator equality*
 
 ```math
-T=T^*,\qquad \operatorname{Dom}(T)=\operatorname{Dom}(T^*).
+T=T^*,\qquad \mathrm{Dom}(T)=\mathrm{Dom}(T^*).
 ```
 
 Here $T$ is a realization of $\tau$ with a specified dense domain. The last **domain equality** is essential: a real differential expression with missing or incompatible boundary conditions need not be self-adjoint.
@@ -842,7 +842,7 @@ m_+(\lambda)=\frac{\psi_+'(0;\lambda)}{\psi_+(0;\lambda)}.
 
 This is the boundary value of a logarithmic derivative of the Weyl solution and satisfies an interior Riccati equation. For an appropriate self-adjoint half-line realization its dependence on $\lambda$ is a Herglotz/Nevanlinna function (with the sign convention determined by which endpoint orientation is chosen); this analytic positivity, unlike local Pinney current conservation, retains substantive spectral-domain information.
 
-For the canonical full-rate carrier $H_{\rm lin}=-\partial_u^2+r^2$, choose the square root $\kappa_\lambda=\sqrt{r^2-\lambda}$ with $\operatorname{Re}\kappa_\lambda>0$. Then
+For the canonical full-rate carrier $H_{\rm lin}=-\partial_u^2+r^2$, choose the square root $\kappa_\lambda=\sqrt{r^2-\lambda}$ with $\mathrm{Re}\kappa_\lambda>0$. Then
 
 ```math
 \psi_+(u;\lambda)=e^{-\kappa_\lambda u},\qquad m_+(\lambda)=-\kappa_\lambda.
@@ -1198,7 +1198,7 @@ The following identities were verified by independent symbolic differentiation o
 3. The unweighted original integral and the weighted SL norm have exact halves $\pi/(4r\sqrt\mu)$ and $1/(4r\mu)$ respectively.
 4. The general moment $M_s=B(s/2,1/2)/[r(2\sqrt\mu)^s]$ pushes to the symmetric Beta$(s/2,s/2)$ law in $P=(1+W)/2$.
 5. The chosen complex carrier $\Phi=\mu^{1/4}(\cosh(ru/2)+i\sinh(ru/2))$ solves $\Phi''=r^2\Phi/4$, has current $r\sqrt\mu/2$, and gives logarithmic derivative $(r/2)(W+iS)$.
-6. The local SL current law is $j'=[\operatorname{Im}q_0-(\operatorname{Im}\lambda)w]|\psi|^2$, independently of the operator domain.
+6. The local SL current law is $j'=[\mathrm{Im}q_0-(\mathrm{Im}\lambda)w]|\psi|^2$, independently of the operator domain.
 7. The non-self-adjoint half-line Robin domain with $h=-1+i$ has the explicit nonreal eigenvalue $r^2/4+2i$.
 8. The Pinney energy quartic has $I=4\mathcal E_a^2-12Q_0k$, $J=-16\mathcal E_a^3-144Q_0k\mathcal E_a$, and $\Delta=-256Q_0k(\mathcal E_a^2+Q_0k)^2$ in the repository's raw convention; these were checked with exact SymPy polynomial operations.
 9. At the centered positive canonical parameters the Pinney energy quartic is smooth with $j=1728$; the Gram-square and Master separatrix quartics instead have zero discriminant.
