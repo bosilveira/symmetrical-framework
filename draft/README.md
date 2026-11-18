@@ -26,6 +26,12 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [070 Symmetries, Noether, Cartan, Projective Reductions, and Algebraic Degenerations](070%20Symmetries%20Noether%20Cartan%20Projective%20Reductions%20and%20Algebraic%20Degenerations.md) — explicit Noether/Killing and Sturm–Liouville Wronskian distinctions; catenoid flux and critical Pohozaev; Palatini projective ambiguity and Cartan-versus-Weitzenbock flatness; sl(2) orbit versus binary-quartic discriminant; corrected Duffing/Master invariants; marked Weierstrass and QRT curves; exact SU(2) two-mode CP1 quartic, limits of SU(3); stochastic frame corrections and Langevin invariant evolution; Kepler/oscillator map-versus-territory safeguards. **Provisional; not yet consolidated.**
 
+- [080 Sturm–Liouville, Riccati, and Projective Geometry](080%20Sturm-Liouville%20Riccati%20and%20Projective%20Geometry.md) — weighted Sturm–Liouville domains and Wronskians, the exact canonical logarithmic Liouville transformation, Riccati linearization and projectivization, Schwarzian and Jacobi fields, Weyl spectral functions, Pöschl–Teller Hessian, Gudermannian, complex logarithm and r=2 recursions. **Provisional; not yet consolidated.**
+
+- [090 Ermakov–Pinney, Gram Geometry, and Complex Phase](090%20Ermakov-Pinney%20Gram%20Geometry%20and%20Complex%20Phase.md) — Pinney nonlinear superposition, Gram determinant and symmetric square, autonomous energy, complex polar reconstruction, Gudermannian phase, complex Riccati circle, Ermakov–Lewis invariant, reciprocal Master map, and r=2 double-angle formulas. **Provisional; not yet consolidated.**
+
+- [100 Sturm–Liouville and Ermakov–Pinney Correspondence](100%20Sturm-Liouville%20and%20Ermakov-Pinney%20Correspondence.md) — conditional amplitude–phase duality with proof, half/full-rate symmetric-square relation, Riccati–Gudermannian–Schwarzian/Cayley synthesis, curvature–torsion and catenoid scalar links, Pöschl–Teller, r=2 whole-web recursion, and spectral/domain obstructions. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
