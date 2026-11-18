@@ -192,11 +192,9 @@ $$
 For every such $f$,
 
 $$
-
 x^2f_{xx}+3xf_x+(1-r^2)f+8\mu r^2x^2f^3
 =
 \frac{y''-r^2y+2\mu r^2y^3}{2x}.
-
 \tag{4.3}
 $$
 
