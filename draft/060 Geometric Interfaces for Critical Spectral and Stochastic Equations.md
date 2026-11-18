@@ -443,3 +443,229 @@ The archive also records a genus-two Lamé curve with degree-three elliptic subc
 A fixed elliptic curve with modulus $j$ admits many distinct differential operators, spectral parameters and line bundles. Even on a fixed real circle, replacing $V(u)$ by $V(u)+a$ shifts all eigenvalues without changing the underlying complex elliptic period lattice. Boundary conditions (periodic, antiperiodic, Dirichlet, singular extensions) can change spectra while the same potential curve remains.
 
 Thus the invariant of an underlying quartic does not determine the Sturm–Liouville or Lamé spectrum. A complete spectral datum additionally includes the operator coefficients, real interval/cycle, marked Floquet multiplier and self-adjoint domain.
+
+## 11. Complex Monge–Ampere, Ricci curvature and the Eguchi–Hanson profile [D,V,H373]
+
+The complex Monge–Ampere branch is a **Kähler Ricci-curvature equation**, not the same determinant as the real optimal-transport equation of §14. Let $z=(z_1,\ldots,z_m)\in\mathbb C^m$ and set
+
+```math
+s=\sum_{i=1}^{m}|z_i|^2>0,\qquad \mathcal K=\mathcal K(s),\qquad P(s)=s\mathcal K_s.
+```
+
+The Kähler metric of the local potential is
+
+```math
+g_{i\bar j}=\partial_i\partial_{\bar j}\mathcal K=\mathcal K_s\delta_{ij}+\mathcal K_{ss}\bar z_i z_j.
+```
+
+The Hermitian matrix has tangential eigenvalue $\mathcal K_s=P/s$ with multiplicity $m-1$, and radial eigenvalue $\mathcal K_s+s\mathcal K_{ss}=P_s$.
+
+**Theorem 11.1 [D,V] (radial complex Monge–Ampere).** Its determinant and Ricci form satisfy
+
+```math
+\det(g_{i\bar j})=(P/s)^{m-1}P_s,\qquad \mathrm{Ric}=-i\,\partial\bar\partial\ln\det(g_{i\bar j}).
+```
+
+Imposing the special Ricci-flat volume normalization $\det g=1$ leads exactly to
+
+```math
+(P^m)_s=m s^{m-1},\qquad P^m=s^m+a^{2m},
+```
+
+where the integration constant $a^{2m}>0$ has been chosen positive.
+
+**Proof.** Diagonalize the rank-one perturbation of $\mathcal K_s I$: $m-1$ eigenvectors orthogonal to $z$ have eigenvalue $P/s$, while the radial vector $z$ has eigenvalue $P_s$. Multiply. Setting the determinant to one gives $P^{m-1}P_s=s^{m-1}$; integrate. Locally a constant determinant gives a zero Ricci form. Other prescribed determinants lead to other complex Monge–Ampere equations.
+
+### 11.1 Eguchi–Hanson at complex dimension two
+
+Set $m=2$, so that the real dimension is four. Then
+
+```math
+P(s)=\sqrt{s^2+a^4},\qquad \det g=(P/s)P_s=1.
+```
+
+An explicit local Kähler potential, up to an additive constant, is
+
+```math
+\mathcal K(s)=\sqrt{s^2+a^4}+a^2\ln\left(\frac{s}{a^2+\sqrt{s^2+a^4}}\right).
+```
+
+A direct derivative gives $\mathcal K_s=P/s$, confirming the radial determinant equation.
+
+To exhibit the Pinney correspondence, introduce a **new** radial chart variable $\xi$, with a separately chosen positive parameter $r$:
+
+```math
+s=a^2\sinh(r\xi),\qquad \xi>0,\qquad P=a^2\cosh(r\xi),\qquad R(\xi)=\sqrt P=a\sqrt{\cosh(r\xi)}.
+```
+
+**Proposition 11.2 [D,V].** This radial function satisfies
+
+```math
+R_{\xi\xi}=\frac{r^2}{4}R+\frac{r^2a^4}{4R^3},\qquad R_\xi^2=\frac{r^2}{4}(R^2-a^4R^{-2}).
+```
+
+**Proof.** $R^2=a^2\cosh(r\xi)$ has quadratic invariant $(R^2)^2-[(R^2)_\xi/r]^2=a^4$. Apply Theorem 3.1 to the centered two-exponential envelope, or differentiate explicitly.
+
+This is an exact **local algebraic correspondence** with the canonical positive Pinney envelope. The coordinate $\xi=r^{-1}\operatorname{arsinh}(s/a^2)$ is not automatically the original canonical $u=\ln(x/c)$; equating them requires the explicit radial pullback $s=a^2\sinh(r\ln(x/c))$ with domain $x>c$.
+
+The Eguchi–Hanson complete four-dimensional metric arises after a suitable angular identification/resolution of the local radial Kähler solution. Its hyperkähler/Ricci-flat, ALE and nonflat character is classical [K]. The local determinant calculation alone does **not** prove the topology, completeness, orientation of self-duality or regularity of the compact exceptional divisor; those require the standard global construction.
+
+### 11.2 Two different algebraic curves can be written for the same radial construction
+
+The fundamental radial Monge–Ampere integral is the **conic**
+
+```math
+P^2-s^2=a^4.
+```
+
+One can separately construct the binary quartic $F_a(X,Z)=X^4-a^4Z^4$ from the common cohomogeneity-one metric coefficient. Its raw invariants are
+
+```math
+I(F_a)=-12a^4,\qquad J(F_a)=0,\qquad\Delta(F_a)=-256a^{12},\qquad j(F_a)=1728\quad(a>0).
+```
+
+**Scope:** This is a smooth *constructed quartic* and a legitimate harmonic elliptic double cover. The original radial complex Monge–Ampere determinant equation is a conic rather than this elliptic curve. The existence of a natural quartic expression in another coordinate does not prove that its periods or elliptic $j$ classify the Eguchi–Hanson metric, its moduli or its self-duality.
+
+### 11.3 Complex Hessian, LC curvature and teleparallel connection must remain distinct
+
+Ricci-flatness here follows from a complex Hermitian determinant/Levi-Civita Ricci form. A local orthonormal frame can be used to build a flat metric-compatible Weitzenbock connection **where a frame exists**, but that is a **different connection** from the Kähler Levi-Civita connection and depends on the chosen frame. Ricci-flatness of the Levi-Civita connection does not imply zero Riemann curvature or zero Weitzenbock torsion.
+
+The self-dual/anti-self-dual decomposition of the four-dimensional Riemann tensor depends on orientation and the Hodge star. It is not a binary-quartic classification determined by a single putative teleparallel torsion scalar.
+
+## 12. BPST: a nonflat SU(2) gauge connection, not flat teleparallel torsion [D,H371,H374]
+
+On flat Euclidean $\mathbb R^4$, fix a center $X_0$, a size $c>0$, radial distance $\rho=|X-X_0|$, and a convention of self-dual 't Hooft symbols $\eta^a_{\mu\nu}$. The classical BPST regular-gauge connection and curvature can be normalized as
+
+```math
+A_\mu^a=\frac{2\eta^a_{\mu\nu}(X-X_0)^\nu}{\rho^2+c^2},\qquad F_{\mu\nu}^a=-\frac{4c^2\eta^a_{\mu\nu}}{(\rho^2+c^2)^2}.
+```
+
+Its squared curvature density in the convention used in the project archive is
+
+```math
+F_{\mu\nu}^aF_{\mu\nu}^a=\frac{192c^4}{(\rho^2+c^2)^4}.
+```
+
+Its self-duality $F=*F$ is a condition on an **SU(2) gauge curvature**, not on the torsion tensor of a flat Weitzenbock connection. The pure Maurer–Cartan form $g^{-1}dg$ has zero gauge curvature; the BPST ansatz multiplies it by a *nonconstant radial function*, producing nonzero curvature. Thus “the BPST instanton is pure Weitzenbock torsion” is false without a new, explicit, nonstandard construction and proof.
+
+### 12.1 The exact logistic and BPST charge identities
+
+Use the physical radial logarithmic coordinate $u=\ln(\rho/c)$, corresponding to **$r=1$** in the canonical radius $\rho$:
+
+```math
+P(\rho)=\frac{\rho^2}{\rho^2+c^2}=\frac{1+\tanh u}{2}=\frac{1+W}{2},\qquad P_u=2P(1-P).
+```
+
+The normalized cumulative charge is the polynomial
+
+```math
+Q(\rho)=3P^2-2P^3=\frac12+\frac34W-\frac14W^3.
+```
+
+Differentiate and use $W_u=S^2$:
+
+```math
+\frac{dQ}{du}=\frac34S^4=\frac34\mathrm{sech}^4u.
+```
+
+In the framework's rescaled radial chart $\rho=c(x/c)^r$, this reads
+
+```math
+\frac{dQ}{du}=\frac{3r}{4}\mathrm{sech}^4(ru),\qquad u=\ln(x/c),\qquad\theta=\ln(\rho/c)=ru.
+```
+
+The parameter $r$ here changes the *pullback coordinate* of the physical BPST radius, not the instanton's topological charge or an independent family of flat-space BPST solutions with arbitrary power-law radial profiles.
+
+### 12.2 The action density and its integral are separate data
+
+The four-dimensional radial integral is
+
+```math
+\int_{\mathbb R^4}\frac{d^4X}{(\rho^2+c^2)^4}=\frac{\pi^2}{6c^4}.
+```
+
+Therefore the ordinary self-dual charge-one BPST configuration has, for the specified normalization,
+
+```math
+\frac1{4g^2}\int F_{\mu\nu}^aF_{\mu\nu}^a\,d^4X=\frac{8\pi^2}{g^2}.
+```
+
+This is a gauge-theoretic variational and topological result after supplying the connection and normalization. The radial scalar coefficient $S^2$ by itself is not a full gauge field; many unrelated mathematical problems can contain $S^2$ without possessing a second Chern number.
+
+## 13. The exact stereographic Aubin–Talenti/BPST density bridge [D,V,H371,H374]
+
+At $D=4$, the $r=1$ Aubin–Talenti/Yamabe bubble is
+
+```math
+U_{\mathrm{AT}}(\rho)=\frac{c}{\sqrt\mu(\rho^2+c^2)}.
+```
+
+The round four-sphere metric stereographic factor is, up to the stated radius normalization, the **square** of this bubble. Its volume density has the fourth power of the conformal factor:
+
+```math
+d\mathrm{vol}_{g_U}=U_{\mathrm{AT}}^4\,d^4X=\frac{c^4}{\mu^2(\rho^2+c^2)^4}\,d^4X.
+```
+
+The BPST squared-curvature density is proportional to the *same* rational function:
+
+```math
+|F_{\rm BPST}|^2=\frac{192c^4}{(\rho^2+c^2)^4}.
+```
+
+Hence, for this matched size, center and flat four-dimensional coordinate,
+
+```math
+|F_{\rm BPST}|^2=192\mu^2\,\frac{d\mathrm{vol}_{g_U}}{d^4X}.
+```
+
+**Proof.** Substitute the displayed $U_{\mathrm{AT}}$ and the BPST curvature formula. This is exact dimensional algebra: in four dimensions the volume density of $g_U=U^2g_{\rm Euc}$ is $U^4$ and the BPST curvature coefficient is fourth power of the same denominator.
+
+This does **not** make the Yang–Mills functional the Yamabe functional, equate their Euler–Lagrange operators or identify their variation spectra. It is a match of specific, properly normalized **density profiles** with the round $S^4$ stereographic measure.
+
+The independent gauge and geometric topological data also differ: BPST uses the second Chern class of an SU(2) bundle over the compactified four-sphere; the Yamabe bubble is a positive scalar conformal factor. In particular, a nonflat Yang–Mills connection cannot be identified with a flat metric-compatible Weitzenbock spin connection merely through their common $S^2$ coefficient.
+
+## 14. Real radial Monge–Ampere transports the same charge density [D,V,H374]
+
+Now consider the **real** Monge–Ampere equation in $\mathbb R^D$ for a radial convex potential $\Phi(X)=\phi(\rho)$, $\rho=|X|$. The radial Hessian eigenvalue is $\phi''(\rho)$ and the tangential eigenvalue is $\phi'(\rho)/\rho$ with multiplicity $D-1$. Hence
+
+```math
+\det D^2\Phi=\phi''(\rho)\left(\frac{\phi'(\rho)}{\rho}\right)^{D-1}.
+```
+
+If $\det D^2\Phi=F(\rho)$ and $\phi'(0)=0$, multiply by $D\rho^{D-1}$ and integrate:
+
+```math
+\phi'(\rho)^D=D\int_0^\rho t^{D-1}F(t)\,dt.
+```
+
+This is a fully explicit second-order **PDE to one-dimensional first-integral** reduction that does not require any binary quartic.
+
+### 14.1 The four-dimensional BPST charge as a transport radius
+
+The normalized BPST/round-sphere probability density and unit four-ball density are respectively
+
+```math
+p_c(X)=\frac{6c^4}{\pi^2(\rho^2+c^2)^4},\qquad p_{\rm ball}=\frac2{\pi^2}.
+```
+
+A radial optimal-transport map to the uniform unit ball has target radius $T(\rho)=\phi'(\rho)$. The pushforward Jacobian equation is
+
+```math
+\det D^2\Phi=\frac{p_c}{p_{\rm ball}}=\frac{3c^4}{(\rho^2+c^2)^4}.
+```
+
+The radial first integral then gives
+
+```math
+\phi'(\rho)^4=Q(\rho)=\frac{\rho^4(\rho^2+3c^2)}{(\rho^2+c^2)^3}=3P(\rho)^2-2P(\rho)^3.
+```
+
+**Proof, step by step.** Differentiate $Q$ from §12.1 to find $Q'(\rho)=12\rho^3c^4/(\rho^2+c^2)^4$. Then $\phi'=Q^{1/4}$ gives
+
+```math
+\phi''(\phi'/\rho)^3=\frac{Q'}{4\rho^3}=\frac{3c^4}{(\rho^2+c^2)^4}.
+```
+
+Because the radial map is monotone and the potential is convex, it is the quadratic-cost Brenier transport in this finite-second-moment setting [K]. The **same cubic charge CDF** now appears as a radial Monge–Ampere transport mass coordinate, not a new gauge curvature.
+
+For the $D$-dimensional critical stereographic probability density proportional to $c^D/(\rho^2+c^2)^D$, the variable $P=\rho^2/(\rho^2+c^2)$ has the Beta$(D/2,D/2)$ distribution; the uniform-$D$-ball target radius is $I_P(D/2,D/2)^{1/D}$. This is a family of exact mass-transport constructions, not an $I,J$-invariant elliptic classification.
