@@ -32,6 +32,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [100 Sturm–Liouville and Ermakov–Pinney Correspondence](100%20Sturm-Liouville%20and%20Ermakov-Pinney%20Correspondence.md) — conditional amplitude–phase duality with proof, half/full-rate symmetric-square relation, Riccati–Gudermannian–Schwarzian/Cayley synthesis, curvature–torsion and catenoid scalar links, Pöschl–Teller, r=2 whole-web recursion, and spectral/domain obstructions. **Provisional; not yet consolidated.**
 
+- [110 Linearity, Nonlinear Envelopes, Operator Calculus, and Application Boundaries](110%20Linearity%20Nonlinear%20Envelopes%20Operator%20Calculus%20and%20Application%20Boundaries.md) — rigorous SL-versus-EP operator and domain distinctions; Fréchet/Hessian/Jacobian/Hamiltonian/Routhian/Casimir calculus; Gel'fand–Dikii diagonal Green and Pinney invariant sign; Darboux/Dirac, Riccati/Schwarzian and Liouvillian meanings; PDM BDD/von Roos/geometric ordering and logarithmic mass profile; Duffing, GPE lens and weighted stationary amplitude–phase theorem; exact conditional Rayleigh–Plesset-to-Pinney map, Keller–Miksis and acoustic-mode qualifications; r=2 whole-web formulas. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
