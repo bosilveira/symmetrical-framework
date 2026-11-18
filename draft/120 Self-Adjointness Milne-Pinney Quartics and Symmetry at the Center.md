@@ -979,3 +979,163 @@ Riemann's classical minimal examples are constructed from selected meromorphic W
 The associated surface Jacobi operator remains an intrinsic/extrinsic geometric differential expression built from $\Delta_g+|A|^2$. In a quotient by a geometric period one must specify periodic, antiperiodic or Floquet boundary data; on the complete noncompact surface, its $L^2$ realization and end behavior matter. A degeneration of an **elliptic curve** toward a catenoid or helicoid does not automatically identify the global Jacobi spectra, because the domains, topology and limiting one-forms can also degenerate.
 
 The projective Riccati ratio, Milne phase, Gauss map and Hopf fibration are all available as **distinct** mathematical objects once the correct linear equation, meromorphic differential or bundle has been supplied. Their recurring appearance is mathematically meaningful; their numerical invariants alone do not classify the complete surface or its spectral operator.
+
+## 27. The half-split moment hierarchy is a Beta CDF and a Dirichlet minimizer [D,V,H169]
+
+The complete positive-moment family introduced in §7 is more structured than equal halves alone. For $s>0$, define
+
+```math
+w_s(x)=x^{s-1}f_\mu(x;r,c)^s,\qquad M_s=\int_0^\infty w_s(x)\,dx.
+```
+
+Its cumulative function is $C_s(x)=M_s^{-1}\int_0^xw_s(t)\,dt$. The canonical logistic coordinate is
+
+```math
+P(u)=\frac{1+W}{2}=\frac{(x/c)^{2r}}{1+(x/c)^{2r}}.
+```
+
+**Theorem 27.1 [D,V] (symmetric Beta coordinate).**
+
+```math
+C_s(x)=I_{P(u)}\left(\frac{s}{2},\frac{s}{2}\right),\qquad C_s(c)=\frac12,\qquad C_s(c^2/x)=1-C_s(x).
+```
+
+Here $I_P(a,b)$ is the regularized incomplete Beta function.
+
+**Proof.** In the logarithmic coordinate $w_s(x)\,dx=(2\sqrt\mu)^{-s}S^sdu$. With $P=(1+W)/2$ one has $P_u=2rP(1-P)$ and $S^2=4P(1-P)$; therefore
+
+```math
+S^sdu=\frac{2^{s-1}}rP^{s/2-1}(1-P)^{s/2-1}dP.
+```
+
+Normalize by the complete symmetric Beta integral. This proves the CDF formula and midpoint symmetry. The two most important cases are
+
+```math
+s=1:\quad C_1(x)=\frac2\pi\arctan((x/c)^r),\qquad w_1=f_\mu.
+```
+
+```math
+s=2:\quad C_2(x)=P=\frac{1+W}{2},\qquad w_2=xf_\mu^2.
+```
+
+Thus the original **arctangent primitive** and the canonical **logistic coordinate** are two members of a single Beta-moment hierarchy. This connects the original integral, the weighted SL Hilbert measure, and the Hopf/Gauss-sphere latitude coordinate without identifying their uses.
+
+### 27.1 The weighted Dirichlet principle has the same midpoint
+
+For an absolutely continuous $F$ with $F(0)=0$, $F(\infty)=1$, define the quadratic energy
+
+```math
+\mathcal D_s[F]=\int_0^\infty\frac{F_x^2}{w_s(x)}\,dx.
+```
+
+**Theorem 27.2 [D,V,H169].** Under the standard finite-energy endpoint assumptions,
+
+```math
+\mathcal D_s[F]\ge\frac1{M_s}
+```
+
+with equality exactly at $F=C_s$.
+
+**Proof.** The Cauchy–Schwarz inequality gives
+
+```math
+1=\left(\int_0^\infty F_x\,dx\right)^2\le\left(\int_0^\infty\frac{F_x^2}{w_s}\,dx\right)\left(\int_0^\infty w_s\,dx\right)=M_s\mathcal D_s[F].
+```
+
+Equality requires $F_x$ proportional to $w_s$, with the normalization fixing $F=C_s$ uniquely. If an interface value $b=F(c)$ is prescribed, the half-interval energies satisfy
+
+```math
+\mathcal D_s^-\ge\frac{b^2}{M_s/2},\qquad\mathcal D_s^+\ge\frac{(1-b)^2}{M_s/2}.
+```
+
+The sum is minimized at $b=1/2$, where each half contributes $1/(2M_s)$. The Euler–Lagrange equation of the minimizing conductivity problem is
+
+```math
+-\frac d{dx}\left(w_s^{-1}F_x\right)=0.
+```
+
+**Crucial qualification:** This is a **different** weighted SL-type differential expression from the original $p=x^3,w=x$ carrier. Its *Dirichlet energy principle* is not the assertion that the canonical eigenfunction must satisfy $f(c)=0$. The equal midpoint is the common reflection of a positive measure, while a spectral boundary condition is separately selected.
+
+At $s=1$, $\min\mathcal D_s=2r\sqrt\mu/\pi$; at $s=2$, $\min\mathcal D_s=2r\mu$. Their half-interval contributions are respectively $r\sqrt\mu/\pi$ and $r\mu$.
+
+## 28. The complete r=2 web with c and mu retained [D,V]
+
+Fix $r=2$ and keep $u=\ln(x/c)$, $c>0$ and $\mu>0$. The rational double-angle fields are
+
+```math
+S_2=\frac{2c^2x^2}{x^4+c^4},\qquad W_2=\frac{x^4-c^4}{x^4+c^4},\qquad S_2^2+W_2^2=1.
+```
+
+Relative to the $r=1$ fields, their recursions are
+
+```math
+W_2=\frac{2W_1}{1+W_1^2},\qquad S_2=\frac{S_1^2}{2-S_1^2}.
+```
+
+The rational function, primitive and improper half-integrals become
+
+```math
+f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)},\qquad\int f_\mu\,dx=\frac1{2\sqrt\mu}\arctan((x/c)^2)+C.
+```
+
+```math
+\int_0^c f_\mu\,dx=\int_c^\infty f_\mu\,dx=\frac{\pi}{8\sqrt\mu},\qquad\int_0^c xf_\mu^2dx=\int_c^\infty xf_\mu^2dx=\frac1{8\mu}.
+```
+
+The centered Pinney amplitude, complex linear carrier and Riccati variable read
+
+```math
+a^2=\sqrt\mu\cosh(2u)=\frac{\sqrt\mu(x^4+c^4)}{2c^2x^2},\qquad\Phi=\mu^{1/4}(\cosh u+i\sinh u).
+```
+
+```math
+a''=a+\mu a^{-3},\qquad\Phi''=\Phi,\qquad\frac{\Phi'}{\Phi}=W_2+iS_2,\qquad\theta=\arctan((x/c)^2)-\frac\pi4.
+```
+
+The centered **Pinney energy quartic** is smooth with $j=1728$:
+
+```math
+Y^2=A^4-\mu,\qquad A=a,\qquad Y=aa'.
+```
+
+The normalized **Master separatrix energy quartic** is $p^2=z^2-z^4$ with $\Delta_{\rm M}=0$. The Gram-square quartic is likewise singular but is a third construction.
+
+### 28.1 Four distinct r=2 operators
+
+The original linear carrier of the Master equation is
+
+```math
+H_{\rm lin,2}=-\partial_u^2+4,\qquad\sigma(H_{\rm lin,2})=[4,\infty).
+```
+
+The half-rate carrier used by Pinney/Riccati is
+
+```math
+H_{\frac12,2}=-\partial_u^2+1,\qquad\sigma(H_{\frac12,2})=[1,\infty).
+```
+
+The **Pinney variational Hessian** and the **Master separatrix Hessian** are respectively
+
+```math
+H_{\rm EP,2}=-\partial_u^2+1-3S_2^2,\qquad H_{\rm M,2}=-\partial_u^2+4-24S_2^2.
+```
+
+On the natural full-line $L^2(du)$ realizations, $H_{\rm EP,2}$ has a zero ground eigenvalue and essential threshold $1$, whereas $H_{\rm M,2}$ has discrete eigenvalues $-12,0$ and essential threshold $4$. Both are self-adjoint real Schrödinger operators despite the difference in their lowest eigenvalue signs.
+
+The **further catenoid Jacobi** separated expression from §24 is
+
+```math
+H_{\rm cat,2}=-\partial_u^2-8S_2^2.
+```
+
+As an abstract full-line Schrödinger operator, it has a bound level at $-4$; converting that observation to a claim about the *surface* Jacobi spectrum also requires the angular mode and surface-domain conditions.
+
+### 28.2 Center-preserving inversion and boundary data
+
+For every resolution, including $r=2$, the involution is
+
+```math
+x\mapsto c^2/x,\qquad u\mapsto-u,\qquad f(x)\mapsto(c^2/x^2)f(c^2/x).
+```
+
+Even modes satisfy $cf_x(c)+f(c)=0$, and odd modes $f(c)=0$. The resolution $r$ changes the rational profile and potential coefficients; $c$ locates the symmetry point and the logarithmic origin.
