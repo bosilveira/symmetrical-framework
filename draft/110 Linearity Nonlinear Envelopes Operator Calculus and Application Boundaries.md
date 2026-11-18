@@ -402,3 +402,202 @@ The Pinney symmetric-square/phase reconstruction says that if the linear carrier
 | Rayleigh quotient | self-adjoint linear variational eigenvalue | quotient of **linearized Hessian**, or nonlinear constrained functional | no automatic eigenvalue quotient for Pinney itself |
 | Darboux / Dirac | factorized first-order partners | acts on the *Hessian* at a background | no standard spin geometry inferred |
 | Liouvillian | differential Galois/phase-space meanings | inherits solvability of carrier with extra constraints | distinct definitions must not be conflated |
+
+## 14. Position-dependent mass: an authentic Sturm–Liouville operator with an ordering choice [D,K,V]
+
+Consider a one-dimensional stationary effective-mass Schrödinger model in an independent spatial coordinate $z$, with **positive** prescribed effective mass $m(z)>0$, an energy-independent real potential $V(z)$, and Planck parameter $\hbar>0$. The BenDaniel–Duke (BDD) ordering is
+
+```math
+\widehat H_{\rm BDD}=-\frac{\hbar^2}{2}\partial_z\left(\frac1{m(z)}\partial_z\right)+V(z).
+```
+
+This is a Sturm–Liouville *differential expression*, with
+
+```math
+p(z)=\frac{\hbar^2}{2m(z)},\qquad q_0(z)=V(z),\qquad w(z)=1,\qquad\widehat H_{\rm BDD}\psi=E\psi.
+```
+
+It may be given a self-adjoint realization on $L^2(dz)$ after specifying endpoints, interface matching and a suitable domain. Hermitian-looking algebra is not enough to make every discontinuous-mass Hamiltonian self-adjoint. For simple piecewise smooth BDD data with no point interactions, the natural transmission conditions at an interface are continuity of $\psi$ and of $m^{-1}\psi_z$; more general self-adjoint interface conditions can be posed.
+
+A PDM Hamiltonian is thus a **specified application of Sturm–Liouville theory**, not evidence that Sturm–Liouville *requires* a spatially variable physical mass. The source differential expression admits many other realizations.
+
+## 15. The von Roos ambiguity: exact operator expansion [D,V,K]
+
+For smooth $m(z)>0$, the one-dimensional von Roos family is
+
+```math
+\widehat T_{\alpha\beta\gamma}=\frac14[m^\alpha\widehat p\,m^\beta\widehat p\,m^\gamma+m^\gamma\widehat p\,m^\beta\widehat p\,m^\alpha],\qquad \widehat p=-i\hbar\partial_z,\quad \alpha+\beta+\gamma=-1.
+```
+
+**Theorem 15.1 [D,V] (all ordering effects are an effective potential for smooth mass).** On compactly supported smooth test functions,
+
+```math
+\widehat T_{\alpha\beta\gamma}=-\frac{\hbar^2}{2}\partial_z(m^{-1}\partial_z)+V_{\rm ord}(z)
+```
+
+with
+
+```math
+V_{\rm ord}=-\frac{\hbar^2}{4}(\alpha+\gamma)\frac{m''}{m^2}+\frac{\hbar^2}{2}(\alpha\gamma+\alpha+\gamma)\frac{(m')^2}{m^3}.
+```
+
+**Proof, step by step.** Apply the product rule twice to $m^\alpha\partial_z[m^\beta\partial_z(m^\gamma\psi)]$ and to the term with $\alpha,\gamma$ exchanged. The coefficient of $\psi''$ is $m^{-1}$, the combined coefficient of $\psi'$ is $-m'/m^2$ in the derivative expression, and the remaining multiplication terms simplify using $\alpha+\beta+\gamma=-1$. The identity was independently verified symbolically.
+
+Two familiar choices are:
+
+- BDD: $(\alpha,\beta,\gamma)=(0,-1,0)$, giving $V_{\rm ord}=0$.
+- Zhu–Kroemer: $(-1/2,0,-1/2)$, giving
+
+```math
+V_{\rm ZK}=\frac{\hbar^2}{4}\frac{m''}{m^2}-\frac{3\hbar^2}{8}\frac{(m')^2}{m^3}.
+```
+
+An **ordering ambiguity is an operator-choice ambiguity**, not an Ermakov–Pinney nonlinearity. For discontinuous mass, $m''$ and $(m')^2$ can become distributionally singular or undefined; formal smooth-mass equivalence does not settle the interface problem. Different orderings with the **same written bare potential** are generally different operators and need not be isospectral.
+
+## 16. Levi-Civita geometry selects one PDM ordering after fixing a measure [D,V,C]
+
+A classical one-dimensional position-dependent kinetic metric is
+
+```math
+g=m(z)\,dz^2.
+```
+
+Intrinsic one-dimensional Levi-Civita curvature is identically zero even when $m'(z)\ne0$; a nonconstant metric coefficient is not itself nonzero curvature. The natural Riemannian volume is $\sqrt m\,dz$, and the Laplace–Beltrami operator is
+
+```math
+\Delta_g=m^{-1/2}\partial_z(m^{-1/2}\partial_z).
+```
+
+Its kinetic operator $-\hbar^2\Delta_g/2$ is symmetric in $L^2(\sqrt m\,dz)$. To compare on the BDD Hilbert space $L^2(dz)$, apply the **unitary** multiplication $U_g\psi=m^{1/4}\psi$. A direct differentiation yields
+
+```math
+U_g(-\hbar^2\Delta_g/2)U_g^{-1}=-\frac{\hbar^2}{2}\partial_z(m^{-1}\partial_z)+\frac{\hbar^2}{8}\frac{m''}{m^2}-\frac{7\hbar^2}{32}\frac{(m')^2}{m^3}.
+```
+
+**Theorem 16.1 [D,V].** This is precisely the smooth-mass von Roos ordering
+
+```math
+(\alpha,\beta,\gamma)=(-1/4,-1/2,-1/4).
+```
+
+**Proof.** Insert these parameters in $V_{\rm ord}$ from §15 and simplify. Direct calculation of the unitary conjugation produces the same result.
+
+This is an exact **metric/measure-to-ordering dictionary**, but does **not** prove that nature universally selects it over BDD or another material-dependent effective model. Different measures, boundary/interface conditions and microscopic reductions can produce different valid operators. Flat one-dimensional curvature does not fix the entire effective quantum Hamiltonian.
+
+## 17. The logarithmic framework as a special PDM Liouville coordinate [D,V]
+
+For BDD let $p(z)=\hbar^2/[2m(z)]$, $w=1$. Its Liouville coordinate $\xi$ and amplitude multiplier are
+
+```math
+\xi=\int^z\frac{\sqrt{2m(s)}}{\hbar}\,ds,\qquad \rho(z)=p(z)^{1/4},\qquad \varphi(\xi)=\rho(z)\psi(z).
+```
+
+The transformed eigenvalue equation is
+
+```math
+-\varphi_{\xi\xi}+\left[V(z(\xi))+\frac{\rho_{\xi\xi}}{\rho}\right]\varphi=E\varphi.
+```
+
+Now choose the **explicit positive power-law mass**, on $z>0$,
+
+```math
+m(z)=m_0(z/c)^{-2},\qquad m_0>0,\qquad c>0.
+```
+
+Then
+
+```math
+\xi=\frac{c\sqrt{2m_0}}{\hbar}\ln(z/c),\qquad \rho(z)=\left(\frac{\hbar^2}{2m_0}\right)^{1/4}(z/c)^{1/2}.
+```
+
+Therefore the Liouville coordinate is a constant multiple of the **canonical logarithmic coordinate** $u=\ln(z/c)$, and its quantum geometric correction is a constant:
+
+```math
+\frac{\rho_{\xi\xi}}{\rho}=\frac{\hbar^2}{8m_0c^2}.
+```
+
+The transformed equation becomes
+
+```math
+-\varphi_{\xi\xi}+\left[V(c\,e^{\hbar\xi/(c\sqrt{2m_0})})+\frac{\hbar^2}{8m_0c^2}\right]\varphi=E\varphi.
+```
+
+This is an **exact** PDM-to-logarithmic-Liouville correspondence with $m_0,c,\hbar$ retained. The framework resolution $r$ may independently enter a chosen potential $V(z;r,c)$, but does not follow from the mass profile's exponent by itself. The original Master weighted operator has $p=x^3,w=x$, not the BDD pair $p=\hbar^2/(2m),w=1$; identical Liouville coordinates do **not** make their original Hilbert-space operators identical.
+
+## 18. Duffing, Pinney and the singular reciprocal substitution [D,H,C]
+
+The autonomous Duffing equation is
+
+```math
+y''=r^2y-2\mu r^2y^3,\qquad E_D=\frac12y'^2-\frac{r^2}{2}y^2+\frac{\mu r^2}{2}y^4.
+```
+
+It is nonlinear and its variational Hessian at the canonical separatrix is the order-two Pöschl–Teller operator of §10. Its first integral gives the binary quartic with
+
+```math
+z'^2=r^2(e+z^2-z^4),\quad z=\sqrt\mu\,y,\quad e=2\mu E_D/r^2,\qquad \Delta_{\rm quartic}=-16e(1+4e)^2.
+```
+
+For the Pinney envelope $a$ in §10 and $y=a^{-2}$, the exact reciprocal calculation gives the same cubic Duffing equation **only under the proper zero-shift constraint**. More generally, with
+
+```math
+a^2=Ae^{ru}+2C+Be^{-ru},\qquad k=r^2(AB-C^2),\qquad Q=r^2/4,
+```
+
+one obtains
+
+```math
+y''=r^2y-6Cr^2y^2-8r^2(AB-C^2)y^3.
+```
+
+**Proof.** From $y=a^{-2}$ compute $y''=6a^{-4}(a')^2-2a^{-3}a''$; insert Pinney and its constant Hamiltonian $H_{\rm EP}=-Cr^2/2$. The resulting quadratic term vanishes **iff** $C=0$.
+
+Thus Duffing and Pinney are exactly linked along selected reciprocal families, but are **not the same nonlinear differential operator** for arbitrary initial data, finite Master energy or nonzero Gram shift. Their Hessians are not unitarily equivalent (§10).
+
+## 19. Gross–Pitaevskii as a nonlinear spectral problem [K,D,C]
+
+In $d$ Euclidean spatial dimensions, a standard dimensionless cubic Gross–Pitaevskii equation with a time-dependent isotropic harmonic trap is
+
+```math
+i\partial_t\Psi=-\frac12\Delta\Psi+\frac12\Omega(t)^2|X|^2\Psi+g(t)|\Psi|^2\Psi.
+```
+
+A stationary mode $\Psi(t,X)=e^{-i\nu t}\Phi(X)$ under constant parameters obeys
+
+```math
+\left[-\frac12\Delta+\frac12\Omega^2|X|^2+g|\Phi|^2\right]\Phi=\nu\Phi.
+```
+
+This is a mathematically well-defined **nonlinear eigenvalue problem**, often with a mass constraint; it does not satisfy linear superposition. Its second-variation/Bogoliubov–de Gennes operators nevertheless form a linear spectral system.
+
+For a real stationary $\Phi$, write $\Psi=e^{-i\nu t}[\Phi+a+ib]$ with small real perturbations. To first order,
+
+```math
+\partial_t\binom{a}{b}=\begin{pmatrix}0&L_-\\-L_+&0\end{pmatrix}\binom{a}{b},\quad L_-=-\frac12\Delta+V+g\Phi^2-\nu,\quad L_+=-\frac12\Delta+V+3g\Phi^2-\nu.
+```
+
+The underlying Laplacian, operator domains and sign of $g$ matter for existence/stability. A scalar localized profile shared with the Master ODE is not proof that the full GPE realizes the same Hamiltonian, mass norm or physical medium.
+
+## 20. Exact GPE lens scaling produces Pinney under a specified coupling law [D,K,V]
+
+Let $\Phi(Y)$ solve a stationary reference equation with fixed constants $\omega_0,g_0,\nu$:
+
+```math
+-\frac12\Delta_Y\Phi+\frac12\omega_0^2|Y|^2\Phi+g_0|\Phi|^2\Phi=\nu\Phi.
+```
+
+Choose a positive scale $b(t)$ and a new clock $\tau'(t)=b(t)^{-2}$. Define the **explicit ansatz**
+
+```math
+\Psi(t,X)=b(t)^{-d/2}\exp\left[i\frac{\dot b(t)}{2b(t)}|X|^2-i\nu\tau(t)\right]\Phi(X/b(t)).
+```
+
+**Theorem 20.1 [D,K].** This solves the time-dependent GPE of §19 exactly if
+
+```math
+\ddot b+\Omega(t)^2b=\omega_0^2b^{-3},\qquad g(t)=g_0b(t)^{d-2}.
+```
+
+**Proof sketch with decisive coefficients.** Put $Y=X/b$, differentiate the scaling amplitude and quadratic phase, and evaluate the Laplacian. The transport terms cancel when the phase coefficient is $\dot b/(2b)$; the residual quadratic terms require $\ddot b+\Omega^2b=\omega_0^2/b^3$; the nonlinear cubic term carries a relative factor $g(t)b^{2-d}$ after the kinetic scaling, requiring $g(t)b^{2-d}=g_0$. The scalar phase is canceled by $\tau'=b^{-2}$.
+
+For the **mass-critical cubic dimension $d=2$**, the coupling remains constant $g(t)=g_0$. For $d\ne2$ a time-dependent coupling must be imposed (unless the nonlinear term vanishes), or the simple ansatz is not exact. This is a genuinely qualified Pinney reduction, independent of the original $x$-coordinate and the Master parameter $\mu$. The lens scale $b(t)$ is not automatically the framework envelope $a(u)$: an identification requires $\Omega(t)$, $\omega_0$, a clock map $t\leftrightarrow u$ and a chosen reference state.
