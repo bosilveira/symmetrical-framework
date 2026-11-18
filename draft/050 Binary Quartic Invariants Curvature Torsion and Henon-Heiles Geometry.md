@@ -275,3 +275,282 @@ The important negative controls are:
 - The scalar identity $`\mathring{\mathcal R}=-\mathbb T+\mathbb B`$ from SF-DRAFT-040 is only a trace of this full tensor relation. It does not determine Weyl curvature.
 
 The next sections give a complete worked example where these distinctions are unavoidable.
+
+## 8. Hénon–Heiles as a separate two-degree-of-freedom Hamiltonian [K,D]
+
+Take a real two-dimensional natural Hamiltonian with distinct mechanical coordinates $`q_1,q_2`$ and momenta $`p_1,p_2`$:
+
+```math
+\mathcal H_{\rm HH}(q,p)=\frac12(p_1^2+p_2^2)+V(q_1,q_2).
+```
+
+For the generalized cubic Hénon–Heiles family choose the convention
+
+```math
+V(q_1,q_2)=\frac12(Aq_1^2+Bq_2^2)+\lambda(q_1^2q_2+\beta q_2^3).
+```
+
+The parameters $`A,B,\lambda,\beta`$ of this mechanical problem are **not** the Gram envelope's $`A,B,C`$ or the Master resolution and center $`r,c`$. The cubic Hénon–Heiles Hamiltonian used in the Eisenhart example is not the same as the **quartic Hénon–Heiles coupling forms** labeled $`Q_{168},Q_{1216}`$ in the archived invariant-theory investigation.
+
+The Lagrangian is
+
+```math
+L(q,\dot q)=\frac12(\dot q_1^2+\dot q_2^2)-V(q_1,q_2).
+```
+
+Euler–Lagrange gives a coupled second-order ODE:
+
+```math
+\ddot q_1=-Aq_1-2\lambda q_1q_2,\qquad\ddot q_2=-Bq_2-\lambda(q_1^2+3\beta q_2^2).
+```
+
+The first integral is
+
+```math
+\mathcal E=\frac12(\dot q_1^2+\dot q_2^2)+V(q_1,q_2).
+```
+
+For generic parameters there need not be a second independent integral giving Liouville integrability. The classical Sawada–Kotera, KdV and Kaup–Kupershmidt integrable cases impose special relations among couplings and harmonic terms. None of those integrability conditions is implied by the mere presence of a flat or curved connection in an auxiliary manifold.
+
+The potential gradient and Hessian, which drive two distinct geometric representations below, are
+
+```math
+\nabla V=\begin{pmatrix}Aq_1+2\lambda q_1q_2\\Bq_2+\lambda q_1^2+3\beta\lambda q_2^2\end{pmatrix},\qquad \mathrm{Hess}\,V=\begin{pmatrix}A+2\lambda q_2&2\lambda q_1\\2\lambda q_1&B+6\beta\lambda q_2\end{pmatrix}.
+```
+
+This is the **same second-order mechanical system** that can now be lifted to several inequivalent geometrical data sets.
+
+## 9. Eisenhart–Duval lift: Hamiltonian trajectories as null geodesics [K,D,V]
+
+Add two coordinates $`t`$ and $`s`$ to the configuration space, and consider the four-dimensional Lorentzian Brinkmann metric
+
+```math
+g_E=dq_1^2+dq_2^2+2dt\,ds-2V(q_1,q_2)\,dt^2.
+```
+
+It has one negative and three positive directions. The vector field $`\partial_s`$ is null and covariantly constant for its Levi-Civita connection. This is the standard scalar-potential Eisenhart–Duval or Bargmann lift [K].
+
+The geodesic Lagrangian is
+
+```math
+L_E=\frac12(\dot q_1^2+\dot q_2^2)+\dot t\dot s-V(q)\dot t^2.
+```
+
+The $`s`$-coordinate is cyclic and its conserved conjugate momentum is
+
+```math
+p_s=\frac{\partial L_E}{\partial\dot s}=\dot t=\kappa.
+```
+
+For $`\kappa\ne0`$, reparametrize the affine geodesic so $`\dot t=1`$. Euler–Lagrange in $`q_i`$ then gives
+
+```math
+\frac d{dt}\frac{\partial L_E}{\partial\dot q_i}-\frac{\partial L_E}{\partial q_i}=0\quad\Longrightarrow\quad\ddot q_i+\partial_iV=0.
+```
+
+This is **exactly** the original mechanical equation. For a null geodesic with $`\dot t=1`$, the condition $`L_E=0`$ gives
+
+```math
+\dot s=V-\frac12|\dot q|^2=2V-\mathcal E.
+```
+
+Thus the extra null coordinate recovers the mechanical action along the trajectory, up to the conventional energy term and integration constant.
+
+**Converse and scope.** A mechanical solution at fixed $`\mathcal E`$, together with $`s(t)`$ obtained by integration, lifts locally to a null geodesic. The correspondence needs $`\dot t\ne0`$; global completeness and periodicity of $`s`$ are separate. A null geodesic is a geodesic of a chosen auxiliary metric, not a declaration of physical spacetime dynamics.
+
+## 10. Levi-Civita curvature of the Eisenhart metric is the potential Hessian [D,V]
+
+In coordinate order $`(t,s,q_1,q_2)`$, the metric and inverse matrices are
+
+```math
+(g_{\alpha\beta})=\begin{pmatrix}-2V&1&0&0\\1&0&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix},\qquad (g^{\alpha\beta})=\begin{pmatrix}0&1&0&0\\1&2V&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix}.
+```
+
+For a time-independent potential, the only nonzero Levi-Civita Christoffel symbols, up to lower-index symmetry, are
+
+```math
+\mathring\Gamma^i{}_{tt}=\partial_iV,\qquad\mathring\Gamma^s{}_{ti}=-\partial_iV,\qquad i=1,2.
+```
+
+**Direct derivation.** Differentiate $`g_{tt}=-2V`$. All other metric components are constant. Substitution into the Levi-Civita metric formula yields the displayed terms; no metric field equation is used.
+
+Fix the Riemann sign convention for the remainder by
+
+```math
+R^\alpha{}_{\beta\mu\nu}=\partial_\mu\Gamma^\alpha{}_{\nu\beta}-\partial_\nu\Gamma^\alpha{}_{\mu\beta}+\Gamma^\alpha{}_{\mu\gamma}\Gamma^\gamma{}_{\nu\beta}-\Gamma^\alpha{}_{\nu\gamma}\Gamma^\gamma{}_{\mu\beta}.
+```
+
+**Theorem 10.1 [D,V] (Hessian–tidal curvature).** The only independent nonzero covariant Riemann components are
+
+```math
+\mathring R_{titj}=\partial_i\partial_jV,\qquad i,j\in\{1,2\}.
+```
+
+Taking the Ricci trace gives
+
+```math
+\mathring R_{tt}=\partial_1^2V+\partial_2^2V=\Delta_{\mathbb R^2}V,\qquad\mathring{\mathcal R}=0.
+```
+
+**Proof, step by step.**
+
+1. The nonzero connection coefficient $`\mathring\Gamma^i{}_{tt}`$ differentiates in the transverse coordinates to give $`\partial_j\partial_iV`$.
+2. The remaining connection terms can be checked directly from the sparse Christoffel list; the independent curvature components are those in the theorem.
+3. Contracting $`i,j`$ with the transverse Euclidean inverse metric gives $`\mathring R_{tt}=\Delta V`$.
+4. The inverse metric has $`g^{tt}=0`$, so the scalar trace vanishes even when $`\mathring R_{tt}`$ is nonzero.
+
+The *full Hessian*, not merely its trace or a scalar curvature invariant, survives in the curvature tensor. The third derivatives of $`V`$ would control covariant derivatives of this curvature.
+
+### 10.1 Jacobi geodesic deviation is precisely mechanical linearization
+
+Let $`q(t,\epsilon)`$ be a smooth family of mechanical trajectories and $`\xi^i=\partial_\epsilon q^i|_{\epsilon=0}`$. Differentiate the original equations:
+
+```math
+\ddot\xi^i+\sum_j(\partial_i\partial_jV)(q(t))\,\xi^j=0.
+```
+
+This is a matrix-valued second-order Jacobi/variational equation. It is also the transverse null-geodesic deviation equation of the Eisenhart metric, with the same Hessian matrix $`\mathring R_{titj}`$.
+
+This is a **precise geometric mechanism** for recovering a second-order differential equation and its perturbation theory. It neither presupposes integrability nor automatically separates the matrix system into two scalar Sturm–Liouville equations. A time-dependent orthogonal eigenbasis of the Hessian introduces additional first-derivative coupling terms.
+
+## 11. Weyl curvature and Petrov degeneracy of the scalar-potential lift [D,V,K]
+
+Because the scalar curvature is zero and the Ricci tensor has only the null $`tt`$ component, the Weyl tensor is the trace-free part of the transverse Hessian:
+
+```math
+C_{titj}=V_{ij}-\frac12\delta_{ij}\Delta V.
+```
+
+All other independent Weyl components vanish, up to tensor symmetries. Introduce the trace-free Hessian matrix
+
+```math
+\mathsf A=\begin{pmatrix}D/2&G\\G&-D/2\end{pmatrix},\qquad D=V_{11}-V_{22},\qquad G=V_{12}.
+```
+
+**Theorem 11.1 [D,V,K].** On the subset where $`\mathsf A\ne0`$, the Eisenhart Weyl tensor is Petrov type N with repeated null direction $`\partial_s`$. Where $`\mathsf A=0`$, it is Petrov type O. In either case its Weyl-spinor quartic invariants satisfy
+
+```math
+I_{\rm W}=0,\qquad J_{\rm W}=0.
+```
+
+**Proof, step by step.**
+
+1. The parallel null vector $`\partial_s`$ and the above Weyl component pattern place all nonzero curvature components in the same aligned null transverse sector of a Brinkmann pp-wave.
+2. Choose a null spin dyad/tetrad adapted to $`\partial_s`$. The only potentially nonzero Weyl scalar is one extreme component $`\Psi_0`$ or $`\Psi_4`$, depending on which null vector is designated first.
+3. The associated binary quartic is a pure fourth power of one linear form, for instance
+
+```math
+Q_{\rm W}(\xi,\eta)=\Psi_4\,\eta^4.
+```
+
+4. The raw or binomial quartic invariants vanish because all mixed coefficient products are zero. The quartic has a quadruple root when $`\Psi_4\ne0`$ (type N), and vanishes identically when $`\Psi_4=0`$ (type O).
+
+**Important: these vanishing invariants do not imply that the Levi-Civita curvature tensor vanishes.** The Riemann Hessian components may remain nonzero, and the Ricci tensor may remain nonzero even in the conformally flat type-O case.
+
+The same aligned null-index property forces scalar polynomial contractions of the pp-wave curvature to vanish, including $`\mathring{\mathcal R}`$, $`\mathring R_{\mu\nu}\mathring R^{\mu\nu}`$, $`C_{\alpha\beta\gamma\delta}C^{\alpha\beta\gamma\delta}`$ and the Kretschmann scalar. These are weaker diagnostic data than the nonzero Cartan/frame curvature components.
+
+### 11.1 Exact Hénon–Heiles Petrov coefficient
+
+For the chosen cubic potential in §8,
+
+```math
+D=A-B+2\lambda(1-3\beta)q_2,\qquad G=2\lambda q_1.
+```
+
+Consequently,
+
+```math
+\mathsf A=\begin{pmatrix}\frac12[A-B+2\lambda(1-3\beta)q_2]&2\lambda q_1\\2\lambda q_1&-\frac12[A-B+2\lambda(1-3\beta)q_2]\end{pmatrix}.
+```
+
+In a standard adapted null tetrad, the nonzero extreme Weyl coefficient is proportional (up to orientation and normalization) to
+
+```math
+\Psi_4\ \sim\ D+2iG=A-B+2\lambda(1-3\beta)q_2+4i\lambda q_1.
+```
+
+Thus the Weyl tensor is type O precisely at points where
+
+```math
+2\lambda q_1=0,\qquad A-B+2\lambda(1-3\beta)q_2=0.
+```
+
+Away from that algebraic locus it is type N. These formulas make no reference to the special Liouville-integrable Hénon–Heiles ratios; Petrov N is automatic for the **whole scalar-potential Eisenhart class**.
+
+**Counterexample to an attached claim.** Harmonic potential does not imply type O: $`V=q_1^2-q_2^2`$ has $`\Delta V=0`$ (Ricci-flat lift) but $`\mathsf A=\mathrm{diag}(2,-2)\ne0`$ (type N). Conversely an isotropic quadratic potential $`V=\alpha(q_1^2+q_2^2)/2`$ has $`\mathsf A=0`$ (type O) but $`\Delta V=2\alpha`$ and generally nonzero Ricci tensor.
+
+## 12. An exact Weitzenbock connection of the Eisenhart lift [D,V]
+
+Use the *null* coframe
+
+```math
+\vartheta^+=dt,\qquad\vartheta^-=ds-V(q)\,dt,\qquad\vartheta^1=dq_1,\qquad\vartheta^2=dq_2.
+```
+
+Its constant frame bilinear form is
+
+```math
+g_E=2\vartheta^+\vartheta^-+(\vartheta^1)^2+(\vartheta^2)^2.
+```
+
+Declare this null frame parallel for a flat metric-compatible connection $`\widetilde\nabla`$, with zero connection one-forms in the chosen frame. Its torsion two-forms are
+
+```math
+\mathcal T^+=0,\qquad\mathcal T^-=-V_1\,dq_1\wedge dt-V_2\,dq_2\wedge dt,\qquad\mathcal T^1=\mathcal T^2=0.
+```
+
+**Coordinate proof.** The coordinate coframe component is $`\vartheta^-_t=-V`$. With the same connection convention as SF-DRAFT-040, the only nonzero torsion components are
+
+```math
+\mathcal T^s{}_{it}=-V_i,\qquad \mathcal T^s{}_{ti}=V_i.
+```
+
+Thus the chosen **torsion tensor records the first derivatives of $`V`$**, while the Levi-Civita curvature records its second derivatives. Contorsion is the exact differential/algebraic bridge from one to the other (§7).
+
+### 12.1 The quadratic torsion scalar vanishes despite nonzero torsion
+
+With the trace convention $`v_\mu=\mathcal T^\nu{}_{\nu\mu}`$, direct inspection of the null components gives
+
+```math
+v_\mu=0.
+```
+
+Using exactly the quadratic scalar convention of SF-DRAFT-040,
+
+```math
+\mathbb T=\frac14\mathcal T_{\rho\mu\nu}\mathcal T^{\rho\mu\nu}+\frac12\mathcal T_{\rho\mu\nu}\mathcal T^{\nu\mu\rho}-v_\rho v^\rho,
+```
+
+each individual quadratic contraction vanishes:
+
+```math
+\mathcal T_{\rho\mu\nu}\mathcal T^{\rho\mu\nu}=0,\qquad\mathcal T_{\rho\mu\nu}\mathcal T^{\nu\mu\rho}=0,\qquad v_\rho v^\rho=0.
+```
+
+The reason is the **null index structure**: raising the first null index pairs it with the complementary null direction, whose relevant torsion components are zero. Hence
+
+```math
+\mathbb T=0.
+```
+
+Because $`\mathring{\mathcal R}=0`$ and $`\mathring{\mathcal R}=-\mathbb T+\mathbb B`$, the boundary divergence also vanishes:
+
+```math
+\mathbb B=0.
+```
+
+These equations hold for **every** smooth scalar potential $`V(q_1,q_2)`$ in the chosen Eisenhart null coframe, including highly nonlinear Hénon–Heiles potentials. Nevertheless $`\mathcal T^-\ne0`$ where $`\nabla V\ne0`$, and $`\mathring R_{titj}=V_{ij}`$ may be nonzero.
+
+**New exact negative control:** the pair of scalar teleparallel invariants $`(\mathbb T,\mathbb B)=(0,0)`$ and the Weyl pair $`(I_{\rm W},J_{\rm W})=(0,0)`$ are insufficient to reconstruct either the Hénon–Heiles potential, its integrability class, or its nonzero tidal curvature. Scalar-only identification loses the essential differential data.
+
+This is an explicit example of why the **tensorial** Levi-Civita/Weitzenbock dictionary is stronger than the scalar curvature–torsion–boundary identity. It is not an argument that the torsion *tensor* carries no information.
+
+### 12.2 Exact curvature hierarchy of the lift
+
+The same selected data give a graded chain of objects:
+
+```math
+V\ \xrightarrow{\ d\ }\ \nabla V\ \xrightarrow{\ \mathrm{coframe}\ }\ \mathcal T\ \xrightarrow{\ \nabla+\mathcal T^2\ }\ \mathring R\ \xrightarrow{\ \mathrm{tracefree}\ }\ C\ \xrightarrow{\ \mathrm{spinor}\ }\ Q_{\rm W}.
+```
+
+At successive steps information may be projected away: $`V`$ is determined by $`\nabla V`$ only up to an additive constant, $`\mathring R`$ sees the Hessian rather than the absolute gradient, the Weyl tensor loses the Hessian trace, and the binary quartic invariants lose nilpotent Petrov-N information. Conversely, reconstructing the full $`V`$ from one of the final scalar invariants is impossible without extra differential and boundary data.
