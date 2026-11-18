@@ -554,3 +554,356 @@ V\ \xrightarrow{\ d\ }\ \nabla V\ \xrightarrow{\ \mathrm{coframe}\ }\ \mathcal T
 ```
 
 At successive steps information may be projected away: $`V`$ is determined by $`\nabla V`$ only up to an additive constant, $`\mathring R`$ sees the Hessian rather than the absolute gradient, the Weyl tensor loses the Hessian trace, and the binary quartic invariants lose nilpotent Petrov-N information. Conversely, reconstructing the full $`V`$ from one of the final scalar invariants is impossible without extra differential and boundary data.
+
+## 13. A constructed tidal-Hessian quartic: nonzero invariants despite Petrov N [D,V]
+
+The lift's curvature matrix $`\mathsf M=(\mathring R_{titj})=(V_{ij})`$ is a real symmetric $`2\times2`$ matrix. Because the transverse plane carries a chosen Euclidean kinetic metric, its eigenvalues $`\lambda_1,\lambda_2`$ are invariant under **orthonormal changes of transverse coordinates**.
+
+We can construct from this data a quartic of **exactly the same type as the archived surface fundamental-form quartic**, but this time the second quadratic form is the mechanical Hessian, not a surface second fundamental form:
+
+```math
+F_{\rm tidal}(X,Z)=(X^2+Z^2)(\lambda_1X^2+\lambda_2Z^2).
+```
+
+Let $`\tau=\mathrm{tr}\,\mathsf M=\Delta V`$ and $`d=\det\mathsf M`$. The eigenvalue sum and product are $`\tau,d`$.
+
+**Theorem 13.1 [D,V] (tidal quartic invariants).** The constructed quartic has
+
+```math
+I_{\rm tidal}=\tau^2+12d,\qquad J_{\rm tidal}=2\tau(36d-\tau^2),\qquad\Delta_{\rm tidal}=16d(\tau^2-4d)^2.
+```
+
+On the smooth locus its elliptic modulus is
+
+```math
+j_{\rm tidal}=\frac{16(\tau^2+12d)^3}{d(\tau^2-4d)^2}.
+```
+
+**Proof.** In the eigenbasis the unweighted coefficients are $`a=\lambda_1`$, $`c_2=\lambda_1+\lambda_2=\tau`$, $`f=\lambda_2`$, with $`b=d_{\rm cubic}=0`$. Substitute into the definitions of §2, and use $`\tau^2-4d=(\lambda_1-\lambda_2)^2`$.
+
+This construction is **canonical relative to the chosen Euclidean transverse kinetic metric and Hessian tensor**, up to an interchange of eigenvalues that does not alter the stated invariants. It is not canonically a Petrov Weyl-spinor quartic; the map from a symmetric $`2\times2`$ tidal tensor to a binary quartic is an **additional polynomial construction**.
+
+### 13.1 Exact expression in the cubic Hénon–Heiles parameters
+
+For the cubic potential of §8, define
+
+```math
+\tau=A+B+2\lambda(1+3\beta)q_2,\qquad d=(A+2\lambda q_2)(B+6\beta\lambda q_2)-4\lambda^2q_1^2.
+```
+
+Then $`I_{\rm tidal}`$ and $`J_{\rm tidal}`$ above are explicit polynomials in $`(q_1,q_2;A,B,\lambda,\beta)`$, and
+
+```math
+\tau^2-4d=[A-B+2\lambda(1-3\beta)q_2]^2+16\lambda^2q_1^2.
+```
+
+Thus
+
+```math
+\Delta_{\rm tidal}=16d\left([A-B+2\lambda(1-3\beta)q_2]^2+16\lambda^2q_1^2\right)^2.
+```
+
+Over the real transverse plane, this quartic is singular precisely when $`\det\mathsf M=0`$ or $`\mathsf M`$ is isotropic ($`\lambda_1=\lambda_2`$). At the latter points the **Weyl tensor** vanishes (type O). Elsewhere the Weyl type is N, irrespective of whether the tidal quartic is smooth or singular.
+
+### 13.2 A simple exact counterexample to conflating the two invariant pairs
+
+Choose a local quadratic potential $`V=(q_1^2+2q_2^2)/2`$. Then
+
+```math
+\mathsf M=\begin{pmatrix}1&0\\0&2\end{pmatrix},\qquad \tau=3,\qquad d=2.
+```
+
+The tidal quartic is
+
+```math
+F_{\rm tidal}=(X^2+Z^2)(X^2+2Z^2)=X^4+3X^2Z^2+2Z^4.
+```
+
+Its invariants are
+
+```math
+I_{\rm tidal}=33,\qquad J_{\rm tidal}=378,\qquad\Delta_{\rm tidal}=32,\qquad j_{\rm tidal}=287496.
+```
+
+But the **very same** potential's Eisenhart Weyl-spinor quartic is type N, so
+
+```math
+I_{\rm W}=J_{\rm W}=0.
+```
+
+It is impossible to identify these two invariant pairs as scalars of one unnamed “quartic”. The number $`287496`$ also occurs in the archived quartic Hénon–Heiles pencil at its parameter $`t=0`$, but that numerical match alone is **not** a constructed equivalence of dynamical Hamiltonians.
+
+### 13.3 Recovering the tidal quartic from a torsion derivative
+
+In the chosen Eisenhart Weitzenbock coframe of §12,
+
+```math
+\mathcal T^s{}_{it}=-V_i,\qquad M_{ij}=-\partial_j\mathcal T^s{}_{it}=V_{ij}.
+```
+
+Therefore $`\tau`$ and $`d`$, hence the constructed $`I_{\rm tidal}`$ and $`J_{\rm tidal}`$, are polynomials in **first derivatives of the full torsion tensor in this preferred chart**. This is a genuine torsion-to-invariant construction, but it does not depend on the vanishing scalar $`\mathbb T`$. The preferred-frame and coordinate qualifications must be retained; a general covariant formulation uses the full contorsion identity rather than bare partial derivatives.
+
+This result is potentially useful for an eventual Layer II theorem: it gives two separate, explicitly typed paths to the *same mechanical tidal matrix*, one through Levi-Civita curvature and one through a specified teleparallel torsion derivative.
+
+## 14. The archived Hénon–Heiles quartic pencil and the Master quartic [D,V,H352,H353,H403]
+
+The uploaded ZIP contains an independent, extensive algebraic identification concerning **quartic Hénon–Heiles coupling forms**. This must be imported accurately, rather than attributed to the generic cubic mechanical potential of §8.
+
+The two historical quartic coupling forms are
+
+```math
+Q_{168}=X^4+6X^2Z^2+8Z^4,\qquad Q_{1216}=X^4+12X^2Z^2+16Z^4.
+```
+
+Their projective pencil with affine coordinate $`t`$ is
+
+```math
+P_t=(1+t)X^4+6(1+2t)X^2Z^2+8(1+2t)Z^4.
+```
+
+The normalized Master energy quartic, in homogeneous notation, is
+
+```math
+Q_e(X,Z)=-X^4+X^2Z^2+eZ^4.
+```
+
+**Theorem 14.1 [H403,D,V] (exact projective equivalence away from the exceptional member).** Set
+
+```math
+e(t)=-\frac{2(t+1)}{9(2t+1)}.
+```
+
+For $`2t+1\ne0`$, the exact polynomial identity is
+
+```math
+P_t(X,Z)=-\frac{2t+1}{2}Q_{e(t)}(2iZ,\sqrt3X).
+```
+
+**Direct proof, step by step.**
+
+1. Substitute $`(X_Q,Z_Q)=(2iZ,\sqrt3X)`$ into $`Q_e`$.
+2. The terms are $`-(2iZ)^4=-16Z^4`$, $`(2iZ)^2(\sqrt3X)^2=-12X^2Z^2`$, and $`e(\sqrt3X)^4=9eX^4`$.
+3. Multiply by $`-(2t+1)/2`$; the $`Z^4`$ and $`X^2Z^2`$ coefficients become $`8(2t+1)`$ and $`6(2t+1)`$.
+4. Insert $`9e(t)=-2(t+1)/(2t+1)`$; the $`X^4`$ coefficient becomes $`1+t`$. This is exactly $`P_t`$.
+
+The coordinate transformation is invertible over $`\mathbb C`$ and the overall scaling is nonzero for $`t\ne-1/2`$. **This is projective equivalence of binary quartic families**. The complex coefficient $`i`$ and the parameter-dependent scale matter: it is not automatically an equivalence over $`\mathbb R`$ of the full mechanical Hénon–Heiles equations, energy surfaces, canonical symplectic forms or their real-time dynamics.
+
+At $`t=-1/2`$ the projective pencil has a singular fourth-power member and $`e(t)`$ is infinite. The formula with a finite Master energy does not apply without projective compactification.
+
+### 14.1 Raw I, J and discriminant of the Hénon–Heiles pencil
+
+An even quartic $`aX^4+c_2X^2Z^2+fZ^4`$ has $`I=c_2^2+12af`$, $`J=2c_2(36af-c_2^2)`$. Substituting the coefficients of $`P_t`$ yields
+
+```math
+I_P=12(2t+1)(14t+11),\qquad J_P=432(2t+1)^2(6t+7).
+```
+
+Its polynomial discriminant is
+
+```math
+\Delta_P=2048(t+1)(2t+1)^3(10t+1)^2.
+```
+
+The smooth modulus is
+
+```math
+j_P(t)=216\frac{(11+14t)^3}{(1+t)(1+10t)^2}.
+```
+
+For the Master quartic,
+
+```math
+I_M=1-12e,\qquad J_M=-2-72e,\qquad\Delta_M=-16e(1+4e)^2.
+```
+
+Its modulus is
+
+```math
+j_M(e)=-16\frac{(1-12e)^3}{e(1+4e)^2}.
+```
+
+**Verification of compatibility:** Direct substitution of $`e=e(t)`$ into $`j_M(e)`$ simplifies to $`j_P(t)`$. The archived discriminant identity is likewise verified:
+
+```math
+\Delta_P=6^6(2t+1)^6\,\Delta_M(e(t)).
+```
+
+The singular members occur at $`t=-1`$ with multiplicity one, $`t=-1/10`$ with multiplicity two, and $`t=-1/2`$ with multiplicity three. They correspond to root-collision partitions $`(2,1,1)`$, $`(2,2)`$, and $`(4)`$ respectively (H403).
+
+### 14.2 The two special modular values
+
+At $`t=-7/6`$, one obtains $`e=-1/36`$ and $`j_P=1728`$. At $`t=7/2`$, one obtains $`e=-1/8`$ and $`j_P=8000`$:
+
+```math
+j_P(-7/6)=1728,\qquad j_P(7/2)=8000.
+```
+
+At $`j=1728`$ the smooth Master/Hénon–Heiles elliptic curve has the same abstract complex elliptic modulus as the catenoid's fundamental-form quartic of §4. Over $`\mathbb C`$ smooth elliptic curves with equal $`j`$ are abstractly isomorphic. **However, this equality at a selected parameter does not supply a canonical map between the catenoid immersion, the Hénon–Heiles Hamiltonian, their cycles, or their time differentials.** An explicit realization would require those extra data and belongs in [O3].
+
+At $`e=-1/8`$, the elliptic energy curve has $`j=8000`$ and nonzero discriminant, as in H406. The same value is not a Weyl-spinor Petrov invariant of the associated Eisenhart lift, because its Weyl quartic remains singular type N with $`I_{\rm W}=J_{\rm W}=0`$.
+
+## 15. The Hessian pencil, modular curves and what the connections do not imply [H404,H405,H406]
+
+The archived H404 computation defines a binary-quartic Hessian covariant using ordinary polynomial partial derivatives:
+
+```math
+\mathcal H(F)=\frac{F_{XX}F_{ZZ}-F_{XZ}^2}{144}.
+```
+
+From a quartic $`F`$ one forms a projective pencil $`F+t\mathcal H(F)`$. The archive verifies its invariant and discriminant syzygies, including a squared cubic factor of the pencil discriminant and its roots at the reciprocals of the associated elliptic curve's two-torsion coordinates.
+
+The important classification is **algebraic**: the polynomial Hessian covariant is an $`SL_2`$-equivariant construction on $`\mathrm{Sym}^4(\mathbb C^2)`$, not the Riemannian covariant Hessian $`\nabla df`$ of a surface potential and not the Hessian of the mechanical Hénon–Heiles potential $`V(q_1,q_2)`$.
+
+The standard normal form recorded in H405 is
+
+```math
+F_k(X,Z)=X^4+6kX^2Z^2+Z^4.
+```
+
+Its invariant moduli are
+
+```math
+I_k=12(3k^2+1),\qquad J_k=432k(1-k^2),\qquad \Delta_k=256(9k^2-1)^2.
+```
+
+and
+
+```math
+j_k=1728\frac{(3k^2+1)^3}{(9k^2-1)^2}.
+```
+
+The archival $`S_3`$ action on $`k`$, the degree-six map to $`j`$, the Fricke involution at level two, and the Hessian self-map all belong to the **elliptic quartic-pencil** problem. H405 explicitly corrects the tempting false claim that taking the Hessian preserves $`j`$; generically it does not.
+
+No Levi-Civita connection, Weitzenbock frame, Hénon–Heiles lift or spin structure is necessary to state those algebraic invariant formulas. Geometric connections can realize such quartics only through a separately specified construction like §§3, 6, 13 or 14.
+
+### 15.1 A clear independence test
+
+Consider the original cubic Master at $`e=1/12`$. Then $`I_M=0`$, $`J_M=-8`$, and $`\Delta_M\ne0`$; therefore $`j_M=0`$, the smooth equianharmonic modulus. Its associated scalar-potential Eisenhart Weyl quartic would still have $`I_{\rm W}=J_{\rm W}=0`$, for which no smooth elliptic $`j`$ is defined. The two statements have the **same algebraic symbol zero** but radically different geometric meanings.
+
+At $`e=-1/36`$, the smooth Master quartic has $`J_M=0`$, $`I_M\ne0`$ and $`j=1728`$. This is the same abstract harmonic quartic locus as the nonflat minimal-surface construction, but is not produced by it without an explicit map.
+
+## 16. Jacobi–Maupertuis geometry: an independent Riemannian realization [K,D,V]
+
+The Eisenhart lift is Lorentzian and uses an extra null coordinate. At a fixed mechanical energy $`\mathcal E`$, a **different** geometric construction is available: the Jacobi–Maupertuis metric on the Hill region where $`\mathcal E>V`$:
+
+```math
+g_J=2(\mathcal E-V(q_1,q_2))(dq_1^2+dq_2^2)=\Lambda^2(dq_1^2+dq_2^2),\qquad \Lambda=\sqrt{2(\mathcal E-V)}.
+```
+
+Mechanical trajectories at energy $`\mathcal E`$ are reparametrized geodesics of this metric on its regular region. The Jacobi arclength and mechanical clock obey
+
+```math
+\frac{ds_J}{dt}=2(\mathcal E-V(q(t))).
+```
+
+**Proof.** The kinetic energy is $`|\dot q|^2/2=\mathcal E-V`$. Thus the speed in $`g_J`$ is $`\Lambda|\dot q|=2(\mathcal E-V)`$. Maupertuis' variational principle then identifies fixed-energy unparametrized mechanical paths with geodesics.
+
+Introduce the conformal factor $`h=\ln\Lambda=\frac12\ln[2(\mathcal E-V)]`$. The Gaussian curvature formula is
+
+```math
+K_J=-\Lambda^{-2}(\partial_1^2h+\partial_2^2h).
+```
+
+**Theorem 16.1 [D,V] (Jacobi curvature from gradient and Hessian).** On the Hill region,
+
+```math
+K_J=\frac{\Delta V}{4(\mathcal E-V)^2}+\frac{|\nabla V|^2}{4(\mathcal E-V)^3}.
+```
+
+**Proof, step by step.**
+
+1. Differentiate $`h`$:
+
+```math
+\partial_i h=-\frac{V_i}{2(\mathcal E-V)}.
+```
+
+2. Differentiate again and take the Euclidean trace:
+
+```math
+\Delta h=-\frac{\Delta V}{2(\mathcal E-V)}-\frac{|\nabla V|^2}{2(\mathcal E-V)^2}.
+```
+
+3. Multiply by $`-\Lambda^{-2}=-[2(\mathcal E-V)]^{-1}`$ and simplify. This gives the formula in the theorem.
+
+The **scalar Jacobi curvature** depends on both the Hessian trace and the squared gradient. It differs from the trace-free Hessian controlling the Eisenhart Weyl tensor. In particular, Jacobi curvature can diverge at a Hill boundary $`\mathcal E=V`$ where the chosen metric degenerates; that is not automatically a curvature singularity of the smooth four-dimensional Eisenhart lift.
+
+### 16.1 A chosen Weitzenbock connection of the Jacobi metric
+
+Use the orthonormal coframe
+
+```math
+\vartheta^1=\Lambda\,dq_1,\qquad \vartheta^2=\Lambda\,dq_2.
+```
+
+Declare it parallel for a chosen flat metric-compatible tangent connection. Its torsion two-forms are
+
+```math
+\mathcal T^1=d\vartheta^1=-\Lambda_2\,dq_1\wedge dq_2,\qquad \mathcal T^2=d\vartheta^2=\Lambda_1\,dq_1\wedge dq_2.
+```
+
+Using $`\Lambda_i=-V_i/\Lambda`$, write them explicitly as
+
+```math
+\mathcal T^1=\frac{V_2}{\Lambda}\,dq_1\wedge dq_2,\qquad\mathcal T^2=-\frac{V_1}{\Lambda}\,dq_1\wedge dq_2.
+```
+
+The Levi-Civita connection one-form in the same oriented tangent-frame convention as SF-DRAFT-030 is
+
+```math
+\omega_{12}^{LC}=h_2\,dq_1-h_1\,dq_2=\frac{-V_2\,dq_1+V_1\,dq_2}{2(\mathcal E-V)}.
+```
+
+Its curvature two-form is
+
+```math
+d\omega_{12}^{LC}=-(\Delta h)\,dq_1\wedge dq_2=K_J\,\vartheta^1\wedge\vartheta^2.
+```
+
+This is an exact **second curvature–torsion dictionary** for the same mechanical system, different from the null Eisenhart lift: the chosen two-dimensional torsion encodes first derivatives of the conformal Jacobi factor, and its Levi-Civita curvature follows by differentiation.
+
+### 16.2 Fundamental limitations of Jacobi geometry
+
+The metric depends on the chosen energy $`\mathcal E`$. It is defined only where $`\mathcal E-V>0`$. The curve parameter changes, so temporal growth rates and Lyapunov exponents require careful clock conversion. Neither the scalar curvature of $`g_J`$ nor its teleparallel torsion scalar uniquely determines whether the original two-degree-of-freedom Hénon–Heiles Hamiltonian is Liouville integrable.
+
+## 17. A third geometric comparison: conformally flat Friedmann versus type-N Eisenhart [D,H313]
+
+Draft SF-DRAFT-040 constructs a **different** four-dimensional Lorentzian warped metric from the reciprocal Master envelope:
+
+```math
+g_F=-du^2+a(u)^2[(dq^1)^2+(dq^2)^2+(dq^3)^2],\qquad a(u)=\mu^{1/4}\sqrt{\cosh(ru)}.
+```
+
+This spatially flat FLRW-type metric is conformally flat for **any** scale factor $`a(u)`$, so its Levi-Civita Weyl tensor is identically zero:
+
+```math
+C[g_F]=0,\qquad I_{\rm W}[g_F]=J_{\rm W}[g_F]=0,\qquad \mathrm{Petrov\ type\ O}.
+```
+
+The chosen homogeneous Weitzenbock scalar and boundary divergence are nonetheless nontrivial:
+
+```math
+\mathbb T[g_F]=6H^2=\frac{3r^2}{2}W^2,\qquad\mathbb B[g_F]=\mathbb T[g_F]+3r^2,\qquad\mathring{\mathcal R}[g_F]=3r^2.
+```
+
+Compare with the Hénon–Heiles Eisenhart metric:
+
+```math
+I_{\rm W}[g_E]=J_{\rm W}[g_E]=0,\qquad\mathrm{Petrov\ type\ N\ generically},\qquad\mathbb T[g_E]=\mathbb B[g_E]=\mathring{\mathcal R}[g_E]=0.
+```
+
+The **same Weyl invariant pair $`(0,0)`$ occurs in geometries of different Petrov types and very different torsion/curvature behavior**. Therefore the mere coincidence of quartic invariants cannot establish a geometric identification, a conformal equivalence, or an equivalence between their respective second-order differential systems.
+
+## 18. Cartan's (2,3,5) quartic: a possible additional bridge, not an automatic consequence [K,O]
+
+In classical Cartan geometry, a rank-two distribution $`D\subset TM^5`$ with growth vector $`(2,3,5)`$ has a canonical parabolic geometry. Its fundamental harmonic curvature is a binary quartic section
+
+```math
+\mathcal C\in\Gamma(\mathrm{Sym}^4D^*).
+```
+
+Its projective root type is often described using Petrov-like labels. This is a **genuine** curvature-quartic appearance in a geometry not built from a four-dimensional Lorentzian Weyl spinor. Modern work also relates certain Cartan quartics to Weyl quartics of specifically constructed para-Kähler–Einstein twistor geometries.
+
+However, a generic pair of second-order Hénon–Heiles ODEs is **not automatically** a specified (2,3,5)-distribution or an almost-Grassmannian geometry. To claim a Cartan quartic from it, one must provide the five-manifold, rank-two distribution, derived flag, appropriate Cartan connection and explicit harmonic-curvature coefficients. There is no established theorem in the uploaded sources identifying this quartic with the Master/Hénon–Heiles energy quartic.
+
+Thus this is a legitimate **open research path**, not a proved universal equivalence or a mechanism that distinguishes integrable and chaotic parameter values merely by the symbols I and J.
