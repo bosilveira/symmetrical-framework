@@ -294,3 +294,132 @@ C_q'(t)=\frac{C_q(t)^{q+2}}{q+1-qC_q(t)}.
 ```
 
 On the real outer branch $`C_q'>0`$ until $`C_q=(q+1)/q`$, where the inverse derivative diverges.
+
+## 6. Inner turning point and reciprocal-parameter inversion
+
+The smaller root tends to zero when $`v\to0`$. It is generally a Puiseux series, not an ordinary Taylor series in $`v`$.
+
+Put $`t=c_qv`$ and $`s=t^{1/q}`$. The turning-point equation can be rearranged as
+
+```math
+X=s(1-X)^{-1/q}.
+```
+
+Lagrange–Bürmann gives the exact local inverse branch
+
+```math
+X_{q,-}(v)=\sum_{n=1}^{\infty}\frac1n\binom{n/q+n-2}{n-1}s^n,\qquad s=(c_qv)^{1/q}.
+```
+
+The first terms are
+
+```math
+X_{q,-}=s+\frac1q s^2+\frac{q+3}{2q^2}s^3+O(s^4).
+```
+
+This converges as an analytic series in $`s`$ near zero. For $`q=2`$, its powers correspond to half-integer powers of $`v`$; for $`q=4`$, they correspond to quarter-integer powers.
+
+### Theorem 6.1 — Exact turning-point reciprocity
+
+For all real $`q>0`$,
+
+```math
+c_{1/q}^{\,q}=c_q.
+```
+
+For $`0<v<1`$, the real root branches satisfy
+
+```math
+X_{q,-}(v)=1-X_{1/q,+}(v^{1/q}),\qquad X_{q,+}(v)=1-X_{1/q,-}(v^{1/q}).
+```
+
+Equivalently,
+
+```math
+X_{q,-}(v)=1-\frac1{C_{1/q}(c_{1/q}v^{1/q})}.
+```
+
+**Proof.**
+
+1. Compute directly $`c_{1/q}^{\,q}=q^q/(q+1)^{q+1}`$.
+2. Introduce $`Y=1-X`$ and take the positive $`q`$-th root of $`X^q(1-X)=c_qv`$:
+
+```math
+Y^{1/q}(1-Y)=c_{1/q}v^{1/q}.
+```
+
+3. This is exactly the normalized turning-point equation for parameter $`1/q`$ and level $`v^{1/q}`$.
+4. The map $`X\mapsto1-X`$ reverses the order of the two roots, so small and large branches are interchanged.
+5. Substitute Theorem 5.1 for the reciprocal outer root to obtain the last formula.
+
+At $`q=1`$ this reduces to $`X_{1,-}(v)+X_{1,+}(v)=1`$. At $`q=2`$ it pairs the branches with those at $`q=1/2`$. The theorem concerns the selected positive real inverse branches; it is not by itself a statement about complex monodromy or Jacobians.
+
+## 7. Convergence boundary, fold singularity, and asymptotics
+
+### Proposition 7.1 — Turning-point coalescence
+
+As $`v\uparrow1`$, let $`\delta=1-v`$. Then
+
+```math
+X_{q,\pm}(v)=\frac q{q+1}\ \pm\sqrt{\frac{2q}{(q+1)^3}}\sqrt\delta-\frac{2(q-1)}{3(q+1)^2}\delta+O(\delta^{3/2}).
+```
+
+**Proof.**
+
+1. At $`X_*=q/(q+1)`$, the derivatives of $`P_q(X)=X^q(1-X)`$ are
+
+```math
+P_q'(X_*)=0,\qquad P_q''(X_*)=-qX_*^{q-2}<0,\qquad P_q'''(X_*)=-2q(q-1)X_*^{q-3}.
+```
+
+2. Substitute $`X=X_*+a\delta^{1/2}+b\delta+O(\delta^{3/2})`$ into $`P_q(X)=c_q(1-\delta)`$.
+3. Comparing coefficients of $`\delta`$ gives
+
+```math
+\frac12P_q''(X_*)a^2=-c_q\quad\Longrightarrow\quad a^2=\frac{2q}{(q+1)^3}.
+```
+
+4. Comparing coefficients of $`\delta^{3/2}`$ gives
+
+```math
+P_q''(X_*)ab+\frac16P_q'''(X_*)a^3=0\quad\Longrightarrow\quad b=-\frac{2(q-1)}{3(q+1)^2}.
+```
+
+5. Choose the positive sign of $`a`$ for $`X_{q,+}`$ and the negative sign for $`X_{q,-}`$.
+
+Implicit differentiation further gives
+
+```math
+\frac{dX_{q,\pm}}{dv}=\frac{c_q}{P_q'(X_{q,\pm})}.
+```
+
+Thus the slopes of both inverse branches diverge in magnitude like $`(1-v)^{-1/2}`$. This is the ordinary analytic fold produced by the merger of two simple roots.
+
+### Proposition 7.2 — Exact radius of the generalized Catalan series
+
+For each fixed real $`q>0`$,
+
+```math
+A_n(q)=\frac1{qn+1}\binom{(q+1)n}{n}\sim\frac{\sqrt{q+1}}{\sqrt{2\pi}\,q^{3/2}}\,n^{-3/2}c_q^{-n}.
+```
+
+**Proof.**
+
+1. Write the binomial coefficient as a ratio of Gamma functions,
+
+```math
+\binom{(q+1)n}{n}=\frac{\Gamma((q+1)n+1)}{\Gamma(n+1)\Gamma(qn+1)}.
+```
+
+2. Apply Stirling's formula separately to the three Gamma factors.
+3. Their exponential ratio is $`((q+1)^{q+1}/q^q)^n=c_q^{-n}`$; the remaining power and prefactor are precisely $`n^{-3/2}\sqrt{q+1}/(\sqrt{2\pi}\,q^{3/2})`$.
+4. The root test therefore yields radius of convergence exactly $`c_q`$ for $`C_q(t)`$.
+5. At the positive boundary $`t=c_q`$, the asymptotic $`n^{-3/2}`$ is summable, so the series converges there. Its value on the continuous real branch is
+
+```math
+C_q(c_q)=\frac{q+1}{q},\qquad X_{q,+}(1)=\frac q{q+1}.
+```
+
+The denominator of $`C_q'(t)`$ in Section 5.3 vanishes at this value. Consequently the turning-point fold, the square-root singularity, the coefficient asymptotics, and the inverse-series radius are all descriptions of the same critical event.
+
+**Do not conflate radii.** This radius $`c_q`$ belongs to the series for $`C_q`$ about $`t=0`$. It says nothing immediate about the global radius of the period series about $`v=1`$.
