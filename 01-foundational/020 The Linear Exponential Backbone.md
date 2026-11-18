@@ -93,9 +93,7 @@ $$
 Then
 
 $$
-
 R' = rb,\qquad b'=rR,\qquad R^2-b^2=1,
-
 \tag{2.5}
 $$
 
