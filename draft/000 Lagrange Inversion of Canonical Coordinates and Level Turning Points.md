@@ -767,3 +767,47 @@ X=X_-+(X_+-X_-)\sin^2\theta,\qquad 0\le\theta\le\pi/2
 ```
 
 regularizes both endpoint square-root singularities. Quadrature at $`v=0.997`$ agreed with the second-order period expansion of Section 9.3 to relative errors around $`10^{-9}`$ for the six values above. Such checks are evidence, not a substitute for the analytic proof or certified interval bounds.
+
+## 12. Claim-by-claim consolidation destinations
+
+The table separates **the mathematical destination** from the **evidence review**. A draft is not canonical simply because it appears in this repository.
+
+| Proposed result | Draft source | Historical provenance | Candidate layer and chapter | Review state |
+|---|---|---|---|---|
+| Catalan inverse of $`S`$ and logistic/logarithmic reconstruction | Section 3.1–3.3 | Canonical Riccati/conic fields | Layer I: Riccati and Conic Structures | Stepwise proof; independent audit pending |
+| Arctangent/Gudermannian half-split reconstruction | Section 3.4 | Canonical primitive | Layer I: Integral Representations | Stepwise proof; independent audit pending |
+| Generalized Fuss–Catalan outer turning point | Section 5 | H147 | Layer I: Level Hierarchy | Classical inversion mechanism, application proved |
+| Puiseux inner branch and exact reciprocal turning points | Section 6 | H147–H148 | Layer I: Energy Classification | Stepwise proof; global continuation open |
+| Critical fold and inverse-series convergence | Section 7 | H147 | Layer I: Energy Classification | Derivation and Stirling proof |
+| Real period integral and reciprocal identity | Section 8 | H147–H148 | Layer III: Period Correspondences | Historical result cited; source audit recommended |
+| **All-orders local period coefficient theorem** | Section 9 | H147–H148 plus extended derivation | Layer III: Period Correspondences | Stepwise proof plus independent symbolic checks |
+| Bring-quintic and integer-level curve genus | Section 10 | H147 | Layer III: Algebraic Inversion and Period Curves | Algebraic derivation; geometric model audit recommended |
+
+No new permanent CLAIMS ID has been allocated. The references H147, H148 and H151 identify *historical source records*, not automatic approvals. Assign final theorem and equation identifiers only when the individual statements are promoted into the authoritative DLMF-style sequence.
+
+## 13. Corrections, caveats and next questions
+
+1. **Coefficient correction.** At $`q=1/2`$ the coefficient of $`t^3`$ in $`C_q(t)`$ is $`21/8`$, not $`3`$.
+2. **Different local variables.** The outer turning point has a Taylor series in $`v`$ around zero; the inner branch generally requires a series in $`v^{1/q}`$.
+3. **Different radii of convergence.** The exact radius $`c_q`$ refers to the Fuss–Catalan turning-point series. The **global** radius of the period's Taylor series near $`v=1`$ is not determined here.
+4. **Fold versus period regularity.** Turning-point derivatives diverge at $`v=1`$, while the period possesses an ordinary analytic expansion in $`1-v`$ there.
+5. **Distinct hypergeometric roles.** At $`q=4`$, the fifths function in the Bring inverse and the tenths functions in the period representation are not the same object.
+6. **Integer versus real parameters.** The local analytic inversion and period theorem hold for all $`q>0`$; the algebraic-curve genus models in Section 10 were established only for positive integers $`q`$.
+7. **Reciprocal domains.** Real turning-point reciprocity is exact. It does not, without additional evidence, prove equality of complex monodromy groups or Jacobians.
+8. **No forced physical interpretation.** The framework's ODE, periods, and coordinate maps are mathematical constructions. Physical terminology adds no hypotheses or conclusions to these proofs.
+9. **Literature novelty remains open.** Lagrange–Bürmann, Fuss–Catalan inversion, analytic Morse coordinates, and oscillator-period expansions are established techniques. No claim of historical originality is made here for the resulting formulas.
+
+**Recommended further work:** compute $`\beta_3(q)`$ from Theorem 9.1, obtain recurrence relations for $`\beta_n(q)`$, compare with action-angle/Birkhoff normal forms, determine the complex singularities controlling the period-series radius, and verify the precise birational maps to the archived Weierstrass/genus-two models. Then review each result in dependency order rather than attempting to publish the entire draft unchanged.
+
+## 14. Reference sources
+
+- [NIST DLMF, Section 1.10(vii): Inverse Functions](https://dlmf.nist.gov/1.10.vii), containing the classical inverse-function and Lagrange inversion framework.
+- [Wolfram MathWorld: Lagrange Inversion Theorem](https://mathworld.wolfram.com/LagrangeInversionTheorem.html).
+- Historical archive, '04-follow-ups/fox-h-reading.md', $`q=4`$ quintic and Mellin/period distinctions.
+- Historical archive, '04-follow-ups/period-hierarchy.md', normalized period and reciprocal-parameter structure.
+- User-supplied historical 'CLAIMS(6).md', particularly H147, H148, H151.
+- [01-foundational/010 Variables and Normalizations](../01-foundational/010%20Variables%20and%20Normalizations.md).
+- [01-foundational/020 The Linear Exponential Backbone](../01-foundational/020%20The%20Linear%20Exponential%20Backbone.md).
+- [Draft folder policy and numbering](README.md).
+
+**End of provisional investigation 000.** Preserve this complete derivation and its audit trail when migrating individual verified statements into their authoritative mathematical sections.
