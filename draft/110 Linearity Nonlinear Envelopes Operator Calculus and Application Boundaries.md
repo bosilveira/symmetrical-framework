@@ -601,3 +601,155 @@ Choose a positive scale $b(t)$ and a new clock $\tau'(t)=b(t)^{-2}$. Define the 
 **Proof sketch with decisive coefficients.** Put $Y=X/b$, differentiate the scaling amplitude and quadratic phase, and evaluate the Laplacian. The transport terms cancel when the phase coefficient is $\dot b/(2b)$; the residual quadratic terms require $\ddot b+\Omega^2b=\omega_0^2/b^3$; the nonlinear cubic term carries a relative factor $g(t)b^{2-d}$ after the kinetic scaling, requiring $g(t)b^{2-d}=g_0$. The scalar phase is canceled by $\tau'=b^{-2}$.
 
 For the **mass-critical cubic dimension $d=2$**, the coupling remains constant $g(t)=g_0$. For $d\ne2$ a time-dependent coupling must be imposed (unless the nonlinear term vanishes), or the simple ansatz is not exact. This is a genuinely qualified Pinney reduction, independent of the original $x$-coordinate and the Master parameter $\mu$. The lens scale $b(t)$ is not automatically the framework envelope $a(u)$: an identification requires $\Omega(t)$, $\omega_0$, a clock map $t\leftrightarrow u$ and a chosen reference state.
+
+## 21. Keller–Miksis: the nonlinear bubble-radius equation is not generically Pinney [D,K,C]
+
+Use a physical bubble radius $R_b(t)>0$ in a liquid of density $\rho_L>0$ and sound speed $c_L>0$. To first order in a wall Mach number, one common Keller–Miksis (KM) convention is
+
+```math
+\left(1-\frac{\dot R_b}{c_L}\right)R_b\ddot R_b+\frac32\left(1-\frac{\dot R_b}{3c_L}\right)\dot R_b^2=\frac1{\rho_L}\left[\left(1+\frac{\dot R_b}{c_L}\right)P+\frac{R_b}{c_L}\frac{dP}{dt}\right].
+```
+
+Here $P$ is a specified wall-pressure difference. For a common uncoated model it is
+
+```math
+P=p_g(R_b)-p_\infty(t)-\frac{2\sigma}{R_b}-\frac{4\eta_L\dot R_b}{R_b}.
+```
+
+The gas law, excitation, surface tension, viscosity and compressibility convention are **constitutive/model choices**; different published Keller–Miksis variants reorganize the terms. Because $P$ may depend on $\dot R_b$, its total derivative can contain $\ddot R_b$, and one must collect acceleration terms before treating the model as an explicit ODE.
+
+There is **no general mathematical identification** of this equation with Pinney $a''=Qa+k/a^3$: KM has nonlinear acceleration coefficients, quadratic wall velocity, external forcing, possibly damping/radiation and a constitutive pressure law. A second-order *nonlinear* equation is not thereby an EP equation.
+
+## 22. A constructive exact Rayleigh–Plesset-to-Pinney reduction [D,V]
+
+Take the incompressible limit $c_L\to\infty$ in the stated model and, first, set aside explicit viscous dependence. The Rayleigh–Plesset equation becomes
+
+```math
+R_b\ddot R_b+\frac32\dot R_b^2=\frac{P(R_b,t)}{\rho_L}.
+```
+
+**Theorem 22.1 [D,V] (precise mass-flattening coordinate).** On every interval where $R_b>0$, put
+
+```math
+b(t)=R_b(t)^{5/2}.
+```
+
+Then Rayleigh–Plesset is *exactly* equivalent to
+
+```math
+\ddot b=\frac{5}{2\rho_L}\,b^{1/5}P(b^{2/5},t).
+```
+
+**Proof.** Differentiate twice:
+
+```math
+\ddot b=\frac52R_b^{1/2}\left(R_b\ddot R_b+\frac32\dot R_b^2\right).
+```
+
+Substitute the Rayleigh–Plesset equation and use $R_b^{1/2}=b^{1/5}$. No approximation is involved *after the incompressible model is chosen*.
+
+### 22.1 An explicitly engineered pressure law gives an exact Pinney equation
+
+**Corollary 22.2 [D,V].** Choose the mathematical pressure constitutive function
+
+```math
+P(R_b,t)=\frac{2\rho_L}{5}\left[-\Omega(t)^2R_b^2+kR_b^{-8}\right].
+```
+
+Then
+
+```math
+\ddot b+\Omega(t)^2b=kb^{-3},\qquad b=R_b^{5/2}.
+```
+
+**Proof.** Multiply the pressure by $(5/2\rho_L)R_b^{1/2}$ in Theorem 22.1. The two powers become $R_b^{5/2}=b$ and $R_b^{-15/2}=b^{-3}$ respectively.
+
+The exponent $R_b^{-8}$ is *mathematically forced* by the $\rho^{-3}$ Pinney term under this mass-flattening map. This constructed pressure is **not a generic Keller–Miksis constitutive law**, nor is it proof of a laboratory fluid realizing a Pinney system. For ordinary polytropic gas $p_g\propto R_b^{-3\gamma_g}$, the special inverse-eighth power would require the nonstandard index $\gamma_g=8/3$ even before accounting for ambient pressure, surface tension, radiation and viscosity.
+
+At $k>0$ the Pinney term is repulsive near $b=0$ in a conservative constant-frequency model; “nonlinear radial collapse” is not automatically reproduced by *positive* Pinney strength. Negative $k$, external energy input, a singular time-dependent coefficient or a different pressure law changes the question and can invalidate positivity/completeness assumptions.
+
+### 22.2 Connection to position-dependent mass and a Routhian-style kinetic flattening
+
+For an inviscid incompressible exterior flow, the radial kinetic energy is proportional to
+
+```math
+T_{\rm rad}=\frac12 m_{\rm eff}(R_b)\dot R_b^2,\qquad m_{\rm eff}(R_b)=4\pi\rho_LR_b^3.
+```
+
+Define a new coordinate by its configuration-space metric arclength:
+
+```math
+q(R_b)=\int^{R_b}\sqrt{m_{\rm eff}(s)}\,ds=\frac{4\sqrt{\pi\rho_L}}5R_b^{5/2}.
+```
+
+Then $T_{\rm rad}=\dot q^2/2$; the exponent $5/2$ used above is precisely the **position-dependent kinetic-mass flattening** coordinate. If $P=P(R_b,t)$ is independent of $\dot R_b$, the reduced Lagrangian is
+
+```math
+L_{\rm rad}=\frac12m_{\rm eff}(R_b)\dot R_b^2-U(R_b,t),\qquad \partial_{R_b}U=-4\pi R_b^2P(R_b,t).
+```
+
+Its Euler–Lagrange equation is Rayleigh–Plesset:
+
+```math
+R_b\ddot R_b+\frac32\dot R_b^2=P/\rho_L.
+```
+
+This provides an exact **classical PDM–Rayleigh–Plesset–Pinney dictionary in a selected conservative model**. It is separate from the quantum von Roos operator ordering, for which no canonical conclusion follows from the classical mass coordinate alone.
+
+## 23. Small-amplitude bubble resonance yields a linear Sturm–Liouville-type problem [D,K,C]
+
+Take $P=p_{g0}(R_0/R_b)^{3\gamma_g}-p_{\infty,0}-2\sigma/R_b-4\eta_L\dot R_b/R_b-p_{\rm ac}(t)$ in Rayleigh–Plesset, with equilibrium $R_0>0$ and
+
+```math
+p_{g0}=p_{\infty,0}+2\sigma/R_0.
+```
+
+Put $R_b(t)=R_0+\epsilon(t)$ with small $\epsilon$, and keep only linear terms. Then
+
+```math
+\ddot\epsilon+\Gamma_b\dot\epsilon+\omega_b^2\epsilon=-\frac{p_{\rm ac}(t)}{\rho_LR_0},
+```
+
+where the *incompressible-model* coefficients are
+
+```math
+\Gamma_b=\frac{4\eta_L}{\rho_LR_0^2},\qquad\omega_b^2=\frac{3\gamma_g p_{g0}-2\sigma/R_0}{\rho_LR_0^2}.
+```
+
+**Proof.** Expand $p_g(R_b)=p_{g0}[1-3\gamma_g\epsilon/R_0]+O(\epsilon^2)$, $-2\sigma/R_b=-2\sigma/R_0+2\sigma\epsilon/R_0^2+O(\epsilon^2)$ and $-4\eta_L\dot R_b/R_b=-4\eta_L\dot\epsilon/R_0+O(\epsilon^2)$. On the left $R_b\ddot R_b=R_0\ddot\epsilon+O(\epsilon^2)$, while $\dot R_b^2$ is second order. Divide by $\rho_LR_0$.
+
+For negligible damping and surface tension, $\omega_b^2=3\gamma_g p_{\infty,0}/(\rho_LR_0^2)$ is the standard Minnaert-type small-oscillation value. Compressibility adds radiation effects and can shift frequency/damping; a full Keller–Miksis linearization has extra coefficients.
+
+In homogeneous constant-coefficient form, the damped equation is transformed by $\epsilon=e^{-\Gamma_b t/2}v$ into
+
+```math
+\ddot v+\left(\omega_b^2-\frac{\Gamma_b^2}{4}\right)v=0.
+```
+
+This is a *linear* second-order equation. A true self-adjoint Sturm–Liouville eigenproblem requires specifying which **spatial** or temporal interval, weight and boundary conditions are intended. A damped open system is not automatically a self-adjoint normal-mode problem.
+
+## 24. Spatial acoustic matching, shape modes and non-self-adjoint resonances [K,D]
+
+For a separated scalar acoustic wave field in a spherical geometry, let the angular factor be a spherical harmonic $Y_{\ell m}$ with eigenvalue $\ell(\ell+1)$ under $-\Delta_{S^2}$. The radial Helmholtz equation in a homogeneous fluid is
+
+```math
+-(\rho^2h_\rho)_\rho+\ell(\ell+1)h=\frac{\omega^2}{c_L^2}\rho^2h.
+```
+
+This is a Sturm–Liouville *expression* on its chosen radial interval with
+
+```math
+p(\rho)=\rho^2,\qquad q_\ell=\ell(\ell+1),\qquad w(\rho)=\rho^2.
+```
+
+On a finite closed cavity with real energy-conserving boundary conditions it can give a self-adjoint spectrum. Coupling the boundary to a moving bubble typically adds a **frequency-dependent dynamic boundary condition**; outgoing radiation at infinity instead leads to a *non-self-adjoint resonance/scattering problem*. It is mathematically incorrect to cite the real self-adjoint Sturm–Liouville theorem for complex radiating resonances without a suitable extension.
+
+A separate ideal inviscid surface-tension model of **nonspherical** shape perturbations has capillary modes with angular indices $\ell\ge2$ and classical leading frequencies
+
+```math
+\omega_\ell^2=\frac{(\ell-1)(\ell+1)(\ell+2)\sigma}{\rho_L R_0^3}.
+```
+
+This is a **specific model** and angular decomposition, not the same eigenproblem as the $\ell=0$ radial Keller–Miksis oscillator. Bubble interface conditions, gas density, compressibility, viscosity and flow coupling can change the formula.
+
+**Conclusion for the bubble branch:** the nonlinear radius dynamics and its linearized perturbation/wave-matching operators can be studied simultaneously, but no universal transformation KM $\leftrightarrow$ EP $\leftrightarrow$ self-adjoint SL exists without the explicitly stated pressure law, limiting regime and boundary conditions.
