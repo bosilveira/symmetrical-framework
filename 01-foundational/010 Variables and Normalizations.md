@@ -15,17 +15,23 @@ related_claims: [D04, F02, F03, F06]
 
 Unless otherwise noted, let
 
-$$x>0,\quad c>0,\quad r>0,\quad \mu>0,\qquad u=\ln(x/c),\quad \theta=ru. \qquad (1.1)$$
+```math
+x>0,\quad c>0,\quad r>0,\quad \mu>0,\qquad u=\ln(x/c),\quad \theta=ru. \qquad (1.1)
+```
 
 Here $x$ is the original positive variable, $c$ is the fixed inversion center, $r$ is the logarithmic-resolution parameter, and $\mu$ is a positive amplitude/coupling normalization. They are independent parameters; do not absorb $c$ into $x$ or set $r=1$ without explicitly invoking a normalization.
 
 The main function, amplitude, and centered fields are
 
-$$f_\mu(x;r,c)= \frac{c^r x^{r-1}}{\sqrt{\mu}(c^{2r}+x^{2r})}, \quad y(u)=2xf_\mu(x;r,c), \quad S(u)=\mathrm{sech}(ru),\quad W(u)=\tanh(ru). \qquad (1.2)$$
+```math
+f_\mu(x;r,c)= \frac{c^r x^{r-1}}{\sqrt{\mu}(c^{2r}+x^{2r})}, \quad y(u)=2xf_\mu(x;r,c), \quad S(u)=\mathrm{sech}(ru),\quad W(u)=\tanh(ru). \qquad (1.2)
+```
 
 In particular,
 
-$$y(u)=\mu^{-1/2}S(u),\qquad x=ce^u,\qquad \theta=ru. \qquad (1.3)$$
+```math
+y(u)=\mu^{-1/2}S(u),\qquad x=ce^u,\qquad \theta=ru. \qquad (1.3)
+```
 
 The original symmetrical function is $f=f_{\mu=1}$.
 
@@ -33,11 +39,15 @@ The original symmetrical function is $f=f_{\mu=1}$.
 
 For a twice differentiable function $F(x)$, writing $\widetilde F(u)=F(ce^u)$, one has
 
-$$\widetilde F_u=xF_x,\qquad \widetilde F_{uu}=x^2F_{xx}+xF_x. \qquad (1.4)$$
+```math
+\widetilde F_u=xF_x,\qquad \widetilde F_{uu}=x^2F_{xx}+xF_x. \qquad (1.4)
+```
 
 Equivalently,
 
-$$\partial_x=x^{-1}\partial_u,\qquad \partial_x^2=x^{-2}(\partial_u^2-\partial_u) \qquad (1.5)$$
+```math
+\partial_x=x^{-1}\partial_u,\qquad \partial_x^2=x^{-2}(\partial_u^2-\partial_u) \qquad (1.5)
+```
 
 when acting on $F(ce^u)$.
 
@@ -54,11 +64,15 @@ when acting on $F(ce^u)$.
 
 Define $I_c(x)=c^2/x$. Then $I_c^2(x)=x$ and
 
-$$u(I_c(x))=-u(x),\qquad |I_c'(x)|=\frac{c^2}{x^2}. \qquad (2.1)$$
+```math
+u(I_c(x))=-u(x),\qquad |I_c'(x)|=\frac{c^2}{x^2}. \qquad (2.1)
+```
 
 ### Proposition 2.1 [T] (invariant positive measure)
 
-$$f_\mu(I_c(x);r,c)|I_c'(x)|=f_\mu(x;r,c). \qquad (2.2)$$
+```math
+f_\mu(I_c(x);r,c)|I_c'(x)|=f_\mu(x;r,c). \qquad (2.2)
+```
 
 **Proof.**
 
@@ -74,11 +88,15 @@ The oriented one-form $f_\mu(x)\,dx$ changes sign under pullback by the decreasi
 
 For $x>0$,
 
-$$\int f_\mu(x;r,c)\,dx =\frac{1}{r\sqrt{\mu}} \arctan\!\left((x/c)^r\right)+C. \qquad (3.1)$$
+```math
+\int f_\mu(x;r,c)\,dx =\frac{1}{r\sqrt{\mu}} \arctan\!\left((x/c)^r\right)+C. \qquad (3.1)
+```
 
 Consequently,
 
-$$\int_0^c f_\mu\,dx =\int_c^\infty f_\mu\,dx =\frac{\pi}{4r\sqrt{\mu}},\qquad \int_0^\infty f_\mu\,dx=\frac{\pi}{2r\sqrt{\mu}}. \qquad (3.2)$$
+```math
+\int_0^c f_\mu\,dx =\int_c^\infty f_\mu\,dx =\frac{\pi}{4r\sqrt{\mu}},\qquad \int_0^\infty f_\mu\,dx=\frac{\pi}{2r\sqrt{\mu}}. \qquad (3.2)
+```
 
 **Proof.**
 
@@ -94,7 +112,9 @@ The half-split follows from this **specific density** and its inversion symmetry
 
 The positive profile satisfies
 
-$$\mathcal N(f_\mu):= \int_0^\infty f_\mu(x)^2\,x\,dx =\frac{1}{2r\mu}. \qquad (3.3)$$
+```math
+\mathcal N(f_\mu):= \int_0^\infty f_\mu(x)^2\,x\,dx =\frac{1}{2r\mu}. \qquad (3.3)
+```
 
 **Proof.**
 
@@ -111,7 +131,9 @@ The norm (3.3) is invariant under translations of $u$, equivalently multiplicati
 
 For every $\lambda>0$,
 
-$$f_\mu(\lambda x;r,\lambda c)= \lambda^{-1}f_\mu(x;r,c). \qquad (4.1)$$
+```math
+f_\mu(\lambda x;r,\lambda c)= \lambda^{-1}f_\mu(x;r,c). \qquad (4.1)
+```
 
 **Proof.**
 
@@ -125,19 +147,27 @@ $$f_\mu(\lambda x;r,\lambda c)= \lambda^{-1}f_\mu(x;r,c). \qquad (4.1)$$
 
 Let $A,B>0$ and
 
-$$J_{A,B}(u)=Ae^{ru}+Be^{-ru}. \qquad (4.2)$$
+```math
+J_{A,B}(u)=Ae^{ru}+Be^{-ru}. \qquad (4.2)
+```
 
 Then, with $\mu=4AB$ and
 
-$$u_*=\frac{1}{2r}\ln(B/A), \qquad (4.3)$$
+```math
+u_*=\frac{1}{2r}\ln(B/A), \qquad (4.3)
+```
 
 we have
 
-$$J_{A,B}(u)=\sqrt{\mu}\cosh(r(u-u_*)). \qquad (4.4)$$
+```math
+J_{A,B}(u)=\sqrt{\mu}\cosh(r(u-u_*)). \qquad (4.4)
+```
 
 In the original coordinate the new center is
 
-$$c_*=ce^{u_*}=c(B/A)^{1/(2r)}. \qquad (4.5)$$
+```math
+c_*=ce^{u_*}=c(B/A)^{1/(2r)}. \qquad (4.5)
+```
 
 **Proof.**
 
