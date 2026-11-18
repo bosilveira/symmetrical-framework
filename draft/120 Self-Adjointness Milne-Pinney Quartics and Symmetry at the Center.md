@@ -1139,3 +1139,91 @@ x\mapsto c^2/x,\qquad u\mapsto-u,\qquad f(x)\mapsto(c^2/x^2)f(c^2/x).
 ```
 
 Even modes satisfy $cf_x(c)+f(c)=0$, and odd modes $f(c)=0$. The resolution $r$ changes the rational profile and potential coefficients; $c$ locates the symmetry point and the logarithmic origin.
+
+## 29. Evidence classification, counterexamples and candidate foundational theorems
+
+| Proposed claim | Mathematical verdict |
+|---|---|
+| EP measures whether a Sturm–Liouville operator is self-adjoint. | **False.** Pinney strength/current is solution-space data; self-adjointness depends on the operator domain and boundary form. The complex-Robin counterexample is explicit (§10). |
+| Wronskian conservation implies self-adjointness. | **False.** It follows locally for real coefficients and real $\lambda$, even before specifying an operator domain (§9). |
+| Nonzero Milne phase current means self-adjointness is broken. | **False.** Real self-adjoint operators have current-carrying generalized scattering states (§20). |
+| A nonreal spectral *parameter* means a real operator is not self-adjoint. | **False.** Self-adjoint resolvents are evaluated at complex parameters; nonreal *eigenvalues* are a different issue (§9). |
+| The canonical Pinney effective potential is a double well. | **False.** For $Q_0,k>0$ it is strictly decreasing on $a>0$; for $Q_0=-\omega^2,k>0$ it has a single centrifugal minimum (§16). |
+| The signed Duffing/Master potential is a smooth quartic double well. | **True**, but its $\mathrm{sech}$ pulse is a homoclinic to the barrier equilibrium, not a tunneling trajectory between the two minima (§17). |
+| Negative eigenvalues of a Hessian imply non-self-adjointness. | **False.** The real Master Hessian is self-adjoint and has a negative bound state (§23). |
+| Every quartic attached to Pinney is singular. | **False.** The Gram-square quartic is always singular, but the *Pinney energy quartic* is smooth in the canonical regime (§18). |
+| A smooth elliptic energy quartic always requires elliptic time evolution. | **False.** The Pinney *time differential* descends through a degree-two quotient to a conic (§18.2). |
+| Tunneling requires an operator with a complex spectrum. | **False.** A real finite barrier admits a self-adjoint operator and exact nonzero transmission (§20). |
+| Reflection at $x=c$ forces a new boundary of the original full-line operator. | **False.** It is a regular interior point; boundary or interface conditions are an additional domain choice (§§4–6). |
+| Reflection gives Neumann/Dirichlet sectors. | **True** for a parity-preserving self-adjoint realization, with the even sector becoming Robin in the original weighted $f$ variable (§5). |
+| The original half-integral is a spectral boundary condition. | **False.** It is a symmetry of a positive measure; spectral conditions are separate (§§7,27). |
+| The original integral equals a scaled Gudermannian phase change. | **True for the specified canonical carrier**, with factor $1/(r\sqrt\mu)$ (§12). |
+| Riccati ratio automatically equals the Hopf fiber. | **False.** It is the projective base coordinate; a normalized spinor and common phase produce the Hopf bundle (§15). |
+| All minimal-surface Jacobi operators have the canonical Master spectrum. | **False.** Catenoid, Pinney and Master use PT wells of different orders, and global surface domains are further data (§§23–26). |
+
+### 29.1 Candidate theorem statements for the foundational-layer audit
+
+**A — Domain-safe Liouville/parity theorem [D,V].** The original weighted carrier with $p=x^3,w=x$ is unitarily $-\partial_u^2+r^2$ with transported domains; the involution $x\mapsto c^2/x$ becomes parity and yields exact even/odd half-line Robin/Dirichlet conditions at $x=c$. Proof: §§3–6.
+
+**B — Milne–primitive theorem [D,V].** The argument of the selected half-rate complex carrier is $\theta=\mathrm{gd}(ru)/2$, with $d\theta=r\sqrt\mu f_\mu\,dx$, giving equal half-integral phase increments. Proof: §§7, 11–12.
+
+**C — Pinney energy quartic/conic quotient theorem [D,V].** The constant-carrier Pinney energy quartic has the invariant formulas of §18, while the distinguished time differential descends under $(a,Y)\mapsto(a^2,Y)$ to a genus-zero conic. The canonical centered smooth quartic has $j=1728$. This observation is classical algebraic geometry reorganized within the framework, not a novelty claim.
+
+**D — Phase–Gauss metric theorem [D,V].** The catenoid round Gauss-map metric has conformal factor $4(\theta')^2=4j^2/a^4$ for the specified canonical Pinney amplitude and Milne phase; its equator is $x=c$. Proof: §25.
+
+**E — Reflection and Beta-moment theorem [D,V,H169].** The whole weighted moment family has an exact symmetric Beta CDF with median $x=c$ and a minimizer of its own inverse-weight Dirichlet energy. It does not dictate the self-adjoint domain of the original operator. Proof: §§7,27.
+
+**F — Self-adjoint tunneling counterexample [D,K].** A finite real rectangular barrier has an interior hyperbolic Pinney envelope and exterior flux-preserving matching with nonzero transmission; its full Schrödinger operator is still self-adjoint. Proof: §20.
+
+## 30. Independent verification, literature and research agenda
+
+### 30.1 Algebraic and analytic checks
+
+The following identities were verified by independent symbolic differentiation or direct elementary integration when preparing this draft:
+
+1. The unitary map $f\mapsto xf$ sends the original weighted expression to $-\partial_u^2+r^2$ and carries its exact boundary pairing to the ordinary Wronskian.
+2. Inversion $\mathfrak R_cf=(c^2/x^2)f(c^2/x)$ becomes parity, and the even-sector original-variable condition is $cf_x(c)+f(c)=0$.
+3. The unweighted original integral and the weighted SL norm have exact halves $\pi/(4r\sqrt\mu)$ and $1/(4r\mu)$ respectively.
+4. The general moment $M_s=B(s/2,1/2)/[r(2\sqrt\mu)^s]$ pushes to the symmetric Beta$(s/2,s/2)$ law in $P=(1+W)/2$.
+5. The chosen complex carrier $\Phi=\mu^{1/4}(\cosh(ru/2)+i\sinh(ru/2))$ solves $\Phi''=r^2\Phi/4$, has current $r\sqrt\mu/2$, and gives logarithmic derivative $(r/2)(W+iS)$.
+6. The local SL current law is $j'=[\operatorname{Im}q_0-(\operatorname{Im}\lambda)w]|\psi|^2$, independently of the operator domain.
+7. The non-self-adjoint half-line Robin domain with $h=-1+i$ has the explicit nonreal eigenvalue $r^2/4+2i$.
+8. The Pinney energy quartic has $I=4\mathcal E_a^2-12Q_0k$, $J=-16\mathcal E_a^3-144Q_0k\mathcal E_a$, and $\Delta=-256Q_0k(\mathcal E_a^2+Q_0k)^2$ in the repository's raw convention; these were checked with exact SymPy polynomial operations.
+9. At the centered positive canonical parameters the Pinney energy quartic is smooth with $j=1728$; the Gram-square and Master separatrix quartics instead have zero discriminant.
+10. The quotient $J=a^2$ satisfies the conic $Y^2=Q_0J^2+2\mathcal E_a J-k$ and time form $du=dJ/(2Y)$.
+11. The Master Hessian eigenrelations $H_{\rm M}S^2=-3r^2S^2$ and $H_{\rm M}(SW)=0$, and the catenoid Jacobi order-one eigenrelation, were checked by differentiation.
+12. The catenoid Gauss metric equality $g_G=4(\theta')^2|d\zeta|^2$ and both equal hemisphere area integrals follow from the explicit Gauss map.
+13. The rectangular barrier transfer matrix has determinant one; matching it to exterior waves gives the standard transmission coefficient.
+14. For $r=2$ the exact rational expressions, Pinney equation, operator eigenvalue scalings and half-integrals were recalculated.
+
+These are checks of the stated algebraic/differential identities and ordinary explicit operators. They do not certify every global minimal-surface period, all self-adjoint extensions of general singular operators, or any new universal classification theorem.
+
+### 30.2 Existing framework sources
+
+- The live foundational linear-exponential chapter SF-I-020 and provisional research drafts 020, 030, 040, 050, 060, 080, 090, 100 and 110.
+- Historical ZIP: 04-follow-ups/spectral-calculus.md (H169–H172: reflection, half-splitting, Weyl–Wronskian factorization, weighted Dirichlet principle and Hopf flux), directly reopened and compared in this investigation.
+- Historical ZIP: 04-follow-ups/bernoulli-riccati.md, friedmann-reciprocal-envelope.md, fundamental-forms-willmore-hopf.md, and conformal-and-probabilistic-readings.md.
+- The 2026-11-16_v2 complete reference retains its own claim-by-claim evidence levels; the present additional quartic-conic quotient and boundary counterexamples are **new derived additions to the provisional record**.
+
+### 30.3 External classical sources and exact scope
+
+- Sturm–Liouville operator domains, Weyl alternative and boundary spectral functions: https://encyclopediaofmath.org/wiki/Sturm-Liouville_theory ; https://diana.mat.univie.ac.at/~gerald/students/krueger_dipl.pdf .
+- Singular self-adjoint extensions and boundary triples: https://arxiv.org/abs/1910.13117 ; https://www.sciencedirect.com/science/article/am/pii/S0022039623001833 .
+- Self-adjoint multi-interval and point-interaction transmission conditions: https://www.mat.univie.ac.at/~gerald/ftp/articles/MeasureSL.pdf ; https://www.sciencedirect.com/science/article/pii/S0024379509000196 .
+- Milne amplitude-phase analysis and Ermakov invariant in spectral/scattering theory: https://journals.aps.org/pra/abstract/10.1103/PhysRevA.63.012103 ; https://journals.aps.org/pra/abstract/10.1103/PhysRevA.97.022701 .
+- Barrier scattering using amplitude-phase methods: https://doi.org/10.1088/0305-4470/38/1/017 ; https://www.mdpi.com/2218-2004/14/8/71 .
+- Minimal-surface Jacobi fields and the catenoid/helicoid: https://pmc.ncbi.nlm.nih.gov/articles/PMC7428034/ .
+- Classical binary-quartic invariant normalization: https://link.springer.com/article/10.1007/s40993-022-00376-z . **Normalization warning:** The project's raw *polynomial discriminant* is $\Delta=(4I^3-J^2)/27$; some classical invariant-theory sources call $16\Delta$ the binary quartic discriminant. Ratios $j$ and the zero locus are unchanged by this naming choice, but numerical discriminants must not be mixed.
+
+### 30.4 Open mathematical problems
+
+1. **Boundary-triple continuation:** derive a precise rank-one resolvent relation between the free full-line carrier and its real point-interaction family at $x=c$, and express both half-line Weyl functions in the original weighted coordinate.
+2. **Marked quartic correspondence:** convert the smooth Pinney energy quartic to a Weierstrass cubic and exhibit explicitly the degree-two conic quotient and its marked time differential; test whether the $j=1728$ catenoid surface quartic is isomorphic in a way preserving *any selected differential*.
+3. **Scattering phases:** compute Milne phase shifts, transmission and resonance data for the order-two Master Pöschl–Teller well with different parity/interface extensions, tracking spectral and physical energy normalization.
+4. **Beta Dirichlet-to-Neumann:** determine boundary operators associated with the entire $s>0$ inverse-weight Beta moment family; compare with the archived level-$q$ Hopf and Legendre constructions while distinguishing the two shape exponents.
+5. **Global minimal-surface limits:** compare catenoid and helicoid Jacobi-operator domains with Riemann minimal example period data, including Floquet and noncompact-end conditions.
+6. **Hopf phase versus Milne phase:** construct an explicit bundle map and connection pullback relating the selected Hopf base coordinate $t=e^{ru}$ to the nonconstant Milne phase; identify where their holonomies/normalizations differ.
+7. **Quartic classification:** track simultaneously the Gram-square, Pinney-energy and Master-energy quartics under $r$ doubling, and determine which marked differentials—not merely $I,J$—intertwine.
+8. **Self-adjointness boundary tests:** analyze complex Robin and non-Hermitian/PT-symmetric extensions on the two half-intervals without conflating non-real boundary parameters with nonlinear potential instability.
+
+**Closing mathematical statement.** Self-adjointness, a Pinney determinant, a Riccati chart, a phase current, a binary-quartic discriminant, a quartic double well, and a tunneling coefficient are different kinds of data. The Symmetrical Framework supplies precise transformations between selected instances of them: a unitary logarithmic Liouville map, a symmetric-square/Pinney envelope, a projective Cayley–Gudermannian phase, a marked elliptic-to-conic quotient, and a catenoid Gauss-map realization. The fixed point $x=c$ is simultaneously the original measure's half-split, a spectral parity center after declaring the correct domain, and the Gauss sphere's equator—but those observations do not identify the distinct measures, spectra, connections, or physical interpretations.
