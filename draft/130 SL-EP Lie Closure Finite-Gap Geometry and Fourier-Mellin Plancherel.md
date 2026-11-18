@@ -988,3 +988,151 @@ The **shifted** Master Hessian is $-\partial_u^2+4-24S_2^2$, with eigenvalues $-
 The Virasoro Schwarzian is $\{e^{2u},u\}=-2$; the Hopf base ratio is $e^{2u+i\varphi}$ with $\varphi=2v$; the catenoid angular period is $v\sim v+\pi$. The normalized Hilbert variance pair is $\sigma_u=\pi/(4\sqrt3)$, $\sigma_k=2/\sqrt3$, and $\sigma_u\sigma_k=\pi/6$.
 
 **Every object is tracked:** the same $r=2$ changes the hyperbolic resolution, rational denominator, spectral wells, oscillator rates, Fourier bandwidth and angular period. The center $c$ remains the multiplicative inversion center and $\mu$ remains an amplitude/Hilbert normalization, not a spectral parameter.
+
+## 29. An even stronger closure: the canonical potential itself has a polynomial autonomous ODE [D,V]
+
+The finite Lie–Hamilton mechanism in §4 treats $\omega^2$ as an external coefficient. For the *selected* canonical integer wells $V_n=-n(n+1)r^2S^2$, the coefficient itself has a closed dynamical evolution. This is a direct answer to the strongest formulation of “close the SL–EP system including the potential.”
+
+**Theorem 29.1 [D,V] (potential self-closure for every n>0).** Put $n>0$ (integer values $n=1,2,\ldots$ are required for the reflectionless integer spectral hierarchy), and define
+
+```math
+V_n(u)=-n(n+1)r^2\mathrm{sech}^2(ru),\qquad P_n=(V_n)_u.
+```
+
+Then
+
+```math
+(V_n)_u=P_n,\qquad(P_n)_u=4r^2V_n+\frac6{n(n+1)}V_n^2
+```
+
+with conserved polynomial energy
+
+```math
+P_n^2=4r^2V_n^2+\frac4{n(n+1)}V_n^3.
+```
+
+**Proof.** Set $A_n=n(n+1)r^2$ and $V_n=-A_nS^2$. Use
+
+```math
+(S^2)_u=-2rS^2W,\qquad(S^2)_{uu}=4r^2S^2-6r^2S^4.
+```
+
+It follows that $V_n''=4r^2V_n+6r^2A_nS^4=4r^2V_n+6V_n^2/[n(n+1)]$. Likewise $V_n'=2rA_nS^2W$ and $W^2=1-S^2$ give its displayed polynomial first integral. All coefficients are explicit functions of the original resolution $r$; the center $c$ appears through $u=\ln(x/c)$.
+
+### 29.1 A single finite-dimensional autonomous coupled system
+
+Choose a fixed real **spectral parameter** $\lambda$ and one of these potentials. Its associated Schrödinger carrier satisfies $\phi_{uu}=(V_n-\lambda)\phi$. Write the Riccati variable $h=\phi_u/\phi$ on a nonvanishing chart. Couple it to a positive Pinney amplitude $a>0$ with $p=a_u$:
+
+```math
+V_u=P,\quad P_u=4r^2V+\frac6{n(n+1)}V^2,\quad h_u=V-\lambda-h^2,\quad a_u=p,\quad p_u=(V-\lambda)a+k_{\rm EP}a^{-3}.
+```
+
+**Theorem 29.2 [D,V].** With fixed $(n,r,\lambda,k_{\rm EP})$, this is a **five-component autonomous rational/polynomial differential system** closed under differentiation on the domain $a>0$ and finite Riccati charts. It requires no independent tower of higher derivatives of the potential. Its potential energy and the Pinney/Riccati Wronskian/Casimir levels are inherited constraints from the corresponding carrier.
+
+For the particularly distinguished spectral-Pinney subfamilies generated in §§12–13, take $n=1$ or $n=2$, $\lambda>0$ and **fix** $k_{\rm EP}=-\mathscr R_n(\lambda)/4$; the algebraic relation $a^2=F_n(\lambda,u)$ then reduces the coupled system further to an explicitly elementary solution.
+
+**This is an exact closure certificate within the framework.** It is not a universal integrability theorem for arbitrary Sturm–Liouville coefficients. The polynomial first integral of $V$ is **not** the finite-gap hyperelliptic spectral polynomial $\mathscr R_n(\lambda)$: one describes the spatial profile of the potential; the other encodes spectral data of the carrier.
+
+### 29.2 Two explicit potential equations
+
+For the catenoid/order-one well $n=1$, one has
+
+```math
+V_1''=4r^2V_1+3V_1^2,\qquad (V_1')^2=4r^2V_1^2+2V_1^3.
+```
+
+For the Master/order-two unshifted well $n=2$,
+
+```math
+V_2''=4r^2V_2+V_2^2,\qquad (V_2')^2=4r^2V_2^2+\frac23V_2^3.
+```
+
+For $n=1$, differentiation gives $V_1'''-6V_1V_1'-4r^2V_1'=0$, a stationary/travelling-reduced KdV relation in the convention of §10. For $n=2$, higher stationary KdV algebra is naturally involved; one should not call the profile a one-soliton solution of the first KdV flow without checking its actual time evolution.
+
+## 30. Compatibility diagram: exactly which arrows are theorems?
+
+The verified finite differential chain for the canonical branch is
+
+```math
+x/c\longmapsto u=\ln(x/c)\longmapsto \big(e^{ru/2},e^{-ru/2}\big)\longmapsto t=e^{ru}\longmapsto (W,S)\longmapsto \Phi,\ J=|\Phi|^2,\ a=\sqrt J.
+```
+
+From the **linear carrier** one obtains (i) a symplectic Wronskian, (ii) a projective Riccati/Schwarzian, (iii) the three-dimensional symmetric-square equation, and (iv) a Pinney envelope at a fixed Gram determinant. From the **chosen integer PT potential** and a spectral parameter one additionally obtains a polynomial squared eigenfunction $F_n$ and a degenerate hyperelliptic spectral curve. From a **chosen minimal immersion** one obtains the catenoid Gauss map and Jacobi operator; from a **chosen compact Hopf base and connection** one obtains a first Chern number. From the **weighted SL Hilbert norm** one obtains a *unitary* Mellin/Fourier/Sobolev dictionary, including a separate isometric embedding into the chosen catenoid surface $L^2$.
+
+The arrows below are **not** justified merely from the preceding steps:
+
+| Proposed arrow | Mathematical status |
+|---|---|
+| Defective $2\times2$ transfer matrix $\Rightarrow$ loss of SL self-adjointness | **False**: §3 explicit self-adjoint periodic counterexample |
+| Finite $\mathfrak{sl}_2$ Lie system $\Rightarrow$ finite-dimensional full Virasoro orbit | **False**: Virasoro generic orbits are infinite-dimensional (§8) |
+| SL–EP for arbitrary $\omega^2(u)$ $\Rightarrow$ autonomous equation for $\omega^2$ | **False without extra law** (§5) |
+| Selected PT potential $V_n$ $\Rightarrow$ autonomous potential equation | **True**: Theorem 29.1 |
+| Selected integer PT potential + polynomial $F_n$ $\Rightarrow$ spectral Pinney invariant | **True**: §§9,12–14 and Theorem 29.2 |
+| Any SL–EP carrier $\Rightarrow$ smooth finite-gap spectral curve | **False**: polynomial stationarity is an extra constraint |
+| Smooth elliptic curve with a j-invariant $\Rightarrow$ minimal-surface period closing | **False**: marked periods and differential required (§17) |
+| Riccati projective coordinate $\Rightarrow$ quantized Berry phase | **False** without a normalized Hopf bundle, connection and two-cycle (§18) |
+| Chern number quantized $\Rightarrow$ every Berry loop phase quantized | **False**: latitude phase varies continuously (§18.2) |
+| Weighted $L^2(xdx)$ $\Rightarrow$ Mellin/Fourier/Sobolev Plancherel | **Exactly true** with the unitary map $f\mapsto xf$ (§§20–24) |
+| Weighted $L^2(xdx)$ $\Rightarrow$ catenoid scalar $L^2$ angular-constant sector | **True** by the explicitly constructed isometry (§26) |
+| The last isometry $\Rightarrow$ equality of SL and surface Jacobi spectra | **False without an operator intertwiner** |
+| Weighted profile norm $\Rightarrow$ Riemann elliptic period matrix | **Not established**; a Hodge/pullback and marked-period map is needed (§19) |
+| Ordinary Fourier + multiplicative Mellin $\Rightarrow$ one joint 1D spectral diagonalization | **False generally**; the tensor-product transform on independent coordinates is exact (§25) |
+
+## 31. Independent mathematical verification and scope of evidence
+
+The following algebraic identities were rederived and/or tested by exact SymPy polynomial operations, direct differentiation, or standard Fourier/Beta integration during this investigation.
+
+1. The constant coefficient oscillator matrix obeys $A^2=-\omega^2I$; the periodic free operator at $\lambda=0$ has defective $M=\left(\begin{smallmatrix}1&L\\0&1\end{smallmatrix}\right)$ while being self-adjoint.
+2. The Poisson brackets $\{D,H_0\}=H_0$, $\{D,K\}=-K$, $\{K,H_0\}=2D$ and Casimir $H_0K-D^2=k_{\rm EP}/4$ are exact.
+3. The closed three-dimensional system for $(K,D,H_0)$ gives the symmetric-square third-order ODE and fixed invariant.
+4. The canonical complex carrier's logarithmic derivative is $(r/2)(W+iS)$; its Schwarzian developing map is $e^{ru}$ with Schwarzian $-r^2/2$.
+5. The Gel'fand–Dikii identity $F'''-4(V-\lambda)F'-2V'F=0$ and conserved $\mathscr R=-2FF''+F'^2+4(V-\lambda)F^2$ follow by differentiation.
+6. **Order one:** for $V_1=-2r^2S^2$ and $F_1=\lambda+r^2W^2$, the differential residual is identically zero and $\mathscr R_1=-4\lambda(\lambda+r^2)^2$.
+7. **Order two:** for $V_2=-6r^2S^2$ and $F_2=\lambda^2+r^2(3W^2+2)\lambda+r^4(3W^2-1)^2$, the differential residual is identically zero and $\mathscr R_2=-4\lambda(\lambda+r^2)^2(\lambda+4r^2)^2$.
+8. All spectral-polynomial checks used the exact derivation $D_W=r(1-W^2)\partial_W$ and polynomial factorization, without numerical finite-difference approximations.
+9. The potential $V_n=-n(n+1)r^2S^2$ satisfies $V_n''=4r^2V_n+6V_n^2/[n(n+1)]$ and $(V_n')^2=4r^2V_n^2+4V_n^3/[n(n+1)]$ for every $n>0$ (exact symbolic check).
+10. The canonical weighted Liouville unitary map sends the original weighted SL operator to $-\partial_u^2+r^2$ and its quadratic form to $\int(|\psi_u|^2+r^2|\psi|^2)du$.
+11. The canonical $\|\psi\|_2^2$, $\|\psi_u\|_2^2$, $\|\psi_{uu}\|_2^2$ are respectively $1/(2r\mu)$, $r/(6\mu)$ and $7r^3/(30\mu)$.
+12. Mellin evaluation gives $\pi c^{s-1}\sec[\pi(s-1)/(2r)]/(2r\sqrt\mu)$ and the reflection equation with power $c^{2s-2}$.
+13. The shifted-weight norms are $\mathcal N_b=\pi b/[4\mu r^2c^b\sin(\pi b/(2r))]$, with $|b|<2r$ and $b=0$ defined by a continuous limit.
+14. The logarithmic Fourier amplitude has exact $\mathrm{sech}$ form; normalized position/frequency variances are $\pi^2/(12r^2)$ and $r^2/3$.
+15. The tensor-product Fourier–Mellin transform is Plancherel-unitary on $L^2(dv\,x\,dx)$; the catenoid isometric embedding follows by cancellation of $R^2$ between surface area and the half-density $R^{-1}$.
+16. The Gauss-sphere Hopf curvature integrates to $2\pi$, while individual latitude loop phases $\gamma(W)=\pi(1+W)$ vary continuously.
+17. At $r=2$, the full rational, spectral polynomial, Mellin, Sobolev and norm-product expressions were evaluated independently.
+
+**Evidence limits:** Finite-gap polynomial certificates do not by themselves prove smooth finite-gap period closing for *every* elliptic deformation; the archive's marked Riemann periods retain their original checked scope. Unitariy of one Hilbert-space transform does not construct an operator-domain intertwiner for a different surface. Algebraic Casimir invariance does not imply quantization of Berry holonomy or self-adjointness of an arbitrary boundary realization. No historical novelty claim is made for the Lie algebra, Gel'fand–Dikii recursion, Mellin Plancherel theorem or Hodge/Riemann bilinear identity.
+
+## 32. References and provenance
+
+**Canonical project records (checked):**
+
+- Live foundational SF-I-020 and provisional drafts 080, 090, 100, 110, 120: carrier, Riccati, Milne–Pinney symmetric square, weighted self-adjointness, boundary domains, energy quartic/conic quotient and the half-integral at $x=c$.
+- Live draft 030/040 and 050/060: catenoid/helicoid Gauss–Codazzi, chosen Levi-Civita/Weitzenböck torsion identity, separate binary quartic invariants, finite-gap/Pöschl–Teller and geometric layer distinctions.
+- Historical ZIP 04-follow-ups/spectral-calculus.md, H169–H172: even/odd boundary splitting, weighted Dirichlet and Wronskian/Jacobi constructions.
+- Historical ZIP 04-follow-ups/plancherel-elastica-modular.md, H391–H396: complete $b$-shifted Mellin/Plancherel norm family, reflection, norm products, logistic cumulants and modular identities (the archival source uses $\mu=1$; the present formulas restore $\mu$ explicitly).
+- Historical ZIP 04-follow-ups/mellin-beta-heun-lame.md (H162–H164) and binary-quartic-and-spectral-curves.md (H177–H183): Lamé, Jacobi/Heun, finite-gap spectral curve and 2-isogeny statements with their separate curve conventions.
+- Historical ZIP 04-follow-ups/riemann-marked-periods-gauss-manin-x04.md (H466–H479 and later additions): the elliptic Riemann family, explicitly marked periods, Gauss–Manin matrix, modular $X_0(4)$ identification, period/flux determinant and known global caveats.
+
+**External mathematics consulted for the specific claims:**
+
+- Ermakov systems and Lie group closure: https://researchspace.ukzn.ac.za/items/3cbbc237-afef-4f1f-8916-9251f2c0ac97 ; https://link.springer.com/article/10.2991/jnmp.2005.12.2.10 .
+- Hill operators, Schwarzian/projective curves and Virasoro coadjoint actions: https://arxiv.org/abs/2211.06216 ; https://ovsienko.perso.math.cnrs.fr/Publis/ContFriezeFinal.pdf .
+- Finite-gap Schrödinger potentials, KdV hierarchy and spectral curves: https://link.springer.com/article/10.1007/s00020-025-02818-6 ; https://www.sciencedirect.com/science/article/pii/S0393044024002237 ; https://academic.oup.com/integrablesystems/article/4/1/xyz006/5543069 .
+- Mellin transform and Plancherel: https://dlmf.nist.gov/1.14 ; https://dlmf.nist.gov/2.5 ; https://encyclopediaofmath.org/index.php?title=Plancherel_theorem ; https://www.mathnet.ru/links/4ad03805deae467564d1149cb733a2db/rm6374_eng.pdf .
+- Riemann minimal examples and global immersion structure: https://arxiv.org/abs/1609.05660 .
+- Berry curvature, geometric phase and Chern number distinctions: https://matfiz.github.io/topologija/en/lectures/24/ ; https://doi.org/10.1088/2515-7639/abf0b5 .
+
+## 33. Next genuinely mathematical research questions [O]
+
+1. **Intrinsic finite-dimensional potential closure beyond PT:** classify all meromorphic $V(u)$ expressible rationally in the canonical $(S,W)$ differential field for which the polynomial squared-eigenfunction ansatz terminates, distinguishing generic functions in that field from stationary KdV potentials.
+2. **Commuting-operator certificate:** construct the actual odd-order commuting differential operators for $L_1,L_2$, verify their Burchnall–Chaundy polynomial relation, and compare it with the present $\mathscr R_1,\mathscr R_2$ spectral curves.
+3. **Nondegenerate Lamé deformation:** exhibit the smooth genus-one and genus-two spectral polynomial families degenerating to the factors in §§12–13, including their real periods and the exact relation between the KdV deformation parameter and resolution $r$.
+4. **Virasoro/projective orbit:** compute the stabilizer and monodromy of a *specific periodic Hill representative*, keeping its lifted monodromy and projective degree; test how the finite $\mathfrak{sl}_2$ subalgebra acts in that setting.
+5. **Riemann minimal-example comparison:** attempt an explicit period-preserving map from the projective exponential Gauss chart of the catenoid to the archived elliptic Riemann family, tracking the degeneration of both the meromorphic height differential and real period lattice.
+6. **Operator intertwining:** conjugate the canonical weighted SL expression by the catenoid scalar $L^2$ isometry of §26 and determine its exact differential operator on the surface angular-constant sector; compare its quadratic form and self-adjoint domain to those of the catenoid Jacobi operator.
+7. **Hodge norm versus Mellin norm:** construct or disprove a naturally period-compatible pullback identifying an element of the canonical weighted SL Hilbert space with a harmonic differential on the chosen elliptic Riemann curve. Equality of numerical norms is insufficient; the map must preserve the relevant bilinear pairings and marked cycles.
+8. **Berry/Milne connection:** decide whether a canonical connection-preserving bundle map relates the scalar Gudermannian phase to the Hopf Berry holonomy; distinguish any result on the real meridian from the global Chern class.
+9. **Mixed Fourier–Mellin spectral transform:** for each catenoid angular mode $n$, derive the *actual* radial Sturm–Liouville scattering transform and its Plancherel measure instead of assuming the free Mellin transform diagonalizes the varying Jacobi well.
+10. **Resolution multiplication:** track $r\mapsto mr$ through the polynomial spectral closure, the half-rate $\mathfrak{sl}_2$ representation, the conformal catenoid angular period, and the mixed Fourier–Mellin density. Determine whether any proposed multiplication map preserves a chosen elliptic curve and its **marked** differential, not merely the elementary hyperbolic rational profile.
+
+**Final mathematical boundary:** The framework does contain an exact Lie–Hamilton SL–EP closure, and for the distinguished Pöschl–Teller branches it contains a stronger polynomial spectral/auxiliary-potential closure. The global Virasoro, Riemann-minimal-surface and Hopf/Chern constructions are legitimate, simultaneously available mathematical extensions only after their independent geometric data and boundary conditions are supplied. The weighted $L^2$ structure gives an exact and surprisingly broad *unitary Hilbert metric glue*, including a concrete catenoid embedding and a true Fourier–Mellin product calculus, but it does not alone supply a universal Riemann-surface or topological period-closing theorem.
