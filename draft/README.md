@@ -14,6 +14,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [010 Gauss-Codazzi Equations and Canonical Surface Geometry](010%20Gauss-Codazzi%20Equations%20and%20Canonical%20Surface%20Geometry.md) — intrinsic/extrinsic surface compatibility, Riccati–Maurer-Cartan reconstruction, cubic Master energy as ambient curvature, Clifford equilibria, Kähler/Hopf structures, and explicit limitations. **Provisional; not yet consolidated.**
 
+- [020 Weierstrass-Enneper, Kobayashi, and Calabi Correspondence](020%20Weierstrass-Enneper%20Kobayashi%20and%20Calabi%20Correspondence.md) — Euclidean minimal and Lorentzian maximal Weierstrass data, Calabi graph duality, Gudermannian/Riccati continuation, signature-correct Gauss-Codazzi quartics, and elliptic Riemann-example period obstructions. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
