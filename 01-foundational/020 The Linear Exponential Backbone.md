@@ -140,7 +140,7 @@ $$
 After centering,
 
 $$
-\boxed{S(u)=\operatorname{sech}(ru),\qquad W(u)=\tanh(ru).}
+\boxed{S(u)=\mathrm{sech}(ru),\qquad W(u)=\tanh(ru).}
 \tag{3.4}
 $$
 
@@ -299,7 +299,7 @@ Let $\varepsilon=0$ and suppose $y>0$ globally on $\mathbb R$. Then
 $$
 \boxed{
 J(u)=\sqrt{\mu}\cosh(r(u-u_*)),\quad
-y(u)=\frac{\operatorname{sech}(r(u-u_*))}{\sqrt{\mu}},
+y(u)=\frac{\mathrm{sech}(r(u-u_*))}{\sqrt{\mu}},
 }
 \tag{5.4}
 $$
@@ -309,7 +309,7 @@ and, in the corresponding original coordinate with center $c_*=ce^{u_*}$,
 $$
 \boxed{
 f(x)=\frac{1}{2\sqrt{\mu}\,x}
-\operatorname{sech}\!\left(r\ln(x/c_*)\right).
+\mathrm{sech}\!\left(r\ln(x/c_*)\right).
 }
 \tag{5.5}
 $$
