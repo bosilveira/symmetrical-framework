@@ -31,7 +31,7 @@ f_\mu(x;r,c)=
 \quad
 y(u)=2xf_\mu(x;r,c),
 \quad
-S(u)=\operatorname{sech}(ru),\quad
+S(u)=\mathrm{sech}(ru),\quad
 W(u)=\tanh(ru).
 \tag{1.2}
 $$
