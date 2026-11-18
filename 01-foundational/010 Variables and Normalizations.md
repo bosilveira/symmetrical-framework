@@ -52,20 +52,20 @@ The original symmetrical function is $f=f_{\mu=1}$.
 For a twice differentiable function $F(x)$, writing $\widetilde F(u)=F(ce^u)$, one has
 
 $$
-\boxed{
+
 \widetilde F_u=xF_x,\qquad
 \widetilde F_{uu}=x^2F_{xx}+xF_x.
-}
+
 \tag{1.4}
 $$
 
 Equivalently,
 
 $$
-\boxed{
+
 \partial_x=x^{-1}\partial_u,\qquad
 \partial_x^2=x^{-2}(\partial_u^2-\partial_u)
-}
+
 \tag{1.5}
 $$
 
@@ -92,9 +92,9 @@ $$
 ### Proposition 2.1 [T] (invariant positive measure)
 
 $$
-\boxed{
+
 f_\mu(I_c(x);r,c)|I_c'(x)|=f_\mu(x;r,c).
-}
+
 \tag{2.2}
 $$
 
@@ -113,23 +113,23 @@ The oriented one-form $f_\mu(x)\,dx$ changes sign under pullback by the decreasi
 For $x>0$,
 
 $$
-\boxed{
+
 \int f_\mu(x;r,c)\,dx
 =\frac{1}{r\sqrt{\mu}}
 \arctan\!\left((x/c)^r\right)+C.
-}
+
 \tag{3.1}
 $$
 
 Consequently,
 
 $$
-\boxed{
+
 \int_0^c f_\mu\,dx
 =\int_c^\infty f_\mu\,dx
 =\frac{\pi}{4r\sqrt{\mu}},\qquad
 \int_0^\infty f_\mu\,dx=\frac{\pi}{2r\sqrt{\mu}}.
-}
+
 \tag{3.2}
 $$
 
@@ -148,11 +148,11 @@ The half-split follows from this **specific density** and its inversion symmetry
 The positive profile satisfies
 
 $$
-\boxed{
+
 \mathcal N(f_\mu):=
 \int_0^\infty f_\mu(x)^2\,x\,dx
 =\frac{1}{2r\mu}.
-}
+
 \tag{3.3}
 $$
 
@@ -172,10 +172,10 @@ The norm (3.3) is invariant under translations of $u$, equivalently multiplicati
 For every $\lambda>0$,
 
 $$
-\boxed{
+
 f_\mu(\lambda x;r,\lambda c)=
 \lambda^{-1}f_\mu(x;r,c).
-}
+
 \tag{4.1}
 $$
 
@@ -206,16 +206,16 @@ $$
 we have
 
 $$
-\boxed{
+
 J_{A,B}(u)=\sqrt{\mu}\cosh(r(u-u_*)).
-}
+
 \tag{4.4}
 $$
 
 In the original coordinate the new center is
 
 $$
-\boxed{c_*=ce^{u_*}=c(B/A)^{1/(2r)}.}
+c_*=ce^{u_*}=c(B/A)^{1/(2r)}.
 \tag{4.5}
 $$
 
