@@ -18,7 +18,7 @@ Fix $r>0$, $c>0$, and put $u=\ln(x/c)$. Every derivative in this chapter is with
 Consider the linear ordinary differential equation
 
 $$
-\boxed{J''=r^2J.}
+J''=r^2J.
 \tag{1.1}
 $$
 
@@ -27,14 +27,14 @@ $$
 Every real $C^2$ solution on an interval is
 
 $$
-\boxed{J(u)=Ae^{ru}+Be^{-ru},\qquad A,B\in\mathbb R.}
+J(u)=Ae^{ru}+Be^{-ru},\qquad A,B\in\mathbb R.
 \tag{1.2}
 $$
 
 The quadratic expression
 
 $$
-\boxed{\Delta_J=J^2-\frac{J'^2}{r^2}=4AB}
+\Delta_J=J^2-\frac{J'^2}{r^2}=4AB
 \tag{1.3}
 $$
 
@@ -74,7 +74,7 @@ $$
 The corresponding center in $x$ is $c_*=ce^{u_*}$. Choosing the centered coordinate $v=u-u_*=\ln(x/c_*)$ gives
 
 $$
-\boxed{J(v)=\sqrt{\mu}\cosh(rv).}
+J(v)=\sqrt{\mu}\cosh(rv).
 \tag{2.3}
 $$
 
@@ -93,9 +93,9 @@ $$
 Then
 
 $$
-\boxed{
+
 R' = rb,\qquad b'=rR,\qquad R^2-b^2=1,
-}
+
 \tag{2.5}
 $$
 
@@ -130,17 +130,17 @@ $$
 The fields $S,W$ obey
 
 $$
-\boxed{
+
 W'=r(1-W^2),\qquad
 S'=-rSW,\qquad S^2+W^2=1.
-}
+
 \tag{3.3}
 $$
 
 After centering,
 
 $$
-\boxed{S(u)=\mathrm{sech}(ru),\qquad W(u)=\tanh(ru).}
+S(u)=\mathrm{sech}(ru),\qquad W(u)=\tanh(ru).
 \tag{3.4}
 $$
 
@@ -164,7 +164,7 @@ $$
 Let $p=(1+W)/2$. Then
 
 $$
-\boxed{p'=2rp(1-p),\qquad p=\frac{1}{1+e^{-2ru}}.}
+p'=2rp(1-p),\qquad p=\frac{1}{1+e^{-2ru}}.
 \tag{3.5}
 $$
 
@@ -194,27 +194,27 @@ $$
 For every such $f$,
 
 $$
-\boxed{
+
 x^2f_{xx}+3xf_x+(1-r^2)f+8\mu r^2x^2f^3
 =
 \frac{y''-r^2y+2\mu r^2y^3}{2x}.
-}
+
 \tag{4.3}
 $$
 
 In particular,
 
 $$
-\boxed{
+
 x^2f_{xx}+3xf_x+(1-r^2)f+8\mu r^2x^2f^3=0
-}
+
 \tag{M}
 $$
 
 is equivalent to
 
 $$
-\boxed{y''=r^2y-2\mu r^2y^3.}
+y''=r^2y-2\mu r^2y^3.
 \tag{4.4}
 $$
 
@@ -230,9 +230,9 @@ $$
 Every $C^2$ solution of (4.4) has constant energy
 
 $$
-\boxed{
+
 \varepsilon=y'^2-r^2y^2+\mu r^2y^4.
-}
+
 \tag{4.5}
 $$
 
@@ -260,18 +260,18 @@ $$
 For every nonvanishing $C^2$ solution of (4.4),
 
 $$
-\boxed{
+
 J'^2-r^2J^2=-\mu r^2+\varepsilon J^4,
-}
+
 \tag{5.2}
 $$
 
 and
 
 $$
-\boxed{
+
 J''=r^2J+2\varepsilon J^3.
-}
+
 \tag{5.3}
 $$
 
@@ -297,20 +297,20 @@ Consequently, the reciprocal obeys the **linear backbone equation** $J''=r^2J$ e
 Let $\varepsilon=0$ and suppose $y>0$ globally on $\mathbb R$. Then
 
 $$
-\boxed{
+
 J(u)=\sqrt{\mu}\cosh(r(u-u_*)),\quad
 y(u)=\frac{\mathrm{sech}(r(u-u_*))}{\sqrt{\mu}},
-}
+
 \tag{5.4}
 $$
 
 and, in the corresponding original coordinate with center $c_*=ce^{u_*}$,
 
 $$
-\boxed{
+
 f(x)=\frac{1}{2\sqrt{\mu}\,x}
 \mathrm{sech}\!\left(r\ln(x/c_*)\right).
-}
+
 \tag{5.5}
 $$
 
@@ -347,20 +347,20 @@ Let $\delta=AB-C^2$. On any interval where $Q>0$, set $\rho=\sqrt Q$.
 One has
 
 $$
-\boxed{
+
 Q'''=r^2Q',
 \qquad
 2QQ''-Q'^2-r^2Q^2=4r^2\delta,
-}
+
 \tag{6.3}
 $$
 
 and
 
 $$
-\boxed{
+
 \rho''=\frac{r^2}{4}\rho+\frac{r^2\delta}{\rho^3}.
-}
+
 \tag{6.4}
 $$
 
@@ -385,16 +385,16 @@ $$
 When $C\ne0$, the quadratic envelope in general **does not** satisfy $Q''=r^2Q$. Instead,
 
 $$
-\boxed{Q''=r^2(Q-2C),\qquad Q'''=r^2Q'.}
+Q''=r^2(Q-2C),\qquad Q'''=r^2Q'.
 \tag{6.5}
 $$
 
 Thus a general quadratic envelope must not be conflated with the two-exponential backbone. On the slice $C=0$, $Q=J$, $\delta=AB=\mu/4$, and equation (6.4) reduces to
 
 $$
-\boxed{
+
 \rho''=\frac{r^2}{4}\rho+\frac{\mu r^2}{4\rho^3}.
-}
+
 \tag{6.6}
 $$
 
@@ -419,19 +419,19 @@ $$
 ### Proposition 7.1 [T] (projective invariant)
 
 $$
-\boxed{
+
 \{e^{ru},u\}=-\frac{r^2}{2}.
-}
+
 \tag{7.3}
 $$
 
 In the original coordinate,
 
 $$
-\boxed{
+
 \left\{\left(\frac{x}{c}\right)^r,x\right\}
 =\frac{1-r^2}{2x^2}.
-}
+
 \tag{7.4}
 $$
 
@@ -455,7 +455,7 @@ This gives an exact projective reading of the same exponential solution pair. It
 The logical order established in this chapter is
 
 $$
-\boxed{
+
 \begin{gathered}
 J''=r^2J
 \ \Longrightarrow\
@@ -463,7 +463,7 @@ J=Ae^{ru}+Be^{-ru},\ \Delta_J=4AB\\
 \Longrightarrow\ (R,b),\ (S,W),\ \text{Riccati and conic relations}\\
 \Longrightarrow\ \text{a zero-energy nonlinear Master solution via }y=1/J.
 \end{gathered}
-}
+
 $$
 
 The converse—from a **nonvanishing nonlinear Master solution** to a linear reciprocal—requires the extra condition $\varepsilon=0$, proved in Theorem 5.1. The quadratic envelope has its own three-parameter identity and EP equation, proved in Theorem 6.1.
