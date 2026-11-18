@@ -8,6 +8,10 @@ This directory preserves **complete, provisional mathematical investigations** b
 - Allocate each number once. Keep earlier drafts in place when consolidating; mark them as incorporated or superseded rather than silently replacing their history.
 - Use objective titles identifying the mathematics, not a claim of novelty.
 
+## Draft index
+
+- [000 Lagrange Inversion of Canonical Coordinates and Level Turning Points](000%20Lagrange%20Inversion%20of%20Canonical%20Coordinates%20and%20Level%20Turning%20Points.md) — Catalan and Fuss–Catalan inversion, reciprocal turning points, and the all-orders local period expansion. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
@@ -21,9 +25,9 @@ Maintain distinct evidence labels: **proved in this draft**, **checked computati
 
 ## GitHub Markdown conventions
 
-- Inline mathematics: `$`expression`$` (backticks *inside* the dollar signs).
+- Inline mathematics: ``$`x`$`` (backticks immediately inside the dollar signs).
 - Display mathematics: unindented fenced `math` blocks, with one blank line immediately above and below the fence; keep each expression on one line.
-- Avoid `\\boxed`, `\\tag`, and `\\operatorname`; prefer `\\mathrm{sech}` for the hyperbolic secant.
+- Avoid `\boxed`, `\tag`, and `\operatorname`; prefer `\mathrm{sech}` for the hyperbolic secant.
 - Keep the original stepwise calculations visible, not just final results.
 
 ## Consolidation
