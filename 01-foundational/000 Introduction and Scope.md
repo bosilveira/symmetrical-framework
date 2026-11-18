@@ -15,19 +15,19 @@ related_claims: [D04, F01, F04, F06, F08]
 
 The **Symmetrical Framework** is a mathematical investigation of an explicitly defined family of functions on the multiplicative half-line, the differential equations they solve, and the algebraic structures obtained from their changes of variables, first integrals, and solution spaces. Its purpose is to state, prove, verify, and organize precise relationships—not to assert that an elementary function uniquely determines all of the mathematical theories in which it can be realized.
 
-**Definition 1.1 (the original symmetrical function).** Fix a resolution parameter $r>0$ and a center $c>0$. For $x>0$, set
+**Definition 1.1 (the original symmetrical function).** Fix a resolution parameter $`r>0`$ and a center $`c>0`$. For $`x>0`$, set
 
 ```math
 f(x;r,c)=\frac{c^r x^{r-1}}{c^{2r}+x^{2r}}. \qquad (1.1)
 ```
 
-For later differential equations it is useful to introduce an independent amplitude normalization $\mu>0$:
+For later differential equations it is useful to introduce an independent amplitude normalization $`\mu>0`$:
 
 ```math
 f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}f(x;r,c). \qquad (1.2)
 ```
 
-The original function is the case $\mu=1$. Throughout these first three chapters $r,c,\mu$ are constants, and all functions and derivatives are real unless otherwise specified.
+The original function is the case $`\mu=1`$. Throughout these first three chapters $`r,c,\mu`$ are constants, and all functions and derivatives are real unless otherwise specified.
 
 **Definition 1.2 (centered logarithmic coordinate).** Set
 
@@ -47,11 +47,11 @@ gives
 2x f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}\mathrm{sech}(ru). \qquad (1.4)
 ```
 
-This is the basic translation from multiplicative to additive coordinates. The center $x=c$ corresponds exactly to $u=0$.
+This is the basic translation from multiplicative to additive coordinates. The center $`x=c`$ corresponds exactly to $`u=0`$.
 
 ### Proposition 1.3 [T] (multiplicative inversion and half-split)
 
-Let $I_c(x)=c^2/x$. Then
+Let $`I_c(x)=c^2/x`$. Then
 
 ```math
 f_\mu(I_c(x);r,c)|I_c'(x)|=f_\mu(x;r,c). \qquad (1.5)
@@ -65,10 +65,10 @@ Moreover,
 
 **Proof, step by step.**
 
-1. Under $x\mapsto I_c(x)$, the coordinate $u=\ln(x/c)$ changes to $-u$.
-2. Because $\mathrm{sech}(-ru)=\mathrm{sech}(ru)$, equation (1.4) implies that the differential form $f_\mu(x)\,dx=(2\sqrt{\mu})^{-1}\mathrm{sech}(ru)\,du$ is invariant as a positive measure under inversion (the orientation of the form itself reverses).
-3. Put $z=(x/c)^r$. A direct substitution gives $f_\mu(x)\,dx=dz/[r\sqrt{\mu}(1+z^2)]$.
-4. Hence $\int_0^c f_\mu\,dx=(r\sqrt{\mu})^{-1}\int_0^1(1+z^2)^{-1}\,dz=\pi/(4r\sqrt{\mu})$. The interval $c<x<\infty$ corresponds to $1<z<\infty$ and gives the same value. $\square$
+1. Under $`x\mapsto I_c(x)`$, the coordinate $`u=\ln(x/c)`$ changes to $`-u`$.
+2. Because $`\mathrm{sech}(-ru)=\mathrm{sech}(ru)`$, equation (1.4) implies that the differential form $`f_\mu(x)\,dx=(2\sqrt{\mu})^{-1}\mathrm{sech}(ru)\,du`$ is invariant as a positive measure under inversion (the orientation of the form itself reverses).
+3. Put $`z=(x/c)^r`$. A direct substitution gives $`f_\mu(x)\,dx=dz/[r\sqrt{\mu}(1+z^2)]`$.
+4. Hence $`\int_0^c f_\mu\,dx=(r\sqrt{\mu})^{-1}\int_0^1(1+z^2)^{-1}\,dz=\pi/(4r\sqrt{\mu})`$. The interval $`c<x<\infty`$ corresponds to $`1<z<\infty`$ and gives the same value. $`\square`$
 
 **Non-uniqueness warning.** The half-split property by itself does **not** characterize (1.1) uniquely among positive continuous integrable functions. Any symmetric integrable density in the logarithmic coordinate has a half-split. Uniqueness statements must always include the additional differential equation, function class, normalization, and boundary or integrability hypotheses that make them valid.
 
@@ -78,7 +78,7 @@ Here **foundational** refers to objects and statements that can be defined and p
 
 The initial foundational objects are:
 
-- the $x$-to-$u$ coordinate dictionary and scaling symmetry;
+- the $`x`$-to-$`u`$ coordinate dictionary and scaling symmetry;
 - a two-dimensional exponential solution space and its quadratic invariant;
 - logarithmic derivatives, Riccati equations, and conic identities;
 - the Master nonlinear equation, its conserved energy, and the distinguished zero-energy separatrix;
@@ -110,7 +110,7 @@ The following conventions apply to the numbered foundational documents:
 3. **Prove in steps.** Write substitutions and intermediate equalities; do not replace an argument by “it is straightforward” when a calculation matters.
 4. **Show reversibility where claimed.** An implication is not an equivalence unless the converse, including its domain restrictions, is checked.
 5. **Track integration constants.** In particular, do not silently set the Master energy to zero.
-6. **Audit evidence.** Existing repository conventions are $[T]$ proved in the document, $[V]$ checked by a specified computation, $[K]$ known result from the literature, $[I]$ interpretation, and $[C]$ conjecture or open question. A passing numerical test alone is not a general proof.
+6. **Audit evidence.** Existing repository conventions are $`[T]`$ proved in the document, $`[V]`$ checked by a specified computation, $`[K]`$ known result from the literature, $`[I]`$ interpretation, and $`[C]`$ conjecture or open question. A passing numerical test alone is not a general proof.
 7. **Preserve stable identifiers.** Document names and numbers may change, but claim identifiers (for example F01 or H516) remain stable.
 
 References to other mathematical domains are invitations to explicit constructions and proofs, not claims that their entirety is encoded by (1.1).
@@ -119,11 +119,11 @@ References to other mathematical domains are invitations to explicit constructio
 
 - **[010 Variables and Normalizations](010%20Variables%20and%20Normalizations.md)** establishes the derivative, measure, inversion, and parameter dictionaries in full detail.
 - **[020 The Linear Exponential Backbone](020%20The%20Linear%20Exponential%20Backbone.md)** proves the linear invariant, the centered hyperbolic equations, the Master separatrix connection, and the quadratic-envelope/Ermakov–Pinney identity.
-- Later chapters will develop the Master equation and its classification, the $q$-family, projective invariants, energy curves, and the structural correspondence atlas.
+- Later chapters will develop the Master equation and its classification, the $`q`$-family, projective invariants, energy curves, and the structural correspondence atlas.
 
 ### Historical notation
 
-Earlier drafts use $x_0$ for the center and $t=\ln x$, $\theta=r\ln(x/x_0)$. This series uses $c=x_0$ and the centered coordinate $u=\ln(x/c)$, so
+Earlier drafts use $`x_0`$ for the center and $`t=\ln x`$, $`\theta=r\ln(x/x_0)`$. This series uses $`c=x_0`$ and the centered coordinate $`u=\ln(x/c)`$, so
 
 ```math
 t=u+\ln c,\qquad \theta=ru. \qquad (1.7)
