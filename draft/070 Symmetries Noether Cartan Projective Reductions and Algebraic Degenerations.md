@@ -622,3 +622,187 @@ Equivalently the zero mode of the shifted order-two Pöschl–Teller operator is
 ```
 
 This is a direct, fully verified variational ODE connection. It does not classify every Pöschl–Teller Schrödinger operator or every stochastic Kramers problem by a single quartic discriminant.
+
+## 14. Weierstrass data, Gauss maps and Riemann minimal examples: the missing marked differential [D,K,H421,H424]
+
+On an oriented Euclidean minimal surface, a conformal parameter $\zeta$ makes the stereographic Gauss map $g(\zeta)$ meromorphic and the Weierstrass one-form data holomorphic/meromorphic in a compatible chart. The immersion is reconstructed by integrating a vector of one-forms and taking its real part. Both the Gauss map and a separately chosen height differential are necessary.
+
+For a fixed convention, let $\eta$ be a meromorphic height differential. The Weierstrass one-forms can be written
+
+```math
+(\Phi_1,\Phi_2,\Phi_3)=\left(\frac12(g^{-1}-g)\eta,\,\frac{i}{2}(g^{-1}+g)\eta,\,\eta\right).
+```
+
+They satisfy the ambient null relation
+
+```math
+\Phi_1^2+\Phi_2^2+\Phi_3^2=0.
+```
+
+The immersion $X=\mathrm{Re}\int(\Phi_1,\Phi_2,\Phi_3)$ requires regularity and real-period closing conditions. Rotating $\eta$ by a unit complex phase generates the local associate family; the catenoid/helicoid conjugacy is one classical instance. The **same Gauss map** need not determine the same global immersed surface.
+
+### 14.1 An elliptic model is not automatically the Gauss map ODE of every surface
+
+A smooth genus-one double cover of the sphere can be specified by
+
+```math
+w^2=P_4(g),\qquad P_4(g)=g(g-a)(g+a^{-1}),\qquad a\in\mathbb C\setminus\{0\},
+```
+
+with a fourth branch point at infinity, provided the finite roots are distinct. Along the elliptic Abel parameter $\zeta=\int dg/w$, one then has $(dg/d\zeta)^2=P_4(g)$. This is an **explicit choice of differential** on a specific curve.
+
+Not every meromorphic Gauss map on a minimal surface satisfies a first-order quartic autonomous equation in an arbitrary surface chart. One must specify the elliptic base, its degree-two meromorphic function, the Abel differential, and the immersion's height differential. The global Riemann minimal examples have additional real period and closing conditions reviewed in drafts 020 and 030.
+
+### 14.2 The catenoid and helicoid are not “different Jordan or torsion phases”
+
+In a common simply connected parameterization of a catenoid/helicoid associate family, the stereographic Gauss map can be normalized as $g=e^{r\zeta}$, with the phase of $\eta$ distinguishing the immersion. The associated projective relation is
+
+```math
+g_\zeta=rg,\qquad \{g,\zeta\}=-r^2/2.
+```
+
+This is hyperbolic projective evolution in the **chosen coordinate**, even though both surfaces have the same nonzero intrinsic Gaussian curvature. They cannot be classified respectively as “Levi-Civita-only curvature” and “Weitzenbock-only torsion”.
+
+In a particular degeneration of a **specified marked elliptic family**, roots of $P_4$ may collide and the elliptic uniformization may become elementary. This does not alone imply global convergence to catenoid or helicoid: rescaling, Bonnet phase, real structure, period normalization and the immersion differential must also converge. A linear **pencil** of quartics $P_0+\lambda P_1$ is a further special structure, not a synonym for every nonlinearly parameterized family of branch points.
+
+## 15. Euler's biquadratic correspondence and QRT curves [D,K,C,H352–H358]
+
+A genuinely common source of **two** binary quartics is a smooth bidegree-(2,2) curve in $\mathbb P^1\times\mathbb P^1$:
+
+```math
+\mathcal C:\quad A_0(x)y^2+2A_1(x)y+A_2(x)=0,
+```
+
+where each $A_i(x)$ has degree at most two. Solving for $y$ gives
+
+```math
+y=\frac{-A_1(x)\pm\sqrt{A_1(x)^2-A_0(x)A_2(x)}}{A_0(x)}.
+```
+
+The discriminant of the **projection onto the x-line** is the quartic
+
+```math
+D_x(x)=A_1(x)^2-A_0(x)A_2(x).
+```
+
+Interchange $x,y$ and form $D_y(y)$ from the other projection. If $\mathcal C$ is smooth of bidegree (2,2), its genus is
+
+```math
+g(\mathcal C)=(2-1)(2-1)=1.
+```
+
+Each degree-two projection makes the same genus-one curve a double cover of a projective line branched at four points (counting multiplicities). Therefore the two quartic double covers have the same **abstract complex elliptic** $j$-invariant, after compactification and the appropriate coordinate/leading-coefficient normalizations.
+
+### 15.1 The crucial limitation: equal j does not force literal equal I and J
+
+If a quartic is multiplied by a nonzero scalar $\lambda$, its raw invariants scale by
+
+```math
+I(\lambda F)=\lambda^2I(F),\qquad J(\lambda F)=\lambda^3J(F),\qquad\Delta(\lambda F)=\lambda^6\Delta(F),
+```
+
+while its elliptic $j$ remains the same. General projective variable changes introduce further determinant weights. Thus two double-cover presentations of one smooth genus-one curve can have **equal j but different numerical raw I and J**.
+
+Nor does the algebraic relation $D_x=A_1^2-A_0A_2$ imply the **dynamical** relation $\dot x^2=D_x(x)$. A Hamiltonian flow, choice of clock and marked differential must be added. The attachment's assertion that any coupled oscillator with two integrals automatically yields a symmetric QRT biquadratic and phase locking is not a theorem.
+
+The archived Hénon–Heiles/Master quartic pencil, its projective transformation and modular relations are specific algebraic constructions; draft 050 already makes explicit that a quartic-pencil equivalence does not identify all mechanical Hamiltonians.
+
+## 16. Two complex modes: the exact SU(2)–CP1 quartic mechanism [D,V,K]
+
+A rigorous projective phase-space reduction *does* exist for a specified two-mode complex Hamiltonian. Let $z_1,z_2$ be complex canonical variables with brackets
+
+```math
+\{z_i,\bar z_j\}=-i\delta_{ij},\qquad \{z_i,z_j\}=0,\qquad N=|z_1|^2+|z_2|^2>0.
+```
+
+Define the classical Schwinger variables
+
+```math
+S_x=\frac{\bar z_1z_2+\bar z_2z_1}{2},\qquad S_y=\frac{\bar z_1z_2-\bar z_2z_1}{2i},\qquad S_z=\frac{|z_1|^2-|z_2|^2}{2}.
+```
+
+They satisfy
+
+```math
+\{S_i,S_j\}=\epsilon_{ijk}S_k,\qquad S_x^2+S_y^2+S_z^2=(N/2)^2.
+```
+
+For fixed $N$, the norm sphere is $S^3$; quotienting its common phase $U(1)$ gives
+
+```math
+S^3/U(1)=\mathbb{CP}^1\cong S^2.
+```
+
+This is the symplectic quotient at a fixed nonzero moment-map level, not merely the quotient $(\mathbb C^2\setminus\{0\})/U(1)$, which still carries a radial coordinate.
+
+### 16.1 Two-mode quartic from an actual Hamiltonian
+
+Choose the real two-mode mean-field Hamiltonian with hopping parameter $\tau>0$ and interaction $U$:
+
+```math
+\mathcal H=-\tau(\bar z_1z_2+\bar z_2z_1)+\frac U2(|z_1|^4+|z_2|^4).
+```
+
+On the sphere of fixed norm $N$, this becomes
+
+```math
+\mathcal H=-2\tau S_x+US_z^2+\frac{UN^2}{4}.
+```
+
+Let the conserved **reduced energy** be $h=\mathcal H-UN^2/4$ and write $z=S_z$. Then
+
+```math
+h=-2\tau S_x+Uz^2,\qquad \dot z=\{S_z,\mathcal H\}=-2\tau S_y.
+```
+
+Eliminate $S_x$ using the reduced energy and $S_y$ using the sphere identity:
+
+```math
+S_x=\frac{Uz^2-h}{2\tau},\qquad \dot z^2=4\tau^2[(N/2)^2-z^2]-(Uz^2-h)^2.
+```
+
+**Theorem 16.1 [D,V] (two-mode energy quartic).** The population-imbalance variable satisfies
+
+```math
+\dot z^2=-U^2z^4+(2Uh-4\tau^2)z^2+\tau^2N^2-h^2.
+```
+
+The proof is substitution in the identity $S_x^2+S_y^2+S_z^2=N^2/4$, not a conjectural Lie-group analogy.
+
+### 16.2 Its actual binary quartic discriminant
+
+The raw quartic is
+
+```math
+F_h(X,Z)=-U^2X^4+(2Uh-4\tau^2)X^2Z^2+(\tau^2N^2-h^2)Z^4.
+```
+
+A direct invariant calculation yields
+
+```math
+I_h=4(-3N^2U^2\tau^2+4U^2h^2-4Uh\tau^2+4\tau^4).
+```
+
+```math
+J_h=16(Uh-2\tau^2)(-9N^2U^2\tau^2+8U^2h^2+4Uh\tau^2-4\tau^4).
+```
+
+```math
+\Delta_h=256U^2\tau^4(h^2-N^2\tau^2)(-N^2U^2+4Uh-4\tau^2)^2.
+```
+
+This **explicit** energy quartic gives precise discriminant loci for the selected nonlinear two-mode model. When $U=0$ or $\tau=0$ it is singular because the quartic loses degree or becomes a square, even though the original linear or decoupled evolution remains well-defined.
+
+At the fixed point $z=0$ and relative phase $\pi$, $h=N\tau$. In the usual repulsive-interaction convention, the linear stability changes when $UN=2\tau$; this follows by Taylor expansion of the reduced Hamiltonian near that fixed point. The **macroscopic self-trapping of a given initial condition** also depends on energy and initial phase, not solely on that single threshold.
+
+The fixed-$N$ mean-field quartic does not automatically describe the finite-particle quantum Bose–Hubbard spectrum, which requires quantization and additional Hilbert-space data.
+
+### 16.3 Projective dynamics is nonlinear Riccati only under additional conditions
+
+On the chart $z_2\ne0$ define $g=z_1/z_2$. Hamilton's equations for the selected complex amplitudes give
+
+```math
+i\dot g=\tau(g^2-1)+UN\,\frac{|g|^2-1}{1+|g|^2}\,g.
+```
+
+For $U=0$ this is a holomorphic Riccati equation induced by a linear two-component system. For $U\ne0$ it contains $\bar g$ through $|g|^2$, hence is a **real-Hamiltonian nonlinear projective flow**, not an ordinary holomorphic Riccati equation with coefficients depending only on time. This is another necessary distinction between the algebraic projective coordinate and the particular differential equation imposed on it.
