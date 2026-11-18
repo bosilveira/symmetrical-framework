@@ -995,3 +995,163 @@ The relevant data have different types:
 | Original Symmetrical Master separatrix | scalar ODE in $u=\ln(x/c)$, energy quartic | may appear as a special Duffing profile or conformal/variational reduction, without assuming Kepler or hydrogen data |
 
 A shared oscillator differential expression does **not** identify the spectra, Hilbert spaces, clock, boundary conditions, forces, or physical systems. Conversely, the KS regularization is stronger than a superficial analogy precisely because its map, constraints and time conversion are explicitly stated. The same standard should be applied to all proposed correspondences in this framework.
+
+## 21. A further invariant theorem: deterministic quartic-pencil line versus stochastic motion along the line [D,V]
+
+The Duffing binary-quartic invariants in the raw convention are
+
+```math
+I(E)=\alpha^2-12\beta E,\qquad J(E)=-2\alpha^3-72\alpha\beta E.
+```
+
+Eliminate the energy $E$ and obtain an exact affine invariant relation:
+
+```math
+J(E)=6\alpha I(E)-8\alpha^3.
+```
+
+**Theorem 21.1 [D,V].** For fixed Duffing coefficients $\alpha,\beta>0$, the map from the energy parameter $E$ to the raw invariant pair $(I(E),J(E))$ has image on the straight line $J=6\alpha I-8\alpha^3$. The binary-quartic discriminant restricts to a cubic polynomial on that line and vanishes at $E=0$ and $E=-\alpha^2/(4\beta)$.
+
+**Proof, step by step.** Solve $E=(\alpha^2-I)/(12\beta)$ from the first invariant and substitute into the second. The relation follows immediately. Insert the same substitution into the discriminant of §13 to recover its two special energy values.
+
+This line is a simple invariant-theoretic description of the **specific energy pencil**; it should not be confused with an $\mathfrak{sl}_2$ conjugacy class or a common Levi-Civita torsion invariant. The values of $(I,J)$ are constant along each deterministic Duffing orbit only because the energy $E$ is conserved.
+
+### 21.1 The same line persists under noise, but the invariant values do not
+
+In the Langevin system of §19, $E_t=H(q_t,p_t)$ is an Itô process. By affine differentiation,
+
+```math
+dI_t=-12\beta\,dE_t,\qquad dJ_t=6\alpha\,dI_t.
+```
+
+Substituting the exact energy Itô formula gives
+
+```math
+dI_t=(12\beta\gamma p_t^2-6\beta\sigma^2)\,dt-12\beta\sigma p_t\,dB_t.
+```
+
+In particular, $(I_t,J_t)$ stays on the *deterministic algebraic line* $J_t=6\alpha I_t-8\alpha^3$ almost surely, but is generally **not constant, nor a martingale**.
+
+This is a precise “map is not the territory” phenomenon: a *constraint between invariant polynomials* can remain algebraically valid under a stochastic deformation without becoming a *conservation law along stochastic trajectories*. Nonlinear functions of $(I_t,J_t)$—such as the discriminant or smooth $j$—acquire further Itô drift through their second derivatives whenever their values are defined.
+
+## 22. A rigorous audit of the submitted suggestions
+
+The submitted text spans several mathematical traditions. The following table preserves its motivations and identifies where the proposed implication is genuinely a theorem, where extra data are necessary, and where an explicit counterexample applies.
+
+| Submitted theme | Mathematical verdict | Source or derivation |
+|---|---|---|
+| “Second order is fundamentally curvature or torsion.” | **Too strong [C].** Both can vanish while independent nontrivial second-order forces exist. | §3; flat one-dimensional oscillator and Duffing |
+| Curvature/torsion completely determine an affine connection. | **False [C].** Connection and global holonomy/gauge data are additional. | §3; drafts 030 and 040 |
+| Kinetic Euler–Lagrange is Levi-Civita geodesic. | **True under metric kinetic action and fixed-endpoint hypotheses [K].** | §§3–4,9 |
+| Antisymmetric torsion supplies the force $T^k{}_{ij}v^iv^j$. | **False [C]**, identically zero. The correct difference uses contorsion. | §3 |
+| Killing vector gives a conserved geodesic momentum. | **True [K]**; with a potential require $K(V)=0$. | §4 |
+| Wronskian is conserved for a Sturm–Liouville problem. | **True [K,D]** for two solutions of the same spectral parameter; weighted Wronskian. | §5 |
+| Wronskian is automatically a global $SL(2)$ Noether charge of every potential. | **Overstated [C].** It is a solution-space symplectic current; background symmetries are separate. | §5 |
+| Minimal surface has translation flux. | **True [K,D]**; catenoid flux computed explicitly. | §6 |
+| Pohozaev fixes Aubin–Talenti scale. | **False [C].** Critical dilation leaves a continuous family. | §7 |
+| BPST charge and Eguchi–Hanson characteristics are frame-torsion Noether charges. | **False as stated [C].** Separate Chern–Weil gauge and Riemannian topology. | §8; draft 060 |
+| All Palatini variations force uniquely Levi-Civita. | **False for an unrestricted independent connection [C]**; projective gauge ambiguity. | §9 |
+| Linear Levi-Civita and TEGR bulk actions differ by boundary term. | **True with matching conventions/variational boundary data [K].** | §9; draft 040 |
+| dS/AdS homogeneous Cartan curvature can be flat. | **True [K]** for the appropriately modeled *larger-group Cartan* connection. | §10 |
+| Cartan flatness is the same as Weitzenbock flatness. | **False [C]**; distinct structure groups and connections. | §10 |
+| dS, AdS, Minkowski correspond uniquely to elliptic, hyperbolic, nilpotent sl2 and R/T regimes. | **False [C]**; conjugacy signs classify a specified matrix, not arbitrary metric/connection pairs. | §§10–11 |
+| sl2 constant-matrix elliptic/hyperbolic/parabolic exponential formulas. | **True [D]** for the stated sign of $\det A$ and separately zero matrix. | §11 |
+| Quartic discriminant zero is the sl2 nilpotent cone. | **False [C]**; different invariant representations. | §12 |
+| $I=J=0$ means a quadruple root. | **False [C]**; a triple-root quartic has the same pair. | §12 |
+| Duffing energy generates a quartic pencil and elliptic separatrix degeneration. | **True [D,V]** with correct discriminant normalization and real branch. | §13 |
+| The attached Duffing discriminant formula is correct. | **False [C]** in its stated conventions. | §13 |
+| Riemann examples require elliptic Weierstrass data. | **Qualified [K,H]**; selected elliptic families require marked periods and height differential. | §14; drafts 020,030 |
+| Catenoid is curvature-only and helicoid torsion-only. | **False [C]**; same intrinsic curvature, different associate data. | §14 |
+| A smooth (2,2) biquadratic yields two elliptic quartic projections. | **True under smoothness/nondegeneracy [K,D]**; same complex $j$. | §15 |
+| The two quartics have identical raw I,J without normalization and automatically synchronized motion. | **False [C]**; scaling and chosen flows matter. | §15 |
+| Two-mode mean-field quotient gives CP1 and an energy quartic. | **True [D,V]** when fixed norm and a particular Hamiltonian are supplied. | §16 |
+| Every nonlinear two-mode ratio obeys a holomorphic Riccati equation. | **False [C]**; the interaction introduces $\bar g$. | §16 |
+| Three modes imply dynamical SU(3) symmetry and genus-two separation. | **False [C]** without a specified invariant Hamiltonian and integrability. | §17 |
+| A Killing vector automatically produces a Brownian martingale. | **False [C]**; the generator/harmonicity and vector drift matter. | §18 |
+| Weitzenbock frame noise is automatically Laplace–Beltrami Brownian motion. | **False [C]**; a frame-dependent drift correction is required. | §18 |
+| Langevin energy and quartic I,J are martingales because of deterministic Noether. | **False [C]**; explicit Itô drift computed. | §§19,21 |
+| Kepler, hydrogen and oscillator can share a regularized differential model. | **True with explicit constraints, clocks and domains [K].** No physical identification follows. | §§1,20 |
+
+## 23. What is genuinely new in the *organization* rather than the mathematics?
+
+The source mathematics is mainly classical. The useful research contribution of this provisional investigation is to specify a disciplined **interface record** for each correspondence. A candidate record should have fields:
+
+- **Object:** an embedded surface, Riemannian/Kähler metric, frame and connection, Lie-algebra matrix, polynomial/elliptic curve, Hamiltonian, self-adjoint operator, or stochastic generator.
+- **Required extra data:** orientation, spin structure, gauge, Lagrangian, energy and momentum level, clock, boundary condition, bundle, measure, noise amplitude.
+- **Map type:** equality of differential expressions; Levi-Civita/contorsion rewriting; action boundary equivalence; Noether reduction; Hopf/symplectic quotient; projective Riccati map; elliptic isomorphism or isogeny; spectral unitary conjugacy; stochastic Doob transformation.
+- **Invariant preserved:** Wronskian, energy, flux, Chern class, curvature tensor, quartic discriminant/j, symplectic form, stationary law, or operator spectrum as appropriate.
+- **Lost data:** vector direction, time orientation, phase, marked cycle, global embedding, connection holonomy, self-adjoint extension, stochastic filtration, or physical application.
+- **Verification status:** exact proof; symbolic check; numerical evidence; classical theorem with cited hypotheses; open/false.
+
+The guiding principle is to **never place two different mathematical invariants in the same box merely because they have the same numerical value or the same letter**. A Pohozaev identity, a Noether momentum, a Wronskian, a Chern number and a stochastic martingale have different sources and different conservation mechanisms.
+
+### 23.1 Four precise candidate foundational propositions
+
+**Candidate A (exact, §§3–5).** On a selected metric with a selected flat metric-compatible connection, Levi-Civita geodesics may be rewritten by contorsion, while Wronskians of a fixed Sturm–Liouville operator are conserved symplectic currents. Neither statement is reducible to the torsion scalar alone.
+
+**Candidate B (exact, §§11–13).** Constant real traceless two-by-two matrix conjugacy is governed by its matrix determinant, while the cubic Duffing energy family is governed by a *different* quartic discriminant. The normalized Master equation is an explicit special member of the latter family, and its separatrix Hessian is order-two Pöschl–Teller.
+
+**Candidate C (exact, §§15–17).** Fixed-norm two-mode symplectic reduction gives CP1 and, for the specified nonlinear hopping-plus-interaction Hamiltonian, an explicit imbalance quartic with the displayed $I,J,\Delta$. The projective ratio is holomorphic Riccati only in the linear case or other suitably restricted cases.
+
+**Candidate D (exact, §§19–21).** The Duffing energy pencil has $J=6\alpha I-8\alpha^3$. Its algebraic invariant line persists if energy becomes stochastic, but the coordinates $I_t,J_t$ are not generally conserved or martingales; their Itô differentials follow from the selected Langevin law.
+
+These statements may eventually be split between the project's authoritative algebraic and differential-geometric layers after review. Their individual identities are classical or elementary consequences of known structures; no priority claim is made.
+
+## 24. Open questions suitable for further mathematical work [O]
+
+1. **Matched surface quartics:** Starting with a specifically marked Weierstrass–Enneper family, determine when the surface fundamental-form quartic of draft 050 and the Gauss-map elliptic quartic have isomorphic smooth double covers, with an explicit map of the meromorphic differential.
+2. **Noether and connection equivalence:** Derive a covariant presymplectic current for the canonical Master/Pinney Lagrangian and compute how it transforms under the selected two-dimensional catenoid Weitzenbock frame and its contorsion, without identifying it with an independent torsion charge.
+3. **Lie groups and real forms:** Relate the canonical hyperbolic/circular KAN charts to precisely specified $\mathrm{SL}(2,\mathbb R)$ conjugacy and Iwasawa decompositions; distinguish real-form changes, complex analytic continuation and Gudermannian coordinate substitutions.
+4. **QRT as a genuine dynamic map:** Choose one historically archived Hénon–Heiles integrable leaf, derive its separation variables and marked differential, and test whether its quartic pencils yield an explicit QRT/Bäcklund map. Do not infer existence from equal $j$ alone.
+5. **Two-mode modular map:** Compute period integrals, discriminant strata and possible degree-two isogenies for the exact two-mode quartic of §16, tracking $U,\tau,N,h$ and the physical/reduced clocks.
+6. **SU(3) separation:** Find an explicit three-mode Hamiltonian with a second commuting integral after U(1) reduction, derive the actual spectral curve and prove its genus; investigate when a genus-two description genuinely exists.
+7. **Stochastic invariant dynamics:** For the Langevin Duffing system, use $(I_t,J_t)$ as a one-dimensional diffusion image of the energy and derive its Kolmogorov operator (including the momentum dependence) and conditional metastability estimates. Do not assert autonomous Markovian closure in $E_t$ unless justified.
+8. **Cartan/teleparallel bundles:** Compare homogeneous dS/AdS Cartan flatness with a separately chosen Weitzenbock connection via explicit associated bundles, holonomies and local coframes; prove exactly which curvature terms correspond and which cannot be traded.
+9. **KS constraints:** Make an exact diagram of classical Kepler regularization and quantum hydrogen oscillator correspondence, distinguishing energy-shell symplectic reduction, time change, fiber quotient and self-adjoint domains.
+10. **Boundary-sensitive Noether:** Compare the catenoid flux and Riemann-example period closing, critical Yamabe Pohozaev integral, the BPST Chern charge and the weighted Sturm–Liouville boundary Wronskian under a common boundary-term bookkeeping language, retaining their different differential forms and dimensions.
+11. **Dimensional caution:** Characterize the four-dimensional Weyl-spinor binary-quartic representation as a *dimension-specific algebraic convenience*, rather than a claim that physical space must be three-dimensional or that every four-dimensional torsion tensor is a spinor quartic.
+
+## 25. Source status, independent checks and references
+
+### 25.1 Exact symbolic checks performed in this investigation
+
+The following identities were independently checked with SymPy using exact rational expressions and symbolic parameters:
+
+1. Duffing raw invariants $I=\alpha^2-12\beta E$, $J=-2\alpha^3-72\alpha\beta E$ and $\Delta=-16\beta E(\alpha^2+4\beta E)^2$.
+2. Binomial normalization $(I_b,J_b)=(I/12,J/432)$ and $\Delta=256(I_b^3-27J_b^2)$.
+3. Exact affine pencil identity $J-6\alpha I+8\alpha^3=0$.
+4. The two-mode quartic of §16, its raw $I_h,J_h$, and its fully factored discriminant.
+5. The classical $\mathfrak{su}(2)$ Poisson relations of the Schwinger bilinears with $\{z_i,\bar z_j\}=-i\delta_{ij}$.
+6. The canonical catenoid flux integral $\oint_\gamma *dX=(0,0,2\pi/r)$ with the stated $v$ period and orientation.
+7. The previously archived Gram-square invariants $I=16(AB-C^2)^2$, $J=128(AB-C^2)^3$ were rechecked while relating the Pinney and elliptic quartics.
+
+The remaining displayed claims are accompanied by direct calculations in their sections or are identified as classical structural results. Exact arithmetic does not independently establish all global existence, isometry, minimal-surface period, projective holonomy or stochastic semigroup claims.
+
+### 25.2 Historical references
+
+- Historical ZIP: 04-follow-ups/spinning-tops-henon-heiles-double-wells.md (Euler/Lagrange/Kovalevskaya tops, Hénon–Heiles algebra, Miura–Darboux, double-well calculations and explicitly identified limits of adoption).
+- Historical ZIP: 04-follow-ups/coupled-oscillator-and-modular-clock.md (the special 1:6:8 coupled oscillator, modular clock and invariant calculations). This is **not** a theorem about arbitrary coupled modes.
+- Historical ZIP: 04-follow-ups/binary-quartic-pencils.md (H352–H358; explicit Hénon–Heiles quartic pencils, QRT-adjacent Wronski maps, ramification and period data), together with the later live draft 050.
+- Historical ZIP: 04-follow-ups/fundamental-forms-willmore-hopf.md (H421–H428; catenoid/helicoid, Gauss–Codazzi, Hopf differential, Willmore/elastica and scope corrections).
+- Historical ZIP: 04-follow-ups/conformal-and-probabilistic-readings.md (H173–H176, including the existing dilation/Noether/Pohozaev results).
+- Current live main branch: drafts 020, 030, 040, 050 and 060; for the original logarithmic variable and linear/Gram backbone, SF-I-020. These are provisional sources until claim-by-claim integration.
+
+### 25.3 External mathematical literature
+
+- **Einstein–Hilbert–Palatini projective ambiguity:** https://arxiv.org/abs/1606.08756 and https://arxiv.org/abs/1010.0869 . In particular a general independent connection need not be uniquely Levi-Civita without imposing projective gauge or other restrictions.
+- **Teleparallel versus Cartan bundle-level geometry:** https://link.springer.com/article/10.1007/s13194-025-00658-0 and https://www.mdpi.com/2218-1997/7/5/114 .
+- **Classical minimal-surface flux and associate representations:** https://mathworld.wolfram.com/ConjugateMinimalSurface.html and the Hoffman–Karcher minimal-surface literature.
+- **Symplectic reduction, moment map and complex projective spaces:** https://people.math.ethz.ch/~acannas/Teaching/Moment_Map_2026/stm.pdf and https://www.sciencedirect.com/science/article/am/pii/S1063520322000586 .
+- **QRT curves and their quartic projections:** https://web.maths.unsw.edu.au/~jagr/RJ14.pdf ; distinct double covers have the same smooth complex $j$ after the proper comparison.
+- **Kepler/oscillator regularization with dimension and clock change:** https://link.springer.com/article/10.1007/s10569-021-10029-5 ; https://amj.math.stonybrook.edu/Articles/240913-Takeuchi/index.html ; https://encyclopediaofmath.org/wiki/Kustaanheimo-Stiefel_transformation .
+- **Manifold Brownian motion and parallel-transport choices:** https://link.springer.com/article/10.1007/s00440-016-0706-4 . The drift-correction formula in §18 is derived directly.
+- **Duffing energy quartics and Jacobi elliptic oscillations:** https://dlmf.nist.gov/22.19 and the archived H320–H324 mathematical checks.
+
+### 25.4 Proposed consolidation destinations
+
+- **Layer I, algebraic foundations:** precise $SL_2$ trichotomy, projective Riccati, quartic invariant normalization, Duffing/Master energy pencil and nullcone corrections; Gram/Pinney versus quartic.
+- **Layer II, differential geometry:** typed connection/contorsion and Cartan comparison, Gauss–Codazzi/Weierstrass marked data, minimal-surface flux, Hopf/CPn symplectic reduction, topological versus variational characteristic forms.
+- **Layer III, differential-equation correspondences:** Noether/Routhian, Sturm–Liouville symplectic Wronskian, Pohozaev, two-mode energy quartic and QRT conditions, Pöschl–Teller variational Hessian, properly specified Kepler regularization.
+- **Layer IV, separately qualified extensions:** stochastic frame corrections and martingales, Langevin/Kramers and optional application-specific physical realizations.
+
+**Final distinction:** A common operator, group representation, scalar profile, quartic discriminant or Noether-type conservation formula provides a **mathematical map**. It does not identify the source objects, interpret a selected gauge field as torsion, determine a stochastic law, prove physical spacetime dimension, or erase necessary clocks, metrics, bundles, domains and constraints. The central value of the Symmetrical Framework is to make those maps explicit, verify their algebra, and preserve the information that the reductions lose.
