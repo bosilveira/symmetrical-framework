@@ -282,3 +282,245 @@ Its exact eigenvalues are
 For $n$ odd the eigenfunction is **even** and satisfies a Neumann condition at $u=0$; for $n$ even it is **odd** and satisfies Dirichlet at $u=0$. The two parity sectors therefore reconstruct one and the same self-adjoint full-interval spectrum **only with the correct joining rule**.
 
 The same expression on $\mathbb R$ instead has continuous spectrum $[r^2,\infty)$ and no $L^2$ eigenfunction. The point $u=0$ has not moved, and the parameters $r,c$ have not changed: the **interval/domain** has changed, and that alone explains the different spectral claims.
+
+## 9. What the Wronskian current measures—and what it cannot measure [D,K,C]
+
+For an arbitrary real Sturm–Liouville equation at spectral parameter $\lambda$,
+
+```math
+-(p\psi')'+q_0\psi=\lambda w\psi,
+```
+
+define the weighted current of a complex local solution
+
+```math
+j_\psi=\mathrm{Im}(\bar\psi\,p\psi').
+```
+
+**Theorem 9.1 [D].** For real $p,w$ and possibly complex $q_0,\lambda$, its current satisfies
+
+```math
+j_\psi'=[\mathrm{Im}\,q_0-(\mathrm{Im}\,\lambda)w]|\psi|^2.
+```
+
+**Proof.** Differentiate $\bar\psi p\psi'$ and take the imaginary part. The term $p|\psi'|^2$ is real. Use $(p\psi')'=(q_0-\lambda w)\psi$ for the remaining term.
+
+For real coefficients and **real** $\lambda$, $j_\psi$ is constant locally. This is an ODE identity, requiring **no self-adjoint operator domain**. Conversely, at complex $\lambda$ the current changes even if the chosen Sturm–Liouville operator is perfectly self-adjoint: complex $\lambda$ can simply be a resolvent parameter. Hence current conservation cannot be promoted to a binary self-adjointness test.
+
+### 9.1 At a self-adjoint separated boundary, an actual eigenfunction has zero current
+
+At a regular endpoint with real separated Robin condition $p\psi'=h\psi$, $h\in\mathbb R$, the current is zero there. It is also zero at Dirichlet and Neumann endpoints. If the coefficients and eigenvalue are real, the current is constant, and therefore vanishes throughout the interval for an eigenfunction satisfying such a boundary condition.
+
+A **complex carrier** $\Phi=a e^{i\theta}$ with positive Milne current $j=a^2\theta'\ne0$ can still be constructed from two independent real solutions of the **same local ODE**, but this particular carrier generally does **not** satisfy the original real separated boundary conditions. It is not the normalized bound-state eigenfunction.
+
+On the whole line, self-adjoint Schrödinger operators also admit **generalized scattering solutions** with nonzero constant current. They need not belong to $L^2$ and are not counterexamples to self-adjointness. The operator domain controls spectral/flux boundary pairings; the current attached to a selected carrier is extra solution data.
+
+## 10. Explicit broken self-adjointness with no change at all to Pinney [D,C]
+
+Consider the *same half-rate real carrier expression* on the right half-line $u>0$,
+
+```math
+H_{\frac12}=-\partial_u^2+\frac{r^2}{4}.
+```
+
+Give it a regular Robin condition at $u=0$,
+
+```math
+\psi_u(0)=h\psi(0).
+```
+
+If $h\in\mathbb R$, the corresponding standard Robin realization is self-adjoint. If $h=-1+i$, it is not symmetric. Indeed the decaying function
+
+```math
+\psi(u)=e^{(-1+i)u}
+```
+
+belongs to its natural $H^2$ domain and is an eigenfunction with **nonreal** eigenvalue
+
+```math
+H_{\frac12}\psi=\left(\frac{r^2}{4}+2i\right)\psi.
+```
+
+The differential equation on every interior point is still $\phi''=(r^2/4-\lambda)\phi$. At the **fixed local Pinney carrier parameter $\lambda=0**$ (considered independently of the boundary-selected eigenvalues), the centered positive amplitude remains
+
+```math
+a(u)=\mu^{1/4}\sqrt{\cosh(ru)},\qquad a''=\frac{r^2}{4}a+\frac{\mu r^2}{4a^3}.
+```
+
+This amplitude exists identically on the half-line for *both* real and complex Robin boundary choices. It does not “detect” the change of domain or the nonreal eigenvalue. An operator realization and a local Pinney solution occupy different levels of the mathematical dictionary.
+
+**Corrected terminology [C]:** In this explicit setting “broken self-adjointness” means a non-self-adjoint **operator domain**. It is unrelated to spontaneous breaking of a $y\mapsto-y$ symmetry in a quartic potential. Breaking parity while keeping real admissible boundary conditions can also preserve self-adjointness.
+
+## 11. Milne–Pinney: the exact amplitude–phase reconstruction [D,K,V]
+
+Let $Q(u)$ be real and continuous on an interval, and choose a nonvanishing complex carrier solution
+
+```math
+\Phi''=Q(u)\Phi,\qquad \Phi=a e^{i\theta},\qquad a>0.
+```
+
+The imaginary and real parts give respectively
+
+```math
+(a^2\theta')'=0,\qquad a''=Qa+a(\theta')^2.
+```
+
+Set the conserved phase current to $j=a^2\theta'$. Then the envelope equation is
+
+```math
+a''=Qa+\frac{j^2}{a^3},\qquad\theta'=\frac{j}{a^2},\qquad k=j^2\ge0.
+```
+
+This is the Milne/Ermakov–Pinney amplitude–phase correspondence. For a positive $a$ solving Pinney with $k>0$, integrating $\theta'= \sqrt{k}/a^2$ reconstructs a zero-free complex linear solution. Its amplitude is nonlinear but its real and imaginary parts are **linear** carrier solutions.
+
+This theorem is conditional: it requires real $Q$, positive amplitude, a choice of phase-current sign, an integration constant and a chart without zeros. It is not an equivalence between all self-adjoint spectral realizations and all Pinney boundary-value problems.
+
+### 11.1 The complex logarithmic derivative is the exact coupled Riccati system
+
+Write
+
+```math
+Z(u)=\frac{\Phi'}{\Phi}=(\mathrm{Log}\,\Phi)'=H(u)+iB(u),\qquad H=\frac{a'}a,\quad B=\frac{j}{a^2}.
+```
+
+The complex Riccati identity $Z'+Z^2=Q$ splits into
+
+```math
+H'+H^2-B^2=Q,\qquad B'+2HB=0.
+```
+
+Equivalently,
+
+```math
+H'=Q-H^2+B^2,\qquad B'=-2HB.
+```
+
+The *imaginary Riccati component is the Milne phase current density*, whereas the real component is the envelope's logarithmic growth rate. These equations follow from a **linear carrier** and hold irrespective of whether a selected spectral domain is self-adjoint.
+
+## 12. The canonical complex solution, Gudermannian and integral phase [D,V,H112]
+
+For the framework's centered positive Pinney envelope define
+
+```math
+\Phi(u)=\mu^{1/4}\left[\cosh\left(\frac{ru}{2}\right)+i\sinh\left(\frac{ru}{2}\right)\right].
+```
+
+It satisfies
+
+```math
+\Phi''=\frac{r^2}{4}\Phi,\qquad |\Phi|^2=\sqrt\mu\cosh(ru)=a^2,\qquad j=\mathrm{Im}(\bar\Phi\Phi')=\frac{r\sqrt\mu}{2}.
+```
+
+Its phase, logarithmic derivative and Riccati identity are
+
+```math
+\theta(u)=\arg\Phi=\frac12\mathrm{gd}(ru)=\arctan(e^{ru})-\frac\pi4,\qquad \theta'=\frac r2S.
+```
+
+```math
+\frac{\Phi'}{\Phi}=\frac r2(W+iS),\qquad\left(\frac{\Phi'}{\Phi}\right)'+\left(\frac{\Phi'}{\Phi}\right)^2=\frac{r^2}{4}.
+```
+
+This supplies the *same explicit* $S,W$ as the original framework. Its Riccati components lie on a circle,
+
+```math
+H=\frac r2W,\qquad B=\frac r2S,\qquad H^2+B^2=\frac{r^2}{4}.
+```
+
+The circular relation is a **particular centered, zero-auxiliary-energy identity**, not a condition for self-adjointness of an arbitrary Sturm–Liouville realization.
+
+### 12.1 The exact original integral is a Milne phase increment
+
+Since $x=ce^u$,
+
+```math
+f_\mu(x;r,c)\,dx=\frac{S}{2\sqrt\mu}\,du=\frac1{r\sqrt\mu}\,d\theta.
+```
+
+Thus the ordinary integral is an **integrated phase current divided by the fixed normalization**:
+
+```math
+\int_{x_1}^{x_2}f_\mu(x;r,c)\,dx=\frac{\theta(\ln(x_2/c))-\theta(\ln(x_1/c))}{r\sqrt\mu}.
+```
+
+At the midpoint $x=c$ ($u=0$), $\theta=0$; at the two improper endpoints,
+
+```math
+\theta(-\infty)=-\frac\pi4,\qquad\theta(0)=0,\qquad\theta(+\infty)=\frac\pi4.
+```
+
+The two phase increments are equal to $\pi/4$, reproducing the exact half integrals. This is a genuine **arithmetical identity between the original half-integral and the selected Milne phase**, not a spectral quantization statement.
+
+## 13. Phase increments and interval quantization are different constructions [D,K]
+
+A positive Milne amplitude can be used to build **real** solutions of the same linear equation:
+
+```math
+\psi_{\delta}(u)=a(u)\sin(\theta(u)+\delta).
+```
+
+For a fixed real spectral parameter and selected amplitude, imposing Dirichlet at two regular endpoints $u_-,u_+$ requires a phase difference
+
+```math
+\theta(u_+)-\theta(u_-)=n\pi,\qquad n\in\mathbb Z_{\ge1}
+```
+
+whenever a nonzero Dirichlet eigenfunction is obtained with monotone $\theta$ and appropriate phase choice. However $a$ and $\theta$ typically **depend on the spectral parameter**: the equation is an implicit quantization rule, not a new eigenvalue formula without that dependence.
+
+For the *canonical half-rate carrier at spectral value zero*, the phase difference across all $\mathbb R$ is only $\pi/2$. It cannot satisfy a positive-integer Dirichlet phase condition across a finite pair of endpoints. This agrees with the fact that the constant-potential half-rate operator has spectral bottom $r^2/4>0$ and no zero-energy eigenfunction on such a Dirichlet interval.
+
+For an oscillatory carrier $Q=-\kappa^2$ with $\kappa>0$, choose $a=1$, $\theta=\kappa u$, $k=\kappa^2$. Dirichlet on $[-L,L]$ instead gives
+
+```math
+2\kappa L=n\pi,\qquad\lambda_n=\frac{r^2}{4}+\left(\frac{n\pi}{2L}\right)^2
+```
+
+for the half-rate Schrödinger operator $H_{\frac12}$, as expected. **Self-adjointness** entered through the boundary conditions, not through the positive Pinney coefficient $k$.
+
+## 14. Riccati projectivization, Schwarzian and the Cayley circle [D,V]
+
+For the half-rate linear equation $\phi''=r^2\phi/4$ choose
+
+```math
+\phi_+=e^{ru/2},\qquad\phi_-=e^{-ru/2},\qquad t(u)=\frac{\phi_+}{\phi_-}=e^{ru}=(x/c)^r.
+```
+
+The ratio $t$ is a coordinate on the real projective solution line, while its Schwarzian is
+
+```math
+\{t,u\}=-\frac{r^2}{2}.
+```
+
+Its Cayley transform gives exactly the canonical complex Riccati circle:
+
+```math
+\frac{t+i}{t-i}=\frac{t^2-1+2it}{t^2+1}=W+iS,\qquad \frac{\Phi'}{\Phi}=\frac r2\frac{t+i}{t-i}.
+```
+
+This is the precise **projective Rosetta Stone**: a linear rank-two carrier supplies a projective ratio; a Möbius/Cayley transformation produces the circle chart; its logarithmic derivative is Riccati; integrating its imaginary part gives half the Gudermannian and the original primitive. This is an exact algebraic web, with the half-rate $r/2$ tracked throughout.
+
+Riccati equations are *locally* linearizable by an associated rank-two system. A particular Riccati solution can have poles when the denominator of its projective chart vanishes; global monodromy and real/complex boundary conditions are independent data. A Riccati coordinate is not itself an invariant test of self-adjointness.
+
+## 15. The Hopf fibration is related to projectivization, but is not identical to a scalar Riccati equation [D,K,H170,H176]
+
+The abstract projectivization of a nonzero complex vector $(z_1,z_2)\in\mathbb C^2$ is a point of $\mathbb{CP}^1$. Restrict to the unit sphere $|z_1|^2+|z_2|^2=1$ and quotient by common phase $U(1)$ to obtain the Hopf fibration
+
+```math
+S^1\longrightarrow S^3\longrightarrow\mathbb{CP}^1\cong S^2.
+```
+
+For the *real positive* half-rate carrier vector define the explicitly normalized spinor
+
+```math
+\eta(u)=\frac{(e^{ru/2},e^{-ru/2})}{\sqrt{2\cosh(ru)}}=\left(\sqrt{\frac{1+W}{2}},\sqrt{\frac{1-W}{2}}\right).
+```
+
+It satisfies
+
+```math
+|\eta_1|^2+|\eta_2|^2=1,\quad \frac{\eta_1}{\eta_2}=e^{ru}=t,\quad |\eta_1|^2-|\eta_2|^2=W,\quad 2\eta_1\eta_2=S.
+```
+
+Thus $W,S$ are *precisely* the Bloch/Hopf-base coordinates for this normalized projective curve. Multiplying $\eta$ by an arbitrary common phase produces its full Hopf fiber. This makes the relation concrete rather than metaphorical.
+
+**Boundary of the identification:** The complex scalar $\Phi=a e^{i\theta}$ of §12 has its own polar $U(1)$ phase and its own Wronskian current. That scalar phase is not **automatically** the vertical Hopf-bundle phase of the normalized *two-component* vector $\eta$. The Riccati ratio $t$ lives on the Hopf **base**; the Hopf fiber appears only after the normalized lift and its common phase have been specified.
