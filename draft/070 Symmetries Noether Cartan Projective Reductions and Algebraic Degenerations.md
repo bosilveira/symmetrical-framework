@@ -204,3 +204,203 @@ E_{\rm EP}=\frac12Y_u^2-\frac{r^2}{8}Y^2+\frac{r^2(AB-C^2)}{2Y^2}=-\frac{r^2}{2}
 ```
 
 The equality follows from the Gram first integral and shows exactly how a quadratic invariant and a dynamical energy enter distinct algebraic roles.
+
+## 6. Minimal-surface flux is an exact geometric Noether current [D,K,H421,H424]
+
+Let $X:\Sigma\to\mathbb R^3$ be a conformal minimal immersion and take the Hodge star of its induced oriented metric. The coordinate functions of $X$ are harmonic:
+
+```math
+\Delta_\Sigma X=0,\qquad d(*dX)=0.
+```
+
+The vector-valued closed one-form $*dX$ therefore determines a period/flux homomorphism on closed curves:
+
+```math
+\mathrm{Flux}([\gamma])=\oint_\gamma *dX\in\mathbb R^3.
+```
+
+The value is invariant under homology of cycles in the regular domain; it is also the translation Noether flux associated with stationarity of the area functional. The corresponding rotational currents involve additional factors of the immersion $X$. These fluxes are not generally equal to the complex elliptic period lattice of a Gauss-map quartic, although particular Weierstrass representations relate them.
+
+### 6.1 Exact catenoid neck flux in the canonical scale
+
+Use the catenoid immersion with real angular coordinate $v$ of period $2\pi/r$:
+
+```math
+X(u,v)=\left(r^{-1}\cosh(ru)\cos(rv),\,r^{-1}\cosh(ru)\sin(rv),\,u\right),\qquad v\sim v+2\pi/r.
+```
+
+Its coordinate tangent fields satisfy
+
+```math
+|X_u|^2=|X_v|^2=R^2,\qquad X_u\cdot X_v=0,\qquad I=R^2(du^2+dv^2),\qquad R=\cosh(ru).
+```
+
+With orientation $du\wedge dv$, $*du=dv$ and $*dv=-du$, hence
+
+```math
+*dX=X_u\,dv-X_v\,du.
+```
+
+At fixed $u$, integrate over one full neck:
+
+```math
+\oint_{v=0}^{2\pi/r}*dX=\left(0,0,\frac{2\pi}{r}\right).
+```
+
+**Proof.** $X_u=(\sinh(ru)\cos(rv),\sinh(ru)\sin(rv),1)$; its first two components integrate to zero over a period, and the last integrates to $2\pi/r$. The result is independent of the chosen $u$, as it must be because $d*dX=0$.
+
+This exact flux is determined by the chosen immersion scale and orientation. It illustrates a genuinely conserved **surface current** that is different from the Wronskian, the Master energy and a gauge Chern number.
+
+### 6.2 Bonnet rotation is not a curvature-to-torsion exchange
+
+The catenoid and helicoid are locally isometric minimal associates. On a simply connected parameter domain, their Weierstrass data can share the meromorphic Gauss map while rotating the height differential by a complex phase. Their first fundamental forms coincide, and the second fundamental forms rotate in tangent coordinates.
+
+Therefore it is wrong to call one “curvature only” and the other “torsion only”: the two have the **same nonzero Gaussian curvature** and each admits both Levi-Civita and selected teleparallel descriptions. Their periods, embeddedness and global quotients can differ.
+
+## 7. Critical Yamabe, dilation and Pohozaev: symmetry does not fix bubble scale [D,K,H173]
+
+The Euclidean critical Yamabe equation in dimension $D>2$ is
+
+```math
+-\Delta U=\kappa U^p,\qquad p=\frac{D+2}{D-2},\qquad \kappa>0.
+```
+
+Under sufficient decay, multiply by $U$ and integrate by parts:
+
+```math
+\int_{\mathbb R^D}|\nabla U|^2\,dX=\kappa\int_{\mathbb R^D}U^{p+1}\,dX.
+```
+
+The Pohozaev identity for a sufficiently regular decaying whole-space solution is
+
+```math
+\frac{D-2}{2}\int|\nabla U|^2\,dX=\frac{D\kappa}{p+1}\int U^{p+1}\,dX.
+```
+
+But at the critical exponent
+
+```math
+\frac D{p+1}=\frac{D-2}{2}.
+```
+
+Thus the two integral equations coincide identically: the Pohozaev constraint is compatible with the **entire continuous scale orbit**, not an equation selecting one bubble size.
+
+### 7.1 An explicit counterexample to “Pohozaev locks the bubble scale”
+
+Choose an Aubin–Talenti family normalized to the equation:
+
+```math
+U_{\lambda,X_0}(X)=\left[\frac{D(D-2)}{\kappa}\right]^{(D-2)/4}\left(\frac{\lambda}{1+\lambda^2|X-X_0|^2}\right)^{(D-2)/2},\qquad\lambda>0.
+```
+
+Each positive member solves the same critical equation and satisfies the same Pohozaev integral equality. Changing $\lambda$ does not violate either identity. The scale is a modulus of the conformal symmetry, not a number pinned down by a universal Noether charge.
+
+The corresponding radial Emden–Fowler critical profile leads, after the framework's explicit logarithmic substitution $u=\ln(x/c)$ and a normalization, to a $\mathrm{sech}^{q}$ profile and a Pöschl–Teller Hessian (draft 060). This is a proved reduction with specified dimension and clock, not an automatic consequence of every surface or quartic.
+
+## 8. BPST and Eguchi–Hanson: topological characteristic classes are not Noether charges of a flat frame [K,D,C]
+
+For a **specified nonflat** Lie-algebra-valued SU(2) connection $A$, its curvature is
+
+```math
+F_A=dA+A\wedge A.
+```
+
+On a compact oriented four-manifold with appropriate bundle and trace normalization, the second Chern number is
+
+```math
+k=-\frac{1}{8\pi^2}\int\mathrm{tr}(F_A\wedge F_A)\in\mathbb Z.
+```
+
+The value is topological and invariant under smooth continuous deformations of the connection that preserve the bundle and boundary data. It is obtained through Chern–Weil theory, **not** from every local continuous isometry's Noether theorem. On noncompact domains, finite-action and asymptotic trivialization hypotheses are needed to interpret boundary integrals.
+
+The BPST solution has $F_A\ne0$ and is (anti-)self-dual after choosing an orientation. A pure-gauge SU(2) Maurer–Cartan connection $A=g^{-1}dg$ has $F_A=0$ locally. A flat Lorentz Weitzenbock spin connection also has **zero connection curvature**, but may have a nonzero torsion tensor once a coframe is chosen. These are three different bundle/connection data types.
+
+Eguchi–Hanson is a Ricci-flat nonflat hyperkähler metric whose characteristic numbers are computed from its Riemannian curvature and global topology. It cannot be assigned the same gauge Chern number as BPST merely because both possess a self-duality statement or because their radial formulas share a hyperbolic function. Its local complex Monge–Ampere/Pinney reduction was proved separately in draft 060.
+
+### 8.1 The exact density correspondence that really survives
+
+For the matched four-dimensional stereographic Aubin–Talenti bubble and BPST connection,
+
+```math
+U(\rho)=\frac{c}{\sqrt\mu(\rho^2+c^2)},\qquad |F_{\rm BPST}|^2=\frac{192c^4}{(\rho^2+c^2)^4}=192\mu^2U^4.
+```
+
+This is an **equality of scalar densities after specifying coordinate, normalization and scale**, not an equality of their connections, bundle curvatures, field equations or action functionals. Draft 060 separately derives the shared charge polynomial $3P^2-2P^3$ and its real Monge–Ampere mass-transport interpretation.
+
+## 9. Euler–Lagrange, Palatini and action equivalence [K,D,C]
+
+The user attachment correctly emphasizes that a variational functional supplies a crucial missing arrow between geometric data and an equation. Its suggestion that *all* metric, Palatini and tetrad variations form one universally equivalent calculus is too broad.
+
+### 9.1 Ordinary kinetic action
+
+For a metric $g$, the functional
+
+```math
+\mathcal A[\gamma]=\frac12\int g_{\gamma(t)}(\dot\gamma,\dot\gamma)\,dt
+```
+
+has Euler–Lagrange equation $\mathring\nabla_{\dot\gamma}\dot\gamma=0$, with fixed endpoints. This is independent of whether one later chooses a different flat torsionful connection on the same metric. Section 3 gives the exact contorsion rewrite.
+
+### 9.2 The projective subtlety in unconstrained Einstein–Hilbert–Palatini variation
+
+Consider an independent metric and a **completely general** affine connection in a Palatini action linear in the connection's Ricci scalar. In the conventional zero-hypermomentum vacuum setting, the stationary connections are not necessarily uniquely Levi-Civita: the action is projectively invariant.
+
+In our coordinate convention $\nabla_{\partial_\mu}\partial_\nu=\Gamma^\lambda{}_{\mu\nu}\partial_\lambda$, one projective family can be written
+
+```math
+\Gamma^\lambda{}_{\mu\nu}=\mathring\Gamma^\lambda{}_{\mu\nu}+\delta^\lambda_\nu A_\mu.
+```
+
+The curvature changes by a term proportional to the exact two-form $dA$, so the scalar Ricci contraction remains unchanged. The induced torsion is generally nonzero:
+
+```math
+\mathcal T^\lambda{}_{\mu\nu}=\delta^\lambda_\nu A_\mu-\delta^\lambda_\mu A_\nu.
+```
+
+Thus *unconstrained* Palatini variation does not simply “force torsion to vanish” or select a unique connection. Imposing torsion-free symmetry in advance, fixing projective gauge or changing matter couplings alters the solution statement. The precise nonuniqueness is an established result; see the literature references in §22.
+
+### 9.3 Linear teleparallel versus nonlinear actions
+
+With a chosen coframe and flat compatible Lorentz spin connection, the **linear** teleparallel scalar density differs from the Levi-Civita scalar density by a total divergence:
+
+```math
+\mathring{\mathcal R}=-\mathbb T+\mathbb B.
+```
+
+This yields the usual linear bulk variational equivalence under compatible boundary assumptions. Nonlinear functionals $f(\mathbb T)$, $f(\mathbb T,\mathbb B)$ and $f(\mathring{\mathcal R})$ generally have distinct Euler–Lagrange operators unless a specific functional identity and boundary conditions are imposed. Nor does Einstein–Hilbert variation by itself derive the Yamabe, Monge–Ampere, BPST and Fokker–Planck equations: these require **their own** scalar, Kähler, gauge or stochastic functionals.
+
+## 10. Two meanings of “Cartan flat”: constant-curvature model versus teleparallelism [K,D,C]
+
+Let $(M,g)$ be a torsion-free pseudo-Riemannian space form with sectional curvature $k$. In an orthonormal coframe $\vartheta^a$ and its Levi-Civita spin connection $\omega^a{}_b$, the Cartan structure equations are
+
+```math
+T^a=d\vartheta^a+\omega^a{}_b\wedge\vartheta^b=0,\qquad R^{ab}(\omega)=k\,\vartheta^a\wedge\vartheta^b.
+```
+
+In a reductive Cartan geometry modeled on the appropriate homogeneous de Sitter or anti-de Sitter space, combine the spin connection and the coframe into a **larger-group** Cartan connection. With a convention depending on the sign of $k$, its Lorentz part has curvature
+
+```math
+\mathcal F^{ab}=R^{ab}(\omega)-k\,\vartheta^a\wedge\vartheta^b,\qquad \mathcal F^a=T^a.
+```
+
+The homogeneous space-form model has **flat Cartan curvature** $\mathcal F=0$, even though the *Lorentz subconnection* has nonzero curvature $R^{ab}=k\vartheta^a\wedge\vartheta^b$ and zero torsion.
+
+**Important correction:** Flatness of this **larger-group Cartan connection** is **not** the definition of a Weitzenbock connection. A Weitzenbock affine/Lorentz connection is flat with respect to its own smaller structure group and typically has nonzero torsion from a chosen coframe. The two zero-curvature statements refer to **different connections and bundles**.
+
+### 10.1 Exact four-dimensional space-form scalar checks
+
+For de Sitter space in its flat expanding chart with $H=1/L$ constant, the preferred diagonal Weitzenbock tetrad of draft 040 has
+
+```math
+\mathring{\mathcal R}_{\mathrm{dS}}=12/L^2,\qquad \mathbb T_{\mathrm{dS}}=6/L^2,\qquad \mathbb B_{\mathrm{dS}}=18/L^2.
+```
+
+For anti-de Sitter space in a Poincare chart, choose the local conformal coframe $g=(L^2/z^2)\eta$ with spacelike $z>0$ and flat zero-spin Weitzenbock gauge. The conformal formula in draft 060 gives
+
+```math
+\mathring{\mathcal R}_{\mathrm{AdS}}=-12/L^2,\qquad \mathbb T_{\mathrm{AdS}}=-6/L^2,\qquad \mathbb B_{\mathrm{AdS}}=-18/L^2.
+```
+
+**Verification.** For AdS $h=\ln(L/z)$, so $e^{-2h}|\nabla_0h|^2=1/L^2$. Use the four-dimensional conformal teleparallel formulas and $\mathring{\mathcal R}=-\mathbb T+\mathbb B$. For de Sitter use constant $H=1/L$ in the flat-warped formulas. These are **local frame choices** on different coordinate patches, and neither requires a gravitational field equation.
+
+They show exactly why the three labels “curvature only”, “mixed”, “torsion only” cannot be identified with dS/AdS/Minkowski: the same dS or AdS metric admits a torsion-free Levi-Civita representation and the chosen flat torsionful teleparallel representation. Minkowski in a Cartesian coframe has both curvature and torsion zero, while an accelerated Rindler zero-spin coframe can have torsion components nonzero even with vanishing Levi-Civita curvature (draft 040).
