@@ -793,3 +793,189 @@ The following four mathematically distinct constructions should never be collaps
 4. **Barrier tunneling:** in a *real self-adjoint* operator, evanescent modes in classically forbidden regions couple through flux-preserving matching to oscillatory modes.
 
 The canonical positive Pinney inverse-square wall is a barrier in **amplitude configuration space**. The double-well Duffing potential is a function of a **signed field variable**. The spectral barrier of §20 is a potential in an **independent spatial coordinate**. Their graphs can resemble one another under transformations, but their variable types and boundary conditions differ.
+
+## 22. Weyl–Titchmarsh boundary data: the exact spectral interface at u=0 [D,K,H169]
+
+For a real Schrödinger expression $H=-\partial_u^2+V(u)$ on the full line, assume the left/right endpoints are limit-point. For a spectral value $\lambda$ away from half-line spectral poles, let $\psi_-(u;\lambda)$ be the solution square integrable as $u\to-\infty$, and $\psi_+(u;\lambda)$ the solution square integrable as $u\to+\infty$, both unique up to scale.
+
+Their Wronskian is independent of $u$ and gives the full-line bound-state matching equation
+
+```math
+\mathscr W(\lambda)=\psi_-(0;\lambda)\psi_+'(0;\lambda)-\psi_-'(0;\lambda)\psi_+(0;\lambda).
+```
+
+**Theorem 22.1 [D,H169] (reflection factorization).** If $V(u)=V(-u)$ and the two Weyl solutions are normalized compatibly by reflection, $\psi_-(u;\lambda)=\psi_+(-u;\lambda)$, then
+
+```math
+\mathscr W(\lambda)=2\psi_+(0;\lambda)\psi_+'(0;\lambda).
+```
+
+**Proof.** Reflection gives $\psi_-(0)=\psi_+(0)$ and $\psi_-'(0)=-\psi_+'(0)$. Substitute into the Wronskian formula.
+
+A genuine full-line $L^2$ eigenvalue therefore satisfies at least one of the two half-line conditions
+
+```math
+\psi_+(0;\lambda)=0\quad(\mathrm{odd/Dirichlet}),\qquad \psi_+'(0;\lambda)=0\quad(\mathrm{even/Neumann}).
+```
+
+This factorization is **spectral**; it requires the relevant Weyl solutions and their endpoint behavior. It should not be confused with the *integral's* equal halves, although both use the same reflection involution.
+
+### 22.1 The boundary logarithmic derivative is a spectral Riccati coordinate
+
+If $\psi_+(0;\lambda)\ne0$, define the right half-line Weyl function
+
+```math
+m_+(\lambda)=\frac{\psi_+'(0;\lambda)}{\psi_+(0;\lambda)}.
+```
+
+This is the boundary value of a logarithmic derivative of the Weyl solution and satisfies an interior Riccati equation. For an appropriate self-adjoint half-line realization its dependence on $\lambda$ is a Herglotz/Nevanlinna function (with the sign convention determined by which endpoint orientation is chosen); this analytic positivity, unlike local Pinney current conservation, retains substantive spectral-domain information.
+
+For the canonical full-rate carrier $H_{\rm lin}=-\partial_u^2+r^2$, choose the square root $\kappa_\lambda=\sqrt{r^2-\lambda}$ with $\operatorname{Re}\kappa_\lambda>0$. Then
+
+```math
+\psi_+(u;\lambda)=e^{-\kappa_\lambda u},\qquad m_+(\lambda)=-\kappa_\lambda.
+```
+
+This gives an exact, parameter-dependent *boundary* Riccati datum; the constant $r$ sets the spectral threshold and the scale $c$ sets the coordinate location $x=c$ of the boundary chart.
+
+### 22.2 An explicit self-adjoint point interaction shifts the spectrum
+
+For the full-line constant carrier $H_{\rm lin}$, add the real delta jump of §6 with strength $\alpha<0$. The even bound state is
+
+```math
+\psi_\alpha(u)=e^{\alpha|u|/2},\qquad \lambda_\alpha=r^2-\frac{\alpha^2}{4}.
+```
+
+The operator with this real transmission condition is self-adjoint and has one simple discrete eigenvalue below the continuum $[r^2,\infty)$, even though the **local** differential expression and its constant-carrier Pinney construction away from $u=0$ are unchanged. This is a direct counterexample to the proposal that the local Pinney amplitude uniquely determines the spectral bound states or self-adjoint extension.
+
+## 23. The canonical Master Hessian: parity, negative mode and zero mode [D,V,H172]
+
+Linearize the *original nonlinear Master equation* around $y_{\rm sep}=\mu^{-1/2}S$. In the $u$ variable the self-adjoint full-line differential expression is
+
+```math
+H_{\rm M}=-\partial_u^2+r^2-6r^2S^2.
+```
+
+It is a Pöschl–Teller well of order two, not the constant-potential carrier of §3 and not the half-rate Pinney Hessian of draft 110.
+
+**Theorem 23.1 [D,V,H172].** Two exact $L^2(\mathbb R)$ eigenfunctions are
+
+```math
+H_{\rm M}(S^2)=-3r^2S^2,\qquad H_{\rm M}(SW)=0.
+```
+
+The first is **even** and satisfies Neumann at $u=0$; the second is **odd** and satisfies Dirichlet there. Their eigenvalues are $-3r^2$ and $0$, and the essential spectrum is $[r^2,\infty)$.
+
+**Proof.** Differentiate $S^2$ and $SW$ twice using $S'=-rSW$, $W'=rS^2$; substitute into the differential expression. These are the standard two square-integrable bound states of the order-two Pöschl–Teller well; its factorization and oscillation theorem exclude additional bound states.
+
+The **negative eigenvalue does not break self-adjointness**. It identifies a negative mode of this specified real self-adjoint Hessian (for an appropriately interpreted second variation); the translation-related zero mode records a continuous family of centered profiles. This is precisely the even/odd half-line split of the archived H172 analysis.
+
+### 23.1 The distinct Pinney Hessian
+
+On the canonical Pinney envelope $a=\mu^{1/4}\sqrt R$, its variational Hessian is
+
+```math
+H_{\rm EP}=-\partial_u^2+\frac{r^2}{4}-\frac{3r^2}{4}S^2.
+```
+
+This half-integer Pöschl–Teller operator is nonnegative on its full-line $L^2$ realization and has a zero ground mode $S^{1/2}$. The Master operator has an additional negative mode and a different threshold. The reciprocal **solution** map $y=a^{-2}$ is not a unitary transformation of the two unconstrained Hessian operators.
+
+## 24. Catenoid and helicoid: a third, geometrically derived Jacobi operator [D,V,K,H421,H424]
+
+Introduce the independent surface coordinate $v$ with period $2\pi/r$, and the complex conformal coordinate $\zeta=u+iv$. The canonical catenoid immersion is
+
+```math
+X(u,v)=\left(r^{-1}R\cos(rv),\,r^{-1}R\sin(rv),\,u\right),\qquad R=\cosh(ru).
+```
+
+Its induced metric, Gaussian curvature and squared second-fundamental-form norm are
+
+```math
+g_C=R^2(du^2+dv^2),\qquad K_C=-r^2S^4,\qquad |A_C|^2=-2K_C=2r^2S^4.
+```
+
+The normal Jacobi differential expression of the minimal immersion is $J_C=\Delta_{g_C}+|A_C|^2$ in one common sign convention. Since the conformal Laplacian is $\Delta_{g_C}=R^{-2}(\partial_u^2+\partial_v^2)$,
+
+```math
+R^2J_C=\partial_u^2+\partial_v^2+2r^2S^2.
+```
+
+On an angular Fourier mode $e^{inrv}$ ($n\in\mathbb Z$), the zero-Jacobi equation reduces to
+
+```math
+\left[-\partial_u^2-2r^2S^2\right]h_n=-(nr)^2h_n.
+```
+
+**This is the order-one Pöschl–Teller well**, distinct from both the original Master Hessian (order two) and the Pinney Hessian (half-integer order). As one exact check,
+
+```math
+\left[-\partial_u^2-2r^2S^2\right]S=-r^2S.
+```
+
+The local catenoid and helicoid are minimal Bonnet associates, sharing the same induced metric and pointwise $|A|^2$ after the appropriate local identification. Therefore they have the same **local** Jacobi differential expression in matching conformal coordinates, while their global parameter domains differ: a catenoid has a periodic angular coordinate, whereas a complete helicoid is simply connected with an unwrapped angular direction.
+
+**Consequently their global spectral domains need not be the same.** The formal differential expression, its allowed Fourier modes, the $L^2$ surface measure $R^2du\,dv$, completeness and the boundary/period conditions must all be declared before asserting a spectral equivalence.
+
+## 25. The Pinney complex phase reconstructs the catenoid and Gauss-sphere conformal factors [D,V]
+
+The exact canonical Pinney amplitude and phase of §12 are
+
+```math
+a^2=\sqrt\mu R,\qquad \theta'=\frac r2S,\qquad j=a^2\theta'=\frac{r\sqrt\mu}{2}.
+```
+
+Thus the catenoid conformal metric is
+
+```math
+g_C=\frac{a^4}{\mu}|d\zeta|^2.
+```
+
+The stereographic Gauss map of the catenoid may be taken as $G(\zeta)=-e^{r\zeta}$. The pulled-back round sphere metric (the third fundamental form) is
+
+```math
+g_G=\frac{4|G_\zeta|^2}{(1+|G|^2)^2}|d\zeta|^2=r^2S^2|d\zeta|^2.
+```
+
+**Theorem 25.1 [D,V] (Pinney phase–Gauss metric identity).**
+
+```math
+g_G=4(\theta')^2|d\zeta|^2=\frac{4j^2}{a^4}|d\zeta|^2=\frac{\mu r^2}{a^4}|d\zeta|^2.
+```
+
+**Proof.** From the positive Pinney amplitude $a^4=\mu R^2$, and $S^2=1/R^2$, obtain $\mu r^2/a^4=r^2S^2$. From the Milne phase $\theta'=(r/2)S$ obtain $4\theta'^2=r^2S^2$. The Gauss stereographic formula gives the same coefficient directly.
+
+This is an exact *two-metric* relation between the minimal immersion, the selected positive Pinney envelope and its Gudermannian phase. It explains why the curvature and Riccati structures appear in the same foundational layer. It is **not** a claim that the catenoid and sphere are isometric or that every Pinney solution reconstructs this particular minimal immersion.
+
+### 25.1 The symmetry midpoint is also the Gauss-sphere equator
+
+Let $\phi=rv$ and $W=\tanh(ru)$. The Gauss-sphere area form is
+
+```math
+\omega_G=r^2S^2\,du\wedge dv=dW\wedge d\phi.
+```
+
+For $v$ of period $2\pi/r$,
+
+```math
+\int_{-\infty}^0\int_0^{2\pi/r}\omega_G=2\pi,\qquad \int_0^\infty\int_0^{2\pi/r}\omega_G=2\pi.
+```
+
+Thus $u=0$ is the sphere's equator and separates two equal-area hemispheres. For a standard Hopf connection with curvature $F_H=\tfrac12\omega_G$, each hemisphere has flux $\pi$. These **geometric** halves and the original function's integral halves share the same logarithmic reflection, but they are integrals of **different measures** and with different normalizations: $\pi$ for Hopf curvature, $\pi/(4r\sqrt\mu)$ for each original half-integral, and $1/(4r\mu)$ for each weighted-norm half.
+
+### 25.2 A harmonic quartic is attached to the catenoid, but it is not a spectral boundary condition
+
+From the two fundamental forms, draft 050 constructs a separate binary quartic with
+
+```math
+I_{\rm surf}=-12r^2S^4,\qquad J_{\rm surf}=0,\qquad j_{\rm surf}=1728.
+```
+
+This abstract complex elliptic modulus coincides numerically with the **centered Pinney energy quartic** $j_{\rm EP}=1728$ from §18. That is an equality of a selected invariant after two different constructions. It does not supply a canonical identification of their marked differentials, surface periods, real ovals or self-adjoint boundary conditions.
+
+## 26. Riemann minimal examples: elliptic Weierstrass periods and operator domains [K,H,O]
+
+Riemann's classical minimal examples are constructed from selected meromorphic Weierstrass–Enneper data on elliptic curves with real period-closing conditions. A genus-one curve and its $j$ invariant may encode the complex structure of the underlying data, but reconstructing the immersion also requires a Gauss map, height differential, integration paths, real periods and geometric identification of the ends.
+
+The associated surface Jacobi operator remains an intrinsic/extrinsic geometric differential expression built from $\Delta_g+|A|^2$. In a quotient by a geometric period one must specify periodic, antiperiodic or Floquet boundary data; on the complete noncompact surface, its $L^2$ realization and end behavior matter. A degeneration of an **elliptic curve** toward a catenoid or helicoid does not automatically identify the global Jacobi spectra, because the domains, topology and limiting one-forms can also degenerate.
+
+The projective Riccati ratio, Milne phase, Gauss map and Hopf fibration are all available as **distinct** mathematical objects once the correct linear equation, meromorphic differential or bundle has been supplied. Their recurring appearance is mathematically meaningful; their numerical invariants alone do not classify the complete surface or its spectral operator.
