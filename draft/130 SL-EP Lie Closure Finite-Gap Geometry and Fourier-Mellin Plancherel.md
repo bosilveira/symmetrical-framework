@@ -602,3 +602,213 @@ For the normalized form $\alpha=dz/\omega_1$ with periods $(1,\tau)$, $\tau=\ome
 This is an exact relation between **holomorphic period data** and an $L^2$ metric on differential forms, via the Riemann bilinear relations. It resembles the weighted $L^2$ pairing of the canonical SL carrier in the broad sense that both are positive Hilbert metrics, but they live on **different spaces with different measures**: one-dimensional weighted functions on $(0,\infty)$ versus harmonic one-forms on a compact complex curve.
 
 **Important boundary:** The scalar norm $\|f_\mu\|_{L^2(xdx)}$ alone does not determine $\omega_1,\omega_2$, their ratio $\tau$, the Gauss–Manin connection or a surface's immersion-period closing. An actual intertwiner/pullback of the relevant differential and measure, plus a marked cycle and normalization, would be required. This is a concrete answer to the proposed “exact metric glue” interpretation.
+
+## 20. The weighted Sturm–Liouville Hilbert space IS exactly logarithmic L2 [D,V,H169]
+
+Return to the original **weighted** differential expression on $x>0$:
+
+```math
+\tau_x f=\frac1x\left[-(x^3f_x)_x+(r^2-1)xf\right],\qquad p=x^3,\quad w=x,\quad q_0=(r^2-1)x.
+```
+
+Its Hilbert space is $\mathcal H_x=L^2((0,\infty),x\,dx)$. Define the transform with the original center explicit:
+
+```math
+(U_cf)(u)=x f(x),\qquad x=ce^u.
+```
+
+**Theorem 20.1 [D,V] (exact unitary Hilbert dictionary).**
+
+```math
+\int_0^\infty|f(x)|^2x\,dx=\int_{-\infty}^{\infty}|(U_cf)(u)|^2\,du,\qquad U_c\tau_xU_c^{-1}=-\partial_u^2+r^2.
+```
+
+**Proof.** Because $dx=xdu$, the left norm is $\int|xf|^2du$. For $\psi=xf$ one has $f_x=(\psi_u-\psi)/x^2$ and $(x^3f_x)_x=\psi_{uu}-\psi$; substitution gives the Schrödinger expression. This is a unitary equivalence **only if domains are transported**. The original point $x=c$ corresponds to the interior coordinate $u=0$.
+
+The full-line self-adjoint carrier $-\partial_u^2+r^2$ has spectrum $[r^2,\infty)$, purely absolutely continuous, and the weight transformation alone does not create a bound state. The nonlinear localized profile is not a zero-energy eigenfunction of this free positive carrier.
+
+### 20.1 Weighted Sobolev/Dirichlet form dictionary
+
+For smooth functions with sufficient endpoint decay, the original quadratic form becomes
+
+```math
+\mathfrak q_x[f]=\int_0^\infty[x^3|f_x|^2+(r^2-1)x|f|^2]\,dx=\int_{\mathbb R}[|\psi_u|^2+r^2|\psi|^2]\,du.
+```
+
+Indeed, $x^3|f_x|^2dx=|\psi_u-\psi|^2du$; the cross term integrates to the vanishing endpoint value $-[|\psi|^2]_{-\infty}^{+\infty}$. The *form domain* is the pullback of $H^1(\mathbb R)$ for the full-line realization. One obtains a legitimate **weighted Sobolev space** in $x$ isometric to the standard $H^1$ form in the logarithmic coordinate.
+
+**Caution:** The quadratic form may involve a negative coefficient $(r^2-1)x$ for $0<r<1$, yet its complete transformed form is nonnegative and bounded below by $r^2\|\psi\|^2$ after the cross term is treated correctly. An isolated negative coefficient in one coordinate is not a negative self-adjoint eigenvalue.
+
+## 21. Exact H1 and H2 norms of the canonical profile [D,V]
+
+For the actual normalized Symmetrical Function put
+
+```math
+\psi_\mu(u)=(U_cf_\mu)(u)=\frac1{2\sqrt\mu}\mathrm{sech}(ru).
+```
+
+Its fundamental Hilbert norm and derivative Sobolev seminorm are
+
+```math
+\|\psi_\mu\|_2^2=\frac1{2r\mu},\qquad\|\partial_u\psi_\mu\|_2^2=\frac r{6\mu}.
+```
+
+A second differentiation gives the exact higher seminorm
+
+```math
+\|\partial_u^2\psi_\mu\|_2^2=\frac{7r^3}{30\mu}.
+```
+
+**Proof.** Use $\psi_u=-rSW/(2\sqrt\mu)$ and $\psi_{uu}=r^2(S-2S^3)/(2\sqrt\mu)$ with
+
+```math
+\int_{\mathbb R}S^2du=\frac2r,\qquad\int_{\mathbb R}S^4du=\frac4{3r},\qquad\int_{\mathbb R}S^6du=\frac{16}{15r}.
+```
+
+The cross terms simplify by $W^2=1-S^2$. Consequently the canonical weighted quadratic form is
+
+```math
+\mathfrak q_x[f_\mu]=\frac{2r}{3\mu},\qquad\frac{\mathfrak q_x[f_\mu]}{\|f_\mu\|^2_{L^2(xdx)}}=\frac{4r^2}{3}.
+```
+
+This Rayleigh quotient is an expectation value of the free linear carrier in the **nonlinear** localized test profile, not an eigenvalue of that free carrier. It exceeds the spectral threshold $r^2$, as it must.
+
+## 22. Mellin is literally the Fourier transform in the canonical logarithmic coordinate [D,K,H391]
+
+Define the ordinary Mellin transform of the original profile (with an amplitude factor $\mu^{-1/2}$) by
+
+```math
+\mathcal M[f_\mu](s)=\int_0^\infty x^{s-1}f_\mu(x;r,c)\,dx.
+```
+
+The exact evaluation on its open convergence strip is
+
+```math
+\mathcal M[f_\mu](s)=\frac{\pi c^{s-1}}{2r\sqrt\mu}\sec\left(\frac{\pi(s-1)}{2r}\right),\qquad1-r<\mathrm{Re}\,s<1+r.
+```
+
+**Proof.** Substitute $x=ce^u$ so that $f_\mu dx=(2\sqrt\mu)^{-1}Sdu$ and $x^{s-1}=c^{s-1}e^{(s-1)u}$, then use the Euler integral of $\mathrm{sech}(ru)$. The strip follows from the two exponential tails. In particular the Mellin reflection identity is
+
+```math
+\mathcal M[f_\mu](s)=c^{2s-2}\mathcal M[f_\mu](2-s).
+```
+
+This expresses the original center-preserving inversion $x\mapsto c^2/x$ in Mellin form; the dependence on $c$ is essential.
+
+### 22.1 The unitary multiplicative Plancherel transform
+
+For $f\in L^2((0,\infty),x\,dx)$ define the Mellin-frequency transform
+
+```math
+(\mathscr M_cf)(k)=\frac1{\sqrt{2\pi}}\int_0^\infty x f(x)(x/c)^{-ik}\frac{dx}{x}.
+```
+
+Equivalently, $\mathscr M_cf$ is the standard Fourier transform of $\psi=U_cf$:
+
+```math
+(\mathscr M_cf)(k)=\frac1{\sqrt{2\pi}}\int_{\mathbb R}\psi(u)e^{-iku}\,du=\widehat\psi(k).
+```
+
+Hence exact Plancherel gives
+
+```math
+\int_0^\infty x|f(x)|^2dx=\int_{\mathbb R}|\widehat\psi(k)|^2dk.
+```
+
+This is not just a formal Mellin–Fourier analogy: it is an **explicit unitary equivalence** of Hilbert spaces with all factors accounted for.
+
+For the original canonical profile one obtains the elementary spectral amplitude
+
+```math
+\widehat\psi_\mu(k)=\frac{\pi}{2r\sqrt{2\pi\mu}}\mathrm{sech}\left(\frac{\pi k}{2r}\right).
+```
+
+The center $c$ cancels from this **centered** Fourier–Mellin amplitude because the character $(x/c)^{-ik}$ uses the original logarithmic origin. If ordinary Mellin characters $x^{-ik}$ are used instead, the corresponding factor $c^{-ik}$ or $c^{ik}$ must be tracked according to transform orientation.
+
+## 23. Fourier–Sobolev and the exact uncertainty invariant [D,V]
+
+Parseval for derivatives gives the spectral Sobolev norm
+
+```math
+\int_{\mathbb R}|\partial_u^m\psi|^2du=\int_{\mathbb R}k^{2m}|\widehat\psi(k)|^2dk,\qquad m=0,1,2,\ldots,
+```
+
+for appropriate Sobolev-domain functions. On the original weighted space, the self-adjoint *dilation generator* is
+
+```math
+D_x=U_c^{-1}(-i\partial_u)U_c=-i(x\partial_x+1).
+```
+
+The generator of dilations, not the ordinary momentum $-i\partial_x$, is diagonalized by the Mellin characters under this weighted Hilbert realization. Its domain must be specified as the transported $H^1$ domain.
+
+Normalize the canonical position density and spectral density:
+
+```math
+\rho_u(u)=\frac{|\psi_\mu(u)|^2}{\|\psi_\mu\|_2^2}=\frac r2\mathrm{sech}^2(ru).
+```
+
+```math
+\rho_k(k)=\frac{|\widehat\psi_\mu(k)|^2}{\|\widehat\psi_\mu\|_2^2}=\frac{\pi}{4r}\mathrm{sech}^2\left(\frac{\pi k}{2r}\right).
+```
+
+Both are centered logistic distributions. Direct integration or expansion of their characteristic functions gives
+
+```math
+\sigma_u^2=\frac{\pi^2}{12r^2},\qquad\sigma_k^2=\frac{r^2}{3},\qquad\sigma_u\sigma_k=\frac\pi6.
+```
+
+The product is resolution-independent but **not** an equality case of the ordinary Heisenberg lower bound ($\sigma_u\sigma_k\ge1/2$). It is a special, exactly computable uncertainty invariant of this profile. The scale $c$ shifts the original $x$ chart, while $\mu$ cancels after normalization; neither changes the displayed product.
+
+## 24. Ordinary Fourier versus multiplicative Plancherel: different norms and thresholds [D,V]
+
+Extend $f_\mu(x)$ by zero to the negative real line and define its **ordinary** Fourier transform in the *original additive coordinate* $x$:
+
+```math
+\widehat f_{\rm add}(\xi)=\frac1{\sqrt{2\pi}}\int_0^\infty f_\mu(x;r,c)e^{-i\xi x}\,dx.
+```
+
+The ordinary additive Plancherel identity requires $f_\mu\in L^2(dx)$. The behavior $f_\mu(x)\sim x^{r-1}/(\sqrt\mu\,c^r)$ near zero shows this is equivalent to $r>1/2$. Under this condition,
+
+```math
+\int_{\mathbb R}|\widehat f_{\rm add}(\xi)|^2d\xi=\int_0^\infty|f_\mu(x)|^2dx=\frac{\pi}{4\mu r^2c\sin(\pi/(2r))}.
+```
+
+This is **not the same** as the canonical weighted norm $\|f_\mu\|_{L^2(xdx)}^2=1/(2r\mu)$; the additive Fourier basis diagonalizes translations in $x$, while the Mellin basis diagonalizes multiplicative dilations in $x$.
+
+### 24.1 The complete shifted-weight Mellin–Plancherel family
+
+For real $b$ with $|b|<2r$, define
+
+```math
+\mathcal N_b=\int_0^\infty x^{1-b}|f_\mu(x)|^2dx.
+```
+
+The exact general norm is
+
+```math
+\mathcal N_b=\frac{\pi b}{4\mu r^2c^b\sin(\pi b/(2r))},\qquad \mathcal N_0=\frac1{2r\mu}\ \mathrm{(continuous\ limit)}.
+```
+
+Its shifted Mellin Plancherel formula is
+
+```math
+\mathcal N_b=\frac1{2\pi}\int_{-\infty}^{\infty}\left|\mathcal M[f_\mu]\left(1-\frac b2+ik\right)\right|^2dk.
+```
+
+**Proof.** Let $g_b(u)=x^{1-b/2}f_\mu(x)$, so $\|g_b\|_{L^2(du)}^2=\mathcal N_b$. Its Fourier transform is a phase times the Mellin transform on the vertical line $\mathrm{Re}\,s=1-b/2$. Parseval proves the identity. The closed form follows from the Gamma reflection identity. Its convergence strip yields exactly $|b|<2r$.
+
+For $b=0$ this is canonical **weighted SL** Plancherel. For $b=1$ it is **ordinary additive $L^2(dx)$ norm** expressed using Mellin frequencies (available only when $r>1/2$). For $b=2$ it is $\|f_\mu\|^2_{L^2(dx/x)}$, available only when $r>1$.
+
+### 24.2 Product of ordinary and multiplicative L2 norms
+
+For $r>1$, both $\mathcal N_1=\|f_\mu\|_{L^2(dx)}^2$ and $\mathcal N_2=\|f_\mu\|_{L^2(dx/x)}^2$ exist. The historical Plancherel archive studies their joint scalar products. With explicit amplitude and scale, they are
+
+```math
+\mathcal N_1=\frac{\pi}{4\mu r^2c\sin(\pi/(2r))},\qquad\mathcal N_2=\frac{\pi}{2\mu r^2c^2\sin(\pi/r)}.
+```
+
+```math
+\mathcal N_1\mathcal N_2=\frac{\pi^2}{8\mu^2r^4c^3\sin(\pi/(2r))\sin(\pi/r)}.
+```
+
+The last expression is a **product of two distinct scalar norms**, not the automatic norm of a new “simultaneous one-variable Fourier and Mellin transform”. Such a joint transform needs either two independent coordinates or another explicitly constructed operator-theoretic framework.
