@@ -686,3 +686,188 @@ Then
 ```
 
 All remaining torsion components vanish as well, and the spin connection is flat. The two coframe/connection pairs with the same metric are **different teleparallel connections**; holding the coframe fixed while changing the spin connection is not the simultaneous local Lorentz gauge transformation under which the torsion tensor transforms covariantly. This example cleanly separates geometry, inertial frame and torsion gauge.
+
+## 16. Lapse and conformal-time consistency checks [D]
+
+The same warped geometry may be expressed in a conformal coordinate $`\eta`$ defined by $`d\eta=du/a`$. Then
+
+```math
+g_4=a(\eta)^2[-d\eta^2+h_K],\qquad \mathcal H_c=\frac{a_\eta}{a}=aH,\qquad H=\frac{a_\eta}{a^2}.
+```
+
+For the generalized reciprocal-envelope first integral,
+
+```math
+a_\eta^2=a^4H^2=\frac{r^2}{4}a^4-Cr^2a^2-\frac{\delta_G r^2}{4}+\frac{\varepsilon}{4}a^8.
+```
+
+At $`\varepsilon=0`$ this is a quartic polynomial in $`a`$ (the elliptic conformal-time curve studied in H315 when nonsingular); at $`\varepsilon\ne0`$ the resulting degree-eight curve is generically of genus three, with the marked clocks and elliptic/hyperelliptic quotients analyzed in the archive. Those are **period problems**, not automatically torsion invariants.
+
+The proper-time teleparallel scalar is
+
+```math
+\mathbb T=6H^2=6\frac{a_\eta^2}{a^4},
+```
+
+not $`6\mathcal H_c^2`$ unless an additional lapse factor has been properly included. A naive conformal-time substitution would therefore introduce a spurious factor of $`a^2`$. The torsion and scalar-curvature dictionary is coordinate invariant **when the coframe and its lapse are transformed consistently**.
+
+## 17. What is—and is not—an action-dependent “teleparallel Friedmann equation” [K,D,C]
+
+The scalar identity $`\mathring{\mathcal R}=-\mathbb T+\mathbb B`$ is geometric. To obtain a **field equation**, independently choose the action and the source. For example, in the sign convention of §7 consider the formal functional
+
+```math
+\mathcal S=\frac1{2\mathfrak g}\int d^4q\,\sqrt{-g}\,F(\mathbb T,\mathbb B)+\mathcal S_m,
+```
+
+where $`\mathfrak g>0`$ is a coupling normalization and $`\mathcal S_m`$ is a **separately specified** matter functional. The published flat-FLRW field-equation calculation, with the same sign of the torsion scalar and an admissible tetrad/spin pair, takes the form
+
+```math
+\mathfrak g\rho=-3H^2(3F_{\mathbb B}+2F_{\mathbb T})+3H\dot F_{\mathbb B}-3\dot H F_{\mathbb B}+\frac12F.
+```
+
+```math
+-\mathfrak g p=-(3H^2+\dot H)(3F_{\mathbb B}+2F_{\mathbb T})-2H\dot F_{\mathbb T}+\ddot F_{\mathbb B}+\frac12F.
+```
+
+These equations are a **quoted, action-dependent result [K]**, not derived from the original Symmetrical Function. They are included to show exactly what data are missing from a merely kinematic Friedmann identification. Their overall signs and matter conventions must be retained with the action.
+
+### 17.1 The linear action recovers the same Levi-Civita field equations
+
+For the teleparallel equivalent choice $`F=-\mathbb T`$, we have $`F_{\mathbb T}=-1`$, $`F_{\mathbb B}=0`$ and $`\mathbb T=6H^2`$. Substitution in the two quoted equations yields
+
+```math
+\mathfrak g\rho=3H^2,\qquad -\mathfrak g p=2\dot H+3H^2.
+```
+
+These are exactly the two corresponding flat-slice Levi-Civita Einstein equations. The equality also follows variationally because the linear densities differ by a total divergence (§8).
+
+Thus there **is** a rigorous Levi-Civita–Weitzenbock Friedmann dictionary for this specified linear action, with the same source and boundary hypotheses. It is the classical teleparallel equivalence, not an independent physical prediction of the Symmetrical Framework.
+
+### 17.2 Nonlinear actions require their own dynamics
+
+For a general $`F(\mathbb T,\mathbb B)`$, derivatives $`\dot F_{\mathbb B}`$, $`\ddot F_{\mathbb B}`$ and $`\dot F_{\mathbb T}`$ appear in the field equations. If $`F=f(-\mathbb T+\mathbb B)`$, the action is exactly $`f(\mathring{\mathcal R})`$; that is a special restriction, often involving higher-order equations. General $`F`$ need not be equivalent to an $`f(\mathring{\mathcal R})`$ action, to Einstein theory, or to a theory with a single canonical scalar.
+
+A formal effective tensor obtained by moving extra terms to one side of the field equations is not unique as a physical matter interpretation. In particular, a connection decomposition does **not** prove absence of ghosts, new degrees of freedom, acausality or singularities. Covariance under simultaneous local Lorentz transformations of the tetrad and **flat inertial spin connection** must be distinguished from dynamical health of an action.
+
+## 18. A square-root counterexample to an automatic Rindler H term [D,C]
+
+For the action restricted to $`F(\mathbb T)`$, the quoted first equation reduces to
+
+```math
+2\mathfrak g\rho=F(\mathbb T)-2\mathbb T F_{\mathbb T}(\mathbb T),\qquad \mathbb T=6H^2.
+```
+
+In the canonical sign convention the homogeneous reconstruction equation is $`F-2\mathbb T F_{\mathbb T}=0`$.
+
+**Theorem 18.1 [D,C].** On any branch $`\mathbb T>0`$, a square-root term belongs to the exact homogeneous kernel:
+
+```math
+F_h(\mathbb T)=A\sqrt{\mathbb T},\qquad F_h-2\mathbb T(F_h)_{\mathbb T}=A\sqrt{\mathbb T}-2\mathbb T\frac A{2\sqrt{\mathbb T}}=0.
+```
+
+Therefore adding $`A\sqrt{\mathbb T}`$ to this background action does **not automatically** generate a linear $`H`$ correction to the first Friedmann constraint. In the alternate common notation $`\tau=-6H^2`$, the same kernel is $`A\sqrt{-\tau}`$. The suggestion that a square-root torsion term by itself universally produces $`H^2-\alpha H=`$ source is **false in this standard background equation**.
+
+A general inhomogeneous reconstruction can be written as a first-order linear differential equation. If $`G(\mathbb T)=2\mathfrak g\rho(\mathbb T)`$ on a monotone branch,
+
+```math
+\frac d{d\mathbb T}\left(\frac{F}{\sqrt{\mathbb T}}\right)=-\frac{G(\mathbb T)}{2\mathbb T^{3/2}}.
+```
+
+Its solutions are
+
+```math
+F(\mathbb T)=\sqrt{\mathbb T}\left[C_0-\frac12\int^{\mathbb T}\frac{G(s)}{s^{3/2}}\,ds\right].
+```
+
+The integration constant multiplies the homogeneous square-root kernel. Moreover, the square root is not differentiable at $`\mathbb T=0`$, which is reached by the canonical bouncing profile. Requiring a smooth action across that point can exclude this ambiguity.
+
+**Branch warning:** Even if $`\mathbb T(u)`$ is known, the sign of $`H`$ is lost, and the matter function $`\rho(\mathbb T)`$ may be multivalued on nonmonotone trajectories. Background reconstruction alone does not determine a unique covariant theory or verify the second field equation and perturbation spectrum.
+
+## 19. All-level separatrix collapse of the teleparallel invariants [D,V,H317,H318]
+
+The archive's general positive level has $`q=(l-1)/2>0`$ and a normalized reciprocal amplitude $`a_q`$. Its normalized first integral can be written
+
+```math
+H_q^2=\frac{r^2}{4}\left(1-a_q^{-4}+e_q a_q^{4q}\right),\qquad H_q=\dot a_q/a_q.
+```
+
+On nonstationary branches differentiate and extend through ordinary turning points using the second-order equation:
+
+```math
+\dot H_q=\frac{r^2}{2}\left(a_q^{-4}+q e_q a_q^{4q}\right).
+```
+
+The same **chosen spatially flat warped geometry and tetrad** produces
+
+```math
+\mathbb T_q=6H_q^2=\frac{3r^2}{2}\left(1-a_q^{-4}+e_q a_q^{4q}\right).
+```
+
+Its Levi-Civita scalar curvature and teleparallel boundary invariant are
+
+```math
+\mathring{\mathcal R}_q=6(\dot H_q+2H_q^2)=3r^2[1+(q+1)e_q a_q^{4q}],\qquad \mathbb B_q=\mathbb T_q+\mathring{\mathcal R}_q.
+```
+
+This rederives the historical general-level warped scalar formula in the *flat-slice, zero-Gram-shift normalization*, and simultaneously supplies its teleparallel counterpart.
+
+**Theorem 19.1 [D,V] (separatrix collapse).** At the zero-energy separatrix $`e_q=0`$, every real level $`q>0`$ has the same normalized reciprocal envelope
+
+```math
+a_q(u)=\sqrt{\cosh(ru)}.
+```
+
+Consequently all such levels, when placed into this **same chosen warped metric ansatz**, share the invariant pair
+
+```math
+\mathbb T_q=\frac{3r^2}{2}\tanh^2(ru),\qquad \mathbb B_q=\mathbb T_q+3r^2,\qquad\mathring{\mathcal R}_q=3r^2.
+```
+
+**Proof.** The normalized separatrix field at level $`q`$ is $`\mathrm{sech}^{q}(ru)`$; raising it to the reciprocal power $`-1/(2q)`$ gives $`\sqrt{\cosh(ru)}`$. Its logarithmic derivative is $`(r/2)\tanh(ru)`$, independent of $`q`$, and substitution in the invariant formulas completes the proof.
+
+**Consequence and limitation:** This four-dimensional geometric realization **cannot distinguish levels from their normalized zero-energy torsion/curvature scalars alone**. The nonlinear level information reappears away from the separatrix through the factor $`(q+1)e_q a_q^{4q}`$ and through the independent algebraic-curve/period data. The collapse is due to a declared normalization and an information-losing reciprocal map; it is not a claim that the underlying distinct level ODEs are identical.
+
+## 20. Rigor audit, limitations and mathematical next steps
+
+The supplied exploratory text includes several statements that are mathematically too strong. Record explicit corrections:
+
+| Proposed claim | Correct mathematical status |
+|---|---|
+| Every kinematic Friedmann constraint is a Weitzenbock field equation. | A scalar first integral is only kinematic; an action and source are required to obtain field equations. |
+| A metric uniquely selects a flat torsionful connection. | False: a Weitzenbock connection requires a chosen tetrad and compatible flat spin connection; global holonomy matters. |
+| The scalar identity gives a unique map between arbitrary modified-curvature and modified-torsion theories. | False: linear bulk densities are boundary-equivalent; nonlinear functions differ and carry independent dynamics. |
+| $`T=-6H^2`$ can be paired with any quoted $`R=-T+B`$ without changing conventions. | False: scalar-curvature and boundary signs must be transformed together. This draft uses $`\mathbb T=+6H^2`$ and $`\mathring{\mathcal R}=-\mathbb T+\mathbb B`$. |
+| A Rindler tetrad's nonzero torsion necessarily gives nonzero torsion scalar or a linear-Hubble correction. | Explicit counterexample: §15 gives nonzero torsion components but $`\mathbb T_R=\mathbb B_R=0`$. |
+| A $`\sqrt{|T|}`$ term automatically generates a new background Friedmann term linear in $`H`$. | Explicit counterexample: §18 gives an exact homogeneous-kernel cancellation in the standard first $`F(T)`$ background equation. |
+| Apparent phantom exponents prove phantom matter or freedom from ghosts. | They are optional formal power-law bookkeeping; physical conclusions need a matter action and stability analysis. |
+| A constant scalar curvature means the metric is a space form. | False on the basic separatrix: §11 derives nonzero trace-free Ricci tensor. |
+| Milne and Rindler are the same geometric realization. | Both relate to Minkowski patches but have different natural slicings; the historical Milne profile arises in a singular Gram-limit with $`K=-1`$. |
+| The Weitzenbock connection and the Bochner–Weitzenbock identity are identical. | The latter is a separate Hodge/Levi-Civita Laplacian formula, as established in SF-DRAFT-030. |
+
+**Independent verification record [V].** New SymPy work checked: (i) the coordinate torsion contractions $`-3H^2/2,-3H^2/2,-9H^2`$, giving $`\mathbb T=6H^2`$; (ii) $`\dot H`$ and all general Gram/finite-energy invariant formulas; (iii) $`\mathring{\mathcal R}_K=3r^2+6\varepsilon a^4`$ with $`K=Cr^2`$; (iv) separatrix affine identity $`\mathbb B-\mathbb T=3r^2`$; (v) trace-free Ricci square and the catenoid cross-invariant; (vi) Rindler's nonzero torsion components but scalar $`\mathbb T_R=0`$; (vii) square-root homogeneous $`F(T)`$ kernel. Steps are given explicitly above for reproducibility. Source H313–H319 includes additional **numerical, quoted and unexamined** material not promoted here.
+
+**Open problems:**
+
+1. [O1] Construct a compatible flat spin connection/tetrad for $`K=Cr^2\ne0`$ and compute $`\mathbb T_K,\mathbb B_K`$ without importing Cartesian-flat formulas; compare spatial curvature, global frames and holonomy.
+2. [O2] Classify flat metric-compatible connections sharing a warped metric, and distinguish tetrad/spin gauge transformations from genuinely different teleparallel connections.
+3. [O3] Determine the algebraic curves in the $`(\mathbb T,\mathbb B)`$-plane generated by general $`q`$ at nonzero energy, and investigate branch points, discriminants and recoverability of $`q`$.
+4. [O4] Compare complete-domain conditions, Jacobi operators, curvature singularities and spectral endpoints of the reciprocal envelopes with their torsion invariants.
+5. [O5] Solve carefully specified variational reconstruction problems for $`F(\mathbb T)`$ or $`F(\mathbb T,\mathbb B)`$ with lapse, source and regularity hypotheses; test nonuniqueness of the background inverse problem.
+6. [O6] Relate Milne and Rindler coframes through explicit local coordinate/boost maps while tracking inertial spin connections and the difference between zero curvature and zero torsion.
+7. [O7] Compare the two-dimensional catenoid teleparallel frame with the four-dimensional warped frame only through declared maps or matching scalar evaluations; do not infer a dimensional equivalence.
+
+## 21. Historical sources, external references and consolidation route
+
+**Archive and live reference:** The principal archival source is the ZIP's 04-follow-ups/friedmann-reciprocal-envelope.md, specifically §§1–3 and §6, plus verification/friedmann.py. Its H313–H319 records contain 47 individually tagged checks. In H318, terms Milne, phantom, Big Rip and scalar reconstruction are historical algebraic/optional geometric descriptions, **not assertions of physical realization**. The live SF-I-020 fixes the two-exponential/Gram distinction, and drafts 010/020/030 distinguish ambient moving frames, intrinsic surface Weitzenbock geometry, Lorentzian immersions and variational operator domains.
+
+**External references [K] for sign and action conventions:**
+
+- Variational Principles in Teleparallel Gravity Theories, Universe 7 (2021), 114: https://www.mdpi.com/2218-1997/7/5/114 . Tetrads, flat spin connections, torsion and the distinction from nonmetricity.
+- f(T, B) Cosmography for High Redshifts, Universe 7 (2021), 441: https://www.mdpi.com/2218-1997/7/11/441 . Flat homogeneous invariants $`\mathbb T=6H^2`$, $`\mathbb B=6(\dot H+3H^2)`$ and $`\mathring{\mathcal R}=-\mathbb T+\mathbb B`$ with consistent convention.
+- Dynamical system analysis in teleparallel gravity with boundary term, European Physical Journal C 83 (2023): https://link.springer.com/article/10.1140/epjc/s10052-023-11937-6 . The action-dependent homogeneous $`F(T,B)`$ equations used only in §17.
+- Holographic renormalization in teleparallel gravity, European Physical Journal C 77 (2017): https://link.springer.com/article/10.1140/epjc/s10052-017-4621-3 . Covariant inertial spin connections, contorsion, and boundary relations.
+- Classical Ermakov-Pinney, Gauss-Codazzi and ADM hypersurface geometry are used with their stated hypotheses; the Friedmann–Pinney connection predates this investigation, as already acknowledged by the historical project archive.
+
+**After audit, proposed destinations:** Layer I: reciprocal envelope, first integrals, energy/Gauss invariants, and normalized $`q`$-family. Layer II: explicit warped geometry, Levi-Civita–Weitzenbock connection dictionary, Gauss-Codazzi slicing, catenoid cross-model invariants, Rindler/Milne geometry and holonomy. Layer III: qualified Friedmann/Ermakov correspondences, optional formal-fluid and action-based $`F(T,B)`$ reconstruction. Layer IV: any physical cosmology, phantom model, horizon or observational interpretation *only if separately supplied with an actual model and evidence*.
+
+**Closing mathematical statement:** The Symmetrical Framework does possess an exact Weitzenbock–Levi-Civita Friedmann dictionary, but it is a **typed geometric correspondence**, not a new universal theory of gravity. Its key identities are the reciprocal-envelope first integral, the induced warped metric, the preferred-frame torsion $`\mathbb T=6H^2`$, the divergence $`\mathbb B=6(\dot H+3H^2)`$, and $`\mathring{\mathcal R}=-\mathbb T+\mathbb B`$. The separatrix makes the invariant locus affine and constant-curvature-scalar; the nonzero-energy and general-level extensions expose the precise defects. These are powerful mathematical organizing results precisely because they require no forced physical interpretation.
