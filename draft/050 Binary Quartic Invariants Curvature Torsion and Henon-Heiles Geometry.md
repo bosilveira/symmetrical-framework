@@ -907,3 +907,178 @@ Its projective root type is often described using Petrov-like labels. This is a 
 However, a generic pair of second-order Hénon–Heiles ODEs is **not automatically** a specified (2,3,5)-distribution or an almost-Grassmannian geometry. To claim a Cartan quartic from it, one must provide the five-manifold, rank-two distribution, derived flag, appropriate Cartan connection and explicit harmonic-curvature coefficients. There is no established theorem in the uploaded sources identifying this quartic with the Master/Hénon–Heiles energy quartic.
 
 Thus this is a legitimate **open research path**, not a proved universal equivalence or a mechanism that distinguishes integrable and chaotic parameter values merely by the symbols I and J.
+
+## 19. Integrability survives the lift as Killing tensors, not as Weyl I and J [D,K,V]
+
+The Eisenhart construction does more than reproduce the second-order equations. Its geodesic Hamiltonian makes the fate of **polynomial mechanical first integrals** explicit.
+
+From the inverse metric of §10, the cotangent geodesic Hamiltonian is
+
+```math
+\mathcal H_E=\frac12(p_1^2+p_2^2)+p_t p_s+V(q_1,q_2)p_s^2.
+```
+
+The momenta $`p_s`$ and $`p_t`$ are conserved. On the null shell $`\mathcal H_E=0`$ with $`p_s=1`$, identify
+
+```math
+p_t=-\mathcal E,\qquad\frac12(p_1^2+p_2^2)+V=\mathcal E.
+```
+
+Now suppose the mechanical Hamiltonian $`\mathcal H_{\rm HH}=\frac12(p_1^2+p_2^2)+V`$ has a first integral $`F(q,p_1,p_2)`$ that is polynomial in the mechanical momenta of degree at most $`m`$, with coefficients independent of $`t`$.
+
+**Theorem 19.1 [D,K] (homogenized Killing-tensor lift).** On $`p_s\ne0`$, set
+
+```math
+\widetilde F(q,p_1,p_2,p_s)=p_s^mF(q,p_1/p_s,p_2/p_s).
+```
+
+Then $`\widetilde F`$ is a homogeneous polynomial of total degree $`m`$ in the lift momenta and is conserved by the Eisenhart geodesic Hamiltonian:
+
+```math
+\{\widetilde F,\mathcal H_E\}_{\mathrm{can}}=0.
+```
+
+Accordingly, its symmetric homogeneous momentum coefficients define a rank-$`m`$ Killing tensor of the lift metric (modulo the usual reductions when the polynomial has lower effective rank).
+
+**Proof, step by step.**
+
+1. Since $`F`$ is a polynomial of degree at most $`m`$, multiplying by $`p_s^m`$ cancels the denominators and produces a homogeneous polynomial in $`(p_1,p_2,p_s)`$.
+2. Since $`V`$ and $`F`$ are independent of $`t,s`$, the terms involving $`p_t`$ and their canonical derivatives vanish in the Poisson bracket.
+3. Write $`P_i=p_i/p_s`$; then
+
+```math
+\partial_{q_i}\widetilde F=p_s^mF_{q_i}(q,P),\qquad\partial_{p_i}\widetilde F=p_s^{m-1}F_{P_i}(q,P).
+```
+
+4. Insert these derivatives and $`\partial_{p_i}\mathcal H_E=p_i=p_sP_i`$, $`\partial_{q_i}\mathcal H_E=p_s^2V_{q_i}`$ into the canonical bracket:
+
+```math
+\{\widetilde F,\mathcal H_E\}=p_s^{m+1}\sum_{i=1}^2\left(P_iF_{q_i}-V_{q_i}F_{P_i}\right)=p_s^{m+1}\{F,\mathcal H_{\rm HH}\}=0.
+```
+
+5. The vanishing bracket of a symmetric homogeneous momentum polynomial with the geodesic Hamiltonian is precisely the Killing-tensor condition on its coefficient field.
+
+**Immediate example.** The mechanical energy itself homogenizes to the quadratic tensor integral
+
+```math
+\widetilde{\mathcal H}_{\rm mech}=\frac12(p_1^2+p_2^2)+V p_s^2,\qquad \mathcal H_E=\widetilde{\mathcal H}_{\rm mech}+p_tp_s.
+```
+
+Its bracket vanishes identically. An additional independent polynomial integral in a special integrable Hénon–Heiles case yields an additional nontrivial Killing tensor. Generic nonintegrable parameter choices do not acquire such a tensor merely because the lift has Petrov type N.
+
+**This is the correct geometric discriminator:** the integrability distinctions within the ordinary scalar-potential lift are encoded in special Killing tensors, separability, Lax/ spectral structures and algebraic curves—not in the universally vanishing Weyl-spinor pair $`I_{\rm W},J_{\rm W}`$.
+
+**Scope:** This theorem concerns first integrals polynomial in momenta, independent of time, and the chosen scalar-potential Eisenhart lift. Integrals rational in momenta, time-dependent, defined only on a fixed-energy shell, or involving magnetic terms require additional homogenization or lift arguments.
+
+## 20. A dictionary of four quartics and the information each retains [D,H]
+
+| Quartic | Input object | Coefficients obtained from | Generic invariant behavior | What it does not determine |
+|---|---|---|---|---|
+| Surface fundamental-form $`F_{\rm surf}`$ | Immersed Euclidean surface $`(I,II)`$ | principal curvatures $`k_1,k_2`$ | $`I=4H_m^2+12K_G`$, $`J=16H_m(9K_G-H_m^2)`$ | entire immersion, period closing, torsion gauge |
+| Master/Hénon–Heiles pencil $`Q_e,P_t`$ | Algebraic first integral or coupling-form pencil | polynomial coefficients and explicit projective map | generally $`\Delta\ne0`$, nonconstant elliptic $`j`$ | full HH mechanical integrability or spacetime Weyl type |
+| Eisenhart Weyl-spinor $`Q_{\rm W}`$ | Four-dimensional Levi-Civita Weyl curvature | trace-free Hessian of $`V`$, spin dyad | type N/O, $`I_{\rm W}=J_{\rm W}=0`$ | potential Hessian trace, mechanical integrability, modulus of another quartic |
+| Constructed tidal Hessian $`F_{\rm tidal}`$ | Euclidean configuration metric and Hessian $`V_{ij}`$ | eigenvalues of Hessian | generally nonzero $`I,J,\Delta`$ with $`j`$ given in §13 | full potential, trajectory clock, Weyl Petrov type |
+| Cartan $`(2,3,5)`$ quartic | Explicit rank-two distribution plus canonical Cartan connection | harmonic curvature of distribution | depends on selected distribution | generic ODE or HH data without a specified construction |
+
+The common abstract representation $`\mathrm{Sym}^4(\mathbb C^2)`$ **explains why identical invariant polynomials and root-degeneration types recur**. The source-to-quartic maps are different. There is no theorem saying that two objects with numerical equal $`j`$ or both with vanishing $`I,J`$ must be geometrically the same, unless the appropriate smoothness and reconstruction hypotheses are met.
+
+### 20.1 Typed diagram for the two genuinely coupled connections
+
+The exact Eisenhart part can be organized as a commuting *reconstruction* chain, with a caveat that the arrows to scalars discard information:
+
+```math
+V\ \xrightarrow{d}\ (V_i)\ \xrightarrow{\mathrm{null\ coframe}}\ \mathcal T^s{}_{it}=-V_i\ \xrightarrow{-\partial_j}\ M_{ij}=V_{ij}.
+```
+
+```math
+V\ \xrightarrow{\mathrm{Eisenhart}}\ g_E\ \xrightarrow{\mathring\nabla}\ \mathring R_{titj}=M_{ij}\ \xrightarrow{\mathrm{tracefree}}\ C_{titj}=M_{ij}-\frac12(\mathrm{tr}\,M)\delta_{ij}.
+```
+
+From $`M_{ij}`$ one may construct $`F_{\rm tidal}`$, with generally nonzero invariants. From the Weyl projection one obtains $`Q_{\rm W}`$, always type N/O for this lift. Both constructions use the same $`M`$, yet the outputs are **not** the same quartic.
+
+The Jacobi metric supplies a further map at fixed energy:
+
+```math
+(V,\mathcal E)\ \xrightarrow{\mathcal E>V}\ g_J=2(\mathcal E-V)\delta\ \xrightarrow{\mathrm{LC}}\ K_J=\frac{\Delta V}{4(\mathcal E-V)^2}+\frac{|\nabla V|^2}{4(\mathcal E-V)^3}.
+```
+
+A chosen tangent Weitzenbock frame of $`g_J`$ recovers this curvature from its own torsion, while the four-dimensional Eisenhart teleparallel scalar is identically zero. These are consistent, **different geometric realizations**.
+
+### 20.2 Connection to the framework's foundational layers
+
+- **Layer I, algebraic:** Master energy quartic, Hessian covariant of a binary form, $`I_{\rm raw},J_{\rm raw},\Delta,j`$, modular transforms and discriminant loci; real/complex normalization and parameter clocks.
+- **Layer II, geometry:** fundamental-form quartic, Levi-Civita versus chosen Weitzenbock connections, explicit Eisenhart and Jacobi metrics, curvature/torsion tensor relationship, Weyl/Petrov quartic, Cartan distribution if actually built.
+- **Layer III, correspondences:** Hénon–Heiles Hamiltonian to geodesics, polynomial integrals to Killing tensors, fixed-energy Maupertuis reparametrization, archived quartic-pencil equivalence with its projective constraints, Gauss–Manin and Picard–Fuchs after an actual family of curves is chosen.
+- **Layer IV, applications:** specific mechanical, stochastic, or physical-gravity models only after Hamiltonians, action principles, boundary conditions and stability assumptions are imposed.
+
+No physical prediction is inferred by any of the foundational identities.
+
+## 21. Independent verification record [V]
+
+The following independent calculations were executed symbolically with SymPy and reviewed against the ZIP's corresponding formulas:
+
+1. **Eisenhart inverse metric:** The matrix of §10 multiplies by its proposed inverse to the identity for symbolic $`V`$.
+2. **Levi-Civita coefficients:** For the full cubic Hénon–Heiles potential, the only independent nonzero coefficients are $`\mathring\Gamma^i{}_{tt}=V_i`$, $`\mathring\Gamma^s{}_{ti}=-V_i`$, with $`t`$-independent $`V`$.
+3. **Riemann and Ricci:** Direct four-index curvature calculation gives $`\mathring R_{titj}=V_{ij}`$, $`\mathring R_{tt}=\Delta V`$ and scalar $`\mathring{\mathcal R}=0`$.
+4. **Weyl Hessian:** Direct trace subtraction gives $`C_{titj}=V_{ij}-(\Delta V)\delta_{ij}/2`$ and the explicit Hénon–Heiles formulas of §11.1.
+5. **Preferred null teleparallel coframe:** All independent torsion components equal $`\mathcal T^s{}_{it}=-V_i`$ or their antisymmetric partners. The torsion trace and **both distinct quadratic contractions** vanish identically as symbolic expressions; therefore $`\mathbb T=\mathbb B=0`$.
+6. **Jacobi metric:** Exact symbolic differentiation proves $`K_J=\Delta V/[4(\mathcal E-V)^2]+|\nabla V|^2/[4(\mathcal E-V)^3]`$.
+7. **Master quartic:** $`\Delta_M=-16e(4e+1)^2`$ and $`(4I_M^3-J_M^2)/27=\Delta_M`$.
+8. **Archived Hénon–Heiles quartic pencil:** Direct polynomial substitution confirms $`P_t=-(2t+1)Q_{e(t)}(2iZ,\sqrt3X)/2`$ as an algebraic identity, and its discriminant is $`2048(t+1)(2t+1)^3(10t+1)^2`$.
+9. **Invariant normalization:** The binomial-to-raw conversions $`I_{\rm raw}=12I_b`$ and $`J_{\rm raw}=432J_b`$ follow by substitution; the quoted discriminant and elliptic $`j`$ formulas are consistent.
+10. **Constructed tidal quartic:** For $`\lambda_1=1,\lambda_2=2`$, direct substitution yields $`I=33`$, $`J=378`$, $`\Delta=32`$, $`j=287496`$, while the Eisenhart Weyl invariants remain zero.
+11. **Homogeneous-integral lift:** The Poisson-bracket identity of §19 was checked for the mechanical energy example using the full cubic Hénon–Heiles potential; the general polynomial argument is proved algebraically in the text.
+
+These computations are **exact checks of the displayed polynomial/differential identities**, not experimental proof of any proposed new globally integrable Hénon–Heiles coupling or existence of a special global spin structure.
+
+### 21.1 Minimal reproducibility recipe
+
+Take the coordinate order $`(t,s,q_1,q_2)`$, metric matrix in §10, and $`V=(Aq_1^2+Bq_2^2)/2+\lambda(q_1^2q_2+\beta q_2^3)`$. Compute the inverse, Christoffels, Riemann tensor with the sign convention in §10, and Weyl tensor by removing the Ricci trace. For the preferred teleparallel connection use $`\vartheta^+=dt`$, $`\vartheta^-=ds-Vdt`$, $`\vartheta^i=dq_i`$, and raise/lower torsion indices with the **null** metric rather than a diagonal Euclidean form; otherwise the vanishing torsion scalar is missed.
+
+For the quartic algebra use $`I=12af-3bd+c_2^2`$, $`J=72ac_2f+9bc_2d-27ad^2-27fb^2-2c_2^3`$. For $`P_t`$ use a complex coefficient $`i`$ in the projective coordinate map and retain the exceptional $`t=-1/2`$ separately.
+
+## 22. Corrections to the suggested text and precise research limits [C,O]
+
+| Statement suggested or tempting | Mathematical audit |
+|---|---|
+| Levi-Civita and Weitzenbock have unrelated curvature/torsion algebra. | False: the full contorsion identity exactly reconstructs LC curvature from a chosen flat metric-compatible connection. |
+| Any torsion tensor is a binary quartic classified by I and J. | False: torsion is a vector-valued two-form; the Weyl spinor or a separately specified harmonic-curvature projection produces a quartic. |
+| Weyl quartic and Master/Hénon–Heiles quartic must have equal I,J. | False: the standard HH Eisenhart Weyl invariants vanish for every scalar potential, while the energy-pencil invariants generally do not. |
+| I=J=0 for a Weyl quartic proves Petrov N. | False alone: could be III, N or O; the pp-wave component pattern proves N/O here. |
+| I=J=0 is elliptic j=0. | False: a zero or quadruple-root quartic is singular or identically zero, so the smooth elliptic modulus is undefined. |
+| Harmonic potential implies conformally flat Eisenhart geometry. | False: harmonicity gives Ricci-flat lift but a nonzero trace-free Hessian can still yield type N. |
+| Adding an arbitrary magnetic one-form to Brinkmann data generically produces Petrov type I, D or II. | Not justified; one must calculate curvature and holonomy of that specified metric. Many aligned-null/gyraton extensions remain algebraically special and have vanishing scalar invariants. |
+| Cartan harmonic quartic of any coupled second-order ODE detects HH integrable ratios. | Not established: requires an actual Cartan distribution/construction and proof of its invariant/integrability implication. |
+| The Hénon–Heiles quartic-pencil isomorphism proves a continuous family of integrable Hamiltonians. | False: the historical ZIP explicitly restricts it to algebraic quartic forms and their elliptic curve families. |
+| Petrov I,J determine all LC curvature or the mechanical Hessian. | False: Weyl projection removes Ricci trace, and type N has vanishing scalar polynomial invariants despite nonzero tidal Hessian. |
+| A flat Weitzenbock connection has zero torsion or no curvature information. | False: its torsion may be nonzero; differentiation/contorsion reconstruct LC curvature. |
+| A j equality alone gives a canonical correspondence of flows and periods. | False: smooth elliptic isomorphism after selecting a complex curve does not identify mechanical clocks, one-forms, real structure or Hamiltonian symplectic data. |
+
+### Open research questions
+
+1. [O1] For the archived integrable **quartic** Hénon–Heiles Hamiltonians, construct their actual Eisenhart metric from each mechanical potential and compare its Killing-tensor hierarchy with H352/H403 elliptic-pencil data.
+2. [O2] Determine whether the historical H403 projective quartic equivalence can be lifted to an explicit map of selected **separated** Hamiltonian subsystems and marked holomorphic time differentials, beyond an equality of $`j`$.
+3. [O3] Investigate the special $`j=1728`$ meeting of the surface fundamental-form quartic and the Master/Hénon–Heiles quartic: identify an explicit isomorphism of smooth elliptic double covers, and rigorously test whether any geometric differential or period is preserved.
+4. [O4] Determine whether a natural trace-free Hessian quadratic differential on the Jacobi surface has a global holomorphic extension for any integrable HH case; generic Hessian data are not holomorphic without extra equations.
+5. [O5] Construct, if possible, a concrete rank-two $`(2,3,5)`$ distribution from a **specified** HH ODE or rank-three Pfaffian system, then compute the Cartan quartic. Do not equate it with the Weyl or spectral quartic before calculation.
+6. [O6] Classify how the preferred null Weitzenbock torsion and the tidal quartic transform under local Lorentz/frame rotations accompanied by flat spin-connection transformations; distinguish covariant invariants from pure-coframe artifacts.
+7. [O7] Study integrable HH Killing tensors and the associated symmetric-power/projective structures, including whether the archived quartic Hessian pencil admits a natural connection-theoretic realization with an explicit differential map.
+8. [O8] Compare a generic Hénon–Heiles potential's Jacobi-metric teleparallel curvature relation with the canonical catenoid's torsion-curvature syzygy, retaining the fixed-energy Hill region and mechanical clock.
+9. [O9] Investigate magnetic Eisenhart extensions **within their actual aligned-null metric class**, calculate their Petrov scalars and invariants first, and only then ask which alterations yield nonzero Weyl I,J.
+
+## 23. External references and historical attribution
+
+**Project ZIP:** The exact H403 coupling-form pencil, its Master map, discriminant and $`j`$ appear in 04-follow-ups/binary-quartics-hessian-hh-s4.md and are also cross-checked in 04-follow-ups/binary-quartic-pencils.md (H352–H358). The surface fundamental-form quartic is in 04-follow-ups/fundamental-forms-willmore-hopf.md (H421); its catenoid specialization and associate family are H424. The catenoid's teleparallel torsion-curvature identity, the gauge distinction, and four-dimensional warped scalar dictionary are in the recent live drafts 030 and 040. Historical ledger check status [V] is not a blanket proof of every physical or spectral interpretation.
+
+**External mathematical literature [K]:**
+
+- *Eisenhart lift of 2-dimensional mechanics*, European Physical Journal C **79** (2019): https://link.springer.com/article/10.1140/epjc/s10052-019-6812-6 . Includes the Hénon–Heiles potential, lifted metric and Brinkmann geometry.
+- *Geometry of Hamiltonian Dynamics with Conformal Eisenhart Metric* (2011): https://onlinelibrary.wiley.com/doi/10.1155/2011/710274 . Eisenhart/Jacobi curvature and deviation methods in Hamiltonian dynamics.
+- Classical invariant theory lecture notes: https://www.math.utoronto.ca/~ila/ClassicalInvariantTheory.pdf . Binary quartic invariant algebra and discriminant root classification.
+- Petrov invariants and quartic spinor normalization: https://homepage.villanova.edu/robert.jantzen/research/articles/ijgmmp2022.pdf ; see also the standard Petrov literature.
+- Generalized Hénon–Heiles integrability and algebraic geometry: https://www.sciencedirect.com/science/article/pii/S0393044014000059 ; https://arxiv.org/abs/nlin/0507011 . Genus-two/spectral structures belong to specific integrable Hamiltonians.
+- Cartan harmonic quartic of $`(2,3,5)`$ distributions and its exceptional algebraic role: https://pmc.ncbi.nlm.nih.gov/articles/PMC6560648/ ; https://link.springer.com/article/10.1007/s10711-021-00665-4 . The latter treats a specific correspondence with Weyl quartics of constructed para-Kähler–Einstein twistor structures, not arbitrary mechanical systems.
+- Teleparallel connection/contorsion geometry with covariant flat spin connections: https://www.mdpi.com/2218-1997/7/5/114 ; https://link.springer.com/article/10.1140/epjc/s10052-021-09944-6 .
+- The current GitHub drafts [SF-DRAFT-030](030%20Connections%20and%20Differential-Geometric%20Operators%20of%20the%20Canonical%20Surface.md) and [SF-DRAFT-040](040%20Weitzenbock%20and%20Levi-Civita%20Friedmann%20Dictionaries.md) remain provisional source dependencies.
+
+**Final mathematical result:** Levi-Civita curvature, Weitzenbock torsion, and binary quartic invariant theory are linked by **explicit constructions**, not by a universal equivalence of their scalar invariants. The canonical catenoid supplies a nontrivial smooth $`j=1728`$ surface quartic reconstructed from curvature or chosen torsion derivatives. The Hénon–Heiles Eisenhart lift supplies a different, type-N Weyl quartic with vanishing I and J despite a nonzero Hessian, and a constructed tidal quartic with generally nonzero invariants. The historical HH/Master pencil independently supplies a nonconstant elliptic $`j`$ and genuine projective equivalence. The new structural gain is understanding exactly which geometry creates each quartic, which derivatives and connection choices enter, and what information is lost under each projection.
