@@ -414,3 +414,275 @@ Hence
 ```
 
 The squared scalar equation has two time orientations; neither the pointwise torsion scalar nor the curvature-boundary identity restores the lost sign without a chosen branch, clock and tetrad.
+
+## 11. Constant scalar curvature does not mean constant sectional curvature [D,V]
+
+For any spatially flat warped metric, the mixed-index Ricci eigenvalues are
+
+```math
+\mathring R^0{}_0=3(\dot H+H^2),\qquad \mathring R^i{}_i=\dot H+3H^2.
+```
+
+Define the trace-free Ricci tensor $`\mathring S^\mu{}_\nu=\mathring R^\mu{}_\nu-\delta^\mu{}_\nu\mathring{\mathcal R}/4`$. Its eigenvalues are
+
+```math
+\mathring S^0{}_0=\frac32\dot H,\qquad\mathring S^i{}_i=-\frac12\dot H.
+```
+
+On the canonical separatrix, $`\dot H=r^2S^2/2`$. Therefore
+
+```math
+\mathring S^0{}_0=\frac{3r^2}{4}S^2,\qquad\mathring S^i{}_i=-\frac{r^2}{4}S^2.
+```
+
+Their invariant square is
+
+```math
+\mathring S_{\mu\nu}\mathring S^{\mu\nu}=3\dot H^2=\frac{3r^4}{4}S^4.
+```
+
+At every finite $`u`$, this is strictly positive, although $`\mathring{\mathcal R}=3r^2`$ is constant. Hence the four-metric is **not Einstein** at any finite $`u`$ and does not have constant four-dimensional sectional curvature. This prevents an unjustified identification with a de Sitter metric merely because the Ricci scalar is constant.
+
+The FLRW Weyl tensor vanishes. Its Kretschmann invariant, derived from the two independent sectional-curvature combinations, is
+
+```math
+\mathcal K_4=12[(\dot H+H^2)^2+H^4]=\frac{3r^4}{2}(1+S^4).
+```
+
+The curvature is finite at the bounce $`u=0`$. In fact the flat-slice canonical geometry has $`\mathbb T(0)=0`$, $`\mathbb B(0)=3r^2`$, $`\mathring{\mathcal R}(0)=3r^2`$. Vanishing of the selected torsion scalar at one instant says neither that the metric is locally flat nor that the full torsion tensor vanishes throughout a neighborhood.
+
+## 12. Connection with the two-dimensional catenoid torsion geometry [D,V,H421,H424]
+
+Draft SF-DRAFT-030 derives a **different** Weitzenbock connection on the intrinsic two-dimensional catenoid cylinder, with metric
+
+```math
+I_{\mathrm{cat}}=R^2(du^2+dv^2),\qquad R=\cosh(ru).
+```
+
+Its frame-dependent torsion coefficient and Gaussian curvature are
+
+```math
+t_2=\frac{R_u}{R^2}=rSW,\qquad K_{\mathrm{cat}}=-e_1(t_2)-t_2^2=-r^2S^4,\qquad e_1=R^{-1}\partial_u.
+```
+
+In the **separately chosen four-dimensional flat warped** realization, the very same scalar profile has
+
+```math
+H=\frac r2W,\qquad \mathbb T_4=6H^2=\frac{3r^2}{2}W^2.
+```
+
+The two geometries are not isometric (nor even of equal dimension), but the common scalar coordinates imply exact cross-realization identities:
+
+```math
+t_2=2SH,\qquad K_{\mathrm{cat}}=-r^2\left(1-\frac{2\mathbb T_4}{3r^2}\right)^2.
+```
+
+Moreover,
+
+```math
+\mathring S_{\mu\nu}\mathring S^{\mu\nu}=-\frac{3r^2}{4}K_{\mathrm{cat}}.
+```
+
+**Proof, step by step.**
+
+1. From $`\mathbb T_4=(3r^2/2)W^2`$, obtain $`S^2=1-W^2=1-2\mathbb T_4/(3r^2)`$.
+2. Insert that expression in $`K_{\mathrm{cat}}=-r^2S^4`$.
+3. Insert $`K_{\mathrm{cat}}=-r^2S^4`$ in the trace-free Ricci square from §11, to obtain the last equality.
+
+These are valid equalities of **selected functions evaluated at the same logarithmic coordinate**, not pullback identities between the two manifolds without a map. They show how the same differential-algebraic backbone can organize multiple geometries while preserving their distinct definitions.
+
+## 13. An optional effective-fluid dictionary and the historical “phantom” label [D,H318]
+
+A Friedmann-type equation becomes a matter equation only after imposing a source field equation. Without doing so, introduce a positive *bookkeeping* constant $`\mathfrak g`$ and define formal effective functions using the Einstein tensor of the optional **curved-slice** metric with $`K=Cr^2`$:
+
+```math
+\mathfrak g\,\rho_{\rm eff}=3(H^2+K/a^2),\qquad\mathfrak g\,p_{\rm eff}=-(2\dot H+3H^2+K/a^2).
+```
+
+This is a pair of **definitions**. Differentiating them gives the formal continuity equation
+
+```math
+\dot\rho_{\rm eff}+3H(\rho_{\rm eff}+p_{\rm eff})=0.
+```
+
+**Proof.** Compute $`\mathfrak g\dot\rho_{\rm eff}=6H\dot H-6KH/a^2`$, while $`3H\mathfrak g(\rho_{\rm eff}+p_{\rm eff})=-6H\dot H+6KH/a^2`$. They cancel for every smooth positive $`a`$.
+
+Insert the source's complete reciprocal-envelope constraint to obtain
+
+```math
+\mathfrak g\,\rho_{\rm eff}=\frac{3r^2}{4}-\frac{3\delta_G r^2}{4a^4}+\frac{3\varepsilon}{4}a^4.
+```
+
+```math
+\mathfrak g\,p_{\rm eff}=-\frac{3r^2}{4}-\frac{\delta_G r^2}{4a^4}-\frac{7\varepsilon}{4}a^4.
+```
+
+Therefore,
+
+```math
+\mathfrak g(\rho_{\rm eff}+p_{\rm eff})=-\frac{\delta_G r^2}{a^4}-\varepsilon a^4=-2(\dot H-K/a^2).
+```
+
+The component proportional to $`a^{-4}`$ has the **formal** exponent $`w=1/3`$ but a negative density coefficient when $`\delta_G>0`$. The $`\varepsilon a^4`$ component has formal exponent $`w=-7/3`$ when it is assigned the usual conserved-fluid power law. No matter fields have been deduced by these exponent names.
+
+### 13.1 Phantom behavior on the zero-energy separatrix
+
+For the unshifted case $`C=0`$, $`\delta_G=\mu>0`$, $`\varepsilon=0`$ with flat slices,
+
+```math
+\mathfrak g\rho_{\rm eff}=\frac{3r^2}{4}W^2,\qquad\mathfrak g p_{\rm eff}=-\frac{r^2}{4}(3+S^2).
+```
+
+Where $`H\ne0`$, their quotient is
+
+```math
+w_{\rm eff}=-1-\frac{4S^2}{3W^2}=-1-\frac{4}{3\sinh^2(ru)}.
+```
+
+This lies below $`-1`$ on either side of the bounce and tends to $`-1`$ as $`u\to\pm\infty`$. At $`u=0`$ it is **undefined**, since $`\rho_{\rm eff}=0`$ and $`p_{\rm eff}=-r^2/\mathfrak g`$. This is not a paradox: the quotient ceases to be a valid variable at the zero of its denominator.
+
+The regular scale function $`a=\mu^{1/4}\sqrt{\cosh(ru)}`$ has no finite-time blow-up and the warped metric has finite curvature there. An effective ratio below $`-1`$ **does not imply** a wrong-sign fundamental scalar, a ghost, a physical Big Rip, or any observational conclusion.
+
+### 13.2 An explicit *optional* negative-kinetic scalar reconstruction
+
+If one deliberately chooses $`\mathfrak g=1`$ and a scalar-field ansatz with formal negative kinetic sign,
+
+```math
+\rho_\phi=-\frac12\dot\phi^2+V,\qquad p_\phi=-\frac12\dot\phi^2-V,
+```
+
+then the canonical separatrix can be reproduced by
+
+```math
+\dot\phi^2=2\dot H=r^2S^2,\qquad\phi(u)=\mathrm{gd}(ru)+\phi_0.
+```
+
+With $`W=\sin(\phi-\phi_0)`$, the corresponding potential is
+
+```math
+V=3H^2+\dot H=\frac{r^2}{4}[2+\sin^2(\phi-\phi_0)].
+```
+
+Direct differentiation checks the formally reconstructed field equation
+
+```math
+\ddot\phi+3H\dot\phi=\partial_\phi V.
+```
+
+This is the Gudermannian reconstruction recorded in the historical H318 investigation. It is an **additional matter ansatz**, not a result of the Levi-Civita/Weitzenbock scalar dictionary alone. Its physical viability is neither established nor presumed.
+
+### 13.3 The general-level exponent ladder and its clock
+
+The historical reciprocal-envelope hierarchy has a term proportional to $`e_q a^{4q}`$ for $`q=(l-1)/2>0`$. Within **this particular logarithmic-time warped-metric and continuity** convention, a component $`\rho\propto a^\beta`$ has
+
+```math
+w_\beta=-1-\frac{\beta}{3}.
+```
+
+Thus
+
+```math
+\beta_q=4q=2(l-1),\qquad w_l=-1-\frac{4q}{3}=-\frac{2l+1}{3}.
+```
+
+This is not the framework's other, conformal-time Friedmann dictionary (different time and amplitude variables). The two power-law assignments must not be identified without an explicit clock transformation.
+
+### 13.4 Positive energy and a finite-time singular branch
+
+At large $`a`$, if $`\varepsilon>0`$ and the solution is expanding, the leading first integral is $`\dot a\sim\sqrt\varepsilon a^3/2`$. Integration gives
+
+```math
+a(u)\sim\varepsilon^{-1/4}(u_*-u)^{-1/2},\qquad \mathring{\mathcal R}_K\sim6(u_*-u)^{-2}.
+```
+
+This is the actual source of the archived label Big Rip in the **optional warped geometry**. The singularity is absent when $`\varepsilon=0`$. The term's sign and the chosen real branch are indispensable.
+
+## 14. The Milne limit is a separate geometric construction [D,V,H318]
+
+The ZIP records a singular Gram-parameter limit that is easily confused with Rindler. Use the historical shift parameter $`k=2C/\sqrt{\mu}`$. Choose $`k=-1`$ and scale $`\sqrt\mu=2/r^2`$. Then
+
+```math
+C=-r^{-2},\qquad \delta_G=0,\qquad J=\frac{2}{r^2}[\cosh(ru)-1]=\frac4{r^2}\sinh^2(ru/2).
+```
+
+On the branch $`u>0`$,
+
+```math
+a=\sqrt J=\frac2r\sinh(ru/2),\qquad K=Cr^2=-1.
+```
+
+The logarithmic rate obeys
+
+```math
+H^2=\frac{r^2}{4}+\frac1{a^2},\qquad\dot H=-\frac1{a^2}.
+```
+
+Both independent sectional-curvature combinations of the **curved-slice warped metric** agree:
+
+```math
+\dot H+H^2=\frac{r^2}{4},\qquad H^2+\frac{K}{a^2}=\frac{r^2}{4}.
+```
+
+Thus for finite $`r>0`$ the metric is locally a positive constant-sectional-curvature four-dimensional space form in an open slicing, with $`\mathring{\mathcal R}=3r^2`$. Letting $`r\to0^+`$ at fixed $`u>0`$ gives
+
+```math
+a(u)\to u,\qquad g_4\to-du^2+u^2h_{-1}.
+```
+
+This is **Milne slicing** of a flat Minkowski region, not the same coordinate chart as Rindler. The limit requires a singular correlated scaling of Gram parameters and does not produce another finite-norm original Master profile. Spatial curvature $`K=-1`$ also means the flat-Cartesian torsion formula $`\mathbb T=6H^2`$ must **not** be transferred without a new covariant coframe/spin calculation.
+
+## 15. Rindler as a negative control [D,V,C]
+
+Let $`\alpha>0`$ and consider the Rindler wedge metric
+
+```math
+g_R=-\alpha^2\xi^2d\eta^2+d\xi^2+dy^2+dz^2,\qquad\xi>0.
+```
+
+The coordinate transformation
+
+```math
+T_M=\xi\sinh(\alpha\eta),\qquad X_M=\xi\cosh(\alpha\eta)
+```
+
+shows that this is exactly flat Minkowski space in accelerated coordinates. Its Levi-Civita Riemann tensor vanishes.
+
+Choose an accelerated orthonormal coframe with **zero** spin connection,
+
+```math
+\vartheta^0=\alpha\xi\,d\eta,\qquad\vartheta^1=d\xi,\qquad\vartheta^2=dy,\qquad\vartheta^3=dz.
+```
+
+The corresponding Weitzenbock torsion is nonzero:
+
+```math
+\mathcal T^0=d\vartheta^0=\alpha\,d\xi\wedge d\eta,\qquad\mathcal T^\eta{}_{\xi\eta}=\xi^{-1}.
+```
+
+Nevertheless the quadratic torsion scalar vanishes exactly. Its three contractions, in the same convention as §7, are
+
+```math
+\frac14\mathcal T_{\rho\mu\nu}\mathcal T^{\rho\mu\nu}=\frac1{2\xi^2},\qquad \frac12\mathcal T_{\rho\mu\nu}\mathcal T^{\nu\mu\rho}=\frac1{2\xi^2},\qquad v_\rho v^\rho=\xi^{-2}.
+```
+
+Therefore
+
+```math
+\mathbb T_R=0,\qquad\mathbb B_R=0,\qquad\mathring{\mathcal R}_R=0.
+```
+
+**Counterexample:** An accelerated coframe can have nonzero torsion components but zero quadratic torsion scalar and zero curvature. One cannot infer a universal linear-$`H`$ term, effective dark energy, or nonzero spacetime curvature merely from Rindler-like acceleration.
+
+A **different, covariantly inertial** choice supplies the flat Lorentz spin connection
+
+```math
+\omega^0{}_1=\alpha\,d\eta,\qquad\omega^1{}_0=\alpha\,d\eta.
+```
+
+Then
+
+```math
+\mathcal T^0=d\vartheta^0+\omega^0{}_1\wedge\vartheta^1=\alpha\,d\xi\wedge d\eta+\alpha\,d\eta\wedge d\xi=0.
+```
+
+All remaining torsion components vanish as well, and the spin connection is flat. The two coframe/connection pairs with the same metric are **different teleparallel connections**; holding the coframe fixed while changing the spin connection is not the simultaneous local Lorentz gauge transformation under which the torsion tensor transforms covariantly. This example cleanly separates geometry, inertial frame and torsion gauge.
