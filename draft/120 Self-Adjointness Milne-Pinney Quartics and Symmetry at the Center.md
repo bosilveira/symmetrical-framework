@@ -524,3 +524,272 @@ It satisfies
 Thus $W,S$ are *precisely* the Bloch/Hopf-base coordinates for this normalized projective curve. Multiplying $\eta$ by an arbitrary common phase produces its full Hopf fiber. This makes the relation concrete rather than metaphorical.
 
 **Boundary of the identification:** The complex scalar $\Phi=a e^{i\theta}$ of §12 has its own polar $U(1)$ phase and its own Wronskian current. That scalar phase is not **automatically** the vertical Hopf-bundle phase of the normalized *two-component* vector $\eta$. The Riccati ratio $t$ lives on the Hopf **base**; the Hopf fiber appears only after the normalized lift and its common phase have been specified.
+
+## 16. The canonical Pinney potential is not a Higgs-like double well [D,V,C]
+
+For a **constant real carrier coefficient** $Q_0$, the positive-amplitude Pinney equation
+
+```math
+a''=Q_0a+ka^{-3},\qquad a>0
+```
+
+has conserved Hamiltonian energy
+
+```math
+\mathcal E_a=\frac12(a')^2+V_{\rm EP}(a),\qquad V_{\rm EP}(a)=-\frac{Q_0}{2}a^2+\frac{k}{2a^2}.
+```
+
+The physical terminology here is only a name for the **graph of a mathematical potential**. The sign of $Q_0$, the sign of $k$, and the permitted half-line $a>0$ determine the shape.
+
+### 16.1 Positive inverted carrier Q0>0, positive Pinney strength k>0
+
+This is the **canonical framework regime**:
+
+```math
+Q_0=\frac{r^2}{4}>0,\qquad k=\frac{\mu r^2}{4}>0,\qquad V_{\rm EP}(a)=-\frac{r^2a^2}{8}+\frac{\mu r^2}{8a^2}.
+```
+
+Its derivative is strictly negative:
+
+```math
+V_{\rm EP}'(a)=-Q_0a-ka^{-3}<0\qquad(a>0).
+```
+
+It diverges to $+\infty$ near the forbidden amplitude $a=0$ and to $-\infty$ as $a\to+\infty$; **there is no local minimum and no double well**. The centered solution $a=\mu^{1/4}\sqrt{\cosh(ru)}$ has a positive *turning point* at $u=0$ (its kinetic energy vanishes there), not a stable equilibrium of the effective one-dimensional potential.
+
+### 16.2 Oscillatory carrier Q0=-omega²<0, k>0: the centrifugal/isotonic well
+
+With $Q_0=-\omega^2$, $\omega>0$,
+
+```math
+V_{\rm iso}(a)=\frac{\omega^2a^2}{2}+\frac{k}{2a^2}.
+```
+
+This has a **single** positive minimum,
+
+```math
+a_0=(k/\omega^2)^{1/4},\qquad V_{\rm iso}(a_0)=\omega\sqrt{k},\qquad V_{\rm iso}''(a_0)=4\omega^2.
+```
+
+Small oscillations around that minimum have frequency $2\omega$. If the signed coordinate $a\ne0$ is artificially allowed, the singular barrier divides two disconnected half-lines with one minimum each. That appearance is **not** a smooth Higgs double well: trajectories cannot cross $a=0$ at finite positive $k$, and positive Pinney amplitudes live on only one side.
+
+### 16.3 Other signs
+
+At $k=0$, Pinney reduces to the linear carrier equation and the inverse-square barrier disappears. At $k<0$, the singular term is attractive; positivity can fail, and finite-time collapse to $a=0$ may occur. At $Q_0>0,k<0$ there is a **local maximum**, not a confining double minimum. Thus neither nonlinearity alone nor self-adjointness of an associated SL operator dictates the effective-well topology.
+
+## 17. The distinct smooth Duffing/Higgs-like double well [D,V,C]
+
+The original cubic Master equation for the **signed** field $y$,
+
+```math
+y''=r^2y-2\mu r^2y^3,
+```
+
+has a different mechanical energy function
+
+```math
+E_D=\frac12(y')^2+V_D(y),\qquad V_D(y)=-\frac{r^2}{2}y^2+\frac{\mu r^2}{2}y^4.
+```
+
+Its critical points are
+
+```math
+y=0\quad(\mathrm{maximum}),\qquad y_\pm=\pm(2\mu)^{-1/2}\quad(\mathrm{minima}),\qquad V_D(y_\pm)=-\frac{r^2}{8\mu}.
+```
+
+This is indeed a **smooth symmetric quartic double well** on the entire signed real line, and the familiar “Higgs-like” label can be used as a *formal potential-shape analogy*. The separatrix
+
+```math
+y_{\rm sep}(u)=\mu^{-1/2}\mathrm{sech}(ru)
+```
+
+is homoclinic to the unstable critical point $y=0$ at energy $E_D=0$; it is **not** a tunneling trajectory joining the two minima. There is also a negative homoclinic branch.
+
+The map $y=a^{-2}$ from the positive canonical Pinney amplitude produces only $y>0$ and only selected zero-energy branches of the signed cubic Master system; it does not extend as a global dynamical equivalence between the two potential landscapes. Neither potential shape determines self-adjointness of a spectral operator, and a negative direction of a self-adjoint variational Hessian is not “broken self-adjointness”.
+
+## 18. The Pinney energy curve is a quartic—and its time evolution descends to a conic [D,V]
+
+This section distinguishes **three algebraic quartics** that have been conflated in informal descriptions: (i) the square of the Pinney Gram quadratic, (ii) the Pinney **energy** quartic, and (iii) the cubic Master/Duffing energy quartic.
+
+For constant $Q_0$ and fixed Pinney energy $\mathcal E_a$, solve the first integral of §16:
+
+```math
+(a')^2=2\mathcal E_a+Q_0a^2-ka^{-2}.
+```
+
+Introduce the auxiliary algebraic coordinate $Y=aa'$. Then
+
+```math
+Y^2=Q_0a^4+2\mathcal E_a a^2-k.
+```
+
+Homogenizing yields the **smooth, generically genus-one Pinney energy quartic**
+
+```math
+F_{\rm EP}(A,Z)=Q_0A^4+2\mathcal E_a A^2Z^2-kZ^4.
+```
+
+### 18.1 Exact binary quartic I, J and discriminant
+
+Use the repository's **raw** quartic normalization $I=12af-3bd+c_2^2$, $J=72ac_2f+9bc_2d-27ad^2-27fb^2-2c_2^3$, $\Delta=(4I^3-J^2)/27$.
+
+**Theorem 18.1 [D,V].** The Pinney energy quartic has
+
+```math
+I_{\rm EP}=4\mathcal E_a^2-12Q_0k,\qquad J_{\rm EP}=-16\mathcal E_a^3-144Q_0k\mathcal E_a.
+```
+
+```math
+\Delta_{\rm EP}=-256Q_0k(\mathcal E_a^2+Q_0k)^2.
+```
+
+Where $\Delta_{\rm EP}\ne0$, its complex elliptic modulus is
+
+```math
+j_{\rm EP}=-64\frac{(\mathcal E_a^2-3Q_0k)^3}{Q_0k(\mathcal E_a^2+Q_0k)^2}.
+```
+
+**Proof.** The even quartic coefficients are $a=Q_0$, $c_2=2\mathcal E_a$, $f=-k$, $b=d=0$. Substitute into $I=c_2^2+12af$ and $J=2c_2(36af-c_2^2)$; factor the discriminant and simplify $j=256I^3/\Delta$.
+
+For the **canonical** $Q_0=r^2/4>0$, $k=\mu r^2/4>0$, and centered Pinney energy $\mathcal E_a=0$, the quartic is smooth:
+
+```math
+F_{\rm EP,0}(A,Z)=\frac{r^2}{4}(A^4-\mu Z^4),\qquad \Delta_{\rm EP,0}\ne0,\qquad J_{\rm EP,0}=0,\qquad j_{\rm EP,0}=1728.
+```
+
+This is an exact nontrivial **harmonic elliptic quartic** attached to the Pinney energy representation, even though the framework's **Master separatrix energy quartic** is singular. Equal source profiles do not identify those different algebraic curves.
+
+### 18.2 Why the Pinney motion is nevertheless elementary
+
+Set $J=a^2>0$ (the envelope variable, not the raw quartic invariant $J_{\rm EP}$). Then $J'=2aa'=2Y$ and the energy curve descends to
+
+```math
+Y^2=Q_0J^2+2\mathcal E_a J-k.
+```
+
+This is a **conic**, hence genus zero when smooth. The map
+
+```math
+(a,Y)\longmapsto(J,Y)=(a^2,Y)
+```
+
+is a degree-two algebraic quotient of the generic smooth elliptic quartic by the involution $(a,Y)\mapsto(-a,Y)$.
+
+The distinguished **physical/mathematical time differential** descends as
+
+```math
+du=\frac{da}{a'}=\frac{a\,da}{Y}=\frac{dJ}{2Y}.
+```
+
+The last expression is a rational/conic quadrature, giving exponential or trigonometric Pinney envelopes. Thus *smooth elliptic quartic geometry does not force elliptic-function time evolution when the marked differential descends through a genus-zero quotient*. This is a fundamental “curve versus differential” example within the framework.
+
+The ordinary holomorphic elliptic differential $da/Y$ is **not** the physical time differential $a\,da/Y$. Interchanging them silently produces a false assertion of elliptic time dependence.
+
+### 18.3 Canonical conic and its resolution/scale dependence
+
+For the centered envelope $J=\sqrt\mu\cosh(ru)$, we have
+
+```math
+Q_0=\frac{r^2}{4},\quad k=\frac{\mu r^2}{4},\quad\mathcal E_a=0,\quad J'^2=r^2(J^2-\mu).
+```
+
+Its two conic branches $J=\sqrt\mu\cosh[r(u-u_0)]$ are explicitly elementary. Translating $u$ corresponds to changing the center parameter of the envelope; to stay centered at the original $x=c$, take $u_0=0$.
+
+### 18.4 Two further quartics have incompatible discriminant types
+
+The **Gram-square quartic** $(AX^2+2CXZ+BZ^2)^2$ has discriminant zero **for every Gram determinant**; it is not $F_{\rm EP}$. The **normalized Master energy quartic**
+
+```math
+F_{\rm M}(Z,T)=-Z^4+Z^2T^2+eT^4,\qquad e=\mu\varepsilon_N/r^2,
+```
+
+has
+
+```math
+I_{\rm M}=1-12e,\qquad J_{\rm M}=-2-72e,\qquad\Delta_{\rm M}=-16e(1+4e)^2.
+```
+
+It is singular at the canonical homoclinic energy $e=0$ and generally elliptic at finite $e\ne0,-1/4$. Therefore the **same canonical solution** supports: a singular Gram-square quartic, a smooth $j=1728$ Pinney-energy quartic, and a singular Master separatrix quartic. None is “the universal quartic” of self-adjointness.
+
+## 19. Real-branch implications of the Pinney energy quartic [D,V]
+
+The sign regimes have a concrete root interpretation.
+
+**Canonical inverted carrier:** $Q_0>0$, $k>0$ imply
+
+```math
+\Delta_{\rm EP}=-256Q_0k(\mathcal E_a^2+Q_0k)^2<0
+```
+
+for every real $\mathcal E_a$. Thus the corresponding *projective complex* quartic is smooth at every real energy, although the admissible real trajectory $a(u)>0$ has a turning point and grows without bound in both temporal directions. No double-well bifurcation is marked by its discriminant.
+
+**Stable centrifugal carrier:** with $Q_0=-\omega^2<0$ and $k>0$, the energy minimum $\mathcal E_a=\omega\sqrt k$ is exactly the real degeneracy locus $\mathcal E_a^2+Q_0k=0$. At energies above this minimum the amplitude oscillates between two positive turning radii; the inverse-square barrier still prevents crossing zero. The discriminant degeneration records an **equilibrium energy/root collision**, not non-self-adjointness of the associated linear carrier.
+
+**Distinguish amplitude sign:** Positive Milne amplitude $a>0$ occupies one connected component of a signed-coordinate quartic picture. Extending the algebraic coordinate to negative $a$ does not create an ordinary smooth double-well dynamical crossing through the inverse-square singularity.
+
+## 20. “Tunneling Sturm–Liouville” is genuine, but does not mean loss of self-adjointness [D,K,C]
+
+Consider a separate, explicitly chosen **self-adjoint** one-dimensional Schrödinger operator on the whole spatial line $\xi\in\mathbb R$:
+
+```math
+H_{\rm bar}=-\frac{d^2}{d\xi^2}+V_{\rm bar}(\xi),\quad V_{\rm bar}=V_0\,\mathbf 1_{(0,L)}(\xi),\quad V_0>0,\quad L>0.
+```
+
+Here $V_0>0$ is the barrier height. Let the scattering energy satisfy $0<E<V_0$ and put
+
+```math
+k_{\rm ext}=\sqrt E,\qquad\kappa=\sqrt{V_0-E}>0.
+```
+
+Inside the barrier the linear carrier is
+
+```math
+\psi_{\xi\xi}=\kappa^2\psi,\qquad \psi=Ae^{\kappa\xi}+Be^{-\kappa\xi}.
+```
+
+Thus the local carrier is **hyperbolic**, but the full Schrödinger operator is still self-adjoint on its natural $H^2(\mathbb R)$ domain (the potential is real and bounded).
+
+### 20.1 An explicit positive Pinney amplitude inside the forbidden interval
+
+Choose the local complex carrier
+
+```math
+\Phi_{\rm bar}(\xi)=\cosh(\kappa\xi)+i\sinh(\kappa\xi).
+```
+
+Then
+
+```math
+|\Phi_{\rm bar}|^2=\cosh(2\kappa\xi),\qquad j_{\rm bar}=\kappa,\qquad a_{\rm bar}''=\kappa^2a_{\rm bar}+\kappa^2a_{\rm bar}^{-3}.
+```
+
+This is the same *mathematical Pinney normal form* as the canonical framework with $r=2\kappa$ and $\mu=1$ after the local coordinate identification $u=\xi$. The barrier region, however, has its own $V_0,E,L$ and scattering boundary matching; the equality of local ODEs does not imply equality of physical systems or spectra.
+
+### 20.2 Exact transfer matrix and transmission coefficient
+
+The interior Cauchy-data transfer matrix is
+
+```math
+\binom{\psi(L)}{\psi'(L)}=\begin{pmatrix}\cosh(\kappa L)&\sinh(\kappa L)/\kappa\\\kappa\sinh(\kappa L)&\cosh(\kappa L)\end{pmatrix}\binom{\psi(0)}{\psi'(0)}.
+```
+
+Its determinant is exactly one, preserving the Wronskian/symplectic current. Matching to plane waves on the exterior regions yields the classical real-barrier transmission probability
+
+```math
+\mathsf T(E)=\left[1+\frac{V_0^2\sinh^2(\kappa L)}{4E(V_0-E)}\right]^{-1}.
+```
+
+For a thick barrier, $\mathsf T(E)$ is exponentially small but nonzero. **The existence of this tunneling effect is completely compatible with self-adjointness**. It depends on *global matching to exterior oscillatory modes*, not merely on the local Pinney amplitude or its invariant level.
+
+The word “tunneling” is therefore legitimate only after a concrete spectral barrier, energy range and matching problem are specified. There is no universal identity “EP equals broken-self-adjoint tunneling SL”.
+
+## 21. Broken parity, negative modes, complex spectra and tunnels are four different phenomena [C]
+
+The following four mathematically distinct constructions should never be collapsed:
+
+1. **Parity or symmetry breaking:** replace an even real potential by an asymmetric real potential or impose different real boundary choices. The associated operator can remain self-adjoint.
+2. **Instability/negative Hessian eigenvalue:** a self-adjoint Hessian may possess negative spectrum, indicating a negative second variation. This does **not** destroy self-adjointness.
+3. **Non-self-adjoint spectral realization:** introduce complex coefficients or boundary/interface conditions that violate the symmetric boundary form; complex eigenvalues and nonnormality can arise.
+4. **Barrier tunneling:** in a *real self-adjoint* operator, evanescent modes in classically forbidden regions couple through flux-preserving matching to oscillatory modes.
+
+The canonical positive Pinney inverse-square wall is a barrier in **amplitude configuration space**. The double-well Duffing potential is a function of a **signed field variable**. The spectral barrier of §20 is a potential in an **independent spatial coordinate**. Their graphs can resemble one another under transformations, but their variable types and boundary conditions differ.
