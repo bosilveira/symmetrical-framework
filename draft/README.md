@@ -20,6 +20,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [040 Weitzenbock and Levi-Civita Friedmann Dictionaries](040%20Weitzenbock%20and%20Levi-Civita%20Friedmann%20Dictionaries.md) — reciprocal Ermakov-Pinney/Friedmann constraints; explicit flat-slice Levi-Civita and Weitzenbock connections; torsion, boundary divergence, Gauss-Codazzi, constant scalar curvature, formal phantom bookkeeping, Milne/Rindler counterexamples, action-dependent f(T,B) limits, and all-level separatrix collapse. **Provisional; not yet consolidated.**
 
+- [050 Binary Quartic Invariants, Curvature, Torsion, and Henon-Heiles Geometry](050%20Binary%20Quartic%20Invariants%20Curvature%20Torsion%20and%20Henon-Heiles%20Geometry.md) — fundamental-form quartic and catenoid j=1728; archived Hénon–Heiles/Master quartic pencil; Eisenhart lift, Petrov-N Weyl quartic, preferred Weitzenbock torsion and vanishing scalar invariants; tidal-Hessian quartic, Jacobi metric, Killing-tensor integrability, and exact counterexamples to conflated I/J meanings. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
