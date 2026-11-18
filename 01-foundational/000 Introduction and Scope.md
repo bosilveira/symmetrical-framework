@@ -48,7 +48,7 @@ $$
 gives
 
 $$
-\boxed{2x f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}\mathrm{sech}(ru).}
+2x f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}\mathrm{sech}(ru).
 \tag{1.4}
 $$
 
