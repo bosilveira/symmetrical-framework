@@ -812,3 +812,179 @@ For $r>1$, both $\mathcal N_1=\|f_\mu\|_{L^2(dx)}^2$ and $\mathcal N_2=\|f_\mu\|
 ```
 
 The last expression is a **product of two distinct scalar norms**, not the automatic norm of a new “simultaneous one-variable Fourier and Mellin transform”. Such a joint transform needs either two independent coordinates or another explicitly constructed operator-theoretic framework.
+
+## 25. An ACTUAL product transform: additive Fourier times multiplicative Mellin [D,V]
+
+To combine two Fourier theories **simultaneously**, use two independent coordinates. Let $v\in\mathbb R$ be an additive coordinate and $x\in(0,\infty)$ a multiplicative coordinate, and put
+
+```math
+\mathcal H_{v,x}=L^2(\mathbb R_v\times(0,\infty)_x,\;dv\,x\,dx).
+```
+
+For a sufficiently regular field $F(v,x)$ define the mixed Fourier–Mellin transform
+
+```math
+(\mathscr T_cF)(\xi,k)=\frac1{2\pi}\int_{\mathbb R}e^{-i\xi v}\,dv\int_0^\infty F(v,x)(x/c)^{-ik}\,dx.
+```
+
+The apparently unweighted $dx$ in the transform is *intentional*: it comes from applying the canonical multiplier $xF$ and the multiplicative Haar measure $dx/x$.
+
+**Theorem 25.1 [D,V] (tensor-product Plancherel).**
+
+```math
+\int_{\mathbb R}\int_0^\infty|F(v,x)|^2x\,dx\,dv=\int_{\mathbb R}\int_{\mathbb R}|\mathscr T_cF(\xi,k)|^2\,dk\,d\xi.
+```
+
+**Proof.** Set $u=\ln(x/c)$ and $\Psi(v,u)=xF(v,ce^u)$. Then the left side becomes $\int|\Psi|^2du\,dv$. The displayed mixed transform becomes precisely the product of ordinary **unitary Fourier transforms** in the two *independent* additive variables $(v,u)$. Apply the two-variable Plancherel theorem.
+
+For separable $F(v,x)=g(v)f_\mu(x;r,c)$, the transform factorizes:
+
+```math
+\mathscr T_cF(\xi,k)=\widehat g(\xi)\widehat\psi_\mu(k),\qquad \|F\|_{\mathcal H_{v,x}}^2=\|g\|_{L^2(dv)}^2\frac1{2r\mu}.
+```
+
+**This is the precise meaning of an operator product “standard Fourier times multiplicative Fourier”.** It is a tensor-product unitary transform. It does not claim that ordinary translations in $x$ and multiplicative dilations in $x$ have a joint eigenbasis on the *same one-dimensional* Hilbert space: those generators do not commute in general.
+
+## 26. A new exact isometric bridge from the weighted SL space into catenoid L2 [D,V]
+
+This provides an unusually concrete answer to the proposed weighted-norm “metric glue”, using the *actual surface metric* rather than merely a similar profile.
+
+The complete catenoid has coordinates $u\in\mathbb R$, $v\in[0,2\pi/r)$ and area measure
+
+```math
+dA_C=R(u)^2\,du\,dv,\qquad R(u)=\cosh(ru).
+```
+
+Let $h_0(v)=\sqrt{r/(2\pi)}$ be the **normalized angular constant mode**, so $\int_0^{2\pi/r}|h_0|^2dv=1$. Define a linear map on scalar functions
+
+```math
+(\mathscr I_{c,r}f)(u,v)=h_0(v)\frac{x f(x)}{R(u)},\qquad x=ce^u.
+```
+
+**Theorem 26.1 [D,V] (exact Hilbert-space isometry).**
+
+```math
+\|\mathscr I_{c,r}f\|_{L^2(C,dA_C)}^2=\int_0^\infty|f(x)|^2x\,dx.
+```
+
+**Proof.** Integrate the square:
+
+```math
+\int_{\mathbb R}\int_0^{2\pi/r}\left|h_0(v)\frac{xf(x)}{R(u)}\right|^2R(u)^2\,dv\,du=\int_{\mathbb R}|xf(ce^u)|^2du.
+```
+
+The angular normalization removes the circle length, the conformal half-density $R^{-1}$ cancels the catenoid area multiplier, and the logarithmic Liouville transform converts the last integral to $\int x|f|^2dx$.
+
+**Meaning:** The original weighted Hilbert space has an exact **isometric embedding into the angularly constant scalar $L^2$ sector of the complete catenoid**, with $c,r$ explicitly preserved. This is a *new constructed Hilbert map* in the foundational dictionary, not a claim that the two natural differential operators are unitarily intertwined.
+
+### 26.1 Why this does not automatically identify the spectra
+
+The catenoid Laplacian is $\Delta_{g_C}=R^{-2}(\partial_u^2+\partial_v^2)$ and its Jacobi operator additionally contains $2r^2S^4$. The isometry $\mathscr I_{c,r}$ contains multiplication by $R^{-1}$, whose derivatives generate extra terms when differential operators are conjugated. Therefore
+
+```math
+\mathscr I_{c,r}\,\tau_x\,\mathscr I_{c,r}^{-1}\ne-\Delta_{g_C}-|A_C|^2
+```
+
+as bare equalities of differential operators; one must calculate any proposed intertwiner and transport the domains and angular modes. The fact that the corresponding scalar Hilbert spaces are isometric is strictly weaker than isospectrality.
+
+For the **complete helicoid** the angular coordinate is unwrapped, so an angular constant is not in $L^2$ on the noncompact angular line. The displayed normalized-constant-mode embedding is tied to the catenoid's *global angular quotient*. This gives an exact place where topological/geometric information survives even though the local catenoid and helicoid metrics agree.
+
+## 27. Angular Fourier series times radial Mellin: the natural catenoid product calculus [D,V]
+
+For an arbitrary scalar field $\Phi(u,v)$ on the catenoid, define the unitary “flattened” field $G(u,v)=R(u)\Phi(u,v)$. Then
+
+```math
+\|\Phi\|^2_{L^2(C,dA_C)}=\int_{\mathbb R}\int_0^{2\pi/r}|G(u,v)|^2\,dv\,du.
+```
+
+Let the normalized angular modes be $h_n(v)=\sqrt{r/(2\pi)}e^{inrv}$ for $n\in\mathbb Z$. Define
+
+```math
+\widehat\Phi(n,k)=\frac1{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iku}\,du\int_0^{2\pi/r}\overline{h_n(v)}\,R(u)\Phi(u,v)\,dv.
+```
+
+Ordinary Fourier–series Plancherel in $v$ followed by Fourier–Mellin Plancherel in $u=\ln(x/c)$ gives the **exact surface norm decomposition**
+
+```math
+\|\Phi\|^2_{L^2(C,dA_C)}=\sum_{n\in\mathbb Z}\int_{-\infty}^{\infty}|\widehat\Phi(n,k)|^2\,dk.
+```
+
+This is the natural **discrete angular Fourier × continuous multiplicative Mellin** Hilbert dictionary for the catenoid. It incorporates $r$ through the angular lattice $nr$ and through $R=\cosh(ru)$; $c$ remains the log center of $x$.
+
+But angular Fourier diagonalizes $\partial_v$, while **radial Fourier does not diagonalize the varying Pöschl–Teller potential** or the catenoid Jacobi operator automatically. The spectral transform of the latter uses its own scattering/eigenfunctions and matching conditions. The Plancherel identity is Hilbert-space compatibility, not a spectral equivalence theorem.
+
+### 27.1 The two-dimensional metric has a second exact measure
+
+The Gauss-sphere metric is $III=r^2S^2(du^2+dv^2)$, with volume $r^2S^2du\,dv$. The canonical weighted profile density is $|\psi_\mu|^2du=S^2du/(4\mu)$. After angular integration,
+
+```math
+\int_0^{2\pi/r}r^2S^2\,dv=2\pi rS^2.
+```
+
+Thus the Gauss-sphere marginal density in $u$ is proportional to the **same** normalized logistic law as $|\psi_\mu|^2du$, with different total normalization (sphere area $4\pi$ versus weighted SL norm $1/(2r\mu)$). This is an equality of normalized **pushforward measures** after specifying the Gauss map and angular range; it does not identify the scalar SL operator with the spherical Laplacian.
+
+## 28. The r=2 case as a simultaneous regression test of all closure maps [D,V]
+
+Set $r=2$ but **keep $c,\mu$ explicit**. Then
+
+```math
+S_2=\mathrm{sech}(2u)=\frac{2c^2x^2}{x^4+c^4},\qquad W_2=\tanh(2u)=\frac{x^4-c^4}{x^4+c^4},\qquad u=\ln(x/c).
+```
+
+The original function and the logarithmic Hilbert profile are
+
+```math
+f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)},\qquad \psi_\mu(u)=\frac{S_2}{2\sqrt\mu}.
+```
+
+The original improper integral and its half-splits are
+
+```math
+\int_0^c f_\mu dx=\int_c^\infty f_\mu dx=\frac{\pi}{8\sqrt\mu},\qquad\|f_\mu\|_{L^2(xdx)}^2=\frac1{4\mu}.
+```
+
+The ordinary- and multiplicative-norm pair (when both defined) is
+
+```math
+\mathcal N_1=\frac{\pi}{8\sqrt2\mu c},\qquad\mathcal N_2=\frac{\pi}{8\mu c^2},\qquad\mathcal N_1\mathcal N_2=\frac{\pi^2}{64\sqrt2\mu^2c^3}.
+```
+
+The exact Mellin transform, its unitary log-Fourier restriction and Sobolev form are
+
+```math
+\mathcal M[f_\mu](s)=\frac{\pi c^{s-1}}{4\sqrt\mu}\sec\left(\frac{\pi(s-1)}4\right),\qquad\widehat\psi_\mu(k)=\frac{\pi}{4\sqrt{2\pi\mu}}\mathrm{sech}(\pi k/4).
+```
+
+```math
+\|\psi_\mu\|_2^2=\frac1{4\mu},\qquad\|\psi_{\mu,u}\|_2^2=\frac1{3\mu},\qquad\mathfrak q_x[f_\mu]=\frac4{3\mu}.
+```
+
+The canonical Pinney/Riccati construction reads
+
+```math
+a^2=\sqrt\mu\cosh(2u),\qquad a_{uu}=a+\mu a^{-3},\qquad\frac{\Phi_u}{\Phi}=W_2+iS_2.
+```
+
+### 28.1 Both spectral closure polynomials at r=2
+
+For the **catenoid order-one well** $V_1=-8S_2^2$,
+
+```math
+F_1(\lambda,u)=\lambda+4W_2^2,\qquad\mathscr R_1=-4\lambda(\lambda+4)^2.
+```
+
+For the **Master Hessian order-two well** $V_2=-24S_2^2$,
+
+```math
+F_2(\lambda,u)=\lambda^2+4(3W_2^2+2)\lambda+16(3W_2^2-1)^2.
+```
+
+```math
+\mathscr R_2=-4\lambda(\lambda+4)^2(\lambda+16)^2.
+```
+
+The **shifted** Master Hessian is $-\partial_u^2+4-24S_2^2$, with eigenvalues $-12$ and $0$ and continuum starting at $4$. Its bound levels are encoded by the two repeated factors after the shift $E=\lambda+4$.
+
+The Virasoro Schwarzian is $\{e^{2u},u\}=-2$; the Hopf base ratio is $e^{2u+i\varphi}$ with $\varphi=2v$; the catenoid angular period is $v\sim v+\pi$. The normalized Hilbert variance pair is $\sigma_u=\pi/(4\sqrt3)$, $\sigma_k=2/\sqrt3$, and $\sigma_u\sigma_k=\pi/6$.
+
+**Every object is tracked:** the same $r=2$ changes the hyperbolic resolution, rational denominator, spectral wells, oscillator rates, Fourier bandwidth and angular period. The center $c$ remains the multiplicative inversion center and $\mu$ remains an amplitude/Hilbert normalization, not a spectral parameter.
