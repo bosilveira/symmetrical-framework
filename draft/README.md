@@ -12,6 +12,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [000 Lagrange Inversion of Canonical Coordinates and Level Turning Points](000%20Lagrange%20Inversion%20of%20Canonical%20Coordinates%20and%20Level%20Turning%20Points.md) — Catalan and Fuss–Catalan inversion, reciprocal turning points, and the all-orders local period expansion. **Provisional; not yet consolidated.**
 
+- [010 Gauss-Codazzi Equations and Canonical Surface Geometry](010%20Gauss-Codazzi%20Equations%20and%20Canonical%20Surface%20Geometry.md) — intrinsic/extrinsic surface compatibility, Riccati–Maurer-Cartan reconstruction, cubic Master energy as ambient curvature, Clifford equilibria, Kähler/Hopf structures, and explicit limitations. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
