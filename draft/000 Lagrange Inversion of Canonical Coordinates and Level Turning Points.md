@@ -157,3 +157,140 @@ For the Gudermannian angle $`\gamma(u)=2\arctan(e^{ru})-\pi/2`$,
 ```
 
 This is an exact coordinate construction, not an additional physical interpretation.
+
+## 4. Nonlinear level family and the turning-point map
+
+For $`q=(l-1)/2>0`$ the archived family is
+
+```math
+U_q''=q^2r^2U_q-4\mu q(q+1)r^2U_q^{1+2/q},\qquad U_q>0.
+```
+
+The centered separatrix is
+
+```math
+U_q=(4\mu)^{-q/2}\,\mathrm{sech}^{\,q}(ru).
+```
+
+**Convention warning:** $`U_1=xf_\mu`$, whereas the earlier cubic Master amplitude is $`y=2xf_\mu=2U_1`$. The corresponding energy constants differ by normalization.
+
+### Proposition 4.1 — Conservation and turning points
+
+Every positive classical solution has conserved energy
+
+```math
+\varepsilon=(U_q')^2-q^2r^2U_q^2+4\mu q^2r^2U_q^{2+2/q}.
+```
+
+**Proof.** Direct differentiation gives
+
+```math
+\varepsilon'=2U_q'[U_q''-q^2r^2U_q+4\mu q(q+1)r^2U_q^{1+2/q}]=0.
+```
+
+Define $`X=4\mu U_q^{2/q}`$ and $`U_q^2=(X/(4\mu))^q`$. At a turning point $`U_q'=0`$,
+
+```math
+X^q(1-X)=a,\qquad a=-\frac{(4\mu)^q\varepsilon}{q^2r^2}.
+```
+
+Introduce the critical constant and dimensionless level
+
+```math
+c_q=\frac{q^q}{(q+1)^{q+1}},\qquad v=\frac a{c_q}.
+```
+
+The turning-point equation is
+
+```math
+P_q(X)=X^q(1-X)=c_qv.
+```
+
+Since
+
+```math
+P_q'(X)=X^{q-1}(q-(q+1)X),\qquad X_*=\frac q{q+1},\qquad P_q(X_*)=c_q,
+```
+
+there are precisely two positive turning points $`0<X_{q,-}<X_*<X_{q,+}<1`$ for $`0<v<1`$. The separatrix is the limiting level $`v=0`$ and the equilibrium the merger at $`v=1`$.
+
+## 5. Universal outer turning-point inversion
+
+Define $`C_q(t)`$ near $`t=0`$ as the unique analytic solution of
+
+```math
+C_q(t)=1+tC_q(t)^{q+1},\qquad C_q(0)=1.
+```
+
+For noninteger $`q`$ the power uses the analytic branch near $`C=1`$.
+
+### Theorem 5.1 — Fuss–Catalan reconstruction
+
+For every fixed real $`q>0`$,
+
+```math
+C_q(t)=\sum_{n=0}^{\infty}A_n(q)t^n,\qquad A_n(q)=\frac1{qn+1}\binom{(q+1)n}{n}.
+```
+
+The larger turning point is
+
+```math
+X_{q,+}(v)=\frac1{C_q(c_qv)}.
+```
+
+**Proof.**
+
+1. Select the inverse root $`X\to1`$ as $`t=X^q(1-X)\to0`$.
+2. Put $`C=1/X`$. Then $`t=(C-1)/C^{q+1}`$, so $`C=1+tC^{q+1}`$.
+3. Put $`D=C-1`$, so $`D=t(1+D)^{q+1}`$.
+4. Lagrange–Bürmann gives
+
+```math
+[t^n]D(t)=\frac1n[z^{n-1}](1+z)^{(q+1)n}=\frac1n\binom{(q+1)n}{n-1}=\frac1{qn+1}\binom{(q+1)n}{n}.
+```
+
+5. Since $`X=1/C`$, the stated branch is reconstructed. Exact convergence and endpoint results follow in Section 7.
+
+These are ordinary Fuss–Catalan coefficients for positive integer $`q`$, and analytic generalized binomial coefficients for arbitrary real $`q>0`$.
+
+| $`q`$ | $`l`$ | First coefficients $`A_0,A_1,A_2,A_3,A_4`$ |
+|---:|---:|---|
+| $`1/2`$ | $`2`$ | $`1,1,3/2,21/8,5`$ |
+| $`1`$ | $`3`$ | $`1,1,2,5,14`$ |
+| $`2`$ | $`5`$ | $`1,1,3,12,55`$ |
+| $`3`$ | $`7`$ | $`1,1,4,22,140`$ |
+| $`4`$ | $`9`$ | $`1,1,5,35,285`$ |
+
+**Correction:** The earlier discussion incorrectly listed $`3`$ as the coefficient of $`t^3`$ at $`q=1/2`$. It is $`21/8`$.
+
+### 5.2 Universal coefficient formula for observables
+
+For fixed $`\alpha\in\mathbb C`$, Lagrange–Bürmann applied to $`H(D)=(1+D)^\alpha`$ yields
+
+```math
+[t^n]C_q(t)^\alpha=\frac{\alpha}{n}\binom{(q+1)n+\alpha-1}{n-1}\qquad(n\ge1).
+```
+
+At $`\alpha=-1`$ this recovers the outer-root expansion
+
+```math
+X_{q,+}=1-t-qt^2-\frac{q(3q+1)}2t^3+O(t^4),\qquad t=c_qv.
+```
+
+Differentiating the coefficient identity with respect to $`\alpha`$ at zero gives
+
+```math
+\ln C_q(t)=\sum_{n=1}^{\infty}\frac1n\binom{(q+1)n-1}{n-1}t^n.
+```
+
+The central-binomial logarithm of Section 3 is the specialization $`q=1`$.
+
+### 5.3 Differential identity of the inverse
+
+Differentiating $`C=1+tC^{q+1}`$ and eliminating $`t=(C-1)/C^{q+1}`$ gives
+
+```math
+C_q'(t)=\frac{C_q(t)^{q+2}}{q+1-qC_q(t)}.
+```
+
+On the real outer branch $`C_q'>0`$ until $`C_q=(q+1)/q`$, where the inverse derivative diverges.
