@@ -36,6 +36,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [120 Self-Adjointness, Milne–Pinney Quartics, and Symmetry at the Center](120%20Self-Adjointness%20Milne-Pinney%20Quartics%20and%20Symmetry%20at%20the%20Center.md) — exact self-adjoint domains and weighted Liouville parity at x=c; real/complex Robin and point-interaction counterexamples; Wronskian current versus Milne phase and boundary m-functions; Gudermannian, Riccati/Cayley and normalized Hopf lift; Pinney inverse-square versus signed Duffing double well; smooth Pinney energy quartic with j=1728 and a conic time-differential quotient; self-adjoint barrier tunneling; catenoid/helicoid/Riemann Jacobi operators; symmetric Beta moment and Dirichlet half-split; complete r=2 operator comparison. **Provisional; not yet consolidated.**
 
+- [130 SL–EP Lie Closure, Finite-Gap Geometry, and Fourier–Mellin Plancherel](130%20SL-EP%20Lie%20Closure%20Finite-Gap%20Geometry%20and%20Fourier-Mellin%20Plancherel.md) — exact SL/Riccati/EP sl(2) Lie–Hamilton and symmetric-square Casimir closure; correction of Jordan monodromy versus self-adjointness; Virasoro coadjoint orbit scope; Gel'fand–Dikii finite-gap certificates F1/F2 encoding catenoid and Master Hessian bound spectra; autonomous polynomial closure of the PT potential itself; marked Gauss–Manin/Riemann minimal-example periods and Hopf/Chern versus Berry phases; weighted L2–Sobolev/Fourier–Mellin and shifted Plancherel norms, exact uncertainty, a catenoid Hilbert-space isometry, mixed transform and complete r=2 test. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
