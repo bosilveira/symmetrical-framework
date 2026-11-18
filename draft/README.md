@@ -22,6 +22,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [050 Binary Quartic Invariants, Curvature, Torsion, and Henon-Heiles Geometry](050%20Binary%20Quartic%20Invariants%20Curvature%20Torsion%20and%20Henon-Heiles%20Geometry.md) — fundamental-form quartic and catenoid j=1728; archived Hénon–Heiles/Master quartic pencil; Eisenhart lift, Petrov-N Weyl quartic, preferred Weitzenbock torsion and vanishing scalar invariants; tidal-Hessian quartic, Jacobi metric, Killing-tensor integrability, and exact counterexamples to conflated I/J meanings. **Provisional; not yet consolidated.**
 
+- [060 Geometric Interfaces for Critical, Spectral, and Stochastic Equations](060%20Geometric%20Interfaces%20for%20Critical%20Spectral%20and%20Stochastic%20Equations.md) — Gram/Ermakov–Pinney determinant versus quartic I,J; explicit Levi-Civita–Weitzenbock conformal/Yamabe identities, Aubin–Talenti and Hardy–Sobolev reductions; Sturm–Liouville/Pöschl–Teller/Lamé; radial complex Monge–Ampere and Eguchi–Hanson; BPST gauge charge and real Monge–Ampere transport; Itô/Fokker–Planck, Beta/Jacobi, Ornstein–Uhlenbeck limit and an exact Yamabe–diffusion operator shift. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
