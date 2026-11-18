@@ -903,3 +903,200 @@ The conjugate Schrödinger potential converges to the harmonic oscillator:
 The fixed-index discrete eigenvalues satisfy $r^2j(\alpha-j)\to\kappa j$, while the Pöschl–Teller continuum threshold $\alpha^2r^2/4$ diverges.
 
 **Scope:** Strong semigroup or norm-resolvent convergence is not implied by pointwise coefficient limits without a separate operator-domain argument. This OU limit changes $\alpha$ and $r$ simultaneously; it is **not** the same as keeping a fixed Sobolev dimension $D$ and taking the critical Yamabe value $r=1$. The Ornstein–Uhlenbeck process is not “classified by an elliptic binary-quartic discriminant”: it arises here through a probability/ground-state scaling, and its Gaussian invariant measure is supplied by the chosen drift and diffusion coefficient.
+
+## 19. Sharp Sobolev integral check in dimension four [D,V,H429–H431]
+
+For $D=4$, $q=1$, the exact Hardy–Sobolev radial profile is
+
+```math
+U_{r,c,\mu}(\rho)=\frac{\mathrm{sech}(r\ln(\rho/c))}{2\sqrt\mu\,\rho}.
+```
+
+Its three natural integrals over $\mathbb R^4$ are
+
+```math
+\int_{\mathbb R^4}U^4\,d^4X=\frac{\pi^2}{6\mu^2r},\qquad\int_{\mathbb R^4}\rho^{-2}U^2\,d^4X=\frac{\pi^2}{\mu r}.
+```
+
+```math
+\int_{\mathbb R^4}|\nabla U|^2\,d^4X=\frac{\pi^2}{\mu}\left(\frac r3+\frac1r\right).
+```
+
+**Proof, step by step.**
+
+1. Use the four-dimensional radial volume $d^4X=2\pi^2\rho^3d\rho=2\pi^2\rho^4du$ with $u=\ln(\rho/c)$.
+2. Substitute $U=S/(2\sqrt\mu\,\rho)$ and use
+
+```math
+\int_{-\infty}^{\infty}S^2\,du=\frac2r,\qquad \int_{-\infty}^{\infty}S^4\,du=\frac4{3r},\qquad\int_{-\infty}^{\infty}S^2W^2\,du=\frac2{3r}.
+```
+
+3. Since $U_\rho=(S_u-S)/(2\sqrt\mu\,\rho^2)$, its gradient energy reduces to
+
+```math
+\int|\nabla U|^2\,d^4X=\frac{\pi^2}{2\mu}\int S^2(1+rW)^2du.
+```
+
+4. The cross term integrates to zero by parity. The remaining integrals give precisely the values above.
+
+For the Hardy quadratic functional with coefficient $(r^2-1)/\rho^2$, its value is
+
+```math
+\mathcal E_r[U]=\int[|\nabla U|^2+(r^2-1)\rho^{-2}U^2]d^4X=\frac{4\pi^2r}{3\mu}.
+```
+
+The corresponding radial quotient is
+
+```math
+\frac{\mathcal E_r[U]}{(\int U^4d^4X)^{1/2}}=\frac{4\pi\sqrt6}{3}r^{3/2}.
+```
+
+At $r=1$, this equals the classical sharp Sobolev constant $S_4=4\pi\sqrt6/3$ in the normalization $\|\nabla U\|_2^2/\|U\|_4^2$. For other $r$, the displayed value is a **radial critical-point quotient**, not automatically the unrestricted sharp constant of the Hardy–Sobolev inequality. The user's archive explicitly records this distinction.
+
+The integral identities are a quantitative bridge from the first-order hyperbolic profile to the variational second-order PDE. They do not require classifying the profile by binary-quartic moduli, even though the separatrix also sits on the degenerate energy quartic $e=0$.
+
+## 20. Which constructions actually use I and J? [D,V,H]
+
+A projective quartic and its invariant ring are useful **only after a specific quartic has been constructed**. Several sharply different uses already occur in the current project.
+
+| Construction | Actual quartic or curve | Its status | Invariants and limits |
+|---|---|---|---|
+| Cubic Master energy | $p^2=e+z^2-z^4$ | smooth elliptic for $e\ne0,-1/4$ | raw $I=1-12e$, $J=-2(1+36e)$; separatrix $\Delta=0$ |
+| Gram/Pinney | binary quadratic $G=A X^2+2CXZ+B Z^2$ | determinant is $AB-C^2$ | artificial quartic $G^2$ has $\Delta=0$ **always** |
+| Catenoid surface fundamental forms | $(X^2+Z^2)(k_1X^2+k_2Z^2)$ | smooth at nonflat nonumbilic points | $H_m=0$, $J=0$, $j=1728$, $\Delta\ne0$ |
+| Eguchi–Hanson radial Monge–Ampere | $P^2-s^2=a^4$ | a **conic** | separately constructed $R^4-a^4$ gives smooth $j=1728$ but not a universal EH moduli curve |
+| Intrinsic level five | $B_\theta^2=4(e_5+B^2-B^3)$ | elliptic cubic | $j=-256/[e_5(27e_5+4)]$ |
+| Periodic level-five Hessian | degree-three Lamé finite-gap operator | spectral genus three | needs more than elliptic $I,J$ |
+| Riemann minimal examples | marked elliptic Weierstrass/Gauss data | genus one with period conditions | its j and Gauss–Manin data belong to the chosen family, not the catenoid surface quartic |
+| Four-dimensional Weyl spinor | $\Psi_{ABCD}\zeta^A\zeta^B\zeta^C\zeta^D$ | Petrov classification | I,J are curvature-spinor scalars; not automatically nonlinear energy invariants |
+| Stochastic reversible diffusion | generator $\mathcal G_{\alpha,r}$ | second-order parabolic operator | **no intrinsic elliptic quartic** required |
+| Ornstein–Uhlenbeck contraction | Gaussian diffusion and oscillator | quadratic potential | **no intrinsic binary quartic discriminant** governing its recurrence |
+
+Two especially useful tests:
+
+**Test A:** The **same** catenoid separatrix has a smooth $j=1728$ surface fundamental-form quartic and a singular $\Delta=0$ nonlinear Master energy quartic. There is no contradiction because the source-to-quartic maps differ.
+
+**Test B:** The ordinary Hénon–Heiles Eisenhart lift in draft 050 has Weyl-spinor $I_{\mathrm W}=J_{\mathrm W}=0$ for generic type N, while its separately constructed Hessian/tidal quartic can have nonzero discriminant. The same distinction extends to the present critical/spectral/stochastic interface.
+
+### 20.1 Discriminant zero is not synonymous with every soliton or instanton
+
+The separatrix degeneration of the cubic Master **energy curve** is exact. The claim that all Aubin–Talenti, Eguchi–Hanson, BPST, Pöschl–Teller and OU realizations have a *single common* binary quartic with $\Delta=0$ is false.
+
+For example the constructed Eguchi–Hanson quartic $X^4-a^4Z^4$ has $\Delta=-256a^{12}\ne0$ at $a>0$, while the canonical Master separatrix quartic is singular. The Pöschl–Teller operator arises from linearization and its **particular** Lamé spectral degeneration, whereas the OU limit is a singular scaling of a reversible diffusion generator. These are distinct limiting constructions.
+
+Likewise the statement “$I=J=0$ means all four roots coincide and $j=0$” is false. A smooth elliptic curve with $j=0$ has $I=0$ and $J\ne0$, while the zero pair corresponds to a singular/zero quartic with **no finite smooth elliptic $j$**. A Petrov type-N Weyl quartic may have quadruple-root pattern and both invariants zero, without supplying any elliptic curve.
+
+## 21. An explicit counterexample to a universal scalar classification [D,C]
+
+Use the Euclidean line with the ordinary flat metric $g=du^2$, its flat Levi-Civita connection and the trivial coordinate Weitzenbock connection. Both curvature and torsion vanish. In any fixed four-dimensional flat extension the Weyl quartic also has $I_{\rm W}=J_{\rm W}=0$.
+
+Now choose **two different** Itô diffusions on precisely the same geometry:
+
+```math
+dX_t=\sqrt2\,dB_t,\qquad dY_t=-\kappa Y_t\,dt+\sqrt2\,dB_t,\qquad \kappa>0.
+```
+
+Their generators are
+
+```math
+\mathcal G_{\rm B}=\partial_u^2,\qquad \mathcal G_{\rm OU}=\partial_u^2-\kappa u\partial_u.
+```
+
+Brownian motion on the full line has no invariant probability density; the OU diffusion has the centered Gaussian stationary density proportional to $e^{-\kappa u^2/2}$. Both share the same background Levi-Civita curvature, chosen Weitzenbock torsion and any fixed flat Weyl-quartic invariants.
+
+**Conclusion [C]:** Those background scalar invariants cannot determine the stochastic dynamics, the invariant measure or recurrence class. The drift/noise, generator domain and stochastic time are genuinely additional data. This counterexample invalidates any assertion that quartic I,J are automatically martingales or determine a stochastic recurrence criterion.
+
+A second counterexample is the source's stochastic projective idea: if the Master energy parameter is explicitly made stochastic, $de_t=b(e_t)dt+\sigma(e_t)dB_t$, then the raw quartic invariant $I_e=1-12e$ obeys
+
+```math
+dI_e=-12b(e_t)\,dt-12\sigma(e_t)\,dB_t.
+```
+
+It is a local martingale only under additional conditions, for example $b=0$ with appropriate integrability, while the nonlinear $j(e_t)$ generally acquires a nonzero Itô correction. No universal stochastic conservation law follows merely from algebraic invariant theory.
+
+## 22. The actual geometric interface: a commuting family of typed maps
+
+The verified mechanisms can be arranged as several explicit, **not globally interchangeable**, routes.
+
+**Linear/Ermakov route.** A two-dimensional linear solution space plus a Gram quadratic leads to a Pinney envelope. Its Wronskian gives the determinant coefficient, while its chosen logarithmic derivative gives a Riccati equation. Squaring the Gram form produces a singular quartic whose discriminant is always zero, irrespective of the nonsingular nature of the original Gram quadratic.
+
+**Conformal/critical route.** A flat Euclidean metric plus positive conformal factor $U$ gives a Levi-Civita metric, its scalar curvature and the Yamabe equation. On a chosen local parallel coframe, the same metric gives a flat metric-compatible Weitzenbock connection and the exact identity $\mathring{\mathcal R}=-\mathbb T+\mathbb B$. Under a radial Emden–Fowler pullback, the critical Euler–Lagrange PDE becomes the level-$q$ Master cylinder ODE, whose Hessian is Pöschl–Teller.
+
+**Kähler route.** A complex Hessian $\partial\bar\partial\mathcal K$ and prescribed determinant produce complex Monge–Ampere. Under a radial unit-determinant ansatz, the resulting $P^m=s^m+a^{2m}$ specializes to the local Eguchi–Hanson radial potential at $m=2$, with an independently chosen $\cosh$ coordinate revealing Pinney. The local Kähler Ricci-flatness is a metric theorem, not a BPST gauge field or automatic teleparallel torsion identity.
+
+**Gauge and transport route.** SU(2) self-duality for a *specified nonflat* BPST gauge connection gives a logistic coefficient and quartic curvature density. The normalized radial density pushes to a Beta$(2,2)$ law and has a cubic CDF $Q=3P^2-2P^3$. A separate real Monge–Ampere convex transport has radial target radius $Q^{1/4}$. The shared $Q$ is a constructed mass-coordinate identity, not a connection isomorphism.
+
+**Spectral/stochastic route.** The critical Hessian and reversible diffusion ground-state transform yield the *same* hyperbolic Pöschl–Teller well up to a constant shift. The reversible diffusion pushes forward to a Beta law under the logistic chart and, after a separate state-dependent time change, to a Jacobi/Gegenbauer generator. A simultaneous parameter contraction yields the Ornstein–Uhlenbeck/harmonic-oscillator pair. None of these requires a common smooth elliptic quartic.
+
+At every arrow, track: input manifold, radial/logarithmic clock, resolution $r$, scale $c$, amplitude $\mu$, dimension $D$, connection choice, functional or generator, discriminant/real branch where applicable, and analytic domain.
+
+## 23. Independent verification and reproducibility [V]
+
+The following checks were performed independently by exact SymPy manipulations and elementary derivative/integration proofs while drafting this file:
+
+1. Expanding the Gram-square quartic gives $I=16(AB-C^2)^2$, $J=128(AB-C^2)^3$, and $\Delta=0$ identically.
+2. The Master energy quartic has $I=1-12e$, $J=-2(1+36e)$ and $\Delta=-16e(1+4e)^2$.
+3. The arbitrary-$q$ derivative of $S^q$ gives precisely $q^2r^2S^q-q(q+1)r^2S^{q+2}$.
+4. The Pinney envelope satisfies $J_{uu}=r^2(J-2C)$ and $J_u^2=r^2(J^2-4CJ-4(AB-C^2))$.
+5. The radial complex Monge–Ampere potential $\mathcal K(s)$ in §11 differentiates to $\mathcal K_s=\sqrt{s^2+a^4}/s$ and has determinant one.
+6. The conformal flat-frame formulas for $\mathbb T$, $\mathbb B$ and $\mathring{\mathcal R}$ were checked algebraically; on the Aubin–Talenti factor they simplify to $\mathring{\mathcal R}=4\mu D(D-1)$ with the explicit position-dependent torsion of §7.2.
+7. The derivative of the BPST charge $Q=3P^2-2P^3$ is $(3r/4)S^4$ in the appropriate radial pullback.
+8. The real Monge–Ampere transport satisfies $Q'=12\rho^3c^4/(\rho^2+c^2)^4$ and $\det D^2\Phi=Q'/(4\rho^3)$.
+9. The reversible ground-state conjugation gives the Pöschl–Teller potential $\alpha^2r^2/4-\alpha(\alpha+2)r^2S^2/4$ exactly.
+10. Substituting $\alpha=2(q+1)$ reproduces the Yamabe Hessian well and gives the affine shift $\ell(\ell+2q)-(2q+1)r^2$.
+11. The logistic coordinate change satisfies $P_u^2=4r^2P^2(1-P)^2$ and the Itô drift of §18.
+12. The dimension-four sharp Sobolev integrals of §19 follow from the elementary definite integrals of $S^2$, $S^4$ and $S^2W^2$.
+
+These are **equation checks**, not complete independent audits of every archived claim or global theorem. Especially, the archive's quoted spectral theorems, sharpness and compactification arguments still require their classical hypotheses. Operator domains, spectral self-adjoint extensions and stochastic semigroup convergence are not fully certified by the checks above.
+
+### 23.1 Suggested minimal computational checks for subsequent review
+
+Use exact symbolic parameters $r,\mu,c>0$, $q>0$, and the identity $\tanh^2+\mathrm{sech}^2=1$. Verify separately: Gram quartic coefficients before invoking the discriminant formula; the radial Laplacian after conjugation by $\rho^{-q}$; the complex Hessian determinant from its eigenvalues; the chosen teleparallel torsion contractions and divergence (not merely a guessed scalar curvature identity); the Pöschl–Teller operator coefficients; and the Itô transformation with volatility $\sqrt2$.
+
+For high-confidence spectral results also specify which Hilbert space and boundary endpoints are being used, especially at the Hardy inverse-square singularity and the noncompact catenoid/Eguchi–Hanson ends. For geometric global claims check smooth extension, topology and frame parallelizability beyond one coordinate chart.
+
+## 24. Proposed foundational theorem and consolidation agenda [O]
+
+**Candidate theorem A:** For every local conformally flat metric $g=e^{2h}\eta$, the chosen flat-frame Weitzenbock connection has explicit vector-type torsion; its quadratic scalar and divergence reproduce the Levi-Civita conformal scalar curvature. For critical $r=1$ Aubin–Talenti bubbles the curvature is constant while the preferred torsion scalar is position-dependent. Proof: §7; verify sign conventions and global chart scope before promotion.
+
+**Candidate theorem B:** The Gram-squared quartic has invariant pair $(16\Delta_G^2,128\Delta_G^3)$ but identically zero quartic discriminant. Proof: §3. This precisely separates Ermakov–Pinney's quadratic determinant from the smooth nonlinear energy elliptic moduli.
+
+**Candidate theorem C:** Under the specified positive reversible density $\mathrm{sech}^{2(q+1)}(ru)\,du$, the diffusion's ground-state Schrödinger operator is the critical Yamabe cylinder Hessian in harmonic sector $\ell$, shifted by $\ell(\ell+2q)-(2q+1)r^2$. Proof: §§8, 16–17. The operator expression is exact; full spectral equivalence requires matching domains.
+
+**Candidate theorem D:** The normalized BPST charge, the Beta$(2,2)$ CDF of the logarithmic radial density, and the real radial Monge–Ampere transport mass coordinate coincide as $Q(P)=3P^2-2P^3$. Proof: §§12, 14, 18. The interpretations and associated bundles remain separate.
+
+**Candidate theorem E:** The radial complex Monge–Ampere determinant gives $P^m=s^m+a^{2m}$, and $m=2$ admits a local change of radial coordinate exposing the Pinney envelope. Proof: §11. The identification with the complete Eguchi–Hanson metric requires the separate classical smooth quotient/resolution.
+
+**Further research tasks:**
+
+1. Classify all *natural*, functorial assignments of a binary quartic to the canonical critical or Kähler data, and prove which maps retain the marked differential rather than just an abstract elliptic $j$.
+2. Extend the conformal teleparallel formula to non-conformally-flat cohomogeneity-one Eguchi–Hanson frames with an explicitly fixed flat inertial connection; compute the full tensorial contorsion and LC curvature, avoiding an invented SU(2) gauge equivalence.
+3. Determine how the exact Yamabe Hessian–diffusion ground-state transform interacts with angular decomposition, index theory and the known $r_{D,\ell}$ thresholds; account for distinct operator domains before claiming a full spectral isomorphism.
+4. Analyze the time-changed Jacobi diffusion on the compact $w$ interval, its endpoint classification and global stochastic domain; establish precise semigroup convergence to OU if the scaling limit is to be promoted from formal/local to spectral.
+5. Investigate the level-nine genus-two nonlinear curve and finite-energy spectral branching alongside the $l=5$ Lamé genus-three spectral curve; identify which higher-genus Siegel invariants, not quartic I,J alone, actually classify the selected families.
+6. Compare the BPST gauge self-duality operator with the Yamabe scalar Hessian through an **actual intertwiner and bundle map**. A shared Pöschl–Teller radial coefficient or conformal density is not sufficient.
+7. Develop boundary-sensitive Sturm–Liouville and Itô domains in the original multiplicative coordinate $x$, keeping $c,r$ visible in unitary changes and weighted measures.
+8. Test whether the teleparallel torsion coefficients of the Aubin–Talenti conformal metric can be organized into a meaningful projective connection after specifying an explicit Cartan/Gauss-map lift; avoid assuming universal $I,J$ Casimirs.
+
+### Proposed destinations after mathematical review
+
+- **Layer I:** Gram/Pinney determinant versus quartic I,J; canonical levels, energy discriminants, Riccati/Schwarzian and clocks.
+- **Layer II:** conformal Levi-Civita/Weitzenbock theorem, Kähler/complex Monge–Ampere geometry, gauge versus spin connections, and global frame/topology qualifications.
+- **Layer III:** critical Hardy–Sobolev and Yamabe reductions, Aubin–Talenti profiles, real Monge–Ampere transport, Sturm–Liouville/PT/Lamé operators and marked spectral curves.
+- **Layer IV:** chosen Itô/Fokker–Planck generators, Beta/Jacobi transformations, OU limit, optional physical gauge/gravitation interpretations only with independently specified actions and fields.
+
+## 25. Sources and exact attribution
+
+**Project sources:** The historical ZIP includes the detailed source-status table of H371–H376 in *bpst-yamabe-eguchi-hanson.md* (including checked radial complex MA, BPST charge, reversible diffusion, and unexamined global sharpness assumptions); H429–H447 in *hardy-master-lame-genus-two.md* (including the four-dimensional Hardy–Sobolev integral data, Lamé spectra and genus-two modular comparisons); H173–H176 in *conformal-and-probabilistic-readings.md*; and the 2026-11-16_v2 reference §§21–24, 32. The live main-branch drafts 030, 040 and 050 provide the typed connection and invariant-theory conventions. Earlier ledger verification flags have **different evidence levels**: exact symbolic checks do not automatically prove global analytic classification theorems.
+
+**Classical and external mathematics:**
+
+- Pinney nonlinear superposition and its Wronskian determinant: E. Pinney's classical result and https://mathworld.wolfram.com/ErmakovEquation.html .
+- Aubin–Talenti sharp critical Sobolev extremals and stereographic Yamabe geometry: classical Aubin/Talenti/Yamabe theory; see also the archived H429–H431 proof register for the exact normalization and unrestricted-minimizer caveat.
+- Radial Calabi–Eguchi–Hanson Ricci-flat Kähler construction: https://www.claymath.org/library/monographs/cmim04c.pdf and https://link.springer.com/article/10.1007/s00022-025-00763-8 . Global ALE completion is separate from local determinant-one calculus.
+- BPST instanton as a nonflat SU(2) self-dual connection: standard BPST theory and https://www2.yukawa.kyoto-u.ac.jp/~katsushi.ito/summer2004.pdf .
+- Ground-state transformation between Ornstein–Uhlenbeck diffusion and harmonic oscillator: https://repository.tudelft.nl/record/uuid%3A08ad4a94-483d-46db-8840-6f73c3e48a70 .
+- Teleparallel torsion/contorsion, flat inertial spin connections and the curvature-boundary identity: https://www.mdpi.com/2218-1997/7/5/114 ; comparison with live SF-DRAFT-040.
+- Pöschl–Teller and Lamé spectral calculations: historical H429–H447 and the classical exactly-solvable hypergeometric/finite-gap theory they cite. The identity in §17 is derived here algebraically; no claim is made that this general framework is novel.
+
+**Final mathematical boundary:** Levi-Civita curvature, a chosen flat Weitzenbock connection and binary-form invariant theory form a useful **algebro-geometric interface** only after specifying the metric, coframe, quartic/curve, functional or operator, domain and clock. There is no complete universal classification of Yamabe, Eguchi–Hanson, BPST, Sturm–Liouville or Itô dynamics by a common $(I,J,\mathbb T)$ triple. The exact interfaces identified here are nonetheless strong enough to guide the organization of the foundational layers without imposing theoretical-physics interpretations.
