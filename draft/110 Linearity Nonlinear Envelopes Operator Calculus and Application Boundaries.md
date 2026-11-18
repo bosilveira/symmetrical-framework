@@ -943,3 +943,135 @@ There are at least four mathematically legitimate but distinct meanings of an ei
 4. **Stability spectrum:** fix one nonlinear solution and study the self-adjoint (or coupled non-self-adjoint) Hessian/BdG operator on its chosen domain; its eigenvalues describe linear perturbations, not the original nonlinear solution set.
 
 A Rayleigh quotient for the *linearized* Hessian has the usual quadratic-form interpretation. A nonlinear constrained energy has its own minimax/critical-point theory, not the unmodified Sturm–Liouville Rayleigh quotient. Confusing these four notions is the main mathematical source of the claim that nonlinear Ermakov–Pinney “cannot have an eigenvalue problem at all”.
+
+## 28. The weighted Wronskian-current and nonlinear Riccati closure test [D,V]
+
+Return to the general complex stationary equation of §25,
+
+```math
+-(p\Psi')'+(V+g|\Psi|^2)\Psi=E\Psi,\qquad p>0,\qquad V,g,E\ \mathrm{real}.
+```
+
+Take the complex conjugate of this **single equation**, multiply the original by $\bar\Psi$, multiply its conjugate by $\Psi$ and subtract. The nonlinear term cancels because $g|\Psi|^2$ is real:
+
+```math
+\frac d{dz}[p(\bar\Psi\Psi'-\bar\Psi'\Psi)]=0.
+```
+
+Consequently the current of the polar decomposition equals exactly the weighted self-conjugate Wronskian:
+
+```math
+\mathscr W_p(\bar\Psi,\Psi)=p(\bar\Psi\Psi'-\bar\Psi'\Psi)=2i\,p a^2\theta'=2i\mathcal J.
+```
+
+**Important distinction:** For a *linear* SL equation, the weighted Wronskian of **any two** solutions at the same spectral parameter is constant. For this **nonlinear** stationary equation, the Wronskian of two **different** solutions is generally not constant because their effective potentials depend on their respective amplitudes. The special conjugate-pair conservation follows from the global phase symmetry and the reality of the nonlinearity, not from unrestricted superposition.
+
+### 28.1 Riccati does not automatically linearize GPE
+
+On a nonzero complex stationary solution set
+
+```math
+h=p\frac{\Psi'}{\Psi}.
+```
+
+Direct differentiation gives
+
+```math
+h'=V-E+g|\Psi|^2-\frac{h^2}{p}.
+```
+
+When $g=0$ this is a closed complex Riccati equation and is projectively linearizable. When $g\ne0$, the term $|\Psi|^2$ is *not determined by the holomorphic coordinate $h$ alone as a prescribed coefficient*; the Riccati expression is coupled to the amplitude equation. Calling the full nonlinear GPE “Riccati and therefore always linearizable” would be false. The weighted polar equations provide the correct coupled system.
+
+For the PDM BDD case, $\mathcal J$ is the conserved one-dimensional probability current **up to the physical normalization of $\hbar$**, and its interface continuity is related to the BDD flux boundary conditions. No flux should be identified with the BPST Chern number or a metric torsion scalar on the basis of the shared word “charge”.
+
+## 29. A typed comparison of the operators, models and preserved data
+
+| Source | Exact mathematical output | Required extra data | Lost information / non-equivalence |
+|---|---|---|---|
+| Regular/singular SL | linear expression and operator domain; weighted Wronskian | interval, $p,q,w$, endpoint conditions | formal expression alone does not fix the spectrum |
+| Linear second-order carrier | Riccati, Schwarzian, symmetric-square third-order | nonzero fundamental pair, projective chart | poles of log derivative are solution zeros, not coefficient singularities |
+| Pinney $a''=Qa+ka^{-3}$ | nonlinear envelope and its self-adjoint variational Hessian | $k$, positive interval, action and domain | nonlinear solution set not a linear eigenspace |
+| Symmetric-square $J=a^2$ | linear third-order equation, fixed quadratic Casimir | positivity and invariant level $\mathcal C=4k$ | third-order equation alone does not fix $k$ |
+| SL diagonal Green resolvent | product of two endpoint-adapted solutions | spectral parameter in resolvent set | its real Pinney strength is negative, unlike the canonical positive envelope |
+| Routh reduction of 2D oscillator | Pinney with $k=\ell^2$ | cyclic angle and fixed moment-map value | reduced radial dynamics loses angle |
+| Darboux/Dirac block | factored *linear* Hessians | superpotential, Hilbert domain | not an automatic spin Dirac operator or original nonlinear spectrum |
+| PDM quantum Hamiltonian | weighted SL with chosen ordering | positive mass, $V,\hbar$, ordering/interface data | geometry/weight alone does not select material Hamiltonian |
+| Stationary GPE | nonlinear eigenstate and BdG linearization | interaction sign/coupling, trap, norm | chemical potential not linear eigenvalue |
+| Stationary weighted complex profile | Duffing + Pinney in polar equation | $p,V,g,E$, conserved current | not a single universal PDE or a linear Riccati for $g\ne0$ |
+| GPE lens scaling | Pinney scale ODE | quadratic trap and $g(t)=g_0b^{d-2}$ | scale not full condensate field; dimensions matter |
+| Incompressible Rayleigh–Plesset | variable-mass radial Lagrangian and $b=R^{5/2}$ | pressure law $P(R,t)$ | generic forcing/damping not Pinney |
+| Keller–Miksis | compressible radius ODE | $c_L,\rho_L$, constitutive pressure, forcing | radiation/viscosity and nonlinear acceleration remain |
+| Bubble acoustic modes | linear SL-type radial wave equation | angular order, acoustic boundary and radiation condition | open outgoing problem generally non-self-adjoint |
+| Cubic Master at fixed $r,c,\mu$ | Duffing profile, quartic energy and PT Hessian | logarithmic chart and energy level | not an assertion of any specific PDM/GPE/bubble realization |
+
+The algebro-geometric interface is therefore a **diagram of exact partial maps**, not a claim that a single global linear or nonlinear operator classifies all the rows.
+
+## 30. Independent algebraic checks, corrections and scope [V,C]
+
+The following identities were independently verified with exact symbolic calculations or by elementary differential expansions during this investigation:
+
+1. **von Roos expansion:** the full ordered two-term kinetic expression equals BDD plus $V_{\rm ord}$ in §15, using only $\alpha+\beta+\gamma=-1$.
+2. **Geometric PDM ordering:** unitary conjugation of $-\hbar^2\Delta_g/2$ from $L^2(\sqrt m\,dz)$ into $L^2(dz)$ yields the exact $(-1/4,-1/2,-1/4)$ terms in §16; direct subtraction simplifies identically to zero.
+3. **PDM logarithmic mass:** $m(z)=m_0(z/c)^{-2}$ makes the Liouville spectral coordinate proportional to $\ln(z/c)$ and produces the constant correction $\hbar^2/(8m_0c^2)$.
+4. **Pinney symmetric square:** for $J=Ae^{ru}+2C+Be^{-ru}$, verify both $J'''-r^2J'=0$ and $\mathcal C[J]=4r^2(AB-C^2)$.
+5. **Pinney Green relation:** for two carrier solutions, direct differentiation gives the negative-Wronskian Gel'fand–Dikii identity of §7; normalized diagonal Green gives right-hand side $1$.
+6. **Routhian Casimir:** the canonical brackets and $H_0K-D^2=k/4$ follow by direct Poisson differentiation.
+7. **Canonical Hessians:** direct differentiation of the EP and Duffing equations gives the PT potentials and first-order factorizations in §10; the full-line bound-state assertions use standard PT spectral theory with the specified $L^2$ domain.
+8. **Rayleigh–Plesset coordinate:** direct differentiation confirms $\ddot b=(5/2)R_b^{1/2}(R_b\ddot R_b+\tfrac32\dot R_b^2)$; the pressure powers $R_b^2,R_b^{-8}$ become $b,b^{-3}$.
+9. **Classical kinetic mass:** $m_{\rm eff}(R_b)=4\pi\rho_LR_b^3$ is flattened by $q=(4/5)\sqrt{\pi\rho_L}R_b^{5/2}$.
+10. **Small bubble linearization:** Taylor expansion of the pressure and radial kinematics gives $\Gamma_b$ and $\omega_b^2$ in §23; Keller–Miksis compressible corrections are *not* silently discarded when claiming the final physical frequency.
+11. **Weighted polar decomposition:** substituting $\Psi=a e^{i\theta}$ in the nonlinear real-coefficient stationary equation proves both the current and weighted Duffing–Pinney amplitude equation.
+12. **Constant-coefficient stationary GPE cubic:** multiplying the amplitude equation by $a_z$ and using $J=a^2$ gives the elliptic cubic polynomial in §25.
+13. **Canonical $r=2$ entire web:** the rational $S_2,W_2$, complex solution, PT Hessians, Pinney constraint and constant diagonal Green kernel follow by direct differentiation.
+
+**Scope of the checks:** Exact algebra does **not** certify every global functional-analytic theorem or physical approximation. In particular, global GPE solution existence and instability, nonlinear Pinney boundary value problems, physical validity of the engineered RP pressure, quantum PDM interface models, or Keller–Miksis resonance spectra require their own hypotheses and independent analysis.
+
+### 30.1 Especially tempting overstatements to reject
+
+- “Because Pinney is nonlinear, operators, eigenvalues, Green identities or Rayleigh quotients cannot appear in its theory.” **False**: nonlinear operators, Fréchet Hessians, constrained nonlinear spectra, and the symmetric-square/Green identities are well-defined.
+- “Because a differential expression is formally Sturm–Liouville, its spectrum is automatically real and discrete.” **False** without a specified self-adjoint realization and compactness.
+- “The symmetric-square linearization makes every Pinney solution a linear SL eigenfunction.” **False**: positivity and the quadratic Casimir level remain nonlinear constraints.
+- “PDM geometry uniquely proves the BDD kinetic ordering.” **False**: the geometric Laplace–Beltrami ordering gives a different exact von Roos set on a chosen measure.
+- “The Gross–Pitaevskii equation is equivalent to Pinney for arbitrary dimension and coupling.” **False**: the lens map has the explicit law $g(t)=g_0b^{d-2}$, and the stationary polar equation contains a cubic term unless $g=0$.
+- “Keller–Miksis bubble collapse is always an inverse-cubic oscillator.” **False**: only an engineered pressure after the stated Rayleigh–Plesset limit yields that special form.
+- “A shared PT potential, Riccati coordinate, or elliptic $j$ identifies the physical realizations.” **False**: functions, spectra, dimensions, clocks, measures and boundary conditions must be retained.
+
+## 31. Research questions for the next foundational audit [O]
+
+1. **Inverse spectral/PDM:** For $m=m_0(z/c)^{-2}$ and a PT potential $V\propto\mathrm{sech}^2(r\ln(z/c))$, determine explicit spectral maps and interface scattering data for each von Roos ordering, including the scale parameters $c,m_0,\hbar$.
+2. **Green and Pinney discriminant:** Investigate the complexified diagonal resolvent's Gram determinant as $z$ crosses spectral gaps and poles, paying attention to the positivity of the diagonal and the branch of its square root.
+3. **Ermakov–Lewis/Routhian:** Determine all self-adjoint boundary realizations of the half-integer PT Hessian naturally compatible with a positive Pinney amplitude on finite and half-infinite intervals; compare with the order-two Master Hessian.
+4. **GPE invariant curve:** Classify the discriminant and real ovals of the stationary constant-potential cubic in §25 as functions of $(g,V-E,C_E,j)$; determine the genuine genus-one-to-separatrix degeneration and the marked phase differential $j\,dz/J$.
+5. **Nonlinear current versus weighted SL Wronskian:** Establish a boundary-form theorem for the stationary nonlinear equation with the self-conjugate pair $\bar\Psi,\Psi$ across piecewise smooth PDM interfaces.
+6. **Two-dimensional scaling:** Review precise global well-posedness and domain conditions of the critical $d=2$ GPE lens transform; test whether any framework $r$-family provides genuine integrable scaled solutions of a specific trap rather than simply matched ODE coefficients.
+7. **Bubble radial mass:** For physically common gas polytropic exponents, classify the monomial powers after $b=R^{5/2}$ and determine when a generalized Emden–Fowler or generalized Pinney system, rather than standard EP, is obtained.
+8. **KM acoustic boundaries:** Construct the correct coupled bubble-fluid energy Hilbert space in a *closed, lossless* geometry and determine which wave matching conditions make the linearized operator self-adjoint; compare its complex radiating resonance formulation.
+9. **Operator algebras:** Distinguish spectral Darboux, Liouville transport and nonlinear Hamiltonian Casimir claims in the existing CLAIMS register, and propose exact regression tests before promoting any statement.
+
+## 32. Literature and project attribution
+
+**Internal project material:** Current foundational SF-I-020 (linear exponential backbone, canonical $u=\ln(x/c)$); provisional drafts 080, 090, 100 (SL projectivization, Pinney complex phase and conditional amplitude–phase duality), 040 (connection/warped metric dictionary), 050 (separate binary quartics), 060 (Sobolev/Yamabe/PT/OU/GPE-adjacent profiles), 070 (Noether/Routhian and invariant classification). The November 18 ZIP contains spectral calculus, Riccati, Pinney/Gram, quartic and Duffing analyses. No claim is made that the ZIP pre-verified the PDM, stationary GPE or Keller–Miksis reductions developed here.
+
+**Classical Sturm–Liouville / special functions:**
+- NIST DLMF §1.13, Liouville transformation and special-function second-order ODEs: https://dlmf.nist.gov/1.13
+- NIST DLMF §1.18, self-adjoint SL, Green functions and spectral theory: https://dlmf.nist.gov/1.18
+- Encyclopedia of Mathematics, Sturm–Liouville theory: https://encyclopediaofmath.org/wiki/Sturm-Liouville_theory
+
+**PDM and ordering, checked externally:**
+- Classical and quantum systems with position-dependent mass, Brazilian Journal of Physics Education (2023): https://www.scielo.br/j/rbef/a/8gHrhh3Yr4s7ymwZZ3TsBkj/?format=html
+- A novel approach for constructing kinetic energy operators with position dependent mass: https://www.sciencedirect.com/science/article/pii/S2211379719303055
+- BenDaniel–Duke matching and operator boundary form: https://mochizuki-tus.github.io/QM_Textbook_EN/ch11_finite_well.html
+
+**Gross–Pitaevskii and Pinney scaling:**
+- From Feshbach-resonance managed Bose–Einstein condensates to anisotropic universes: Applications of the Ermakov–Pinney equation with time-dependent nonlinearity, Physics Letters A (2007): https://www.sciencedirect.com/science/article/pii/S0375960107003362 . This is a literature precedent for conditional EP/moment reductions, not evidence that every GPE solution is of lens form.
+- For the GPE lens theorem in §20, the precise $b(t)$ and $g(t)$ laws are derived algebraically in the text rather than inferred from a physical analogy.
+
+**Keller–Miksis and bubble acoustic models:**
+- Bubble Dynamics in Soft and Biological Matter, Annual Review of Fluid Mechanics: https://doi.org/10.1146/annurev-fluid-010518-040352
+- Experimental/theoretical pressure dependence of bubbly-media sound speed and attenuation: https://pmc.ncbi.nlm.nih.gov/articles/PMC11487347/
+- Rayleigh–Plesset and Keller–Miksis formula comparison: https://www.tandfonline.com/doi/full/10.1080/19942060.2023.2210193
+- Acoustic bubble shape and radial linearizations: https://pmc.ncbi.nlm.nih.gov/articles/PMC2818980/
+
+**Gel'fand–Dikii / diagonal Green link:** The core identity is proved in §7 from the product of two fundamental solutions; source literature includes one-dimensional diagonal-resolvent and Gel'fand–Dikii treatments (for example JHEP 2009 source indexed in the bibliography of the project investigation). Do not transfer its normalization or spectral interpretation without the resolvent-domain hypotheses.
+
+**Final mathematical statement:** Standard linear Sturm–Liouville theory, nonlinear Ermakov–Pinney dynamics, and specific PDM/GPE/bubble equations intersect through *explicit differential constructions*: a weighted Wronskian, a nonlinear amplitude-phase equation, symmetric-square invariant levels, Routh reduction, a stability Hessian and selected mass/clock changes. Their identical-looking functions or operators can be shared without equating their Hilbert spaces, actions, boundary conditions or applications. The role of the framework is to record these typed maps, not to collapse them into one universal physical theory.
