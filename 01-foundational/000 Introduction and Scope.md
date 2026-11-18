@@ -41,14 +41,14 @@ $$
 Then the elementary identity
 
 $$
-\operatorname{sech}(ru)
+\mathrm{sech}(ru)
 =\frac{2(x/c)^r}{1+(x/c)^{2r}}
 $$
 
 gives
 
 $$
-\boxed{2x f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}\operatorname{sech}(ru).}
+\boxed{2x f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}\mathrm{sech}(ru).}
 \tag{1.4}
 $$
 
@@ -75,7 +75,7 @@ $$
 **Proof, step by step.**
 
 1. Under $x\mapsto I_c(x)$, the coordinate $u=\ln(x/c)$ changes to $-u$.
-2. Because $\operatorname{sech}(-ru)=\operatorname{sech}(ru)$, equation (1.4) implies that the differential form $f_\mu(x)\,dx=(2\sqrt{\mu})^{-1}\operatorname{sech}(ru)\,du$ is invariant as a positive measure under inversion (the orientation of the form itself reverses).
+2. Because $\mathrm{sech}(-ru)=\mathrm{sech}(ru)$, equation (1.4) implies that the differential form $f_\mu(x)\,dx=(2\sqrt{\mu})^{-1}\mathrm{sech}(ru)\,du$ is invariant as a positive measure under inversion (the orientation of the form itself reverses).
 3. Put $z=(x/c)^r$. A direct substitution gives $f_\mu(x)\,dx=dz/[r\sqrt{\mu}(1+z^2)]$.
 4. Hence $\int_0^c f_\mu\,dx=(r\sqrt{\mu})^{-1}\int_0^1(1+z^2)^{-1}\,dz=\pi/(4r\sqrt{\mu})$. The interval $c<x<\infty$ corresponds to $1<z<\infty$ and gives the same value. $\square$
 
