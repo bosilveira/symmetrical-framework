@@ -34,6 +34,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [110 Linearity, Nonlinear Envelopes, Operator Calculus, and Application Boundaries](110%20Linearity%20Nonlinear%20Envelopes%20Operator%20Calculus%20and%20Application%20Boundaries.md) — rigorous SL-versus-EP operator and domain distinctions; Fréchet/Hessian/Jacobian/Hamiltonian/Routhian/Casimir calculus; Gel'fand–Dikii diagonal Green and Pinney invariant sign; Darboux/Dirac, Riccati/Schwarzian and Liouvillian meanings; PDM BDD/von Roos/geometric ordering and logarithmic mass profile; Duffing, GPE lens and weighted stationary amplitude–phase theorem; exact conditional Rayleigh–Plesset-to-Pinney map, Keller–Miksis and acoustic-mode qualifications; r=2 whole-web formulas. **Provisional; not yet consolidated.**
 
+- [120 Self-Adjointness, Milne–Pinney Quartics, and Symmetry at the Center](120%20Self-Adjointness%20Milne-Pinney%20Quartics%20and%20Symmetry%20at%20the%20Center.md) — exact self-adjoint domains and weighted Liouville parity at x=c; real/complex Robin and point-interaction counterexamples; Wronskian current versus Milne phase and boundary m-functions; Gudermannian, Riccati/Cayley and normalized Hopf lift; Pinney inverse-square versus signed Duffing double well; smooth Pinney energy quartic with j=1728 and a conic time-differential quotient; self-adjoint barrier tunneling; catenoid/helicoid/Riemann Jacobi operators; symmetric Beta moment and Dirichlet half-split; complete r=2 operator comparison. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
