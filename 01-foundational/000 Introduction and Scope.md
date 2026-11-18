@@ -17,25 +17,35 @@ The **Symmetrical Framework** is a mathematical investigation of an explicitly d
 
 **Definition 1.1 (the original symmetrical function).** Fix a resolution parameter $r>0$ and a center $c>0$. For $x>0$, set
 
-$$f(x;r,c)=\frac{c^r x^{r-1}}{c^{2r}+x^{2r}}. \qquad (1.1)$$
+```math
+f(x;r,c)=\frac{c^r x^{r-1}}{c^{2r}+x^{2r}}. \qquad (1.1)
+```
 
 For later differential equations it is useful to introduce an independent amplitude normalization $\mu>0$:
 
-$$f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}f(x;r,c). \qquad (1.2)$$
+```math
+f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}f(x;r,c). \qquad (1.2)
+```
 
 The original function is the case $\mu=1$. Throughout these first three chapters $r,c,\mu$ are constants, and all functions and derivatives are real unless otherwise specified.
 
 **Definition 1.2 (centered logarithmic coordinate).** Set
 
-$$u=\ln(x/c),\qquad x=ce^u. \qquad (1.3)$$
+```math
+u=\ln(x/c),\qquad x=ce^u. \qquad (1.3)
+```
 
 Then the elementary identity
 
-$$\mathrm{sech}(ru) =\frac{2(x/c)^r}{1+(x/c)^{2r}}$$
+```math
+\mathrm{sech}(ru) =\frac{2(x/c)^r}{1+(x/c)^{2r}}
+```
 
 gives
 
-$$2x f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}\mathrm{sech}(ru). \qquad (1.4)$$
+```math
+2x f_\mu(x;r,c)=\frac{1}{\sqrt{\mu}}\mathrm{sech}(ru). \qquad (1.4)
+```
 
 This is the basic translation from multiplicative to additive coordinates. The center $x=c$ corresponds exactly to $u=0$.
 
@@ -43,11 +53,15 @@ This is the basic translation from multiplicative to additive coordinates. The c
 
 Let $I_c(x)=c^2/x$. Then
 
-$$f_\mu(I_c(x);r,c)|I_c'(x)|=f_\mu(x;r,c). \qquad (1.5)$$
+```math
+f_\mu(I_c(x);r,c)|I_c'(x)|=f_\mu(x;r,c). \qquad (1.5)
+```
 
 Moreover,
 
-$$\int_0^c f_\mu(x;r,c)\,dx =\int_c^\infty f_\mu(x;r,c)\,dx =\frac{\pi}{4r\sqrt{\mu}}. \qquad (1.6)$$
+```math
+\int_0^c f_\mu(x;r,c)\,dx =\int_c^\infty f_\mu(x;r,c)\,dx =\frac{\pi}{4r\sqrt{\mu}}. \qquad (1.6)
+```
 
 **Proof, step by step.**
 
@@ -111,7 +125,9 @@ References to other mathematical domains are invitations to explicit constructio
 
 Earlier drafts use $x_0$ for the center and $t=\ln x$, $\theta=r\ln(x/x_0)$. This series uses $c=x_0$ and the centered coordinate $u=\ln(x/c)$, so
 
-$$t=u+\ln c,\qquad \theta=ru. \qquad (1.7)$$
+```math
+t=u+\ln c,\qquad \theta=ru. \qquad (1.7)
+```
 
 This conversion does not alter the mathematical objects. It must, however, be applied explicitly whenever an older formula is imported.
 
