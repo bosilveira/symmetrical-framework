@@ -655,3 +655,115 @@ A^2=\frac{q}{2(q+1)}(1-v)+O((1-v)^{3/2}).
 ```
 
 The resulting first correction equals $`\beta_1(q)`$ above. The more exact *analytic normal-form proof* in Theorem 9.1 is needed to establish the integer-power series and all its higher coefficients.
+
+## 10. Special levels and algebraic curve models
+
+### 10.1 Level $`l=9`$: the Bring quintic
+
+For $`q=4`$, the critical constant is $`c_4=256/3125`$ and the turning-point equation is
+
+```math
+X^4(1-X)=\frac{256}{3125}v.
+```
+
+Choose $`\lambda>0`$ so that $`\lambda^4=c_4v`$ and set $`X=\lambda/\xi`$. Multiplication by $`\xi^5/\lambda^4`$ yields
+
+```math
+\xi^5-\xi+\lambda=0.
+```
+
+The root $`\xi\to0`$ when $`\lambda\to0`$ satisfies $`\xi=\lambda+\xi^5`$, hence $`\xi=\lambda C_4(\lambda^4)`$. The generalized Fuss–Catalan function can be written with hypergeometric fifths:
+
+```math
+C_4(c_4v)={}_4F_3\!\left(\begin{matrix}1/5,\,2/5,\,3/5,\,4/5\\1/2,\,3/4,\,5/4\end{matrix};v\right).
+```
+
+Consequently,
+
+```math
+X_{4,+}(v)=\left[{}_4F_3\!\left(\begin{matrix}1/5,\,2/5,\,3/5,\,4/5\\1/2,\,3/4,\,5/4\end{matrix};v\right)\right]^{-1}.
+```
+
+At $`v=1`$, $`C_4(c_4)=5/4`$ and $`X_{4,+}=4/5`$. This agrees with the historical H147 Bring-quintic result. The **fifths** parameters describe a quintic root. The distinct **tenths** parameters in archived period formulas describe Abelian periods. Their roles must not be conflated.
+
+### 10.2 Genus of the integer-level period models
+
+The period differential is
+
+```math
+\omega_q=\frac{X^{q/2-1}\,dX}{\sqrt{X^q(1-X)-c_qv}}.
+```
+
+If $`q=2k`$ is an even positive integer, the numerator power is $`X^{k-1}`$, and a natural period curve is
+
+```math
+Y^2=X^q(1-X)-c_qv,\qquad q=2k.
+```
+
+For $`0<v<1`$ its polynomial is square-free and of degree $`q+1=2k+1`$, so its genus is $`k`$.
+
+If $`q=2k+1`$ is odd, absorb the additional half-power of $`X`$ into the square root:
+
+```math
+Y^2=X\left[X^q(1-X)-c_qv\right],\qquad \omega_q=\frac{X^k\,dX}{Y}.
+```
+
+This model has square-free polynomial of degree $`q+2=2k+3`$ at noncritical level, so its genus is $`k+1`$. In summary,
+
+```math
+g(q)=\left\lceil\frac q2\right\rceil,\qquad q\in\mathbb Z_{>0},\quad 0<v<1.
+```
+
+Thus $`q=1,2`$ give genus-one models; $`q=3,4`$ give genus-two models. The curves degenerate at $`v=0`$ and $`v=1`$, where this generic-genus statement does not apply. For irrational $`q`$, $`X^q`$ is not globally algebraic in $`X`$; the integer genus formula must not be extrapolated.
+
+## 11. Symbolic checks and reproducibility
+
+The following checks were completed independently of the narrative derivations:
+
+1. Differentiate the $`q`$-energy and verify the conserved quantity.
+2. Substitute $`C=1/X`$ and $`Y=1-X`$ into the turning-point equation.
+3. Substitute the first three inverse-series coefficients back into the defining equations.
+4. Expand the fold at equilibrium to verify the two Puiseux coefficients.
+5. Derive the $`n^{-3/2}`$ Fuss–Catalan asymptotic from Stirling's formula.
+6. Extract $`\beta_1(q)`$ and $`\beta_2(q)`$ symbolically from Theorem 9.1.
+7. Verify exact agreement with the $`q=1,2`$ hypergeometric periods and reciprocal $`q\leftrightarrow1/q`$ coefficient identities.
+
+A minimal independently executable SymPy check for the two period coefficients follows.
+
+```python
+import sympy as sp
+
+q, h = sp.symbols("q h", positive=True)
+g0 = q*(q+1)/2
+g = q*(q+1)*sum(
+    sp.binomial(q-1, k)*h**k/sp.Integer(k+2)
+    for k in range(5)
+)
+
+def beta(n):
+    expr = (1+h)**(q/2-1)*(g/g0)**(-sp.Rational(2*n+1, 2))
+    coefficient = sp.series(expr, h, 0, 2*n+1).removeO().coeff(h, 2*n)
+    return sp.factor(sp.binomial(2*n, n)/4**n*coefficient/g0**n)
+
+b1 = (q+2)*(2*q+1)/(24*q*(q+1))
+b2 = (q+2)*(2*q+1)*(50*q**2+53*q+2)/(2304*q**2*(q+1)**2)
+
+assert sp.simplify(beta(0)-1) == 0
+assert sp.simplify(beta(1)-b1) == 0
+assert sp.simplify(beta(2)-b2) == 0
+assert sp.simplify(b1-b1.subs(q, 1/q)/q) == 0
+assert sp.simplify(
+    b2-b2.subs(q, 1/q)/q**2-(q-1)*b1.subs(q, 1/q)/(2*q**2)
+) == 0
+print("symbolic checks passed")
+```
+
+High-precision turning-point comparisons at $`v=0.86`$ used $`q=1/2,1,\sqrt2,2,3,4`$. The outer $`C_q`$ series, truncated after 400 terms with 55-digit working precision, agreed with numerical roots to approximately $`10^{-30}`$. The inner reciprocal series converged more slowly at higher $`q`$ because the effective argument approaches its convergence boundary.
+
+For the period integral, the substitution
+
+```math
+X=X_-+(X_+-X_-)\sin^2\theta,\qquad 0\le\theta\le\pi/2
+```
+
+regularizes both endpoint square-root singularities. Quadrature at $`v=0.997`$ agreed with the second-order period expansion of Section 9.3 to relative errors around $`10^{-9}`$ for the six values above. Such checks are evidence, not a substitute for the analytic proof or certified interval bounds.
