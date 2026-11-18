@@ -806,3 +806,192 @@ i\dot g=\tau(g^2-1)+UN\,\frac{|g|^2-1}{1+|g|^2}\,g.
 ```
 
 For $U=0$ this is a holomorphic Riccati equation induced by a linear two-component system. For $U\ne0$ it contains $\bar g$ through $|g|^2$, hence is a **real-Hamiltonian nonlinear projective flow**, not an ordinary holomorphic Riccati equation with coefficients depending only on time. This is another necessary distinction between the algebraic projective coordinate and the particular differential equation imposed on it.
+
+## 17. Three complex modes: the CP2 and SU(3) structure is kinematic, not an automatic symmetry [D,K,C]
+
+For $n$ complex canonical modes $z\in\mathbb C^n$ with standard symplectic form, the common phase $z\mapsto e^{i\phi}z$ has moment map proportional to
+
+```math
+N=z^\dagger z=\sum_{i=1}^n|z_i|^2.
+```
+
+At a **fixed positive** norm $N=N_0$, the level set is $S^{2n-1}$ and Marsden–Weinstein reduction gives
+
+```math
+N^{-1}(N_0)/U(1)\cong\mathbb{CP}^{n-1},\qquad\dim_{\mathbb R}\mathbb{CP}^{n-1}=2n-2.
+```
+
+For $n=1$ the reduction is a point, not a circle; the circle is the **unreduced** constant-norm orbit. For $n=2$ it is $\mathbb{CP}^1\cong S^2$; for $n=3$, $\mathbb{CP}^2$ with four real dimensions. On the $z_3\ne0$ chart the Fubini–Study potential is
+
+```math
+\Phi_{\rm FS}=\log(1+|g_1|^2+|g_2|^2),\qquad g_1=z_1/z_3,\qquad g_2=z_2/z_3.
+```
+
+The symplectic form acquires the positive scale determined by the fixed norm $N_0$.
+
+### 17.1 Schwinger bilinears realize a Lie algebra independently of the Hamiltonian
+
+At $n=3$, choose Gell-Mann matrices $\lambda_a$ with the standard normalization and set
+
+```math
+T_a=\frac12 z^\dagger\lambda_a z,\qquad a=1,\ldots,8.
+```
+
+The Poisson brackets close into the $\mathfrak{su}(3)$ Lie algebra, and the $T_a$ form the components of a moment map. This is a **kinematic representation** for a chosen phase space and its canonical brackets.
+
+An arbitrary nonlinear three-mode Hamiltonian need not be invariant under all SU(3) transformations. Bilinear generators that do not commute with the specified Hamiltonian are not conserved Noether charges. For many hopping-plus-interaction Hamiltonians, the only unbroken continuous symmetry is the common U(1) phase. The matrix generators remain valid as observables even when the dynamical SU(3) symmetry is broken.
+
+### 17.2 Multi-Riccati charts exist, but higher-genus integrability does not follow
+
+For a *linear* system $\dot z=M(t)z$, projective ratios satisfy the holomorphic multi-Riccati equations
+
+```math
+\dot g_i=M_{i3}+\sum_{j=1}^2M_{ij}g_j-g_i\left(M_{33}+\sum_{j=1}^2M_{3j}g_j\right),\qquad i=1,2.
+```
+
+For a nonlinear Hamiltonian with intensity-dependent couplings, the corresponding equations generally contain $\bar g_i$ and are not holomorphic Riccati equations. Even for an integrable reduced Hamiltonian on $\mathbb{CP}^2$, its separation curve might be elliptic, hyperelliptic, rational, or not globally algebraically separated in the proposed variables.
+
+**Correction [C]:** Three modes do **not** force a genus-two hyperelliptic curve or a pair of coupled binary quartics, and the kinematic labels SU(2) and SU(3) do not imply symmetry groups of every two- or three-mode system. The historical ZIP's $1:6:8$ and Hénon–Heiles integrable examples are **specified special Hamiltonians**, not general classification theorems for mode count.
+
+### 17.3 Noncompact analogues require a new real form and signature
+
+Replacing the positive Hermitian norm on $\mathbb C^n$ by an indefinite form leads to noncompact groups such as SU(1,1) or SU(2,1), with domains and quotient spaces determined by sign, level set and stability conditions. The resulting unit disk or complex-hyperbolic geometry is not simply the same $\mathbb{CP}^{n-1}$ metric with a symbol replaced. A Gudermannian real function can relate specific coordinates but cannot replace the full projective quotient and signature audit.
+
+## 18. Stochastic Noether claims: generator harmonicity, not isometry alone [D,K,C]
+
+A diffusion on a manifold is specified by a Markov generator (and its domain). In one coordinate with Itô noise,
+
+```math
+dX_t=b(X_t)dt+\sigma(X_t)dB_t,\qquad \mathcal Lf=bf'+\frac12\sigma^2f''.
+```
+
+Itô's formula says
+
+```math
+df(X_t)=(\mathcal Lf)(X_t)dt+\sigma(X_t)f'(X_t)dB_t.
+```
+
+Thus $f(X_t)$ is a **local martingale** when $\mathcal Lf=0$ and the local integrability hypotheses hold. If $\mathcal L f=-\lambda f$, then $e^{\lambda t}f(X_t)$ is a local martingale under appropriate regularity. Being associated with a metric isometry or a Killing vector does **not** by itself give $\mathcal Lf=0$.
+
+### 18.1 A chosen orthonormal frame needs its own Brownian correction
+
+Let $\{e_a\}$ be a local orthonormal frame on a Riemannian manifold. The Stratonovich SDE
+
+```math
+dX_t=\sum_a e_a(X_t)\circ dB_t^a+b(X_t)dt
+```
+
+has generator
+
+```math
+\mathcal L=\frac12\sum_a e_a(e_af)+bf.
+```
+
+The Laplace–Beltrami operator is
+
+```math
+\Delta_gf=\sum_a[e_a(e_af)-(\mathring\nabla_{e_a}e_a)f].
+```
+
+Therefore a particular choice making the generator exactly $\Delta_g/2$ is
+
+```math
+b=-\frac12\sum_a\mathring\nabla_{e_a}e_a.
+```
+
+This makes the **frame correction explicit**. A selected Weitzenbock frame may drive the noise, but its nonzero torsion components do not automatically generate the Levi-Civita Brownian motion without the correcting drift.
+
+**Euclidean polar negative control.** The flat punctured plane with metric $dr^2+r^2d\phi^2$ has local orthonormal frame $e_r=\partial_r$, $e_\phi=r^{-1}\partial_\phi$. With no drift,
+
+```math
+\frac12(e_r^2+e_\phi^2)=\frac12(\partial_r^2+r^{-2}\partial_\phi^2),
+```
+
+whereas Euclidean Brownian motion requires
+
+```math
+\frac12\Delta_{\mathbb R^2}=\frac12(\partial_r^2+r^{-1}\partial_r+r^{-2}\partial_\phi^2).
+```
+
+The missing drift is exactly $(2r)^{-1}\partial_r$. The background curvature is zero in both cases; the local frame choice and induced stochastic connection term are what distinguish the two stochastic developments.
+
+### 18.2 Why a Killing vector does not automatically become a parallel martingale
+
+If $K$ is a Killing field, its flow commutes with the metric Laplacian on scalar functions. However, the rough vector Laplacian of $K$ is generally controlled by the Ricci tensor, not zero:
+
+```math
+\nabla^*\nabla K=\mathrm{Ric}(K)
+```
+
+for the standard nonnegative rough Laplacian convention. On the round sphere, $\mathrm{Ric}(K)$ is nonzero for nonzero Killing fields, so simply parallel transporting $K(X_t)$ back along Brownian motion does not generally remove its drift. An actual vector-valued stochastic martingale construction requires the appropriate damping/Doob/Bismut transport and precise connection conventions.
+
+### 18.3 Stochastic variational principles are separate extra structures
+
+Nelson's or Yasue's stochastic Euler–Lagrange calculus can define forward and backward mean derivatives and variational actions, but the resulting equations depend on the chosen diffusion law, time reversal, density and regularity assumptions. They do not follow solely from $\widetilde\nabla=\mathring\nabla+C$ or from the ordinary deterministic Euler–Lagrange principle.
+
+Similarly, the claim that the antisymmetric difference of forward/backward stochastic accelerations **automatically equals teleparallel torsion drift** lacks a specified stochastic connection, mean-derivative definition and calculation. It is **not established** by the attachment or the current repository.
+
+## 19. Noisy double-well energy: an exact Itô counterexample to automatic conservation [D,V]
+
+Let the deterministic Duffing potential of §13 be
+
+```math
+V(q)=-\alpha q^2/2+\beta q^4/4,\qquad \alpha,\beta>0.
+```
+
+Choose the underdamped Langevin system
+
+```math
+dq_t=p_tdt,\qquad dp_t=[-V'(q_t)-\gamma p_t]dt+\sigma dB_t,\qquad\gamma,\sigma>0.
+```
+
+Its mechanical energy function is $H(q,p)=p^2/2+V(q)$. Applying Itô's formula, including quadratic variation of momentum, yields
+
+```math
+dH_t=\left(-\gamma p_t^2+\frac{\sigma^2}{2}\right)dt+\sigma p_t\,dB_t.
+```
+
+**Proof, step by step.** Use $H_q=V'(q)$, $H_p=p$, $H_{pp}=1$. The deterministic $V'(q)p$ and $-pV'(q)$ terms cancel; friction yields $-\gamma p^2dt$ and $d[p,p]_t=\sigma^2dt$ gives the additional $\sigma^2dt/2$.
+
+Therefore the deterministic energy and its associated quartic invariant coefficients are generally **not stochastic constants or martingales**. The discriminant of a quartic energy curve changes when the energy variable changes along noisy trajectories. This is exactly why a deterministic $I,J$ invariant cannot be called a stochastic martingale without a separate condition on the noise.
+
+### 19.1 The stationary Gibbs density and its parameters
+
+The Fokker–Planck generator of this hypoelliptic process is
+
+```math
+\mathcal L=p\partial_q+(-V'(q)-\gamma p)\partial_p+\frac{\sigma^2}{2}\partial_p^2.
+```
+
+On the full plane, with confining $\beta>0$, the normalizable stationary density is
+
+```math
+\rho_{\mathrm{eq}}(q,p)=Z^{-1}e^{-\vartheta H(q,p)},\qquad\vartheta=\frac{2\gamma}{\sigma^2}.
+```
+
+Substitution into the formal adjoint verifies $\mathcal L^*\rho_{\mathrm{eq}}=0$. The stationary law is set by the **noise–friction ratio** and the specified confining potential; it is not forced by the binary quartic discriminant. The process is generally not reversible in ordinary phase-space coordinates without momentum reversal.
+
+### 19.2 Kramers scaling needs the barrier and the stochastic model
+
+For the double-well potential, the saddle is $q=0$ with $V(0)=0$, and the minima are $q_\pm=\pm\sqrt{\alpha/\beta}$ with $V(q_\pm)=-\alpha^2/(4\beta)$. The barrier height and Hessian values are
+
+```math
+\Delta V=\frac{\alpha^2}{4\beta},\qquad V''(q_\pm)=2\alpha,\qquad V''(0)=-\alpha.
+```
+
+Small-noise escape rates involve $\vartheta\Delta V$ in the exponential scale and curvature/friction-dependent prefactors under appropriate metastability hypotheses. The **quartic energy discriminant zero at deterministic separatrix energy $E=0$** describes a barrier-level root collision, but it is not a complete Kramers transition-rate formula. The spectral operator of the stochastic generator is different from merely linearizing the deterministic homoclinic Duffing ODE, even though both reductions may contain solvable local potentials.
+
+## 20. A disciplined oscillator/Kepler/hydrogen correspondence [K,C]
+
+To make “the map is not the territory” concrete, recall a well-known dimension-changing regularization. The planar Levi-Civita map uses a complex square $x=z^2$ (on a covering chart), plus a **nontrivial Sundman time change**, to relate a fixed-energy planar Kepler flow to an oscillator-type regularized flow. The three-dimensional Kustaanheimo–Stiefel construction uses a quadratic spinor/Hopf-type map from four real coordinates to three, with a residual circle-fiber constraint, fixed-energy conditions and a reparametrized time.
+
+The relevant data have different types:
+
+| Object | Original structure | Data added or changed by the mathematical map |
+|---|---|---|
+| Kepler classical trajectories | phase-space Hamiltonian, inverse-radius potential, physical time | collision regularization, fixed energy, auxiliary oscillator coordinates and time |
+| Regularized four-dimensional oscillator | lifted variables and quadratic Hamiltonian | a fiber gauge constraint and inverse map required to reconstruct Kepler |
+| Hydrogen spectral operator | Hilbert-space Hamiltonian, domain, self-adjointness | oscillator-form differential expression under KS with constraints and energy-dependent parameters |
+| Original Symmetrical Master separatrix | scalar ODE in $u=\ln(x/c)$, energy quartic | may appear as a special Duffing profile or conformal/variational reduction, without assuming Kepler or hydrogen data |
+
+A shared oscillator differential expression does **not** identify the spectra, Hilbert spaces, clock, boundary conditions, forces, or physical systems. Conversely, the KS regularization is stronger than a superficial analogy precisely because its map, constraints and time conversion are explicitly stated. The same standard should be applied to all proposed correspondences in this framework.
