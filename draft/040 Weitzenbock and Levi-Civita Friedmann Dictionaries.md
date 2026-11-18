@@ -190,3 +190,227 @@ Homogeneity gives the spatial Codazzi equation $`D_i\mathsf K_{jk}-D_j\mathsf K_
 ```
 
 The quadratic form $`\mathsf K^2-\mathsf K_{ij}\mathsf K^{ij}=6H^2`$ will reappear as the torsion scalar in one explicitly specified Weitzenbock gauge. This is the first exact bridge between the hypersurface and teleparallel dictionaries.
+
+## 6. The preferred Weitzenbock connection on the same metric [D,V]
+
+For the flat-slice coframe in §4, choose the Weitzenbock gauge in which the **flat Lorentz spin connection is zero** and the orthonormal frame is parallel for a new connection $`\widetilde\nabla`$. Then
+
+```math
+\widetilde\nabla e_A=0,\qquad \widetilde R^A{}_B=0,\qquad \widetilde\nabla g_4=0.
+```
+
+With coordinate convention $`\widetilde\nabla_{\partial_\mu}\partial_\nu=\widetilde\Gamma^\lambda{}_{\mu\nu}\partial_\lambda`$,
+
+```math
+\widetilde\Gamma^\lambda{}_{\mu\nu}=e_A{}^\lambda\partial_\mu\vartheta^A{}_\nu,\qquad \widetilde\Gamma^i{}_{0j}=H\delta^i{}_j.
+```
+
+All other components vanish. The torsion tensor with explicitly fixed sign convention is
+
+```math
+\mathcal T^\lambda{}_{\mu\nu}=\widetilde\Gamma^\lambda{}_{\mu\nu}-\widetilde\Gamma^\lambda{}_{\nu\mu},\qquad\mathcal T^i{}_{0j}=H\delta^i{}_j,\qquad\mathcal T^i{}_{j0}=-H\delta^i{}_j.
+```
+
+In exterior-form language the same result is
+
+```math
+\mathcal T^0=0,\qquad\mathcal T^i=d\vartheta^i=H\,\vartheta^0\wedge\vartheta^i.
+```
+
+**Proof of flatness and metric compatibility.** The frame is everywhere orthonormal and declared parallel, so the connection preserves $`\eta_{AB}`$ and hence the metric. Its matrix coefficients vanish in that frame, so curvature vanishes. It does *not* follow that the intrinsic Levi-Civita curvature vanishes, because $`\widetilde\nabla\ne\mathring\nabla`$.
+
+The connection difference (the contorsion tensor in this convention) is
+
+```math
+\mathsf C^\lambda{}_{\mu\nu}=\widetilde\Gamma^\lambda{}_{\mu\nu}-\mathring\Gamma^\lambda{}_{\mu\nu},\qquad\mathsf C^0{}_{ij}=-a\dot a\,\delta_{ij},\qquad\mathsf C^i{}_{j0}=-H\delta^i{}_j.
+```
+
+Other independent components of $`\mathsf C`$ vanish. This gives the exact relation between covariant accelerations:
+
+```math
+\nabla^{LC}_{\dot\gamma}\dot\gamma=0\quad\Longleftrightarrow\quad\widetilde\nabla_{\dot\gamma}\dot\gamma=\mathsf C(\dot\gamma,\dot\gamma).
+```
+
+The antisymmetric torsion alone cannot be used in place of $`\mathsf C`$ because $`\mathcal T^\lambda{}_{\mu\nu}\dot x^\mu\dot x^\nu=0`$ identically. This corrects a proposed torsion-force formula in the supplied suggestion.
+
+**Gauss-Codazzi link:** In this special flat homogeneous frame,
+
+```math
+\mathcal T^i{}_{0j}=\mathsf K^i{}_j=H\delta^i{}_j.
+```
+
+It is a slice- and frame-dependent component equality, not a statement that any Weitzenbock torsion tensor equals a hypersurface shape operator.
+
+## 7. The quadratic torsion scalar is exactly six times H squared [D,V]
+
+Define the torsion-trace vector by
+
+```math
+v_\mu=\mathcal T^\nu{}_{\nu\mu}.
+```
+
+For the preferred flat-slice tetrad,
+
+```math
+v_0=-3H,\qquad v_i=0,\qquad v^0=3H.
+```
+
+Choose the following quadratic torsion scalar, with our signature $`(-,+,+,+)`$:
+
+```math
+\mathbb T=\frac14\mathcal T_{\rho\mu\nu}\mathcal T^{\rho\mu\nu}+\frac12\mathcal T_{\rho\mu\nu}\mathcal T^{\nu\mu\rho}-v_\rho v^\rho.
+```
+
+**Theorem 7.1 [D,V].** With these conventions and this tetrad,
+
+```math
+\mathbb T=6H^2=\mathsf K^2-\mathsf K_{ij}\mathsf K^{ij}=2\mathring G_{00}.
+```
+
+**Proof by the three tensor contractions.** The components $`\mathcal T^i{}_{0j}=H\delta^i{}_j`$, their antisymmetric partners and the trace above give
+
+```math
+\frac14\mathcal T_{\rho\mu\nu}\mathcal T^{\rho\mu\nu}=-\frac32H^2,\qquad\frac12\mathcal T_{\rho\mu\nu}\mathcal T^{\nu\mu\rho}=-\frac32H^2,\qquad v_\rho v^\rho=-9H^2.
+```
+
+Subtracting the last term yields $`\mathbb T=-3H^2+9H^2=6H^2`$. The hypersurface equality is exactly §5. The equality to $`2\mathring G_{00}`$ **requires spatial flatness**; for $`K\ne0`$, the extra $`3K/a^2`$ is present in $`\mathring G_{00}`$.
+
+The literature also contains the convention $`T_{\rm alt}=-6H^2`$. The sign of the torsion scalar, the sign of the Ricci scalar and the boundary identity must be transformed *together*, not copied individually from incompatible conventions. The present calculation agrees with the convention used in the HTML sources listed at the end.
+
+## 8. Levi-Civita curvature equals boundary divergence minus torsion [K,D,V]
+
+Expanding the curvature of $`\widetilde\nabla=\mathring\nabla+\mathsf C`$ and using $`\widetilde R=0`$ yields the standard teleparallel contraction identity
+
+```math
+\mathring{\mathcal R}=-\mathbb T+\mathbb B,\qquad\mathbb B=2\mathring\nabla_\mu v^\mu.
+```
+
+The boundary term is an exact divergence:
+
+```math
+\mathbb B=\frac2{\sqrt{-g_4}}\partial_\mu(\sqrt{-g_4}\,v^\mu).
+```
+
+Since $`\sqrt{-g_4}=a^3`$ per unit spatial coordinate volume and $`v^0=3H`$,
+
+```math
+\mathbb B=\frac2{a^3}\frac d{du}(3a^3H)=6(\dot H+3H^2).
+```
+
+Subtract the scalar from §7:
+
+```math
+\mathbb B-\mathbb T=6(\dot H+3H^2)-6H^2=6(\dot H+2H^2)=\mathring{\mathcal R}_0.
+```
+
+The two connections therefore give **the same metric's invariants in different differential variables**, without introducing any field equations.
+
+### 8.1 A complete minisuperspace total-derivative proof
+
+Write $`\sqrt{-g_4}=a^3`$ in the homogeneous Cartesian chart. Since $`\dot H=\ddot a/a-H^2`$,
+
+```math
+a^3\mathring{\mathcal R}=6(a^2\ddot a+a\dot a^2).
+```
+
+Now integrate the exact derivative $`d(a^2\dot a)/du`$ algebraically:
+
+```math
+6(a^2\ddot a+a\dot a^2)=6\frac d{du}(a^2\dot a)-6a\dot a^2.
+```
+
+But $`6a\dot a^2=a^3\mathbb T`$, so
+
+```math
+a^3\mathring{\mathcal R}=-a^3\mathbb T+\frac d{du}(6a^2\dot a),\qquad a^3\mathbb B=\frac d{du}(6a^2\dot a).
+```
+
+This is the exact local source of the action-level boundary equivalence of **linear** curvature and torsion Lagrangians. Equivalence of variational problems also requires appropriate matching boundary terms and boundary conditions. No nonlinear function $`f(\mathbb T)`$ can be replaced by $`f(\mathring{\mathcal R})`$ simply because their arguments differ by a divergence.
+
+### 8.2 The curved-slice obstruction
+
+The Levi-Civita identities of §5 remain valid for $`K\ne0`$, especially
+
+```math
+\mathring{\mathcal R}_K=6(\dot H+2H^2+K/a^2).
+```
+
+But one cannot simply paste the **flat** tetrad formulas $`\mathbb T=6H^2`$, $`\mathbb B=6(\dot H+3H^2)`$ into this expression. The coframe on a curved spatial slice has spatial structure coefficients and may require a nonzero flat inertial spin connection for an admissible covariant teleparallel representation. Constructing $`\mathbb T_K`$ and $`\mathbb B_K`$ consistently is [O1], not a theorem obtained from the Cartesian tetrad.
+
+## 9. General reciprocal energy in the two flat-slice invariants [D,V,H313,H318]
+
+Insert the exact general constraint and derivative from §3:
+
+```math
+H^2=\frac{r^2}{4}-\frac{Cr^2}{a^2}-\frac{\delta_G r^2}{4a^4}+\frac{\varepsilon}{4}a^4,\qquad\dot H=\frac{Cr^2}{a^2}+\frac{\delta_G r^2}{2a^4}+\frac{\varepsilon}{2}a^4.
+```
+
+The preferred flat-slice Weitzenbock scalar is
+
+```math
+\mathbb T=\frac{3r^2}{2}-\frac{6Cr^2}{a^2}-\frac{3\delta_G r^2}{2a^4}+\frac{3\varepsilon}{2}a^4.
+```
+
+Its boundary divergence is
+
+```math
+\mathbb B=\frac{9r^2}{2}-\frac{12Cr^2}{a^2}-\frac{3\delta_G r^2}{2a^4}+\frac{15\varepsilon}{2}a^4.
+```
+
+Subtracting gives an exact Levi-Civita scalar formula:
+
+```math
+\mathring{\mathcal R}_0=\mathbb B-\mathbb T=3r^2-\frac{6Cr^2}{a^2}+6\varepsilon a^4.
+```
+
+**Verification.** Insert the two expressions for $`H^2,\dot H`$ into $`6H^2`$, $`6(\dot H+3H^2)`$ and $`6(\dot H+2H^2)`$, and collect coefficients of $`a^0,a^{-2},a^{-4},a^4`$. The $`a^{-4}`$ coefficient cancels in the scalar curvature. This holds for any real regular branch on which the reciprocal $`a`$ is defined.
+
+If one instead chooses the **different**, spatially curved warped metric with $`K=Cr^2`$, its Levi-Civita scalar is
+
+```math
+\mathring{\mathcal R}_K=6(\dot H+2H^2+K/a^2)=3r^2+6\varepsilon a^4.
+```
+
+This is precisely the optional warped-curvature formula documented under H318. It does **not** imply the same formula for the flat-slice torsion scalar when $`K\ne0`$: the two selected four-metrics are different. The Gram parameter $`\delta_G`$ cancels from both Levi-Civita scalar traces, but remains present in the full Ricci tensor.
+
+## 10. The canonical separatrix: an affine invariant plane [D,V]
+
+Select the original positive branch $`C=0`$, $`\delta_G=\mu`$, $`\varepsilon=0`$. With
+
+```math
+S=\mathrm{sech}(ru),\qquad W=\tanh(ru),\qquad a=\mu^{1/4}\sqrt{\cosh(ru)},\qquad H=\frac r2 W,
+```
+
+we have
+
+```math
+\dot H=\frac{r^2}{2}S^2,\qquad \mathbb T=\frac{3r^2}{2}W^2,\qquad \mathbb B=3r^2+\frac{3r^2}{2}W^2.
+```
+
+**Theorem 10.1 [D,V].** On this explicit warped metric and preferred tetrad,
+
+```math
+\mathbb B=\mathbb T+3r^2,\qquad\mathring{\mathcal R}=3r^2.
+```
+
+**Proof.** Substitute the last formulas. The difference is $`3r^2`$ by $`S^2+W^2=1`$. This is the same circle invariant that originally characterizes the canonical separatrix. The geometry now makes the circle identity into an affine relation between torsion and boundary scalars.
+
+**Nonuniqueness warning:** $`\mathring{\mathcal R}=3r^2`$ does **not** make this metric Einstein or constant-sectional-curvature. The trace-free Ricci tensor is nonzero, as calculated in §11. No identification of the metric with a physical de Sitter solution has been made.
+
+### 10.1 Torsion forgets the expansion sign
+
+Because $`\mathbb T=6H^2`$, it determines $`|H|`$ but not the sign of $`H`$. The separatrix passes smoothly through $`H(0)=0`$ with $`\dot H(0)=r^2/2>0`$, so the torsion scalar alone loses the distinction between contracting and expanding halves.
+
+From the canonical Riccati equation,
+
+```math
+\dot H=\frac{r^2}{2}-2H^2=\frac{r^2}{2}-\frac{\mathbb T}{3}.
+```
+
+Hence
+
+```math
+\dot{\mathbb T}=2H(3r^2-2\mathbb T),\qquad(\dot{\mathbb T})^2=\frac23\mathbb T(3r^2-2\mathbb T)^2.
+```
+
+The squared scalar equation has two time orientations; neither the pointwise torsion scalar nor the curvature-boundary identity restores the lost sign without a chosen branch, clock and tetrad.
