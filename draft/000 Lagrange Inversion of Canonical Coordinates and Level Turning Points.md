@@ -423,3 +423,235 @@ C_q(c_q)=\frac{q+1}{q},\qquad X_{q,+}(1)=\frac q{q+1}.
 The denominator of $`C_q'(t)`$ in Section 5.3 vanishes at this value. Consequently the turning-point fold, the square-root singularity, the coefficient asymptotics, and the inverse-series radius are all descriptions of the same critical event.
 
 **Do not conflate radii.** This radius $`c_q`$ belongs to the series for $`C_q`$ about $`t=0`$. It says nothing immediate about the global radius of the period series about $`v=1`$.
+
+## 8. The real period integral and historical reciprocity
+
+Using $`X=4\mu U_q^{2/q}`$ in the energy integral gives
+
+```math
+(X')^2=4r^2X^{2-q}\big[X^q(1-X)-c_qv\big].
+```
+
+Indeed, $`X'/X=(2/q)U_q'/U_q`$; insert the first integral from Proposition 4.1 and simplify. A full positive oscillation goes from the lower turning point to the upper one and back. Hence its period with respect to $`u=\ln(x/c)`$ is
+
+```math
+T_q(v)=\frac1r\mathfrak p_q(v),\qquad\mathfrak p_q(v)=\int_{X_{q,-}(v)}^{X_{q,+}(v)}\frac{X^{q/2-1}\,dX}{\sqrt{X^q(1-X)-c_qv}}.
+```
+
+The singularities at the two endpoints are integrable for $`0<v<1`$.
+
+The archived H147–H148 investigations record the exact Mellin transform
+
+```math
+\int_0^1v^{s-1}\mathfrak p_q(v)\,dv=c_q^{-s}\sqrt\pi\,\frac{\Gamma(s)\Gamma(qs)}{\Gamma((q+1)s+1/2)}
+```
+
+in its appropriate convergence region, together with the real-branch reciprocity
+
+```math
+\mathfrak p_q(v)=\frac1q\mathfrak p_{1/q}(v^{1/q}).
+```
+
+These are historical source claims to preserve and re-audit before promotion. The turning-point reciprocity in Section 6 is an independent algebraic counterpart, but it does not by itself imply the period relation for arbitrary complex periods.
+
+Linearization at the positive equilibrium immediately predicts the limiting real period
+
+```math
+\mathfrak p_q(1)=\pi\sqrt{\frac2q}.
+```
+
+The following construction gives a stronger result: the complete local expansion around this limit.
+
+## 9. Lagrange inversion produces the full near-equilibrium period series
+
+### 9.1 A local analytic coordinate at the fold
+
+Put
+
+```math
+X=X_*(1+h),\qquad X_*=\frac q{q+1}.
+```
+
+There is an *exact* normalized identity
+
+```math
+\frac{P_q(X)}{c_q}=(1+h)^q(1-qh).
+```
+
+Define a function with a removable zero-over-zero singularity,
+
+```math
+g_q(h)=\frac{1-(1+h)^q(1-qh)}{h^2}.
+```
+
+Expanding the binomial series yields
+
+```math
+g_q(h)=q(q+1)\sum_{k=0}^\infty\frac1{k+2}\binom{q-1}{k}h^k,\qquad g_0:=g_q(0)=\frac{q(q+1)}2.
+```
+
+An alternative exact integral representation is
+
+```math
+g_q(h)=q(q+1)\int_0^1t(1+th)^{q-1}\,dt.
+```
+
+**Derivation:** Integrate the binomial series for $`(1+th)^{q-1}`$ term by term against $`t\,dt`$. This gives precisely the coefficients $`\binom{q-1}{k}/(k+2)`$. It also proves $`g_q(h)>0`$ for real $`h>-1`$ and $`q>0`$.
+
+Choose the analytic square root near $`h=0`$ satisfying $`\sqrt{g_q(0)}>0`$ and set
+
+```math
+z=h\sqrt{g_q(h)}.
+```
+
+Then
+
+```math
+1-\frac{P_q(X)}{c_q}=h^2g_q(h)=z^2,\qquad h=z\,g_q(h)^{-1/2}.
+```
+
+The second relation is another Lagrange inversion equation. Since its linear coefficient is nonzero, it has a unique analytic inverse $`h=h(z)`$ near zero. At the normalized level $`v=1-\delta`$, the two turning points correspond exactly to $`z=\pm\sqrt\delta`$ inside this local chart.
+
+For every analytic observable $`H`$, Theorem 2.1 gives the general inverse-series algorithm
+
+```math
+[z^n]H(h(z))=\frac1n[h^{n-1}]H'(h)g_q(h)^{-n/2}\qquad(n\ge1).
+```
+
+### 9.2 Transform the period integral
+
+The substitution $`X=X_*(1+h(z))`$ gives
+
+```math
+\frac{X^{q/2-1}\,dX}{\sqrt{P_q(X)-c_qv}}=\sqrt{q+1}\frac{(1+h(z))^{q/2-1}h'(z)}{\sqrt{\delta-z^2}}\,dz.
+```
+
+The factor $`\sqrt{q+1}`$ follows from the exact identity $`X_*^{q/2}/\sqrt{c_q}=\sqrt{q+1}`$. Thus
+
+```math
+\mathfrak p_q(1-\delta)=\sqrt{q+1}\int_{-\sqrt\delta}^{\sqrt\delta}\frac{(1+h(z))^{q/2-1}h'(z)}{\sqrt{\delta-z^2}}\,dz.
+```
+
+The moments of the fixed square-root kernel are
+
+```math
+\int_{-\sqrt\delta}^{\sqrt\delta}\frac{z^{2n}\,dz}{\sqrt{\delta-z^2}}=\pi\frac{\binom{2n}{n}}{4^n}\delta^n.
+```
+
+Odd moments vanish by symmetry.
+
+### Theorem 9.1 — An all-orders analytic period expansion
+
+For every fixed $`q>0`$, there is a positive radius $`R_q>0`$ for which the real period admits the *convergent* Taylor series
+
+```math
+\mathfrak p_q(1-\delta)=\pi\sqrt{\frac2q}\sum_{n=0}^\infty\beta_n(q)\delta^n,\qquad \beta_0(q)=1,\qquad |\delta|<R_q.
+```
+
+Its coefficients are explicitly and finitely computable:
+
+```math
+\beta_n(q)=\frac{\binom{2n}{n}}{4^n}\,g_0^{-n}\,[h^{2n}]\left\{(1+h)^{q/2-1}\left(\frac{g_q(h)}{g_0}\right)^{-n-1/2}\right\},\qquad g_0=\frac{q(q+1)}2.
+```
+
+**Proof, with all transformations shown.**
+
+1. The function $`g_q`$ is analytic and nonzero near zero. Thus $`h(z)`$ and its derivative are analytic in some disk $`|z|<\rho`$.
+2. Define $`F(z)=(1+h(z))^{q/2-1}h'(z)`$, likewise analytic for sufficiently small $`|z|`$.
+3. For $`0<\delta<\rho^2`$ expand $`F(z)=\sum_{m\ge0}f_mz^m`$ uniformly on $`[-\sqrt\delta,\sqrt\delta]`$. Integrate term by term using the moments in Section 9.2:
+
+```math
+\mathfrak p_q(1-\delta)=\pi\sqrt{q+1}\sum_{n=0}^\infty f_{2n}\frac{\binom{2n}{n}}{4^n}\delta^n.
+```
+
+4. Set $`H(h)=(1+h)^{q/2}`$. Then $`\frac{d}{dz}H(h(z))=(q/2)F(z)`$.
+5. By the Lagrange–Bürmann formula, for every $`n\ge0`$,
+
+```math
+[z^{2n+1}]H(h(z))=\frac{q/2}{2n+1}[h^{2n}](1+h)^{q/2-1}g_q(h)^{-(2n+1)/2}.
+```
+
+6. Differentiate coefficientwise in $`z`$, multiply by $`2/q`$, and conclude
+
+```math
+f_{2n}=[h^{2n}](1+h)^{q/2-1}g_q(h)^{-n-1/2}.
+```
+
+7. Substitute this coefficient into the period series. Since $`\sqrt{q+1}/\sqrt{g_0}=\sqrt{2/q}`$, the result is exactly the displayed formula for $`\beta_n(q)`$.
+8. The analytic expansion of $`F(z)`$ and the even-moment integration prove a positive local radius of convergence in $`\delta`$, rather than merely a formal asymptotic expansion.
+
+**Algorithmic consequence:** To compute $`\beta_n(q)`$, it suffices to know the Taylor coefficients of $`g_q(h)`$ through $`h^{2n}`$. In particular, the method never requires the global nonlinear solution $`U_q`$.
+
+### 9.3 Explicit first and second coefficients
+
+Performing the coefficient extraction at $`n=1`$ yields
+
+```math
+\beta_1(q)=\frac{(q+2)(2q+1)}{24q(q+1)}.
+```
+
+At $`n=2`$, finite algebra gives
+
+```math
+\beta_2(q)=\frac{(q+2)(2q+1)(50q^2+53q+2)}{2304q^2(q+1)^2}.
+```
+
+Consequently,
+
+```math
+\mathfrak p_q(v)=\pi\sqrt{\frac2q}\left(1+\frac{(q+2)(2q+1)}{24q(q+1)}(1-v)+\frac{(q+2)(2q+1)(50q^2+53q+2)}{2304q^2(q+1)^2}(1-v)^2+O((1-v)^3)\right).
+```
+
+The preceding conversational investigation had derived only the $`\beta_1`$ formula. The all-orders extraction and explicit $`\beta_2`$ are the principal extensions in this revised draft. These calculations are *not* claimed to be historically new without literature comparison.
+
+### 9.4 Independent checks from known periods
+
+The archived H147 formulas give
+
+```math
+\mathfrak p_1(v)=\pi\sqrt2\,{}_2F_1(1/4,3/4;1;1-v),\qquad \mathfrak p_2(v)=\pi\,{}_2F_1(1/6,5/6;1;1-v).
+```
+
+Their standard Gauss Taylor coefficients imply
+
+```math
+\beta_1(1)=\frac3{16},\quad \beta_2(1)=\frac{105}{1024};\qquad \beta_1(2)=\frac5{36},\quad\beta_2(2)=\frac{385}{5184}.
+```
+
+All four values agree *exactly* with Theorem 9.1.
+
+The archived real-period reciprocity gives a second structural test. Since
+
+```math
+1-v^{1/q}=\frac{\delta}{q}+\frac{q-1}{2q^2}\delta^2+O(\delta^3),\qquad \delta=1-v,
+```
+
+the normalized coefficients must satisfy
+
+```math
+\beta_1(q)=\frac1q\beta_1(1/q),\qquad \beta_2(q)=\frac{\beta_2(1/q)}{q^2}+\frac{q-1}{2q^2}\beta_1(1/q).
+```
+
+Substitution and symbolic simplification of the rational expressions for $`\beta_1`$ and $`\beta_2`$ gives zero for both differences.
+
+### 9.5 Independent nonlinear-oscillator derivation of the first coefficient
+
+Set $`s=ru`$ and perturb the positive equilibrium $`U_*=(q/(4\mu(q+1)))^{q/2}`$ by $`U_q=U_*(1+h)`$. Expansion of the ODE gives
+
+```math
+\ddot h+2qh+(q+2)h^2+\frac{(q+2)(2-q)}{3q}h^3+O(h^4)=0.
+```
+
+For $`\ddot h+\omega_0^2h+ah^2+bh^3=0`$, the Poincaré–Lindstedt calculation gives the leading harmonic-amplitude period correction
+
+```math
+\frac{T_s}{2\pi/\omega_0}=1+\left(\frac{5a^2}{12\omega_0^4}-\frac{3b}{8\omega_0^2}\right)A^2+O(A^3).
+```
+
+Here $`\omega_0^2=2q`$, $`a=q+2`$ and $`b=(q+2)(2-q)/(3q)`$. From the turning-point fold of Section 7,
+
+```math
+A^2=\frac{q}{2(q+1)}(1-v)+O((1-v)^{3/2}).
+```
+
+The resulting first correction equals $`\beta_1(q)`$ above. The more exact *analytic normal-form proof* in Theorem 9.1 is needed to establish the integer-power series and all its higher coefficients.
