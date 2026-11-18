@@ -140,6 +140,18 @@ On $L^2(\mathbb R,du)$, $H_{\rm lin}=-\partial_u^2+r^2$ is essentially self-adjo
 
 purely absolutely continuous. In the original $x$ chart, the endpoints $x\downarrow0$ and $x\uparrow\infty$ correspond to $u\to-\infty,+\infty$ and are both **limit-point** for this expression. There is no separate boundary condition at the symmetry point $x=c$ when the full-line operator is retained without an inserted interface.
 
+### 3.3 The localized nonlinear field is not a linear carrier eigenfunction
+
+The transformed original nonlinear function is $\psi_{\rm loc}=x f_\mu=S/(2\sqrt\mu)$. It is square-integrable in $du$ and smooth, but substituting it into the **linear** operator gives
+
+```math
+H_{\rm lin}\psi_{\rm loc}=(-\partial_u^2+r^2)\frac{S}{2\sqrt\mu}=\frac{r^2}{\sqrt\mu}S^3\ne0.
+```
+
+This term is canceled only by the *nonlinear* cubic part of the Master equation. By contrast, the **half-rate** complex Pinney carrier $\Phi$ satisfies $H_{\frac12}\Phi=0$ as a formal differential equation but is not in the full-line $L^2$ domain because it grows at the ends.
+
+Therefore neither the localized nonlinear solution nor the complex Pinney carrier furnishes a spurious zero-energy eigenfunction of the positive self-adjoint constant-potential operators. Their roles are respectively a nonlinear localized profile and a non-$L^2$ linear fundamental solution.
+
 ## 4. The symmetry point x=c is interior, not a singular endpoint [D,V,H169]
 
 The exact interval dictionary is
