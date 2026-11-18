@@ -753,3 +753,193 @@ A separate ideal inviscid surface-tension model of **nonspherical** shape pertur
 This is a **specific model** and angular decomposition, not the same eigenproblem as the $\ell=0$ radial Keller–Miksis oscillator. Bubble interface conditions, gas density, compressibility, viscosity and flow coupling can change the formula.
 
 **Conclusion for the bubble branch:** the nonlinear radius dynamics and its linearized perturbation/wave-matching operators can be studied simultaneously, but no universal transformation KM $\leftrightarrow$ EP $\leftrightarrow$ self-adjoint SL exists without the explicitly stated pressure law, limiting regime and boundary conditions.
+
+## 25. A new exact weighted PDM–GPE–Pinney–Duffing amplitude/phase theorem [D,V]
+
+There is a single *mathematical* equation that unifies the polar-amplitude mechanisms behind several of the named theories—without identifying their physical interpretations.
+
+Let $p(z)>0$ be a smooth weight in an independent spatial coordinate $z$; let $V(z)$ be real, $g\in\mathbb R$, and let $E$ be a real stationary parameter. Consider the **specified nonlinear stationary Sturm–Liouville-type equation**
+
+```math
+-(p(z)\Psi_z)_z+[V(z)+g|\Psi|^2]\Psi=E\Psi.
+```
+
+The linear case is $g=0$. BDD PDM corresponds to $p(z)=\hbar^2/[2m(z)]$; smooth von Roos ordering changes $V$ to $V+V_{\rm ord}$. Ordinary stationary cubic GPE has constant $p=1/2$ in its dimensionless normalization.
+
+Assume a nonzero complex solution on an interval, and write
+
+```math
+\Psi(z)=a(z)e^{i\theta(z)},\qquad a(z)>0.
+```
+
+**Theorem 25.1 [D,V] (weighted Duffing–Pinney polar decomposition).** Its real and imaginary equations are equivalent to
+
+```math
+\frac{d}{dz}[p a^2\theta_z]=0,\qquad \mathcal J=p a^2\theta_z=\mathrm{constant},
+```
+
+and
+
+```math
+(p a_z)_z=(V-E)a+g a^3+\frac{\mathcal J^2}{p a^3}.
+```
+
+**Proof, step by step.**
+
+1. Differentiate $\Psi=a e^{i\theta}$ once and twice. The imaginary part of $-(p\Psi_z)_z+[V+g|\Psi|^2-E]\Psi=0$ gives $(p a^2\theta_z)_z=0$.
+2. Thus $\theta_z=\mathcal J/(p a^2)$. The real part gives
+
+```math
+(p a_z)_z=p a\theta_z^2+(V-E)a+g a^3.
+```
+
+3. Replace $\theta_z^2$ with $\mathcal J^2/(p^2a^4)$ to obtain the displayed weighted inverse-cubic term. Reversing the steps reconstructs the original complex solution up to a constant phase.
+
+The charge $\mathcal J$ is a Wronskian/current invariant of the **chosen stationary complex equation**. It is not automatically the Pinney Gram determinant, a Noether charge of an arbitrary time-dependent GPE, or a Chern number.
+
+### 25.1 A third coordinate: the phase-flattening variable is not the Liouville spectral coordinate
+
+Define
+
+```math
+\xi=\int^z\frac{ds}{p(s)}.
+```
+
+Since $p a_z=a_\xi$ and $(p a_z)_z=a_{\xi\xi}/p$, the amplitude equation is
+
+```math
+a_{\xi\xi}=p(z(\xi))[V(z(\xi))-E]a+p(z(\xi))g a^3+\mathcal J^2a^{-3}.
+```
+
+When $g=0$ this is exactly a **variable-coefficient Ermakov–Pinney equation**, with constant inverse-cubic coefficient $\mathcal J^2$. When $\mathcal J=0$ it is a stationary nonlinear cubic/weighted Duffing equation. If both are nonzero it contains both nonlinearities.
+
+Note the two different coordinate differentials for BDD with $w=1$:
+
+```math
+d\xi=\frac{dz}{p(z)},\qquad d\tau=\frac{dz}{\sqrt{p(z)}}.
+```
+
+The first flattens the **phase-current/amplitude equation**; the second is the **self-adjoint Sturm–Liouville Liouville coordinate** (§17). They coincide only in special cases or after an explicit further map. This is an important clock distinction for all proposed PDM–Pinney correspondences.
+
+### 25.2 Constant-coefficient stationary GPE: an elliptic cubic emerges
+
+For dimensionless $p=1/2$, constant $V$ and $g$, define $j=\theta_z$ times $a^2$, so $j=a^2\theta_z=2\mathcal J$. Then
+
+```math
+a_{zz}=2(V-E)a+2g a^3+j^2a^{-3}.
+```
+
+Multiply by $a_z$ and integrate to obtain the exact first integral, with constant $C_E$,
+
+```math
+a_z^2=2(V-E)a^2+g a^4-j^2a^{-2}+C_E.
+```
+
+Put $J=a^2$. It follows that
+
+```math
+J_z^2=4gJ^3+8(V-E)J^2+4C_EJ-4j^2.
+```
+
+This is generically a smooth **elliptic cubic** when $g\ne0$ and its discriminant is nonzero. If $g=0$ the polynomial degree drops to at most two, the Pinney/conic case. The collision of roots and real positivity of $J$ must be studied separately; not every value of the cubic parameters gives a physical normalizable GPE state.
+
+**Exact canonical specialization.** Choose the *independently specified spatial chart* $z=u=\ln(x/c)$, zero current $j=0$, and parameters
+
+```math
+V-E=r^2/2,\qquad g=-\mu r^2,\qquad C_E=0.
+```
+
+The amplitude equation becomes
+
+```math
+a_{uu}=r^2a-2\mu r^2a^3,
+```
+
+whose positive localized solution is $a=\mu^{-1/2}\mathrm{sech}(ru)$. This is a literal equality of **chosen stationary differential expressions**, not an assertion that the original Symmetrical Function represents a condensate. A nonzero stationary current adds an inverse-cubic Pinney barrier and destroys the exact original zero-current Duffing equation.
+
+**This is the main application-level bridge:** linear SL corresponds to $g=0$; a fixed flux gives Pinney; a cubic stationary nonlinearity gives Duffing; both give a combined Duffing–Pinney equation. The entire statement is derived from one complex polar decomposition with all coefficients and currents explicit.
+
+## 26. Canonical resolution r=2: the entire operator network at once [D,V,H]
+
+Return explicitly to the original $u=\ln(x/c)$, retain $\mu,c>0$, and choose the *resolution* $r=2$ (independent of physical mass or acoustic parameters). The elementary profiles become rational:
+
+```math
+S_2=\mathrm{sech}(2u)=\frac{2c^2x^2}{x^4+c^4},\qquad W_2=\tanh(2u)=\frac{x^4-c^4}{x^4+c^4}.
+```
+
+The double-angle recursions are
+
+```math
+W_2=\frac{2W_1}{1+W_1^2},\qquad S_2=\frac{S_1^2}{2-S_1^2},\qquad W_2^2+S_2^2=1.
+```
+
+The canonical field, squared envelope and Pinney amplitude are
+
+```math
+f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)},\qquad J_2=\sqrt\mu\cosh(2u)=\frac{\sqrt\mu(x^4+c^4)}{2c^2x^2},\qquad a_2=\sqrt{J_2}.
+```
+
+The **nonlinear envelope equation**, **linear symmetric-square equation**, and **fixed determinant constraint** simultaneously become
+
+```math
+a_2''=a_2+\mu a_2^{-3},\qquad J_2'''-4J_2'=0,\qquad 2J_2J_2''-(J_2')^2-4J_2^2=4\mu.
+```
+
+Choose the complex linear half-rate solution and its logarithmic derivative:
+
+```math
+\Phi_2=\mu^{1/4}(\cosh u+i\sinh u),\qquad \Phi_2''=\Phi_2,\qquad \Phi_2'/\Phi_2=W_2+iS_2.
+```
+
+Its modulus and phase are
+
+```math
+|\Phi_2|=a_2,\qquad \arg\Phi_2=\frac12\mathrm{gd}(2u),\qquad \theta_2'=S_2.
+```
+
+The two different self-adjoint **linearized** operators are
+
+```math
+\mathcal H_{\rm EP,2}=-\partial_u^2+1-3S_2^2,\qquad \mathcal H_{\rm Master,2}=-\partial_u^2+4-24S_2^2.
+```
+
+On the full real line the first has zero ground eigenvalue and essential spectrum starting at $1$, while the second has eigenvalues $-12$ and $0$ with continuum threshold $4$. These statements depend on the full-line $L^2(du)$ realizations and must not be transferred blindly to truncated $x$-domains.
+
+### 26.1 The constant-potential Green function is *not* the positive canonical envelope
+
+For the linear carrier Schrödinger operator
+
+```math
+L_0=-\partial_u^2+\frac{r^2}{4}
+```
+
+on $L^2(\mathbb R)$, the resolvent at zero energy exists for $r>0$ and has kernel
+
+```math
+G_0(u,v)=\frac1r\exp\left[-\frac r2|u-v|\right],\qquad G_0(u,u)=\frac1r.
+```
+
+The positive diagonal $R_0=1/r$ is constant and its square root solves the **negative-strength** Pinney equation
+
+```math
+a_G''=\frac{r^2}{4}a_G-\frac1{4a_G^3},\qquad a_G=r^{-1/2}.
+```
+
+At $r=2$, $a_G=1/\sqrt2$ is constant, while the framework's positive-determinant envelope $a_2=\mu^{1/4}\sqrt{\cosh(2u)}$ is nonconstant. Both are attached to the **same linear carrier**, but have **opposite determinant levels** in the symmetric-square invariant. This is a fully explicit counterexample to identifying the Green-diagonal and canonical Pinney amplitudes as the same function.
+
+### 26.2 Resolution as a variable in other application equations
+
+To obtain a matching hyperbolic PDM potential in the logarithmic coordinate, one must **choose** an external potential with argument $r\ln(z/c)$ and keep the PDM coordinate scale $\xi=(c\sqrt{2m_0}/\hbar)\ln(z/c)$ visible. At $r=2$, its Pöschl–Teller well becomes a rational function of $z^4+c^4$; its spectral energies additionally depend on $m_0,\hbar$ and the potential prefactor.
+
+Likewise an exact GPE lens scale $b(t)$ can be chosen to share the Pinney equation $b''=b+\mu b^{-3}$ only when the trap coefficient and reference scale parameter are set to $\Omega(t)^2=-1$, $\omega_0^2=\mu$ and the clock is identified. This is a mathematically allowed *inverted* quadratic trap parameter but not a claim of a stable conventional confining condensate. Keller–Miksis would require the explicitly engineered pressure of §22 with the corresponding $\Omega^2$ sign and a separate physical time $t$.
+
+## 27. Distinct nonlinear and linear “eigenvalue” problems [D,K,C]
+
+There are at least four mathematically legitimate but distinct meanings of an eigenvalue-like parameter in this web:
+
+1. **Linear Sturm–Liouville:** find $\phi\ne0$ in a fixed linear domain such that $L\phi=\lambda\phi$, with spectral theorem when $L$ is self-adjoint.
+2. **Nonlinear stationary GPE:** find $(\Phi,\nu)$ with a fixed norm (or another constraint), satisfying $(-\frac12\Delta+V+g|\Phi|^2)\Phi=\nu\Phi$; $\nu$ is a Lagrange multiplier/nonlinear spectral parameter, not a linear eigenvalue with a vector-space eigenspace.
+3. **Pinney boundary-value shooting:** for fixed $k$ and specified positive boundary data, ask for which $\lambda$ the nonlinear equation $a''=[V(z)-\lambda]a+k/a^3$ is solvable. This is a valid nonlinear parameter spectrum but has no ordinary linear superposition or general linear orthogonality theorem.
+4. **Stability spectrum:** fix one nonlinear solution and study the self-adjoint (or coupled non-self-adjoint) Hessian/BdG operator on its chosen domain; its eigenvalues describe linear perturbations, not the original nonlinear solution set.
+
+A Rayleigh quotient for the *linearized* Hessian has the usual quadratic-form interpretation. A nonlinear constrained energy has its own minimax/critical-point theory, not the unmodified Sturm–Liouville Rayleigh quotient. Confusing these four notions is the main mathematical source of the claim that nonlinear Ermakov–Pinney “cannot have an eigenvalue problem at all”.
