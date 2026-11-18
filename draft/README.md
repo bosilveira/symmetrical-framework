@@ -18,6 +18,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [030 Connections and Differential-Geometric Operators of the Canonical Surface](030%20Connections%20and%20Differential-Geometric%20Operators%20of%20the%20Canonical%20Surface.md) — exact tangent Levi-Civita/Weitzenböck and ambient Maurer-Cartan distinctions; curvature reconstructed from frame torsion; Riccati–Möbius–Schwarzian and Kähler/Hodge identities; geodesic Routhian versus surface area; Jacobi, Riemann periods, and qualified stochastic extensions. **Provisional; not yet consolidated.**
 
+- [040 Weitzenbock and Levi-Civita Friedmann Dictionaries](040%20Weitzenbock%20and%20Levi-Civita%20Friedmann%20Dictionaries.md) — reciprocal Ermakov-Pinney/Friedmann constraints; explicit flat-slice Levi-Civita and Weitzenbock connections; torsion, boundary divergence, Gauss-Codazzi, constant scalar curvature, formal phantom bookkeeping, Milne/Rindler counterexamples, action-dependent f(T,B) limits, and all-level separatrix collapse. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
