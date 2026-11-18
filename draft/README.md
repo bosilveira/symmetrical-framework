@@ -24,6 +24,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [060 Geometric Interfaces for Critical, Spectral, and Stochastic Equations](060%20Geometric%20Interfaces%20for%20Critical%20Spectral%20and%20Stochastic%20Equations.md) — Gram/Ermakov–Pinney determinant versus quartic I,J; explicit Levi-Civita–Weitzenbock conformal/Yamabe identities, Aubin–Talenti and Hardy–Sobolev reductions; Sturm–Liouville/Pöschl–Teller/Lamé; radial complex Monge–Ampere and Eguchi–Hanson; BPST gauge charge and real Monge–Ampere transport; Itô/Fokker–Planck, Beta/Jacobi, Ornstein–Uhlenbeck limit and an exact Yamabe–diffusion operator shift. **Provisional; not yet consolidated.**
 
+- [070 Symmetries, Noether, Cartan, Projective Reductions, and Algebraic Degenerations](070%20Symmetries%20Noether%20Cartan%20Projective%20Reductions%20and%20Algebraic%20Degenerations.md) — explicit Noether/Killing and Sturm–Liouville Wronskian distinctions; catenoid flux and critical Pohozaev; Palatini projective ambiguity and Cartan-versus-Weitzenbock flatness; sl(2) orbit versus binary-quartic discriminant; corrected Duffing/Master invariants; marked Weierstrass and QRT curves; exact SU(2) two-mode CP1 quartic, limits of SU(3); stochastic frame corrections and Langevin invariant evolution; Kepler/oscillator map-versus-territory safeguards. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
