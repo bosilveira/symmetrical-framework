@@ -669,3 +669,237 @@ The radial first integral then gives
 Because the radial map is monotone and the potential is convex, it is the quadratic-cost Brenier transport in this finite-second-moment setting [K]. The **same cubic charge CDF** now appears as a radial Monge–Ampere transport mass coordinate, not a new gauge curvature.
 
 For the $D$-dimensional critical stereographic probability density proportional to $c^D/(\rho^2+c^2)^D$, the variable $P=\rho^2/(\rho^2+c^2)$ has the Beta$(D/2,D/2)$ distribution; the uniform-$D$-ball target radius is $I_P(D/2,D/2)^{1/D}$. This is a family of exact mass-transport constructions, not an $I,J$-invariant elliptic classification.
+
+## 15. Reversible Itô diffusion is a chosen outer-layer generator [D,V,H375]
+
+Fix $\alpha>0$ and retain the canonical $u=\ln(x/c)$, $r>0$ and $W(u)=\tanh(ru)$. Define the normalized probability density
+
+```math
+\pi_{\alpha,r}(u)=\frac{r\,\Gamma((\alpha+1)/2)}{\sqrt\pi\,\Gamma(\alpha/2)}\mathrm{sech}^{\alpha}(ru).
+```
+
+The normalization follows from the Euler Beta integral. Let the confinement function be
+
+```math
+V_\alpha(u)=\alpha\ln\cosh(ru),\qquad V_\alpha'=\alpha rW,\qquad V_\alpha''=\alpha r^2S^2.
+```
+
+**Theorem 15.1 [D,V] (diffusion and reversible divergence form).** The generator
+
+```math
+\mathcal G_{\alpha,r}=\partial_u^2-\alpha rW\partial_u=\pi_{\alpha,r}^{-1}\partial_u(\pi_{\alpha,r}\partial_u)
+```
+
+corresponds to the Itô stochastic differential equation in **stochastic time $t$**, distinct from the spatial logarithmic coordinate $u$:
+
+```math
+dU_t=-\alpha r\tanh(rU_t)\,dt+\sqrt2\,dB_t.
+```
+
+The formal Fokker–Planck adjoint is
+
+```math
+\partial_t p=\partial_u^2p+\partial_u(\alpha rW p),
+```
+
+and $\pi_{\alpha,r}$ is its zero-current stationary density.
+
+**Proof, step by step.** Since $(\ln\pi_{\alpha,r})'=-\alpha rW$, expand the divergence-form generator. An Itô diffusion with volatility $\sqrt2$ has generator $\tfrac12(2)\partial_u^2+b(u)\partial_u$. Set $b=-\alpha rW$. Integrating by parts under appropriate decay/no-flux boundary conditions gives
+
+```math
+\int f\mathcal G_{\alpha,r}g\,\pi_{\alpha,r}\,du=-\int f'g'\,\pi_{\alpha,r}\,du.
+```
+
+Thus the generator is formally symmetric, nonpositive and reversible with respect to its specified density. Statements about a unique global Markov semigroup, stationary uniqueness or spectral self-adjointness require their respective domain hypotheses.
+
+### 15.1 What Itô's Hessian actually does
+
+For a smooth coordinate function $F$, Itô's formula is
+
+```math
+dF(U_t)=[F''(U_t)-\alpha rW(U_t)F'(U_t)]\,dt+\sqrt2 F'(U_t)\,dB_t.
+```
+
+The second derivative is the quadratic-variation correction. A Levi-Civita connection can organize the Hessian covariantly on a manifold; a chosen Weitzenbock frame can also describe stochastic developments but requires the correct drift correction. **Neither connection alone specifies the noise or its drift.**
+
+For example the original multiplicative coordinate $X_t=ce^{U_t}$ obeys
+
+```math
+dX_t=X_t[1-\alpha r\tanh(r\ln(X_t/c))]\,dt+\sqrt2 X_t\,dB_t.
+```
+
+The extra $+X_tdt$ comes exactly from Itô's second derivative, not from a curvature invariant. The invariant measure in the $x$ coordinate has density proportional to $\mathrm{sech}^\alpha(r\ln(x/c))\,dx/x$.
+
+## 16. The exact ground-state transformation: diffusion to Pöschl–Teller [D,V,K,H375]
+
+The unitary map from the diffusion Hilbert space $L^2(\pi_{\alpha,r}\,du)$ to ordinary $L^2(du)$ is multiplication by $\psi_0=\sqrt{\pi_{\alpha,r}}$, up to a harmless normalization. Define
+
+```math
+\mathcal H_{\alpha,r}=-\psi_0\mathcal G_{\alpha,r}\psi_0^{-1}.
+```
+
+**Theorem 16.1 [D,V] (Pöschl–Teller via a reversible ground state).**
+
+```math
+\mathcal H_{\alpha,r}=-\partial_u^2+\frac14(V_\alpha')^2-\frac12V_\alpha''.
+```
+
+```math
+\mathcal H_{\alpha,r}=-\partial_u^2+\frac{\alpha^2r^2}{4}-\frac{\alpha(\alpha+2)r^2}{4}S^2.
+```
+
+It factorizes as
+
+```math
+\mathcal H_{\alpha,r}=A_n^\dagger A_n,\qquad A_n=\partial_u+nrW,\qquad A_n^\dagger=-\partial_u+nrW,\qquad n=\alpha/2.
+```
+
+The positive ground state is $\psi_0\propto S^n$, with eigenvalue zero.
+
+**Proof, step by step.**
+
+1. Write $\pi=e^{-V_\alpha}/Z$. Then $\psi_0=e^{-V_\alpha/2}/\sqrt Z$.
+2. Substitute $f=e^{V_\alpha/2}\psi$ into $\mathcal G_{\alpha,r}f=f''-V_\alpha'f'$, and simplify:
+
+```math
+-\psi_0\mathcal G_{\alpha,r}(\psi_0^{-1}\psi)=-\psi''+\left[\frac{(V_\alpha')^2}{4}-\frac{V_\alpha''}{2}\right]\psi.
+```
+
+3. Since $W^2=1-S^2$, replace $(V_\alpha')^2/4=\alpha^2r^2(1-S^2)/4$ and $V_\alpha''/2=\alpha r^2S^2/2$.
+4. Multiplying out $A_n^\dagger A_n$ gives $-\partial_u^2+n^2r^2-n(n+1)r^2S^2$.
+
+The bound-state formula is the classical hyperbolic Pöschl–Teller spectrum: for integers $0\le j<n$, the discrete eigenvalues of $\mathcal H_{\alpha,r}$ are
+
+```math
+\lambda_j=r^2j(\alpha-j),\qquad \sigma_{\rm ess}(\mathcal H_{\alpha,r})=[\alpha^2r^2/4,\infty).
+```
+
+The endpoint $j=n$ is normally a threshold resonance rather than an $L^2$ bound state when $n$ is an integer. In particular for $\alpha=4$ the eigenvalues are $0$ and $3r^2$; essential spectrum begins at $4r^2$. This radial expression is not the full multidimensional gauge-theory fluctuation spectrum of BPST.
+
+## 17. A direct Yamabe–diffusion operator identity [D,V]
+
+This is a particularly strong interface because it compares the **same differential operator coefficients** after making all geometry and probability choices explicit.
+
+Let $q=(D-2)/2>0$ be the critical cylinder exponent from §8, and choose the **different** diffusion-shape parameter
+
+```math
+\alpha=2(q+1).
+```
+
+Then the ground-state Hamiltonian of §16 reads
+
+```math
+\mathcal H_{2(q+1),r}=-\partial_u^2+(q+1)^2r^2-(q+1)(q+2)r^2S^2.
+```
+
+Compare it with the angular sector of the critical Yamabe/Hardy Hessian from §8:
+
+```math
+\mathcal L_{q,r}^{(\ell)}=-\partial_u^2+\ell(\ell+2q)+q^2r^2-(q+1)(q+2)r^2S^2.
+```
+
+**Theorem 17.1 [D,V] (affine conjugacy of critical Hessian and reversible diffusion).**
+
+```math
+\mathcal L_{q,r}^{(\ell)}=\mathcal H_{2(q+1),r}+\ell(\ell+2q)-(2q+1)r^2.
+```
+
+**Proof.** Subtract the displayed operators. Their differential term and hyperbolic well coincide identically. The remaining scalar offset is $q^2-(q+1)^2=-(2q+1)$ multiplied by $r^2$, plus the angular eigenvalue $\ell(\ell+2q)$.
+
+This exact differential-expression identity links three branches at once: critical Yamabe linearization, reversible diffusion, and the Pöschl–Teller Schrödinger operator. It does **not** equate their physical meanings, boundary conditions or natural Hilbert-space domains. It is independent of the nonlinear energy quartic's smooth elliptic $j$.
+
+### 17.1 The dimension-four BPST/Bubble meeting
+
+At $q=1$ (hence $D=4$), the diffusion parameter is $\alpha=4$, precisely the density $\pi_{4,r}\propto S^4$ appearing in the normalized BPST charge along the logarithmic radial line. The radial Hessian identity becomes
+
+```math
+\mathcal L_{1,r}^{(0)}=-\partial_u^2+r^2-6r^2S^2=\mathcal H_{4,r}-3r^2.
+```
+
+Thus the same hyperbolic well arises from the critical Yamabe scalar Hessian and the BPST charge **diffusion ground-state transform**, with a fixed energy shift. The archived radial BPST gauge Hessian is $\mathcal H_{4,1}=-\partial_u^2+4-6S^2$ in its physical $r=1$ clock.
+
+At $q=2$ (dimension $D=6$), choosing $\alpha=6$ gives
+
+```math
+\mathcal L_{2,r}^{(0)}=-\partial_u^2+4r^2-12r^2S^2=\mathcal H_{6,r}-5r^2.
+```
+
+The level-five **scalar** separatrix Hessian has the same order-three well and is algebraically related by this shift. It is not the same as the level-five **radial Yang–Mills gauge** Hessian, which uses the order-two well. Distinguishing the two variations is essential.
+
+## 18. Beta coordinates, Jacobi diffusion and the Ornstein–Uhlenbeck contraction [D,V,H375]
+
+Let $w=\tanh(ru)$ and $P=(1+w)/2$. The exact derivatives are
+
+```math
+w_u=r(1-w^2),\qquad P_u=2rP(1-P),\qquad w_{uu}=-2r^2w(1-w^2).
+```
+
+### 18.1 Pushforward of the reversible measure
+
+The normalized probability measure $\pi_{\alpha,r}(u)\,du$ has, in the variable $P$, a Beta distribution:
+
+```math
+P\sim\mathrm{Beta}(\alpha/2,\alpha/2),\qquad dP=2rP(1-P)\,du.
+```
+
+**Proof.** Since $S^2=1-w^2=4P(1-P)$, the transformed density is proportional to $[P(1-P)]^{\alpha/2-1}\,dP$.
+
+In particular $\alpha=4$ gives Beta$(2,2)$ with cumulative distribution
+
+```math
+\mathrm{Pr}(P'\le P)=3P^2-2P^3,
+```
+
+exactly the BPST charge polynomial. The same polynomial thus occurs as a gauge charge, a probability CDF and a radial real Monge–Ampere transport mass coordinate, **after each of those independent constructions has been supplied**.
+
+### 18.2 The transformed Itô generator
+
+Applying the generator to functions of $w$ gives
+
+```math
+\mathcal G_{\alpha,r}^{(w)}=r^2(1-w^2)^2\partial_w^2-(\alpha+2)r^2w(1-w^2)\partial_w.
+```
+
+It is the generator of the Itô SDE
+
+```math
+dw_t=-(\alpha+2)r^2w_t(1-w_t^2)\,dt+\sqrt2 r(1-w_t^2)\,dB_t.
+```
+
+The state-dependent time change dividing the generator by $(1-w^2)$ gives
+
+```math
+\widehat{\mathcal G}_{\alpha,r}=r^2[(1-w^2)\partial_w^2-(\alpha+2)w\partial_w].
+```
+
+For integer $\alpha+2$, the differential expression is the polar-coordinate Jacobi/Gegenbauer generator associated with an isotropic sphere of that dimension. For noninteger $\alpha$ it remains a well-defined Jacobi diffusion expression, without literally being Brownian motion on a sphere of noninteger dimension. Its stationary density after this **new clock** is proportional to $(1-w^2)^{\alpha/2}$ rather than the old $(1-w^2)^{\alpha/2-1}$.
+
+### 18.3 Exact Ornstein–Uhlenbeck scaling limit
+
+Take the controlled simultaneous limit
+
+```math
+\alpha\to\infty,\qquad r\to0,\qquad \alpha r^2\to\kappa>0.
+```
+
+For fixed $u$,
+
+```math
+V_\alpha(u)=\alpha\ln\cosh(ru)\to\frac{\kappa u^2}{2},\qquad \alpha r\tanh(ru)\to\kappa u.
+```
+
+Consequently the diffusion generator and its invariant density converge at the level of local coefficients and normalized measures to
+
+```math
+\mathcal G_{\rm OU}=\partial_u^2-\kappa u\partial_u,\qquad \pi_{\rm OU}(u)=\sqrt{\frac{\kappa}{2\pi}}e^{-\kappa u^2/2}.
+```
+
+The conjugate Schrödinger potential converges to the harmonic oscillator:
+
+```math
+\mathcal H_{\rm OU}=-\partial_u^2+\frac{\kappa^2u^2}{4}-\frac{\kappa}{2}.
+```
+
+The fixed-index discrete eigenvalues satisfy $r^2j(\alpha-j)\to\kappa j$, while the Pöschl–Teller continuum threshold $\alpha^2r^2/4$ diverges.
+
+**Scope:** Strong semigroup or norm-resolvent convergence is not implied by pointwise coefficient limits without a separate operator-domain argument. This OU limit changes $\alpha$ and $r$ simultaneously; it is **not** the same as keeping a fixed Sobolev dimension $D$ and taking the critical Yamabe value $r=1$. The Ornstein–Uhlenbeck process is not “classified by an elliptic binary-quartic discriminant”: it arises here through a probability/ground-state scaling, and its Gaussian invariant measure is supplied by the chosen drift and diffusion coefficient.
