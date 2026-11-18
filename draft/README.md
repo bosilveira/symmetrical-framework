@@ -16,6 +16,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [020 Weierstrass-Enneper, Kobayashi, and Calabi Correspondence](020%20Weierstrass-Enneper%20Kobayashi%20and%20Calabi%20Correspondence.md) — Euclidean minimal and Lorentzian maximal Weierstrass data, Calabi graph duality, Gudermannian/Riccati continuation, signature-correct Gauss-Codazzi quartics, and elliptic Riemann-example period obstructions. **Provisional; not yet consolidated.**
 
+- [030 Connections and Differential-Geometric Operators of the Canonical Surface](030%20Connections%20and%20Differential-Geometric%20Operators%20of%20the%20Canonical%20Surface.md) — exact tangent Levi-Civita/Weitzenböck and ambient Maurer-Cartan distinctions; curvature reconstructed from frame torsion; Riccati–Möbius–Schwarzian and Kähler/Hodge identities; geodesic Routhian versus surface area; Jacobi, Riemann periods, and qualified stochastic extensions. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
