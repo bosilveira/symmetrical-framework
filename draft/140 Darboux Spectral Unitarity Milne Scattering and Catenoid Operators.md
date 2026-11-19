@@ -361,3 +361,165 @@ Set $w=W(u)$, $dw=rS^2du$. Then
 This independently confirms the phase formula without invoking an abstract scattering theorem.
 
 **Endpoint caveat:** As $k\downarrow0$, the unwrapped phase tends to $n\pi$; at a bound-state or threshold spectral value the normalized positive-amplitude formula can degenerate. The scattering phase is not an automatically quantized Berry phase or a topological Chern integral.
+
+## 11. Exact half-line boundary Riccati/Weyl data at the symmetry center [D,V]
+
+The logarithmic center $x=c$ is exactly $u=0$. For the right-decaying Weyl solution at negative energy, or the outgoing Jost solution for positive energy, use the boundary **logarithmic derivative**
+
+```math
+m_{+,n}(k)=\frac{\Psi_{n,k,u}(0)}{\Psi_{n,k}(0)}.
+```
+
+This is a Riccati boundary coordinate for the **chosen right-normalized solution**. At a zero of $\Psi_{n,k}(0)$ it has a pole: the projective chart fails, while the original linear differential equation remains regular. The notation $m_+$ is meaningful as a Weyl–Titchmarsh function only after the complex energy branch and the right half-line domain are specified.
+
+### 11.1 First well: an explicit rational boundary function
+
+For $\Psi_{1,k}\propto(rW-ik)e^{iku}$, use $W(0)=0$ and $W_u(0)=r$:
+
+```math
+m_{+,1}(k)=ik+\frac{r^2}{-ik}=i\frac{k^2+r^2}{k}.
+```
+
+For an $L^2$ right-decaying solution at negative energy, analytically continue $k=i\kappa$, $\kappa>0$:
+
+```math
+m_{+,1}(i\kappa)=-\kappa+\frac{r^2}{\kappa}.
+```
+
+It vanishes at $\kappa=r$, exactly the **even/Neumann** bound level $E=-r^2$ of $h_1$. This is a spectral boundary statement, unlike a claim that the Riccati circle by itself tests self-adjointness.
+
+### 11.2 Second well: one Neumann zero and one Dirichlet pole
+
+For the polynomial of §9, evaluate at the center:
+
+```math
+B_2(k,0)=-(k^2+r^2),\qquad (B_2)_u(k,0)=-3ikr^2.
+```
+
+Therefore
+
+```math
+m_{+,2}(k)=ik\frac{k^2+4r^2}{k^2+r^2}.
+```
+
+After $k=i\kappa$,
+
+```math
+m_{+,2}(i\kappa)=-\kappa\frac{4r^2-\kappa^2}{r^2-\kappa^2}.
+```
+
+The **zero at $\kappa=2r$** is the even/Neumann bound state $E=-4r^2$; the **pole at $\kappa=r$** corresponds to the odd/Dirichlet bound state $E=-r^2$. These are exactly the two bound levels encoded by the double factors of the spectral polynomial in draft 130.
+
+**Important qualification:** These formulas are rational in the *wave number $k$*, while the spectral parameter is $\lambda=k^2$. The square-root branch of $k$ matters for analytic continuation and the Herglotz property. One cannot treat the rational formula as a single-valued meromorphic function of all complex $\lambda$ without specifying its spectral sheet.
+
+### 11.3 Back to the original rational x-coordinate
+
+For a transformed solution $\psi(u)=xf(x)$, the boundary logarithmic derivatives obey
+
+```math
+\frac{cf_x(c)}{f(c)}=\frac{\psi_u(0)}{\psi(0)}-1=m_{+,n}(k)-1.
+```
+
+Thus the even sector's original weighted Robin condition $cf_x(c)+f(c)=0$ becomes $m_{+,n}=0$, whereas the odd sector's Dirichlet condition is a pole of the projective ratio. The resolution $r$ controls the rational spectral coefficients, while $c$ selects the multiplicative location of the boundary.
+
+## 12. A genuinely unitary distorted Fourier transform [D,V,K]
+
+By the polar-unitary theorem of §5, the continuous spectral basis can be obtained by sending free Fourier plane waves **back** through the adjoint polar isometry. Define generalized eigenfunctions for real $k$ by
+
+```math
+\chi_{n,k}(u)=\frac{Q_n^\dagger e^{iku}}{\sqrt{2\pi D_n(k^2)}},\qquad D_n(k^2)=\prod_{j=1}^n(k^2+j^2r^2).
+```
+
+They solve $h_n\chi_{n,k}=k^2\chi_{n,k}$ and have the correct delta normalization on the absolutely continuous subspace, in the generalized-eigenfunction sense. The associated spectral transform is
+
+```math
+(\mathscr F_n\psi)(k)=\int_{\mathbb R}\overline{\chi_{n,k}(u)}\psi(u)\,du.
+```
+
+Its inverse reconstructs only the continuous part:
+
+```math
+(P_{\rm ac}\psi)(u)=\int_{\mathbb R}\chi_{n,k}(u)(\mathscr F_n\psi)(k)\,dk.
+```
+
+**Theorem 12.1 [D,K] (continuous plus bound-state Plancherel).** For $\psi\in L^2(\mathbb R)$,
+
+```math
+\|\psi\|_2^2=\sum_{j=1}^n|\langle\varphi_{n,j},\psi\rangle|^2+\int_{\mathbb R}|(\mathscr F_n\psi)(k)|^2\,dk.
+```
+
+**Proof.** Apply the ordinary unitary Fourier transform to $\mathcal U_nP_{\rm ac}\psi$ and use the orthogonal decomposition in §5. The generalized integral formula is interpreted distributionally or initially on a dense scattering-test-function space before completion. Neither the continuum Jost wave nor a scattering amplitude belongs to the ordinary $L^2$ eigenfunction domain.
+
+### 12.1 Exact normalized bound modes for n=1,2
+
+The discrete subspaces are particularly elementary:
+
+```math
+\varphi_{1,1}(u)=\sqrt{\frac r2}\,S,\qquad h_1\varphi_{1,1}=-r^2\varphi_{1,1}.
+```
+
+```math
+\varphi_{2,2}(u)=\sqrt{\frac{3r}{4}}\,S^2,\qquad h_2\varphi_{2,2}=-4r^2\varphi_{2,2}.
+```
+
+```math
+\varphi_{2,1}(u)=\sqrt{\frac{3r}{2}}\,SW,\qquad h_2\varphi_{2,1}=-r^2\varphi_{2,1}.
+```
+
+Their norms follow from $\int S^2du=2/r$, $\int S^4du=4/(3r)$ and $\int S^2W^2du=2/(3r)$. Even/odd parity matches the half-line Riccati boundary data of §11. With the constant shift $r^2$, the original Master Hessian has eigenvalues $-3r^2$ and $0$ and essential threshold $r^2$.
+
+## 13. Transport the ENTIRE distorted spectral resolution back to the original x [D,V]
+
+Define the exact original-variable weighted Sturm–Liouville operator with a **chosen** reflectionless potential added:
+
+```math
+(\tau_{x,n}f)(x)=\frac1x\left[-(x^3f_x)_x+\big(r^2-1+V_n(\ln(x/c))\big)xf\right].
+```
+
+The transformation of §1 gives
+
+```math
+U_c\tau_{x,n}U_c^{-1}=h_n+r^2.
+```
+
+This equation defines a precise **new weighted SL realization** with the same original measure $x\,dx$ and all scale parameters. It is not the same expression as the original linear Master carrier when $n>0$; its extra potential is an explicitly selected pullback.
+
+Define the continuum modes and discrete modes in the original variable:
+
+```math
+\chi^x_{n,k}(x)=\frac{\chi_{n,k}(\ln(x/c))}{x},\qquad \varphi^x_{n,j}(x)=\frac{\varphi_{n,j}(\ln(x/c))}{x}.
+```
+
+These satisfy
+
+```math
+\tau_{x,n}\chi^x_{n,k}=(r^2+k^2)\chi^x_{n,k},\qquad\tau_{x,n}\varphi^x_{n,j}=(r^2-j^2r^2)\varphi^x_{n,j}.
+```
+
+**Theorem 13.1 [D,V] (distorted multiplicative Plancherel).** With the domain transported by $U_c$, every $f\in L^2((0,\infty),x\,dx)$ has the exact norm decomposition
+
+```math
+\|f\|_{L^2(xdx)}^2=\sum_{j=1}^n\left|\int_0^\infty\overline{\varphi^x_{n,j}(x)}f(x)\,x\,dx\right|^2+\int_{\mathbb R}\left|\int_0^\infty\overline{\chi^x_{n,k}(x)}f(x)\,x\,dx\right|^2dk.
+```
+
+**Proof.** The map $f\mapsto xf$ is unitary. Apply Theorem 12.1 to $\psi=xf$. Each scalar product changes exactly by the weight $x\,dx$, including the factor $1/x$ in each normalized mode.
+
+The free case $n=0$ reduces to the canonical *unitary Mellin–Fourier transform* of draft 130. For $n=1,2$, the ordinary Mellin kernel is replaced by a finite Darboux polynomial in $W=\tanh(r\ln(x/c))$ times the character $(x/c)^{ik}$; the discrete corrections are finitely many weighted bound-state coefficients.
+
+**New synthesis:** This is a complete unitary **SL–Darboux–Fourier/Mellin spectral dictionary** on the original weighted Hilbert space, including the discrete defect that a naive statement of full free-unitarity would discard.
+
+### 13.1 The scattering states are multiplicative generalized eigenfunctions
+
+Because $e^{iku}=(x/c)^{ik}$, the continuum wave has the structure
+
+```math
+\chi^x_{n,k}(x)=\frac{(x/c)^{ik}}{x\sqrt{2\pi D_n(k^2)}}B_n\left(k,\tanh(r\ln(x/c))\right).
+```
+
+For $n=1$, $B_1=rW-ik$; for $n=2$, $B_2=r^2(3W^2-1)-k^2-3ikrW$. They are not square-integrable in $x\,dx$ at real scattering energies, just as Fourier characters are not in $L^2(du)$. The completeness assertion uses a generalized spectral transform, not a discrete countable eigenbasis.
+
+## 14. The scattering spectrum does not determine a physical clock or Riemann period [C]
+
+The real parameter $k$ is conjugate to the canonical logarithmic coordinate $u=\ln(x/c)$ in the **weighted spectral Hilbert space**. Its squared value $\lambda=k^2$ is the Schrödinger spectral energy relative to the unshifted $h_n$ operator. It is not the mechanical energy of the original nonlinear Duffing separatrix, not the Riemann family parameter $\lambda_R$ of draft 130, and not the oscillatory time frequency of a separately selected physical system.
+
+The scattering phase $\delta_n(k)$ is obtained from a spatial Jost normalization, while the Milne–Gudermannian phase of the canonical half-rate carrier has $u$ as its **linear-carrier independent variable**. Their common Riccati amplitude–phase equations produce explicit pullbacks, not an automatic equality of their phase increments. Likewise the Lax–Novikov spectral curve is a singular spectral-operator curve, not the smooth elliptic Riemann minimal-example curve with marked height differential and immersion periods.
