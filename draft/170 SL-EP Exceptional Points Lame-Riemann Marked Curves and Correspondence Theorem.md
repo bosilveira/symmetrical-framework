@@ -714,7 +714,7 @@ Under the complex rotation $`\rho(s)=is`$, one finds
 
 This is a **complex algebraic relation of differently marked third-kind differentials**, resembling a Wick rotation. It is *not* a real operator unitary map, a real isometry of the free and PT Schrödinger operators, or an equality of their Floquet spectra.
 
-**Main theorem 19.3 [D,V] (two-end marked-differential closure).** The selected one-gap Lamé spectral elliptic family has two rational nodal degenerations which yield **exactly two foundational Symmetrical Framework one-forms** under separately specified normalization maps: at $`m\to1`$, the catenoid logarithmic height $`dh_C`$; at $`m\to0`$, the original arctangent primitive $`f_\mu dx`$, up to the fixed amplitude factor $`-1/(2\sqrt\mu)`$. Their distinct residue/pole divisors and the complex rotation $`s\mapsto is`$ explain their relationship without conflating the distinct underlying real operator families.
+**Theorem 19.3 [D,V] (two-end marked-differential closure).** The selected one-gap Lamé spectral elliptic family has two rational nodal degenerations which yield **exactly two foundational Symmetrical Framework one-forms** under separately specified normalization maps: at $`m\to1`$, the catenoid logarithmic height $`dh_C`$; at $`m\to0`$, the original arctangent primitive $`f_\mu dx`$, up to the fixed amplitude factor $`-1/(2\sqrt\mu)`$. Their distinct residue/pole divisors and the complex rotation $`s\mapsto is`$ explain their relationship without conflating the distinct underlying real operator families.
 
 ## 20. Picard–Lefschetz Jordan monodromy is NOT Floquet Jordan monodromy [D,K,C]
 
