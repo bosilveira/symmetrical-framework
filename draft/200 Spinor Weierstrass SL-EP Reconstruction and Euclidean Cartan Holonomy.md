@@ -106,13 +106,13 @@ Define the quadratic differential
 \Theta=\frac{dg}{g}\,dh=\frac{h_zg_z}{g}\,dz^2.
 ```
 
-Under the standard Hopf convention $Q_H=-\Theta$ for the stated Weierstrass data (some geometric normalizations insert a constant factor), one obtains
+Under the framework's convention $II=2\mathrm{Re}(Q_H)$ for the complex quadratic differential and with the selected surface-normal orientation, $Q_H=-\Theta/2$; consequently
 
 ```math
-\mathscr W_z(p,q)\,dz^2=\Theta=-Q_H.
+\mathscr W_z(p,q)\,dz^2=\Theta=-2Q_H.
 ```
 
-**Theorem 5.1 [D,V] (Wronskian–Hopf identity).** The Wronskian of the **Weierstrass spinor pair** is exactly the coefficient of the extrinsic Hopf quadratic differential, up to a declared sign. It is not constant in an arbitrary conformal coordinate.
+**Theorem 5.1 [D,V] (Wronskian–Hopf identity).** The Wronskian of the **Weierstrass spinor pair** is exactly the coefficient of twice the extrinsic Hopf quadratic differential with the declared sign. It is not constant in an arbitrary conformal coordinate.
 
 **Proof.** The $p_z$ terms cancel in $pq_z-p_zq$; substitute $p^2=h_z/g$. Under $z=z(\xi)$ the spinor coefficients change as $p_\xi=p_z\sqrt{dz/d\xi}$ and $q_\xi=q_z\sqrt{dz/d\xi}$, so
 
