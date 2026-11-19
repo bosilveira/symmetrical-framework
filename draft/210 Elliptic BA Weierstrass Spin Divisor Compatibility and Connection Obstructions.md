@@ -403,7 +403,7 @@ The right side is the **Jacobian translation** by $r(u-u_*)/\sqrt{D_R}$. It is t
 One can express a meromorphic section of $\mathcal O(P_b-P_a)$ through a standard sigma quotient with exponential correction: for Abel representatives $a,b$,
 
 ```math
-\frac{\sigma(z-a)}{\sigma(z-b)}\,\exp\big((\zeta(a)-\zeta(b))z\big),
+\frac{\sigma(z-b)}{\sigma(z-a)}\,\exp\big((\zeta(b)-\zeta(a))z\big),
 ```
 
 with quasi-period multipliers determined by $a-b$. In general this is not a globally elliptic *function* unless $a-b$ is a period; it is a local representation of a section of the **nontrivial degree-zero line** and its multipliers. This theta/sigma distinction is essential: a nonprincipal divisor class cannot be turned into a principal divisor merely by writing a theta quotient.
