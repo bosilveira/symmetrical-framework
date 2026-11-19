@@ -785,3 +785,71 @@ The two mechanisms admit **exact 1D reductions**, but those reductions preserve 
 - A Tzitzéica PDE one-variable reduction preserves its declared elliptic first integral; its nodal limit is Riccati, but a separate map is needed to compare it to the canonical framework's SL/EP clock, weighted norm, WE spin line or Gauss–Manin periods.
 
 This is a useful higher-rank **test case** for the proposed fibration-holography program: one has an exact connection-aware reconstruction *inside a specified geometric category*, not a theorem that every 1D carrier uniquely remembers every 3D immersion.
+
+## 23. THE COMPLETE SL–EP–Drach–SL3 GRAM DICTIONARY [D,V,K,H100,H136]
+
+This section directly answers the whole-web question. Let $\psi_1,\psi_2$ be real independent solutions of $\psi_{ss}=Q(s)\psi$, and form the two-dimensional solution vector
+
+```math
+\mathbf\psi=\begin{pmatrix}\psi_1\\\psi_2\end{pmatrix},\qquad \mathscr W=\psi_1\psi_{2,s}-\psi_{1,s}\psi_2\ne0.
+```
+
+Choose an arbitrary **constant positive-definite real Gram matrix**
+
+```math
+G=\begin{pmatrix}A&B\\B&C\end{pmatrix},\qquad A>0,\quad \delta:=AC-B^2>0.
+```
+
+The positive quadratic Gram field and its square root are
+
+```math
+R(s)=\mathbf\psi^{\mathsf T}G\mathbf\psi=A\psi_1^2+2B\psi_1\psi_2+C\psi_2^2,\qquad \rho=\sqrt R>0.
+```
+
+### 23.1 R is a LINEAR symmetric-square field
+
+For all $Q$ and constant $G$, direct differentiation yields
+
+```math
+R_{sss}=4Q R_s+2Q_s R.
+```
+
+Thus the positive Pinney envelope **squared** is a linear functional of the three-dimensional symmetric-square Drach solution module. No extra ODE is assumed.
+
+### 23.2 The quadratic first integral is exactly the Pinney CASIMIR
+
+The Gram determinant identity (verified by direct symbolic expansion) is
+
+```math
+2R R_{ss}-R_s^2-4Q R^2=4\delta\,\mathscr W^2.
+```
+
+Because $\rho=\sqrt R$, differentiation gives
+
+```math
+\rho_{ss}=Q\rho+\frac{\delta\,\mathscr W^2}{\rho^3}.
+```
+
+**Theorem 23.1 [D,V] (exact equivalence of the three expressions).** Under the stated positive Gram hypothesis, the same data satisfy: (i) the rank-two **linear SL** carrier; (ii) the rank-three **linear Drach/Sym²** equation for $R$ with conserved quadratic invariant $4\delta\mathscr W^2$; and (iii) the **nonlinear Ermakov–Pinney** equation for $\rho=\sqrt R$ with coupling $k_{\rm EP}=\delta\mathscr W^2>0$. The nonlinear inverse-cubic term is the quadratic Gram determinant expressed in square-root coordinates.
+
+**Proof.** Differentiate $R=\mathbf\psi^{\mathsf T}G\mathbf\psi$ three times using $\psi_{ss}=Q\psi$. The 3rd derivative becomes $4Q R_s+2Q_sR$. The algebraic identity $2RR_{ss}-R_s^2-4QR^2=4(AC-B^2)(\psi_1\psi_{2,s}-\psi_{1,s}\psi_2)^2$ follows by expanding a binary quadratic form (or a 2×2 Gram determinant). Substituting $R=\rho^2$ reduces its left side to $4\rho^3(\rho_{ss}-Q\rho)$.
+
+**Theorem 23.2 [D,V] (exact connection to Tzitzéica).** The **same rank-three symmetric-square moving frame** has centro-affine Tzitzéica ratio $Q_s/\mathscr W^3$ in its raw basis and $2Q_s$ after determinant-one normalization. Therefore:
+
+- The SL/EP/Drach correspondence exists for ANY smooth real Q under the stated Gram and nonvanishing Wronskian hypotheses.
+- The further *Tzitzéica curve* condition is the additional requirement $Q_s=\mathrm{constant}\ne0$.
+- The affine-sphere two-dimensional Tzitzéica PDE is yet another, stronger integrability system needing a separate SL3 flat connection and extra surface data.
+
+The **positive Gram determinant $\delta$** here is a Casimir-type invariant of the SL2 action on binary quadratics; it is closely linked to the split quadratic discriminant preserved by Sym²(SL2). It is NOT the pair $(I,J)$ of a binary **quartic**, nor the Chern class of the Riemann elliptic WE spin bundle.
+
+### 23.3 An exact framework calibration
+
+For the canonical catenoid spinor half-rate real solutions $\psi_1=e^{-ru/2}$, $\psi_2=e^{ru/2}$, take $G=I$ and $\mathscr W=r$. Then
+
+```math
+Q=r^2/4,\quad R=2\cosh(ru),\quad \rho=\sqrt{2\cosh(ru)},\quad \rho_{uu}=\frac{r^2}{4}\rho+\frac{r^2}{\rho^3}.
+```
+
+This is exactly the spinor–WE–EP theorem of draft 200, including $\rho=\sqrt2\,\mu^{-1/4}a$ for $a=\mu^{1/4}\sqrt{\cosh(ru)}$. Its Sym² Tzitzéica invariant is **zero** because $Q_u=0$; the valid WE–EP reconstruction does not make the catenoid a nonzero-torsion Tzitzéica curve.
+
+For the independently selected Airy carrier $Q(s)=as+b$ with $a\ne0$, the same Gram construction instead gives a **positive EP solution and a genuine nonzero Tzitzéica symmetric-square curve simultaneously**. The Airy, catenoid and Lamé cases are therefore exactly classified by the same general algebra, without asserting they are the same geometric immersion.
