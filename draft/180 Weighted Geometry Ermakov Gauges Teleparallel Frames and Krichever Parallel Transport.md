@@ -851,3 +851,158 @@ This gives a precise meaning to “the Weierstrass immersion is parallel transpo
 ### 22.1 Four different parallel transport loops on one selected elliptic curve
 
 Even if the Lamé spectral elliptic curve is isomorphic to the Riemann immersion elliptic curve, one can put on it four genuinely different transport constructions: (a) the SL solution matrix varying $u$ at fixed spectral point; (b) the Gauss–Manin system varying the elliptic modulus with transported cycles; (c) the Hopf $U(1)$ connection pulled back along $g_R$ on the fixed elliptic surface; and (d) the flat affine $\mathbb R^3$ connection whose holonomy is the real Weierstrass period vector. **Their monodromies need not agree and act on different fibers.** An exact spectral-curve isomorphism gives a common base for constructing these data; it does not make them one connection.
+
+## 23. The exact Gauss–Manin period gauge is NOT Levi–Civita parallel transport [D,H,K]
+
+In the selected smooth one-gap Lamé and Riemann elliptic families of draft 170, define spectral curve differential periods on a marked cycle $\gamma_{\rm sp}$:
+
+```math
+I_0(m_{\rm ell})=\oint_{\gamma_{\rm sp}}\frac{dE}{\eta},\qquad I_1(m_{\rm ell})=\oint_{\gamma_{\rm sp}}\frac{E\,dE}{\eta}.
+```
+
+Transport the cycle in the Gauss–Manin local system as the **modulus** $m_{\rm ell}$ varies. Draft 170 derives and checks the explicit rational first-order system
+
+```math
+\frac d{dm_{\rm ell}}\binom{I_0}{I_1}=\frac1{2m_{\rm ell}(1-m_{\rm ell})}\begin{pmatrix}2m_{\rm ell}-1&r^{-2}\\-r^2(1-m_{\rm ell}+m_{\rm ell}^2)&1-2m_{\rm ell}\end{pmatrix}\binom{I_0}{I_1}.
+```
+
+Its connection matrix has **trace zero**, so the determinant of two independent marked period vectors is constant. In the specified oriented branch-cut basis of draft 170,
+
+```math
+I_{0,\alpha}I_{1,\beta}-I_{0,\beta}I_{1,\alpha}=-8\pi i.
+```
+
+The affine Lamé–Riemann isomorphism induces a gauge transformation of this connection with an explicit matrix of determinant $-1$, transporting the period pairing to the archived Riemann Gauss–Manin system. This is a **legitimate parallel-transport correspondence of de Rham periods**. It is not the LC curvature of the embedded Riemann surface, the Euclidean affine translation holonomy of its immersion, or the spectral SL carrier matrix (which evolves in $u$ at fixed $E$).
+
+### 23.1 Independent connection and differential markings
+
+The Riemann immersion one-forms reduce, modulo exact meromorphic differentials, to the holomorphic and second-kind period span of $dg_R/y_R$ and $g_Rdg_R/y_R$. Through the selected spectral curve isomorphism these become the span of $dE/\eta$ and $E\,dE/\eta$; **periods are transported with explicit scale factors**. The Lamé spectral quasimomentum is another specifically normalized *second-kind differential*, with a pole at spectral infinity; it is not the Riemann holomorphic height differential. The Baker–Akhiezer function depends on yet another divisor/line-bundle marking.
+
+**Theorem 23.1 [D,H] (typed simultaneous realization).** The same smooth elliptic curve can carry at least three independent compatible structures: a finite-gap spectral pair $(L,A)$ with a marked BA divisor; a flat Gauss–Manin period local system varying with the curve modulus; and a meromorphic Weierstrass immersion triple on a punctured curve. An explicit elliptic curve isomorphism transports the specified **curve and differential** data, but it does not by itself equate the respective connection one-forms, carrier evolution variables, operator spectra, or Euclidean immersion period-closing conditions.
+
+## 24. Conditional weighted SL–EP–geometry correspondence theorem [D,K,H,C]
+
+**Theorem 24.1 (foundation-to-realization interface).** Fix the canonical $r,c,\mu>0$ and a positive-coefficient scalar SL expression. The following arrows hold, under the stated independent hypotheses.
+
+**Layer I: weighted metric and local algebra.** The data $(p,w,q_0)$ define a weighted one-manifold $(g=w\,dx^2/p,d\nu=w\,dx)$, Green identity and constrained variational Hessian. A Liouville half-density transforms its scalar equation locally to a Schrödinger carrier, and carries weighted $L^2$ and Wronskians exactly. A *real* carrier with chosen positive Gram form produces Riccati, a positive EP amplitude with constant Wronskian strength, and the exact Schwarzian clock transformation of §6.
+
+**Layer II: selected surface geometry.** Upon independently choosing an oriented **two-dimensional** immersion and coframe, the LC and teleparallel connections are related by contortion; on the catenoid the torsion coefficient $rSW$ reconstructs $K_C=-r^2S^4$. A Killing symmetry produces a separated **weighted** SL Jacobi equation. This does not make the 1D Darboux factorization a torsion identity.
+
+**Layer III: selected integrable/spectral completion.** For the archived Sato rank-one point or a properly decorated smooth Krichever curve, a Baker function solves the selected Lax eigenproblem and a tau/determinant encodes the potential. The one-gap Lamé spectral elliptic curve is explicitly isomorphic, after a specified modulus match and real form, to the Riemann elliptic curve, and its marked period differentials are transported by a Gauss–Manin gauge. Neither construction supplies a self-adjoint Hilbert domain or a meromorphic minimal immersion automatically.
+
+**Layer III geometric realization.** If one separately chooses compatible Weierstrass data, the immersion is the flat affine integral $\mathrm{Re}\int\boldsymbol\Phi$; **real period closing** is a global constraint. On the catenoid/helicoid associate family, the Bonnet angle rotates these periods while leaving the Hopf Chern degree unchanged. The Riemann Gauss map has degree two, catenoid degree one, giving different topological Hopf pullbacks.
+
+**Layer IV typed model equations.** The Lewis–Riesenfeld invariant and the time-dependent harmonic-trap Schrödinger lens map follow from an **independently selected oscillator Hamiltonian** and EP clock. Critical-power or tuned-coupling conditions are needed for a fixed-coefficient Gross–Pitaevskii transform. PDM supplies an SL kinetic principal symbol but retains the von Roos ordering potential. The FRW constraint is a reciprocal first integral on the Master separatrix, and Keller–Miksis becomes EP only after the stated conservative Sundman and polytropic-exponent reductions.
+
+**Proof.** §§2–6 derive the weighted and projective equivalences; §§7–11 compute the actual connection and factorization distinctions; §§12–17 derive the selected application transformations; §§18–23 give the archived Grassmannian/finite-gap data, the explicit Hopf and affine transport, and the marked Gauss–Manin theorem. Global self-adjointness, positivity, curve decorations, surface completeness and period constraints are **separate hypotheses**, not conclusions of local differential algebra.
+
+**Status of the theorem:** A rigorous **conditional dictionary with checked component identities**, not a universal equivalence between all nonlinear ODEs, all spatial Hilbert operators, all teleparallel geometries or all minimal surfaces. Its strength is that every arrow has specified source, target and preserved datum.
+
+## 25. Complete r=2 and c-preserving regression [D,V]
+
+Set $r=2$, leave $c,\mu>0$, and keep independent temporal, angular and spectral variables separate. The canonical rational forms are
+
+```math
+u=\ln(x/c),\qquad S_2=\frac{2c^2x^2}{x^4+c^4},\quad W_2=\frac{x^4-c^4}{x^4+c^4},\quad f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)}.
+```
+
+Weighted metric/measure and exact half-split are
+
+```math
+g=x^{-2}dx^2=du^2,\quad d\nu=x\,dx=x^2du,\quad\|f_\mu\|^2_{L^2(xdx)}=\frac1{4\mu}.
+```
+
+```math
+\int_0^c f_\mu\,dx=\int_c^\infty f_\mu\,dx=\frac{\pi}{8\sqrt\mu}.
+```
+
+The canonical reciprocal positive separatrix and its algebraic FRW constraint are
+
+```math
+a=\mu^{1/4}\sqrt{\cosh(2u)},\quad a_{uu}=a+\mu a^{-3},\quad H_a=a_u/a=\tanh(2u),\quad H_a^2=1-\mu/a^4.
+```
+
+At finite Master energy $\varepsilon_N$, the exact correction is
+
+```math
+a_{uu}=a+\mu a^{-3}+\frac{3\varepsilon_N}4a^5,\qquad H_a^2=1-\mu/a^4+\frac{\varepsilon_N}4a^4.
+```
+
+The catenoid metric/teleparallel torsion/LC curvature are
+
+```math
+g_C=\cosh^2(2u)(du^2+dv^2),\qquad t_2=2S_2W_2,\qquad K_C=-4S_2^4.
+```
+
+The Riccati Darboux factorization instead gives
+
+```math
+A=\partial_u+2W_2,\qquad A^\dagger A=-\partial_u^2+4-8S_2^2.
+```
+
+They are **different identities**. For the same catenoid $g_C$ the pulled-back Hopf Chern class has $c_1=1$, and the marked height period is $\oint dh_C=\pi i$; the helicoid Bonnet associate has real period $-\pi$. For the separately selected Riemann elliptic example with Gauss-coordinate degree two one has $c_1=2$, while real immersion periods still depend on $\lambda_R,A_R$ and cycles.
+
+At $\lambda_R=1$ the selected smooth one-gap Lamé elliptic parameter is $m_{\rm ell}=1/2$, its spectral branch values are $(-2,0,2)$, and its algebraic map to the symmetric Riemann elliptic fiber is
+
+```math
+g_R=-E/2,\qquad y_R=\frac{\sqrt2}{4}\eta,\qquad\frac{dg_R}{w_R}=-\sqrt2\frac{dE}{\eta}.
+```
+
+The distinct specializations $m_{\rm ell}\to1$ and $m_{\rm ell}\to0$ yield respectively the catenoid logarithmic height differential and the original arctangent primitive on rational nodal normalizations (draft 170). They do **not** identify the SL spatial variable $u$ with the elliptic spectral energy $E$ as one isospectral flow.
+
+## 26. Verification register, source provenance, and remaining problems
+
+### 26.1 Direct mathematical checks
+
+1. **Weighted SL:** using $g=w/p$ and $\rho=\sqrt{pw}$, direct coordinate divergence gives $\Delta_{g,\rho}=w^{-1}(p\partial_x)_x$; Green's identity and constrained Euler–Lagrange variation reproduce SL exactly.
+2. **Liouville half-density:** $t_x=\sqrt{w/p}$ and $\chi=(pw)^{1/4}$ preserve the norm and Wronskian, mapping the canonical $(p,w,q_0)=(x^3,x,(r^2-1)x)$ to $-\partial_u^2+r^2$.
+3. **Conformal cylinder and radial PDE:** $x=ce^u$ gives the punctured Euclidean conformal cylinder. Direct differentiation of $F=y/x$ in 4D yields $\Delta F=x^{-3}(y_{uu}-y)$ and the exact $r$-dependent inverse-square correction.
+4. **Geometric separation:** catenoid angular Fourier modes produce a weighted Jacobi SL equation with weight $R^2$, while its genuine unitary conjugate has leading coefficient $S^2$. Its zero equation alone does not determine its complete spectrum.
+5. **EP clock and Schwarzian:** independent differentiation gives $y_{uu}+\omega^2y=\rho^{-3}(Y_{\tau\tau}+k_{\rm EP}Y)$ and $\{\tau,u\}=-2\rho_{uu}/\rho$.
+6. **Two connections:** from $\theta^1=Rdu,\theta^2=Rdv$, $d\theta^2=rSW\,\theta^1\wedge\theta^2$ and $\omega^{LC}{}^1{}_2=-rWdv$, symbolic differentiation gives $K_C=-e_1(t_2)-t_2^2=-r^2S^4$ exactly.
+7. **Bochner versus Darboux:** expansion of $A^\dagger A$ gives $-\partial_u^2+h^2-h_u$; 1D torsion vanishes identically. The Bochner–Weitzenböck curvature term acts on forms/bundles, not a generic scalar Riccati potential.
+8. **Reciprocal Duffing:** the substitution $a=y^{-1/2}$ with the full Master energy gives $a_{uu}=\frac14r^2a+\frac14\mu r^2a^{-3}+\frac34\varepsilon_Na^5$, verified by SymPy with symbolic derivatives. The finite-energy FRW constraint and its derivative follow without dividing by a vanishing $a$.
+9. **Lewis and harmonic lens:** differentiating $Q=q/\rho$, $P=\rho p-\rho_tq$ gives $Q_t=P/\rho^2$, $P_t=-\omega_0^2Q/\rho^2$ and conserved $I_{\rm EL}$. The time-dependent Schrödinger lens is the associated unitary dilation/chirp.
+10. **GP critical exponent:** the lens scaling of $|\Psi|^{2\sigma}\Psi$ produces coupling $g(t)\rho^{2-d\sigma}$; it stays constant without tuning exactly for $d\sigma=2$.
+11. **PDM ordering:** expansion of both von Roos terms yields the exact scalar ordering difference of §16; the BenDaniel–Duke principal part remains a weighted SL expression.
+12. **Keller–Miksis limit:** direct Sundman differentiation of $Y=X^{3/2}$ and $d\tau/dt=1/X$ gives the reduced pressure ODE. A selected polytropic index $\gamma=2$ is required for the inverse-cubic Pinney term.
+13. **Sato/Krichever:** the actual H136 archived Grassmannian gluing condition, rank-one basis, stabilizer, tau and Baker function were inspected. The historical KdV reduction and finite-gap operator conclusions retain their verified or quoted status, not a new universal theorem.
+14. **Hopf:** direct differentiation of $\eta_g=(1,g)/\sqrt{1+|g|^2}$ gives $\mathcal A_g$, $\mathcal F_g$ and $\int\mathcal F_g/(2\pi)=\deg g$. The catenoid Gauss map has degree one and the Riemann elliptic coordinate projection degree two.
+15. **Bonnet and affine periods:** $e^{i\delta}$ rotates the real/imaginary immersion periods without changing $g$; $\mathrm{Re}\oint\boldsymbol\Phi$ is the exact holonomy of a flat affine translation connection.
+16. **Parameter separation:** the elliptic coordinate $g_R(E)$ is constant along spatial SL evolution at fixed $E$. A chosen surface parametrization $t(s)=e^{r\zeta}$ entails a moving $s(\zeta)$ and therefore a moving spectral coordinate, so cannot be called the original isospectral carrier flow.
+17. **Resolution test:** for $r=2$, the canonical rational profile, weighted norm, EP/FRW forms, teleparallel curvature, Darboux operator, catenoid height period and symmetric elliptic differential scales were checked against the formulas of drafts 130–170.
+
+### 26.2 Historical ZIP references, with scope
+
+- H136, 04-follow-ups/sato-grassmannian.md: verified rank-one Grassmannian point, KdV reduction, tau and BA function; general Segal–Wilson/Krichever statements remain classical quoted inputs. The higher-level defect formula explicitly prevents declaring generic level-nine evolution a straight one-point Jacobian flow.
+- H73/H100/H299 and 00-meta/INTEGRABLE.md: checked PT Darboux/shape-invariant and Lax–Novikov operator identities; they are **not** the Bochner–Weitzenböck formula.
+- 04-follow-ups/friedmann-reciprocal-envelope.md: verified reciprocal EP plus *finite-energy quintic*, kinematic FRW constraint, multiple clock/curve distinctions and conditional warped-metric realization.
+- H376, 04-follow-ups/bpst-yamabe-eguchi-hanson.md and the Complete Reference §25: controlled Keller–Miksis to Rayleigh–Plesset/Sundman/EP path, including caveats about compressibility, forcing and gas-law exponents.
+- H466–H470 and drafts 150–170: Riemann Weierstrass, Gauss–Manin and marked period data, explicit one-gap Lamé elliptic isomorphism, and distinct nodal catenoid and original arctangent differentials.
+
+### 26.3 Independent external references consulted
+
+- Standard Bochner–Weitzenböck formula for forms and the Levi–Civita Laplacian: https://math.bu.edu/people/sr/articles/book.pdf .
+- Teleparallel/contortion versus Levi–Civita curvature: https://pmc.ncbi.nlm.nih.gov/articles/PMC5080365/ .
+- Stäckel/Robertson separation conditions for Schrödinger/Laplace–Beltrami: https://www.sciencedirect.com/science/article/pii/S0375960113007135 ; https://harvest.aps.org/v2/journals/articles/10.1103/RevModPhys.86.1283/fulltext .
+- Krichever data, BA function and the map to the Sato Grassmannian: https://www.math.columbia.edu/department/krichever/Igor60/pdfs/2005-2009/2006-ILEATRP.pdf ; https://doi.org/10.4213/im9533e .
+- Lewis–Riesenfeld exact time-dependent oscillator invariant: https://inspirehep.net/literature/52790 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC9778280/ .
+- Nonlinear GP/NLS harmonic-lens mapping and coupling condition: https://journals.aps.org/pra/abstract/10.1103/PhysRevA.67.063610 .
+- PDM ordering ambiguity: https://doi.org/10.1103/PhysRevB.27.7547 ; https://www.scielo.br/j/rbef/a/8gHrhh3Yr4s7ymwZZ3TsBkj/?format=html .
+- Keller–Miksis equation including compressibility and pressure derivatives: https://pmc.ncbi.nlm.nih.gov/articles/PMC8050038/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC6364854/ .
+- Riemann minimal examples and global Gauss/period geometry: https://arxiv.org/abs/1609.05660 .
+
+### 26.4 Next mathematical tasks
+
+1. **Teleparallel Hodge operator:** explicitly compute the LC Hodge–de Rham Laplacian on catenoid one-forms and its decomposition using teleparallel contortion and torsion. Only then test a genuine relation to a first-order Dirac/SUSY factorization.
+2. **Spectral versus bundle lift:** construct a natural normalized BA eigenvector line bundle over the selected Lamé spectral curve and calculate its Hermitian/Berry connection. Compare its pole divisor and curvature with the pullback Hopf connection of the Riemann Gauss map, instead of identifying them by projective analogy.
+3. **Riemann Jacobi separation:** derive the exact induced metric, global quotient and separated stability operator for Riemann minimal examples; compare its spectral curve, if any, with the chosen Lamé index-one Lax curve. Same elliptic base alone does not imply equality of Jacobi and finite-gap operators.
+4. **Stäckel/Killing-tensor classification:** determine which of the framework's separations are generated by genuine commuting geometric differential operators and which require additional nonorthogonal or conformal separation factors.
+5. **Full EP–Schwarzian domain:** classify positive Gram gauges through zeros, turning points, poles and real singular endpoints; identify which gauges extend to global self-adjoint unitary equivalences and which are only local.
+6. **Krichever divisor from inverse scattering:** match the H136 rank-one gluing parameter with the complete PT norming data of draft 150 and track it through the smooth Lamé-to-nodal degeneration. Curve isomorphism alone cannot determine the gluing divisor.
+7. **PDM operator ordering:** test whether the von Roos scalar corrections can be realized as curvature or density-potential terms for a **declared higher-dimensional or bundle geometry**, avoiding the false claim of 1D torsion.
+8. **Master finite-energy envelope:** classify the quintic-deformed reciprocal EP equation, its Hamiltonian, phase-space period and binary quartic/elliptic quotient; retain the explicit $\varepsilon_Na^5$ term.
+9. **Geometric Hopf degree:** prove the Riemann Gauss map degree-two Chern formula including precise patch transitions at its planar ends, and compute independent Berry holonomy along real cycles. The Chern class alone does not fix those holonomies.
+10. **Time-dependent GP:** characterize the precisely tuned noncritical coupling $g(t)$ and domain regularity needed for the oscillator lens map to extend globally in time, and separate bounded EP envelopes from finite-time envelope blow-up.
+
+**Final structural boundary.** There is a mathematically rigorous weighted geometric source of SL and a local EP clock/projective lift. A chosen 2D coframe supplies a separate LC–teleparallel torsion/curvature dictionary. Sato/Krichever supplies a selected integrable curve/operator/BA dictionary; explicit marked elliptic curve maps supply a separate Gauss–Manin and Weierstrass period correspondence; a Hopf lift has its own degree and connection. Applications require their own Hamiltonian, measure, pressure law, nonlinear coupling or metric. The unifying principle is **typed maps preserving declared invariants**, not one universal physical model or one globally identical connection.
