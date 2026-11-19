@@ -511,3 +511,181 @@ The Gauss–Manin matrix has trace zero, so the determinant of any fundamental p
 ```
 
 In a real SL carrier, the conserved Wronskian is likewise a determinant. In EP the square of that Wronskian multiplies the Gram determinant to yield the Pinney strength. Those facts are **structurally analogous and algebraically exact**, but the *objects whose determinants are preserved* are different. The fixed $-8\pi i$ comes from the Riemann family and its marked cycles, not from the original $L^2(xdx)$ norm or a universal Pinney constant.
+
+## 15. Resolution doubling becomes a Joukowski map between the MARKED spectral normalizations [D,V]
+
+This section directly addresses the framework's insistence that $r\mapsto2r$ act *simultaneously* on all fields and maps, not on an isolated hyperbolic identity.
+
+For the order-one marked normalization at resolution $r$, write
+
+```math
+t_r=\frac{s_r-r}{s_r+r}=e^{r\zeta},\qquad s_r=r\frac{1+t_r}{1-t_r},\qquad \zeta=u+iv_{\rm ang}.
+```
+
+At resolution $2r$ **with the same original logarithmic coordinate $u=\ln(x/c)$** and the same complexified coordinate $\zeta$, one has $t_{2r}=t_r^2$. The new marked normalization coordinate is
+
+```math
+s_{2r}=2r\frac{1+t_r^2}{1-t_r^2}.
+```
+
+**Theorem 15.1 [D,V] (resolution-doubling Joukowski identity).**
+
+```math
+s_{2r}=s_r+\frac{r^2}{s_r},\qquad\frac{ds_{2r}}{ds_r}=1-\frac{r^2}{s_r^2}.
+```
+
+**Proof.** Substitute $t_r=(s_r-r)/(s_r+r)$ into the displayed formula for $s_{2r}$; numerator and denominator factor to $2(s_r^2+r^2)$ and $4rs_r$ respectively, giving $s_{2r}=(s_r^2+r^2)/s_r$. Differentiation yields the ramification formula.
+
+This is a **degree-two rational map between two marked normalization spheres**, branched at $s_r=\pm r$—exactly the two node-preimage markings. The ramification is the algebraic counterpart of the squaring map $t_r\mapsto t_r^2$; it does not itself identify the two different Schrödinger operators or their spectral eigenvalue scales.
+
+### 15.1 Marked height forms commute with resolution doubling
+
+The catenoid height form at resolution $r$ is $dh_r=(1/r)d\log t_r$. At resolution $2r$,
+
+```math
+(t_r\mapsto t_r^2)^*(dh_{2r})=\frac1{2r}d\log(t_r^2)=\frac1r\,d\log t_r=dh_r.
+```
+
+Thus the **marked height differential is preserved exactly by pullback**. A small loop around $t_r=0$ maps to a loop winding twice around $t_{2r}=0$, and the target flux is half the source flux:
+
+```math
+\oint_{t_{2r}=0}dh_{2r}=\frac{2\pi i}{2r},\qquad \oint_{t_r=0}(t_r^2)^*dh_{2r}=\frac{2\pi i}{r}.
+```
+
+This is the correct period-degree relation. It is false to conclude that catenoids of neck radii $1/r$ and $1/(2r)$ are isometric merely because their height differentials agree under pullback: the Gauss maps become $-t_r$ and $-t_r^2$, so their induced metrics differ.
+
+### 15.2 Higher multiplication and the spectral involution
+
+For every integer $M\ge1$,
+
+```math
+t_{Mr}=t_r^M,\quad s_{Mr}=Mr\frac{1+t_r^M}{1-t_r^M},\quad (t\mapsto t^M)^*dh_{Mr}=dh_r.
+```
+
+The map $s_{Mr}(s_r)$ is rational of degree $M$ and can be expressed by Chebyshev/coth multiplication identities. The ordinary hyperbolic double-angle identities for $S,W$ are its real-variable shadows.
+
+Under the original **inversion** $x\mapsto c^2/x$ on the real angular meridian, $u\mapsto-u$, $t_r\mapsto1/t_r$, and
+
+```math
+s_r\mapsto-s_r,\qquad\Lambda=-s_r^2\mapsto\Lambda,\qquad\nu=s_r(r^2-s_r^2)\mapsto-\nu.
+```
+
+Therefore the canonical multiplicative reflection becomes **the hyperelliptic sheet involution** on the marked order-one spectral normalization. The real symmetry midpoint $x=c$ has $u=0$, $t_r=1$, hence $s_r=\infty$ in this projective chart. The spectral node preimages $s_r=\pm r$ are the two improper original ends $x\downarrow0$ and $x\uparrow\infty$.
+
+The same sheet-involution statement holds on the normalized depth-$n$ spectral model, because $\Lambda=-s^2$ is even and $\nu=s\prod_j(\kappa_j^2-s^2)$ is odd. This is an exact map of **involutions**, not an equality of the original weighted functions under unweighted inversion.
+
+## 16. A second marked differential on the SAME spectral sphere: the original arctangent primitive [D,V]
+
+The original rational Symmetrical Function has the exact one-form
+
+```math
+f_\mu(x;r,c)\,dx=\frac1{r\sqrt\mu}\frac{dt_r}{1+t_r^2},\qquad t_r=(x/c)^r
+```
+
+on the real meridian $v_{\rm ang}=0$. Use the Möbius-normalization map $t_r=(s_r-r)/(s_r+r)$ from §4.
+
+**Theorem 16.1 [D,V] (original integral as a rational differential on the spectral normalization).**
+
+```math
+f_\mu(x;r,c)\,dx=\frac{ds_r}{\sqrt\mu(s_r^2+r^2)}.
+```
+
+**Proof.** Differentiate the Möbius map and simplify:
+
+```math
+\frac{dt_r}{1+t_r^2}=\frac{r\,ds_r}{s_r^2+r^2}.
+```
+
+The displayed identity follows immediately. It is an exact equality of pullback differential forms along the **marked real projective arc**, with the usual branch orientation through $s_r=\infty$.
+
+The integral splits at $x=c$, which is $s_r=\infty$. The two real intervals become the two tails of the projective spectral line:
+
+```math
+x\in(0,c):\quad s_r\in(r,+\infty),\qquad x\in(c,\infty):\quad s_r\in(-\infty,-r).
+```
+
+They have exactly equal rational integrals:
+
+```math
+\int_r^\infty\frac{ds_r}{\sqrt\mu(s_r^2+r^2)}=\int_{-\infty}^{-r}\frac{ds_r}{\sqrt\mu(s_r^2+r^2)}=\frac{\pi}{4r\sqrt\mu}.
+```
+
+This recovers the original improper half-split, but **now as a marked-differential statement on the rational normalization of the actual reflectionless spectral curve**. It also explains why the canonical midpoint is naturally a projective point at infinity in this normalization chart.
+
+### 16.1 The two marked differential polar divisors are different
+
+On the same normalized $s_r$-sphere, the catenoid height differential is
+
+```math
+dh_C=\frac{2\,ds_r}{s_r^2-r^2}.
+```
+
+The original arctangent-primitive differential is
+
+```math
+d\mathcal A=\frac{ds_r}{\sqrt\mu(s_r^2+r^2)}.
+```
+
+**Theorem 16.2 [D,V].** These are two third-kind meromorphic differentials with **different** pole divisors:
+
+```math
+\mathrm{poles}(dh_C)=\{+r,-r\},\qquad \mathrm{poles}(d\mathcal A)=\{+ir,-ir\}.
+```
+
+Their residues are respectively $+1/r,-1/r$ and $1/(2ir\sqrt\mu),-1/(2ir\sqrt\mu)$ at the stated ordered poles.
+
+Under the complex rotation of the normalization coordinate $s_r=i\sigma$,
+
+```math
+d\mathcal A(\sigma)=\frac{i}{2\sqrt\mu}\left.dh_C\right|_{s_r=i\sigma}.
+```
+
+**Interpretation:** The arctangent/Gudermannian primitive and the catenoid logarithmic height are **different marked third-kind forms on the same rational curve**, with polar sets related by complex rotation. This is a rigorous analytic-continuation/Wick-like algebraic relation; it is *not* a real isometry, a claim of identical fluxes, or an identification of scattering energies. At $s_r=\pm ir$ the spectral projection $\Lambda=-s_r^2$ takes the value $+r^2$ rather than the bound-node energy $-r^2$.
+
+### 16.2 Original integral versus catenoid period
+
+The full original positive integral is $\pi/(2r\sqrt\mu)$; the catenoid height loop period is $2\pi i/r$. They are different types of integrals: the first is along an open real projective arc, and the second is a closed contour about a puncture, with different differentials and reality structures. Their common appearance of $\pi/r$ is explained by the two rational differential formulas, **not** by identifying the two integrals.
+
+## 17. Matching vertical flux does NOT close Riemann's horizontal periods [D,V,H467]
+
+The historical Riemann family has two marked period integrals $\omega_\beta=\oint_\beta dg_R/w_R$ and $\nu_\beta=\oint_\beta g_Rdg_R/w_R$, plus a conjugate cycle with corresponding absolute imaginary periods. The archived convention gives translation and flux vectors in the selected coordinate plane:
+
+```math
+T_R=A_R(-\nu_\beta,\,\omega_\beta),\qquad F_R=A_R(-|\nu_\alpha|,\,|\omega_\alpha|).
+```
+
+At the symmetric fiber $\lambda_R=1$, put $K_*=K(m=1/2)$ and $E_*=E(m=1/2)$, with the elliptic integral parameter $m$, not the scattering wave number. Then
+
+```math
+\omega_\beta=|\omega_\alpha|=2\sqrt2\,K_*,\qquad \frac{(T_R)_1}{(T_R)_3}=\frac{2E_*-K_*}{K_*}=\frac{\pi}{2K_*^2}.
+```
+
+The last identity uses the classical Legendre relation at complementary equal moduli:
+
+```math
+2K_*E_*-K_*^2=\frac\pi2.
+```
+
+Choose the *additional geometric normalization* that the Riemann vertical flux equal the catenoid vertical flux $2\pi/r$:
+
+```math
+(F_R)_3=A_R\,2\sqrt2K_*=\frac{2\pi}{r},\qquad A_R=\frac{\pi}{\sqrt2\,rK_*}.
+```
+
+**Theorem 17.1 [D,V] (matched flux, nonclosed horizontal period).** Under this normalization,
+
+```math
+(T_R)_3=(F_R)_3=\frac{2\pi}{r},\qquad (T_R)_1=\frac{\pi^2}{rK_*^2}>0,\qquad (F_R)_1=-(T_R)_1.
+```
+
+**Proof.** At $\lambda_R=1$ the real and conjugate vertical periods have equal magnitude; substitute the chosen $A_R$. The horizontal/vertical slope follows from the archived $\nu_\beta$ expression and the Legendre relation. The horizontal flux relation follows from the archived reciprocal-modulus conjugacy specialized to $\lambda_R=1$.
+
+The period/flux determinant then agrees exactly with the archival formula:
+
+```math
+(T_R)_1(F_R)_3-(T_R)_3(F_R)_1=\frac{4\pi^3}{r^2K_*^2}=8\pi A_R^2.
+```
+
+**Meaning:** Even after choosing the Riemann immersion scale so that its *vertical flux* matches the catenoid's marked flux, the Riemann immersion has a **nonzero horizontal translation period**. It is not a globally closed catenoid, and no equality of inverse-scattering spectral curves, Hodge norms, or Pinney amplitudes can erase this additional immersion-period datum.
+
+The Riemann minimal example may be considered in its own singly periodic translation quotient. That global quotient is a separate geometric object from the simply periodic angular catenoid.
