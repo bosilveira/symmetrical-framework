@@ -443,3 +443,147 @@ Y_{\tau\tau}+\kappa Y=0,\qquad \omega^2=\kappa(\tau_u)^2+\frac12\{\tau,u\}.
 This is an exact **gauge and reparametrization** of the rank-two local SL solution system. The phase/current $\vartheta_u=j/\rho^2$ with $j^2=\kappa$ is a scalar carrier phase, and for periodic $\rho$ its increment can encode a Floquet rotation number. Neither the Wronskian nor this phase by itself determines the curvature/Chern class of an independent Hopf circle bundle.
 
 **Theorem 15.1 [D,H] (what the EP lift actually preserves).** The positive EP clock transforms the local real SL solution space, projective Schwarzian and its determinant/Wronskian invariant. Any relation to the **Hopf** Berry connection requires an additional normalized complex spinor, a Hermitian structure, and a specified map of base paths. None is automatically supplied by the scalar EP amplitude.
+
+## 16. NEW EXACT LIFT: the canonical weighted Master SL carrier is the neutral sector of a hyperbolic cylinder [D,V]
+
+There is a particularly strong, simple application of Theorem 4.1 to the original framework, distinct from the catenoid metric.
+
+Recall the **original linear carrier** and weighted Hilbert space:
+
+```math
+\mathcal L_xf=-\frac1x(x^3f_x)_x+(r^2-1)f,\qquad \mathcal H_x=L^2((0,\infty),x\,dx).
+```
+
+Keep $u=\ln(x/c)$ and choose a **specific two-dimensional geometric lift**, with $2\pi$-periodic angle $\theta$ and strictly positive circle radius
+
+```math
+\phi_{\rm hyp}(u)=x^2=c^2e^{2u},\qquad g_{\rm hyp}=du^2+\phi_{\rm hyp}(u)^2d\theta^2=du^2+c^4e^{4u}d\theta^2.
+```
+
+This is a globally smooth metric on the cylinder $\mathbb R_u\times S^1_\theta$ (with fixed choice of dimensionless metric units). The principal rotational circle connection is trivial, $A=0$.
+
+**Theorem 16.1 [D,V] (canonical weighted SL as hyperbolic neutral reduction).** On functions invariant under $\theta$, the lifted Laplacian and its natural measure satisfy
+
+```math
+\Delta_{\rm hyp}^{(0)}=\partial_u^2+2\partial_u,\qquad\phi_{\rm hyp}\,du=x^2du=x\,dx.
+```
+
+The original carrier is **exactly**
+
+```math
+\mathcal L_x=-\Delta_{\rm hyp}^{(0)}+(r^2-1)
+```
+
+on the identified neutral Hilbert space. Multiplication by the positive half-density $\sqrt{\phi_{\rm hyp}}=x$ is precisely the **canonical** Liouville unitary and gives
+
+```math
+U_c\mathcal L_xU_c^{-1}=-\partial_u^2+r^2,\qquad U_cf(u)=xf(ce^u).
+```
+
+**Proof.** The circle-volume factor gives $\Delta^{(0)}=\phi^{-1}\partial_u(\phi\partial_u)$, and $\phi_u/\phi=2$. The volume identity is $x\,dx=x^2du$. The conjugation can be checked by substituting $f=\psi/x$.
+
+### 16.1 Exact constant negative Gaussian curvature
+
+For any warped surface $g=du^2+\phi(u)^2d\theta^2$, $K=-\phi_{uu}/\phi$. Here
+
+```math
+K_{\rm hyp}=-\frac{\partial_u^2(c^2e^{2u})}{c^2e^{2u}}=-4.
+```
+
+To see completeness and the hyperbolic geometry explicitly, set
+
+```math
+y=e^{-2u}>0,\qquad z=2c^2\theta,\qquad g_{\rm hyp}=\frac{dy^2+dz^2}{4y^2},\quad z\sim z+4\pi c^2.
+```
+
+This is the constant-curvature-$-4$ upper-half-plane metric modulo a parabolic translation; it is complete and has a shrinking horocyclic circle end as $u\to-\infty$.
+
+**Structural significance.** The canonical **one-dimensional weighted metric** $du^2$ is intrinsically flat, yet the neutral SL equation is exactly the invariant reduction of this **specified two-dimensional hyperbolic metric**. The negative curvature is encoded by the retained fiber radius $\phi=x^2$; it is invisible if one retains only the Liouville-conjugated free operator and throws away the positive half-density.
+
+**Nonuniqueness caveat [C].** This does not imply the hyperbolic cylinder is the **unique** higher-dimensional geometry generating the original SL equation. Other choices of fiber, metric, density and extra potential can produce the same neutral scalar differential expression. The exact lift gives a constructive existence theorem, not a unique inverse-geometric reconstruction.
+
+## 17. Charged modes of the same exact lift produce a Bessel/Mellin spectral hierarchy [D,V,K]
+
+Retain all angular charges $n\in\mathbb Z$ in the hyperbolic metric of §16, still with the same scalar shift $(r^2-1)$. The full geometric operator is
+
+```math
+\mathscr L_{\rm hyp}=-\Delta_{g_{\rm hyp}}+(r^2-1).
+```
+
+On the $n$-th normalized angular mode its weighted one-dimensional expression is
+
+```math
+\mathscr L_{\rm hyp}^{(n)}=-\partial_u^2-2\partial_u+(r^2-1)+\frac{n^2}{c^4e^{4u}}.
+```
+
+After **the same unitary multiplier $x$ as for the original weighted SL**, every charged mode becomes
+
+```math
+U_c\mathscr L_{\rm hyp}^{(n)}U_c^{-1}=-\partial_u^2+r^2+\frac{n^2}{c^4e^{4u}}=-\partial_u^2+r^2+\frac{n^2}{x^4}.
+```
+
+This is a one-dimensional **exponential-wall Schrödinger operator**. It is not the reflectionless Pöschl–Teller potential of draft 140; it is a different exact spectral realization emerging from the same underlying weighted metric.
+
+### 17.1 Exact modified-Bessel eigenfunctions
+
+For nonzero $n$, set
+
+```math
+t=\frac{|n|}{2c^2}e^{-2u}=\frac{|n|}{2x^2},\qquad \lambda=r^2+k^2,\qquad k>0,\qquad \kappa=k/2.
+```
+
+Then the spectral equation becomes
+
+```math
+t^2\psi_{tt}+t\psi_t+(\kappa^2-t^2)\psi=0.
+```
+
+Its solution exponentially decaying toward the high exponential wall ($u\to-\infty$, $t\to\infty$) is the **modified Bessel/Macdonald function**
+
+```math
+\psi_{n,k}(u)=K_{i k/2}\left(\frac{|n|}{2c^2}e^{-2u}\right).
+```
+
+**Theorem 17.1 [D,V] (exact charged generalized eigenfunction).** Each charged sector has a complete modified-Bessel scattering basis (in generalized-eigenfunction sense) with continuum threshold $\lambda=r^2$, under the natural self-adjoint realization. The neutral sector $n=0$ instead has free Fourier characters $e^{iku}$: both arise from the **same 2D hyperbolic Laplacian**, separated by their circle representation charge.
+
+### 17.2 Exact unit-modulus reflection coefficient
+
+For $k>0$ the small-$t$ expansion of $K_{i\kappa}(t)$ is
+
+```math
+K_{i\kappa}(t)\sim\frac12\Gamma(i\kappa)(t/2)^{-i\kappa}+\frac12\Gamma(-i\kappa)(t/2)^{i\kappa}.
+```
+
+At $u\to+\infty$, where $t/2=(|n|/(4c^2))e^{-2u}$, the two terms are respectively outgoing $e^{+iku}$ and incident $e^{-iku}$ waves. Hence
+
+```math
+\mathcal R_n(k)=\frac{\Gamma(ik/2)}{\Gamma(-ik/2)}\left(\frac{|n|}{4c^2}\right)^{-ik},\qquad|\mathcal R_n(k)|=1.
+```
+
+This is **total reflection from an exponential wall**, not Pöschl–Teller reflectionlessness, which has zero reflection coefficient and nontrivial transmission. The $c$ dependence is a phase shift tied to the chosen logarithmic origin/metric scaling, not a claim that the intrinsic topological class depends on $c$.
+
+### 17.3 The spectral Plancherel transform becomes Kontorovich–Lebedev
+
+Let $F(t)=\psi(u(t))$ and form the classical Kontorovich–Lebedev transform
+
+```math
+\widehat F(\kappa)=\int_0^\infty K_{i\kappa}(t)F(t)\,\frac{dt}{t},\qquad \kappa>0.
+```
+
+On its standard dense domain the inversion and Plancherel identities are
+
+```math
+F(t)=\frac2{\pi^2}\int_0^\infty \kappa\sinh(\pi\kappa)K_{i\kappa}(t)\widehat F(\kappa)\,d\kappa.
+```
+
+```math
+\int_0^\infty|F(t)|^2\frac{dt}{t}=\frac2{\pi^2}\int_0^\infty\kappa\sinh(\pi\kappa)|\widehat F(\kappa)|^2d\kappa.
+```
+
+Since $|du|=dt/(2t)$, the original flat logarithmic Hilbert norm is
+
+```math
+\int_{\mathbb R}|\psi(u)|^2du=\frac1{\pi^2}\int_0^\infty\kappa\sinh(\pi\kappa)|\widehat F(\kappa)|^2d\kappa.
+```
+
+**New exact synthesis:** The same canonical weighted space $L^2(x\,dx)$ can be realized geometrically so that **neutral modes use Fourier–Mellin Plancherel** and **charged modes use Kontorovich–Lebedev Plancherel**. The difference is a rigorous consequence of retaining, rather than discarding, the circle fiber representations. See NIST DLMF §10.43 and the classical Kontorovich–Lebedev inversion theory; the spectral transform formula requires its standard $L^2$ interpretation and generalized eigenfunction domains.
