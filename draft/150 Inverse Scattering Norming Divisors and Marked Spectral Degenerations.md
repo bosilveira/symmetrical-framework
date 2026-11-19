@@ -159,3 +159,199 @@ Expand the determinant into principal minors. The Cauchy determinant formula yie
 All coefficients are nonnegative, and the empty subset contributes $1$. This finite polynomial/exponential sum is an exact **linear-algebraic inverse map**, not a conjectural infinite series. Translation changes only the positive factors $\beta_j^2e^{-2\kappa_jv}$; the pairwise Cauchy interaction factors remain fixed.
 
 For the canonical family choose $\kappa_j=jr$ and $\beta_j^2=\alpha_{n,j}^2e^{2jr u_0}$ from §4, with $u=v-u_0$.
+
+## 6. Exact binomial Marchenko determinant for the entire integer ladder [D,V,K]
+
+Set $\kappa_j=jr$, use the canonical centered norming constants from §3, put $u=v-u_0$, and write $z=e^{-2ru}$. The matrix of §5 is finite-dimensional but its determinant has degree
+
+```math
+N=\sum_{j=1}^n j=\frac{n(n+1)}2
+```
+
+in $z$, *not* degree $n$. Nevertheless it collapses to a single power.
+
+**Theorem 6.1 [D,V,K] (exact binomial tau identity).**
+
+```math
+\det\left[\delta_{ij}+\frac{\alpha_{n,i}\alpha_{n,j}}{(i+j)r}e^{-(i+j)ru}\right]_{i,j=1}^n=(1+e^{-2ru})^{n(n+1)/2}.
+```
+
+The recovered potential is consequently
+
+```math
+-2\partial_u^2\log\tau_n(u)=-n(n+1)r^2\mathrm{sech}^2(ru)=V_n(u).
+```
+
+**Mathematical proof with declared classical input.** The associated-Legendre modes in §3 determine *all* the negative eigenvalues and the right norming constants of the explicitly reflectionless integer Pöschl–Teller operator. Reflectionlessness follows from the Darboux chain of draft 140. The standard uniqueness theorem for the finite real reflectionless Marchenko inverse problem therefore says that its determinant reconstructs exactly this $V_n$. Independently,
+
+```math
+-2\partial_u^2\log(1+e^{-2ru})^N=-2Nr^2\mathrm{sech}^2(ru)=-n(n+1)r^2S^2.
+```
+
+Two tau functions producing the same potential can differ by $e^{au+b}$. Both approach $1$ as $u\to+\infty$, forcing $a=b=0$; hence the determinant is the displayed binomial. The proof thus depends on the **stated classical Marchenko uniqueness theorem**, not an unproved inference from matching a few coefficients.
+
+**Independent symbolic certificate [V].** Expanding the Cauchy principal-minor formula of §5 in exact rational arithmetic, with the factorial constants of §3, gives zero polynomial residual for **every** integer depth $1\le n\le6$ (degree $1,3,6,10,15,21$ respectively). This check is supplementary to the theorem, not its proof for all $n$.
+
+### 6.1 Fully explicit low-depth cases
+
+At depth one,
+
+```math
+\kappa_1=r,\quad\alpha_{1,1}^2=2r,\quad\tau_1=1+z,\quad V_1=-2r^2S^2.
+```
+
+At depth two,
+
+```math
+(\kappa_1,\kappa_2)=(r,2r),\quad(\alpha_{2,1}^2,\alpha_{2,2}^2)=(6r,12r).
+```
+
+The $2\times2$ Cauchy determinant is
+
+```math
+\tau_2=1+3z+3z^2+z^3=(1+z)^3,\quad V_2=-6r^2S^2.
+```
+
+At depth three, the coefficient sequence becomes
+
+```math
+(\alpha_{3,1}^2,\alpha_{3,2}^2,\alpha_{3,3}^2)=(12r,60r,60r),\quad\tau_3=(1+z)^6.
+```
+
+The $n=3$ determinant is **degree six** despite the $3\times3$ matrix. The powers of $z$ come from sums of distinct decay exponents. This is a concrete algebraic realization of the framework's level/recursion web.
+
+## 7. The ratio of norming constants is a spectral test of a centered PT slice [D,V]
+
+With $\beta_j^2$ defined relative to the reference coordinate $v$, write
+
+```math
+\rho_j=\left(\frac{\beta_j^2}{\alpha_{n,j}^2}\right)^{1/j}.
+```
+
+For an exactly translated centered Pöschl–Teller well, §4 proves
+
+```math
+\rho_1=\rho_2=\cdots=\rho_n=e^{2ru_0}=(c/c_{\rm ref})^{2r}.
+```
+
+Conversely, among reflectionless potentials with exactly the integer spectrum $\{-j^2r^2\}$ and positive right norming constants, this condition is **sufficient** to reconstruct the translated integer PT profile by the uniqueness of the Marchenko problem and Theorem 6.1.
+
+**Theorem 7.1 [D,K] (inverse-spectral characterization).** A real reflectionless $n$-bound-state potential with $\kappa_j=jr$ belongs to the one-translation-parameter family $V_{n,r,u_0}$ if and only if its positive right norming constants obey the displayed common-ratio condition.
+
+This gives a strict test for whether an arbitrary reflectionless $n$-soliton potential lies on the *special PT slice* of its full $n$-parameter isospectral manifold. For $n=1$, all positive norming data can be absorbed into a translation; for $n\ge2$, $(n-1)$ independent ratio constraints are nontrivial.
+
+## 8. KdV flow proves that the n≥2 PT slice is not stationary under the first flow [D,K]
+
+Use the same KdV sign convention as draft 130:
+
+```math
+V_\tau=6VV_v-V_{vvv},\qquad L(\tau)=-\partial_v^2+V(v,\tau).
+```
+
+For rapidly decaying real reflectionless data, the bound exponents $\kappa_j$ and the transmission coefficient remain fixed, while the **right squared norming coefficients** evolve as
+
+```math
+\beta_j^2(\tau)=\beta_j^2(0)e^{8\kappa_j^3\tau}.
+```
+
+This is the standard inverse-scattering/KdV time law in the explicit right-tail convention of §3. Substitution into the Marchenko matrix yields the finite-dimensional tau evolution
+
+```math
+C_{ij}(v,\tau)=\frac{\beta_i(0)\beta_j(0)}{\kappa_i+\kappa_j}e^{-(\kappa_i+\kappa_j)v+4(\kappa_i^3+\kappa_j^3)\tau}.
+```
+
+```math
+V(v,\tau)=-2\partial_v^2\log\det(I_n+C(v,\tau)).
+```
+
+### 8.1 One bound level is a pure translation
+
+For $n=1$, $\kappa_1=r$ and $\beta_1^2(0)=2r\,e^{2ru_0}$. Then
+
+```math
+\tau_1(v,\tau)=1+e^{-2r(v-u_0-4r^2\tau)}
+```
+
+and
+
+```math
+V_1(v,\tau)=-2r^2\mathrm{sech}^2[r(v-u_0-4r^2\tau)].
+```
+
+Thus the $n=1$ first KdV flow translates the centered well at speed $4r^2$ and exactly preserves its functional shape.
+
+### 8.2 Two or more levels separate their norming phases
+
+For $n\ge2$, starting from the centered PT data,
+
+```math
+\left(\frac{\beta_j^2(\tau)}{\alpha_{n,j}^2}\right)^{1/j}=e^{2ru_0+8j^2r^3\tau}.
+```
+
+This depends on $j$ as soon as $\tau\ne0$. Hence the centered PT norming-ratio condition of §7 is broken at every nonzero first-KdV time:
+
+**Theorem 8.1 [D].** For $n\ge2$, the standard first KdV flow leaving the eigenvalues $\{-j^2r^2\}$ fixed generally moves the potential **off the translated PT family**, although it stays reflectionless and in the finite-dimensional $n$-soliton isospectral class.
+
+This is an exact example of a finite spectral closure with **nontrivial divisor motion**. It also explains why the higher integer PT potential is not simply a one-soliton travelling solution of the first KdV equation.
+
+## 9. Two spectral trace invariants reconstruct the resolution r [D,V,K]
+
+The centered PT potential is negative and rapidly decaying. Direct integration yields
+
+```math
+I_1:=\int_{\mathbb R}V_n(v)\,dv=-2n(n+1)r=-4\sum_{j=1}^n\kappa_j.
+```
+
+Similarly,
+
+```math
+I_2:=\int_{\mathbb R}V_n(v)^2\,dv=\frac43n^2(n+1)^2r^3=\frac{16}{3}\sum_{j=1}^n\kappa_j^3.
+```
+
+**Proof.** Use $\int S^2du=2/r$, $\int S^4du=4/(3r)$ and $\sum_{j=1}^n j=n(n+1)/2$, $\sum_{j=1}^n j^3=[n(n+1)/2]^2$. The equalities on the right are the familiar reflectionless trace identities, verified here in the special integer family.
+
+**Theorem 9.1 [D,V] (resolution from two integrals).** For the PT family, the resolution is exactly
+
+```math
+r=\frac{3I_2}{I_1^2},\qquad n(n+1)=-\frac{I_1}{2r}=-\frac{I_1^3}{6I_2}.
+```
+
+Both integrals are invariant under the first decaying KdV flow. Indeed,
+
+```math
+\frac{dI_1}{d\tau}=0,\qquad \frac{dI_2}{d\tau}=2\int V(6VV_v-V_{vvv})dv=0
+```
+
+by integration by parts and decay. Consequently the scalar combination $3I_2/I_1^2$ stays equal to the original $r$ **through the entire KdV deformation**, even when the profile ceases to be a translated PT well. It becomes a preserved spectral **resolution proxy**, not a theorem that every later profile still has precisely the single-well shape $\mathrm{sech}^2(rv)$.
+
+**Correction of potential overreach:** These two moments do not determine the translation center, the full function, or a general scattering reflection coefficient. They recover $r$ and $n$ only **within the stated reflectionless integer-spectrum/PT-origin class**.
+
+## 10. A second inverse route: the potential's logarithmic barycenter [D,V]
+
+For the translated symmetric potential $V_{n,r,u_0}$, the first logarithmic moment is
+
+```math
+I_{1,v}:=\int_{\mathbb R}vV_{n,r,u_0}(v)\,dv=u_0 I_1.
+```
+
+Hence on a **fixed reference coordinate** $v=\ln(x/c_{\rm ref})$,
+
+```math
+u_0=\frac{\int vV(v)\,dv}{\int V(v)\,dv},\qquad c=c_{\rm ref}\exp\left(\frac{\int vV(v)\,dv}{\int V(v)\,dv}\right).
+```
+
+This agrees exactly with the norming-constant center of §4. Under KdV, the moment obeys
+
+```math
+\frac{d}{d\tau}\int_{\mathbb R}vV(v,\tau)\,dv=-3I_2.
+```
+
+**Proof.** Integrate $v(6VV_v-V_{vvv})$ by parts. The cubic derivative contributes zero; $\int vVV_v=-\frac12\int V^2$, giving $-3I_2$.
+
+Thus the potential's weighted barycenter moves at the exact constant velocity
+
+```math
+\frac{d}{d\tau}\frac{\int vV\,dv}{\int V\,dv}=-\frac{3I_2}{I_1}=2n(n+1)r^2
+```
+
+for a KdV flow originating from the integer PT data. For $n=1$ this equals the individual soliton speed $4r^2$; for $n\ge2$ it is a **moment centroid speed**, not the speed of a single translated PT profile. This gives an independent exact check of the norming/divisor dynamics.
