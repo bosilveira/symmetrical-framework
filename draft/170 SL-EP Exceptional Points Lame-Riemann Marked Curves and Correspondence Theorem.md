@@ -1079,3 +1079,41 @@ At the $m\to0$ free closed-gap endpoint,
 ```
 
 At $m\to0$ the finite spatial period is $\pi/2$, and the self-adjoint free transfer at $E=4$ is **semisimple $M=-I$**. At $m\to1$ the primitive period diverges and the isolated PT bound state lies at $E=-4$. Throughout, $c$ is the log origin and $\mu$ the original amplitude/norm normalization: neither becomes the elliptic modulus or spectral energy.
+
+## 27. Independent evidence, historical provenance and literature
+
+### 27.1 Exact or independent checks in this investigation
+
+1. **Free Hill discriminant:** its derivative at zero is $-L^2$, while at every positive free periodic/antiperiodic double level the derivative vanishes and the transfer matrix is $\pm I$. Both statements follow directly by expanding $2\cos(L\sqrt\lambda)$.
+2. **Genuine complex-potential exceptional point:** the substitution $z=\sqrt\alpha e^{iu}$ converts the complex exponential Hill equation into Bessel's equation. DLMF's exact continuation formula makes $Y_n$ acquire $4iJ_n$ on one circuit. The finite-period characteristic determinant vanishes quadratically at $\lambda=n^2$, $n\ge1$, while the periodic eigenfunction space is one-dimensional. Antiperiodic half-integer-square eigenvalues remain semisimple even for the same nonreal potential.
+3. **Domain distinction:** regular periodic Green-function boundary corrections contain the matrix inverse $(M-\sigma I)^{-1}$; its adjugate cancels a potential double pole at semisimple $M=\sigma I$, but not at a genuine Jordan $M\ne\sigma I$ with a quadratic characteristic root. This is not a claim about the whole-line nonselfadjoint spectrum.
+4. **Complex Milne equations:** direct separation of real and imaginary parts gives the extra current derivative $j'=(\mathrm{Im}V-\mathrm{Im}\lambda)a^2$. The real constant-strength EP correspondence has **both** real potential and real spectral-parameter assumptions.
+5. **Lamé band edges:** substitution of Jacobi $\mathrm{dn},\mathrm{cn},\mathrm{sn}$ in the shifted one-gap Lamé operator produces the three displayed energies $E_0,E_1,E_2$. Exact limits of those roots at $m=0,1$ give **different** nodes, respectively free closed gap and PT collapsed allowed band.
+6. **Full Lamé–Riemann curve isomorphism:** exact SymPy polynomial reduction proves that $g_R=-k_R-D_RE/r^2$, $y_R=D_R^{3/2}\eta/r^3$ satisfy $y_R^2=g_R(g_R-\lambda_R)(g_R+\lambda_R^{-1})$. The branch images are exactly $(\lambda_R,0,-1/\lambda_R)$, and the two rational elliptic $j$ invariants agree identically after $m=1/(1+\lambda_R^2)$.
+7. **Marked differentials:** differentiating the affine map proves $dg_R/y_R=-(r/\sqrt{D_R})dE/\eta$ and $dg_R/w_R=-r\sqrt m\,dE/\eta$, with the physical Riemann normalization $w_R=\sqrt{\lambda_R}y_R$. Pullback of the complete Weierstrass triple and its horizontal exact differential reproduces the existing H466 reduction.
+8. **Full spectral period gauge:** the explicitly displayed Gauss–Manin gauge matrix $G$ has constant determinant $-1$. Symbolic differentiation and simplification produce the rational traceless two-by-two connection in §23. Direct high-precision spectral quadrature, differentiated at $m=0.25,0.5,0.7$ with $r=1.3$, agrees with this connection to around $10^{-21}$ in the quadrature setup.
+9. **Marked spectral periods:** direct cubic quadratures yield the displayed complete $K(m),\mathsf E(m)$ formulas, and Legendre's relation gives the exactly constant determinant $-8\pi i$ in the declared branch-cut orientation. Other cycle orientations change its sign only.
+10. **Distinct marked nodal differentials:** at $m\to1$, $E=-s^2$ gives $dE/\eta=2ds/(s^2-r^2)$, exactly the catenoid logarithmic height with residues $\pm1/r$. At $m\to0$ the other nodal normalization gives $dE/\eta=-2ds/(s^2+r^2)$, exactly $-2\sqrt\mu\,f_\mu dx$ under the independently verified projective identification of draft 160.
+11. **Pinney-to-Lamé degree-two map:** the composed affine expressions $E=-r^2a^2/(2\sqrt\mu)$, $\eta=r^2aY/(\sqrt2\mu^{3/4})$ have identically vanishing elliptic cubic residual modulo the centered Pinney quartic, and holomorphic pullback factor $-\sqrt2\mu^{1/4}$. The degree-one/degree-two Hodge scalings agree.
+12. **Complete r=2 regression:** the symmetric spectral branch points, normalized Riemann affine map, rational Gauss–Manin matrix, elliptic period determinant, both nodal rational primitives, catenoid flux, and original weighted norm were recalculated with $c,\mu$ explicit.
+
+### 27.2 Historical project results retained rather than renamed
+
+The verified historical ZIP claims H95 and H100/H299 record the integer Lamé spectral polynomials, PT soliton degenerations and exact Crum/Lax–Novikov/Burchnall–Chaundy operator identities. H466–H472 record Riemann minimal-example Weierstrass data, exact differential reduction, marked real translation/flux, Gauss–Manin/Picard–Fuchs, modular $X_0(4)$ coordinates and numerical monodromy checks. The Lamé complementary-loci module already reports the Legendre elliptic modulus $m_R=1/(1+\lambda_R^2)$ and equality of corresponding $j$ invariants.
+
+Drafts 120, 130 and 140 respectively establish domain-safe weighted SL parity, the SL–EP symmetric-square/finite-gap dictionary, and Darboux spectral partial unitarity. Draft 150 develops reflectionless inverse norming and the centered Pinney-to-symmetric-Riemann 2-isogeny. Draft 160 supplies the rational nodal spectral-to-catenoid Weierstrass identification and catenoid/helicoid period distinction.
+
+The **new explicit additions within this draft** are chiefly the domain-specific Bessel exceptional-point counterexample, the complete smooth **real affine spectral-energy map** to every Riemann elliptic fiber, the corresponding Gauss–Manin gauge, the **two distinct limiting rational spectral differentials** unifying the catenoid logarithmic height and the original arctangent primitive, and the composed Pinney-to-smooth-Lamé isogeny. Historical novelty is **not** asserted.
+
+### 27.3 External sources and precise uses
+
+- Bessel analytic continuation and its integer-order formula (DLMF 10.11.6): https://dlmf.nist.gov/10.11 .
+- Non-self-adjoint Gasymov-type Hill potentials and spectral-domain qualifications: https://www.sciencedirect.com/science/article/pii/S0022247X1400907X ; https://www.aimsciences.org/article/doi/10.3934/cpaa.2017110 .
+- Classical Lamé equations, periodic band edges and Jacobi functions: https://dlmf.nist.gov/29 ; https://www.sciencedirect.com/science/article/pii/S0393044024002237 .
+- Real periodic Hill discriminants and closed-gap multiplicity: https://link.springer.com/article/10.1186/s13661-018-1111-y ; https://doi.org/10.1016/J.JDE.2014.09.004 .
+- Finite-gap spectral curves and nodal solitonic limits: https://academic.oup.com/integrablesystems/article/4/1/xyz006/5543069 ; https://www.sciencedirect.com/science/article/pii/S0393044017301043 .
+- Meeks, Pérez and Ros, Riemann minimal examples and their catenoid/helicoid limits under suitable normalization: https://annals.math.princeton.edu/2015/181-2/p02 ; https://arxiv.org/abs/1609.05660 .
+- Complete elliptic integrals and the Legendre relation: https://dlmf.nist.gov/19 .
+- General weighted self-adjoint Sturm–Liouville theory: https://encyclopediaofmath.org/wiki/Sturm-Liouville_theory .
+
+**Evidence boundary:** Finite-gap Bloch theory, regular periodic operator algebraic multiplicities, and global embedded Riemann minimal-surface limits are standard mathematical inputs [K]; the displayed algebraic identities were independently derived. The archive's numerical modular/monodromy checks retain their original confidence labels. No operator exceptional point is claimed for a real self-adjoint PT well, and no universal global isometry is claimed merely from equality of local ODEs or curve invariants.
