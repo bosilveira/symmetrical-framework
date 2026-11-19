@@ -523,3 +523,227 @@ For $n=1$, $B_1=rW-ik$; for $n=2$, $B_2=r^2(3W^2-1)-k^2-3ikrW$. They are not squ
 The real parameter $k$ is conjugate to the canonical logarithmic coordinate $u=\ln(x/c)$ in the **weighted spectral Hilbert space**. Its squared value $\lambda=k^2$ is the Schrödinger spectral energy relative to the unshifted $h_n$ operator. It is not the mechanical energy of the original nonlinear Duffing separatrix, not the Riemann family parameter $\lambda_R$ of draft 130, and not the oscillatory time frequency of a separately selected physical system.
 
 The scattering phase $\delta_n(k)$ is obtained from a spatial Jost normalization, while the Milne–Gudermannian phase of the canonical half-rate carrier has $u$ as its **linear-carrier independent variable**. Their common Riccati amplitude–phase equations produce explicit pullbacks, not an automatic equality of their phase increments. Likewise the Lax–Novikov spectral curve is a singular spectral-operator curve, not the smooth elliptic Riemann minimal-example curve with marked height differential and immersion periods.
+
+## 15. The actual catenoid Jacobi operator needs its own Hilbert metric [D,K,V]
+
+On the complete canonical Euclidean catenoid let $\zeta=u+iv$, $v\sim v+2\pi/r$, and
+
+```math
+X(u,v)=\left(\frac{\cosh(ru)}r\cos(rv),\,\frac{\cosh(ru)}r\sin(rv),\,u\right),\qquad R=\cosh(ru)=S^{-1}.
+```
+
+Its induced metric and area element are
+
+```math
+g_C=R^2(du^2+dv^2),\qquad dA_C=R^2\,du\,dv.
+```
+
+The Gaussian curvature and squared second-fundamental-form norm are
+
+```math
+K_C=-r^2S^4,\qquad |A_C|^2=2r^2S^4.
+```
+
+With $\Delta_{g_C}=R^{-2}(\partial_u^2+\partial_v^2)$, choose the **negative** of the minimal-surface Jacobi differential expression
+
+```math
+B_C=-(\Delta_{g_C}+|A_C|^2).
+```
+
+On the normalized angular mode $e^{imrv}$, $m\in\mathbb Z$, it acts on a radial profile $h(u)$ as
+
+```math
+(B_mh)(u)=R^{-2}\left[-h_{uu}+(m^2r^2-2r^2S^2)h\right]=R^{-2}(h_1+m^2r^2)h.
+```
+
+**Critical qualification:** The expression $h_1+m^2r^2$ appears only **after multiplying the Jacobi equation by $R^2$**. That multiplication changes the natural measure and is not a unitary conjugation of $B_m$ on the surface's radial $L^2(R^2du)$ space.
+
+## 16. An exact UNITARY catenoid Jacobi conjugation [D,V]
+
+The radial Hilbert space for a normalized angular mode is
+
+```math
+\mathcal H_C^{(m)}=L^2(\mathbb R,R(u)^2du).
+```
+
+Multiplication by $R$ is the natural unitary map
+
+```math
+(U_Ch)(u)=R(u)h(u),\qquad U_C:\mathcal H_C^{(m)}\longrightarrow L^2(\mathbb R,du).
+```
+
+**Theorem 16.1 [D,V] (exact transformed catenoid operator).** On a common smooth core,
+
+```math
+U_CB_mU_C^{-1}=-\partial_u(S^2\partial_u)+(m^2-1)r^2S^2=:\widetilde B_m.
+```
+
+**Proof, step by step.** For $\psi=R h$ set $a=R_u/R=rW$. Then $h=\psi/R$ and
+
+```math
+h_{uu}=R^{-1}[\psi_{uu}-2a\psi_u+(a^2-a_u)\psi].
+```
+
+Substitute into $R B_m(\psi/R)$ and use $R^{-2}=S^2$, $a_u=r^2S^2$, and $W^2+S^2=1$:
+
+```math
+R B_m(\psi/R)=S^2[-\psi_{uu}+2rW\psi_u+(m^2-1)r^2\psi].
+```
+
+Because $(S^2)_u=-2rWS^2$, the first two terms are exactly $-\partial_u(S^2\partial_u\psi)$. This proves the stated **unitary** conjugation, independently verified by symbolic differentiation for $m=0,1,2$.
+
+The transformed operator has *degenerate leading coefficient* $p(u)=S^2\to0$ at both infinite ends. It is a different Sturm–Liouville operator from $h_1+m^2r^2$ and the original free constant-potential carrier; no equality of their full spectra follows from their common zero-Jacobi equation.
+
+### 16.1 A form-theoretic distinction between angular sectors
+
+For compactly supported smooth $\psi$, the transformed quadratic form is
+
+```math
+\langle\psi,\widetilde B_m\psi\rangle=\int_{\mathbb R}S^2\left(|\psi_u|^2+(m^2-1)r^2|\psi|^2\right)du.
+```
+
+For $|m|\ge1$ this form is nonnegative. For $m=0$ there is an explicit negative direction: take a compactly supported cutoff $\psi_L$ equal to $1$ on $[-L,L]$, tapering only where $|u|$ is large. The derivative contribution is exponentially small as $L\to\infty$ because it is weighted by $S^2$; the negative potential contribution approaches $-r^2\int_{\mathbb R}S^2du=-2r$. Thus the complete geometric Jacobi problem has a negative quadratic direction in the rotationally symmetric sector, without any loss of self-adjointness.
+
+This argument gives a **sector sign statement**, not a complete Morse-index theorem for arbitrary boundary or quotient geometries.
+
+## 17. Darboux solutions produce actual catenoid Jacobi fields [D,V]
+
+The zero-Jacobi equation in angular mode $m$ is
+
+```math
+(h_1+m^2r^2)h=0.
+```
+
+Two familiar exact $m=0$ solutions of $h_1h=0$ are
+
+```math
+h_{0,\mathrm{odd}}(u)=W,\qquad h_{0,\mathrm{even}}(u)=1-ruW.
+```
+
+Their parities and geometric interpretations match axial translation and scale/deformation Jacobi directions; direct differentiation checks both equations. In the $|m|=1$ angular sector,
+
+```math
+(h_1+r^2)S=0,
+```
+
+so $h(u,v)=S(u)e^{\pm irv}$ gives the complexified pair corresponding to real horizontal-translation Jacobi fields.
+
+These are **formal global Jacobi solutions**, not automatically square-integrable eigenfunctions in the catenoid surface Hilbert space. In particular,
+
+```math
+\int_{\mathbb R}R^2S^2du=\int_{\mathbb R}du=\infty.
+```
+
+Thus the $m=1$ geometric Jacobi field $S$ is not in $L^2(C,dA_C)$, even though the **same scalar function** $S$ is a normalized bound state of $h_1$ in the *different* flat measure $du$. This is an exact, instructive counterexample to identifying two spectra from a common differential expression at spectral value zero.
+
+The helicoid is locally Bonnet-associated to the catenoid and shares the local Jacobi expression, but its global angular coordinate is not periodically identified in the same way. The catenoid's normalized angular constant mode and the Fourier index lattice $m\in\mathbb Z$ cannot simply be transported to the helicoid's unwrapped angular line.
+
+## 18. A direct metric diagram from original weighted L2 to the catenoid [D,V]
+
+The canonical weighted Hilbert map of draft 130 is
+
+```math
+U_cf(u)=xf(x),\qquad x=ce^u,\qquad\|f\|_{L^2(xdx)}=\|U_cf\|_{L^2(du)}.
+```
+
+Compose with the inverse catenoid half-density map $U_C^{-1}$ and the normalized angular constant $h_0(v)=\sqrt{r/(2\pi)}$:
+
+```math
+(\mathcal I_{c,r}f)(u,v)=\sqrt{\frac{r}{2\pi}}\frac{x f(x)}{R(u)}.
+```
+
+It is an isometry into the angularly constant sector of $L^2(C,dA_C)$, but its **operator pullback** is explicitly
+
+```math
+\mathcal I_{c,r}^{-1}B_C\mathcal I_{c,r}\quad\stackrel{U_c}{\longleftrightarrow}\quad\widetilde B_0=-\partial_u(S^2\partial_u)-r^2S^2.
+```
+
+The original weighted free carrier instead corresponds to
+
+```math
+U_c\tau_xU_c^{-1}=-\partial_u^2+r^2.
+```
+
+Hence an exact Hilbert-space isometry does **not** intertwine these two naturally defined differential operators. The present calculation makes the obstruction explicit: one has a variable leading coefficient $S^2$ and a negative localized potential, the other a constant leading coefficient and positive constant potential.
+
+There is nevertheless a **different** operator intertwiner available for the flat $h_1$ spectral problem, namely the Darboux polar-unitary map $\mathcal U_1$ of §5. The distinctions between *isometry of function spaces*, *equality of local zero equations*, and *unitary operator intertwining* are fully visible.
+
+## 19. The original localized function: a bound state for n=1, mixed spectrum for n=2 [D,V]
+
+Return to the original centered rational function, keeping $\mu,c$ explicit:
+
+```math
+f_\mu(x;r,c)=\frac{S}{2\sqrt\mu\,x},\qquad \psi_\mu(u)=U_cf_\mu=\frac{S}{2\sqrt\mu},\qquad\|\psi_\mu\|_2^2=\frac1{2r\mu}.
+```
+
+### 19.1 Order-one well: the full canonical norm is discrete
+
+Since $h_1S=-r^2S$, the normalized ground mode is $\varphi_{1,1}=\sqrt{r/2}\,S$. Therefore
+
+```math
+\psi_\mu=\frac1{\sqrt{2r\mu}}\varphi_{1,1}.
+```
+
+Equivalently,
+
+```math
+h_1\psi_\mu=-r^2\psi_\mu,\qquad (h_1+r^2)\psi_\mu=0,\qquad Q_1\psi_\mu=0.
+```
+
+So the entire canonical weighted $L^2$ norm is concentrated in the **single discrete bound state** of this *chosen modified operator*. This does **not** make $\psi_\mu$ a zero eigenfunction of the original free carrier $-\partial_u^2+r^2$; the latter has no $L^2$ bound state.
+
+### 19.2 Order-two well: exactly computable discrete/continuous splitting
+
+For the Master Hessian well $h_2$, $\psi_\mu$ is even, so its projection on the odd bound state $\varphi_{2,1}\propto SW$ vanishes. Its overlap with the even bound state $\varphi_{2,2}=\sqrt{3r/4}\,S^2$ is
+
+```math
+\langle\varphi_{2,2},\psi_\mu\rangle=\frac{\sqrt{3r/4}}{2\sqrt\mu}\int_{\mathbb R}S^3du=\frac{\pi\sqrt3}{8\sqrt{r\mu}}.
+```
+
+The equality uses the exact integral $\int_{\mathbb R}S^3du=\pi/(2r)$. Therefore
+
+```math
+\|P_{\rm bound}^{(2)}\psi_\mu\|_2^2=\frac{3\pi^2}{64r\mu},\qquad \frac{\|P_{\rm bound}^{(2)}\psi_\mu\|_2^2}{\|\psi_\mu\|_2^2}=\frac{3\pi^2}{32}.
+```
+
+The **remaining fraction** $1-3\pi^2/32>0$ lies in the absolutely continuous subspace. This is an exact spectral statement for an explicitly chosen function and operator, not a generic claim that every nonlinear Master separatrix carries this spectral fraction.
+
+### 19.3 The transformed continuous coefficient is elementary
+
+The order-two Crum operator acts on the original profile as
+
+```math
+Q_2S=A_1A_2S=r^2S^3.
+```
+
+Using the known Fourier integral
+
+```math
+\int_{\mathbb R}e^{-iku}S^3du=\frac{\pi(k^2+r^2)}{2r^3}\,\mathrm{sech}\left(\frac{\pi k}{2r}\right),
+```
+
+the distorted Fourier transform of $\psi_\mu$ from §12 is
+
+```math
+(\mathscr F_2\psi_\mu)(k)=\frac{\pi}{4r\sqrt{2\pi\mu}}\sqrt{\frac{k^2+r^2}{k^2+4r^2}}\,\mathrm{sech}\left(\frac{\pi k}{2r}\right).
+```
+
+This formula was checked by applying the exact adjoint Crum operator and comparing normalizations; it is a genuine **Darboux-deformed multiplicative Fourier amplitude** of the original Symmetrical Function.
+
+### 19.4 A definite integral follows from the discrete/continuous Plancherel split
+
+Parseval gives
+
+```math
+\frac1{2r\mu}=\frac{3\pi^2}{64r\mu}+\int_{\mathbb R}|(\mathscr F_2\psi_\mu)(k)|^2dk.
+```
+
+Substituting the exact coefficient and simplifying yields the **parameter-dependent definite integral**
+
+```math
+\int_{-\infty}^{\infty}\frac{k^2+r^2}{k^2+4r^2}\,\mathrm{sech}^2\left(\frac{\pi k}{2r}\right)dk=\frac{r(32-3\pi^2)}{2\pi}.
+```
+
+The identity was independently numerically checked at $r=1/2,1,2$ with errors at floating-point roundoff. It can also be evaluated by contour or Fourier methods; the conceptual derivation here is **Plancherel plus the Darboux discrete kernel**.
+
+**This is a particularly sharp example of the requested whole-system algebra:** the original rational profile, the weighted Hilbert metric, the rank-two scattering carrier, the Crum intertwiner, the Pinney/spectral closure and an exact transcendental integral all participate in one compatible calculation.
