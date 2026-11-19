@@ -128,3 +128,169 @@ U_\phi\mathcal H_0U_\phi^{-1}=-\Delta_h+\frac{\Delta_h\sqrt\phi}{\sqrt\phi}.
 ```
 
 The same half-density in a charged sector gives the covariant Bochner Laplacian plus the displayed density potential and $n^2/\phi^2$. **The scalar invariant reduction remembers the fiber radius as a weight but forgets the connection and its topology.**
+
+## 5. A rigorous counterexample: same invariant operator, different total topology [D,K,C]
+
+On the same round base $(B,h)=(S^2,g_{\rm round})$, fix a **constant** fiber radius $\phi=\ell>0$. Compare two principal circle bundles:
+
+- $P_0=S^2\times S^1$, whose first Chern class is zero and whose connection may be flat.
+- $P_1=S^3\to S^2$ (Hopf), whose first Chern class is one and whose natural connection has nonzero curvature.
+
+Equip both with the invariant metric of §3 using their respective connections. The total spaces are topologically different, but their neutral scalar Hilbert operators are identical:
+
+```math
+\mathcal H_0^{P_0}=\mathcal H_0^{P_1}=-\Delta_{S^2},\qquad \|f_0\|^2=\ell\int_{S^2}|f_0|^2\,dA_h.
+```
+
+**Theorem 5.1 [D,K] (non-faithfulness of uncharged reduction).** A reduced invariant SL/Laplace equation together with its **weighted measure and full neutral spectrum** does not determine the total bundle's Chern class, connection, or total topology.
+
+For each $k\in\mathbb Z$ there is a principal circle bundle $P_k\to S^2$ with $c_1=k$; all can carry the *same* base metric and constant radius $\ell$ and therefore the **same $\mathcal H_0$**. For $k\ne0$ their total spaces include lens-space types, whereas $k=0$ is the product.
+
+### 5.1 What the charged sectors retain
+
+For the bundle $P_k$, the $n$-th reduced coefficient is a section of an associated bundle of Chern number
+
+```math
+c_1(L^n)=n\,c_1(P_k)=nk.
+```
+
+Its covariant derivative contains $nA$, and its Bochner Laplacian knows the curvature through commutators
+
+```math
+[D_i^{(n)},D_j^{(n)}]=-inF_{ij}.
+```
+
+This gives a precise **positive reconstruction statement for the operator decomposition**, not a theorem that *unlabeled eigenvalue sets alone* determine all bundle topology: isospectral or gauge-equivalent situations require careful distinction. The full charge-graded spaces, transition maps and covariant operators carry more information than the neutral scalar spectrum.
+
+## 6. Curvature, Chern class and holonomy are not identical [D,K,C]
+
+On a principal $U(1)$ bundle, $F=dA$ represents the **real** first Chern class with the chosen sign:
+
+```math
+\frac1{2\pi}\int_\Sigma F=\langle c_1(P),[\Sigma]\rangle\in\mathbb Z
+```
+
+for a smooth oriented closed base two-cycle $\Sigma$. Principal circle bundles over a paracompact base are classified by their **integral** Chern classes in $H^2(B,\mathbb Z)$, not just by the de Rham class of $F$.
+
+Two independent obstructions to reconstruction from **curvature alone** are:
+
+1. Torsion classes in integral $H^2(B,\mathbb Z)$ have zero real image, so de Rham curvature can miss torsion topology.
+2. Flat connections can have nontrivial holonomy on noncontractible loops even when $F=0$.
+
+The standard full invariant of a circle bundle **with connection** is the corresponding degree-two differential-cohomology/differential-character class: it keeps integral Chern data, curvature and compatible holonomy, and is defined without choosing a global gauge potential $A$.
+
+**Theorem 6.1 [K,C].** Base metric $h$, radius $\phi$ and curvature form $F$ do not generally reconstruct a bundle with connection. The enriched data $(P,\vartheta,h,\phi)$ do reconstruct the KK metric and its charge-graded scalar Laplacian. One may specify $(P,\vartheta)$ equivalently by suitable global differential-cohomology cocycle/holonomy data.
+
+## 7. An elementary FLAT connection with nontrivial global holonomy [D,V]
+
+Take a base circle $\beta\sim\beta+2\pi$ of radius $R_B>0$, a trivial fiber circle $\theta\sim\theta+2\pi$ of radius $\ell>0$, and a constant $\alpha\in\mathbb R$:
+
+```math
+g_P=R_B^2d\beta^2+\ell^2(d\theta+\alpha\,d\beta)^2,\qquad A=\alpha\,d\beta,\quad F=0.
+```
+
+Its holonomy around the base loop is
+
+```math
+\operatorname{Hol}(\beta\text{-loop})=e^{-2\pi i\alpha}.
+```
+
+The exact Laplacian eigenvalues on globally single-valued functions $e^{ik\beta+in\theta}$, $k,n\in\mathbb Z$, are
+
+```math
+-\Delta_{g_P}e^{ik\beta+in\theta}=\left[\frac{(k-n\alpha)^2}{R_B^2}+\frac{n^2}{\ell^2}\right]e^{ik\beta+in\theta}.
+```
+
+**Theorem 7.1 [D,V].** The neutral $n=0$ spectrum is independent of the *nontrivial flat holonomy* parameter $\alpha$, while charged $n\ne0$ sectors contain the gauge-covariant shift $k-n\alpha$. Shifting $\alpha\mapsto\alpha+j$ with $j\in\mathbb Z$ produces the same gauge class after relabeling $k$.
+
+This is the simplest exact example in which connection holonomy exists **without any local curvature** and is lost under uncharged symmetry reduction.
+
+## 8. The catenoid as an EXACT circle reduction over a one-dimensional base [D,V,H]
+
+Fix the canonical variables with explicit scales
+
+```math
+u=\ln(x/c),\quad x=ce^u,\quad r,c>0,\quad R=\cosh(ru),\quad S=R^{-1},\quad W=\tanh(ru).
+```
+
+The canonical Euclidean catenoid immersion from drafts 130–180 is
+
+```math
+X_C(u,v)=\left(\frac{R(u)}r\cos(rv),\frac{R(u)}r\sin(rv),u\right),\qquad v\sim v+\frac{2\pi}r.
+```
+
+Set the true $2\pi$-periodic fiber angle $\theta=rv$, and the **base meridian arclength**
+
+```math
+ds=R\,du,\qquad s=\frac1r\sinh(ru),\qquad\phi(s)=\frac{R(u)}r=\frac1r\sqrt{1+r^2s^2}.
+```
+
+The catenoid metric is **exactly** a warped circle bundle with a trivial connection:
+
+```math
+g_C=R^2(du^2+dv^2)=ds^2+\phi(s)^2d\theta^2,\qquad A=0,\quad F=0.
+```
+
+Its volume element and neutral scalar Laplace reduction are
+
+```math
+dA_C=\phi(s)\,ds\,d\theta,\qquad \Delta_C^{(0)}f=\phi^{-1}\partial_s(\phi\,\partial_s f)=R^{-2}f_{uu}.
+```
+
+This is a **weighted one-dimensional SL equation** on the meridian; in $s$ the weight and leading coefficient are $p=w=\phi$, while in $u$ (up to a constant normalization) they are $p=1$, $w=R^2$.
+
+### 8.1 Curvature is recoverable from the base AND radius, not the neutral connection
+
+For a warped metric $ds^2+\phi(s)^2d\theta^2$, its Gaussian curvature is
+
+```math
+K_C=-\frac{\phi_{ss}}{\phi}=-\frac{r^2}{(1+r^2s^2)^2}=-r^2S^4.
+```
+
+**Theorem 8.1 [D,V].** The reduced catenoid metric data $(ds^2,\phi(s))$ reconstruct the entire intrinsic metric and its negative Gaussian curvature, despite the fact that the principal circle connection is **flat** ($F=0$) and the total circle bundle is **topologically trivial**.
+
+This is a key warning: intrinsic Levi–Civita Gaussian curvature of a *warped* total surface is **not** the same as curvature $F$ of its selected principal circle connection.
+
+### 8.2 Exact catenoid Jacobi reduction
+
+For $f(u,v)=e^{inrv}h(u)$, $n\in\mathbb Z$, the negative minimal-surface Jacobi operator $B_C=-(\Delta_C+|A_C|^2)$, with $|A_C|^2=2r^2S^4$, becomes
+
+```math
+B_{C,n}h=R^{-2}\left[-h_{uu}+(n^2r^2-2r^2S^2)h\right].
+```
+
+Its spectral eigenvalue equation is therefore
+
+```math
+-h_{uu}+(n^2r^2-2r^2S^2)h=\lambda_JR^2h.
+```
+
+The actual Hilbert weight is $R^2du$; multiplying by $R^2$ to obtain a Pöschl–Teller **zero** equation is not a unitary operator conjugation. The genuine unitary half-density yields the different SL expression
+
+```math
+R B_{C,n}R^{-1}=-\partial_u(S^2\partial_u)+(n^2-1)r^2S^2.
+```
+
+This is exactly the existing operator-domain distinction of draft 140, now derived as a **fiber-mode reduction** of the two-dimensional surface geometry.
+
+### 8.3 The original center and resolution are typed
+
+The scale $r$ determines neck radius $1/r$, angular period $2\pi/r$ and curvature profile; the center $c$ marks where $u=\ln(x/c)=0$. Changing $c$ with the *same intrinsic catenoid* changes the multiplicative chart, not its topology. The amplitude $\mu$ of the canonical original Symmetrical Function is **not** an independent parameter of this chosen catenoid metric.
+
+## 9. Levi–Civita curvature and teleparallel torsion on the catenoid [D,H,C]
+
+The coframe from draft 180 is
+
+```math
+e^1=R\,du,\quad e^2=R\,dv,\qquad T_W^1=0,\quad T_W^2=rSW\,e^1\wedge e^2.
+```
+
+Set $t_2=rSW$ and $e_1=S\partial_u$. Then
+
+```math
+K_C=-e_1(t_2)-t_2^2=-r^2S^4.
+```
+
+This **frame-dependent teleparallel reconstruction** is compatible with the warped fiber-radius formula $K_C=-\phi_{ss}/\phi$. The two computations encode the *same intrinsic surface metric* using different auxiliary data. Neither identifies the Riccati factorization $-\partial_u^2+h^2-h_u$ with the Bochner–Weitzenböck tensor identity or the connection curvature $F=dA$ of the rotational circle bundle (which is zero here).
+
+**Four distinct connections can coexist on this example:** the nonflat surface tangent Levi–Civita connection, the flat chosen teleparallel frame connection with torsion, the flat rotational bundle connection $d\theta$, and the nonflat pullback Hopf connection of the *Gauss map*. Their curvatures, torsions and holonomies must be typed separately.
