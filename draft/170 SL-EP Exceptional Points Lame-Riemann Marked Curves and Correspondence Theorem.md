@@ -841,3 +841,121 @@ R B_{m_{\rm ang}}R^{-1}=-\partial_u(S^2\partial_u)+(m_{\rm ang}^2-1)r^2S^2.
 This is not globally unitarily identical to the flat-measure $h_1=-\partial_u^2-2r^2S^2$ merely because their **zero equations** coincide after multiplication by $R^2$. The complete catenoid and helicoid also have different global angular domain topologies.
 
 This distinction is central to the proposed theory: **equality of local ODEs, isomorphism of marked spectral curves, and unitary equivalence of global operators are three different mathematical arrows**.
+
+## 23. The exact spectral Gauss–Manin system is the Riemann period system in a different gauge [D,V,H468]
+
+The spectral-to-Riemann map is more than a pointwise identification of elliptic fibers. The archived Riemann Gauss–Manin system is
+
+```math
+\frac d{dk_R}\binom{\Omega_y}{N_y}=\frac1{k_R^2+4}\begin{pmatrix}-k_R/2&-1\\-1&k_R/2\end{pmatrix}\binom{\Omega_y}{N_y},
+```
+
+where the **normalized-cubic** periods are
+
+```math
+\Omega_y=\oint dg_R/y_R,\qquad N_y=\oint g_R\,dg_R/y_R.
+```
+
+Let $P_{\rm sp}=(I_0,I_1)^T$ be the two Lamé spectral periods of §17 along the **same transported cycle**. The affine isomorphism gives an explicit **gauge matrix**
+
+```math
+\binom{\Omega_y}{N_y}=G(k_R)\binom{I_0}{I_1},\qquad G=\frac r{\sqrt{D_R}}\begin{pmatrix}-1&0\\k_R&D_R/r^2\end{pmatrix}.
+```
+
+**Theorem 23.1 [D,V] (degree-one period gauge).**
+
+```math
+\det G=-1,\qquad \frac{dm}{dk_R}=\frac2{D_R^3},\qquad D_R=\sqrt{k_R^2+4}=\frac1{\sqrt{m(1-m)}}.
+```
+
+The two spectral periods satisfy the following exact first-order **traceless, rational** connection in the Lamé elliptic parameter:
+
+```math
+\frac d{dm}\binom{I_0}{I_1}=\frac1{2m(1-m)}\begin{pmatrix}2m-1&r^{-2}\\-r^2(1-m+m^2)&1-2m\end{pmatrix}\binom{I_0}{I_1}.
+```
+
+**Proof.** Differentiate $P_y=G P_{\rm sp}$ with respect to $k_R$, use the archival Gauss–Manin connection $P_y'=A_R P_y$, and isolate the spectral vector:
+
+```math
+\frac{dP_{\rm sp}}{dk_R}=(G^{-1}A_RG-G^{-1}G')P_{\rm sp}.
+```
+
+Direct symbolic simplification gives the explicit intermediate matrix
+
+```math
+G^{-1}A_RG-G^{-1}G'=\begin{pmatrix}k_R/D_R^2&(r^2D_R)^{-1}\\-r^2(k_R^2+3)/D_R^3&-k_R/D_R^2\end{pmatrix}.
+```
+
+Multiply by $dk_R/dm=D_R^3/2$ and use $k_R=(2m-1)D_R$, $D_R^2=1/[m(1-m)]$ to obtain the boxed rational connection. The determinant identity follows by multiplying the two-by-two matrices; its value is **exactly $-1$**, independent of $m,r$.
+
+**Independent check [V]:** At $m=1/4,1/2,7/10$ the derivative of direct quadratures for $I_0,I_1$ agreed with this rational matrix to high precision, with numerical residuals near $10^{-21}$ in a 40-digit quadrature. The connection is therefore supported by two independently defined calculations, not simply a restatement of equal modular invariants.
+
+### 23.1 Closed complete-elliptic-integral periods of the Lamé curve
+
+Choose the natural doubled branch-cut cycles $\beta_{\rm sp}$ over $[E_1,E_2]$ and $\alpha_{\rm sp}$ over $[E_0,E_1]$ with the explicit orientations for which $I_0(\beta)$ is positive real and $I_0(\alpha)$ negative imaginary. Direct substitutions in the cubic quadratures give
+
+```math
+I_{0,\beta}=\frac4rK(m),\qquad I_{1,\beta}=4r[\mathsf E(m)-mK(m)].
+```
+
+```math
+I_{0,\alpha}=-\frac{4i}{r}K(1-m),\qquad I_{1,\alpha}=4ir[\mathsf E(1-m)-(1-m)K(1-m)].
+```
+
+Here $K(m)$ and $\mathsf E(m)$ denote complete elliptic integrals of the first and second kind with **parameter $m$**, not the geometric energy $E$. The formulas may be derived by putting $E=E_1+(E_2-E_1)t$ on the $\beta$ cut and similarly on the $\alpha$ cut; the second-kind integral reduces to $\mathsf E$ by differentiation of $K$.
+
+### 23.2 The exact constant spectral period determinant
+
+Using the four formulas above and Legendre's relation
+
+```math
+K(m)\mathsf E(1-m)+K(1-m)\mathsf E(m)-K(m)K(1-m)=\frac\pi2,
+```
+
+one obtains
+
+```math
+I_{0,\alpha}I_{1,\beta}-I_{0,\beta}I_{1,\alpha}=-8\pi i.
+```
+
+**Theorem 23.2 [D,V,K] (spectral symplectic period identity).** The determinant of the two marked Lamé spectral periods is a nonzero **constant independent of $m$ and $r$**. Its sign depends on orientations; in the explicitly oriented branch-cut cycles above it is $-8\pi i$.
+
+This is the same determinant structure as the archived Riemann period invariant; under the **transported** cycle marking, $\det G=-1$ reverses its sign, while taking the modulus and the intersection pairing gives the identical symplectic geometry. This is a rigorous period-level “metric glue” distinct from the original scalar Plancherel norm.
+
+### 23.3 A normalized spectral second-kind period from the same determinant
+
+For a chosen $\alpha$ cycle with $I_{0,\alpha}\ne0$, define a second-kind differential
+
+```math
+dp_{\rm sp}=\frac i2(E-b)\frac{dE}{\eta},\qquad b=\frac{I_{1,\alpha}}{I_{0,\alpha}}.
+```
+
+This has zero $\alpha$ period; on the sheet with $\eta\sim iE^{3/2}$ it has the standard high-energy principal asymptotic $dp_{\rm sp}\sim dE/(2\sqrt E)$.
+
+Its $\beta$ period follows *exactly* from the determinant:
+
+```math
+\oint_{\beta}dp_{\rm sp}=\frac i2\frac{I_{0,\alpha}I_{1,\beta}-I_{0,\beta}I_{1,\alpha}}{I_{0,\alpha}}=\frac{4\pi}{I_{0,\alpha}}=\frac{i\pi r}{K(1-m)}.
+```
+
+This is the precise relation between a **normalized spectral second-kind differential** and the two marked periods that also determine Riemann's immersion forms. It does **not** identify $dp_{\rm sp}$ itself with the Riemann **holomorphic** height form; the former has a prescribed pole at spectral infinity, while the latter does not.
+
+## 24. Conditional Sturm–Liouville–Ermakov–Pinney correspondence and geometric realization theorem [D,K,H]
+
+**Theorem 24.1 (typed SL–EP correspondence and selected geometric realization).** Fix $r,c,\mu>0$. Consider any real SL expression with $p,w>0$ and sufficient regularity, and declare its weighted Hilbert space, interval and domain. Under the additional choices stated below, the following statements hold.
+
+**(I) Local Liouville–Riccati–Pinney equivalence.** The scalar SL equation is locally mapped by a Liouville half-density to a Schrödinger carrier; a nonvanishing complex carrier has a Riccati logarithmic derivative, positive Milne amplitude, conserved current and an EP equation; the symmetric-square envelope obeys a third-order **linear** equation and fixed quadratic invariant. These assertions do not require an operator spectral theorem.
+
+**(II) Weighted Hilbert/domain compatibility.** A Liouville map extends to an exact unitary equivalence of selected self-adjoint realizations **when the domains are carried along**. For the original profile this map is $f\mapsto xf$ with $u=\ln(x/c)$ and measure $x\,dx$. For the integer PT well, the Crum polar isometry intertwines only the absolutely continuous subspace with the free operator; bound states constitute a finite-dimensional kernel and must be included in distorted Fourier–Mellin Plancherel.
+
+**(III) Selected algebro-geometric spectral closure.** For integer PT the verified Lax–Novikov/Burchnall–Chaundy polynomial yields a **nodal** spectral curve. For the separately selected one-gap Lamé periodic family $L_m$, $0<m<1$, the corresponding spectral curve $\Gamma_m$ is smooth elliptic, and the two nodal endpoints $m\to0,1$ have different operator interpretations (§13).
+
+**(IV) Selected exact surface realization.** If one further chooses $\lambda_R>0$ and sets $m=(1+\lambda_R^2)^{-1}$, the **explicit degree-one real isomorphism** of Theorem 15.1 identifies $\Gamma_m$ with the real Riemann elliptic fiber. It transports the entire meromorphic Weierstrass triple and marked period vectors by Theorems 16–17 and 23. The resulting surface is the selected Riemann immersion **provided** its specified real period/translation-lattice closing equations are imposed. The finite-gap *quasimomentum* remains a different meromorphic differential from the geometric holomorphic height.
+
+**(V) Two singular primitive realizations.** At $m\to1$, the limiting smooth elliptic holomorphic spectral differential becomes the **catenoid logarithmic height form** on the marked rational normalization, with an imaginary closing period; its Bonnet conjugate helicoid has a real nonclosing height period on the same punctured-plane quotient. At $m\to0$, the other nodal limit becomes the **original arctangent primitive** after the specified real projective identification and amplitude factor. These are statements about *normalized curves with marked forms*, not a universal isometry between the free, PT, Riemann, and minimal-surface Jacobi operators.
+
+**(VI) Non-equivalences.** None of (I)–(V) asserts that a Jordan **transfer** matrix means broken Hilbert self-adjointness; that every local EP amplitude is a separatrix; that a node forces a spatial Jordan block; that every nonlinear equation is linearizable; or that a scalar weighted $L^2$ norm alone determines a Riemann period lattice, a Berry/Chern number, or physical dynamics.
+
+**Proof.** (I) is the direct derivation in §§3–5; (II) is §3 together with the operator-theoretic Darboux results audited in drafts 120/140; (III) is §§12–13 and H100/H299; (IV) is the explicitly invertible affine curve map and full meromorphic pullbacks in §§14–18/23; (V) is the exact limiting calculation of §19 and the period formulas in drafts 160/§22; (VI) follows from the constructed counterexamples §§9–11, the two distinct spectral degenerations §13, and Riemann–Hurwitz/differential pole divisors. All arrows have named source objects and explicit additional hypotheses.
+
+**Status qualification:** This is a **conditional theorem schema with proved component identities** and classical analytic inputs, not a universal classification of all Sturm–Liouville operators or all minimal surfaces. The bundle/Hodge, operator-domain and real-period conditions are not erased by the existence of the common differential-algebraic core. It is suitable for a future audited foundational proposition, not automatic promotion to the main paper.
