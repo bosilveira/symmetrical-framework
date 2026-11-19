@@ -375,3 +375,161 @@ A degree-zero line on an elliptic curve is spin iff it is 2-torsion. Therefore
 ```
 
 On the **real gap branch** of the chosen Lamé potential, only the endpoints $E_1$ and $E_2$ are reached; the selected Riemann WE spin is $P_0=E_1$, not the other endpoint. This is the exact mathematical content hidden in the proposal's branch-point intuition.
+
+## 9. Exact sigma–theta half-period versus moving BA divisor [D,K,C]
+
+The WE spin structure in §5 is determined by a **fixed** half-period $a=z_R(P_0)$. The moving Dirichlet point of §8 instead has Abel coordinate
+
+```math
+z_\gamma(u)\equiv a+\frac{r}{\sqrt{D_R}}(u-u_*)\pmod{\Lambda_R}.
+```
+
+Thus a convenient representative of the moving degree-zero class is
+
+```math
+D(u)=\mathcal O_{E_R}\big(P_{z_\gamma(u)}-P_\infty\big),
+```
+
+where $P_z$ denotes the point with Abel coordinate $z$.
+
+The abstract identity with the fixed spin class is
+
+```math
+D(u)\otimes S_R^{-1}\simeq\mathcal O_{E_R}\big(P_{z_\gamma(u)}-P_a\big)\in\operatorname{Pic}^0(E_R).
+```
+
+The right side is the **Jacobian translation** by $r(u-u_*)/\sqrt{D_R}$. It is trivial precisely when that translation lies in the period lattice. This gives a complete answer to the attached proposed BA/spin matching **at the level of the moving Dirichlet divisor class**.
+
+One can express a meromorphic section of $\mathcal O(P_b-P_a)$ through a standard sigma quotient with exponential correction: for Abel representatives $a,b$,
+
+```math
+\frac{\sigma(z-a)}{\sigma(z-b)}\,\exp\big((\zeta(a)-\zeta(b))z\big),
+```
+
+with quasi-period multipliers determined by $a-b$. In general this is not a globally elliptic *function* unless $a-b$ is a period; it is a local representation of a section of the **nontrivial degree-zero line** and its multipliers. This theta/sigma distinction is essential: a nonprincipal divisor class cannot be turned into a principal divisor merely by writing a theta quotient.
+
+**Theorem 9.1 [D,K] (all-modulus Picard compatibility).** After choosing a specific normalized moving Dirichlet divisor convention, the relationship between the selected WE spin class and the evolving one-gap spectral divisor is a **nonconstant straight-line translation in $\operatorname{Pic}^0(E_R)$**. At distinguished spatial phases this translation vanishes, yielding the exact degree-zero holomorphic line isomorphism of §6; away from them it does not.
+
+### 9.1 Fixed Baker–Akhiezer poles must not be identified with moving zeros
+
+In the standard algebro-geometric BA construction one initially chooses a nonspecial **fixed pole divisor** $D_*$ of degree $g=1$, a point at infinity, a local spectral parameter and a normalization. The BA function has an essential exponential at infinity and permitted poles at the **fixed $D_*$**. As spatial $u$ varies, its spectral zeros and its corresponding Dirichlet data may move. A different normalization can trade moving zeros for moving poles, but this must be written explicitly.
+
+Consequently the formula $D(u)=\mathcal O(\gamma(u)-P_\infty)$ is **not, without an extra convention, the fixed Baker–Akhiezer pole bundle**. This audit prevents a nominal equality of line-bundle symbols from masquerading as a theorem about the actual eigenline and its spectral connection.
+
+## 10. Irregular spectral singularity: an exact principal-part obstruction [D,V,C]
+
+In the selected Lamé elliptic curve, introduce a local coordinate at spectral infinity
+
+```math
+t=E^{-1/2},\qquad E=t^{-2},\qquad\eta\sim i\,t^{-3}.
+```
+
+Then
+
+```math
+\frac{dE}{\eta}=2i\,dt+O(t^2)\,dt.
+```
+
+The Riemann holomorphic height differential transported in draft 170 is
+
+```math
+dh_R=-A_Rr\sqrt m\,\frac{dE}{\eta}=-2iA_Rr\sqrt m\,dt+O(t^2)\,dt.
+```
+
+By contrast, the **normalized spectral quasimomentum differential of the second kind** constructed in draft 170 §23 has the form
+
+```math
+dp_{\rm sp}=\frac i2(E-b)\frac{dE}{\eta},
+```
+
+where $b$ is chosen by a zero marked period. Its leading local expansion is
+
+```math
+dp_{\rm sp}=-\frac{dt}{t^2}+O(1)\,dt.
+```
+
+**Theorem 10.1 [D,V,C] (no holomorphic-height cancellation of the irregular type).** For every finite scalar constant $C$,
+
+```math
+dp_{\rm sp}-C\,dh_R=-\frac{dt}{t^2}+O(1)\,dt.
+```
+
+Thus subtracting a first-kind Riemann height form cannot strip the spectral quasimomentum's double pole. This directly **falsifies** the attached suggestion that a combination $dp-Cdh$ becomes regular or logarithmic automatically.
+
+The BA exponential has an essential factor of type $\exp(\pm u/t)$ at spectral infinity for nonzero spatial $u$. A local gauge of type $\exp(\mp u/t)$ can remove this *local irregular exponential*, but it is **not a meromorphic gauge at the compactified point**; global normalization, monodromy and bundle/connection classes remain to be matched. A genuine meromorphic gauge cannot erase the formal irregular type.
+
+### 10.1 A meromorphic connection is extra spectral data
+
+The BA eigenfunction is initially a meromorphic/exponentially singular function of a **spectral point**, depending parametrically on the spatial coordinate. The $u$-direction Lax equation is a different transport equation. To speak of a connection in the **spectral-curve direction**, one must define its normalization, e.g. a chosen meromorphic differential $d_P\log\psi$ or a spectral line connection with prescribed irregular type and divisor poles. It is not already the unitary Hopf Chern connection of the Gauss map.
+
+## 11. Holomorphic line isomorphism does NOT preserve the natural connections [D,K,C]
+
+On the selected compact elliptic curve, the nontrivial order-two spin line $S_R$ supports a flat unitary connection with $\pm1$ holonomy around suitable cycles and
+
+```math
+F_{\mathrm{spin,flat}}=0.
+```
+
+The Gauss-pulled Hopf/Berry connection is instead obtained by normalizing the Gauss-projective spinor:
+
+```math
+\eta_g=\frac{(1,g_R)}{\sqrt{1+|g_R|^2}},\qquad A_B=-i\eta_g^\dagger d\eta_g.
+```
+
+On the affine patch it has
+
+```math
+F_B=dA_B=\frac{i\,dg_R\wedge d\bar g_R}{(1+|g_R|^2)^2}.
+```
+
+This form is nonzero on generic open patches because $g_R$ is nonconstant, and its total Berry flux in the stated convention is
+
+```math
+\frac1{2\pi}\int_{E_R}F_B=\deg(g_R)=2.
+```
+
+The standard *holomorphic* tautological line $H_R=g_R^*\mathcal O(-1)$ has degree $-2$; the sign difference is because the Berry convention $-i\eta^\dagger d\eta$ and the mathematicians' Chern normalization for the tautological bundle use opposite curvature-to-degree conventions. Their absolute topological charge is two.
+
+**Theorem 11.1 [D,K,C] (curvature and singularity obstruction).** No gauge transformation identifying **the natural flat spin connection** with **the Gauss-pulled Hopf Chern connection** can preserve connection curvature on any open region where $dg_R\ne0$. Likewise a flat meromorphic BA spectral connection off its singularities cannot be directly gauge equivalent to the nonflat Berry connection there. Furthermore, at spectral infinity a meromorphic gauge cannot remove the BA irregular principal part of §10.
+
+**Important qualified possibility.** Twisting by $\mathcal O(P_0+P_\infty)$ changes bundle degree and introduces an additional **chosen Hermitian metric and connection**. One may choose its curvature to compensate the Hopf Chern curvature in the tensor product (and match the flat 2-torsion holonomy with further flat data). That constructs a **new, connection-enriched twisted comparison**; it does not make the original two natural connections automatically identical. Any claim of a canonical such twist must explicitly give its Hermitian metric, Chern connection, transition maps and residual periods.
+
+### 11.1 Three distinct global invariants on the same elliptic curve
+
+- **Divisor class / Abel–Jacobi point:** a holomorphic line-bundle isomorphism class, completely captured on a genus-one curve by degree and a Picard coordinate.
+- **Flat/irregular monodromy:** path-ordered or abelian monodromy of a selected meromorphic connection, and at infinity its irregular/Stokes data when present.
+- **Hermitian Chern curvature / Berry holonomy:** a unitary connection of a selected metric, whose curvature is a smooth $(1,1)$ form and whose holonomy around cycles depends on that connection.
+
+These are *different typed invariants*. Equality of the first, even via the exact twist of §4, does not imply equality of the second or third.
+
+## 12. Direct spinor construction of the Riemann WE triple versus the BA carrier [D,H,C]
+
+The explicit sigma spinors $p_R,q_R$ in §5 satisfy
+
+```math
+p_R^2dz=\frac{dh_R}{g_R},\qquad q_R^2dz=g_Rdh_R,\qquad \frac{q_R}{p_R}=g_R.
+```
+
+Their WE 1-form triple
+
+```math
+\boldsymbol\Phi_R=\left(\frac{p_R^2-q_R^2}{2},\frac{i(p_R^2+q_R^2)}2,p_Rq_R\right)dz
+```
+
+is meromorphic on the Riemann curve and has marked **real immersion periods**
+
+```math
+\mathrm{Per}_R(\gamma)=\mathrm{Re}\oint_{\gamma}\boldsymbol\Phi_R\in\mathbb R^3.
+```
+
+The period condition required for a closed Euclidean immersion is $\mathrm{Per}_R(\gamma)=0$ on required cycles, or membership in a selected ambient translation lattice. This is a **flat affine translation holonomy** of the WE immersion, not the same as the BA spatial transfer matrix or the BA spectral irregular connection.
+
+The BA function solves the fixed-energy SL eigenproblem
+
+```math
+L_m\psi(u,P)=E(P)\psi(u,P),
+```
+
+where the **spectral point is fixed as $u$ varies**. The WE map $g_R(P)$ is a *function of that spectral point*; it does not evolve under the same fixed-$E$ carrier. To compare it with the moving Dirichlet point one explicitly chooses the path $P=\gamma(u)$, which is an additional map constructed in §6, not the original stationary spectral-eigenvalue equation.
+
+Therefore, the rigorously proved relationship at present is a **selected Abel–Jacobi transport of line classes plus an exact WE spinor reconstruction on the same elliptic curve**. A globally connection-preserving BA-to-WE identification remains an open, stricter theorem.
