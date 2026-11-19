@@ -485,3 +485,129 @@ Under the first KdV time flow they transform instead as
 In logarithmic divisor coordinates, translation and KdV follow the **two linear vectors** $(2\kappa_j)_j$ and $(8\kappa_j^3)_j$. For one node they are proportional; for two or more distinct exponents they are not. This is a geometric reformulation of the exact off-PT result of §8.
 
 The nodal spectral curve is unchanged by either motion; the **marked divisor/gluing data move**. Hence the full spectral inverse problem requires both curve (eigenvalues) and divisor-like norming information, not just the former.
+
+## 15. A NEW explicit marked 2-isogeny from the centered Pinney quartic to the symmetric Riemann elliptic curve [D,V,H]
+
+The previous sections concern a **nodal spectral curve**. There is, separately, an exact bridge to a **smooth elliptic curve** already present in the archived Riemann-minimal-example period family. This bridge uses the *centered canonical Pinney mechanical energy curve*, not the Lax–Novikov spectral curve. Keeping them distinct is essential.
+
+For the canonical constant-coefficient Pinney equation, let the positive amplitude be $A(u)=a(u)$, with
+
+```math
+a_{uu}=\frac{r^2}{4}a+\frac{\mu r^2}{4a^3},\qquad a^2=\sqrt\mu\cosh(ru),\qquad r,\mu>0.
+```
+
+Its zero-energy first integral gives the **smooth quartic genus-one curve**
+
+```math
+C_{\rm EP}:\quad Y^2=\frac{r^2}{4}(A^4-\mu),\qquad Y=Aa_u,\qquad \Delta(C_{\rm EP})\ne0,\qquad j(C_{\rm EP})=1728.
+```
+
+The archived Riemann minimal-example elliptic family has (with the distinct family parameter $k_R=\lambda_R^{-1}-\lambda_R$)
+
+```math
+E_{k_R}:\quad y_R^2=g^3+k_Rg^2-g,\qquad \lambda_R>0.
+```
+
+Its smooth-fiber discriminant and modular invariant are
+
+```math
+\Delta_{\rm cubic}=k_R^2+4,\qquad j_R(k_R)=256\frac{(k_R^2+3)^3}{k_R^2+4}.
+```
+
+At the symmetric Riemann parameter $\lambda_R=1$ (hence $k_R=0$), the fiber becomes
+
+```math
+E_0:\quad y_R^2=g^3-g,\qquad j(E_0)=1728.
+```
+
+The equality of $j$ values suggests a comparison. The following **explicit algebraic map** is stronger than that numerical coincidence.
+
+### 15.1 Exact isogeny theorem
+
+**Theorem 15.1 [D,V] (marked quartic-to-Riemann 2-isogeny).** The rational formulas
+
+```math
+g=\frac{A^2}{\sqrt\mu},\qquad y_R=\frac{2AY}{r\mu^{3/4}}
+```
+
+define a morphism of degree two between the smooth projective models of $C_{\rm EP}$ and $E_0$. On the affine chart they obey identically
+
+```math
+y_R^2=\frac{4A^2Y^2}{r^2\mu^{3/2}}=\frac{A^2(A^4-\mu)}{\mu^{3/2}}=g^3-g.
+```
+
+**Proof.** Substitute the quartic relation $Y^2=r^2(A^4-\mu)/4$; the equation above follows algebraically. A generic $(g,y_R)$ has two preimages $(A,Y)$ and $(-A,-Y)$, proving degree two. Both compactifications are smooth genus-one curves for $\mu,r>0$. By Riemann–Hurwitz, any nonconstant degree-two morphism between them is unramified, and after choosing origins the morphism is a **2-isogeny**. The polynomial identity and the differential formula below were independently verified with exact symbolic algebra.
+
+### 15.2 Holomorphic differential pullback is EXACT
+
+On the quartic, the holomorphic differential is $dA/Y$; on the symmetric Riemann elliptic curve it is $dg/y_R$. The map preserves their one-dimensional Hodge spaces **up to an explicit nonzero scalar**:
+
+```math
+\Phi^*\left(\frac{dg}{y_R}\right)=r\mu^{1/4}\frac{dA}{Y}.
+```
+
+**Proof.** Since $dg=2A\,dA/\sqrt\mu$ and $y_R=2AY/(r\mu^{3/4})$, their ratio simplifies exactly to $r\mu^{1/4}dA/Y$.
+
+Thus the comparison is not merely “both have $j=1728$”: it is an **explicit algebraic isogeny with a proved marked holomorphic-differential scaling**. However the map does **not** specify an immersion height differential, a real homology marking or the closing periods of the complete Riemann minimal surface.
+
+## 16. The V4 involutions reveal why the Pinney TIME differential does not descend along that isogeny [D,V]
+
+The same centered Pinney quartic carries three elementary involutions:
+
+```math
+\sigma:(A,Y)\mapsto(-A,Y),\qquad\iota:(A,Y)\mapsto(-A,-Y),\qquad h:(A,Y)\mapsto(A,-Y).
+```
+
+They satisfy
+
+```math
+\sigma^2=\iota^2=h^2=1,\qquad\sigma\iota=\iota\sigma=h,\qquad\langle\sigma,\iota\rangle\cong V_4.
+```
+
+The involution $\iota$ is the **deck transformation of the degree-two elliptic isogeny** of §15; $\sigma$ is a *different* involution, producing the **genus-zero Pinney time quotient** already found in draft 120.
+
+### 16.1 The Pinney time differential is invariant under sigma
+
+From $Y=Aa_u$ one has
+
+```math
+du=\frac{A\,dA}{Y}.
+```
+
+Under $\sigma$, both $A$ and $dA$ change sign, so their product does not:
+
+```math
+\sigma^*(A\,dA/Y)=A\,dA/Y.
+```
+
+The quotient coordinates are
+
+```math
+J=A^2,\qquad Y^2=\frac{r^2}{4}(J^2-\mu),\qquad du=\frac{dJ}{2Y}.
+```
+
+This quotient is a **smooth conic** and the marked time differential descends. That is why the positive Pinney amplitude evolves via elementary hyperbolic functions despite the smooth genus-one quartic's nontrivial holomorphic period structure.
+
+### 16.2 The holomorphic differential is invariant under iota instead
+
+For the elliptic isogeny deck transformation,
+
+```math
+\iota^*(dA/Y)=dA/Y,\qquad \iota^*(A\,dA/Y)=-A\,dA/Y.
+```
+
+Thus the **holomorphic** differential descends (as in §15), but the **time** differential is anti-invariant and cannot descend as a differential on $E_0$ under the same quotient. Meanwhile $\sigma^*(dA/Y)=-dA/Y$, so the holomorphic differential does not descend along the conic quotient.
+
+**Theorem 16.1 [D,V] (two complementary quotients).** The centered Pinney genus-one quartic supports a $V_4$ of exact involutions in which
+
+- $\sigma$ produces a genus-zero quotient preserving the Pinney **time** differential;
+- $\iota$ produces a genus-one **2-isogeny** preserving the holomorphic differential up to the scale $r\mu^{1/4}$;
+- the two marked differential types are distinguished algebraically by opposite involution characters.
+
+This is a rigorous geometric explanation for the simultaneous occurrence of **elementary Pinney time**, **elliptic binary-quartic invariants** and an **elliptic Riemann-fiber isogeny**. It does not conflate the original Master energy quartic, the nodal spectral curve, or any of their spectral operators.
+
+### 16.3 Why the V4 quotient is not a proof of minimal-surface period closing
+
+The archived Riemann family equips its elliptic fiber with *other* meromorphic Weierstrass data and marked real periods. Preserving $dg/y_R$ up to scale does not imply that all meromorphic immersion one-forms or their period lattices pull back compatibly. Moreover the source Pinney real positive-amplitude branch covers only part of the real quartic; the projective complex isogeny must be interpreted on its **full smooth algebraic compactification**.
+
+A future period-level comparison must supply (i) a chosen homology basis, (ii) the Riemann height differential and Gauss map, (iii) the image/pullback of those forms, and (iv) their real period-closing equations. Without all four, no global minimal-surface identification is claimed.
