@@ -758,3 +758,66 @@ Using Python's SymPy exact Rational arithmetic, subtraction of $(1+z)^{n(n+1)/2}
 7. Check that the isogeny pullback of the holomorphic 1-form is scaled by $r\mu^{1/4}$; the Hodge norm relation then follows by the **topological degree-two integration theorem**, not numerical period-fitting.
 
 **Scope:** These tests do not prove a unique spectral reconstruction from a bare transmission coefficient; full norming data and a fixed coordinate are needed. They do not prove that the physical surface's meromorphic **immersion** periods close, that all KdV solutions remain translated PT profiles, or that the logarithmic scalar Hilbert space is canonically isometric to a smooth elliptic curve's Hodge cohomology.
+
+## 21. Audit of the proposed arrows
+
+| Proposed statement | Result |
+|---|---|
+| Discrete eigenvalues and transmission alone recover the translation center | **False.** Norming coefficients and a reference origin are needed (§§2–4). |
+| The complete positive reflectionless data reconstruct the integer PT well | **True**, with the Marchenko convention fixed (§§5–7). |
+| The Marchenko determinant equals one binomial power | **True**, with a classical uniqueness proof and exact symbolic checks through depth six (§6). |
+| First KdV time preserves every centered PT shape up to translation | **False for depth at least two**; separate norming phases destroy the PT ratios (§8). |
+| Two trace integrals recover the initial resolution | **True** for the declared PT-origin isospectral family (§9). |
+| The potential and original weighted profile have the same logarithmic center | **True in the matched canonical family** (§11). |
+| The smooth Pinney mechanical quartic equals the nodal Lax spectral curve | **False**: their normalizations and marked data differ (§§13–18). |
+| The centered Pinney quartic maps to the symmetric Riemann elliptic fiber | **True** via an explicitly verified degree-two isogeny (§15). |
+| This isogeny preserves the holomorphic differential | **True up to exactly r times the fourth root of mu** (§15). |
+| The same isogeny preserves Pinney time | **False**: the time differential is anti-invariant under its deck involution (§16). |
+| The elliptic isogeny transfers a period sublattice and Hodge norm | **True**, with image lattice index two and exact scale (§17). |
+| The elliptic correspondence proves immersion-period closing | **Not established**; the three Weierstrass forms and real cycles are still missing. |
+| The original weighted SL norm equals a curve Hodge norm as Hilbert spaces | **Not established** by the scalar identities; an operator-domain-compatible map is required. |
+
+## 22. Sources and reproducibility
+
+### Historical framework material inspected
+
+The November 18 ZIP includes the inverse-Wronski ell=3 module (H340–H344), binary-quartic and spectral-curve module (H177–H183), period hierarchy (H132, H145, H146), marchenko-legendre module and archived H100/H299 Lax–Novikov checks. The live GitHub drafts 120, 130 and 140 supply the Pinney energy curve and time quotient, finite-gap squared-eigenfunction polynomials, and normalized Darboux–Jost/Pinney spectral data. They are used as prior sources, not treated as new discoveries here.
+
+### External established mathematics
+
+- Reflectionless inverse scattering, right norming data and reconstruction uniqueness: Grunert–Teschl, *Inverse scattering for reflectionless Schrödinger operators with integrable potentials and generalized soliton solutions for the KdV equation*: https://er.ucu.edu.ua/server/api/core/bitstreams/143e517a-facd-4d33-931b-2328842714d0/content . This reference was located through source excerpts rather than freshly audited in full.
+- Worked one-pole Marchenko normalization and exact KdV time law: https://integrable.org/nonlinear-waves/kdv-lax-and-reconstruction/ .
+- Jost wave and norming convention audit: https://integrable.org/foundations/jost-solutions-and-scattering-data/ .
+- Spectral scattering/soliton limits of finite-gap curves and marked divisor: https://academic.oup.com/integrablesystems/article/4/1/xyz006/5543069 .
+- Generalized Jacobian, nodal line bundles and fiber gluing scalars: https://doi.org/10.1016%2FS0040-9383%2802%2900025-3 and https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/stability-conditions-for-line-bundles-on-nodal-curves/12D3D0D22563D6F54893676DFCD638F4 .
+- The particular elliptic Riemann family and Gauss–Manin periods are from the historical project H466 onward, not inferred from the scattering literature.
+- The explicit degree-two Pinney–Riemann isogeny and V4 differential character computation are derived in §§15–17 by polynomial substitution, pullback of one-forms, and the standard degree formula for a covering of elliptic curves.
+
+### Independent exact checks
+
+The Cauchy principal-minor subset expansion, evaluated using exact rational factorials, agrees with the binomial power for n=1,2,3,4,5,6, with degrees 1,3,6,10,15,21 and zero polynomial residual in each case. The all-depth proof invokes the stated classical uniqueness of the finite reflectionless inverse problem.
+
+The Pinney–Riemann map was independently checked with exact symbolic substitution:
+
+```math
+g=A^2/\sqrt\mu,\quad y_R=2AY/(r\mu^{3/4}),\quad Y^2=r^2(A^4-\mu)/4\quad\Longrightarrow\quad y_R^2-g^3+g=0.
+```
+
+A separate differential simplification gives exactly the pullback factor r times the fourth root of mu. The Riemann cubic invariant was independently expanded as j=256(k_R^2+3)^3/(k_R^2+4). The V4 involution characters, trace integrals, KdV moment derivative and r=2 rational specialization were checked algebraically.
+
+**Scope:** Local polynomial identities and the classical real reflectionless inverse theorem do not automatically prove an isometry between the original weighted SL operator and any elliptic Hodge Laplacian, or closure of the actual Riemann minimal-surface immersion periods.
+
+## 23. Next mathematical targets
+
+1. Give a fully elementary Cauchy determinant proof of the binomial tau identity without appealing to inverse-scattering uniqueness.
+2. Mark a symplectic homology basis on the centered Pinney quartic and compute the integer matrix of its degree-two map to the Riemann symmetric elliptic fiber; compare periods at k_R=0 with the archived Gauss–Manin solution.
+3. Pull back **all three** Riemann Weierstrass immersion forms through the isogeny and test their real periods, flux, and period-lattice closing. Preserve their poles and residues.
+4. Smooth the nodal Lax spectral curve while retaining a chosen meromorphic differential and vanishing cycles; compare the degeneration to the smooth Pinney and Riemann elliptic data without presupposing equality.
+5. Construct an exact half-line spectral inverse map in the original x-coordinate, including the center c, endpoint conditions and norming convention.
+6. Classify how higher KdV time directions on the positive generalized Jacobian intersect the translated PT submanifold for depths n at least two.
+7. Derive the higher trace invariants from the logarithmic derivative of transmission and the factorial spectrum; test resolution multiplication r to 2r.
+8. Examine whether the V4 involutions of the Pinney quartic intertwine with the existing tetrahedral chart actions and clarify which act on holomorphic versus time differentials.
+9. Develop a genuine Hilbert-operator intertwiner, if possible, between the weighted SL realization and a specifically marked elliptic geometric operator; numerical equality of norms is not enough.
+10. Extend the normalized positive Pinney envelope and Jost phase dictionary along the explicit Marchenko/KdV time-dependent tau family, keeping the evolution parameter separate from canonical u=ln(x/c).
+
+**Conclusion:** Complete real reflectionless data recover r and the log-center once a reference coordinate is fixed; the original weighted norm independently fixes mu. The integer Pöschl–Teller Marchenko determinant is a single binomial power, while KdV changes the node-gluing/norming data without changing its singular spectral curve. Separately, the smooth centered Pinney energy quartic has a proved degree-two holomorphic isogeny to the symmetric Riemann elliptic fiber, and its V4 involutions precisely distinguish elementary mechanical time from elliptic holomorphic periods. These are compatible but differently marked mathematical realizations—not one unqualified universal period or physical model.
