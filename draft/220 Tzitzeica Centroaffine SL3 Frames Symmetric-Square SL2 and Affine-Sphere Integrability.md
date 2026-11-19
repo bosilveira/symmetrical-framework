@@ -647,3 +647,141 @@ Equivalently, with $W_T=Z/\sqrt3$,
 This is the **same algebraic Riccati normal form** encountered in the canonical framework's $rW$ equation and in nodal Lamé/catenoid limits, but the coordinate $s$, energy $\varepsilon_T$, half-period markings, and actual surface immersion are different. Equality of Riccati normal forms after declared substitutions is **not** equality of all their original ODE/PDE solution spaces.
 
 The equilibrium $h=0$ corresponds to the double root $v=1$, $Z=\sqrt3$. Real branches with $v>0$ may be restricted intervals; no global periodicity or completeness is asserted from the nodal algebra alone.
+
+## 18. Explicit real j=1728 isomorphism to the SYMMETRIC Riemann elliptic curve [D,V,H170]
+
+The modular coincidence at $\varepsilon_T=-\sqrt[3]{54}$ from §16 can be made into an actual algebraic isomorphism, provided we declare exactly which **curves** and **differentials** are compared.
+
+At this value,
+
+```math
+g_{3,T}=0,\quad g_{2,T}=\frac{\varepsilon_T^2}{3}>0,\qquad \mathcal E_T:\quad Y_T^2=4X_T^3-g_{2,T}X_T.
+```
+
+The framework's matched symmetric Riemann elliptic curve at $\lambda_R=1$, equivalently $m=1/2$ (drafts 170/210), is
+
+```math
+E_R:\quad Y_R^2=4X_R^3-4X_R,\qquad X_R=g_R,\quad Y_R=2y_R.
+```
+
+Define the positive constant $\sigma$ by
+
+```math
+\sigma^4=\frac{g_{2,T}}4=\frac{\varepsilon_T^2}{12},\qquad \sigma>0.
+```
+
+**Theorem 18.1 [D,V] (selected real unmarked elliptic isomorphism).** The explicit real algebraic map
+
+```math
+X_T=\sigma^2X_R,\qquad Y_T=\sigma^3Y_R
+```
+
+is an isomorphism between the two **smooth real elliptic curves**, with a holomorphic-differential scale
+
+```math
+\frac{dX_T}{Y_T}=\sigma^{-1}\frac{dX_R}{Y_R}.
+```
+
+Since $X_T=v+\varepsilon_T/6$, this also gives an explicit affine relation $v=\sigma^2g_R-\varepsilon_T/6$ between the Tzitzéica reduction's *cubic coordinate* and the Riemann elliptic Gauss coordinate at this one marked modulus.
+
+**Strict boundary [C].** The real Tzitzéica physical branch has $v=e^h>0$, the Riemann elliptic curve has a WE height differential and spin bundle, and the original Lamé operator uses an independent spatial coordinate $u=\ln(x/c)$. The displayed curve isomorphism does **not** identify their differential equations, periodic solution intervals, BA eigenline, spin connection, real immersion periods or self-adjoint domains. It is an exact, *explicitly selected* curve-and-differential isomorphism, no stronger.
+
+## 19. Projectivizing the third-order scalar companion gives a coupled RICCATI system [D,V]
+
+The scalar ODE
+
+```math
+\psi_{sss}=\beta(s)\psi_s+\alpha(s)\psi
+```
+
+has first-order vector state $(\psi,\psi_s,\psi_{ss})^{\mathsf T}$ satisfying
+
+```math
+\frac d{ds}\begin{pmatrix}\psi\\\psi_s\\\psi_{ss}\end{pmatrix}=\begin{pmatrix}0&1&0\\0&0&1\\\alpha&\beta&0\end{pmatrix}\begin{pmatrix}\psi\\\psi_s\\\psi_{ss}\end{pmatrix}.
+```
+
+On a chart where $\psi\ne0$ define two projective coordinates
+
+```math
+p=\frac{\psi_s}{\psi},\qquad q=\frac{\psi_{ss}}{\psi}.
+```
+
+Their induced projective dynamics is the explicit first-order **coupled Riccati system**
+
+```math
+p_s=q-p^2,\qquad q_s=\alpha+\beta p-pq.
+```
+
+Eliminating $q=p_s+p^2$ yields the second-order nonlinear *projective jerk* equation
+
+```math
+p_{ss}+3pp_s+p^3-\beta p-\alpha=0.
+```
+
+**Theorem 19.1 [D,V] (RP² Riccati/projective reduction).** The third-order linear centro-affine carrier and the coupled first-order projective Riccati system on a chart of $\mathbb{RP}^2$ are locally equivalent away from zeros of $\psi$. The one-dimensional scalar projective coordinate $p$ obeys the displayed second-order nonlinear equation.
+
+This is the exact higher-rank counterpart of the framework's $\mathrm{SL}(2)$ ratio Riccati equation $h_s=Q-h^2$. A projective plane requires **two** affine chart coordinates; its geometry is not exhausted by one Schwarzian of a ratio.
+
+### 19.1 The pure-square rank-two Riccati submanifold
+
+For the special symmetric-square solution $\psi=\varphi^2$ with $\varphi_{ss}=Q\varphi$, let $h=\varphi_s/\varphi$. Then
+
+```math
+p=2h,\qquad q=2(Q+h^2)=2Q+\frac12p^2,\qquad p_s=2Q-\frac12p^2.
+```
+
+The coupled $\mathbb{RP}^2$ Riccati flow restricts to the declared rank-two pure-square relationship. This is a representation-theoretic **subsystem**: a generic third-order solution is an arbitrary linear combination of the three squared products, not itself the square of one carrier solution.
+
+## 20. Holonomy, Wronskians, spin signs, and global descent [D,K,C]
+
+On a one-dimensional interval a chosen initial centro-affine frame and companion coefficient reconstruct a unique curve:
+
+```math
+F(s)=F(s_0)\,\mathcal P\exp\left(\int_{s_0}^s A_3(t)\,dt\right),\qquad X(s)=F(s)e_1.
+```
+
+If $\beta(s)$ is periodic of period $L$ and $\alpha$ constant, the transport matrix is a monodromy $M_3\in SL(3,R)$ after choosing a frame convention. An actual *closed framed curve* requires the appropriate global frame periodicity (for a fully periodic normalized frame, $M_3=I$); a weaker projective closure of $[X]$ does not impose Euclidean/affine position closure.
+
+For a carrier rank-two monodromy $M_2\in SL(2,R)$, its symmetric-square monodromy is
+
+```math
+M_3=\mathrm{Sym}^2(M_2)\in\mathrm{SO}^+(2,1).
+```
+
+The kernel is the central sign:
+
+```math
+\mathrm{Sym}^2(-M_2)=\mathrm{Sym}^2(M_2).
+```
+
+**Theorem 20.1 [D,K] (global spin information is NOT recoverable from Sym² alone).** The symmetric-square rank-three transport retains the rank-two projective monodromy but cannot distinguish the two spin lifts $M_2$ and $-M_2$. This is the same mathematical loss of a $\mathbb Z_2$ marking that appears in the framework's Riemann WE 2-torsion spin line (draft 210). Recovering the original spinor bundle requires a **chosen lift or theta-characteristic marking**.
+
+An arbitrary centro-affine $\mathrm{SL}(3)$ monodromy need not lie in the symmetric-square subgroup and need not admit such an $\mathrm{SL}(2)$ lift. Thus even retaining the complete rank-three first-order connection does not yield a *universal* canonical WE spin bundle without additional structure.
+
+## 21. Curvature, affine cubic forms, and binary quartics: TYPE CHECK [D,H,C]
+
+The framework already contains at least four independent invariant constructions:
+
+1. **Binary quadratic discriminant** $\Delta_2=b^2-ac$, preserved by the real symmetric-square $\mathrm{SL}(2)$ action on three-dimensional quadratic-form space. Its signature $(2,1)$ determines the embedded split orthogonal subgroup.
+2. **Wilczyński cubic coefficient** $\mathcal W_3=\alpha-\beta_s/2$ of a projective $\mathbb{RP}^2$ curve. Its vanishing characterizes the conic/symmetric-square reduction. It is a *differential invariant*, not the discriminant of a binary cubic or a modular form by definition.
+3. **Affine-sphere Fubini–Pick cubic form**, an intrinsically two-dimensional tensor on an affine sphere, entering its affine Gauss–Codazzi equations and $\mathfrak{sl}_3$ Lax representation. It is not the space-curve torsion, although selected asymptotic curves may link the structures.
+4. **Framework binary quartic invariants** $(I,J,\Delta)$ and pointwise fundamental-form product quartics (H421). They are algebraic invariants of a declared binary *degree-four* form. They do not canonically equal the projective Wilczyński cubic, the affine Fubini–Pick form or the quadratic discriminant.
+
+The **elliptic j-invariant** of the reduced Tzitzéica cubic in §16 is a fifth object: it is constructed from a particular *first integral*, and its special $1728$ locus supplies a selected elliptic curve isomorphism (§18). Conflating these typed invariants would defeat the goal of understanding the origin of the equations.
+
+**Potential future map [O].** One can seek a *marked algebraic functor* from the affine-sphere cubic-form/flat-Lax data to a selected spectral elliptic curve or to the framework's binary-quartic pencil, but a common degree or modular value alone is not enough. Periods, discriminants, spin structures and real forms must be transported explicitly.
+
+## 22. Gauss–Codazzi in two geometries, and what fibration reconstruction actually preserves [D,K,C]
+
+The **Euclidean minimal-surface** mechanism of drafts 180/200 uses a metric $I$, second form $II$, a unit Euclidean normal, zero mean curvature and an adapted **flat Euclidean-motion Cartan connection** with structure group $\mathrm{SE}(3)$ (spin cover $\mathrm{SU}(2)\ltimes\mathbb R^3$). Its WE spinor forms are holomorphic, and global immersion periods are real translations.
+
+The **Tzitzéica affine-sphere** mechanism uses a Blaschke affine metric, affine normal, Fubini–Pick cubic and an **$\mathrm{SL}(3,R)$ affine frame**. Its Gauss–Codazzi compatibility is the Tzitzéica equation in the selected indefinite affine normalization. Their connections and variational functionals are different despite a common three-dimensional ambient set.
+
+The two mechanisms admit **exact 1D reductions**, but those reductions preserve only declared data:
+
+- Sym²(SL2)→SL3 preserves a Wronskian-derived volume determinant and a quadratic discriminant, while losing the central spin sign.
+- A centro-affine Tzitzéica curve preserves $\alpha=\tau/d^2$ under its SL3 frame action but still needs initial frame and monodromy data to reconstruct a closed curve.
+- Restricting the 2D diagonal group orbit on $xyz=1$ to a 1D subgroup gives an actual algebraically explicit curve-on-surface reduction.
+- A Tzitzéica PDE one-variable reduction preserves its declared elliptic first integral; its nodal limit is Riccati, but a separate map is needed to compare it to the canonical framework's SL/EP clock, weighted norm, WE spin line or Gauss–Manin periods.
+
+This is a useful higher-rank **test case** for the proposed fibration-holography program: one has an exact connection-aware reconstruction *inside a specified geometric category*, not a theorem that every 1D carrier uniquely remembers every 3D immersion.
