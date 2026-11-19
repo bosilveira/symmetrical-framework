@@ -415,3 +415,163 @@ Unlike the catenoid case, $\theta_R$ is generally nonconstant, and $\xi$ is only
 ```
 
 This branching is the natural-coordinate singularity at an **umbilic/zero of the Hopf differential**. The immersed surface itself can remain smooth there. It is precisely why a globally regular single-variable SL carrier over the whole compact elliptic curve does not follow from the local natural-coordinate theorem.
+
+## 11. Riemann circular foliations do NOT generally define a rotational Killing quotient [C,D,K]
+
+Every horizontal plane intersects a Riemann minimal example in a circle or line; this does NOT mean all those circles are orbits of a *common* one-parameter Euclidean isometry. The circle centers generally move between horizontal planes.
+
+A generic circle-foliated surface has a local parametrization
+
+```math
+X(z,\theta)=(a(z)+R(z)\cos\theta,\ b(z)+R(z)\sin\theta,\ z).
+```
+
+Its metric coefficients include
+
+```math
+g_{z\theta}=R(-a'(z)\sin\theta+b'(z)\cos\theta)
+```
+
+and
+
+```math
+g_{zz}=1+a'^2+b'^2+R'^2+2R'(a'\cos\theta+b'\sin\theta).
+```
+
+Unless the center derivatives satisfy additional restrictions, these coefficients depend on $\theta$. The vector field $\partial_\theta$ is **not Killing**, so Fourier modes in $\theta$ are coupled by the geometric Laplacian and cannot automatically be used to obtain independent one-dimensional SL operators.
+
+**Theorem 11.1 [D,C] (foliation is weaker than symmetry).** Circular cross-sections do not imply an isometric $U(1)$ action. A separation into independent fiber charges is justified only after establishing an actual invariant metric/connection or a different proven separation ansatz. This is why the genus-one Riemann Weierstrass/period construction must not be described as simply the same axial reduction used for the catenoid.
+
+A helicoid similarly has a **screw** one-parameter isometry with generally noncompact orbits, not the same compact rotational circle quotient as the catenoid. A screw quotient requires tracking translational/rotational monodromy and a different global domain.
+
+## 12. The Euclidean normal direction survives as WE Gauss data and a METRIC-WEIGHTED potential [D,V]
+
+For a Euclidean minimal immersion with first fundamental metric $g_\Sigma$ and Gauss curvature $K_G\le0$, the squared norm of its second fundamental form is
+
+```math
+|A_\Sigma|^2=-2K_G.
+```
+
+The nonnegative-Laplacian-sign **negative Jacobi expression** is
+
+```math
+B_\Sigma=-(\Delta_\Sigma+|A_\Sigma|^2)=-\Delta_\Sigma+2K_G.
+```
+
+In conformal coordinates $ds_\Sigma^2=e^{2\omega}(du^2+dv^2)$, this is
+
+```math
+B_\Sigma=e^{-2\omega}(-\partial_u^2-\partial_v^2)+2K_G.
+```
+
+Multiplication of its **zero equation** by the positive conformal factor produces the flat-leading differential expression
+
+```math
+e^{2\omega}B_\Sigma=-\partial_u^2-\partial_v^2+2e^{2\omega}K_G.
+```
+
+**Theorem 12.1 [D,K].** The extrinsic normal geometry enters the Jacobi equation as $2K_G$, but the corresponding conformally flattened potential is **$2e^{2\omega}K_G$**, not $2K_G$. This difference is essential under surface-to-ODE reduction.
+
+### 12.1 Exact Gauss-map formula for the conformal Jacobi potential
+
+For the WE data $(g,dh)$, with $dh=h_z\,dz$,
+
+```math
+e^{2\omega}=\frac{(1+|g|^2)^2}{4|g|^2}|h_z|^2.
+```
+
+The Gauss-map pullback of the round metric is
+
+```math
+III=\frac{4|g_z|^2}{(1+|g|^2)^2}|dz|^2=-K_G\,I.
+```
+
+Therefore
+
+```math
+K_G=-\frac{16|g|^2|g_z|^2}{(1+|g|^2)^4|h_z|^2},\qquad 2e^{2\omega}K_G=-\frac{8|g_z|^2}{(1+|g|^2)^2}.
+```
+
+The last expression is independent of the overall amplitude $h_z$, as expected for the conformally multiplied zero-Jacobi equation. But it usually depends on **both real surface coordinates** through $g(z)$ and $\bar g(\bar z)$.
+
+For the catenoid $g=-e^{r(u+iv)}$,
+
+```math
+2e^{2\omega}K_C=-2r^2\mathrm{sech}^2(ru).
+```
+
+Only because this coefficient is independent of $v$ does angular separation give the familiar PT equation.
+
+### 12.2 Exact Riemann counterexample to the universal Lamé-potential claim
+
+In the archived Riemann Abelian coordinate $d\zeta=dg_R/w_R$, one has $g_{R,\zeta}=w_R$, so
+
+```math
+2e^{2\omega_R}K_R=-\frac{8|w_R|^2}{(1+|g_R|^2)^2}.
+```
+
+This is the exact *conformal Jacobi potential* of the selected Riemann immersion. It is not, as a function on the full real two-dimensional conformal domain, automatically equal to the real one-gap Lamé spectral potential
+
+```math
+V_{\rm Lame}(u)=2m r^2\mathrm{sn}^2(ru\mid m)-2mr^2.
+```
+
+The smooth spectral elliptic-curve isomorphism of draft 170 is real and exact, but it does **not** turn the Riemann surface Jacobi operator into the one-gap Lamé differential operator. Equality of the underlying compact elliptic curves is weaker than equality of these two differential operators, their weights and their domains.
+
+## 13. The selected Lamé–Riemann elliptic isomorphism transports a PROJECTIVE STRUCTURE, but not spatial SL flow [D,H,C]
+
+The selected real smooth curve isomorphism of draft 170 is
+
+```math
+m=(1+\lambda_R^2)^{-1},\quad k_R=\lambda_R^{-1}-\lambda_R,\quad D_R=\lambda_R+\lambda_R^{-1},
+```
+
+```math
+g_R=-k_R-\frac{D_R}{r^2}E,\qquad y_R=\frac{D_R^{3/2}}{r^3}\eta,\qquad w_R=\sqrt{\lambda_R}y_R.
+```
+
+Its Weierstrass height differential pulls back to the **spectral elliptic curve** as
+
+```math
+dh_R=A_R\frac{dg_R}{w_R}=-A_Rr\sqrt m\,\frac{dE}{\eta}.
+```
+
+The corresponding Hopf quadratic differential is a **marked meromorphic form on the smooth spectral curve**:
+
+```math
+\Theta_R=\frac{dg_R}{g_R}\,dh_R=\frac{A_RD_R\sqrt m}{r\,g_R(E)}\,\frac{dE^2}{\eta}.
+```
+
+A local natural coordinate may be defined by $d\xi^2=\Theta_R$, away from zeros and poles. The explicit affine relation $g_R(E)=aE+b$ is Möbius with vanishing Schwarzian in the energy chart:
+
+```math
+\{g_R,E\}=0.
+```
+
+By the Schwarzian chain rule one then obtains the exact identity
+
+```math
+\{g_R(E(\xi)),\xi\}=\{E(\xi),\xi\}.
+```
+
+**Theorem 13.1 [D,H] (selected projective-curve transport).** The affine Lamé–Riemann curve map identifies the Gauss-map Schwarzian projective structure with the Schwarzian of the **spectral coordinate regarded as a function of the natural surface coordinate $\xi$**. This is a rigorous curve-coordinate/projective result, but it does **not** identify the real Lamé spatial ODE with the surface spinor ODE: the Lamé carrier evolves in $u$ at fixed $E$, whereas here $E(\xi)$ is necessarily **moving along the spectral curve**.
+
+This is the precise extra arrow that the blanket “SL Riccati parallel transports the Riemann Gauss map” assertion is missing.
+
+## 14. The sign of the energy and the actual degenerations matter [D,H,C]
+
+Drafts 160–170 distinguish:
+
+- The nodal spectral normalization of a real PT soliton operator, with $E=-s^2$, catenoid height differential $dh_C=2ds/(s^2-r^2)$, and an independent Gauss map choice $g_C=-(s-r)/(s+r)$.
+- The smooth selected one-gap Lamé spectral curve, isomorphic to the Riemann minimal-example elliptic curve for $0<m<1$, with three branch points and full marked Weierstrass forms.
+- Two distinct nodal limits $m\to1$ (collapsed allowed band/PT bound level) and $m\to0$ (closed forbidden gap/free), with limiting logarithmic and arctangent differentials respectively.
+
+The fact that **the catenoid height differential emerges at the PT spectral node** is an exact differential pullback. But this **alone** does not choose the needed Gauss map, spin structure, conformal metric, Hermitian real form, self-adjoint operator domain or global immersion periods. Those are new, independently typed data.
+
+The rational spectral-normalization coordinate $s$ can be related to a surface coordinate by $t=(s-r)/(s+r)=e^{r\zeta}$, which means
+
+```math
+s(\zeta)=r\,\frac{1+e^{r\zeta}}{1-e^{r\zeta}}=-r\coth(r\zeta/2),\qquad E(\zeta)=-s(\zeta)^2.
+```
+
+Thus the spectral energy *varies* along this selected surface parametrization. It is not an isospectral trajectory of the original PT eigenvalue equation.
