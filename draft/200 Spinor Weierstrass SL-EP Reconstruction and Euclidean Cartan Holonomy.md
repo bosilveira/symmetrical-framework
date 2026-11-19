@@ -702,3 +702,131 @@ Then:
 **Theorem 19.2 (global period qualification).** On a punctured non-simply-connected surface, the local immersion descends to a global immersion into $\mathbb R^3$ exactly when all required real translation periods $\mathrm{Re}\oint_\gamma\boldsymbol\Phi$ vanish, and the data obey the needed global regularity/patching conditions. More general translation quotients permit periods lying in a specified lattice. A global $\mathrm{SU}(2)$ lift needs separate spin-bundle patching; it does not follow merely from the WE Gauss map.
 
 **Status.** This is a theorem of a **specific decorated category** (Riemann surface, meromorphic Gauss map, Hopf differential, compatible spinors and periods), not a theorem that the original weighted SL carrier uniquely determines those decorations. It supplies a concrete exact reconstruction mechanism which the proposed “fiber holography” program can test against spectral data and genuine symmetry reductions.
+
+## 20. THE LOCAL METRIC–CURVATURE–WRONSKIAN IDENTITY [D,V,K]
+
+Let $p,q$ be the genuine local WE spinors of §4, with
+
+```math
+\rho^2=|p|^2+|q|^2,\qquad \vartheta(z)=pq_z-p_zq,\qquad\Theta=\vartheta(z)\,dz^2.
+```
+
+From the spinor metric formula,
+
+```math
+I=\frac{\rho^4}{4}|dz|^2.
+```
+
+The Gauss-map pullback of the unit spherical metric is
+
+```math
+III=\frac{4|g_z|^2}{(1+|g|^2)^2}|dz|^2.
+```
+
+Since $g=q/p$ and $g_z=\vartheta/p^2$, while $\rho^2=|p|^2(1+|g|^2)$, one gets directly
+
+```math
+III=\frac{4|\vartheta|^2}{\rho^4}|dz|^2.
+```
+
+For a Euclidean minimal surface the third fundamental form obeys $III=-K_G I$. Therefore
+
+```math
+K_G=-\frac{16|\vartheta|^2}{\rho^8}.
+```
+
+**Theorem 20.1 [D,V] (local first/third forms and curvature reconstructed from two spinorial scalar invariants).** For any regular nonumbilic WE minimal immersion, the positive Hermitian Gram norm $\rho$ and the WE spinor Wronskian $\vartheta$ determine the entire **conformal factors** of $I$ and $III$, and the Gaussian curvature $K_G$, through the exact three formulas above. The Hopf quadratic differential determines the trace-free second form by $Q_H=-\Theta/2$; with these data the Gauss–Codazzi fundamental theorem reconstructs the immersion up to Euclidean rigid motion on a simply connected chart.
+
+Equivalently, if $I=e^{2\omega}|dz|^2$ and $III=e^{2\widetilde\omega}|dz|^2$, then
+
+```math
+e^{2\omega}e^{2\widetilde\omega}=|\vartheta|^2,\qquad -K_G e^{4\omega}=|\vartheta|^2.
+```
+
+This is a coordinate-normalization-sensitive identity: under holomorphic chart changes the right side transforms with the correct quadratic-differential weight. It is NOT equality of intrinsic **metrics** $I=III$.
+
+### 20.1 The exact reciprocal metric pair in natural Hopf coordinates
+
+In the $\xi$ coordinate where $\Theta=d\xi^2$, $\vartheta_\xi=1$. Therefore
+
+```math
+I=\frac{\rho_\xi^4}{4}|d\xi|^2,\qquad III=\frac4{\rho_\xi^4}|d\xi|^2,\qquad K_G=-\frac{16}{\rho_\xi^8}.
+```
+
+The two conformal factors are **reciprocal**. This is a precise differential-geometric mechanism behind the framework's frequent reciprocal envelopes: it is true for a selected nonumbilic minimal WE patch in its natural quadratic-differential coordinate, independently of any physical interpretation.
+
+### 20.2 Independent r and mu calibration on the catenoid
+
+In the canonical catenoid $\zeta$ coordinate,
+
+```math
+\vartheta_\zeta=r,\quad\rho_\zeta^2=2R,\quad I=R^2|d\zeta|^2,\quad III=r^2S^2|d\zeta|^2,\quad K_G=-r^2S^4.
+```
+
+In its natural coordinate $\xi=\sqrt r\,\zeta$ the transformed spinor norm is
+
+```math
+\rho_\xi^2=\frac{2R}{\sqrt r},\qquad K_G=-\frac{16}{\rho_\xi^8}=-r^2S^4.
+```
+
+The original framework's EP scale $a=\mu^{1/4}\sqrt R$ yields another exact expression, with its own declared normalization:
+
+```math
+K_C=-\frac{\mu^2r^2}{a^8}.
+```
+
+The amplitude $\mu$ cancels after substituting $a^8=\mu^2R^4$, so the intrinsic catenoid geometry is independent of the arbitrary field normalization. This is a valid **mathematical dictionary**, not a new physical curvature law.
+
+## 21. On a REAL projective oval the EP clock is half the spherical Gauss angle [D,V]
+
+The natural-coordinate spinor equation of §6 becomes a **real** SL-type carrier when the selected real slice has real monotone $g=g(\xi)$ and real Schwarzian, with $g_\xi\ne0$. Choose a real independent solution pair with Wronskian $+1$; for $g_\xi>0$, one may take
+
+```math
+P=\frac1{\sqrt{g_\xi}},\qquad Q=\frac g{\sqrt{g_\xi}},\qquad PQ_\xi-P_\xi Q=1.
+```
+
+The positive Gram amplitude has the closed form
+
+```math
+\rho^2=P^2+Q^2=\frac{1+g^2}{g_\xi}.
+```
+
+Since both solutions satisfy $y_{\xi\xi}+\frac12\{g,\xi\}y=0$, the Pinney theorem gives
+
+```math
+\rho_{\xi\xi}+\frac12\{g,\xi\}\rho=\rho^{-3}.
+```
+
+Define its EP clock by $\tau_\xi=\rho^{-2}$. Then
+
+```math
+\tau_\xi=\frac{g_\xi}{1+g^2},\qquad \tau=\arctan g+\mathrm{constant}.
+```
+
+The standard spherical arc-length along the stereographic **real meridian** is $d\ell_{S^2}=2\,dg/(1+g^2)$ for $dg>0$, so
+
+```math
+d\ell_{S^2}=2\,d\tau.
+```
+
+**Theorem 21.1 [D,V] (projective real-slice EP/Gauss half-angle).** On a real monotone Gauss-map slice in a natural Hopf coordinate, the normalized Pinney phase/clock is exactly **half the signed spherical Gauss-map meridian angle**, up to an additive constant. This follows from the linear projective pair and its Wronskian; it is a precise local relation between Riccati projectivization, the EP phase and the $S^2\simeq\mathbb{CP}^1$ Gauss geometry.
+
+For $g_\xi<0$, orient the real coordinate or reverse the ordered solution pair so that the current/clock is positive; then the signed half-angle has the corresponding orientation reversal. For a generic complex-valued Gauss map no one-dimensional real meridian or real Pinney carrier is implied.
+
+### 21.1 The Gudermannian emerges at the exact canonical catenoid scale
+
+Along the catenoid meridian choose the real projective ratio $\widetilde g=e^{ru}=-g_C$, a fixed Möbius transformation of the Gauss coordinate. In the natural coordinate $\xi=\sqrt r\,u$, $\widetilde g_\xi=\sqrt r\,e^{ru}>0$, giving
+
+```math
+\rho_\xi^2=\frac{2\cosh(ru)}{\sqrt r},\qquad \frac{d\tau}{d\xi}=\frac{\sqrt r}{2\cosh(ru)}.
+```
+
+Integration gives the exact familiar primitive
+
+```math
+\tau(u)=\arctan(e^{ru})=\frac{\pi}{4}+\frac12\operatorname{gd}(ru),
+```
+
+where $\operatorname{gd}(s)=2\arctan(e^s)-\pi/2$. Thus the original arctangent/Gudermannian phase is not merely analogous to the spinor geometry: **it is the exact normalized real EP clock and half spherical Gauss-meridian angle of the canonical catenoid**.
+
+**Global boundary.** This half-angle identity does **not** identify the EP clock with the independent Bonnet associate angle, or make a normalized spinor horizontal for the Hopf connection along every two-dimensional path. The angular Hopf potential of §9 remains nonzero; closed-loop Berry holonomy and puncture monodromy require the connection and patch transitions independently.
