@@ -967,3 +967,46 @@ Finally, at the symmetric Riemann modulus $\lambda_R=1$, the selected **smooth**
 14. **Bundle degrees [D,K]:** elliptic spin bundles have degree zero, a generic genus-one BA divisor line has degree one, and the Gauss-pulled tautological line has degree $-2$; no unqualified holomorphic line bundle isomorphism exists without twisting.
 15. **Binary quartics [H]:** the H421 principal-form product quartic has $J=0$ and pointwise $j=1728$ on every nonumbilic minimal surface, whereas the Riemann/Lamé spectral elliptic $j$ varies with $m$. The two curves are different types.
 16. **Domain and completeness [C]:** no claim here promotes a general complex projective spinor ODE to a self-adjoint real Hilbert SL operator. The WE immersion needs real periods; the spin lift needs separate signs/patches; Krichever requires spectral divisor data; and none of these follows from the existence of a nodal curve alone.
+
+## 25. Historical and external source audit
+
+### 25.1 Actual November 18 ZIP and recent live drafts
+
+- **H421–H428, fundamental-forms-willmore-hopf.md:** catenoid/helicoid Gauss–Codazzi, Hopf differential, Jacobi operator and **pointwise** fundamental-form binary quartic. Those are preexisting results. Section 22 explicitly distinguishes the pointwise quartic from the global spectral elliptic curve.
+- **H466–H470, riemann-marked-periods-gauss-manin-x04.md:** exact Riemann WE data, elliptic conformal curve, translation and flux periods, and Gauss–Manin monodromy. This provides the actual Riemann data used in §§10,12–13.
+- **H329–H332, lorentz-gram-hopf.md:** Gram representation, Gudermannian map and normalized Hopf spinor. Section 21 independently derives a selected real EP half-angle from WE spinors.
+- **H136, sato-grassmannian.md:** verified rank-one soliton Grassmannian/tau/BA construction. Its divisor/line bundle is not assumed to equal the WE spin structure or Gauss-pulled Hopf line.
+- **Draft 160:** marked spectral node/catenoid height, Bonnet real-period obstruction and Pinney quartic elliptic isogeny.
+- **Draft 170:** selected all-modulus real Lamé–Riemann spectral-curve isomorphism, complete WE pullbacks and Gauss–Manin periods. The new WE spinor Schwarzian equation is a *different* carrier unless an additional intertwiner is constructed.
+- **Draft 180:** explicit LC/teleparallel frame distinction, weighted catenoid Jacobi operator and Gauss-map Hopf degrees.
+- **Draft 190:** exact circle-bundle Fourier reduction and a counterexample showing that neutral scalar data need not remember Chern class or flat holonomy.
+
+### 25.2 Independent mathematical references
+
+- Rob Kusner and Nick Schmitt, *The Spinor Representation of Minimal Surfaces* (1995), https://arxiv.org/abs/dg-ga/9512003 , and *The Spinor Representation of Surfaces in Space* (1996), https://arxiv.org/abs/dg-ga/9610005 . Fundamental sources on spinor quadratic forms, spin structures, global signs and period conditions. The elementary Hopf/Wronskian/Schwarzian identities here are **derivations in the selected convention**, not claims of historical novelty.
+- *On the topology and index of minimal and Bryant framed surfaces* (2026), https://doi.org/10.1007/s00208-026-03401-z . Relevant independent work explicitly studying Gauss maps and Schwarzian/projective structures in minimal-surface geometry.
+- Meeks, Pérez and Ros, *Properly embedded minimal planar domains* (2015), https://annals.math.princeton.edu/2015/181-2/p02 , and *The Riemann Minimal Examples* (2016), https://arxiv.org/abs/1609.05660 . Precise scope of the properly embedded planar-domain classification, circular foliation and global period behavior.
+- ICM 2026 mathematical survey on classification and dynamics of properly embedded minimal planar domains, https://doi.org/10.1137/25M1803188 . The global classification has **restricted hypotheses**, not a blanket genus-zero/genus-one theorem for all minimal surfaces.
+- *Minimal surfaces associated with orthogonal polynomials* (2020), https://doi.org/10.1080/14029251.2020.1819599 , and related Sym–Tafel/Fokas–Gel'fand immersion work. The extended-frame immersion needs a spectral parameter and prescribed real form that a generic WE pair does not automatically supply.
+- *Minimal surfaces with symmetries*, Proceedings of the London Mathematical Society (2023), https://doi.org/10.1112/plms.12590 , for equivariant WE constructions and why an actual group action is extra geometric input.
+
+**Scope and originality boundary:** The basic spinor representation, natural Hopf coordinates, projective Schwarzian equation, Gauss–Codazzi, finite-gap spectral curves and associated minimal-surface families are established mathematics. The contribution of this **provisional framework draft** is an explicitly normalized, cross-checked dictionary linking those known mechanisms to the canonical $r,c,\mu$ fields, EP Gram amplitude and selected Lamé/Riemann data, while documenting the global no-go and needed maps. No priority claim is made.
+
+## 26. Global reconstruction research tasks and final thesis
+
+1. **Define a decorated reconstruction category:** objects consist of $(\Sigma,\mathfrak s,g,\Theta,\boldsymbol\Phi,\mathrm{Per})$ (conformal domain, spin structure, Gauss map, Hopf form, WE triple and real period homomorphism). Construct a functor to flat adapted Euclidean Cartan immersions modulo rigid motions, preserving explicitly declared connection data.
+2. **Construct the missing BA/WE twist:** on the selected genus-one Riemann conformal/spectral curve, calculate divisors/twists relating the generic degree-one BA eigenline, degree-zero spin structures and degree-two Hopf line, or prove nonexistence of a suitable connection-preserving isomorphism.
+3. **Check natural-coordinate singularities:** compute the complete Puiseux and projective monodromy of the Riemann spinor Schwarzian ODE at umbilics, planar-end punctures and infinity. Decide what branched cover is required for a global projective chart.
+4. **Compare three explicit potentials:** the actual real one-gap Lamé spatial spectral potential, the WE Gauss-map Schwarzian projective potential and the surface conformally flattened Jacobi potential $2e^{2\omega}K$. A genuine Darboux/Liouville map is a new theorem to derive, not a consequence of common elliptic $j$.
+5. **Global real symmetry test:** derive the full two-variable Riemann metric and test for commuting geometric Jacobi operators. Its nonconcentric circle foliation is not a continuous rotational Killing quotient.
+6. **Connection matching:** construct the adapted $\mathrm{SU}(2)$ spin frame and compare its $\mathfrak{su}_2$ Maurer–Cartan form with the holomorphic projective $\mathfrak{sl}_2$ equation and the $U(1)$ Hopf connection, specifying Hermitian reduction and reality conditions.
+7. **Track angular spin and Berry phases:** compute catenoid $-1$ spin sign, the angular Berry holonomy with patch transition, and the Bonnet-translated real immersion periods along the same fundamental-group loop.
+8. **Weighted Hilbert map:** build an actual operator/form intertwiner between the canonical $L^2((0,\infty),x\,dx)$ carrier and a declared surface/spinor space, carrying half-rate factors, area weights, singular endpoints, and self-adjoint domains.
+9. **Higher genus:** examine degree and Riemann–Hurwitz obstructions for genus-two and higher selected spectral curves, and identify whether any admitted map to minimal WE data preserves the required meromorphic divisor and real period conditions.
+10. **Finite-energy reciprocal envelope:** retain the verified $3\varepsilon_N a^5/4$ correction away from the Master Duffing separatrix; the catenoid WE–EP identification is a selected separatrix theorem.
+11. **Sym–Tafel test:** construct an explicit spectral-parameter extended $\mathrm{SU}(2)$ Lax frame for the selected surface and prove that its Sym–Tafel immersion equals the WE immersion up to gauge, scale, Bonnet phase and translation.
+12. **A global fiber-holography theorem, if possible:** require a faithful reconstruction of the *specified* base, spin/BA/affine bundles, connection forms, residues and marked cycles. Do not infer topology or all holonomies from a single reduced scalar ODE.
+
+**Final structural thesis.** On a chosen regular Euclidean minimal-surface patch, the quadratic WE spinors and their Wronskian give the Hopf differential, the Schwarzian second-order projective carrier, the induced metric and Gaussian curvature. On the canonical catenoid meridian they also give the positive EP envelope and exact Gudermannian half-angle clock. The full ambient geometric realization is carried by an adapted flat Euclidean Cartan connection with translational WE periods and a separate normalized Hopf spin connection.
+
+**Global qualification.** A spectral-curve isomorphism does not determine the same **spatial** SL evolution, a single global spin structure, the ambient frame, a real period lattice or a quantum/self-adjoint Hilbert realization. Bonnet ambiguity and bundle degree differences are explicit obstructions. The mathematically strongest candidate theorem is therefore **Spinor–Hopf–Schwarzian Reconstruction with a Selected Ermakov–Pinney Real-Slice Reduction**, with an eventual stronger fiber-reconstruction theorem conditional on the missing line-bundle twist and connection-preserving period map.
