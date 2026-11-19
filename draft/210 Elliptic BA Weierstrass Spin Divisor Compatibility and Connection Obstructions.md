@@ -953,3 +953,44 @@ The strongest tested phenomenon here is not that a codimension-one asymptotic bo
 The projective real-one-variable SL–EP reduction is one **exactly constructed local/selected real slice** of this network, not an all-purpose functor preserving arbitrary bulk topology.
 
 The programmatic extension *Fibration Holography* can ask whether a **decorated base curve** and its collection of equivariant connections/periods reconstruct an ambient Euclidean or pseudo-Riemannian geometry in a faithful category. Such a theorem would require an explicit definition of the objects, their morphisms, and a proof of inverse faithfulness. The current work supplies **several actual construction maps and non-equivalence tests**. It does not assert a physical holographic duality, a common 4D Yang–Mills gauge bundle, or complete reconstruction from one scalar equation.
+
+## 25. Verification register, project provenance, and independent sources
+
+### 25.1 Exact calculations independently checked
+
+1. **Riemann Gauss divisor [D].** The cubic branch $g=0$ has local coordinate $\sqrt g$, yielding $\operatorname{ord}_{P_0}g=2$; the unique cubic infinity has $\operatorname{ord}_{P_\infty}g=-2$. The nonprincipal half-divisor $P_0-P_\infty$ has order two in the elliptic group.
+2. **Holomorphic WE spin [D].** The Riemann height differential $dg_R/w_R$ is nowhere zero on the compact elliptic curve. The WE spinor squares have divisors $\pm2(P_0-P_\infty)$, selecting the nontrivial two-torsion spin class. Nonzero holomorphic sections of this degree-zero nontrivial line do not exist; the actual sections are meromorphic at the punctures.
+3. **Hopf divisor [D].** Pulling back the point infinity on $\mathbb{CP}^1$ gives $2P_\infty$, so $H_R=\mathcal O(-2P_\infty)$ and its exact tensor twist by $\mathcal O(P_0+P_\infty)$ gives $S_R$.
+4. **Weierstrass elliptic uniformization [V].** The translation $X=g+k_R/3$ produces $Y^2=4X^3-G_2X-G_3$ with $G_2=4(1+k_R^2/3)$, $G_3=-4(k_R/3+2k_R^3/27)$. The point $P_0$ has value $X=k_R/3$, a nontrivial half-period root.
+5. **Sigma square root [K,D].** The classical addition identity and half-period quasi-periodicity give $h_a(z)^2=\wp(z)-\wp(a)$. Its sign multipliers over period loops make it a 2-torsion section, not a global elliptic scalar square root.
+6. **Moving Lamé gap point [V].** With $\gamma=r^2(1-m-mt)$ and $t=\mathrm{sn}^2(ru|m)$, direct Jacobi differentiation gives $\gamma_u=-2mr^3\mathrm{sn\,cn\,dn}=-2\eta_\gamma$. It moves between $E_2$ (at $\mathrm{sn}=0$) and $E_1$ (at $\mathrm{sn}^2=1$).
+7. **Drach certificate [V].** SymPy polynomial simplification returned exactly zero for both $R'''-4(V-E)R'-2V'R$ and $R'^2-2RR''+4(V-E)R^2-4\eta(E)^2$ with $R=E-\gamma$, treating $E,m,r,t$ symbolically and using the Jacobi differential identities.
+8. **Abel/Picard slope [V].** The ratio $\gamma_u/\eta_\gamma=-2$, together with the archived real affine differential scale, proves $dz_R(\gamma(u))/du=r/\sqrt{D_R}$ for all smooth real moduli; the Riemann WE half-period $a$ is hit at $u=K(m)/r$ modulo $2K(m)/r$.
+9. **Quasimomentum pole [D].** With $t=E^{-1/2}$, $\eta\sim it^{-3}$ and $dE/\eta\sim2i\,dt$, the normalized $dp_{\rm sp}\sim-dt/t^2$ while $dh_R=O(1)\,dt$. No finite multiple of $dh_R$ cancels its double pole.
+10. **Lorentzian real-form check [V].** SymPy gives $\Phi_{L,1}^2+\Phi_{L,2}^2-\Phi_{L,3}^2=0$ and $T^{\mathsf T}\mathrm{diag}(1,1,-1)T=-I$. The canonical catenoid spinor produces $I_E=\cosh^2(ru)|d\zeta|^2$ and $I_L=\sinh^2(ru)|d\zeta|^2$, with Lorentzian degeneration at $u=0$.
+11. **Riemann Riccati [V].** The normalized cubic gives $g_z^2=4g(g^2+kg-1)$ and $g_{zz}=6g^2+4kg-2$. Symbolic simplification yields $H_z=g+1/g$, $H^2=g+k-1/g$ and Darboux partner potentials $2g+k$ versus $k-2/g$.
+12. **H466 exactness [V,H466].** The archived differential $d(w_R/g_R)=\frac{\lambda_R}{2}(g_R+1/g_R)dg_R/w_R$ is exactly $\sqrt{\lambda_R}\,dH$ when $H=g_z/(2g)$, $w_R=\sqrt{\lambda_R}g_z/2$.
+13. **Elliptic half-period automorphism [V].** The transformation $(g,y)\mapsto(-1/g,y/g^2)$ preserves the cubic equation and differential $dg/y$, squares to the identity and maps infinity to the nontrivial 2-torsion point $P_0$, proving $g(z+a)=-1/g(z)$.
+14. **Darboux partners [V].** Direct operator multiplication gives $D^\sharp D=-\partial_z^2+2g+k$ and $DD^\sharp=-\partial_z^2+k-2/g$; by the half-period identity the second is a translate of the first. The reciprocal WE spinors are the respective factorization zero modes.
+15. **Resolution test [V].** At $r=2,\lambda_R=1$, $(E_0,E_1,E_2)=(-2,0,2)$, $\gamma=2\,\mathrm{cn}^2(2u|1/2)$, $z_\gamma'=\sqrt2$, $G_2=4$, $G_3=0$, and $\wp(z+a)=-1/\wp(z)$ exactly.
+
+### 25.2 Historical ZIP and live project provenance
+
+- The actual November 18 ZIP Riemann marked-periods module, H466–H470, contains the elliptic WE data, horizontal derivative exactness, marked periods, Gauss–Manin and modular coordinates. The Riemann horizontal derivative is a **pre-existing checked identity** whose Riccati interpretation has now been derived.
+- The ZIP Lamé complementary/special-loci module and H95 contain earlier Lamé spectral-modular relationships, but not the complete moving Dirichlet/selected WE spin compatibility of this draft.
+- The ZIP Sato–Grassmannian module H136 constructs the selected rank-one nodal soliton Baker function and tau; it does not equate the smooth elliptic BA divisor, spin line and Hopf Chern connection.
+- The ZIP fundamental-forms/Willmore/Hopf module H421–H428 and draft 200 establish the projective WE spinor framework. The present work derives additional **global divisor and half-period identities** but preserves the previous source claims.
+- Live draft 170 supplies the smooth one-gap Lamé–Riemann real affine curve isomorphism, marked spectral quasimomentum and Gauss–Manin gauge. Live drafts 180–200 supply the connection taxonomy and local WE–SL–EP reconstruction.
+
+### 25.3 Classical literature and precisely relevant uses
+
+- Kusner–Schmitt, *The Spinor Representation of Surfaces in Space*: https://arxiv.org/abs/dg-ga/9610005 . Meromorphic WE spinors, global sign/period and spin-bundle data.
+- Osamu Kobayashi, *Maximal Surfaces in the 3-Dimensional Minkowski Space L3*, Tokyo Journal of Mathematics 6 (1983), 297–309: https://ir.library.osaka-u.ac.jp/repo/ouka/all/26352/?lang=1 . The Lorentzian maximal-surface Weierstrass representation.
+- Krichever–Takhtadzhyan, *Algebraic de Rham Theorem and Baker–Akhiezer Function*, Izvestiya Mathematics 88 (2024), 506–514: https://doi.org/10.4213/im9533e . Degree-$g$ divisors, Picard flow, Dubrovin equations and Baker–Akhiezer functions.
+- Dubrovin, *Theta Functions and Nonlinear Equations*, lecture notes: https://people.sissa.it/~dubrovin/rsnleq_web.pdf . Elliptic BA sigma formulas and distinction between chosen pole divisors and moving spectral data.
+- NIST DLMF, Weierstrass $\wp$, sigma, zeta, half-period and addition identities: https://dlmf.nist.gov/23.2 ; https://dlmf.nist.gov/23.6 ; https://dlmf.nist.gov/23.10 .
+- *The phenomenon of Darboux displacements*, Physics Letters A 281 (2001): https://www.sciencedirect.com/science/article/abs/pii/S0375960101008398 . The half-period/self-isospectral Darboux-displacement mechanism is classical.
+- One-gap Lamé half-period Darboux partners in an integrable-system realization: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.98.065013 . This external example is used solely for the already known Darboux mathematics, not its physical model.
+- NIST DLMF, Lamé equation and spectral band-edge functions: https://dlmf.nist.gov/29 .
+
+**Evidence boundary.** This draft derives an exact *selected mathematical dictionary*. It neither claims priority for Weierstrass spinors, Baker–Akhiezer functions or Darboux displacement, nor promotes line-class compatibility into a global natural-connection equality without the missing data.
