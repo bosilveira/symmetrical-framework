@@ -294,3 +294,152 @@ K_C=-e_1(t_2)-t_2^2=-r^2S^4.
 This **frame-dependent teleparallel reconstruction** is compatible with the warped fiber-radius formula $K_C=-\phi_{ss}/\phi$. The two computations encode the *same intrinsic surface metric* using different auxiliary data. Neither identifies the Riccati factorization $-\partial_u^2+h^2-h_u$ with the Bochner–Weitzenböck tensor identity or the connection curvature $F=dA$ of the rotational circle bundle (which is zero here).
 
 **Four distinct connections can coexist on this example:** the nonflat surface tangent Levi–Civita connection, the flat chosen teleparallel frame connection with torsion, the flat rotational bundle connection $d\theta$, and the nonflat pullback Hopf connection of the *Gauss map*. Their curvatures, torsions and holonomies must be typed separately.
+
+## 10. The Gauss-map Hopf bundle is NOT the catenoid rotational bundle [D,H,K]
+
+For a meromorphic Gauss map $g:\Sigma\to\mathbb{CP}^1$ on a **compactified Riemann surface**, choose the local normalized spinor
+
+```math
+\eta_g=\frac{(1,g)}{\sqrt{1+|g|^2}},\qquad A_g=-i\eta_g^\dagger d\eta_g=\frac{\bar g\,dg-g\,d\bar g}{2i(1+|g|^2)}.
+```
+
+The curvature and Chern number of this **different circle bundle** are
+
+```math
+F_g=dA_g=\frac{i\,dg\wedge d\bar g}{(1+|g|^2)^2}=\frac12g^*\omega_{S^2},\qquad\frac1{2\pi}\int_\Sigma F_g=\deg(g).
+```
+
+The local potential must be patched at $g=\infty$; it is not a globally defined one-form when the Chern number is nonzero.
+
+The compactified **catenoid Gauss map** $g_C=-t$ on $\mathbb{CP}^1$ has degree one. The **Riemann minimal-example** Gauss projection from its compactified elliptic curve,
+
+```math
+E_R:\quad y_R^2=g_R^3+k_Rg_R^2-g_R,\qquad (g_R,y_R)\mapsto g_R,
+```
+
+has degree two. The existing calculation in draft 180 therefore gives
+
+```math
+c_1(g_C^*\mathrm{Hopf})=1,\qquad c_1(g_R^*\mathrm{Hopf})=2.
+```
+
+**Theorem 10.1 [D,H].** In the corresponding charge-$n$ associated bundles, the first Chern numbers are $n$ for the catenoid Gauss-map pullback and $2n$ for the Riemann Gauss-map pullback. Their **uncharged** scalar sections are topologically trivial, but the charged sectors carry the distinction.
+
+**Essential distinction:** The catenoid rotational fibration $C\simeq\mathbb R\times S^1\to\mathbb R$ is **trivial with flat principal circle connection**. The *different* Gauss-map Hopf pullback extends over the compactified conformal sphere with $c_1=1$. These can coexist because they are bundles over **different bases** with different projection maps. One cannot infer the Hopf class from the rotational scalar SL equation alone.
+
+## 11. O'Neill curvature is the correct bridge for a Riemannian submersion [D,K]
+
+For the KK metric of §3 with **constant** fiber radius $\phi=\ell$, the principal connection's curvature appears in the horizontal O'Neill tensor. For orthonormal horizontal lifts of base orthonormal vectors $X,Y$,
+
+```math
+\mathsf A_{X^H}Y^H=\frac12[X^H,Y^H]^V=-\frac12F(X,Y)\,\partial_\theta,\quad\|\mathsf A_{X^H}Y^H\|^2=\frac{\ell^2}{4}F(X,Y)^2.
+```
+
+The O'Neill sectional-curvature formula is
+
+```math
+K_B(X,Y)=K_P(X^H,Y^H)+3\|\mathsf A_{X^H}Y^H\|^2=K_P(X^H,Y^H)+\frac{3\ell^2}{4}F(X,Y)^2.
+```
+
+**Theorem 11.1 [D,K].** Under these declared **constant-radius** conditions, the difference between horizontal sectional curvature in the total space and base curvature is an explicit quadratic function of the principal connection curvature $F$. This is the correct Riemannian-submersion curvature mechanism. With variable $\phi$, additional second-fundamental-form/mean-curvature (O'Neill $T$-tensor) terms enter other curvature components: do not extrapolate this formula unmodified.
+
+**Check against catenoid:** Its base is one-dimensional, so there is no horizontal two-plane $X\wedge Y$ and no nonzero $F$. The catenoid's negative surface curvature is instead the **mixed vertical–horizontal warped curvature** $-\phi_{ss}/\phi$ of §8. The two identities describe complementary curvature components rather than competing explanations.
+
+## 12. Marked meromorphic residues and periods are preserved only under DECLARED maps [D,K,C]
+
+Let $f:\widetilde\Sigma\to\Sigma$ be a holomorphic map of Riemann surfaces and $\omega$ a meromorphic one-form near $q=f(p)$. If its local simple pole has residue $a$ and $f$ has ramification index $e_p$ at $p$, choose local coordinates $w=z^{e_p}$ (up to a nonzero unit). Then
+
+```math
+\omega\sim a\,\frac{dw}{w},\qquad f^*\omega\sim e_pa\,\frac{dz}{z},\qquad\operatorname{Res}_p(f^*\omega)=e_p\operatorname{Res}_q\omega.
+```
+
+Thus residues are **not literally unchanged by arbitrary projection/pullback**; they scale with local degree. Likewise the period identity is
+
+```math
+\int_{\widetilde\gamma}f^*\omega=\int_{f_*\widetilde\gamma}\omega,
+```
+
+where the pushforward cycle includes its winding/multiplicity. Real immersion period closing is a condition on the **real parts of the three marked Weierstrass periods**, not on an unspecified scalar holonomy.
+
+### 12.1 Exact special case: framework resolution multiplication
+
+In draft 160, with $t_r=e^{r\zeta}$, a resolution change $r\mapsto Mr$, $M\in\mathbb N$, sends $t_{Mr}=t_r^M$. For the marked catenoid logarithmic height differential,
+
+```math
+dh_r=\frac1r d\log t_r,\qquad (t\mapsto t^M)^*dh_{Mr}=\frac1{Mr}d\log(t_r^M)=dh_r.
+```
+
+The differential is preserved here **because the scale $1/(Mr)$ compensates the ramification degree $M$**. The source loop winds $M$ times around the target puncture. This is an explicit *selected period-preserving pullback*; it does not prove that arbitrary symmetry reductions preserve all holonomies and residues.
+
+## 13. A type-safe distinction among three monodromies [D,C]
+
+The project already uses monodromy in several precise, different ways:
+
+| Mechanism | Path/base | Fiber and operator | Preserved data |
+|---|---|---|---|
+| Spatial SL carrier | $u$ over a selected interval or period, with fixed spectral energy $E$ | rank-two solution vectors / $\mathrm{SL}(2)$ | Wronskian; transfer matrix |
+| Gauss–Manin | path in a modulus space, e.g. $m_{\rm ell}$ | marked homology/cohomology of elliptic fibers | intersection pairing / symplectic period determinant |
+| Principal Hopf connection | loop on the Gauss sphere or its pullback surface | one-dimensional unitary fiber | Berry/Hopf holonomy, Chern class on closed 2-cycles |
+| Euclidean Weierstrass affine integration | loop on punctured surface | translations of $\mathbb R^3$ | real immersion period vector |
+
+A rank-two Riccati projective coordinate is a coordinate on a projective line, **not** itself the phase of a Hopf lift. A Gauss–Manin matrix acts on *cycles as a parameter moves*, not on the SL Cauchy vector at fixed spectral energy. The Weierstrass period translation is **abelian affine holonomy**, not the surface tangent LC holonomy.
+
+**No-go [C].** There is no general theorem that quotienting by symmetry preserves all of these matrices or identifies their conjugacy classes. Each needs a specified induced connection/representation and a comparison map that transports the relevant paths and domains.
+
+## 14. The selected Lamé–Riemann all-modulus curve isomorphism is still exact [H,D]
+
+The archive and draft 170 establish a **selected smooth one-gap Lamé spectral curve** and its explicit real isomorphism to the Riemann minimal-example elliptic family. With all independent parameters typed,
+
+```math
+m_{\rm ell}=(1+\lambda_R^2)^{-1},\quad k_R=\lambda_R^{-1}-\lambda_R,\quad D_R=\lambda_R+\lambda_R^{-1},\quad r>0,
+```
+
+```math
+\Gamma_m:\quad \eta^2=-(E+mr^2)(E-(1-2m)r^2)(E-(1-m)r^2),
+```
+
+```math
+g_R=-k_R-\frac{D_R}{r^2}E,\qquad y_R=\frac{D_R^{3/2}}{r^3}\eta,\qquad\frac{dg_R}{y_R}=-\frac r{\sqrt{D_R}}\frac{dE}{\eta}.
+```
+
+The Riemann Weierstrass one-forms are transported as **meromorphic forms on the selected smooth elliptic curve**. The exact marked period gauge from draft 170 relates the Gauss–Manin systems and preserves a nonzero symplectic period determinant (up to orientation).
+
+**What this map does NOT assert:** The map $g_R=g_R(E)$ is **constant along the SL spatial variable $u$ if the spectral point $E$ is held fixed**. It therefore does not convert the moving spatial Riccati ratio $\phi_u/\phi$ into a Hopf horizontal lift without an additional, explicitly defined moving-spectral-point construction. The curve's holomorphic height form also differs from the normalized spectral second-kind quasimomentum differential in pole divisor.
+
+### 14.1 Why the catenoid and arctangent limits are nevertheless relevant
+
+In the two *different nodal limits* of the smooth Lamé spectral curve, draft 170 proved
+
+```math
+m\to1:\quad \frac{dE}{\eta}\to\frac{2\,ds}{s^2-r^2}=\frac1r\,d\log\frac{s-r}{s+r}=dh_C.
+```
+
+```math
+m\to0:\quad \frac{dE}{\eta}\to-\frac{2\,ds}{s^2+r^2}=-2\sqrt\mu\,f_\mu(x;r,c)\,dx
+```
+
+under the separately declared real/projective coordinate identifications of drafts 160–170. They are exact **marked differential degenerations**, not one common global operator or topological boundary projection.
+
+## 15. Riccati–Pinney is parallel transport of a DIFFERENT rank-two bundle [D,H]
+
+The general real scalar carrier can be written as a flat first-order connection along a one-dimensional independent coordinate:
+
+```math
+\frac d{du}\binom{y}{y_u}=\begin{pmatrix}0&1\\V(u)-E&0\end{pmatrix}\binom{y}{y_u},\qquad \nabla^{SL}=d-\mathsf A\,du.
+```
+
+Its Wronskian is constant because $\mathrm{tr}\mathsf A=0$. The projective coordinate $z=y_u/y$ obeys $z_u+z^2=V-E$. A selected positive Gram envelope $\rho$ of two independent carrier solutions satisfies an EP equation and a time/clock change
+
+```math
+\rho_{uu}+\omega(u)^2\rho=\kappa\rho^{-3},\qquad \tau_u=\rho^{-2}.
+```
+
+With $y=\rho Y(\tau)$, the linear carrier becomes the constant-coefficient equation
+
+```math
+Y_{\tau\tau}+\kappa Y=0,\qquad \omega^2=\kappa(\tau_u)^2+\frac12\{\tau,u\}.
+```
+
+This is an exact **gauge and reparametrization** of the rank-two local SL solution system. The phase/current $\vartheta_u=j/\rho^2$ with $j^2=\kappa$ is a scalar carrier phase, and for periodic $\rho$ its increment can encode a Floquet rotation number. Neither the Wronskian nor this phase by itself determines the curvature/Chern class of an independent Hopf circle bundle.
+
+**Theorem 15.1 [D,H] (what the EP lift actually preserves).** The positive EP clock transforms the local real SL solution space, projective Schwarzian and its determinant/Wronskian invariant. Any relation to the **Hopf** Berry connection requires an additional normalized complex spinor, a Hermitian structure, and a specified map of base paths. None is automatically supplied by the scalar EP amplitude.
