@@ -355,3 +355,133 @@ Thus the potential's weighted barycenter moves at the exact constant velocity
 ```
 
 for a KdV flow originating from the integer PT data. For $n=1$ this equals the individual soliton speed $4r^2$; for $n\ge2$ it is a **moment centroid speed**, not the speed of a single translated PT profile. This gives an independent exact check of the norming/divisor dynamics.
+
+## 11. The original weighted L2 norm completes a three-parameter reconstruction [D,V]
+
+The spectral potential does **not** contain the original Master amplitude $\mu$. The original function does:
+
+```math
+f_\mu(x;r,c)=\frac{\mathrm{sech}(r\ln(x/c))}{2\sqrt\mu\,x}.
+```
+
+Its natural Sturm–Liouville weighted norm, already verified in drafts 120–140, is
+
+```math
+\mathcal N:=\int_0^\infty x|f_\mu(x;r,c)|^2dx=\frac{1}{2r\mu}.
+```
+
+Therefore
+
+```math
+\mu=\frac{1}{2r\mathcal N}.
+```
+
+Fix the reference scale $c_{\rm ref}$ as in §1. The same positive weighted density reconstructs the logarithmic center through its first moment:
+
+```math
+\frac{\int_0^\infty x|f_\mu|^2\ln(x/c_{\rm ref})dx}{\int_0^\infty x|f_\mu|^2dx}=\ln(c/c_{\rm ref})=u_0.
+```
+
+**Proof.** Set $v=\ln(x/c_{\rm ref})$, $u=v-u_0$. The measure $x|f_\mu|^2dx=(4\mu)^{-1}\mathrm{sech}^2(ru)du$ is even about $u=0$ and has finite first moment. Its mean in the coordinate $v$ is $u_0$.
+
+### 11.1 Three independently meaningful reconstructions
+
+Within this **explicit** family, with a fixed reference $x$-coordinate, the same center is recovered by
+
+```math
+u_0=\frac{\int vV(v)dv}{\int V(v)dv}=\frac{\int_0^\infty x|f_\mu|^2\ln(x/c_{\rm ref})dx}{\int_0^\infty x|f_\mu|^2dx}=\frac{1}{2jr}\ln\frac{\beta_j^2}{\alpha_{n,j}^2}.
+```
+
+These are respectively the potential's logarithmic barycenter, the canonical weighted-Hilbert barycenter, and the right bound-state norming datum. Their equality follows because all three have been evaluated for the **same centered potential/profile pair** in the same fixed coordinate; it is not a generic identity for unrelated Sturm–Liouville functions or arbitrary scattering potentials.
+
+**Reconstruction theorem [D].** Given the integer-spectrum reflectionless potential *together with* its right norming constants and an original normalized canonical function $f_\mu$ in the fixed $x$-coordinate, the triple $(r,c,\mu)$ is recoverable: $r$ from eigenvalue spacings (or the trace formula within the class), $c$ from a norming/moment center plus $c_{\rm ref}$, and $\mu$ from the weighted norm.
+
+A translation-free spectral curve alone lacks the marked coordinate needed for $c$; and no spectral datum of $h_n$ alone fixes the independent amplitude $\mu$.
+
+## 12. Direct reconstruction in the original rational x coordinate [D,V]
+
+For the matched center and resolution,
+
+```math
+z=(x/c)^{-2r}=(c/x)^{2r},\qquad \tau_n(x)=(1+z)^{n(n+1)/2}.
+```
+
+The log-coordinate derivative becomes the dilation operator
+
+```math
+\partial_v=x\partial_x,\qquad V_n(x)=-2(x\partial_x)^2\log\tau_n(x).
+```
+
+Therefore
+
+```math
+V_n(x)=-4n(n+1)r^2\frac{c^{2r}x^{2r}}{(x^{2r}+c^{2r})^2}.
+```
+
+This is rational in $x$ whenever $r$ is a positive integer, and rational in the monomial $x^r$ for arbitrary positive real $r$.
+
+The exact weighted spectral operator in the original coordinate, as defined in draft 140, is
+
+```math
+\tau_{x,n}f=\frac1x[-(x^3f_x)_x+(r^2-1+V_n(\ln(x/c)))xf],\qquad U_c\tau_{x,n}U_c^{-1}=h_n+r^2.
+```
+
+The potential's position-dependent term is **added data** to the original linear Master expression. No change of the original Master equation is silently assumed. The $x=c$ point is the reflection fixed point, not automatically a Dirichlet, Neumann or interface boundary; a self-adjoint domain is transported separately.
+
+## 13. A nodal spectral curve has a rational normalization [D,K,C]
+
+Drafts 130–140 proved that the Lax–Novikov and Gel'fand–Dikii spectral polynomials agree up to an explicit factor of four. The spectral curve at integer depth $n$ is
+
+```math
+\mathcal C_n:\quad \nu^2=-\lambda\prod_{j=1}^n(\lambda+\kappa_j^2)^2,\qquad \kappa_j=jr.
+```
+
+For pairwise distinct positive $\kappa_j$, the curve has ordinary nodes at the $n$ finite points $\lambda=-\kappa_j^2,\nu=0$. Its **arithmetic genus** is $n$ (the hyperelliptic polynomial has odd degree $2n+1$), while the normalization has genus zero.
+
+Indeed set
+
+```math
+\lambda=-s^2,\qquad \nu=s\prod_{j=1}^n(\kappa_j^2-s^2).
+```
+
+This is an explicit rational parametrization of the normalized curve by $s\in\mathbb P^1$. The preimages $s=\pm\kappa_j$ map to the **same node**. Thus the spectral curve's normalization is $\mathbb P^1$, and its apparent higher genus is carried by $n$ node identifications.
+
+This distinction prevents a common overstatement: the degree-five polynomial when $n=2$ has arithmetic genus two, but this **singular** spectral model is not a smooth genus-two hyperelliptic curve with an ordinary two-dimensional principally polarized Jacobian.
+
+## 14. The generalized Jacobian explains where the missing norming data belong [K,D]
+
+For an irreducible projective rational curve with $n$ ordinary nodes and no other singularities, the generalized Jacobian is algebraically
+
+```math
+\mathrm{Jac}(\mathcal C_n)\simeq(\mathbb C^\times)^n.
+```
+
+Each node is obtained by identifying $s=+\kappa_j$ and $s=-\kappa_j$ on the normalized $\mathbb P^1$. A line bundle on the singular curve corresponds to line-bundle data on the normalization **plus a nonzero gluing scalar** identifying fibers at each such pair. This makes the generalized Jacobian a natural home for **multiplicative spectral divisor coordinates**.
+
+An explicit logarithmic differential on the normalized curve is
+
+```math
+\Omega_j=d\log\left(\frac{s-\kappa_j}{s+\kappa_j}\right)=\left(\frac1{s-\kappa_j}-\frac1{s+\kappa_j}\right)ds.
+```
+
+It has residues $+1$ at $+\kappa_j$ and $-1$ at $-\kappa_j$, the paired preimages of one node. Its local closed contour integrals are multiples of $2\pi i$; it is a **third-kind logarithmic differential**, not a globally holomorphic differential on the normalized sphere.
+
+The scattering theory supplies positive real multiplicative norming coordinates $\beta_j^2$, whose KdV evolution is diagonal exponential scaling. **In the usual Baker–Akhiezer/gluing normalization**, such coordinates parametrize a positive-real slice of the generalized-Jacobian picture. The precise identification of a chosen normalized bound-state tail coefficient with a particular algebro-geometric gluing scalar depends on the Baker–Akhiezer frame and node-marking convention; equality of their bare numerical values is **not** asserted without that additional construction.
+
+### 14.1 Translation and KdV are distinct torus directions
+
+At a translated canonical PT point, the positive norming coordinates transform as
+
+```math
+\beta_j^2\longmapsto\beta_j^2e^{2\kappa_j a}\quad\mathrm{under}\quad v\longmapsto v-a.
+```
+
+Under the first KdV time flow they transform instead as
+
+```math
+\beta_j^2(\tau)=\beta_j^2(0)e^{8\kappa_j^3\tau}.
+```
+
+In logarithmic divisor coordinates, translation and KdV follow the **two linear vectors** $(2\kappa_j)_j$ and $(8\kappa_j^3)_j$. For one node they are proportional; for two or more distinct exponents they are not. This is a geometric reformulation of the exact off-PT result of §8.
+
+The nodal spectral curve is unchanged by either motion; the **marked divisor/gluing data move**. Hence the full spectral inverse problem requires both curve (eigenvalues) and divisor-like norming information, not just the former.
