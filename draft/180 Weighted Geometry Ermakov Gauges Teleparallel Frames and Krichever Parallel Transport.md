@@ -399,3 +399,245 @@ ds^2=X_0^2e^{2u}(-\kappa_R^2dt^2+du^2).
 ```
 
 This is a conformal Lorentzian cylinder/wedge chart on **flat** spacetime, and its appearance of a logarithmic coordinate resembles the canonical $u=\ln(x/c)$. But Rindler time is an independent Lorentzian Killing coordinate; the wedge and its horizon are **additional data**. Neither the catenoid's Riemannian teleparallel torsion nor its scalar Darboux factorization automatically produces a Lorentzian horizon or a particular FRW/Rindler geometry.
+
+## 12. Duffing to reciprocal EP: exact only on the zero-energy shell [D,V,H]
+
+The general normalized cubic Master/Duffing equation is
+
+```math
+y_{uu}=r^2y-2\mu r^2y^3,\quad \varepsilon_N=y_u^2-r^2y^2+\mu r^2y^4.
+```
+
+On an interval where $y>0$, define the reciprocal square-root field
+
+```math
+a=y^{-1/2},\qquad y=a^{-2}.
+```
+
+**Theorem 12.1 [D,V] (complete finite-energy reciprocal equation).** On every positive solution interval,
+
+```math
+a_{uu}=\frac{r^2}4a+\frac{\mu r^2}{4a^3}+\frac{3\varepsilon_N}4a^5.
+```
+
+**Proof.** Differentiate $a=y^{-1/2}$ twice:
+
+```math
+a_{uu}=\frac34y^{-5/2}y_u^2-\frac12y^{-3/2}y_{uu}.
+```
+
+Insert $y_u^2=r^2y^2-\mu r^2y^4+\varepsilon_N$ and $y_{uu}=r^2y-2\mu r^2y^3$, then collect powers $y^{-1/2}=a$, $y^{3/2}=a^{-3}$, $y^{-5/2}=a^5$.
+
+**Corollary 12.2 [D].** The reciprocal is a **standard constant-strength EP equation precisely on the separatrix $\varepsilon_N=0$**, unless the chosen solution is a special degenerate constant where the added term can be absorbed into a redefined coefficient. At arbitrary energy, a genuine *quintic* correction survives. The historical ZIP's friedmann-reciprocal-envelope module already records this finite-energy correction; the formula here restores it in the canonical variables and emphasizes its domain restriction.
+
+For the centered positive separatrix $y=S/\sqrt\mu$,
+
+```math
+a(u)=\mu^{1/4}\sqrt{\cosh(ru)},\qquad a_{uu}=\frac{r^2}4a+\frac{\mu r^2}{4a^3}.
+```
+
+The sign of the linear coefficient is **hyperbolic**: this is a real Pinney oscillator with $\omega^2=-r^2/4$, not an oscillatory harmonic trap unless a different real clock/potential or analytical continuation is selected.
+
+### 12.1 Why this is not a canonical symplectic transformation without added momentum data
+
+The point transformation $y=a^{-2}$ changes the natural phase momentum: $p_y=y_u=-2a^{-3}a_u$. At fixed clock $u$,
+
+```math
+dy\wedge dp_y=4a^{-6}\,da\wedge d(a_u).
+```
+
+Thus the raw map $(y,y_u)\mapsto(a,a_u)$ is **conformally symplectic**, not canonical. To obtain a canonical transformation one must take the cotangent-lifted momentum $P_a=p_y\,dy/da=-2a^{-3}p_y=4a^{-6}a_u$ and transform the Hamiltonian accordingly. The two natural unit-mass mechanical Hamiltonians are not simply identical off their selected energy shells.
+
+## 13. The kinematic Friedmann constraint is exactly the reciprocal first integral [D,V,H]
+
+From the same reciprocal substitution, define the **logarithmic derivative**
+
+```math
+H_a=\frac{a_u}{a}.
+```
+
+The finite-energy first integral becomes
+
+```math
+\boxed{\quad H_a^2=\frac{r^2}4\left(1-\frac{\mu}{a^4}\right)+\frac{\varepsilon_N}4a^4.\quad}
+```
+
+(Here the boxed formula is mathematical notation, not a statement about physical cosmological matter.) Direct differentiation, or Theorem 12.1, gives
+
+```math
+(H_a)_u=\frac{\mu r^2}{2a^4}+\frac{\varepsilon_N}{2}a^4.
+```
+
+**Theorem 13.1 [D,V] (algebraic Friedmann–EP dictionary).** On the zero-energy positive Master branch,
+
+```math
+H_a^2=\frac{r^2}4(1-\mu a^{-4}),\qquad (H_a)_u=\frac{\mu r^2}{2a^4},\qquad H_a=\frac r2\tanh(ru).
+```
+
+The first equation is a **kinematic Friedmann-type constraint**. It is not, without a selected Lorentzian metric, proper time, gravitational field equations and matter stress tensor, a physical FLRW solution. The negative $a^{-4}$ term in the separatrix is a *negative radiation-like coefficient* if one elects to compare to standard four-dimensional FLRW scaling; the positive $\varepsilon_N a^4$ term at finite energy would correspond to a formal effective $w=-7/3$ power-law component. Those labels are **different algebraic terms** and must not be conflated into a claim of physical phantom energy.
+
+### 13.1 Optional Lorentzian warped-product realization
+
+Only after choosing dimension three, a constant-curvature spatial metric $h_K$ and Lorentzian proper-time coordinate $T$ does one obtain
+
+```math
+ds^2=-dT^2+a(T)^2h_K,\qquad \mathrm{Scal}=6\left(\frac{a_{TT}}a+\left(\frac{a_T}a\right)^2+\frac K{a^2}\right).
+```
+
+The scalar curvature of this **chosen metric** may then be calculated from the selected function $a(T)$. It is separate from the original **weighted 1D SL** metric $du^2$ and from the catenoid Gaussian curvature $-r^2S^4$. A Friedmann equation is a field equation only after specifying stress energy and gravitational dynamics, whereas here it is obtained from an ODE first integral.
+
+## 14. The Ermakov–Lewis invariant is a true Hamiltonian construction [D,K]
+
+Choose an independent oscillator time $t$ and a real frequency function $\omega(t)^2$. The classical oscillator Hamiltonian is
+
+```math
+H_{\rm osc}(q,p,t)=\frac12[p^2+\omega(t)^2q^2],\qquad q_t=p,\quad p_t=-\omega^2q.
+```
+
+Let $\rho(t)>0$ solve $\rho_{tt}+\omega^2\rho=\omega_0^2\rho^{-3}$ with **fixed** $\omega_0>0$. Define canonical phase variables
+
+```math
+Q=q/\rho,\qquad P=\rho p-\rho_tq.
+```
+
+The Ermakov–Lewis quantity is
+
+```math
+I_{\rm EL}=\frac12[P^2+\omega_0^2Q^2]=\frac12[(\rho p-\rho_tq)^2+\omega_0^2(q/\rho)^2].
+```
+
+**Theorem 14.1 [D,K].** Along every oscillator solution $dI_{\rm EL}/dt=0$.
+
+**Proof.** Differentiate and use the two oscillator equations and the Pinney equation. One obtains $Q_t=P/\rho^2$ and $P_t=-\omega_0^2Q/\rho^2$, so $dI_{\rm EL}/dt=P(-\omega_0^2Q/\rho^2)+\omega_0^2Q(P/\rho^2)=0$.
+
+The map $(q,p)\to(Q,P)$ is symplectic at each fixed time, since $dQ\wedge dP=dq\wedge dp$, but is **time-dependent**. The new clock $\tau_t=\rho^{-2}$ makes $(Q,P)$ a standard constant-frequency oscillator.
+
+### 14.1 Quantum Lewis–Riesenfeld invariant requires an actual Schrödinger Hilbert realization
+
+For the separately chosen quantum harmonic oscillator, setting $\hbar=1$ and particle mass $1$,
+
+```math
+i\partial_t\Psi=\widehat H(t)\Psi,\quad \widehat H(t)=\frac12[-\partial_q^2+\omega(t)^2q^2],
+```
+
+the operator
+
+```math
+\widehat I(t)=\frac12\left[(\rho\widehat p-\rho_tq)^2+\omega_0^2(q/\rho)^2\right]
+```
+
+satisfies the Lewis–Riesenfeld invariant equation $\partial_t\widehat I+i[\widehat H,\widehat I]=0$ on suitable common operator domains. This is a **specific quantization and unitary evolution**, not an automatic consequence of the original spatial SL operator or of the word “Hamiltonian.” Invariant eigenstates acquire additional Lewis–Riesenfeld phases; that phase is not automatically the Hopf Berry holonomy of the Gauss map.
+
+## 15. Harmonic-trap Schrödinger and Gross–Pitaevskii lens maps [D,K]
+
+For the time-dependent quantum oscillator of §14 define
+
+```math
+X=q/\rho(t),\qquad \tau_t=\rho^{-2},\qquad\Psi(q,t)=\rho^{-1/2}e^{i\rho_tq^2/(2\rho)}\chi(X,\tau).
+```
+
+A direct chain-rule calculation gives
+
+```math
+i\partial_\tau\chi=\frac12[-\partial_X^2+\omega_0^2X^2]\chi.
+```
+
+This is a **unitary time-dependent dilation and quadratic phase** with the EP clock, on the correct $L^2(dq)$ and $L^2(dX)$ spaces. The phase and the factor $\rho^{-1/2}$ are necessary; changing only $q\mapsto q/\rho$ does not preserve the Schrödinger equation.
+
+### 15.1 Exact semilinear trap scaling in dimension d
+
+Consider a separately chosen $d$-dimensional semilinear Schrödinger/Gross–Pitaevskii equation
+
+```math
+i\partial_t\Psi=-\frac12\Delta_{\mathbf x}\Psi+\frac{\omega(t)^2}2|\mathbf x|^2\Psi+g(t)|\Psi|^{2\sigma}\Psi.
+```
+
+Let $\rho$ solve the same scalar EP, and use the $d$-dimensional lens ansatz
+
+```math
+\Psi(\mathbf x,t)=\rho^{-d/2}\exp\left(\frac{i\rho_t}{2\rho}|\mathbf x|^2\right)\chi(\mathbf X,\tau),\quad \mathbf X=\mathbf x/\rho,\quad\tau_t=\rho^{-2}.
+```
+
+Then the transformed equation has constant harmonic-trap term but a **possibly time-dependent nonlinear coupling**
+
+```math
+i\partial_\tau\chi=-\frac12\Delta_{\mathbf X}\chi+\frac{\omega_0^2}2|\mathbf X|^2\chi+g(t(\tau))\rho^{2-d\sigma}|\chi|^{2\sigma}\chi.
+```
+
+Hence a constant $g$ stays constant automatically only at **mass-critical power $\sigma=2/d$**. Otherwise the nonlinear equation is not generally conjugate to a constant-coefficient GP equation unless $g(t)$ is chosen to compensate the factor. This is an exact mathematical restriction and makes clear why the cubic GP equation behaves differently in dimensions $1,2,3$.
+
+## 16. PDM and the von Roos ordering: SL does NOT fix a quantum ordering [D,K]
+
+Let $M(x)>0$ be a separately specified position-dependent mass and set $\hbar>0$. The **BenDaniel–Duke** kinetic expression is
+
+```math
+H_{\rm BDD}=-\frac{\hbar^2}2\partial_x(M^{-1}\partial_x)+V(x).
+```
+
+It is a Sturm–Liouville expression on $L^2(dx)$ with
+
+```math
+p(x)=\frac{\hbar^2}{2M(x)},\qquad w(x)=1,\qquad q_0(x)=V(x).
+```
+
+For the more general formal **von Roos** ordering choose real $\alpha,\beta,\gamma$ satisfying $\alpha+\beta+\gamma=-1$:
+
+```math
+H_{\alpha\beta\gamma}=-\frac{\hbar^2}4\left[M^\alpha\partial_xM^\beta\partial_xM^\gamma+M^\gamma\partial_xM^\beta\partial_xM^\alpha\right]+V.
+```
+
+**Theorem 16.1 [D,V] (exact ordering potential).** For smooth $M>0$ the difference from BenDaniel–Duke is a **scalar multiplication potential**
+
+```math
+H_{\alpha\beta\gamma}=H_{\rm BDD}+U_{\alpha\gamma},\quad U_{\alpha\gamma}=-\frac{\hbar^2}4\left[(\alpha+\gamma)\frac{M_{xx}}{M^2}-2(\alpha+\gamma+\alpha\gamma)\frac{M_x^2}{M^3}\right].
+```
+
+**Proof.** Expand both ordered products using Leibniz's rule. Their second-derivative term is $-{\hbar^2}\psi_{xx}/(2M)$ and the first-derivative term is $\hbar^2M_x\psi_x/(2M^2)$ for every allowed ordering. The remaining zeroth-order terms combine into the displayed $U_{\alpha\gamma}$.
+
+Thus the weighted metric from the principal symbol fixes a second-order differential expression **up to scalar ordering potential and domain data**; the geometry does not uniquely resolve the von Roos ambiguity. At mass jumps, interface conditions and distributions require separate analysis; the smooth expansion cannot be applied blindly across discontinuities.
+
+The exact Liouville coordinate and half-density for BDD are
+
+```math
+t(x)=\int_{x_*}^x\sqrt{\frac{2M(s)}{\hbar^2}}ds,\qquad\chi(x)=\left(\frac{\hbar^2}{2M(x)}\right)^{1/4}.
+```
+
+This identifies PDM as a legitimate **weighted SL/operator** realization, not a unique physical consequence of the canonical Symmetrical Function.
+
+## 17. Keller–Miksis: EP appears only in a controlled conservative reduction [D,H,K,C]
+
+Let $R_b(t)>0$ be a bubble-radius variable, $R_0>0$ a reference scale, $\rho_L>0$ a liquid density and $c_s>0$ a sound speed. One common form of the full Keller–Miksis equation, with $M_b=\dot R_b/c_s$, is
+
+```math
+(1-M_b)R_b\ddot R_b+\frac32(1-M_b/3)\dot R_b^2=\frac{1+M_b}{\rho_L}P+\frac{R_b}{\rho_Lc_s}\dot P.
+```
+
+The wall pressure $P$ can depend on $R_b,\dot R_b,t$, surface tension, viscosity and forcing; therefore the **full equation is generally not a conservative Pinney ODE**.
+
+In the controlled incompressible, inviscid and autonomous radius-only limit one gets Rayleigh–Plesset,
+
+```math
+R_b\ddot R_b+\frac32\dot R_b^2=P(R_b)/\rho_L.
+```
+
+Define the *new clock* and amplitude (neither is the original canonical $u$ or EP field $a$)
+
+```math
+X=R_b/R_0>0,\qquad Y=X^{3/2},\qquad d\tau/dt=X^{-1}.
+```
+
+**Theorem 17.1 [D,V,H376] (Sundman reduction).**
+
+```math
+Y_{\tau\tau}=\frac3{2\rho_LR_0^2}Y\,P(R_0Y^{2/3}).
+```
+
+For a selected autonomous polytropic pressure $P=p_0X^{-3\gamma}-p_\infty$, the exact transformed equation is
+
+```math
+Y_{\tau\tau}=-\omega_b^2Y+\beta_bY^{1-2\gamma},\quad\omega_b^2=\frac{3p_\infty}{2\rho_LR_0^2},\quad\beta_b=\frac{3p_0}{2\rho_LR_0^2}.
+```
+
+It is **exactly EP only for $\gamma=2$** (and under the reductions just stated). The original physical radius and time reconstruct as $R_b=R_0Y^{2/3}$ and $dt=Y^{2/3}d\tau$. Other gas laws, compressibility, damping and forcing reintroduce different powers or time dependence.
+
+The historical ZIP's Keller–Miksis section derives the same Sundman/pressure-law condition and also gives a compressible energy-drift identity; it expressly does not identify the full dissipative model with EP. Treating the reduced equation as an exact **ODE dictionary** is rigorous; claiming a universal liquid bubble realization from the framework would not be.
