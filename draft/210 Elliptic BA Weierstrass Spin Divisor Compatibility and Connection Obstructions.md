@@ -994,3 +994,41 @@ The programmatic extension *Fibration Holography* can ask whether a **decorated 
 - NIST DLMF, Lamé equation and spectral band-edge functions: https://dlmf.nist.gov/29 .
 
 **Evidence boundary.** This draft derives an exact *selected mathematical dictionary*. It neither claims priority for Weierstrass spinors, Baker–Akhiezer functions or Darboux displacement, nor promotes line-class compatibility into a global natural-connection equality without the missing data.
+
+## 26. Open global bundle problems, theorem status and mathematical conclusion
+
+### 26.1 The next tests that could upgrade the result
+
+1. **Fixed-pole BA normalization.** Construct the normalized global Baker–Akhiezer function for the *specific* real one-gap shifted Jacobi potential, with fixed degree-one divisor, spectral marked point $P_\infty$ and selected quasimomentum. Determine explicitly how its fixed pole and moving Dirichlet zero correspond to the eigenline of a chosen stationary KdV 2-by-2 Lax matrix. Do not identify all three line constructions by notation.
+2. **Theta/eigenline matching.** Express the chosen BA function as a sigma/theta ratio with its correct quasimomentum factor and compare its divisor and multipliers to $h_a(z)$ at the distinguished $u_*$. Track the selected dual, normalization and possible phase.
+3. **Darboux operator/domain transfer.** Compute the **complex** elliptic coordinate shift mapping the Abel-coordinate operator $-\partial_z^2+2g_R(z)$ to the original real Jacobi shifted Lamé $L_m$, including energy shifts, real contour and self-adjoint domain. The abstract curve isomorphism alone cannot supply this.
+4. **Natural twisted connection.** Construct a Hermitian metric/connection on $T=\mathcal O(P_0+P_\infty)$ whose Chern curvature compensates the natural Gauss tautological curvature, and compute its residual flat holonomies. Determine whether WE immersion periods canonically normalize that choice.
+5. **Irregular BA spectral connection.** Calculate formal type, actual periods and possible Stokes factors of the normalized Baker function near $P_\infty$. A local essential exponential twist can remove a formal principal term only in a broader irregular-connection category; no meromorphic gauge over $P_\infty$ does so.
+6. **Marked modular transport.** Combine the exact Riemann Gauss–Manin period gauge of draft 170 with the Picard slope $r/\sqrt{D_R}$ to track the chosen 2-torsion spin class under loops in the elliptic modulus. Determine the theta-characteristic monodromy rather than equating the *matrix* of the spatial transfer operator with Gauss–Manin.
+7. **Weierstrass real period map.** Apply the 2-torsion translation $g\mapsto-1/g$ to the **full three-component WE triple**, and calculate its effect on real translation/flux periods and on the Bonnet associate angle. The Darboux displacement identity alone does not imply global immersion period closure.
+8. **Lorentzian regularity and geometry.** Analyze $|g_R|=1$ on the compactified Riemann curve, the connected spacelike components after removal, and possible global maxface periods; test a real SL/EP reduction only when a real coordinate and self-adjoint domain exist.
+9. **EP from the elliptic band-edge spinor.** Restrict the sigma spinor to a suitable *real* Abel contour and compute a genuinely positive Gram amplitude, constant real Wronskian and Pinney equation. The complex meromorphic Darboux pair of §§17–19 is not automatically a real EP system.
+10. **Two singular limits.** Follow the distinguished elliptic 2-torsion point, the spin theta characteristic, the reciprocal Gauss involution and the BA divisor as $m\to0$ (free closed gap) or $m\to1$ (PT soliton). The limits can yield different generalized spin structures on nodal curves; compare to the marked catenoid height and original arctangent differentials of draft 170.
+11. **Higher-genus BA and WE.** For the framework's selected genus-two and higher spectral curves, compute the degree-$g$ BA divisor, spin parity and Gauss divisor class, then test which theta characteristics can be matched under actual meromorphic maps to selected surface data.
+12. **Fibration holography as inverse theorem.** Define a category of decorated base curves with spinors, BA eigenlines, irregular/flat/unitary connections, holomorphic forms, real immersion periods and self-adjoint Hilbert domains; require a faithful reconstruction functor before claiming the base encodes the total ambient geometry. This is separate from asymptotic codimension-one boundary duality.
+
+### 26.2 Why this is genuinely a WHOLE-WEB result
+
+The diagram of rigorous arrows in this selected genus-one family is:
+
+- **Real Lamé SL**, in $u=\ln(x/c)$, gives a third-order squared-eigenfunction equation, an algebraic cubic spectral curve and a **moving Dirichlet divisor**.
+- **Dubrovin** gives $\gamma_u=-2\eta_\gamma$, and the exact affine Lamé–Riemann elliptic map gives **linear Picard transport** to the Riemann curve.
+- The Riemann **Weierstrass Gauss map** selects the nontrivial 2-torsion spin class $\mathcal O(P_0-P_\infty)$ and admits an explicit sigma-function square-root spinor.
+- The sigma spinor is itself a **one-gap Lamé band-edge eigenfunction** in the separate elliptic Abel coordinate; its logarithmic derivative generates two exact **Darboux partners**.
+- The partners are exchanged by **translation by the same 2-torsion point $P_0$**, and the archived Riemann horizontal WE differential identity is the same Riccati derivative.
+- The full WE spinor quadratic forms reconstruct a Euclidean minimal immersion with separate **real translation periods**; changing the real form gives a locally maximal Lorentzian null construction, but can create metric degeneracies.
+- The **Hopf** Chern connection and **BA irregular** connection are different extra structures; selected holomorphic divisor matches do not identify their natural curvatures and singularity types.
+- On the canonical real catenoid separatrix (draft 200), a spinor Gram norm also gives the **positive EP envelope and Gudermannian half-angle**. No corresponding statement is made here for arbitrary elliptic BA slices without constructing their real Gram gauge.
+
+This is a **typed, explicitly calculable system** of differential-algebraic, projective, elliptic and geometric transformations. It is not merely an analogy, but neither is it one universal flat connection or one universal self-adjoint operator.
+
+### 26.3 Proposed theorem for eventual foundational consolidation
+
+**Selected Elliptic Picard–Spin–Darboux Correspondence (conditional).** For each $0<m<1$ with its matched positive real Riemann modulus and fixed resolution $r$, the smooth one-gap Lamé spectral curve and Riemann elliptic conformal curve are isomorphic with their declared holomorphic differential scale. The moving Dirichlet divisor defines a linear Abel–Jacobi flow that hits the Riemann WE 2-torsion spin structure at explicit spatial half-periods. The Riemann sigma WE spinor at that selected branch point is simultaneously a Lamé band-edge Hermite function in the elliptic Abel coordinate, and its reciprocal spinor is a Darboux partner related by the identical 2-torsion half-period translation. The WE horizontal exact differential is its Riccati derivative. The identities hold **as specified algebraic/meromorphic/holomorphic data**; extension to global connection-preserving and real self-adjoint operator equivalence requires additional hypotheses and is not claimed.
+
+**Status:** The component identities, divisor classes and transformation formulas were proved or algebraically checked here. The theorem is a provisional **selected correspondence**, not a classification of all minimal/maximal surfaces or all SL–EP theories. It belongs in the draft staging folder pending the additional global BA normalization and connection audit.
