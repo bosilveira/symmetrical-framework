@@ -611,3 +611,150 @@ This is a rigorous geometric explanation for the simultaneous occurrence of **el
 The archived Riemann family equips its elliptic fiber with *other* meromorphic Weierstrass data and marked real periods. Preserving $dg/y_R$ up to scale does not imply that all meromorphic immersion one-forms or their period lattices pull back compatibly. Moreover the source Pinney real positive-amplitude branch covers only part of the real quartic; the projective complex isogeny must be interpreted on its **full smooth algebraic compactification**.
 
 A future period-level comparison must supply (i) a chosen homology basis, (ii) the Riemann height differential and Gauss map, (iii) the image/pullback of those forms, and (iv) their real period-closing equations. Without all four, no global minimal-surface identification is claimed.
+
+## 17. The elliptic isogeny transfers periods and Hodge norms—with a marked index-two lattice [D,V,K]
+
+The map $\Phi:C_{\rm EP}\to E_0$ of §15 is an unramified covering of degree two. Therefore $\Phi_*H_1(C_{\rm EP},\mathbb Z)$ is an **index-two sublattice** of $H_1(E_0,\mathbb Z)$, once compatible basepoints are fixed. For *every* closed cycle $\gamma$ on the Pinney quartic,
+
+```math
+\int_{\Phi_*\gamma}\frac{dg}{y_R}=r\mu^{1/4}\int_\gamma\frac{dA}{Y}.
+```
+
+This gives an exact **period-pullback formula**, with its full resolution/amplitude normalization. It is considerably more informative than equality of the two $j$ invariants.
+
+There is also a precise relation between the Hodge pairings of these **finite-dimensional spaces of holomorphic differentials**. Write $\omega_C=dA/Y$, $\omega_E=dg/y_R$. Since $\deg\Phi=2$ and $\Phi^*\omega_E=r\mu^{1/4}\omega_C$,
+
+```math
+r^2\sqrt\mu\,\frac i2\int_{C_{\rm EP}}\omega_C\wedge\overline{\omega_C}=2\,\frac i2\int_{E_0}\omega_E\wedge\overline{\omega_E}.
+```
+
+**Proof.** Integrate the wedge product of the pulled-back differential over the compact source curve and use the degree formula for an orientation-preserving holomorphic covering. The scaling is $|r\mu^{1/4}|^2=r^2\sqrt\mu$.
+
+**This IS a genuine marked elliptic Hodge-metric correspondence.** However it is a relationship between one-dimensional holomorphic-differential spaces on smooth complex curves, **not** a unitary identification of the original $L^2((0,\infty),x\,dx)$ of functions with the Hilbert space of Riemann-minimal-surface Jacobi modes. The latter requires a separate intertwiner, measure and domain.
+
+### 17.1 The canonical real orbit on the symmetric elliptic fiber
+
+Along the centered positive Pinney solution,
+
+```math
+A(u)=\mu^{1/4}\sqrt{\cosh(ru)},\qquad Y(u)=\frac{r\sqrt\mu}{2}\sinh(ru).
+```
+
+The isogeny image is the explicit real curve path
+
+```math
+g(u)=\cosh(ru),\qquad y_R(u)=\sqrt{\cosh(ru)}\,\sinh(ru),\qquad y_R^2=g^3-g.
+```
+
+This is not a closed elliptic period: $g(u)\ge1$ and tends to infinity at both ends. It is an exact *open real arc* on the symmetric Riemann elliptic fiber. In particular the existence of an explicit elementary real parametrization of **this arc with a non-Abelian clock** does not make the elliptic curve rational.
+
+The time differential remains
+
+```math
+du=A\,dA/Y=\frac{\sqrt g}{r}\,\Phi^*(dg/y_R),
+```
+
+with the square-root factor living naturally on the degree-two source curve. This is another direct proof that the Pinney mechanical clock is not the Riemann holomorphic-period clock.
+
+## 18. A precise three-curve map rather than a universal period equality [D,H,C]
+
+Three separate algebraic varieties now have explicit roles:
+
+| Curve | Equation | Genus and marking | Correct relation |
+|---|---|---|---|
+| $\mathcal C_n$ (Lax spectral) | $\nu^2=-\lambda\prod(\lambda+\kappa_j^2)^2$ | arithmetic genus $n$, **nodal**, normalization $\mathbb P^1$, paired-node gluing data | generalized Jacobian $(\mathbb C^\times)^n$, scattering/KdV norming coordinates after BA choice |
+| $C_{\rm EP}$ (centered Pinney energy) | $Y^2=(r^2/4)(A^4-\mu)$ | smooth genus one; **time** differential $A\,dA/Y$ and **holomorphic** differential $dA/Y$ distinct | conic time quotient plus elliptic 2-isogeny |
+| $E_0$ (symmetric Riemann elliptic fiber) | $y_R^2=g^3-g$ | smooth genus one; chosen holomorphic differential $dg/y_R$ | explicit index-two period-lattice relation with $C_{\rm EP}$ (§17) |
+
+**Do not infer:** The nodal spectral curve $\mathcal C_1$ is not the same smooth elliptic curve as $C_{\rm EP}$ or $E_0$. A generalized Jacobian of a nodal rational spectral curve is not, without a smoothing and chosen degeneration, the same complex torus as a smooth elliptic Jacobian.
+
+**What IS established:** There is an explicit 2-isogeny between the *two smooth elliptic curves* at the symmetric Riemann modulus, and a separate inverse-spectral normalized gluing picture on the singular spectral curve. Connecting the latter to the former would require a specified family of curves, differential, vanishing cycles, and gluing/period limiting map—not just a coinciding invariant.
+
+## 19. The complete r=2 test, including inverse data and both elliptic involutions [D,V]
+
+Set $r=2$, keeping $\mu,c,c_{\rm ref}>0$. In the original $x$ variable,
+
+```math
+u=\ln(x/c),\qquad S_2=\frac{2c^2x^2}{x^4+c^4},\qquad f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)}.
+```
+
+The first two reflectionless potentials become the explicit rational functions
+
+```math
+V_1(x)=-32\frac{c^4x^4}{(x^4+c^4)^2},\qquad V_2(x)=-96\frac{c^4x^4}{(x^4+c^4)^2}.
+```
+
+The spectral and norming data are
+
+```math
+n=1:\quad \kappa_1=2,\quad\alpha_{1,1}^2=4;\qquad n=2:\quad (\kappa_1,\kappa_2)=(2,4),\quad(\alpha_{2,1}^2,\alpha_{2,2}^2)=(12,24).
+```
+
+For $n=2$ the full Marchenko tau is
+
+```math
+\tau_2(x)=\left(1+(c/x)^4\right)^3=1+3(c/x)^4+3(c/x)^8+(c/x)^{12}.
+```
+
+In the fixed reference coordinate $v=\ln(x/c_{\rm ref})$, the two squared tail coefficients are
+
+```math
+\beta_1^2=12(c/c_{\rm ref})^4,\qquad\beta_2^2=24(c/c_{\rm ref})^8.
+```
+
+Both independently give $c=c_{\rm ref}(\beta_1^2/12)^{1/4}=c_{\rm ref}(\beta_2^2/24)^{1/8}$. The original weighted norm is
+
+```math
+\int_0^\infty x|f_\mu|^2dx=\frac1{4\mu}.
+```
+
+The trace ratio recovers $r=2$ and the centered potential $\int V^2$ and $\int V$ satisfy $3I_2/I_1^2=2$ at **both** integer depths.
+
+### 19.1 At r=2 the Pinney quartic and Riemann 2-isogeny simplify
+
+The canonical centered Pinney quartic becomes
+
+```math
+C_{\rm EP}:\quad Y^2=A^4-\mu,\qquad A=\mu^{1/4}\sqrt{\cosh(2u)},\qquad Y=A A_u.
+```
+
+The explicit degree-two map to the symmetric Riemann curve is
+
+```math
+g=A^2/\sqrt\mu,\qquad y_R=AY/\mu^{3/4},\qquad y_R^2=g^3-g.
+```
+
+Its holomorphic-differential relation is
+
+```math
+\Phi^*(dg/y_R)=2\mu^{1/4}\,dA/Y.
+```
+
+The involution $\sigma:(A,Y)\mapsto(-A,Y)$ preserves the Pinney **time** differential and produces the conic quotient; $\iota:(A,Y)\mapsto(-A,-Y)$ preserves the **holomorphic** differential and produces the elliptic 2-isogeny. The $V_4$ distinctions survive the resolution specialization without changing the center $c$.
+
+## 20. Verification protocol and exact algebraic regression data [V]
+
+**Exact nonnumeric regression:** For $1\le n\le6$ construct the factorial numbers
+
+```math
+a_{n,j}=\frac{\alpha_{n,j}^2}{2jr}=\frac{(n+j)!}{2(j!)^2(n-j)!}
+```
+
+and expand
+
+```math
+\tau_n(z)=\sum_{I\subseteq\{1,\ldots,n\}}\left(\prod_{j\in I}a_{n,j}\right)\left(\prod_{i<j\in I}\frac{(j-i)^2}{(j+i)^2}\right)z^{\sum_{j\in I}j}.
+```
+
+Using Python's SymPy exact Rational arithmetic, subtraction of $(1+z)^{n(n+1)/2}$ gives the **zero polynomial for all six depths**, not merely a small floating-point residual. The degrees checked are $1,3,6,10,15,21$. The general theorem is supported separately by Marchenko inverse uniqueness and the known PT scattering data (§6).
+
+**Further symbolic checks:**
+1. Substitute the centered quartic $Y^2=r^2(A^4-\mu)/4$ into $y_R^2-(g^3-g)$ with $g=A^2/\sqrt\mu$, $y_R=2AY/(r\mu^{3/4})$: the residual is identically zero.
+2. Simplify $(dg/dA)Y/y_R$: the result is exactly $r\mu^{1/4}$.
+3. Calculate $j$ for the Riemann fiber $y_R^2=g^3+k_Rg^2-g$: it is $256(k_R^2+3)^3/(k_R^2+4)$, with $j(0)=1728$.
+4. Verify directly that $V_n=-2\partial_v^2\log(1+e^{-2r(v-u_0)})^{n(n+1)/2}$ and that the potential traces satisfy $r=3I_2/I_1^2$.
+5. Check the center norming ratios, the KdV exponents $8j^3r^3\tau$, and the barycenter velocity $2n(n+1)r^2$ at $n=1,2,3$.
+6. On the smooth Pinney quartic, verify that $\sigma^*(A\,dA/Y)=A\,dA/Y$ while $\iota^*(A\,dA/Y)=-A\,dA/Y$, and that $\iota^*(dA/Y)=dA/Y$.
+7. Check that the isogeny pullback of the holomorphic 1-form is scaled by $r\mu^{1/4}$; the Hodge norm relation then follows by the **topological degree-two integration theorem**, not numerical period-fitting.
+
+**Scope:** These tests do not prove a unique spectral reconstruction from a bare transmission coefficient; full norming data and a fixed coordinate are needed. They do not prove that the physical surface's meromorphic **immersion** periods close, that all KdV solutions remain translated PT profiles, or that the logarithmic scalar Hilbert space is canonically isometric to a smooth elliptic curve's Hodge cohomology.
