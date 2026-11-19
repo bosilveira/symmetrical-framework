@@ -644,3 +644,184 @@ This is a genuine geometric compatibility at a **selected spatial phase**, but a
 6. **Integrable extended frame.** A Sym–Tafel immersion needs an additional two-variable spectral-parameter Lax pair and reality reduction; a fixed-energy spatial SL equation alone does not produce a unique immersed surface.
 
 **Candidate theorem that survives the audit:** *Selected One-Gap Lamé–Riemann Elliptic Picard Transport and Half-Period Spin Compatibility*, together with the sigma uniformization and a **connection-obstruction theorem**. A stronger global BA/Hopf/WE connection-preserving equivalence remains an open, precisely formulated research problem.
+
+## 17. NEW EXACT BRIDGE: Riemann's Gauss map produces a Lamé band-edge eigenfunction [D,V,K]
+
+Return to the **Abelian** elliptic coordinate $z$ of §5, not the canonical real SL spatial coordinate $u$. Write $g=g_R(z)$, $k=k_R$, and recall the cubic
+
+```math
+y_R^2=g^3+kg^2-g,\qquad g_z=2y_R.
+```
+
+By differentiation,
+
+```math
+g_z^2=4g(g^2+kg-1),\qquad g_{zz}=6g^2+4kg-2.
+```
+
+On a simply connected chart with $g\ne0,\infty$ choose $\chi(z)=\sqrt{g(z)}$ (as a local representative of the nontrivial spin line). Let its logarithmic derivative be the **Riccati superpotential**
+
+```math
+H(z)=\frac{\chi_z}{\chi}=\frac{g_z}{2g}=\frac{y_R}{g}=\frac{w_R}{\sqrt{\lambda_R}\,g}.
+```
+
+The curve equations imply directly
+
+```math
+H^2=\frac{g_z^2}{4g^2}=g+k-\frac1g,
+```
+
+```math
+H_z=\frac{g_{zz}}{2g}-\frac{g_z^2}{2g^2}=g+\frac1g.
+```
+
+Thus the **two Riccati combinations** are
+
+```math
+H^2+H_z=2g+k,\qquad H^2-H_z=k-\frac2g.
+```
+
+**Theorem 17.1 [D,V] (Riemann Gauss-map Lamé eigenfunction).** The square-root Gauss spinor $\chi=\sqrt g$ satisfies
+
+```math
+\chi_{zz}=(2g+k)\chi,\qquad(-\partial_z^2+2g)\chi=-k\chi.
+```
+
+Since $g(z)=\wp(z)-k/3$, this is precisely the **one-gap Weierstrass Lamé equation**
+
+```math
+(-\partial_z^2+2\wp(z))\chi=-\frac{k}{3}\chi.
+```
+
+The sigma-function section $h_a$ from §5 is its exact **half-period/band-edge Hermite–Halphen Baker-type solution**. This directly realizes a selected Lamé spectral eigenfunction as a Riemann WE spinor factor. It is a classical elliptic-function mechanism, verified here in the framework's **Riemann normalization**.
+
+**Proof.** The two displayed Riccati identities give $\chi_{zz}/\chi=H_z+H^2=2g+k$. Substitute $g=\wp-k/3$.
+
+### 17.1 The archived Riemann horizontal exactness identity IS the Riccati derivative
+
+The historical claim H466 uses the normalized Riemann curve with
+
+```math
+d\left(\frac{w_R}{g_R}\right)=\frac{\lambda_R}{2}\left(g_R+\frac1{g_R}\right)\frac{dg_R}{w_R}.
+```
+
+Our logarithmic derivative is $w_R/g_R=\sqrt{\lambda_R}\,H$, while
+
+```math
+\frac{dg_R}{w_R}=\frac{2}{\sqrt{\lambda_R}}\,dz.
+```
+
+Therefore both sides of H466 are **exactly**
+
+```math
+\sqrt{\lambda_R}\,H_z\,dz=\sqrt{\lambda_R}\left(g_R+\frac1{g_R}\right)dz.
+```
+
+**Corollary 17.2 [D,V,H466].** The previously archived exact-differential reduction of the horizontal Weierstrass periods is *literally the Riccati derivative identity* for the Riemann Gauss spinor's logarithmic derivative. This is a direct and nontrivial algebraic meeting point of the framework's Riemann minimal-surface data, Riccati, Lamé, and WE representations.
+
+## 18. The two WE spinor factors are exact DARBOUX partner zero modes [D,V,K]
+
+Define the formal first-order factors on the complex Abel coordinate,
+
+```math
+D=\partial_z-H,\qquad D^\sharp=-\partial_z-H.
+```
+
+The symbol $\sharp$ means **formal transpose** in the complex $z$ variable, NOT a Hilbert adjoint unless a compatible real contour, positive measure and real coefficients are separately chosen.
+
+From §17,
+
+```math
+D^\sharp D=-\partial_z^2+H^2+H_z=-\partial_z^2+2g+k,
+```
+
+```math
+DD^\sharp=-\partial_z^2+H^2-H_z=-\partial_z^2+k-\frac2g.
+```
+
+Let
+
+```math
+L_+=-\partial_z^2+2g(z),\qquad L_-=-\partial_z^2-\frac2{g(z)}.
+```
+
+Then the exact Darboux factorization and intertwining are
+
+```math
+L_++k=D^\sharp D,\qquad L_-+k=DD^\sharp,\qquad D L_+=L_- D.
+```
+
+The two Riemann WE spinor coefficients of §5 are **reciprocal**:
+
+```math
+q_R=\sqrt{\beta_R}\chi,\quad p_R=\sqrt{\beta_R}\chi^{-1},\qquad Dq_R=0,\quad D^\sharp p_R=0.
+```
+
+**Theorem 18.1 [D,V] (reciprocal WE spinor = Darboux pair).** In the **Abelian elliptic coordinate**, the Riemann WE spinor components are distinguished zero modes of a first-order Darboux partner pair. They do **not** solve the same scalar second-order differential operator in that coordinate, since their ordinary Wronskian $2\beta_RH(z)$ is generally nonconstant.
+
+By contrast, in the **Hopf natural coordinate** $d\xi^2=\Theta_R=2\beta_RH(z)\,dz^2$, the spinors are transported as half-densities and their Wronskian becomes one; they then solve the **same** Schwarzian projective SL equation (draft 200). Hence we have two explicitly compatible forms of the same WE data:
+
+- Abel chart $z$: a pair of **Darboux-partner** scalar equations and a nonconstant Wronskian.
+- Hopf-natural chart $\xi$: one common **Schwarzian SL carrier** and constant Wronskian.
+
+These are different exact gauge/coordinate representations of the selected holomorphic spinor data, not proof that a generic spectral SL operator is unitarily equivalent to a minimal-surface Jacobi operator.
+
+## 19. A 2-TORSION ELLIPTIC TRANSLATION implements the Darboux partner [D,V,K]
+
+Let $a$ be the half-period corresponding to the branch point $P_0$ of the Riemann Gauss map, $g(a)=0$. Consider the map of the normalized Riemann curve
+
+```math
+T:(g,y_R)\longmapsto\left(-\frac1g,\frac{y_R}{g^2}\right).
+```
+
+Since $y_R^2=g^3+kg^2-g$, direct algebra yields
+
+```math
+\left(\frac{y_R}{g^2}\right)^2=\left(-\frac1g\right)^3+k\left(-\frac1g\right)^2-\left(-\frac1g\right).
+```
+
+Also
+
+```math
+T^*\left(\frac{dg}{y_R}\right)=\frac{d(-1/g)}{y_R/g^2}=\frac{dg}{y_R},\qquad T^2=\mathrm{id}.
+```
+
+The map extends through the apparent coordinate poles to an elliptic curve automorphism. It sends the group origin $P_\infty$ to the nontrivial 2-torsion point $P_0$. Since it preserves the holomorphic differential and has order two, it is **translation by $P_0$**, not negation of the group law.
+
+**Theorem 19.1 [D,V] (half-period Gauss-map reciprocal involution).**
+
+```math
+g_R(z+a)=-\frac1{g_R(z)},\qquad 2a\in\Lambda_R.
+```
+
+Therefore the Darboux partner of §18 is literally the **half-period translate of the same elliptic Lamé potential**:
+
+```math
+L_-=-\partial_z^2+2g_R(z+a),\qquad D L_+(z)=L_+(z+a)D.
+```
+
+This is the classical phenomenon of a Lamé **Darboux displacement**, here deduced directly from the Riemann minimal-example Gauss-map equation. The *same* 2-torsion point $P_0$ both selects the WE spin structure and implements the operator displacement.
+
+### 19.1 The two WE spinors themselves are shifted copies of one band-edge function
+
+By Theorem 19.1, $\chi(z+a)^2=g(z+a)=-1/g(z)$. Hence on any simply connected patch away from poles,
+
+```math
+\chi(z+a)=\pm i\,\chi(z)^{-1},\qquad p_R(z)=\mp i\,q_R(z+a),
+```
+
+with the sign fixed by the chosen local spinor trivialization. Thus the two WE spinors are a **half-period-translated** Hermite–Halphen Lamé band-edge section and its reciprocal.
+
+**Global caveat:** For the real family, the branch $P_0$ corresponding to the *middle* root of the Weierstrass cubic generally has a **non-real half-period** $a$. The translation is then an exact **complex elliptic** Darboux displacement; it is not a unitary shift on the original real spatial Lamé line. The Riemann Abel variable $z$ is also not the original canonical $u$ without the separate marked spectral/divisor map of §8. These distinctions keep the proved theorem genuinely algebraic rather than forcing spectral or physical equivalence.
+
+## 20. The two exact bridges form a COMMUTATIVE-TYPE DICTIONARY, not a universal identity [D,H]
+
+The framework now has two concrete ways to pass between the same chosen genus-one surface curve and linear second-order structures.
+
+**Bridge A: spectral Dirichlet/Picard transport.** Starting with the real periodic Lamé equation in the original logarithmic spatial coordinate $u$, its moving gap point $\gamma(u)$ lies on the spectral elliptic curve and satisfies $\gamma_u=-2\eta_\gamma$. Under the exact real affine Lamé–Riemann curve isomorphism, the point moves on the Riemann Picard torus with slope $r/\sqrt{D_R}$ and meets the selected WE spin class at $u=K(m)/r$ modulo the period.
+
+**Bridge B: WE Gauss-spinor/Darboux displacement.** Starting instead with the meromorphic Riemann Gauss map $g_R(z)$ on its **elliptic Abel coordinate**, the local square root $\sqrt{g_R}$ is a half-period Lamé eigenfunction, its logarithmic derivative obeys the two rational Riccati identities, and its reciprocal spinor is a Darboux partner obtained by elliptic translation by $P_0$. In the Hopf-natural quadratic-differential coordinate the two WE spinors form a common Schwarzian carrier.
+
+The bridges share the **same explicitly identified elliptic curve, branch point $P_0$, 2-torsion spin class and marked differential**. Their spatial/Abelian evolution coordinates, operators, Hilbert realizations and connections remain different until an actual intertwiner is supplied.
+
+**This is the strongest currently established algebraic version of the user's “whole web” idea:** the individual links are exact, and their types are explicit; one should not substitute a universal scalar ODE or one $\mathrm{SL}(2,\mathbb C)$ connection for the full decorated geometry.
