@@ -747,3 +747,144 @@ Substituting the exact coefficient and simplifying yields the **parameter-depend
 The identity was independently numerically checked at $r=1/2,1,2$ with errors at floating-point roundoff. It can also be evaluated by contour or Fourier methods; the conceptual derivation here is **Plancherel plus the Darboux discrete kernel**.
 
 **This is a particularly sharp example of the requested whole-system algebra:** the original rational profile, the weighted Hilbert metric, the rank-two scattering carrier, the Crum intertwiner, the Pinney/spectral closure and an exact transcendental integral all participate in one compatible calculation.
+
+## 20. The r=2 whole-system regression [D,V]
+
+Set the resolution $r=2$ but retain the center $c>0$ and amplitude $\mu>0$:
+
+```math
+u=\ln(x/c),\quad S_2=\frac{2c^2x^2}{x^4+c^4},\quad W_2=\frac{x^4-c^4}{x^4+c^4},\quad f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)}.
+```
+
+The Darboux chain, wells, and two Lax–Novikov spectral polynomials are
+
+```math
+A_1=\partial_u+2W_2,\quad A_2=\partial_u+4W_2,\quad h_1=-\partial_u^2-8S_2^2,\quad h_2=-\partial_u^2-24S_2^2.
+```
+
+```math
+\mathscr R_1(\lambda)=-4\lambda(\lambda+4)^2,\qquad\mathscr R_2(\lambda)=-4\lambda(\lambda+4)^2(\lambda+16)^2.
+```
+
+The normalized Jost wave transmission and Milne phase shifts are
+
+```math
+T_1(k)=\frac{k+2i}{k-2i},\qquad T_2(k)=\frac{(k+2i)(k+4i)}{(k-2i)(k-4i)}.
+```
+
+```math
+\delta_1(k)=2\arctan(2/k),\qquad\delta_2(k)=2\arctan(2/k)+2\arctan(4/k).
+```
+
+The corresponding Pinney squared amplitudes are
+
+```math
+a_{1,k}^2=\frac{k^2+4W_2^2}{k^2+4}.
+```
+
+```math
+a_{2,k}^2=\frac{k^4+4(3W_2^2+2)k^2+16(3W_2^2-1)^2}{(k^2+4)(k^2+16)}.
+```
+
+The center Weyl logarithmic derivatives become
+
+```math
+m_{+,1}(k)=i\frac{k^2+4}{k},\qquad m_{+,2}(k)=ik\frac{k^2+16}{k^2+4}.
+```
+
+The catenoid's actual unitary Jacobi transform for angular mode $m\in\mathbb Z$ is
+
+```math
+\widetilde B_m=-\partial_u(S_2^2\partial_u)+4(m^2-1)S_2^2.
+```
+
+The original weighted profile norm and spectral fraction are
+
+```math
+\|f_\mu\|^2_{L^2(xdx)}=\frac1{4\mu},\qquad \frac{\|P_{\rm bound}^{(2)}\psi_\mu\|_2^2}{\|\psi_\mu\|_2^2}=\frac{3\pi^2}{32}.
+```
+
+The new definite integral reduces to
+
+```math
+\int_{\mathbb R}\frac{k^2+4}{k^2+16}\mathrm{sech}^2(\pi k/4)dk=\frac{32-3\pi^2}{\pi}.
+```
+
+Every factor is derived from the original $u=\ln(x/c)$ with $r=2$; no variable has silently been renamed as physical time or a surface modulus. The scattering wave number $k$ is still an independent spectral variable.
+
+## 21. Status audit: which maps genuinely preserve spectral data?
+
+| Proposed arrow | Exact mathematical status |
+|---|---|
+| Darboux–Crum $Q_n$ interwines $h_n$ with $h_0$ | **True** on differential-operator cores; archived H100/H299 and §2 |
+| Lax–Novikov polynomial spectral curve | **True** in the archived verified normalization; §3 |
+| $h_n$ globally unitarily equivalent to free $h_0$ | **False**, because $h_n$ has bound states absent from $h_0$ |
+| $\mathcal U_n$ gives a unitary equivalence of their continuous subspaces | **True**, with explicit polar decomposition and domain transport; §5 |
+| Darboux-normalized Jost modulus solves a positive Pinney equation | **True** for $k>0$ with strength $k^2$; §§6–9 |
+| Gel'fand–Dikii invariant determines the normalized Pinney strength | **True** after dividing by $D_n(k^2)^2$; §7 |
+| Scattering transmission phase equals the integrated excess Milne phase | **True** with the continuous unwrapped phase convention; §10 |
+| Center logarithmic derivatives select parity of negative-energy bound modes | **True** for the chosen even reflectionless potentials; §11 |
+| Free Fourier–Mellin Plancherel survives unchanged for the entire $h_n$ | **False** unless bound-state terms and the Darboux polynomial kernel are added |
+| Distorted Fourier–Mellin transform plus discrete corrections is unitary | **True** with the weighted-space pullback; §§12–13 |
+| Catenoid Jacobi zero equation equals a Pöschl–Teller zero equation after a positive multiplier | **True** with a declared angular mode; §15 |
+| That multiplier is a unitary operator conjugation in $L^2(C,dA_C)$ | **False**; §16 constructs the actual unitary transform |
+| The flat-measure bound state $S$ automatically lies in surface $L^2$ | **False**; §17 computes its divergent surface norm |
+| The canonical original profile is a bound state of the order-one modified operator | **True**, and it exhausts that chosen operator's bound sector; §19 |
+| The same profile has a mixed spectrum for the order-two well | **True**; exact discrete fraction $3\pi^2/32$, §§19–20 |
+| Reflectionless scattering phase is Berry/Chern quantization | **False without a separately defined bundle and connection** |
+| Same spectral polynomial or $j$ invariant proves embedded Riemann minimal-surface period closing | **False without marked cycles, differential and real period conditions** |
+
+### 21.1 What about the original SL–EP closure?
+
+The $\mathfrak{sl}_2$ Lie–Hamilton closure from drafts 100/130 is **general for a specified carrier coefficient**. This draft constructs a much more specialized **operator-theoretic completion** of it: integer Pöschl–Teller potentials, their Darboux hierarchy, an actual partial spectral unitary, and associated scattering-normalized Pinney amplitudes. It is precisely the additional structural constraints on the potential that permit this stronger conclusion.
+
+The scattering Pinney equation is not the same nonlinear operator as the canonical *centered* reciprocal Ermakov–Pinney equation: the former has $Q(u)=V_n(u)-k^2$ and strength $k^2$, while the latter has constant $Q=r^2/4$ and strength $\mu r^2/4$. Their common envelope/phase mechanism is exact, but their sources and invariant levels differ.
+
+## 22. Independent verification, provenance, and classical literature
+
+### 22.1 Checks performed in this investigation
+
+1. Reopened the actual archived code and passing log for H100/H299. The archived operator identities are not treated as new findings.
+2. Independently verified $Q_nQ_n^\dagger=\Pi_n(h_0)$ for $n=1,2,3$, acting on a generic exponential $e^{\zeta u}$ while replacing $\partial_u$ by $\zeta+r(1-W^2)\partial_W$.
+3. Verified the Darboux Jost polynomials $B_1=rW-ik$ and $B_2=r^2(3W^2-1)-k^2-3ikrW$, and exactly recovered the squared-eigenfunction polynomials $F_1,F_2$ of draft 130 from their moduli.
+4. Verified for $n=1,2,3$ that the **unnormalized** Jost current is $kD_n(k^2)$ and the modulus equals $D_n(k^2)$ at both ends. Normalizing makes the current exactly $k$ and the Pinney coefficient exactly $k^2$.
+5. Independently checked the integrated excess Milne phase against the product transmission phase numerically for $n=1,2$ at three different positive $k/r$ values; the differences were within numerical quadrature accuracy. The elementary $n=1$ phase integral is derived exactly.
+6. Verified the center rational boundary data $m_{+,1}(k)=i(k^2+r^2)/k$ and $m_{+,2}(k)=ik(k^2+4r^2)/(k^2+r^2)$ by direct differentiation of the Jost formulas.
+7. Checked the catenoid unitary conjugation $U_CB_mU_C^{-1}=-\partial_u(S^2\partial_u)+(m^2-1)r^2S^2$ symbolically for arbitrary test functions and for $m=0,1,2$. This is *not* the multiplication-by-$R^2$ equation.
+8. Checked the catenoid zero-Jacobi functions $W$, $1-ruW$ and $Se^{\pm irv}$ by direct differentiation.
+9. Verified the exact normalized bound states of $h_1,h_2$, their overlaps with the canonical $\psi_\mu=S/(2\sqrt\mu)$, and the discrete norm fraction $3\pi^2/32$.
+10. Checked $Q_2S=r^2S^3$, applied the exact Fourier transform of $\mathrm{sech}^3$, and obtained the closed distorted Fourier amplitude of §19.
+11. Derived the definite integral in §19 from discrete-plus-continuous Parseval; independently evaluated its two sides numerically at $r=1/2,1,2$ (agreement at approximately machine precision).
+12. The full original-variable weighted distorted Plancherel theorem follows from unitary composition, the Darboux polar decomposition, and ordinary Fourier Plancherel; no numerical assumption is needed.
+
+**Scope:** These algebraic checks and classical operator statements do not by themselves produce a period-preserving isomorphism between smooth elliptic spectral curves and Riemann minimal examples. Nor do they construct a new self-adjoint boundary realization for arbitrary nonreal or singular SL coefficients. Scattering states are generalized, non-$L^2$ eigenfunctions, and all continuous formulas require the stated domain or distributional interpretation.
+
+### 22.2 Source attribution
+
+**Historical framework ZIP:** November 18 backup, claims H100/H299 and actual code verification/audit4/audit4_lax_novikov.py plus its passing log. These establish the factorization, commuting odd differential operator and Burchnall–Chaundy polynomial for integer depths at least $1\le n\le4$. The present draft adds the precise polar-unitary, Jost–Pinney and original-$x$/surface-Hilbert calculations with independently checked formulas.
+
+**Current GitHub:** draft 130 §§9–14 provides $F_1,F_2$ and their Gel'fand–Dikii polynomials; draft 120 provides self-adjoint boundary and parity distinctions; draft 110 the nonlinear Hessian and weighted stationary amplitude/phase construction; drafts 030 and 100 the catenoid metric, local Jacobi and canonical complex Pinney carrier.
+
+**External mathematical literature, relevant scope:**
+
+- Classical Darboux/reflectionless Pöschl–Teller transmission amplitudes, including the exact product formula: https://gustavdelius.github.io/affine_toda/part5-semiclassics/17-dhn.html .
+- Lax–Novikov operators and nonlinear/spectral algebra of reflectionless systems: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.90.025008 .
+- Reflectionless integer Pöschl–Teller scattering and supersymmetric factorization: https://link.springer.com/article/10.1140/epjc/s10052-026-16228-4 .
+- Catenoid Jacobi modes and geometric stability versus Darboux–Pöschl–Teller potentials: https://link.springer.com/article/10.1007/s11040-022-09437-2 .
+- Sturm–Liouville domains, weighted Green identity, Weyl theory: https://encyclopediaofmath.org/wiki/Sturm-Liouville_theory .
+- Mellin/Fourier Plancherel identity in the logarithmic variable: https://dlmf.nist.gov/1.14 and https://dlmf.nist.gov/2.5 .
+
+## 23. Next mathematical questions [O]
+
+1. **Explicit spectral intertwiner for each surface mode:** Determine the self-adjoint realization and spectral measure of the degenerate-coefficient catenoid operator $\widetilde B_m=-\partial(S^2\partial)+(m^2-1)r^2S^2$, including its endpoints, and compare its spectral transform to the flat-measure Darboux transform without assuming equality.
+2. **Dirichlet-to-Neumann matching at the original center:** Use the rational $m_{+,1},m_{+,2}$ to derive exact rank-one resolvent corrections for all real delta/Robin interface strengths at $x=c$; record the resulting discrete spectral flow and continuous scattering phase.
+3. **Full integer-depth Jost–Milne theorem:** Derive a polynomial recursion for $F_n=|B_n|^2$, and establish the excess-phase integral directly by induction in $n$ without passing through transmission amplitudes.
+4. **Bound-state norming and inverse scattering:** Recover $r$ and the translation center $c$ from the complete scattering data, including bound-state norming constants; show explicitly that the transmission phase alone does not locate the center.
+5. **KdV deformation:** Propagate the Darboux–Jost–Pinney correspondence along a chosen isospectral KdV time flow, tracking whether the normalized current remains $k$ and which spatial phase data evolve.
+6. **Hodge and marked periods:** Investigate whether the polynomial continuum spectral curve can be smoothed to a Lamé curve with an explicit marked differential whose periods can be compared to the archive's Riemann minimal-example Gauss–Manin period vector. The degeneration must preserve a specified differential, not just a $j$ or discriminant.
+7. **Bundle-level Berry test:** Construct an explicit connection on the scattering eigenline bundle over a **two-dimensional parameter base**, if one is naturally available, before comparing the Milne scattering phase to the Hopf Berry holonomy and quantized Chern number.
+8. **Soliton resolution multiplication:** For $r\mapsto Mr$ with integer $M\ge2$, analyze how $T_n(k)$, the bound-state levels, the distorted spectral density and the original variable's rational denominator change under the rescaling $u=\ln(x/c)$.
+9. **Fourier–Mellin product on the catenoid:** Combine the discrete angular Fourier modes $m$ with the *correct* radial spectral transforms of $\widetilde B_m$, rather than using ordinary free Fourier in $u$ when the Jacobi coefficient $S^2$ varies.
+10. **Weighted Sobolev refinements:** Determine how the polar-unitary $\mathcal U_n$ acts on Sobolev form domains and whether the canonical norm fraction $3\pi^2/32$ extends to the energy form or a hierarchy of weighted derivatives.
+
+**Final mathematical conclusion.** The previously verified $\mathfrak{sl}_2$/Pinney and Gel'fand–Dikii/Lax–Novikov structures can be completed by an **actual unitary operator correspondence on the continuous spectrum**, a normalized Jost-to-Pinney map, exact Milne scattering phases, rational half-line Riccati boundary data and a discrete-plus-continuous Fourier–Mellin spectral transform. The catenoid's own area-metric Jacobi problem has a different operator obtained by an explicit **unitary** half-density conjugation. Thus the Symmetrical Framework genuinely supports a compatible web of maps, provided each map retains its Hilbert space, domain, spectral shift, center, resolution, amplitude, and boundary or period data. No forced physics interpretation is needed.
