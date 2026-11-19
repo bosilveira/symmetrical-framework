@@ -175,3 +175,163 @@ Thus
 **Theorem 6.1 [D,V].** The associate immersion descends as a *single-valued Euclidean immersion on the same punctured-plane quotient* precisely when $\sin\delta=0$. At $\delta=0$ it gives the catenoid. At $\delta=\pi/2$ (helicoid) its real height period is $-2\pi/r$: the immersion is defined on the angular universal cover or in a specified quotient by vertical translation, but **not** as the same single-valued immersion on $\mathbb C^\times$.
 
 The local Gauss map, induced metric and Jacobi expression alone do not detect this global obstruction. **Marked Weierstrass real periods do.**
+
+## 7. Every spectral node defines its own catenoid residue channel [D,V,C]
+
+For the depth-$n$ normalization of §3, select a **single** decay exponent $\kappa_j=jr$. Define
+
+```math
+t_j=\frac{s-\kappa_j}{s+\kappa_j},\qquad g_j=-t_j,\qquad dh_j=\frac1{\kappa_j}d\log t_j.
+```
+
+The identical Weierstrass calculation of §§4–6 produces a local catenoid channel, with
+
+```math
+\mathrm{neck\ radius}_j=\frac1{\kappa_j}=\frac1{jr},\qquad\oint dh_j=\frac{2\pi i}{jr},\qquad \mathrm{vertical\ flux}_j=\frac{2\pi}{jr}.
+```
+
+**Theorem 7.1 [D,V].** Each marked node pair defines a meromorphic third-kind height differential on the normalization whose residue and period scale is determined by its inverse-scattering decay exponent. The associated local minimal immersion is a catenoid on the twice-punctured normalization (or a helicoid on its angular universal cover).
+
+**Limit of the construction [C].** For $n\ge2$ the chosen $t_j$ does *not* make the other node pairs simultaneously descend. Indeed for $\ell\ne j$,
+
+```math
+t_j(\kappa_\ell)=\frac{\kappa_\ell-\kappa_j}{\kappa_\ell+\kappa_j},\qquad t_j(-\kappa_\ell)=\frac{\kappa_\ell+\kappa_j}{\kappa_\ell-\kappa_j}=\frac1{t_j(\kappa_\ell)}.
+```
+
+The two values are generally different; at its own node, $t_j$ has the incompatible values $0,\infty$. Thus the Gauss map is rational on the **normalization**, but is not a globally well-defined function on the multiply nodal curve after the node identifications. There are $n$ individually marked **channels**, not a unique $n$-neck embedded minimal surface forced by the reflectionless spectral polynomial.
+
+The node differential $\Omega_j$ remains a regular *dualizing* form at the selected node because its paired residues cancel. A full minimal immersion also needs the two horizontal forms, their residues and all real periods on the actual domain. A spectral-curve node is not itself a physical or geometric neck without this added Weierstrass data.
+
+## 8. A no-go theorem: the nodal spectral curve cannot map nontrivially to a smooth elliptic Riemann fiber [D,K,C]
+
+Let $E$ be any smooth complex elliptic curve, including any nonsingular fiber of the archived Riemann family. The normalization of the reflectionless curve $\mathcal C_n$ is $\mathbb P^1$.
+
+**Theorem 8.1 [D,K] (Riemann–Hurwitz obstruction).** Every holomorphic map $F:\mathbb P^1\to E$ is constant. Therefore every morphism $\mathcal C_n\to E$ is constant as well.
+
+**Proof.** If $F$ were nonconstant of degree $d>0$, Riemann–Hurwitz would give
+
+```math
+2g(\mathbb P^1)-2=d(2g(E)-2)+\deg\mathrm{Ram}(F),\qquad -2=0+\deg\mathrm{Ram}(F).
+```
+
+The right-hand side is nonnegative, a contradiction. Any morphism from the irreducible nodal curve to $E$ composed with its surjective normalization would yield such a map, so it too must be constant.
+
+**What this does NOT forbid.** It does not prohibit an algebraic **correspondence**, a map from a positive-genus *cover*, a singular degeneration of a family of smooth curves, an isogeny involving a **different** elliptic curve such as the Pinney mechanical energy curve, or a mapping of meromorphic forms on a punctured rational normalization to meromorphic catenoid data. The no-go result is specifically against the unqualified direct spectral-nodal-to-smooth-elliptic **morphism** claim.
+
+This algebraic obstruction explains why the *spectral* completion and the *Riemann elliptic surface* period completion are not automatically the same global space, even though they are connected by a common local SL–EP/symmetric-square formalism.
+
+## 9. The OTHER curve: centered Pinney mechanical energy is smooth elliptic [H,D,V]
+
+The positive canonical Pinney amplitude solves
+
+```math
+a_{uu}=\frac{r^2}{4}a+\frac{\mu r^2}{4a^3},\qquad a^2=\sqrt\mu\cosh(ru).
+```
+
+Its **centered zero-energy mechanical curve** is the smooth quartic
+
+```math
+\mathcal P_{r,\mu}:\quad Y^2=\frac{r^2}{4}(a^4-\mu),\qquad Y=a\,a_u,\qquad j(\mathcal P_{r,\mu})=1728.
+```
+
+This is an elliptic *energy curve* of the Pinney envelope, **not** the nodal reflectionless spectral curve $\mathcal C_n$. The quartic has two points over infinity in its smooth projective compactification and the holomorphic one-form
+
+```math
+\omega_{\mathcal P}=\frac{da}{Y}.
+```
+
+The Riemann-minimal-example family from the actual historical ZIP is
+
+```math
+w_R^2=g_R(g_R-\lambda_R)(\lambda_Rg_R+1),\quad\lambda_R>0,\qquad y_R=\frac{w_R}{\sqrt{\lambda_R}},\quad k_R=\lambda_R^{-1}-\lambda_R.
+```
+
+In its normalized cubic chart
+
+```math
+E_{k_R}:\quad y_R^2=g_R^3+k_Rg_R^2-g_R,\qquad j_R(k_R)=256\frac{(k_R^2+3)^3}{k_R^2+4}.
+```
+
+At the real **symmetric modulus** $\lambda_R=1$ (so $k_R=0$), this becomes
+
+```math
+E_0:\quad y_R^2=g_R^3-g_R,\qquad j_R(0)=1728.
+```
+
+Draft 150 proves the following explicit *degree-two isogeny between two smooth elliptic curves*, distinct from the spectral normalization map:
+
+```math
+\Phi:\mathcal P_{r,\mu}\longrightarrow E_0,\qquad g_R=\frac{a^2}{\sqrt\mu},\qquad y_R=\frac{2aY}{r\mu^{3/4}}.
+```
+
+Indeed,
+
+```math
+y_R^2=\frac{a^2(a^4-\mu)}{\mu^{3/2}}=g_R^3-g_R,\qquad \Phi^*\left(\frac{dg_R}{y_R}\right)=r\mu^{1/4}\frac{da}{Y}.
+```
+
+This formula defines a degree-two unramified morphism on smooth complex projective compactifications; after choosing elliptic origins it is a 2-isogeny. Its deck involution is $(a,Y)\mapsto(-a,-Y)$. The quartic's *different* involution $(a,Y)\mapsto(-a,Y)$ yields the genus-zero quotient for the **Pinney time differential** $a\,da/Y$.
+
+## 10. Explicit pullback of ALL symmetric Riemann immersion forms [D,V,H466]
+
+The historical Riemann Weierstrass data, in its convention, are
+
+```math
+\boldsymbol\Phi_R=(\Phi_{R1},\Phi_{R2},\Phi_{R3})=\left(\frac{A_R}{2}(g_R^{-1}-g_R),\frac{iA_R}{2}(g_R^{-1}+g_R),A_R\right)\frac{dg_R}{w_R}.
+```
+
+At $\lambda_R=1$ one has $w_R=y_R$ and $A_R>0$. For the isogeny $\Phi$ of §9, direct substitution gives the three **exact pullback forms**
+
+```math
+\Phi^*\Phi_{R1}=\frac{A_Rr}{2}\left(\frac{\mu^{3/4}}{a^2}-\frac{a^2}{\mu^{1/4}}\right)\frac{da}{Y}.
+```
+
+```math
+\Phi^*\Phi_{R2}=\frac{iA_Rr}{2}\left(\frac{\mu^{3/4}}{a^2}+\frac{a^2}{\mu^{1/4}}\right)\frac{da}{Y}.
+```
+
+```math
+\Phi^*\Phi_{R3}=A_Rr\mu^{1/4}\frac{da}{Y}.
+```
+
+**Theorem 10.1 [D,V].** The centered Pinney-to-Riemann isogeny transports the **entire meromorphic Weierstrass triple** by the displayed formulas, not merely the elliptic $j$-invariant or a single holomorphic period. These are equalities of meromorphic 1-forms on the corresponding punctured projective curves, and preserve their full periods under the induced homology map; they do not automatically solve all real immersion-period closing conditions.
+
+**Proof.** Differentiate $g_R=a^2/\sqrt\mu$ and insert the formula for $y_R$:
+
+```math
+\Phi^*(dg_R/y_R)=r\mu^{1/4}da/Y,\quad \Phi^*(g_R\,dg_R/y_R)=r\mu^{-1/4}a^2da/Y.
+```
+
+```math
+\Phi^*(g_R^{-1}dg_R/y_R)=r\mu^{3/4}a^{-2}da/Y.
+```
+
+Taking the appropriate linear combinations proves the three claims.
+
+### 10.1 The exact-differential reduction is preserved
+
+For $E_0:y_R^2=g_R^3-g_R$, direct differentiation gives the archival relation
+
+```math
+d(y_R/g_R)=\frac12(g_R+g_R^{-1})\frac{dg_R}{y_R}.
+```
+
+Therefore
+
+```math
+\Phi_{R2}=iA_R\,d(y_R/g_R)
+```
+
+is exact meromorphic, and
+
+```math
+\Phi_{R1}=A_R\,d(y_R/g_R)-A_R\,g_R\,dg_R/y_R,\qquad \Phi_{R3}=A_R\,dg_R/y_R.
+```
+
+Only the two marked periods of $\omega_R=dg_R/y_R$ and $\eta_R=g_Rdg_R/y_R$ contribute to the closed-cycle immersion periods:
+
+```math
+\oint_\gamma\boldsymbol\Phi_R=A_R\left(-N_\gamma,\,0,\,\Omega_\gamma\right),\quad \Omega_\gamma=\oint_\gamma\omega_R,\quad N_\gamma=\oint_\gamma\eta_R.
+```
+
+This formula holds on cycles avoiding the punctures; the exact derivative has no closed periods. The pullback makes the two relevant Pinney quartic differentials *explicit*, but a real-period closing test still needs a chosen homology basis, the real slice and the immersion translation lattice.
