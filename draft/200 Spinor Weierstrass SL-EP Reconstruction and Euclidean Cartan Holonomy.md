@@ -575,3 +575,130 @@ s(\zeta)=r\,\frac{1+e^{r\zeta}}{1-e^{r\zeta}}=-r\coth(r\zeta/2),\qquad E(\zeta)=
 ```
 
 Thus the spectral energy *varies* along this selected surface parametrization. It is not an isospectral trajectory of the original PT eigenvalue equation.
+
+## 15. Decisive NO-GO: projective SL + positive EP norm do not determine global immersion [D,V,C]
+
+Given Weierstrass data $(g,dh)$, let the Bonnet/associate family be obtained by
+
+```math
+dh_\delta=e^{i\delta}dh,\quad g_\delta=g,\quad\boldsymbol\Phi_\delta=e^{i\delta}\boldsymbol\Phi.
+```
+
+The compatible WE spinors transform by a **common phase**
+
+```math
+p_\delta=e^{i\delta/2}p,\qquad q_\delta=e^{i\delta/2}q.
+```
+
+Therefore
+
+```math
+q_\delta/p_\delta=g,\qquad |p_\delta|^2+|q_\delta|^2=|p|^2+|q|^2.
+```
+
+Their Schwarzian projective potential $\frac12\{g,z\}$ and positive norm are **unchanged** in a fixed conformal coordinate, and so is the induced metric. But the Wronskian/Hopf quadratic differential and the real immersion periods change:
+
+```math
+\mathscr W_\delta=e^{i\delta}\mathscr W,\quad \Theta_\delta=e^{i\delta}\Theta,\quad\mathrm{Re}\oint_\gamma\boldsymbol\Phi_\delta=\cos\delta\,\mathrm{Re}\oint_\gamma\boldsymbol\Phi-\sin\delta\,\mathrm{Im}\oint_\gamma\boldsymbol\Phi.
+```
+
+**Theorem 15.1 [D,C] (Bonnet ambiguity of the SL–EP reconstruction).** Knowledge of the projective ratio $g$, its Schwarzian ODE, the Hermitian spinor norm and the resulting conformal surface metric is insufficient to reconstruct the **global Euclidean immersion**: the Bonnet phase and the complete real period homomorphism remain independent data. The same local intrinsic geometry can have different global immersion periods.
+
+### 15.1 The canonical explicit counterexample
+
+The catenoid WE period is
+
+```math
+\oint_{\gamma}\boldsymbol\Phi_C=(0,0,2\pi i/r),\qquad\mathrm{Re}\oint_\gamma\boldsymbol\Phi_C=0.
+```
+
+Its conjugate helicoid at $\delta=\pi/2$ has exactly the same $g$, projective Schwarzian and positive spinor Gram norm, but
+
+```math
+\mathrm{Re}\oint_\gamma i\boldsymbol\Phi_C=(0,0,-2\pi/r)\ne0.
+```
+
+Thus the catenoid immersion descends to the punctured-plane conformal quotient, whereas the helicoid needs the angular universal cover (or a specified translation quotient). The **Spin(3) normalized frame** and its local Hopf projection still do not remove this translation-period defect.
+
+This is a rigorous counterexample to any overstrong theorem claiming that the SL–EP equations alone already encode and preserve *all* ambient $\mathrm{ISO}(3)$ holonomies.
+
+### 15.2 Scale ambiguity even before periods
+
+Keeping $g$ fixed but replacing $dh$ by $\Lambda dh$ for real $\Lambda>0$ multiplies the induced metric by $\Lambda^2$, while leaving the Gauss-map Schwarzian unchanged. Its WE spinors scale by $\sqrt\Lambda$ and their Hermitian norm by $\Lambda$. Hence the **projective SL operator alone** does not determine even the metric scale: a Hopf quadratic differential/Weierstrass height normalization is an extra datum.
+
+## 16. Four actual holonomies on the same chosen conformal/spectral curve [D,H,C]
+
+| Connection or integral | Base path or evolution | Fiber/data | Holonomy or conserved quantity |
+|---|---|---|---|
+| Spatial SL transfer | $u$ varies with spectral point $E$ FIXED | solution vector in $\mathbb C^2$ | Wronskian and transfer matrix |
+| Gauss–Manin period transport | elliptic modulus varies, cycles marked | $H_1$ / cohomology local system | intersection matrix / period monodromy |
+| Hopf/Berry principal connection | a path in the Gauss sphere (pulled back along $g$) | normalized $U(1)$ phase | Berry phase and first Chern class |
+| WE affine translation | a cycle on punctured conformal surface | affine $\mathbb R^3$ position | $\mathrm{Re}\oint\boldsymbol\Phi$ |
+| Ambient adapted Euclidean Cartan | path on immersed surface | $\mathrm{SE}(3)$ frames/positions | rotational spin sign and translational monodromy, subject to global frame choices |
+
+Their underlying spaces, path variables, connection groups and reality conditions differ. An exact isomorphism of two elliptic curves identifies corresponding **meromorphic differentials and cycles when those are explicitly transported**, but it does not automatically conjugate all five connections.
+
+The correct global reconstruction criteria are (at least): existence of a compatible global spin structure or spin-cover patching, globally valid meromorphic WE forms and immersion regularity, reality conditions for a Euclidean immersion, and vanishing of the required real periods (or membership in a specified translation lattice). Neither a local Wronskian nor the scalar weighted $L^2$ norm imposes all these conditions.
+
+## 17. Enneper–Weierstrass is flat AFFINE reconstruction; Sym–Tafel is an ADDITIONAL loop-frame construction [D,K,C]
+
+The standard WE immersion is
+
+```math
+X(p)=X(p_0)+\mathrm{Re}\int_{p_0}^p\boldsymbol\Phi,\qquad d\boldsymbol\Phi=0\ \text{away from poles}.
+```
+
+This is flat **affine translation integration** in the Euclidean ambient target; its translational monodromy is $\mathrm{Re}\oint_\gamma\boldsymbol\Phi$.
+
+The Sym–Tafel construction, by contrast, requires a **separately supplied spectral-parameter family of flat matrix connections**. For example if
+
+```math
+d\Psi(z,\bar z;\lambda)=U(z,\bar z;\lambda)\Psi,\quad dU-U\wedge U=0
+```
+
+under the left-frame sign convention and suitable reality conditions, define the Lie-algebra-valued immersion candidate
+
+```math
+X_{\rm ST}=\Psi^{-1}\partial_\lambda\Psi.
+```
+
+Differentiating gives the exact formula
+
+```math
+dX_{\rm ST}=\Psi^{-1}(\partial_\lambda U)\Psi.
+```
+
+A real $\mathfrak{su}(2)\cong\mathbb R^3$ surface is obtained only with the appropriate loop-group real form, regularity, normalization and a value of $\lambda$. **Theorem 17.1 [D,C].** The WE construction does not require any spectral-parameter family. The Sym–Tafel construction does. These two immersion formulas can be gauge-equivalent **for selected integrable extended frames**, but they are not automatically the same reconstruction for every flat rank-two carrier.
+
+Likewise a generic *single-variable* SL system has a formally flat one-form $A(u,E)du$; to obtain a nontrivial **two-variable zero-curvature/Lax pair**, one must supply a second operator/coordinate and verify compatibility. Flatness in one dimension is automatic and cannot by itself prove the minimal-surface Gauss–Codazzi equations.
+
+## 18. The precise extent of the classical minimal-surface classification [K,C]
+
+A deep established classification theorem says that **connected properly embedded minimal planar domains** in $\mathbb R^3$ are the plane, catenoid, helicoid, and Riemann minimal examples under the classical proper-embeddedness hypotheses (Meeks–Pérez–Ros; see sources). The Riemann examples are notable for foliations by circles and lines in parallel planes; the statement is not a classification of all minimal surfaces by spectral genus.
+
+**Correction [C].** It is false that the catenoid, helicoid and Riemann examples exhaust *all* genus-zero/genus-one WE or SL–EP realizations. For instance, the Enneper surface is a classical immersed genus-zero minimal surface not in the properly embedded list; Scherk, Costa, and many other minimal surfaces satisfy different global topology or embeddedness hypotheses. Moreover “genus of the compactified conformal domain,” “genus of the Lax spectral curve,” and “genus of a quotient by translations” are three distinct invariants.
+
+The classification result is valuable precisely **because it is restricted and global**. It should not be promoted to a universal classification of every spectral elliptic curve or every local second-order carrier.
+
+## 19. The package that really does reconstruct a minimal surface [D,K]
+
+**Theorem 19.1 (typed spinor–projective–Weierstrass reconstruction, local).** Fix a simply connected complex coordinate patch $U$ on a Riemann surface. Let $g:U\to\mathbb{CP}^1$ be nonconstant meromorphic and let $\Theta$ be a holomorphic quadratic differential such that
+
+```math
+dh=\frac{g\,\Theta}{dg}
+```
+
+defines meromorphic WE height data whose triple $\boldsymbol\Phi=(\frac12(g^{-1}-g),\frac i2(g^{-1}+g),1)dh$ is regular and nondegenerate on the intended immersion patch. Suppose local compatible spinor square roots exist.
+
+Then:
+
+1. The local pair $p^2dz=dh/g$, $q=gp$ reconstructs all three WE forms quadratically, satisfying the nullity condition.
+2. Its Wronskian obeys $\mathscr W_z(p,q)dz^2=\Theta$, and its Hermitian norm determines the metric $ds^2=\frac14(|p|^2+|q|^2)^2|dz|^2$.
+3. Wherever $\Theta\ne0$ a natural coordinate $\xi$ with $d\xi^2=\Theta$ makes the Wronskian one, and the spinors solve the common projective equation $\psi_{\xi\xi}+\frac12\{g,\xi\}\psi=0$.
+4. The complex null WE forms integrate to a real local conformal minimal immersion in $\mathbb R^3$, unique up to translation for fixed WE forms, and therefore to an adapted flat Euclidean Cartan frame with the corresponding Gauss–Codazzi data.
+
+**Proof.** Items 1–3 are the algebraic identities of §§4–7 and local square-root/natural-coordinate theory. Item 4 is the classical WE representation, verified by holomorphic closedness, complex nullity and the nondegenerate metric; the fundamental theorem of surface theory gives the adapted frame.
+
+**Theorem 19.2 (global period qualification).** On a punctured non-simply-connected surface, the local immersion descends to a global immersion into $\mathbb R^3$ exactly when all required real translation periods $\mathrm{Re}\oint_\gamma\boldsymbol\Phi$ vanish, and the data obey the needed global regularity/patching conditions. More general translation quotients permit periods lying in a specified lattice. A global $\mathrm{SU}(2)$ lift needs separate spin-bundle patching; it does not follow merely from the WE Gauss map.
+
+**Status.** This is a theorem of a **specific decorated category** (Riemann surface, meromorphic Gauss map, Hopf differential, compatible spinors and periods), not a theorem that the original weighted SL carrier uniquely determines those decorations. It supplies a concrete exact reconstruction mechanism which the proposed “fiber holography” program can test against spectral data and genuine symmetry reductions.
