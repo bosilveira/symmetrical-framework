@@ -533,3 +533,114 @@ L_m\psi(u,P)=E(P)\psi(u,P),
 where the **spectral point is fixed as $u$ varies**. The WE map $g_R(P)$ is a *function of that spectral point*; it does not evolve under the same fixed-$E$ carrier. To compare it with the moving Dirichlet point one explicitly chooses the path $P=\gamma(u)$, which is an additional map constructed in §6, not the original stationary spectral-eigenvalue equation.
 
 Therefore, the rigorously proved relationship at present is a **selected Abel–Jacobi transport of line classes plus an exact WE spinor reconstruction on the same elliptic curve**. A globally connection-preserving BA-to-WE identification remains an open, stricter theorem.
+
+## 13. Same holomorphic spinors, two REAL FORMS: Euclidean Weierstrass and Lorentzian Kobayashi [D,V,K]
+
+Let $p(z),q(z)$ be a local pair of holomorphic spinor coefficients as above. The Euclidean WE holomorphic null triple is
+
+```math
+\boldsymbol\Phi_E=\left(\frac{p^2-q^2}{2},\frac{i(p^2+q^2)}2,pq\right)dz,\qquad \Phi_{E,1}^2+\Phi_{E,2}^2+\Phi_{E,3}^2=0.
+```
+
+For the Lorentz–Minkowski form of signature $(+,+,-)$ choose the corresponding Kobayashi-type holomorphic null triple
+
+```math
+\boldsymbol\Phi_L=\left(\frac{p^2+q^2}{2},\frac{i(p^2-q^2)}2,pq\right)dz,\qquad \Phi_{L,1}^2+\Phi_{L,2}^2-\Phi_{L,3}^2=0.
+```
+
+They are related by the **explicit complex linear map**
+
+```math
+\boldsymbol\Phi_L=T\boldsymbol\Phi_E,\quad T=\begin{pmatrix}0&-i&0\\i&0&0\\0&0&1\end{pmatrix},\quad T^{\mathsf T}\operatorname{diag}(1,1,-1)T=-I_3.
+```
+
+**Theorem 13.1 [D,V] (shared holomorphic null structure with different real forms).** The two triples are algebraically null for their respective complexified quadratic forms and are closed wherever $p,q$ are holomorphic. Their real primitives are therefore local conformal zero-mean-curvature immersions of the corresponding real types **where the induced metric is nondegenerate**. The transformation is a complex null-cone correspondence, not a real Euclidean isometry or an automatic globally regular Wick rotation.
+
+The two positive/indefinite Hermitian quadratic combinations yield different induced metrics:
+
+```math
+I_E=\frac14(|p|^2+|q|^2)^2|dz|^2,\qquad I_L=\frac14(|p|^2-|q|^2)^2|dz|^2.
+```
+
+The Lorentz immersion is spacelike when $|p|\ne|q|$ and has a degeneracy locus when $|p|=|q|$, equivalently $|g|=1$. This is precisely the familiar regular/maxface distinction in Kobayashi-type representations.
+
+### 13.1 What "the same first-order condition" actually means
+
+Both constructions use a **holomorphic structure**
+
+```math
+\bar\partial p=\bar\partial q=0
+```
+
+on local spinor coefficients, and their complex null one-forms integrate because holomorphic 1-forms in one complex dimension are closed. This is a first-order representation of the minimal/maximal surface equations.
+
+But $\bar\partial\Psi=0$ by itself is **not a complete flat $\mathrm{SU}(2)$ or $\mathrm{SU}(1,1)$ moving-frame connection**. A real adapted frame also depends on the Hermitian metric/reality form and on derivatives in both $z,\bar z$; its projected $U(1)$ connection can have nonzero curvature. A *spectral-parameter family* of flat Lax connections needed for a Sym–Tafel formula is further additional data. Thus the first-order holomorphic null construction is shared, but the global spin/frame/monodromy package is not automatically identical.
+
+### 13.2 Rigorous real-form sign classification
+
+The Euclidean spin geometry uses compact $\mathrm{SU}(2)\to\mathrm{SO}(3)$ for its real orthonormal frames; Lorentzian spin geometry uses a noncompact real form $\mathrm{SU}(1,1)\cong\mathrm{SL}(2,\mathbb R)$ (up to the conventional conjugacy of matrix realization) covering the connected Lorentz-frame group. The two real forms are not unitarily gauge-equivalent. Their complexification to $\mathrm{SL}(2,\mathbb C)$ is common, but the choice of Hermitian structure and regularity conditions is independent, as shown by $I_E$ versus $I_L$.
+
+## 14. Explicit catenoid example: its Lorentzian counterpart DEGENERATES at the waist [D,V,C]
+
+Take the canonical WE spinors from draft 200, preserving $r,c>0$ and $\zeta=u+iv$:
+
+```math
+p=i e^{-r\zeta/2},\qquad q=-i e^{r\zeta/2},\qquad u=\ln(x/c).
+```
+
+Then
+
+```math
+|p|^2=e^{-ru},\quad |q|^2=e^{ru},\qquad I_E=\cosh^2(ru)|d\zeta|^2.
+```
+
+The corresponding Kobayashi-type Lorentz metric is instead
+
+```math
+I_L=\sinh^2(ru)|d\zeta|^2.
+```
+
+It degenerates along the **entire waist $u=0$, equivalently $x=c$**.
+
+The Lorentz null triple for these spinors is
+
+```math
+\boldsymbol\Phi_L=(-\cosh(r\zeta),\,i\sinh(r\zeta),\,1)\,d\zeta.
+```
+
+Its real primitive is
+
+```math
+X_L(u,v)=\left(-\frac{\sinh(ru)\cos(rv)}r,-\frac{\sinh(ru)\sin(rv)}r,u\right).
+```
+
+**Theorem 14.1 [D,V,C].** The same holomorphic spinor pair and Wronskian generate (i) the smooth Euclidean catenoid and (ii) a Lorentzian maximal-surface parametrization that loses spacelike regularity at the canonical symmetry center $u=0$. Thus the shared first-order null-spinor algebra **does not imply a common globally regular surface**, common induced metric, or common self-adjoint Hilbert operator.
+
+The same issue is unavoidable somewhere on the **full compactified Riemann elliptic curve** with nonconstant degree-two meromorphic Gauss map: it is surjective onto the Gauss sphere, hence the preimage of the unit circle $|g_R|=1$ is nonempty. The Lorentzian metric built from the identical spinors degenerates along that locus. Spacelike maximal patches can be studied on chosen components after removing the degeneracy set, but the entire punctured Riemann domain cannot be silently promoted to one globally regular spacelike Kobayashi immersion by a real-form switch.
+
+## 15. The BPST/self-duality comparison is outside the proved bundle result [C,K]
+
+The four-dimensional self-duality equation for a connection $A$ is $F_A=\star F_A$ (or $F_A=-\star F_A$). It is a first-order equation on a connection whose curvature is a two-form in a **chosen oriented four-dimensional metric**. Holomorphic structures, twistor methods and symmetry reductions can relate special self-dual gauge fields to lower-dimensional systems, but the mere presence of $\mathrm{SL}(2,\mathbb C)$ spinor data or a genus-one curve does not imply a BPST instanton.
+
+The selected WE minimal/maximal surface representation is a first-order **closed null 1-form construction** on a complex one-dimensional domain. Its algebra and reality conditions differ from the 4D Yang–Mills Hodge-star condition. The framework may retain both as separate typed constructions for future study; this manuscript makes **no** identity between their gauge bundles or self-duality equations.
+
+## 16. The actual global reconstruction problem is now explicit [D,K,O]
+
+The selected **holomorphic** divisor ladder is
+
+```math
+H_R\otimes\mathcal O(P_0+P_\infty)\simeq S_R,\qquad D(u_*)\simeq S_R
+```
+
+with $D(u_*)=\mathcal O(\gamma(u_*)-P_\infty)$ at the Lamé half-period $u_*=K(m)/r$.
+
+This is a genuine geometric compatibility at a **selected spatial phase**, but a full global *connection-preserving reconstruction* would still need:
+
+1. **Precise eigenline convention.** Specify the actual Krichever fixed pole divisor $D_*$, the moving Dirichlet zero divisor $\gamma(u)$, the Bloch eigenline and their dual/twist identifications, including the sign of the spectral Wronskian.
+2. **Explicit line isomorphism.** Use the sigma half-period construction of §5 and a theta/prime-form representation for the selected BA divisor. Prove the isomorphism over **all points** of the elliptic curve as holomorphic lines, not merely equality of abstract degree.
+3. **Connection comparison.** Specify the BA spectral connection and its irregular type, the flat 2-torsion spin connection, and the Hopf Chern connection, together with the extra twist curvature needed to compare them. A meromorphic gauge cannot cancel the BA irregular type with $dh_R$.
+4. **Marked periods.** Compare the BA quasimomentum $a/b$ periods with the Riemann WE translation/flux periods and the Berry holonomies, using the exact draft-170 Gauss–Manin gauge. A period determinant being constant does not make the individual period vectors equal.
+5. **Reality and operator domain.** Track real forms, spin signs, self-adjoint domains, and (if using a maximal surface) the locus $|g_R|=1$, at which the induced metric is singular.
+6. **Integrable extended frame.** A Sym–Tafel immersion needs an additional two-variable spectral-parameter Lax pair and reality reduction; a fixed-energy spatial SL equation alone does not produce a unique immersed surface.
+
+**Candidate theorem that survives the audit:** *Selected One-Gap Lamé–Riemann Elliptic Picard Transport and Half-Period Spin Compatibility*, together with the sigma uniformization and a **connection-obstruction theorem**. A stronger global BA/Hopf/WE connection-preserving equivalence remains an open, precisely formulated research problem.
