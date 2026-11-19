@@ -960,3 +960,55 @@ In that comparison the original center $c$ merely locates $u=0$ on the multiplic
 - NIST DLMF, Airy functions and their Wronskians (chapter 9), and elliptic/Weierstrass functions (chapter 23): https://dlmf.nist.gov/9 ; https://dlmf.nist.gov/23 .
 
 **Scope.** The classical names and results are attributed; exact parameter-scaled formulas and the cross-dictionary are derived here. No claim of physical Yang–Mills, quantization, spectral self-adjointness or a universal complete global affine-sphere reconstruction follows from a formally flat one-dimensional frame.
+
+## 26. Main conditional theorem, classification boundaries and next tests
+
+### 26.1 Main combined theorem (selected SL–EP–SL3/Tzitzéica correspondence) [D,V,K]
+
+**Theorem 26.1.** Let $Q:I\to\mathbb R$ be $C^1$, and choose two independent real solutions of $\psi''=Q\psi$ with constant nonzero Wronskian $W$. Let $G$ be a fixed positive-definite symmetric real 2×2 matrix of determinant $\delta>0$. Define the positive envelope $\rho^2=(\psi_1,\psi_2)G(\psi_1,\psi_2)^{\mathsf T}$ and the symmetric-square curve $Y=(\psi_1^2,\psi_1\psi_2,\psi_2^2)$.
+
+Then all the following statements are exact on the selected regular interval:
+
+1. The rank-two carrier has an SL2 first-order companion and projective Riccati equation.
+2. The quadratic three-vector $Y$ is a nondegenerate rank-three solution of $Y'''=4QY'+2Q'Y$ with $\det(Y,Y',Y'')=2W^3$.
+3. The rank-three connection is the symmetric-square representation of the rank-two connection, lands in the proper split-orthogonal subgroup $\mathrm{SO}^+(2,1)\subset\mathrm{SL}(3,\mathbb R)$, and carries zero Wilczyński cubic.
+4. The Gram square $R=\rho^2$ satisfies the same **linear third-order equation** and the exact quadratic conserved identity $2RR''-R'^2-4QR^2=4\delta W^2$.
+5. The positive square root $\rho$ solves the **nonlinear Ermakov–Pinney equation** $\rho''=Q\rho+\delta W^2\rho^{-3}$.
+6. The exact Tzitzéica curve ratio for $Y$ is $Q'/W^3$ (or $2Q'$ after normalized determinant-one scaling).
+7. Therefore **Y is a nonzero-constant Tzitzéica curve iff Q is affine linear with nonzero slope**, with the selected parameter/normalization fixed.
+
+**Proof.** §§2–7 and 23, including direct differentiation and determinant expansion, prove items 1–7 without any additional geometric hypothesis. The preservation of the binary quadratic discriminant gives the subgroup statement; the nonzero-constant criterion is immediate from item 6.
+
+**Corollary 26.2 [C] (limits of the proposed identification).** This theorem does not imply that all Tzitzéica curves are symmetric squares, because the explicit determinant-one curve of §8 has $\mathcal W_3=-6\ne0$. It does not imply that every SL–EP/Pöschl–Teller/Lamé envelope is a nonzero-torsion Tzitzéica curve, because those selected potentials do not have nonzero constant derivatives. It does not identify the 2D affine-sphere Lax connection with the Euclidean WE/Spin(3) connection, nor does a 3D affine-space ambient realization determine a global immersion from one scalar ODE without initial frames, periods and real forms.
+
+### 26.2 Independent affine-sphere theorem [D,V,K]
+
+**Theorem 26.3.** For a scalar field $w(a,b)$, the declared real matrices $A_T,B_T$ of §14 define a trace-free two-variable connection whose zero curvature is equivalent to $w_{ab}=e^w-e^{-2w}$. A diagonal symmetry reduction $w(a,b)=h(a+b)$ has the first integral $v_s^2=2v^3+\varepsilon_Tv^2+1$ for $v=e^h>0$. Its nodal member $\varepsilon_T=-3$ is exactly Riccati-linearizable by $Z=\sqrt{2v+1}$. At $\varepsilon_T=-\sqrt[3]{54}$ the smooth first-integral elliptic curve is explicitly real-isomorphic, as an **unmarked algebraic curve with scaled holomorphic differential**, to the selected symmetric Riemann/Lamé elliptic curve of drafts 170/210.
+
+**Proof.** The matrix curvature identity is §14; reduction and first integral are §§16–17; the explicit real elliptic isomorphism is §18.
+
+**Scope.** The theorem is a separate two-dimensional affine-sphere reduction, not a proof that the single-plane-curve condition of Theorem 26.1 is its universal asymptotic-line reduction. Identifying an actual curve on an affine sphere needs a declared map; §9 supplies a special constructive example through the unimodular diagonal group orbit.
+
+### 26.3 Research directions motivated by this exact new dictionary [O]
+
+1. **Full projective-opers comparison.** Construct a precisely normalized rank-three SL3 oper for the selected affine-sphere Lax pair, and compare its Wilczyński cubic with the general centro-affine constant $\alpha$. Determine which special gauge reductions yield zero projective cubic and hence admit an SL2 square root.
+2. **Exact differential invariants under reparametrization.** Study how the Tzitzéica constant and Wilczyński cubic coexist under arbitrary projective changes of parameter, and identify the full nondegenerate curve equivalence classes without silently assuming the canonical log coordinate equals centro-affine arclength.
+3. **Actual geometric reduction from Tzitzéica affine spheres.** For the two-dimensional Lax-integrated surface, classify asymptotic curves versus symmetry-group orbits, and determine when their Euclidean torsion/distance invariant is constant. Separate the positive-curvature $xyz=1$ example from the indefinite affine-sphere equation.
+4. **The symmetric-square spin sign.** Starting from the fixed Riemann two-torsion WE line $S_R=\mathcal O(P_0-P_\infty)$ (draft 210), compute the descent of its quadratic products into rank three and their monodromy. Identify exactly which additional theta characteristic is needed to invert the passage PSL2→SO(2,1).
+5. **Three competing genus-one markings.** For the Tzitzéica reduced cubic, original Master cubic and selected Lamé/Riemann elliptic curve, determine actual marked maps of holomorphic/meromorphic differentials and periods. The explicit $j=1728$ real isomorphism in §18 is one natural test.
+6. **Twisted affine hierarchy.** Trace the Tzitzéica $A_2^{(2)}$ loop-group spectral curve and Baker–Akhiezer data, and test for a compatible Darboux/Miwa/Grassmannian description. Do not confuse a twisted affine algebra label with the framework's level index $\ell$.
+7. **Real positive EP slices.** For rank-three Airy Sym² curves and the rank-three Lax reductions, choose real contours, positive Gram matrices and their exact weights, and compare the resulting EP clocks to the canonical Gudermannian. Generic complex projective solutions require extra real structures before self-adjointness may be claimed.
+8. **Affine Monge–Ampère and variational Hessians.** Compare the explicit Tzitzéica graph equation of §12 with the already catalogued framework Yamabe/Monge–Ampère reductions, fixing the affine versus Euclidean metric and the functional being varied.
+9. **Curve transport closure.** Analyze which constant-$\alpha$ centro-affine companion systems have prescribed finite monodromy and truly close as curves; distinguish projective closure from frame closure and from Euclidean WE real immersion period closure.
+10. **Cylindrical Green kernel.** Study the forced linear oscillator $f''+f=-1/(\alpha t+C)$ and its singular endpoint in the SL–Green's function language, including weighted domains and nonlinear origin-distance constraints.
+11. **Projective versus binary-quartic invariant functors.** Seek an explicit algebraic map from the SL3 Wilczyński cubic/affine Pick cubic to a selected quartic pencil, with all weights and degrees. Do not identify projective cubic coefficients with binary-quartic $(I,J)$ by coincident numerical values.
+12. **Higher symmetric powers.** Study Sym^n(SL2) as an exact $(n+1)$-dimensional linear lift with induced Wronskian identities and higher Wilczyński obstructions. Test whether any chosen framework level admits a genuine higher-rank surface geometry, preserving the difference between Lie-group representation rank and spectral genus.
+13. **Physical theory boundary.** Tzitzéica/Bullough–Dodd, affine Toda, Euclidean minimal surfaces and four-dimensional Yang–Mills all admit first-order or zero-curvature languages in selected gauges. No one of these mathematical representations forces a BPST instanton, quantum gauge field, or asymptotic holographic boundary. Such applications require separately declared equations, field content and variational principles.
+
+### 26.4 Final statement
+
+**The answer to the proposed affine analogy is a qualified YES.** The framework's existing linear Sturm–Liouville, nonlinear positive Ermakov–Pinney, Riccati, Drach, Wronskian and quadratic-discriminant mechanisms lift **exactly** to a rank-three affine/projective system through Sym²(SL2). The Tzitzéica curve equation is a genuine **third-order determinant condition** and a **first-order SL3 frame condition**; it cuts out a special subfamily (Airy in the selected symmetric-square chart). The classical two-dimensional Tzitzéica affine-sphere system has its own checked SL3 zero-curvature connection and a remarkably parallel elliptic-to-nodal-Riccati reduction.
+
+**The answer to a blanket identification is NO.** Generic Tzitzéica curves have nonzero Wilczyński cubic and are not SL2 symmetric squares; the Riemann WE order-two spin line is lost under Sym² unless marked; the Euclidean minimal and affine-sphere conditions have different curvature/normal data; and a shared $j$ or Lie subgroup is not enough to identify connections, meromorphic periods, self-adjoint domains or global immersed surfaces.
+
+**Recommended next foundational theorem candidate:** *The SL2 Gram–Pinney–Drach Symmetric-Square/SL3 Centro-Affine Correspondence, with a Nonzero Tzitzéica Criterion*. This is proved under its explicit hypotheses in Theorem 26.1 and is the mathematically strongest new dictionary step. Keep it in the staging folder pending mathematical editorial review and independent verification before promotion to the canonical paper.
