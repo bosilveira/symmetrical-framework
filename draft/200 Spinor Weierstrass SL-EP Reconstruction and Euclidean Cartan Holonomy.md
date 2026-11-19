@@ -209,3 +209,209 @@ e^{2\omega}=\frac{\rho^4}{4},\qquad e^\omega=\frac{\rho^2}{2}.
 The induced metric for $X=\mathrm{Re}\int\Phi$ is half the squared Hermitian norm of its complex null differential.
 
 **Important restriction.** This $\rho(z,\bar z)$ is initially a **two-real-variable** positive function on a conformal surface, not automatically the solution of a one-dimensional real Pinney ODE. A one-dimensional EP theorem requires a declared real slice or continuous-symmetry reduction and a common *real-coefficient* carrier for the restricted spinors. The catenoid meets those conditions explicitly; a generic minimal surface does not.
+
+## 8. FULL CANONICAL EXAMPLE: the catenoid WE spinors satisfy the half-rate linear carrier [D,V]
+
+Keep $r,c,\mu>0$ and the canonical coordinate
+
+```math
+u=\ln(x/c),\qquad \zeta=u+iv,\qquad v\sim v+\frac{2\pi}{r}.
+```
+
+Choose the historical catenoid Weierstrass data
+
+```math
+g_C(\zeta)=-e^{r\zeta},\qquad dh_C=d\zeta.
+```
+
+An explicit compatible pair of holomorphic spinor coefficients is
+
+```math
+p(\zeta)=i\,e^{-r\zeta/2},\qquad q(\zeta)=-i\,e^{r\zeta/2}.
+```
+
+Direct substitution gives
+
+```math
+g_C=q/p,\qquad p^2=1/g_C,\qquad q^2=g_C,\qquad pq=1,\qquad pq_\zeta-p_\zeta q=r.
+```
+
+Their quadratic Weierstrass triple is precisely
+
+```math
+\boldsymbol\Phi_C=(\sinh(r\zeta),-i\cosh(r\zeta),1)\,d\zeta.
+```
+
+Its real primitive recovers the catenoid, with no untracked scale:
+
+```math
+X_C(u,v)=\left(\frac{\cosh(ru)\cos(rv)}r,\frac{\cosh(ru)\sin(rv)}r,u\right).
+```
+
+### 8.1 Exact rate-halving and symmetric-square hierarchy
+
+The two spinor components satisfy the SAME constant-coefficient linear differential equation
+
+```math
+p_{\zeta\zeta}=\frac{r^2}{4}p,\qquad q_{\zeta\zeta}=\frac{r^2}{4}q.
+```
+
+The projective Gauss map has
+
+```math
+\{g_C,\zeta\}=-\frac{r^2}{2},\qquad -\partial_\zeta^2+\frac{r^2}{4}
+```
+
+as its associated zero-energy projective carrier expression. The Weierstrass **quadratic** forms $p^2,pq,q^2$ lie in the three-dimensional symmetric-square solution space with exponential rates $-r,0,+r$; their real combinations produce $R=\cosh(ru)$ and $b=\sinh(ru)$.
+
+**Theorem 8.1 [D,V] (spinor half-rate).** The catenoid's rate-$r$ hyperbolic fields are quadratic expressions in a flat rank-two carrier with rates $\pm r/2$. The original canonical weighted SL free carrier of drafts 120/180, under $U_cf=xf$, is instead $-\partial_u^2+r^2$. Its coefficient is **four times the spinor carrier's coefficient** at fixed $u$; they are related by symmetric-square/rate multiplication, not literally the same differential operator.
+
+### 8.2 The WE spinor Gram norm is an Ermakov–Pinney amplitude
+
+Along the real meridian,
+
+```math
+\rho(u)^2=|p(u)|^2+|q(u)|^2=e^{-ru}+e^{ru}=2R(u).
+```
+
+The two real independent solutions $\phi_1=e^{-ru/2}$, $\phi_2=e^{ru/2}$ have Wronskian $\mathscr W=r$ and positive Gram matrix $I_2$. Therefore
+
+```math
+\rho_{uu}=\frac{r^2}{4}\rho+\frac{r^2}{\rho^3},\qquad \rho=\sqrt{2\cosh(ru)}.
+```
+
+This is a TRUE constant-strength Pinney equation for the selected real carrier, with inverse-cubic strength $k_{\rm EP}=r^2$ and hyperbolic linear part $\omega^2=-r^2/4$.
+
+The original framework's reciprocal envelope is
+
+```math
+a(u)=\mu^{1/4}\sqrt{R(u)},\qquad \rho=\sqrt2\,\mu^{-1/4}a.
+```
+
+Its scaled equation is exactly the historical separatrix EP form
+
+```math
+a_{uu}=\frac{r^2}{4}a+\frac{\mu r^2}{4a^3}.
+```
+
+**Theorem 8.2 [D,V] (exact WE–EP scale identification).** On this selected catenoid, the **positive Hermitian norm of the Weierstrass spinor pair is, up to the explicit $\mu$ scaling, precisely the canonical EP envelope**. The induced metric is recovered as
+
+```math
+ds_C^2=\frac{\rho^4}{4}|d\zeta|^2=R(u)^2(du^2+dv^2).
+```
+
+This explains the appearance of EP's quadratic Gram expression in the local geometry. It is stronger than matching a few similar differential equations, but it holds for this **selected real one-variable reduction**, not automatically for arbitrary finite-energy Duffing trajectories or generic minimal surfaces.
+
+### 8.3 The Hopf quadratic differential calibration
+
+The Wronskian–Hopf identity gives
+
+```math
+\Theta_C=\frac{dg_C}{g_C}\,dh_C=r\,d\zeta^2,\qquad Q_{H,C}=-\frac r2d\zeta^2
+```
+
+with the paper's convention $II=2\mathrm{Re}(Q_H)$. This independently verifies the factor of $1/2$, the spinor Wronskian, and the canonical constant Hopf differential of the catenoid.
+
+## 9. From the WE spinor to the Hopf map: EXACT normalization, but an independent phase [D,V]
+
+Normalize the catenoid Weierstrass spinor pointwise:
+
+```math
+\eta(\zeta)=\frac1{\rho(u)}\binom{p(\zeta)}{q(\zeta)}\in S^3\subset\mathbb C^2.
+```
+
+Its stereographic Hopf projection is
+
+```math
+g_C=q/p=-e^{r\zeta}\in\mathbb{CP}^1\cong S^2.
+```
+
+On a simply connected chart, the normalized spinor defines a **local** $\mathrm{SU}(2)$ frame by
+
+```math
+U_\eta=\begin{pmatrix}\eta_1&-\bar\eta_2\\ \eta_2&\bar\eta_1\end{pmatrix},\qquad U_\eta^\dagger U_\eta=I,\quad\det U_\eta=1.
+```
+
+However the **Hopf horizontal lift** along a path is not determined merely by normalizing the length $\rho$. The connection is the independently specified Hermitian one-form
+
+```math
+A_{\rm Hopf}=-i\,\eta^\dagger d\eta.
+```
+
+For the explicit catenoid spinor the real meridian and angular components are
+
+```math
+(A_{\rm Hopf})_u=0,\qquad (A_{\rm Hopf})_v=\frac r2\tanh(ru)=\frac r2W.
+```
+
+Thus the chosen lift is horizontal along meridians but **not** along generic angular paths. A horizontal lift of a prescribed path requires an additional compensating phase determined by integrating $A_{\rm Hopf}$; its existence along a path is not the same as EP amplitude positivity.
+
+### 9.1 Connection curvature and catenoid Levi–Civita curvature
+
+Differentiate the Hopf potential to get
+
+```math
+F_{\rm Hopf}=dA_{\rm Hopf}=\frac{r^2}{2}S^2du\wedge dv.
+```
+
+The catenoid's Levi–Civita tangent curvature form in the same orientation is
+
+```math
+d\omega_C^{LC}=-r^2S^2du\wedge dv.
+```
+
+Hence the exact selected connection relation is
+
+```math
+F_{\rm Hopf}=-\frac12d\omega_C^{LC}.
+```
+
+This is a genuine **connection-curvature correspondence**, inherited from the Gauss map and the selected immersed geometry. It is not an identification of the independent spatial SL rank-two carrier matrix with the $U(1)$ Hopf connection.
+
+### 9.2 A global spin-sign obstruction even on the catenoid
+
+Under one full catenoid angular circuit $v\mapsto v+2\pi/r$,
+
+```math
+p\mapsto-p,\qquad q\mapsto-q,\qquad g_C\mapsto g_C,\qquad U_\eta\mapsto-U_\eta.
+```
+
+The $\mathrm{SO}(3)$ moving frame and Gauss map descend even though this particular local $\mathrm{SU}(2)$ spin lift picks up the nontrivial central sign. A globally single-valued spinor representative requires a different patching/double-cover choice. **This is a real global obstruction which the one-dimensional EP ODE does not resolve**.
+
+For comparison, the standard north-chart Hopf spinor $(1,g_C)/\sqrt{1+|g_C|^2}$ has angular potential $\frac r2(1+W)\,dv$; it differs from the locally displayed WE-spinor potential by $\frac r2dv$, a change of spinor gauge whose angular phase is not single-valued after one circuit. Holonomy must incorporate that patch transition.
+
+## 10. Riemann minimal examples: Hopf factor is nonconstant and the natural SL coordinate branches [D,H,C]
+
+The historical Riemann minimal-example elliptic data are
+
+```math
+w_R^2=g_R(g_R-\lambda_R)(\lambda_Rg_R+1),\qquad \lambda_R>0,\qquad dh_R=A_R\,\frac{dg_R}{w_R},\quad A_R>0.
+```
+
+Choose a local holomorphic Abelian coordinate
+
+```math
+d\zeta=\frac{dg_R}{w_R},\qquad (g_R)_\zeta=w_R,\qquad (h_R)_\zeta=A_R.
+```
+
+The spinor Wronskian/Hopf coefficient is now
+
+```math
+\theta_R(\zeta)=\frac{(h_R)_\zeta(g_R)_\zeta}{g_R}=A_R\frac{w_R}{g_R},\qquad \Theta_R=A_R\frac{w_R}{g_R}\,d\zeta^2.
+```
+
+**Theorem 10.1 [D,H] (Riemann surface spinor carrier).** On any simply connected patch avoiding zeros/poles of $\Theta_R$, the square-root coordinate
+
+```math
+d\xi=\sqrt{\Theta_R}=\sqrt{\frac{A_R}{g_Rw_R}}\,dg_R
+```
+
+normalizes the Weierstrass spinor Wronskian to one. The corresponding normalized spinors solve $\psi_{\xi\xi}+\frac12\{g_R,\xi\}\psi=0$ and reproduce **the complete Riemann Weierstrass triple** by the quadratic construction of §6.
+
+Unlike the catenoid case, $\theta_R$ is generally nonconstant, and $\xi$ is only locally single-valued. In particular, at a simple finite branch point where $w_R=0$ and $g_R\ne0$, the Abelian coordinate $\zeta$ is regular while $\theta_R$ vanishes to first order. Locally $\xi-\xi_0\sim(\zeta-\zeta_0)^{3/2}$ and $g_R-g_0\sim(\xi-\xi_0)^{4/3}$; therefore the normalized Schwarzian has the singular leading behavior
+
+```math
+\{g_R,\xi\}\sim-\frac7{18}(\xi-\xi_0)^{-2}.
+```
+
+This branching is the natural-coordinate singularity at an **umbilic/zero of the Hopf differential**. The immersed surface itself can remain smooth there. It is precisely why a globally regular single-variable SL carrier over the whole compact elliptic curve does not follow from the local natural-coordinate theorem.
