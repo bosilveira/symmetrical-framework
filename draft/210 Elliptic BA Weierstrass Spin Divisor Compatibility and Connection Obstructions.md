@@ -825,3 +825,131 @@ The framework now has two concrete ways to pass between the same chosen genus-on
 The bridges share the **same explicitly identified elliptic curve, branch point $P_0$, 2-torsion spin class and marked differential**. Their spatial/Abelian evolution coordinates, operators, Hilbert realizations and connections remain different until an actual intertwiner is supplied.
 
 **This is the strongest currently established algebraic version of the user's “whole web” idea:** the individual links are exact, and their types are explicit; one should not substitute a universal scalar ODE or one $\mathrm{SL}(2,\mathbb C)$ connection for the full decorated geometry.
+
+## 21. CONDITIONAL ELLIPTIC PICARD–SPIN–DARBOUX RECONSTRUCTION THEOREM [D,V,K,H]
+
+**Theorem 21.1 (selected one-gap global HOLomorphic compatibility).** Fix the real Lamé parameter $0<m<1$, canonical resolution $r>0$, and the Riemann modulus $\lambda_R>0$ related by $m=(1+\lambda_R^2)^{-1}$. Let $\Gamma_m$ and $E_R$ be the smooth compact elliptic curves of §2, identified by the exact affine isomorphism from draft 170. Let $P_\infty$ be the group origin and $P_0$ the point $g_R=0$.
+
+Then:
+
+1. **Unique selected WE spin class.** The Riemann meromorphic WE data $(g_R,dh_R)$ determine the nontrivial theta characteristic $S_R=\mathcal O(P_0-P_\infty)$ by the divisor of $dh_R/g_R$; the compatible meromorphic spinors are uniformized by the half-period sigma section $h_a$ of §5.
+2. **Hopf holomorphic compatibility.** The Gauss-pulled tautological line $H_R=g_R^*\mathcal O(-1)$ satisfies the exact global twist $H_R\otimes\mathcal O(P_0+P_\infty)\simeq S_R$.
+3. **Moving spectral divisor class.** The Dirichlet coordinate $\gamma(u)=r^2(1-m-m\mathrm{sn}^2(ru|m))$ satisfies the Dubrovin equation and the squared-eigenfunction Drach cubic; its Abel image on the same Riemann elliptic curve is $z_\gamma(u)=a+\frac r{\sqrt{D_R}}(u-u_*)$ modulo periods.
+4. **Distinguished Picard matching.** The class $D(u)=\mathcal O(\gamma(u)-P_\infty)$ is isomorphic to $S_R$ precisely at the spatial half-periods $u_*=K(m)/r$ modulo $2K(m)/r$ on the chosen real orbit. Generically the class differs by the nontrivial Jacobian translation $\mathcal O(P_{z_\gamma(u)}-P_a)$.
+5. **Band-edge Lamé spinor and displacement.** In the *different* Riemann Abel coordinate $z$, the square-root spinor $\chi=\sqrt{g_R}$ is a meromorphic one-gap Lamé band-edge eigenfunction, its logarithmic derivative produces the reciprocal Darboux pair, and the partner is a translation by the SAME 2-torsion half-period $a$. The historical Riemann horizontal period exactness is its Riccati derivative identity.
+
+**Proof.** (1) follows from $\operatorname{div}(g_R)=2P_0-2P_\infty$, the nowhere-zero holomorphic height form and the explicit sigma square root §§3/5. (2) is §4. (3) follows from Jacobi differentiation, polynomial Drach identity and transported elliptic holomorphic differential §§6–8. (4) is Abel's theorem on the compact elliptic curve, with the real gap endpoints computed in §6. (5) follows directly from the cubic curve's differential equation, Riccati factorization, the exact 2-torsion reciprocal involution and H466 §§17–19.
+
+**What the theorem does NOT assert.** It does not equate the fixed-pole BA normalization, moving Dirichlet divisor and Lax eigenline without extra choices; does not construct a globally connection-preserving intertwiner; does not give a real unitary map between original periodic Lamé $L_m$ and the meromorphic Abel-coordinate $L_+$; and does not derive Euclidean or Lorentzian immersion periods from a lone SL spectrum.
+
+**Theorem 21.2 (connection obstruction).** For the **natural choices** (flat 2-torsion spin connection, Gauss Hopf Chern connection, and selected BA spectral meromorphic irregular connection), no gauge equivalence preserving these connections is implied by Theorem 21.1: their curvatures differ on generic patches and the BA irregular double pole at $P_\infty$ cannot be cancelled by adding a multiple of the holomorphic WE height differential.
+
+**Proof.** Curvature invariance under gauge and the principal-part calculation of §§10–11. A new *twisted* metric/connection may be built after supplying additional curvature and flat-holonomy data, but that is a new object requiring proof.
+
+**Interpretation:** This is a strong conditional **global line-class / half-period Darboux compatibility theorem** plus an equally important no-go for automatic connection matching. It is a genuine step from projective local spinor formulas toward global algebro-geometric organization.
+
+## 22. Explicit r=2, c, mu, and Riemann symmetric modulus regression [D,V]
+
+Set the framework's resolution $r=2$; keep its original multiplicative center $c>0$ and field amplitude $\mu>0$ as *independent constants*. On the selected symmetric elliptic fiber choose $\lambda_R=1$, so
+
+```math
+m=\frac12,\quad k_R=0,\quad D_R=2,\quad (E_0,E_1,E_2)=(-2,0,2).
+```
+
+The spectral and Riemann curves, with the verified affine map, become
+
+```math
+\Gamma_{1/2}:\ \eta^2=-(E+2)E(E-2),\qquad E_R:\ y_R^2=g_R^3-g_R,\qquad g_R=-E/2.
+```
+
+Their Riemann Weierstrass uniformization is
+
+```math
+g_R(z)=\wp(z;4,0),\qquad z=\int\frac{dg_R}{2y_R},\qquad \wp(a)=0,\quad 2a\in\Lambda_R.
+```
+
+The selected WE spin structure is $S_R=\mathcal O(P_0-P_\infty)$, with $P_0$ the branch above $g=0$. Its sigma section satisfies $h_a(z)^2=\wp(z)$ and the exact reciprocal half-period shift
+
+```math
+\wp(z+a)=-1/\wp(z).
+```
+
+The WE spinors in the *Riemann Abel variable* are
+
+```math
+\beta_R=2A_R,\qquad p_R(z)=\sqrt{2A_R}/h_a(z),\qquad q_R(z)=\sqrt{2A_R}\,h_a(z).
+```
+
+The **separate canonical real Lamé spatial problem** has moving gap point
+
+```math
+\gamma(u)=2\,\mathrm{cn}^2(2u\mid \tfrac12),\qquad\eta_\gamma=4\,\mathrm{sn}(2u)\mathrm{cn}(2u)\mathrm{dn}(2u).
+```
+
+It evolves by $\gamma_u=-2\eta_\gamma$, crossing the WE branch $E_1=0$ at
+
+```math
+u_*=\frac12K(\tfrac12)\pmod{K(\tfrac12)},\qquad x_*=c\exp\left(\frac12K(\tfrac12)\right)\exp\left(jK(\tfrac12)\right).
+```
+
+The exact **Riemann Abel/Picard slope** is
+
+```math
+\frac{dz_\gamma}{du}=\sqrt2,\qquad z_\gamma(u)=a+\sqrt2(u-u_*)\pmod{\Lambda_R}.
+```
+
+The meromorphic Abel-coordinate Riccati superpotential is
+
+```math
+H=\frac12\frac{\wp'}{\wp},\qquad H_z=\wp+\frac1{\wp},\quad H^2=\wp-\frac1{\wp}.
+```
+
+Its Darboux partners are
+
+```math
+D^\sharp D=-\partial_z^2+2\wp(z),\qquad DD^\sharp=-\partial_z^2-\frac2{\wp(z)}=-\partial_z^2+2\wp(z+a).
+```
+
+The selected nontrivial spinor $q_R$ solves the band-edge equation $(-\partial_z^2+2\wp)q_R=0$; its reciprocal $p_R$ solves the shifted partner zero equation. **These are Abel-coordinate equations**, not a claim that the original spatial operator $L_{1/2}=-\partial_u^2+4\,\mathrm{sn}^2(2u|1/2)-4$ equals either of them without a selected complex coordinate change and domain map.
+
+The original Symmetrical Function remains
+
+```math
+f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)},\qquad \|f_\mu\|^2_{L^2(xdx)}=\frac1{4\mu}.
+```
+
+It has the earlier zero-energy EP/catenoid spinor identification of draft 200, but $\mu$ is NOT a modulus, Riemann immersion scale or BA divisor phase. This regression separates the algebraic $r$ resolution, multiplicative origin $c$, field normalization $\mu$, elliptic modulus and marked immersion amplitude $A_R$.
+
+## 23. The attached conjectural "exact divisor ladder": audited verdict [D,C]
+
+| Statement in the attachment | Audit result |
+|---|---|
+| $g_R$ has divisor $2P_0-2P_\infty$. | **Exact.** It has a double zero at the branch $g=0$ and double pole at infinity. |
+| The WE data select an elliptic 2-torsion spin bundle. | **Exact**, specifically $S_R=\mathcal O(P_0-P_\infty)$; spinors must be **meromorphic** at the planar ends. |
+| The Hopf line is $\mathcal O(-2P_\infty)$ and can be twisted into the WE spin line. | **Exact holomorphic bundle identity**, with $\mathcal O(P_0+P_\infty)$ as twist. Does not automatically compare natural connections. |
+| A real one-gap BA/Dirichlet divisor always lies at a branch point. | **False generically.** The exact moving Dirichlet point travels through the gap $(E_1,E_2)$; it reaches $P_0$ only at special half-period positions. |
+| The moving degree-zero Dirichlet class can equal the WE spin class. | **True at selected spatial phases**, precisely the corresponding point equality on the elliptic curve. |
+| The BA eigenline and moving Dirichlet divisor are definitionally the same object. | **Requires normalization:** standard Krichever pole divisor can be fixed while Dirichlet zeros move. |
+| A global theta/sigma expression can be written. | **Yes:** the half-period sigma section $h_a$ is given explicitly and is a section of a 2-torsion spin line, not a global scalar elliptic square root. |
+| Subtracting $C\,dh_R$ from the spectral second-kind $dp$ cancels its double pole. | **False for all finite $C$** because $dh_R$ is holomorphic at spectral infinity while $dp$ has a double pole. |
+| The spin/Hopf/BA connections become gauge-identical automatically after the divisor twist. | **False.** Chern curvature and irregular type differ under the natural choices. An enriched twisted connection is additional data. |
+| The same holomorphic spinors can describe Euclidean minimal and Lorentz maximal surfaces. | **Exact locally with distinct real forms**, but the induced metric sign causes a singular set when $|p|=|q|$. |
+| The Riemann WE spinor square root is a Lamé band-edge Baker-type solution. | **Exact** in the Abel elliptic coordinate; its reciprocal is the Darboux-partner zero mode. |
+| The two Darboux potentials are related by a 2-torsion half-period translation. | **Exact** on the Riemann elliptic curve, by $g(z+a)=-1/g(z)$. |
+| The Riemann horizontal WE exact differential is its Riccati derivative. | **Exact** in the archived normalization H466. |
+| This proves a universal isomorphism of all SL–EP/minimal-surface operator domains. | **No.** Spatial, spectral, projective, Hermitian and affine connection/period data remain separately typed. |
+
+## 24. What "fibration holography" would mean AFTER this result [D,O]
+
+The strongest tested phenomenon here is not that a codimension-one asymptotic boundary may be discarded in every setting. Rather, the **same elliptic curve with carefully marked line/divisor, connection and differential data** supports:
+
+- a Lamé finite-gap spectral operator and its moving Dirichlet/Picard coordinates;
+- a selected Riemann WE immersion and its meromorphic spinors;
+- a 2-torsion Gauss-map reciprocal involution implementing a Darboux displacement;
+- a pulled-back Hopf Hermitian line with nontrivial Chern curvature;
+- real Euclidean and Lorentzian null-spinor constructions with different metric positivity domains;
+- period and affine-translation obstructions to a global immersion.
+
+The projective real-one-variable SL–EP reduction is one **exactly constructed local/selected real slice** of this network, not an all-purpose functor preserving arbitrary bulk topology.
+
+The programmatic extension *Fibration Holography* can ask whether a **decorated base curve** and its collection of equivariant connections/periods reconstruct an ambient Euclidean or pseudo-Riemannian geometry in a faithful category. Such a theorem would require an explicit definition of the objects, their morphisms, and a proof of inverse faithfulness. The current work supplies **several actual construction maps and non-equivalence tests**. It does not assert a physical holographic duality, a common 4D Yang–Mills gauge bundle, or complete reconstruction from one scalar equation.
