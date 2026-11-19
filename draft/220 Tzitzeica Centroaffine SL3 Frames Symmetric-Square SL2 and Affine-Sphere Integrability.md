@@ -171,3 +171,223 @@ X_{sss}=2Q_s X+4Q X_s,\qquad\frac{\tau_X}{d_X^2}=2Q_s.
 **Corollary 5.2 [D,V].** For a selected fixed SL independent parameter and a nonzero constant Wronskian, the symmetric-square curve is Tzitzéica with NONZERO invariant iff Q_s is a NONZERO constant: Q(s)=as+b, a≠0. Such second-order carriers are affine-linear potential/Airy equations. A generic SL, PT or Lamé carrier has the same rank-three Drach connection but does NOT satisfy this stronger Tzitzéica condition.
 
 **Representation boundary.** The map Sym²:SL(2)→SL(3) has a three-dimensional subgroup image preserving a conic, not all of SL(3). A genuine centro-affine frame with W₃≠0 cannot be identified with this subgroup by the displayed gauge alone.
+
+## 6. Airy: explicit nonzero Tzitzéica curves inside Sym²(SL2) [D,V,K]
+
+Take the selected linear carrier potential
+
+```math
+Q(s)=a s+b,\qquad a\ne0.
+```
+
+With the real cube root, define
+
+```math
+\xi(s)=\frac{as+b}{a^{2/3}},\qquad \psi_1(s)=\mathrm{Ai}(\xi(s)),\quad\psi_2(s)=\mathrm{Bi}(\xi(s)).
+```
+
+Airy's equation $\mathrm{Ai}''(\xi)=\xi\mathrm{Ai}(\xi)$, and likewise for Bi, gives $\psi_{ss}=(as+b)\psi$. The classical Airy Wronskian is $W_\xi(\mathrm{Ai},\mathrm{Bi})=1/\pi$, so
+
+```math
+\mathscr W_s=\frac{a^{1/3}}{\pi},\qquad \mathscr W_s^3=\frac a{\pi^3}.
+```
+
+**Theorem 6.1 [D,V,K] (Airy/Tzitzéica intersection).** The raw symmetric-square curve
+
+```math
+Y(s)=\big(\mathrm{Ai}(\xi)^2,\mathrm{Ai}(\xi)\mathrm{Bi}(\xi),\mathrm{Bi}(\xi)^2\big)
+```
+
+has the exact nonzero constant centro-affine invariant
+
+```math
+\frac{\tau_Y}{d_Y^2}=\frac{a}{\mathscr W_s^3}=\pi^3.
+```
+
+After scaling to determinant-one arclength $X=(2\mathscr W_s^3)^{-1/3}Y$, the constant becomes $\tau_X/d_X^2=2a$. The original Airy family of Tzitzéica curves is known (Bîlă, 2023); this is a particularly transparent **Sym²(SL2) derivation** preserving the Wronskian normalization and its exact constant.
+
+The curve lies in the projective conic $Y_1Y_3=Y_2^2$, so its Wilczyński cubic is zero. It is a genuine *intersection* of two distinct geometric conditions, not the typical Tzitzéica curve.
+
+## 7. The exact framework Drach, PT, and Lamé classification [D,V,H136,C]
+
+The project archive already records the squared-eigenfunction/Drach third-order equation for the stationary KdV operator. For
+
+```math
+L=-\partial_u^2+V(u),\qquad L\psi=E\psi,\qquad Q(u)=V(u)-E,
+```
+
+the SL symmetric square gives
+
+```math
+Y_{uuu}=4(V-E)Y_u+2V_uY.
+```
+
+In the normalized centro-affine frame its Tzitzéica coefficient is
+
+```math
+\alpha_{\mathrm{sym}^2}(u)=2V_u(u).
+```
+
+**Theorem 7.1 [D,V,H136] (conditional Tzitzéica criterion for Drach).** The squared-eigenfunction curve associated with any fixed real SL potential $V$ is a Tzitzéica curve with nonzero constant ratio **if and only if $V_u$ is a nonzero constant** in the selected independent coordinate. This is independent of the spectral energy E, because E disappears after differentiation.
+
+### 7.1 Original free carrier
+
+The canonical weighted framework SL expression under the declared unitary $U_cf(u)=xf(ce^u)$ becomes the constant potential operator
+
+```math
+U_c\mathcal L_xU_c^{-1}=-\partial_u^2+r^2,\qquad u=\ln(x/c).
+```
+
+Thus $V_u=0$, so its symmetric-square curve has **zero** Tzitzéica invariant. In the zero-energy exponential basis $\psi_\pm=e^{\pm ru}$, the symmetric-square curve lies in an **affine plane** (the middle component is constant). It is not a nonzero-torsion Tzitzéica curve. The half-rate WE spinor carrier of the catenoid similarly has constant potential $r^2/4$ and the same vanishing conclusion.
+
+### 7.2 Reflectionless Pöschl–Teller
+
+For the selected one-soliton PT spectral potential
+
+```math
+V_{\rm PT}(u)=-2r^2\mathrm{sech}^2(ru),\qquad (V_{\rm PT})_u=4r^3\mathrm{sech}^2(ru)\tanh(ru),
+```
+
+the normalized symmetric-square centro-affine coefficient is
+
+```math
+\alpha_{\rm PT}(u)=8r^3\mathrm{sech}^2(ru)\tanh(ru).
+```
+
+It is odd, vanishes at the framework's symmetry center $u=0$, and is not nonzero constant. For the selected Hessian PT expression $V_H=4r^2-6r^2\mathrm{sech}^2(ru)$ the corresponding coefficient is $24r^3\mathrm{sech}^2(ru)\tanh(ru)$, likewise nonconstant.
+
+### 7.3 One-gap Jacobi Lamé
+
+For the selected shifted one-gap Lamé operator from draft 210,
+
+```math
+V_m(u)=2mr^2\mathrm{sn}^2(ru\mid m)-2mr^2,
+```
+
+the symmetric-square centro-affine coefficient is
+
+```math
+\alpha_m(u)=2(V_m)_u=8mr^3\mathrm{sn}(ru\mid m)\mathrm{cn}(ru\mid m)\mathrm{dn}(ru\mid m).
+```
+
+It varies and vanishes at Jacobi turning points. The archived exact Lamé Drach equation is therefore an **SL3 symmetric-square** system, but not a nonzero-constant Tzitzéica curve in the original canonical spatial coordinate.
+
+**Parameter boundary.** The centro-affine parameter s is an independent construction. A nonlinear reparametrization can change the displayed potential and frame; assertions about a *selected symmetric-square construction* must retain the chosen coordinate and its Wronskian gauge. No theorem here says these spectral curves are forbidden from supporting **other**, separately constructed Tzitzéica curves.
+
+## 8. A genuine rank-three Tzitzéica curve NOT of symmetric-square type [D,V]
+
+Consider the explicitly real analytic space curve
+
+```math
+Y(s)=\big(e^s,e^{2s},e^{-3s}\big).
+```
+
+Its three coordinate exponents are the distinct roots of the depressed cubic
+
+```math
+\lambda^3-7\lambda+6=(\lambda-1)(\lambda-2)(\lambda+3).
+```
+
+Hence
+
+```math
+Y_{sss}=7Y_s-6Y.
+```
+
+Direct determinant calculation gives
+
+```math
+\det(Y,Y_s,Y_{ss})=20,\qquad\det(Y_s,Y_{ss},Y_{sss})=-120.
+```
+
+Its unnormalized Tzitzéica invariant is
+
+```math
+\frac{\tau_Y}{d_Y^2}=-\frac3{10}\ne0.
+```
+
+Define the centro-affine normalized curve $X=20^{-1/3}Y$, for which
+
+```math
+\det(X,X_s,X_{ss})=1,\qquad X_{sss}=7X_s-6X,\qquad \frac{\tau_X}{d_X^2}=-6.
+```
+
+**Theorem 8.1 [D,V] (non-conic genuine SL3 example).** This is a Tzitzéica curve with constant nonzero invariant, and it is **not** the symmetric square of a common rank-two SL carrier in the same determinant-one parameter. Indeed its Wilczyński cubic is
+
+```math
+\mathcal W_3=\alpha-\beta_s/2=-6\ne0.
+```
+
+Equivalently, no homogeneous quadratic equation in $(Y_1,Y_2,Y_3)$ vanishes identically: the six exponential weights $2,3,-2,4,-1,-6$ appearing in a general quadratic form are distinct. Its projective image is not a conic.
+
+This explicit counterexample proves that Tzitzéica's centro-affine SL3 family is **strictly larger** than the Sym²(SL2) squared-eigenfunction subsystem.
+
+## 9. The SAME curve lies on an ACTUAL Tzitzéica affine sphere [D,V,K]
+
+The curve of §8 satisfies
+
+```math
+Y_1Y_2Y_3=e^{s+2s-3s}=1.
+```
+
+It is therefore a one-parameter orbit on the positive component of the classical proper affine sphere
+
+```math
+\mathscr S:\quad xyz=1,\qquad x,y,z>0.
+```
+
+Locally write $z=h(x,y)=1/(xy)$, with $x,y>0$. Its Hessian has
+
+```math
+h_{xx}=\frac2{x^3y},\quad h_{xy}=\frac1{x^2y^2},\quad h_{yy}=\frac2{xy^3},\quad\det D^2h=\frac3{x^4y^4}.
+```
+
+The support-plane numerator is
+
+```math
+h-xh_x-yh_y=\frac3{xy}.
+```
+
+Consequently the centro-affine surface invariant is exactly
+
+```math
+\frac{K_G}{d_{\rm tan}^4}=\frac{\det D^2h}{(h-xh_x-yh_y)^4}=\frac1{27}.
+```
+
+**Theorem 9.1 [D,V] (explicit curve-inside-affine-sphere compatibility).** The classic surface $xyz=1$ is a Tzitzéica surface of constant $1/27$ in the displayed origin/scale, and the unnormalized $Y(s)=(e^s,e^{2s},e^{-3s})$ is simultaneously a genuine nonzero-constant Tzitzéica curve on that surface.
+
+The *normalized* curve $X=20^{-1/3}Y$ instead lies on the homothetic surface $xyz=1/20$, with the appropriate rescaled surface invariant $400/27$. Both changes are dictated by the determinant weights; they are not contradictory constants.
+
+### 9.1 This is a genuine affine symmetry reduction, not an analogy
+
+The two-dimensional subgroup
+
+```math
+G_{a,b}=\operatorname{diag}(e^a,e^b,e^{-a-b})\in\mathrm{SL}(3,\mathbb R)
+```
+
+acts transitively on the positive affine sphere $xyz=1$. Restricting the group parameters to the line $(a,b)=(s,2s)$ yields EXACTLY $Y(s)$. Thus a **two-dimensional affine-sphere geometry** has been reduced to a **one-dimensional group orbit**, and its preserved origin-dependent centro-affine structures are explicit.
+
+The surface $xyz=1$ is strictly locally convex on the positive component (its Euclidean Gaussian curvature is positive). There are no real asymptotic directions there. Consequently this Tzitzéica curve-on-Tzitzéica-surface example is **not** an asymptotic curve on a negative-curvature affine sphere. Different affine-sphere real forms must not be conflated.
+
+## 10. Sym²(SL2) preserves a split quadratic form and loses the spin sign [D,V,K,H210]
+
+The rank-two action of $M\in\mathrm{SL}(2,\mathbb R)$ on homogeneous binary quadratics induces its three-dimensional symmetric-square action. The discriminant of a quadratic polynomial
+
+```math
+aX^2+2bXY+cY^2,\qquad \Delta_2=b^2-ac
+```
+
+is preserved under this action. The quadratic form $\Delta_2$ has signature $(2,1)$, so
+
+```math
+\mathrm{Sym}^2(\mathrm{SL}(2,\mathbb R))=\mathrm{SO}^+(2,1)\subset\mathrm{SL}(3,\mathbb R)
+```
+
+as an isomorphism of the **quotient PSL(2,R)** with the identity component of the split orthogonal group; the kernel of the displayed symmetric-square group homomorphism is $\{+I,-I\}$.
+
+**Theorem 10.1 [D,K] (rank-two spin → rank-three projective conic).** The $\mathrm{SL}(2)$ rank-three lift preserves a split-signature discriminant and has projectivized conic image. It is a **proper subgroup** of the full centro-affine $\mathrm{SL}(3)$ frame group, and its central sign is invisible in rank three.
+
+This has an exact relationship to the selected order-two Weierstrass spin class of draft 210: a nontrivial meromorphic spinor pair may acquire a simultaneous $-1$ multiplier along an elliptic period while its **quadratic** Weierstrass forms and symmetric-square frame remain single-valued. Hence the rank-three system does not, by itself, reconstruct the underlying spin structure. A **two-torsion marking** is additional global information.
+
+The same split orthogonal subgroup $\mathrm{SO}(2,1)$ occurs in the classical affine-sphere Tzitzéica integrable geometry as the isotropy subgroup of the symmetric space $\mathrm{SL}(3,\mathbb R)/\mathrm{SO}(2,1)$ (Terng, §3.9). This is an EXACT Lie-group relation. It does **not** imply the generic Tzitzéica 2D Lax connection takes values in $\mathfrak{so}(2,1)$ or is gauge-equivalent to the original $\mathfrak{sl}_2$ carrier.
