@@ -959,3 +959,123 @@ This is the precise relation between a **normalized spectral second-kind differe
 **Proof.** (I) is the direct derivation in §§3–5; (II) is §3 together with the operator-theoretic Darboux results audited in drafts 120/140; (III) is §§12–13 and H100/H299; (IV) is the explicitly invertible affine curve map and full meromorphic pullbacks in §§14–18/23; (V) is the exact limiting calculation of §19 and the period formulas in drafts 160/§22; (VI) follows from the constructed counterexamples §§9–11, the two distinct spectral degenerations §13, and Riemann–Hurwitz/differential pole divisors. All arrows have named source objects and explicit additional hypotheses.
 
 **Status qualification:** This is a **conditional theorem schema with proved component identities** and classical analytic inputs, not a universal classification of all Sturm–Liouville operators or all minimal surfaces. The bundle/Hodge, operator-domain and real-period conditions are not erased by the existence of the common differential-algebraic core. It is suitable for a future audited foundational proposition, not automatic promotion to the main paper.
+
+## 25. The Hilbert-space and spectral-analysis consequences must be typed [D,K,C]
+
+### 25.1 What the original weighted metric guarantees
+
+The canonical unitary map is
+
+```math
+U_cf(u)=xf(ce^u),\qquad\|f\|^2_{L^2(xdx)}=\|U_cf\|^2_{L^2(du)}.
+```
+
+For the canonical profile,
+
+```math
+U_cf_\mu=\frac{S}{2\sqrt\mu},\quad\|f_\mu\|^2_{L^2(xdx)}=\frac1{2r\mu},\quad\widehat{U_cf_\mu}(k)=\frac{\pi}{2r\sqrt{2\pi\mu}}\mathrm{sech}\left(\frac{\pi k}{2r}\right).
+```
+
+Thus ordinary Fourier–Plancherel in $u$ is multiplicative Fourier–Mellin Plancherel in $x$. Weighted Sobolev spaces and the self-adjoint dilation generator follow by transporting domains. The uncertainty product $\sigma_u\sigma_k=\pi/6$ is a **specific profile invariant**, not a universal minimum or a surface period.
+
+### 25.2 A chosen weighted Lamé operator has a different spectral transform
+
+To transport the selected **unshifted** Lamé operator to the original weighted Hilbert space, define the new coefficient expression
+
+```math
+(\tau_{m,x}f)(x)=\frac1x\left[-(x^3f_x)_x+x\big(V_m(\ln(x/c))-1\big)f\right],\qquad V_m(u)=2mr^2\mathrm{sn}^2(ru\mid m)-2mr^2.
+```
+
+The $-1$ appears because the Liouville half-density contributes $+1$ to the Schrödinger potential. Consequently
+
+```math
+U_c\tau_{m,x}U_c^{-1}=-\partial_u^2+V_m(u)=L_m.
+```
+
+This $\tau_{m,x}$ is a **new selected weighted SL expression**, not the original free linear Master carrier. Its spectral variable is the Lamé energy $E$.
+
+For $0<m<1$, the real periodic potential requires a **Bloch–Floquet direct-integral spectral transform** with bands and an open finite gap. Free Mellin characters alone do not diagonalize it. At $m\to0$ the transform reduces to ordinary Fourier–Mellin; at $m\to1$ the correct limit is the **Darboux-distorted Fourier–Mellin transform plus a discrete bound-state correction** from draft 140. This is the Hilbert-space counterpart of the two distinct nodal spectral limits.
+
+### 25.3 The catenoid area metric produces yet another operator
+
+The canonical catenoid has $I_C=R^2(du^2+dv_{\rm ang}^2)$ and $dA_C=R^2du\,dv_{\rm ang}$. Drafts 130/140 construct an isometric embedding of the original weighted $L^2(xdx)$ into its angularly constant scalar $L^2$ sector. But the genuine unitary transformed surface Jacobi operator on angular mode $m_{\rm ang}$ is
+
+```math
+\widetilde B_{m_{\rm ang}}=-\partial_u(S^2\partial_u)+(m_{\rm ang}^2-1)r^2S^2,
+```
+
+not the flat-measure PT Schrödinger operator. Equality of their **zero equations after multiplication by $R^2$** is not equality of global self-adjoint operator domains or spectral measures.
+
+### 25.4 A positive EP envelope is not a conserved Hilbert norm
+
+A real positive $a(t)$ is a **pointwise nonlinear envelope** of a carrier. Its Wronskian/Pinney invariant does not assert conservation of $\int w|y|^2dx$ under an unspecified dynamical evolution. Hilbert norm conservation requires separately specifying a unitary evolution. In general, a real positive EP amplitude can grow without bound and need not be square-integrable. The mathematical dictionary can be used for scattering, stability, and quantum-mechanical operators **after** an actual self-adjoint realization has been supplied, without forcing a physical implementation.
+
+## 26. Complete r=2 regression with c and mu explicit [D,V]
+
+Fix the framework's resolution at $r=2$ but retain $c,\mu>0$:
+
+```math
+u=\ln(x/c),\quad S_2=\frac{2c^2x^2}{x^4+c^4},\quad W_2=\frac{x^4-c^4}{x^4+c^4},\quad f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)}.
+```
+
+The original norm, integral halves and catenoid vertical flux are
+
+```math
+\|f_\mu\|^2_{L^2(xdx)}=\frac1{4\mu},\quad\int_0^c f_\mu dx=\int_c^\infty f_\mu dx=\frac{\pi}{8\sqrt\mu},\quad F_{C,3}=\pi.
+```
+
+At $\lambda_R=1$ the elliptic modulus is $m=1/2$, with $D_R=2$ and $k_R=0$. The Lamé spectral curve is
+
+```math
+\Gamma_{1/2}:\quad\eta^2=-(E+2)E(E-2),\qquad(E_0,E_1,E_2)=(-2,0,2).
+```
+
+The Riemann elliptic isomorphism is
+
+```math
+g_R=-E/2,\qquad y_R=\frac{\sqrt2}{4}\eta,\qquad\frac{dg_R}{w_R}=-\sqrt2\,\frac{dE}{\eta}.
+```
+
+The spectral Gauss–Manin connection at $m=1/2$ becomes
+
+```math
+\left.\frac d{dm}\binom{I_0}{I_1}\right|_{m=1/2}=\begin{pmatrix}0&1/2\\-6&0\end{pmatrix}\binom{I_0}{I_1}.
+```
+
+Writing $K_*=K(1/2)$ and $\mathsf E_*=\mathsf E(1/2)$, the two marked spectral period pairs are
+
+```math
+I_{0,\beta}=2K_*,\quad I_{1,\beta}=8(\mathsf E_*-K_*/2),\quad I_{0,\alpha}=-2iK_*,\quad I_{1,\alpha}=8i(\mathsf E_*-K_*/2).
+```
+
+Their determinant is exactly $-8\pi i$ by Legendre's relation. The selected spectral second-kind differential's $\beta$ period is $2\pi i/K_*$ with the declared marking.
+
+### 26.1 The centered Pinney 2-isogeny meets this same smooth Lamé spectral curve
+
+At $r=2$ the Pinney mechanical quartic is
+
+```math
+Y^2=a^4-\mu,\qquad E=-2a^2/\sqrt\mu,\qquad\eta=2\sqrt2\,aY/\mu^{3/4}.
+```
+
+The holomorphic pullback is
+
+```math
+\Psi^*(dE/\eta)=-\sqrt2\,\mu^{1/4}da/Y.
+```
+
+### 26.2 Both singular primitive endpoints
+
+At the $m\to1$ soliton endpoint,
+
+```math
+\eta^2=-E(E+4)^2,\quad E=-s^2,\quad\omega_{\rm sol}=\frac{2\,ds}{s^2-4},\quad\oint dh_C=\pi i.
+```
+
+At the $m\to0$ free closed-gap endpoint,
+
+```math
+\eta^2=-E(E-4)^2,\quad E=-s^2,\quad\omega_{\rm free}=-\frac{2\,ds}{s^2+4},\quad f_\mu(x;2,c)dx=-\omega_{\rm free}/(2\sqrt\mu).
+```
+
+At $m\to0$ the finite spatial period is $\pi/2$, and the self-adjoint free transfer at $E=4$ is **semisimple $M=-I$**. At $m\to1$ the primitive period diverges and the isolated PT bound state lies at $E=-4$. Throughout, $c$ is the log origin and $\mu$ the original amplitude/norm normalization: neither becomes the elliptic modulus or spectral energy.
