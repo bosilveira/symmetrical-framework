@@ -38,6 +38,8 @@ This directory preserves **complete, provisional mathematical investigations** b
 
 - [130 SL–EP Lie Closure, Finite-Gap Geometry, and Fourier–Mellin Plancherel](130%20SL-EP%20Lie%20Closure%20Finite-Gap%20Geometry%20and%20Fourier-Mellin%20Plancherel.md) — exact SL/Riccati/EP sl(2) Lie–Hamilton and symmetric-square Casimir closure; correction of Jordan monodromy versus self-adjointness; Virasoro coadjoint orbit scope; Gel'fand–Dikii finite-gap certificates F1/F2 encoding catenoid and Master Hessian bound spectra; autonomous polynomial closure of the PT potential itself; marked Gauss–Manin/Riemann minimal-example periods and Hopf/Chern versus Berry phases; weighted L2–Sobolev/Fourier–Mellin and shifted Plancherel norms, exact uncertainty, a catenoid Hilbert-space isometry, mixed transform and complete r=2 test. **Provisional; not yet consolidated.**
 
+- [140 Darboux Spectral Unitarity, Milne Scattering, and Catenoid Operators](140%20Darboux%20Spectral%20Unitarity%20Milne%20Scattering%20and%20Catenoid%20Operators.md) — extends archival H100/H299 Lax–Novikov checks with the polar-decomposition unitary Darboux intertwiner on the continuous spectrum, discrete-bound-state kernel, normalized Jost waves and exact scattering-strength Pinney amplitudes, integral Milne transmission phase, rational center Weyl functions, discrete-plus-continuous distorted Fourier–Mellin Plancherel in the original x-weighted space, explicit unitary catenoid surface-Jacobi conjugation, and the exact canonical norm fraction 3π²/32 with a derived definite integral; complete r=2 verification and source audit. **Provisional; not yet consolidated.**
+
 ## Suggested contents of each draft
 
 1. Canonical definitions and parameter domains (`r`, `c`, `mu`, etc.).
