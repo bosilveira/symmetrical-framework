@@ -379,7 +379,7 @@ t(s)=\frac{s-r}{s+r}=e^{r(u+iv)},\qquad E=-s^2,
 is therefore a **chosen parametrization of the spectral normalization by a surface coordinate**; it imposes a variable spectral projection
 
 ```math
-s(u+iv)=r\coth\left(\frac{r(u+iv)}2\right),\qquad E(u+iv)=-r^2\coth^2\left(\frac{r(u+iv)}2\right).
+s(u+iv)=-r\coth\left(\frac{r(u+iv)}2\right),\qquad E(u+iv)=-r^2\coth^2\left(\frac{r(u+iv)}2\right).
 ```
 
 It is not an **isospectral** SL flow, since $E$ changes along the chosen surface parametrization. What is exact is the map of **marked differential forms**, not equality of independent-variable dynamics. This is an important condition for a future foundational theorem: a point of a spectral curve can be used as a surface coordinate after a declared map, but the Baker–Akhiezer eigenfunction at **fixed** spectral point has a different evolution variable.
@@ -459,10 +459,10 @@ H_a=\frac{a_u}{a}.
 The finite-energy first integral becomes
 
 ```math
-\boxed{\quad H_a^2=\frac{r^2}4\left(1-\frac{\mu}{a^4}\right)+\frac{\varepsilon_N}4a^4.\quad}
+H_a^2=\frac{r^2}4\left(1-\frac{\mu}{a^4}\right)+\frac{\varepsilon_N}4a^4.
 ```
 
-(Here the boxed formula is mathematical notation, not a statement about physical cosmological matter.) Direct differentiation, or Theorem 12.1, gives
+(This identity is mathematical notation, not a statement about physical cosmological matter.) Direct differentiation, or Theorem 12.1, gives
 
 ```math
 (H_a)_u=\frac{\mu r^2}{2a^4}+\frac{\varepsilon_N}{2}a^4.
