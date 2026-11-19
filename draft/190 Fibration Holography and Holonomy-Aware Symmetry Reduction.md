@@ -753,7 +753,7 @@ A more mathematically precise subtitle is: **A program in connection-aware spect
 ### 23.3 Independent external references and precise roles
 
 - J. Jung and S. Zelditch, *Boundedness of the Number of Nodal Domains for Eigenfunctions of Generic Kaluza–Klein 3-Folds*, Ann. Inst. Fourier 70 (2020), 971–1026: KK bundle metric, charge decomposition into associated line bundles and Bochner Laplacians. https://www.numdam.org/item/10.5802/aif.3329.pdf .
-- C. Gordon, H. Ouyang and D. Schueth, *Spectral geometry of Riemannian manifolds with torus actions* and related circle-bundle Laplacian notes, Mathematical Research Letters (1997): identification of bundle sections with equivariant functions and horizontal Laplacian. https://intlpress.com/api/bgcloud-front/resource/pdf/volume/1806607262670024706-1806607262670024706-7f3867527eeef78c7c1291f1280fee3a.pdf .
+- C. Gordon, H. Ouyang and D. Schueth, *Distinguishing Isospectral Nilmanifolds by Bundle Laplacians*, Mathematical Research Letters **4** (1997), 23–33: identification of bundle sections with equivariant functions and horizontal Laplacian. https://intlpress.com/api/bgcloud-front/resource/pdf/volume/1806607262670024706-1806607262670024706-7f3867527eeef78c7c1291f1280fee3a.pdf .
 - Principal $U(1)$ bundles and integral first Chern classification: https://ncatlab.org/nlab/show/principal%20U%281%29-bundle .
 - Bundles with connection and differential cohomology: https://www.mdpi.com/2075-1680/13/1/60 and https://ncatlab.org/nlab/show/ordinary%2Bdifferential%2Bcohomology .
 - O'Neill's Riemannian submersion curvature formula and the horizontal distribution: https://link.springer.com/article/10.1365/s13291-020-00225-x .
