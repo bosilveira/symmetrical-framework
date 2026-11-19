@@ -391,3 +391,259 @@ as an isomorphism of the **quotient PSL(2,R)** with the identity component of th
 This has an exact relationship to the selected order-two Weierstrass spin class of draft 210: a nontrivial meromorphic spinor pair may acquire a simultaneous $-1$ multiplier along an elliptic period while its **quadratic** Weierstrass forms and symmetric-square frame remain single-valued. Hence the rank-three system does not, by itself, reconstruct the underlying spin structure. A **two-torsion marking** is additional global information.
 
 The same split orthogonal subgroup $\mathrm{SO}(2,1)$ occurs in the classical affine-sphere Tzitzéica integrable geometry as the isotropy subgroup of the symmetric space $\mathrm{SL}(3,\mathbb R)/\mathrm{SO}(2,1)$ (Terng, §3.9). This is an EXACT Lie-group relation. It does **not** imply the generic Tzitzéica 2D Lax connection takes values in $\mathfrak{so}(2,1)$ or is gauge-equivalent to the original $\mathfrak{sl}_2$ carrier.
+
+## 11. Classical cylindrical Tzitzéica curve: forced oscillator and RICCATI [D,K,V]
+
+The earlier mathematical literature contains another very useful exact reduction. Consider the nondegenerate cylindrical curve
+
+```math
+X(t)=(\cos t,\sin t,f(t)).
+```
+
+Direct determinant calculation gives
+
+```math
+D(t)=\det(X,X',X'')=f(t)+f''(t),\qquad \det(X',X'',X''')=f'(t)+f'''(t)=D'(t).
+```
+
+The Tzitzéica condition is therefore
+
+```math
+\frac{\tau}{d^2}=\frac{D'}{D^2}=\alpha_0\ne0,\qquad D'=\alpha_0D^2.
+```
+
+This is a **scalar Riccati equation** (pure quadratic term) for the osculating-plane determinant, solved by
+
+```math
+D(t)=-\frac1{\alpha_0t+C_0}
+```
+
+on a connected interval avoiding its pole. The remaining coordinate satisfies the **forced second-order harmonic-oscillator equation**
+
+```math
+f''(t)+f(t)=-\frac1{\alpha_0t+C_0}.
+```
+
+**Theorem 11.1 [D,V,K] (cylindrical Tzitzéica–Riccati–forced SL dictionary).** For the specified cylindrical ansatz and nonzero osculating-plane determinant, the nonlinear third-order curve condition reduces EXACTLY to a first-order Riccati equation for $D=f+f''$, and thence to a forced linear second-order ODE for $f$.
+
+For initial data at $t_0$ the solution is the standard Green-function convolution
+
+```math
+f(t)=f(t_0)\cos(t-t_0)+f'(t_0)\sin(t-t_0)-\int_{t_0}^t\frac{\sin(t-s)}{\alpha_0s+C_0}\,ds.
+```
+
+This is classical (see M. Crâşmăreanu, Tzitzéica cylindrical curves), not a novel general Riccati theorem. It is a second **exact** illustration of the project's theme: a geometric third-order Wronskian constraint becomes a first-order Riccati equation and a second-order forced SL carrier **after a declared geometric ansatz**.
+
+**No conflation:** $D$ is the osculating-plane determinant, not the positive Ermakov–Pinney amplitude, and this forced oscillator does not automatically contain a Pinney inverse-cubic term or a self-adjoint spectral problem.
+
+## 12. Tzitzéica SURFACES: exact Gaussian-curvature/plane-distance invariant [D,K]
+
+Let a surface in Euclidean 3-space be locally the graph $(x,y,h(x,y))$, with nonvanishing regular tangent-plane distance from the origin. The Gauss curvature and support-plane distance are
+
+```math
+K_G=\frac{\det D^2h}{(1+h_x^2+h_y^2)^2},\qquad d_{\rm tan}=\frac{|h-xh_x-yh_y|}{\sqrt{1+h_x^2+h_y^2}}.
+```
+
+Hence the centro-affine ratio is
+
+```math
+\frac{K_G}{d_{\rm tan}^4}=\frac{\det D^2h}{(h-xh_x-yh_y)^4}.
+```
+
+**Theorem 12.1 [D,K] (Monge–Ampère graph characterization).** The nondegenerate graph is a Tzitzéica surface with constant $\kappa_T$ iff it satisfies the exact **Monge–Ampère equation**
+
+```math
+h_{xx}h_{yy}-h_{xy}^2=\kappa_T\,(h-xh_x-yh_y)^4.
+```
+
+The surface equation is **second-order**, nonlinear in the Hessian determinant. Its first-order affine-frame formulation is a different package that includes a transversal affine normal and integrability equations.
+
+Under a fixed centro-affine map $A\in GL(3,R)$ the surface constant scales with $(\det A)^{-2}$; it is invariant under $SL(3,R)$ transformations fixing the origin. Under a pure dilation $X\mapsto aX$, the ratio scales by $a^{-6}$ (consistent with the graph example in §9).
+
+### 12.1 Distinction from the Euclidean minimal-surface Euler–Lagrange PDE
+
+A Euclidean minimal graph satisfies
+
+```math
+\mathrm{div}\left(\frac{\nabla h}{\sqrt{1+|\nabla h|^2}}\right)=0.
+```
+
+The Tzitzéica Monge–Ampère equation instead fixes the ratio $K_G/d_{\rm tan}^4$. Their differential operators, invariance groups, variational geometries and real forms are **different**. A surface may be Tzitzéica without being minimal, or minimal without being Tzitzéica.
+
+## 13. A concrete no-go: the CANONICAL CATENOID is not a Tzitzéica surface [D,V,C]
+
+Use the canonical Euclidean catenoid with $r>0$, $u=\ln(x/c)$ and angular variable $\theta=rv$:
+
+```math
+X_C(u,\theta)=\left(\frac{\cosh(ru)}r\cos\theta,\frac{\cosh(ru)}r\sin\theta,u\right).
+```
+
+Choose its unit normal
+
+```math
+N_C=(-\mathrm{sech}(ru)\cos\theta,-\mathrm{sech}(ru)\sin\theta,\tanh(ru)).
+```
+
+The origin-to-tangent-plane signed support is
+
+```math
+X_C\cdot N_C=-\frac1r+u\tanh(ru),
+```
+
+while the Gaussian curvature is
+
+```math
+K_C=-r^2\mathrm{sech}^4(ru).
+```
+
+Therefore, where the plane distance is nonzero,
+
+```math
+\frac{K_C}{d_{\rm tan}^4}=\frac{-r^2\mathrm{sech}^4(ru)}{(u\tanh(ru)-1/r)^4},
+```
+
+which is **not constant**. Indeed the support vanishes at a finite positive root $u\tanh(ru)=1/r$, while the curvature stays nonzero. The meridian at fixed $\theta$ is a planar curve with zero Euclidean torsion, so it is not a nonzero-constant Tzitzéica space curve either.
+
+**Corollary 13.1 [D,C].** Even the canonical catenoid—despite its fundamental first-order WE spinor construction and SL–EP/Wronskian dictionary—is not automatically an affine Tzitzéica surface in the displayed center/origin. The analogous conclusion for a general Riemann minimal example or its curve foliation cannot be asserted without calculating its actual centro-affine invariants.
+
+## 14. Affine Gauss–Codazzi and the actual Tzitzéica 2D Lax frame [K,D,V]
+
+A proper **indefinite affine sphere** admits suitable asymptotic coordinates $(a,b)$ and a scalar potential $w(a,b)$ with a Blaschke affine metric proportional to $e^{w}\,da\,db$. In one standard sign/normalization, its structural integrability condition is the **Tzitzéica/Bullough–Dodd equation**
+
+```math
+w_{ab}=e^w-e^{-2w}.
+```
+
+Here $a,b$ are **surface coordinates** and must not be confused with the canonical logarithmic variable $u$, Riemann elliptic modulus $\lambda_R$, or the Tzitzéica curve constant $\alpha_0$.
+
+For any nonzero independent Lax spectral parameter $\lambda_T$, define matrices
+
+```math
+A_T=\begin{pmatrix}w_a&0&\lambda_T\\\lambda_T&-w_a&0\\0&\lambda_T&0\end{pmatrix},\qquad B_T=\begin{pmatrix}0&\lambda_T^{-1}e^{-2w}&0\\0&0&\lambda_T^{-1}e^{w}\\\lambda_T^{-1}e^{w}&0&0\end{pmatrix}.
+```
+
+Set $\Omega_T=A_T\,da+B_T\,db\in\mathfrak{sl}_3(\mathbb R)$. Its Maurer–Cartan curvature is
+
+```math
+d\Omega_T+\Omega_T\wedge\Omega_T=\begin{pmatrix}-\mathcal E_T&0&0\\0&\mathcal E_T&0\\0&0&0\end{pmatrix}da\wedge db,\qquad \mathcal E_T=w_{ab}-e^w+e^{-2w}.
+```
+
+**Theorem 14.1 [D,V,K] (explicit affine-sphere zero curvature).**
+
+```math
+d\Omega_T+\Omega_T\wedge\Omega_T=0\quad\Longleftrightarrow\quad w_{ab}=e^w-e^{-2w}.
+```
+
+**Proof.** Write $\Omega_T=A_Tda+B_Tdb$ and expand $-A_{T,b}+B_{T,a}+[A_T,B_T]$. Every off-diagonal entry cancels identically and the two nonzero diagonal entries are $\mp\mathcal E_T$. This was independently checked using symbolic 3×3 matrix multiplication.
+
+For simply connected domains the flatness integrates a frame $G(a,b;\lambda_T)\in SL(3,R)$, $G^{-1}dG=\Omega_T$. Under the conventional affine-sphere frame normalization, a designated column of $G$ gives the immersion in $\mathbb R^3$ (see Chuu-Lian Terng, Geometry and Symmetries of Soliton Equations, affine sphere section). This is **affine** geometry using the Blaschke normal and cubic form, not automatically the Euclidean mean-curvature-zero WE immersion.
+
+### 14.1 A real geometric distinction: two equations both called Tzitzéica
+
+The **curve** condition $\tau/d^2=\alpha_0$ is a 1D third-order determinant identity. The **affine-sphere surface** condition is a 2D Monge–Ampère/Gauss–Codazzi system, which under a selected indefinite affine-normal gauge yields the scalar PDE above. There is no general equivalence between an arbitrary solution of the first and an arbitrary solution of the second. They can meet when the curve is a selected asymptotic line or group orbit on a relevant affine sphere, subject to extra restrictions.
+
+## 15. The symmetric space bridge and the twisted integrable algebra [K,D,C]
+
+The Tzitzéica/Bullough–Dodd equation has a classical twisted affine-integrable structure of type $A_2^{(2)}$. The 3×3 Lax matrices are $\mathfrak{sl}_3$-valued and include the spectral parameter $\lambda_T$ and its inverse. Terng's affine-sphere formulation also identifies a related harmonic-map/symmetric-space structure with real symmetric-space quotient
+
+```math
+\mathrm{SL}(3,\mathbb R)/\mathrm{SO}(2,1).
+```
+
+Recall §10: the symmetric-square of real rank-two SL2 is the subgroup $\mathrm{SO}^+(2,1)$ (up to the central ±I quotient). Thus the same split orthogonal group is both the image of the framework's **Sym² real projective representation** and an **isotropy subgroup** in the affine-sphere geometric setting.
+
+**Theorem 15.1 [D,K] (exact group-level intersection).** The rank-two projective SL–Riccati carrier admits a precise lift into the split-orthogonal subgroup of $\mathrm{SL}(3)$, while Tzitzéica's full affine-sphere connection takes values in the ambient $\mathfrak{sl}_3$. The shared subgroup is exact group theory, but **a reduction of the full 2D Lax pair to the SO(2,1) subgroup is an additional strong condition**, not a consequence of sharing the quotient notation.
+
+This is a particularly promising structural explanation for why two- and three-component linear problems can coexist in the framework. It neither identifies $\mathrm{SU}(2)$ with $\mathrm{SO}(2,1)$ (different real forms) nor implies a four-dimensional Yang–Mills instanton.
+
+## 16. The 1D reduction of the 2D affine-sphere PDE [D,V]
+
+Assume the **declared traveling/diagonal reduction**
+
+```math
+w(a,b)=h(s),\qquad s=a+b.
+```
+
+The affine-sphere compatibility equation becomes a one-variable nonlinear ODE
+
+```math
+h_{ss}=e^h-e^{-2h}.
+```
+
+Multiplying by $2h_s$ and integrating gives the exact conserved first integral
+
+```math
+(h_s)^2=2e^h+e^{-2h}+\varepsilon_T,
+```
+
+where $\varepsilon_T$ is an arbitrary real integration constant, NOT the framework's energy $\varepsilon_N$, elliptic modulus $m$ or multiplicative center $c$.
+
+Put $v=e^h>0$; then
+
+```math
+v_s^2=2v^3+\varepsilon_Tv^2+1.
+```
+
+**Theorem 16.1 [D,V] (exact elliptic reduction).** The one-dimensional reduction of the two-dimensional Tzitzéica affine-sphere equation carries the algebraic cubic curve
+
+```math
+\mathcal E_T:\quad y^2=2v^3+\varepsilon_Tv^2+1,
+```
+
+with the physical real solutions restricted to its portions with $v>0$. It is generically a smooth genus-one curve over $\mathbb C$ and degenerates at its algebraic discriminant zeros. This elliptic spectral-energy mechanism is analogous in **type** to the framework's cubic Master/Duffing reductions, but the cubic polynomials and geometric normalizations are not automatically equal.
+
+### 16.1 Exact Weierstrass invariants and the j-function
+
+Set $X=v+\varepsilon_T/6$ and $Y=\sqrt2\,v_s$. The cubic takes Weierstrass form
+
+```math
+Y^2=4X^3-g_2X-g_3,\qquad g_2=\frac{\varepsilon_T^2}{3},\quad g_3=-\frac{\varepsilon_T^3}{27}-2.
+```
+
+Its discriminant and modular invariant are
+
+```math
+\Delta_T=g_2^3-27g_3^2=-4(\varepsilon_T^3+27),\qquad j_T=-\frac{16\varepsilon_T^6}{\varepsilon_T^3+27}.
+```
+
+The **nodal limit** occurs at $\varepsilon_T=-3$, where
+
+```math
+2v^3-3v^2+1=(v-1)^2(2v+1).
+```
+
+At $\varepsilon_T=0$ the smooth cubic is equianharmonic ($j=0$), and at the special real energy $\varepsilon_T=-\sqrt[3]{54}$ it is lemniscatic ($g_3=0$, $j=1728$). This matches the abstract **complex elliptic j** of the selected symmetric one-gap Lamé/Riemann fiber $m=1/2$ (drafts 170/210), but does **not** fix a real-marked differential, spin class or spectral operator map.
+
+The exact relation
+
+```math
+j_T-1728=-\frac{16(\varepsilon_T^3+54)^2}{\varepsilon_T^3+27}
+```
+
+shows that for $\varepsilon_T<-3$ (three distinct real branch roots) one has $j_T\ge1728$, with equality precisely at $\varepsilon_T=-\sqrt[3]{54}$. This provides a genuine **modular comparison locus**, not evidence of a universal elliptic-curve identification.
+
+## 17. Nodal Tzitzéica reduction becomes the SAME TYPE of Riccati flow [D,V,H,C]
+
+On the nodal energy $\varepsilon_T=-3$, the positive coordinate $v=e^h$ obeys
+
+```math
+v_s^2=(v-1)^2(2v+1).
+```
+
+On a monotone nonconstant branch let $Z=\sqrt{2v+1}>1$. Since $Z Z_s=v_s$, one has
+
+```math
+Z_s=\pm\frac{Z^2-3}{2}.
+```
+
+Equivalently, with $W_T=Z/\sqrt3$,
+
+```math
+(W_T)_s=\pm\frac{\sqrt3}{2}(W_T^2-1).
+```
+
+**Theorem 17.1 [D,V] (exact nodal Riccati mechanism).** A one-dimensional reduction of the affine-sphere Tzitzéica PDE has an exact **Riccati** degeneration at its nodal elliptic cubic, after the explicit positive square-root substitution. With an orientation reversal its right-hand side has the canonical logistic/hyperbolic form $\omega(1-W_T^2)$ at rate $\omega=\sqrt3/2$.
+
+This is the **same algebraic Riccati normal form** encountered in the canonical framework's $rW$ equation and in nodal Lamé/catenoid limits, but the coordinate $s$, energy $\varepsilon_T$, half-period markings, and actual surface immersion are different. Equality of Riccati normal forms after declared substitutions is **not** equality of all their original ODE/PDE solution spaces.
+
+The equilibrium $h=0$ corresponds to the double root $v=1$, $Z=\sqrt3$. Real branches with $v>0$ may be restricted intervals; no global periodicity or completeness is asserted from the nodal algebra alone.
