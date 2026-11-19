@@ -84,7 +84,7 @@ The full-line free carrier is self-adjoint with purely continuous spectrum $[r^2
 
 ## 4. Local Riccati, positive Pinney, and symmetric-square equivalence [D,K]
 
-For a **prescribed real** $V(t)$, let
+For a **prescribed real** $V(t)$ and a **real spectral parameter** $\lambda$, let
 
 ```math
 -\phi_{tt}+V(t)\phi=\lambda\phi,\qquad Q(t)=V(t)-\lambda.
