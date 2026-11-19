@@ -1117,3 +1117,45 @@ The **new explicit additions within this draft** are chiefly the domain-specific
 - General weighted self-adjoint Sturm–Liouville theory: https://encyclopediaofmath.org/wiki/Sturm-Liouville_theory .
 
 **Evidence boundary:** Finite-gap Bloch theory, regular periodic operator algebraic multiplicities, and global embedded Riemann minimal-surface limits are standard mathematical inputs [K]; the displayed algebraic identities were independently derived. The archive's numerical modular/monodromy checks retain their original confidence labels. No operator exceptional point is claimed for a real self-adjoint PT well, and no universal global isometry is claimed merely from equality of local ODEs or curve invariants.
+
+## 28. Final theorem audit and next mathematical targets
+
+| Proposed universal statement | Precisely proved or corrected formulation |
+|---|---|
+| A Jordan transfer matrix means broken self-adjointness. | **False:** free self-adjoint periodic $-\partial^2$ has nontrivial Jordan transfer at zero; its operator eigenvalue is simple (§9). |
+| $\Delta=\pm2$ and $\Delta'=0$ are sufficient for a double Green-resolvent pole. | **False:** at free closed gaps $M=\pm I$ and the double eigenvalue is semisimple (§9). A true pole of order two requires an actual operator Jordan chain (§7). |
+| Genuine nonselfadjoint exceptional points with double poles can be built from scalar Hill equations. | **True:** the explicitly specified complex exponential potential, Bessel monodromy and periodic domain give one at every positive integer-square energy (§10). |
+| The same Floquet discriminant determines whether the operator has Jordan eigenvectors. | **False:** the free and complex Bessel examples have the same $\Delta$ but different eigenvector geometry and resolvent pole orders (§§9–10). |
+| Ermakov–Pinney positivity tests spectral stability or Hilbert-domain self-adjointness. | **False:** it is a property of chosen Gram and carrier solutions; constant positive EP amplitudes also occur at semisimple free band edges (§§4,9,11). |
+| The nonlinear Pinney envelope is linear spectral geometry in disguise. | **Qualified true:** its positive amplitude is a quadratic form in linear carrier solutions with fixed Wronskian/Casimir, but it is not itself a linear self-adjoint eigenvalue operator (§§4–5). |
+| All solitons correspond to closed gaps of periodic Hill operators. | **False as stated:** the selected PT soliton is obtained by collapse of a lower *allowed* band as its primitive period diverges; the **different** free limit closes a forbidden gap (§13). |
+| A node or pinched elliptic handle forces a Jordan spatial transfer matrix. | **False:** the free closed-gap node has semisimple transfer $-I$ while its Picard–Lefschetz **modulus** monodromy is unipotent (§20). |
+| PT nodal curves and smooth Riemann minimal example elliptic curves are globally the same algebraic curve. | **False:** their normalizations have different genera (draft 160); a nonconstant morphism from the rational normalization to a smooth elliptic curve is excluded by Riemann–Hurwitz. |
+| Smooth one-gap Lamé spectral curves and Riemann elliptic fibers admit a selected exact map for every real modulus. | **True:** the explicit invertible real affine energy/curve map of §15 with $m=(1+\lambda_R^2)^{-1}$, preserving a marked holomorphic differential up to scale (§16). |
+| The entire Riemann Weierstrass immersion triple transfers to the marked Lamé spectral curve. | **True**, after pulling back the chosen meromorphic Gauss coordinate and height form (§17); immersion-period closing remains a separately imposed global condition. |
+| The Lamé spectral and Riemann Gauss–Manin connections are related. | **True:** an explicit gauge with determinant $-1$ and parameter change gives the rational spectral connection of §23. The period determinant is $\pm8\pi i$, independent of $m,r$. |
+| Catenoid height and original arctangent come from one marked elliptic spectral family. | **True under the two distinct normalization maps:** $m\to1$ yields logarithmic catenoid height, while $m\to0$ yields the original rational primitive up to $-1/(2\sqrt\mu)$ (§19). |
+| Spectral quasimomentum equals the Riemann holomorphic height differential. | **False:** one is normally meromorphic of the second kind at spectral infinity, while the other is holomorphic; the period span can be related, not their pole divisors (§§18,23). |
+| A weighted scalar $L^2$ norm alone fixes elliptic periods or Berry/Chern integers. | **False:** unitary Liouville/Fourier–Mellin, Hodge period pairings and bundle holonomies are different typed constructions (§25; drafts 120–160). |
+| A global SL–EP correspondence and geometric realization can be stated as a theorem. | **Yes, conditionally:** Theorem 24.1 has explicit hypotheses and separately specified maps for each of its local, global operator, finite-gap and geometric pieces. |
+
+### 28.1 Specific follow-up investigations
+
+1. Construct the smooth Lamé odd-order commuting operator **with the current affine spectral normalization**, prove its Burchnall–Chaundy relation on every fiber, and verify degeneration to the existing PT Lax–Novikov operator as $m\to1$.
+2. Fix oriented integral cycles on the Lamé and Riemann curves and compute the actual integer homology action of the affine isomorphism, checking the curve-family monodromy against the archival $X_0(4)$ integral matrices.
+3. Derive the normalized spectral quasimomentum directly from Floquet solutions, verify its prescribed principal part and $a$ period, then compare its exact $b$ period to the period determinant of §23.
+4. Construct a **differential- and period-preserving** smoothing of the PT node and prove convergence of all three Weierstrass immersion forms, including the geometric rescaling necessary to obtain a catenoid from Riemann examples.
+5. Treat the other free endpoint $m\to0$ in the same way, explicitly tracking the resulting arctangent differential, the complex-rotated node markings and the Riemann helicoid scaling.
+6. Compare the Hilbert-space Bloch–Floquet transform for $L_m$ and the Darboux-distorted Fourier–Mellin transform of its PT limit, including convergence of continuous spectral measures and the isolated bound-state defect.
+7. Extend the exact spectral Gauss–Manin gauge from one-gap curves to the genus-two and higher Lamé levels, and use Riemann–Hurwitz plus marked divisor/polarization data to distinguish possible morphisms, correspondences and no-go cases.
+8. Construct a boundary-domain-sensitive spectral exceptional-point example in the original $x$ variable by transporting the complex Bessel Hill operator under $u=\ln(x/c)$, preserving all endpoint and periodic multipliers.
+9. Attempt an explicitly defined weighted Hilbert-to-Hodge map for a chosen finite-dimensional subspace, tracking the quadratic form and spectral domain; do not infer one from scalar norm coincidences.
+10. Audit every candidate statement in Theorem 24.1 against the repository's historical CLAIMS and the foundational paper, including the external assumptions needed for complex periodic operator Jordan multiplicities and minimal-surface global geometry.
+
+### 28.2 Mathematical structural thesis
+
+The most precise structural thesis supported by this investigation is:
+
+**The Symmetrical Framework is an algebraically rigid but geometrically flexible system of explicitly typed correspondence maps.** Its local rank-two real SL carrier, Riccati projectivization, symmetric-square equation, Gram/Wronskian invariant and positive Pinney envelope form an exact differential-algebraic structure. **Selected** finite-gap potentials add algebraic spectral curves, commuting operators and marked differentials. The **selected one-gap Lamé family** now carries a directly constructed, all-real-modulus elliptic curve isomorphism to the Riemann minimal-example family, together with an exact two-component Gauss–Manin period gauge and two distinct rational nodal realizations: catenoid height and the original arctangent primitive. The global operator, Hilbert measure, spectral boundary conditions, meromorphic polar divisor, homology marking, immersion period lattice and physical interpretation remain **additional independent data**.
+
+**Consequently, the correct equivalences are proved where a specific map preserves specific structures.** There is no unqualified global isomorphism of all SL operators, all EP nonlinear solutions, all soliton spectral curves and all minimal surfaces. Nor is a Jordan transfer matrix an automatic exceptional eigenvalue. The typed conditional Theorem 24.1 is a sound mathematical formulation for future foundational consolidation, with its component identities checked and its global analytic dependencies explicitly visible.
