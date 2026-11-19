@@ -629,3 +629,215 @@ dp_{\rm qm}=\mathrm{constant}\cdot\Phi^*(dg_R/w_R)
 does **not** follow: the quasimomentum generally has a second-kind pole at spectral infinity while the Riemann height form is holomorphic on its compact elliptic curve. Their pole divisors differ, so they cannot be equal as meromorphic differentials unless the defining normalization is radically changed. This is an explicit obstruction to collapsing the spectral and geometric periods into one untyped scalar.
 
 A smooth real isomorphism of spectral and Riemann elliptic curves is not the same thing as equality of the **chosen Schrödinger operator**, a surface **Jacobi operator**, their Hilbert domains, or global minimal-surface embeddedness.
+
+## 19. At the two singular endpoints, the SAME elliptic holomorphic differential produces TWO foundational rational primitives [D,V]
+
+This is a stronger synthesis than merely identifying the nodal spectral polynomial. Work with the **same family of marked holomorphic differentials**
+
+```math
+\omega_m=\frac{dE}{\eta},\qquad \eta^2=-(E-E_0)(E-E_1)(E-E_2),\qquad0<m<1.
+```
+
+In each **separate normalized nodal limit**, choose the same rational coordinate convention $E=-s^2$. The $s$-sphere is the normalization of the corresponding limiting curve; it is **not** the smooth genus-one curve for interior $m$.
+
+### 19.1 Soliton endpoint m tends to one: logarithmic catenoid height
+
+As $m\to1$ the cubic becomes
+
+```math
+\eta^2=-E(E+r^2)^2,\qquad E=-s^2,\qquad\eta=s(r^2-s^2).
+```
+
+Directly,
+
+```math
+\lim_{m\to1}\omega_m=\frac{-2s\,ds}{s(r^2-s^2)}=\frac{2\,ds}{s^2-r^2}=\frac1r\,d\log\frac{s-r}{s+r}.
+```
+
+**Theorem 19.1 [D,V] (soliton-node differential = catenoid height).** In this specified normalization, the limiting holomorphic spectral differential is exactly the marked catenoid height form of draft 160:
+
+```math
+\omega_{\rm sol}=\frac{2\,ds}{s^2-r^2}=dh_C,\quad t=\frac{s-r}{s+r},\quad g_C=-t,\quad \oint_{s=r}dh_C=\frac{2\pi i}{r}.
+```
+
+The positive-node residue is $1/r$, the negative-node residue $-1/r$, and the real part of the loop period vanishes. Together with the **chosen** Gauss map $g_C=-t$ and the standard Weierstrass triple, this yields the canonical catenoid immersion. Multiplying the triple by $i$ yields the conjugate helicoid with real translation period $-2\pi/r$, so it requires the angular universal cover.
+
+**Meaning:** The spectral-node/catenoid identification of draft 160 is not an unrelated Möbius trick: it is exactly the **limiting differential of the smooth one-gap Lamé elliptic spectral family**. This has now been proved by an explicit degeneration.
+
+### 19.2 Free, closed-gap endpoint m tends to zero: the arctangent primitive
+
+As $m\to0$, the spectral cubic instead becomes
+
+```math
+\eta^2=-E(E-r^2)^2,\qquad E=-s^2,\qquad\eta=s(s^2+r^2).
+```
+
+Hence
+
+```math
+\lim_{m\to0}\omega_m=\frac{-2s\,ds}{s(s^2+r^2)}=-\frac{2\,ds}{s^2+r^2}.
+```
+
+Draft 160 independently expresses the original Symmetrical Function **one-form** using the same projective rational coordinate identification:
+
+```math
+t=\frac{s-r}{s+r}=(x/c)^r\quad\mathrm{on\ the\ real\ meridian},\qquad f_\mu(x;r,c)\,dx=\frac{ds}{\sqrt\mu(s^2+r^2)}.
+```
+
+**Theorem 19.2 [D,V] (free closed-gap differential = arctangent primitive).** With this explicitly fixed identification of the rational-normalization coordinates,
+
+```math
+f_\mu(x;r,c)\,dx=-\frac1{2\sqrt\mu}\,\omega_{\rm free},\qquad \omega_{\rm free}=-\frac{2\,ds}{s^2+r^2}.
+```
+
+This recovers the original primitive and half-split:
+
+```math
+\int_0^c f_\mu\,dx=\int_c^\infty f_\mu\,dx=\frac{\pi}{4r\sqrt\mu}.
+```
+
+The **free spectral node** has preimages $s=\pm ir$ (because its repeated energy is $E=r^2=-s^2$). Those are exactly the **poles of the original arctangent differential** on the same normalized $s$-sphere, whereas the soliton node has preimages $\pm r$ and gives the logarithmic catenoid differential.
+
+### 19.3 The exact complex-rotation relation and its limit
+
+The two limiting rational forms are
+
+```math
+\omega_{\rm sol}(s)=\frac{2\,ds}{s^2-r^2},\qquad\omega_{\rm free}(s)=-\frac{2\,ds}{s^2+r^2}.
+```
+
+Under the complex rotation $\rho(s)=is$, one finds
+
+```math
+\rho^*\omega_{\rm sol}=i\,\omega_{\rm free}.
+```
+
+This is a **complex algebraic relation of differently marked third-kind differentials**, resembling a Wick rotation. It is *not* a real operator unitary map, a real isometry of the free and PT Schrödinger operators, or an equality of their Floquet spectra.
+
+**Main theorem 19.3 [D,V] (two-end marked-differential closure).** The selected one-gap Lamé spectral elliptic family has two rational nodal degenerations which yield **exactly two foundational Symmetrical Framework one-forms** under separately specified normalization maps: at $m\to1$, the catenoid logarithmic height $dh_C$; at $m\to0$, the original arctangent primitive $f_\mu dx$, up to the fixed amplitude factor $-1/(2\sqrt\mu)$. Their distinct residue/pole divisors and the complex rotation $s\mapsto is$ explain their relationship without conflating the distinct underlying real operator families.
+
+## 20. Picard–Lefschetz Jordan monodromy is NOT Floquet Jordan monodromy [D,K,C]
+
+Both endpoint cubics in §19 are nodal. In a family of **smooth elliptic curves** approaching a simple node, select a vanishing homology cycle $a$ and a transversal cycle $b$ with intersection number one. After encircling the nodal value in the **complex modulus plane**, the Picard–Lefschetz action is, up to orientations,
+
+```math
+a\longmapsto a,\qquad b\longmapsto b+a,\qquad M_{\rm PL}\sim\begin{pmatrix}1&1\\0&1\end{pmatrix}.
+```
+
+This is a genuine unipotent Jordan matrix acting on the **homology/period local system**, and the dual period typically acquires a logarithmic singularity. But it is **not** the Cauchy-data transfer matrix of $-\partial_u^2+V_m(u)$ over its real spatial period.
+
+Indeed at $m\to0$, the **same nodal spectral degeneration** has
+
+```math
+M_{\rm PL}\ \mathrm{unipotent\ Jordan},\qquad M_{\rm spatial}(E=r^2)=-I\ \mathrm{semisimple}.
+```
+
+This is a direct counterexample to the statement “pinching a handle into a node forces Jordan $2\times2$ spatial monodromy.” The Jordan structure occurs in **modulus continuation**, whereas the spatial transfer at the closed free gap is **diagonalizable**.
+
+The archived Riemann family likewise has its independently verified Gauss–Manin monodromy: around complex $k_R=\pm2i$ there are trace-$2$ unipotents, and at the modular cusp $k_R=\infty$ there is a trace-$(-2)$ matrix equal to minus a unipotent of width four (H470). Those matrices act on **marked elliptic periods**. They do not diagnose whether a Sturm–Liouville Hilbert operator is self-adjoint.
+
+### 20.1 Degenerating periods do not force vanishing numerical periods
+
+A geometrically vanishing homology cycle may have a **nonzero limiting integral** of a family of holomorphic forms when the forms themselves develop a logarithmic pole in the nodal limit. In §19 the limiting form has opposite residues at the two node preimages, and a small loop acquires period $2\pi i/r$. The complementary cycle has a logarithmic period divergence in appropriate normalized coordinates. The *cycle topology* and the *normalization of the differential* must both be tracked before asserting a numerical period limit.
+
+## 21. The centered Pinney elliptic curve is a DEGREE-TWO neighbour of the symmetric Lamé spectral curve [D,V,H]
+
+Drafts 150–160 establish the smooth centered Pinney mechanical energy quartic
+
+```math
+\mathcal P_{r,\mu}:\quad Y^2=\frac{r^2}{4}(a^4-\mu),\quad Y=a\,a_u,\quad j(\mathcal P_{r,\mu})=1728.
+```
+
+Its explicit degree-two isogeny to the symmetric Riemann elliptic fiber $\lambda_R=1$ is
+
+```math
+g_R=\frac{a^2}{\sqrt\mu},\qquad y_R=\frac{2aY}{r\mu^{3/4}},\qquad E_0^{(R)}:\ y_R^2=g_R^3-g_R.
+```
+
+At $\lambda_R=1$, $m=1/2$, $D_R=2$, $k_R=0$. The **new degree-one** Lamé-to-Riemann map of §15 becomes
+
+```math
+g_R=-\frac{2E}{r^2},\qquad y_R=\frac{2\sqrt2}{r^3}\eta,\qquad \Gamma_{1/2}:\quad\eta^2=-\left(E+\frac{r^2}{2}\right)E\left(E-\frac{r^2}{2}\right).
+```
+
+Composing the Pinney isogeny with the inverse Lamé–Riemann isomorphism gives a **direct algebraic degree-two map**
+
+```math
+\Psi:\mathcal P_{r,\mu}\longrightarrow\Gamma_{1/2},\qquad E=-\frac{r^2a^2}{2\sqrt\mu},\qquad \eta=\frac{r^2aY}{\sqrt2\,\mu^{3/4}}.
+```
+
+**Theorem 21.1 [D,V] (Pinney quartic to smooth Lamé spectral elliptic curve).** The displayed map is a degree-two unramified isogeny after selecting elliptic origins. Its holomorphic differential pullback is
+
+```math
+\Psi^*\left(\frac{dE}{\eta}\right)=-\sqrt2\,\mu^{1/4}\frac{da}{Y}.
+```
+
+**Proof.** Substitute $Y^2=r^2(a^4-\mu)/4$ into the cubic spectral equation, or compose the already proved smooth elliptic maps. Differentiating $E=-r^2a^2/(2\sqrt\mu)$ and dividing by $\eta$ yields the differential identity. Its generic fiber has two points related by the Pinney quartic involution $(a,Y)\mapsto(-a,-Y)$; the covering of smooth compact elliptic curves is unramified.
+
+### 21.1 A three-space Hodge norm consistency check
+
+The degree-one Lamé–Riemann map gives
+
+```math
+\left\|\frac{dg_R}{y_R}\right\|_{\rm Hodge}^2=\frac{r^2}{2}\left\|\frac{dE}{\eta}\right\|_{\rm Hodge}^2
+```
+
+at $\lambda_R=1$. The degree-two Pinney–Riemann map gives
+
+```math
+\left\|\frac{dg_R}{y_R}\right\|_{\rm Hodge}^2=\frac{r^2\sqrt\mu}{2}\left\|\frac{da}{Y}\right\|_{\rm Hodge}^2.
+```
+
+Combining them yields the exact consistency relation
+
+```math
+\left\|\frac{dE}{\eta}\right\|_{\rm Hodge}^2=\sqrt\mu\left\|\frac{da}{Y}\right\|_{\rm Hodge}^2,
+```
+
+which also follows directly from the degree-two pullback factor of Theorem 21.1.
+
+The **marked Pinney time differential** $a\,da/Y$, however, descends through the *different genus-zero quotient* $a\mapsto a^2$. It is not the holomorphic elliptic differential $da/Y$, and it does not become the Lamé spectral quasimomentum or the Riemann height simply by composing this isogeny. The V4 involution characters from draft 150 remain essential.
+
+## 22. Catenoid, helicoid, and Riemann minimal examples: a domain- and period-safe comparison [D,H,K,C]
+
+The order-one PT soliton endpoint of §19 carries the marked rational coordinate
+
+```math
+t=\frac{s-r}{s+r}=e^{r(u+iv_{\rm ang})},\qquad g_C=-t,\qquad dh_C=\frac1r\,d\log t.
+```
+
+The Euclidean catenoid Weierstrass triple is
+
+```math
+\boldsymbol\Phi_C=\left(\frac12(g_C^{-1}-g_C),\frac i2(g_C^{-1}+g_C),1\right)dh_C,\qquad X_C=\mathrm{Re}\int\boldsymbol\Phi_C.
+```
+
+The first two forms are meromorphic exact derivatives and the height form has a pure imaginary loop period,
+
+```math
+\oint\boldsymbol\Phi_C=(0,0,2\pi i/r),\qquad \mathrm{Re}\oint\boldsymbol\Phi_C=0.
+```
+
+Thus the catenoid immersion closes on the punctured-plane conformal domain. The Bonnet associate $e^{i\delta}\boldsymbol\Phi_C$ has **real** period $(0,0,-2\pi\sin\delta/r)$, so the helicoid $\delta=\pi/2$ is defined on the unwrapped angular cover rather than the same punctured-plane quotient.
+
+For Riemann minimal examples, the curve is instead **smooth elliptic** for every $\lambda_R>0$ and the actual real translation/flux vectors are given in the verified H467 register. Theorem 17.1 transports the entire marked Riemann Weierstrass differential triple to **the selected smooth Lamé spectral curve**, but the real period-closing equations still require the chosen cycles and the immersion translation lattice.
+
+At the soliton endpoint $\lambda_R\to0$ one has $m\to1$ and the smooth elliptic curve degenerates to a node. After appropriate geometric rescaling, Riemann minimal examples can have **catenoidal** limits; at the opposite end $\lambda_R\to\infty$ they can have **helicoidal** limits (Meeks–Pérez–Ros). The finite-parameter algebraic isomorphism of §15 has coefficients diverging at these endpoints, so passing to a *geometric immersion limit* requires simultaneously rescaling the Weierstrass forms and controlling their real periods. Algebraic convergence of the spectral cubic alone is not a proof of a globally embedded limiting surface.
+
+### 22.1 The catenoid surface Jacobi operator is still a different Hilbert operator
+
+For the induced metric $I_C=R(u)^2(du^2+dv_{\rm ang}^2)$, the negative Jacobi expression on angular mode $e^{im_{\rm ang}rv_{\rm ang}}$ is
+
+```math
+B_{m_{\rm ang}}=R^{-2}\left[-\partial_u^2+(m_{\rm ang}^2r^2-2r^2S^2)\right].
+```
+
+On the natural surface radial Hilbert space $L^2(R^2du)$, the **actual unitary** half-density conjugation produces
+
+```math
+R B_{m_{\rm ang}}R^{-1}=-\partial_u(S^2\partial_u)+(m_{\rm ang}^2-1)r^2S^2.
+```
+
+This is not globally unitarily identical to the flat-measure $h_1=-\partial_u^2-2r^2S^2$ merely because their **zero equations** coincide after multiplication by $R^2$. The complete catenoid and helicoid also have different global angular domain topologies.
+
+This distinction is central to the proposed theory: **equality of local ODEs, isomorphism of marked spectral curves, and unitary equivalence of global operators are three different mathematical arrows**.
