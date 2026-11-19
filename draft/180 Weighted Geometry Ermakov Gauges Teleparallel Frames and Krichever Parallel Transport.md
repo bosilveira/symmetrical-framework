@@ -641,3 +641,213 @@ Y_{\tau\tau}=-\omega_b^2Y+\beta_bY^{1-2\gamma},\quad\omega_b^2=\frac{3p_\infty}{
 It is **exactly EP only for $\gamma=2$** (and under the reductions just stated). The original physical radius and time reconstruct as $R_b=R_0Y^{2/3}$ and $dt=Y^{2/3}d\tau$. Other gas laws, compressibility, damping and forcing reintroduce different powers or time dependence.
 
 The historical ZIP's Keller–Miksis section derives the same Sundman/pressure-law condition and also gives a compressible energy-drift identity; it expressly does not identify the full dissipative model with EP. Treating the reduced equation as an exact **ODE dictionary** is rigorous; claiming a universal liquid bubble realization from the framework would not be.
+
+## 18. Sato Grassmannian: the historical framework already has an EXACT rank-one point [H136,D,K]
+
+The historical ZIP's sato-grassmannian.md distinguishes three inputs: a **soliton Grassmannian point**, a **decorated Krichever curve point**, and a **verified Master-to-KdV reduction**. Their existence is not a universal assertion about every differential equation or all level-$\ell$ hierarchies.
+
+Let $k_{\rm S}$ be a formal **Sato spectral coordinate**, distinct from physical wave number $k_{\rm sc}$ and the Riemann modulus $k_R$. Fix a gluing parameter $\mathfrak a>0$. The archive defines the rank-one subspace
+
+```math
+\mathscr W_{r,\mathfrak a}=\left\{\frac{F(k_{\rm S})}{k_{\rm S}+r}:F\in\mathbb C[k_{\rm S}],\quad F(r)=-\mathfrak a^{-1}F(-r)\right\}.
+```
+
+An explicit normalized basis is
+
+```math
+w_n(k_{\rm S})=k_{\rm S}^n-\frac{2\mathfrak a}{1+\mathfrak a}\frac{r^{n+1}}{k_{\rm S}+r},\qquad n=0,1,\ldots.
+```
+
+The coefficient matrix of negative powers of $k_{\rm S}$ has rank one. Moreover
+
+```math
+k_{\rm S}^2\mathscr W_{r,\mathfrak a}\subseteq\mathscr W_{r,\mathfrak a}
+```
+
+because $k_{\rm S}^2$ takes the same value at the two gluing points $\pm r$: this is the **KdV two-reduction condition** for the selected Grassmannian point. Its polynomial stabilizer is
+
+```math
+\mathbb C[k_{\rm S}^2,k_{\rm S}(k_{\rm S}^2-r^2)].
+```
+
+The nodal cubic is recovered by setting the coordinate functions
+
+```math
+\lambda_{\rm S}=-k_{\rm S}^2,\qquad \nu_{\rm S}=ik_{\rm S}(k_{\rm S}^2-r^2),\qquad \nu_{\rm S}^2=\lambda_{\rm S}(\lambda_{\rm S}+r^2)^2.
+```
+
+This last sign convention is a **quadratic twist** of the real Lax–Novikov curve convention of draft 170 ($\nu^2=-\lambda(\lambda+r^2)^2$). The curve structures become isomorphic over $\mathbb C$ after a corresponding factor of $i$, but their chosen real slices must not be silently identified.
+
+### 18.1 The exact Sato tau and Baker function
+
+For independent hierarchy times $\mathbf t=(t_1,t_3,t_5,\ldots)$, the archival one-soliton tau is
+
+```math
+\tau_{\rm S}(\mathbf t)=1+\mathfrak a\exp\left(2\sum_{j\ge0}r^{2j+1}t_{2j+1}\right).
+```
+
+On the **chosen** slice $t_1=u$, $t_3=-4T$, $\mathfrak a=e^{-2ru_0}$, one gets
+
+```math
+2\partial_u^2\log\tau_{\rm S}=2r^2\mathrm{sech}^2[r(u-4r^2T-u_0)].
+```
+
+The associated Baker/Jost function at $T=0$ is
+
+```math
+\psi_{\rm BA}(u,k_{\rm S})=e^{k_{\rm S}u}\frac{k_{\rm S}-rW(u)}{k_{\rm S}+r},\qquad(\partial_u^2+2r^2S^2)\psi_{\rm BA}=k_{\rm S}^2\psi_{\rm BA}.
+```
+
+**Theorem 18.1 [H136,V] (actual verified integrable closure).** For this selected Grassmannian point, the tau, finite-rank Baker function, PT spectral operator, nodal cubic, and two-reduction condition are explicitly compatible. The archive checks them, including the Schur/Plücker hook-coordinate rule. This is a genuine algebro-geometric origin of the proliferation of determinant identities; **it is not an unconstructed generic KP interpretation**.
+
+### 18.2 The Master reduction to the KdV stationary equation
+
+For a general positive real solution of the cubic Master equation with first integral $\varepsilon_N$, put
+
+```math
+Q=2\mu r^2y^2,\qquad c_1=4\mu r^2\varepsilon_N.
+```
+
+Direct differentiation, using the Master energy, gives the historical H136 identities
+
+```math
+Q_{uu}=4r^2Q-3Q^2+c_1,\quad Q_{uuu}+6QQ_u-4r^2Q_u=0.
+```
+
+With the **separate KdV time** $T$ the chosen travelling field $\mathcal U(\xi,T)=Q(\xi-4r^2T)$ solves $\mathcal U_T+6\mathcal U\mathcal U_\xi+\mathcal U_{\xi\xi\xi}=0$.
+
+The operator $\mathscr L=-\partial_u^2-Q$ and a selected third-order $\mathscr A$ commute, with a Burchnall–Chaundy cubic (H136); the **linearized Master Hessian** is a *different* Lamé index-two or shifted PT operator. One must not swap the integrable Lax operator with the variational Hessian without an actual intertwiner.
+
+## 19. The Krichever construction needs MORE than a smooth curve or equal j [K,C]
+
+A Krichever/Baker–Akhiezer construction starts from **decorated algebraic data**, typically
+
+```math
+(\Gamma,P_\infty,k_\infty^{-1},\mathcal D,\text{framing/normalization},\text{chosen hierarchy times}),
+```
+
+where $\Gamma$ is a smooth spectral curve, $P_\infty$ a marked point, $k_\infty^{-1}$ a local coordinate, and $\mathcal D$ a nonspecial divisor or corresponding line bundle of the required degree. A Baker–Akhiezer function is characterized by its meromorphic divisor and its specified exponential asymptotic at the marked point.
+
+The finite-gap Baker function has the theta schematic form
+
+```math
+\psi_{\rm BA}(P,u)=e^{u\Omega(P)}\frac{\Theta(A(P)+u\mathbf U+\mathbf Z)}{\Theta(A(P)+\mathbf Z)}\,C(P,u),
+```
+
+where $\Omega$ is an Abelian integral with a prescribed principal part and $C$ enforces the chosen normalization. Under the **KdV two-reduction** and appropriate spectral data it satisfies a **second-order** equation $L\psi_{\rm BA}=E(P)\psi_{\rm BA}$. A general KP Grassmannian point, however, is associated to a pseudodifferential Lax operator and does **not automatically** provide a scalar second-order self-adjoint SL problem. Self-adjointness further requires a compatible real structure, potential, interval and Hilbert domain.
+
+### 19.1 What the new Lamé–Riemann curve map actually supplies
+
+Draft 170 constructs the selected real elliptic isomorphism
+
+```math
+m_{\rm ell}=(1+\lambda_R^2)^{-1},\quad k_R=\lambda_R^{-1}-\lambda_R,\quad D_R=\lambda_R+\lambda_R^{-1},
+```
+
+```math
+g_R=-k_R-\frac{D_R}{r^2}E,\qquad y_R=\frac{D_R^{3/2}}{r^3}\eta,\qquad \frac{dg_R}{y_R}=-\frac r{\sqrt{D_R}}\frac{dE}{\eta}.
+```
+
+It identifies a **selected one-gap Lamé spectral curve** with the elliptic curve of the Riemann minimal example, including the marked holomorphic differential up to explicit scale. The associated Gauss–Manin period connections are related by a known explicit gauge (draft 170 §23), with an invariant symplectic period determinant. This is a precise functorial **transport of elliptic cohomology data**. It does not automatically determine a Krichever divisor or equate the spectral second-kind quasimomentum with the geometric holomorphic height form.
+
+The newly identified elliptic curve can support **both** (i) spectral BA data with a marked point at spectral infinity and (ii) minimal immersion Weierstrass data with punctures and a Gauss map. These are different **decorations of the same underlying curve**. The marked pole divisors and homology period constraints decide which portions of the two constructions can be transported.
+
+## 20. Gauss map, Hopf bundle, and Berry curvature: a genuine topological calculation [D,V,K]
+
+For any meromorphic Gauss map $g:\Sigma\to\mathbb{CP}^1$ on a Riemann surface $\Sigma$, choose on the affine chart the unit spinor and local Hopf connection
+
+```math
+\eta_g=\frac{(1,g)}{\sqrt{1+|g|^2}},\qquad \mathcal A_g=-i\,\eta_g^\dagger d\eta_g=\frac{\bar g\,dg-g\,d\bar g}{2i(1+|g|^2)}.
+```
+
+The curvature is
+
+```math
+\mathcal F_g=d\mathcal A_g=\frac{i\,dg\wedge d\bar g}{(1+|g|^2)^2}=\frac12g^*\omega_{S^2},
+```
+
+where $\omega_{S^2}$ is the oriented unit round-sphere area form, total area $4\pi$. On the compactified domain and using the necessary second gauge patch at $g=\infty$,
+
+```math
+\frac1{2\pi}\int_\Sigma\mathcal F_g=\deg(g).
+```
+
+**Theorem 20.1 [D,K] (Chern degree of the selected minimal-surface Gauss map).** The catenoid Gauss map $g_C=-t$ on the compactification $\Sigma_C=\mathbb{CP}^1$ has degree one, while the archived Riemann minimal-example Gauss map $g_R$ on its compactified elliptic curve $E_R$ has degree **two**, since the projection
+
+```math
+E_R:\quad y_R^2=g_R^3+k_Rg_R^2-g_R\quad\longrightarrow\quad\mathbb{CP}^1,\qquad (g_R,y_R)\mapsto g_R
+```
+
+has two generic points in each fiber. Therefore
+
+```math
+c_1(g_C^*\mathrm{Hopf})=1,\qquad c_1(g_R^*\mathrm{Hopf})=2.
+```
+
+The corresponding total Gaussian curvatures over the respective complete finite-total-curvature fundamental surfaces/quotients are
+
+```math
+\int_C K_C\,dA_C=-4\pi,\qquad\int_{R/{\rm period}}K_R\,dA_R=-8\pi.
+```
+
+The last equalities follow from the area-degree formula of the meromorphic minimal-surface Gauss map, with the punctures having measure zero on the compactification. They depend on the chosen **fundamental quotient** for the singly periodic Riemann surface.
+
+**Important limitation:** These Chern numbers concern a **selected Hopf pullback** and the full compactified complex surface. They do not imply that an EP scalar amplitude is the Hopf *horizontal lift*, or that every Berry loop phase is an integer. A Berry holonomy along a loop is $\oint\mathcal A_g$ modulo $2\pi$ and generally depends continuously on the loop.
+
+### 20.1 Real projective SL ratio is not the Hopf fiber
+
+The scalar SL ratio or Riccati variable is a *base projective coordinate* on $\mathbb{CP}^1$ after complexification. A Hopf lift requires an independent choice of normalized spinor and its common $U(1)$ gauge phase. For the **real** Sato slice $z=e^{ru}>0$ the normalized spinor $(1,z)/\sqrt{1+z^2}$ has real coordinates and its local Berry one-form along the meridian is zero. The full two-dimensional Hopf curvature becomes nontrivial only after extending to a complex/projective coordinate such as $z=e^{r(u+iv)}$ and defining a genuine two-dimensional base.
+
+**No-go [C]:** The meromorphic Riemann Gauss coordinate $g_R(E)$ is constant as $u$ evolves at fixed spectral energy $E$, whereas a nontrivial SL Riccati solution generally varies in $u$. Thus the identity $g_R=-k_R-D_RE/r^2$ does not, by itself, project a nontrivial SL Riccati flow into a Hopf horizontal lift. That would require an explicitly specified **moving spectral point**, an eigenvector line bundle, and a connection-preserving map.
+
+## 21. Bonnet rotation and Berry holonomy are distinct U(1) operations [D,C]
+
+For fixed minimal-surface Weierstrass data $(g,dh)$, the **Bonnet/associate family** multiplies the immersion triple of holomorphic/meromorphic 1-forms by a constant phase $e^{i\delta}$:
+
+```math
+\boldsymbol\Phi_\delta=e^{i\delta}\boldsymbol\Phi_0,\qquad X_\delta=\mathrm{Re}\int\boldsymbol\Phi_\delta.
+```
+
+The Gauss map $g$ is unchanged, and therefore the Hopf curvature $\mathcal F_g$ and its Chern degree are unchanged. Nevertheless the **real immersion periods** rotate:
+
+```math
+\mathrm{Re}\oint_\gamma\boldsymbol\Phi_\delta=\cos\delta\,\mathrm{Re}\oint_\gamma\boldsymbol\Phi_0-\sin\delta\,\mathrm{Im}\oint_\gamma\boldsymbol\Phi_0.
+```
+
+For the catenoid, $\oint\boldsymbol\Phi_0=(0,0,2\pi i/r)$, so
+
+```math
+\mathrm{Re}\oint\boldsymbol\Phi_\delta=(0,0,-2\pi\sin\delta/r).
+```
+
+At $\delta=0$ the immersion closes on the punctured plane; at the conjugate helicoid value $\delta=\pi/2$ a nonzero real vertical translation appears, requiring the angular universal cover or a translation quotient.
+
+**Corollary 21.1 [D].** A constant **Bonnet phase** changes real immersion periods without changing the Gauss map's pulled-back Hopf Chern number. A **Berry phase** is connection holonomy along a specified path. Their common notation as a complex $U(1)$ phase does not make them identical geometric quantities.
+
+## 22. Enneper–Weierstrass immersion AS FLAT AFFINE TRANSPORT (qualified) [D,K]
+
+Let $\Sigma^\circ$ be a punctured Riemann surface with meromorphic Weierstrass triple $\boldsymbol\Phi=(\Phi_1,\Phi_2,\Phi_3)$ satisfying the algebraic nullity condition
+
+```math
+\Phi_1^2+\Phi_2^2+\Phi_3^2=0,\qquad d\Phi_j=0\quad\text{away from poles}.
+```
+
+The immersion on the universal cover is
+
+```math
+X(p)=X(p_0)+\mathrm{Re}\int_{p_0}^p\boldsymbol\Phi,\qquad dX=\mathrm{Re}\boldsymbol\Phi.
+```
+
+**Theorem 22.1 [D] (flat translation/period holonomy).** The 1-form $dX$ defines a **flat abelian translation connection** on the trivial affine $\mathbb R^3$ bundle over $\Sigma^\circ$. Its translational holonomy around a closed loop $\gamma$ is exactly
+
+```math
+\mathrm{Hol}_{\rm trans}(\gamma)=\mathrm{Re}\oint_\gamma\boldsymbol\Phi\in\mathbb R^3.
+```
+
+**Proof.** Since each $\Phi_j$ is closed off its poles, $d(dX)=0$. On the universal cover integration defines a single-valued $X$; changing the integration path by $\gamma$ changes $X$ by $\mathrm{Re}\oint_\gamma\boldsymbol\Phi$. A global immersion into Euclidean space requires these real translations to vanish; an immersion into a translation quotient permits a selected lattice.
+
+This gives a precise meaning to “the Weierstrass immersion is parallel transport”: it is *affine translation integration in flat ambient $\mathbb R^3$*, not Levi–Civita parallel transport of a tangent vector (which would be governed by the induced nonzero surface curvature). A *moving adapted orthonormal frame* satisfies its own Euclidean Maurer–Cartan equations; its tangent LC part has nonzero curvature and the normal shape operator supplies Gauss–Codazzi.
+
+### 22.1 Four different parallel transport loops on one selected elliptic curve
+
+Even if the Lamé spectral elliptic curve is isomorphic to the Riemann immersion elliptic curve, one can put on it four genuinely different transport constructions: (a) the SL solution matrix varying $u$ at fixed spectral point; (b) the Gauss–Manin system varying the elliptic modulus with transported cycles; (c) the Hopf $U(1)$ connection pulled back along $g_R$ on the fixed elliptic surface; and (d) the flat affine $\mathbb R^3$ connection whose holonomy is the real Weierstrass period vector. **Their monodromies need not agree and act on different fibers.** An exact spectral-curve isomorphism gives a common base for constructing these data; it does not make them one connection.
