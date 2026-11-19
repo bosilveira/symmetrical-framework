@@ -191,3 +191,221 @@ The boundary correction in the Green function uses
 If the denominator vanishes quadratically but $M(\lambda_0)=\sigma I$, the adjugate vanishes too; a **semisimple** double eigenvalue can have only a simple resolvent pole. If $M(\lambda_0)\ne\sigma I$ is Jordan and the characteristic zero is **exactly** double, the adjugate is nonzero and the regular boundary operator has a true double resolvent pole.
 
 **Counterpoint:** For quasiperiodic multiplier $e^{i\vartheta}$ the characteristic equation is $\Delta=2\cos\vartheta$, not necessarily $\pm2$. For separated Robin or other domains the characteristic determinant is different again. Hence the proposed equalities $\Delta=\pm2$, $\Delta'=0$ are neither a universal necessary condition nor a universal sufficient condition for an operator exceptional point.
+
+## 9. First exact counterexample: free SELF-ADJOINT Hill operator [D,V,C]
+
+On $L^2([0,L])$, let $L_0=-\partial_u^2$ with standard real periodic or antiperiodic $H^2$ domain. At spectral value $\lambda$ the transfer matrix and discriminant are
+
+```math
+M_0(\lambda)=\begin{pmatrix}\cos(\sqrt\lambda L)&\sin(\sqrt\lambda L)/\sqrt\lambda\\-\sqrt\lambda\sin(\sqrt\lambda L)&\cos(\sqrt\lambda L)\end{pmatrix},\qquad\Delta_0(\lambda)=2\cos(\sqrt\lambda L).
+```
+
+At the bottom point $\lambda=0$,
+
+```math
+M_0(0)=\begin{pmatrix}1&L\\0&1\end{pmatrix},\qquad\Delta_0(0)=2,\qquad\Delta_0'(0)=-L^2\ne0.
+```
+
+The spatial matrix has a nontrivial Jordan block, but the periodic operator is self-adjoint and its zero eigenvalue is **simple**. The resolvent pole is simple.
+
+At every positive free band-edge value $\lambda_n=(n\pi/L)^2$ ($n\ge1$),
+
+```math
+M_0(\lambda_n)=(-1)^nI,\qquad\Delta_0(\lambda_n)=2(-1)^n,\qquad\Delta_0'(\lambda_n)=0.
+```
+
+The corresponding *periodic* ($n$ even) or *antiperiodic* ($n$ odd) eigenvalue has geometric multiplicity **two**, spanned by $\sin(n\pi u/L)$ and $\cos(n\pi u/L)$. It is **semisimple**, and its resolvent still has only a simple pole.
+
+**Theorem 9.1 [D,V,C].** Neither a Jordan spatial transfer matrix alone, nor a double root of $\Delta-2\sigma$ alone, implies a spectral exceptional point. The first fails at $\lambda=0$; the second fails at every positive $\lambda_n$.
+
+For the free period $L=\pi/r$, the $n=1$ **antiperiodic** level at $\lambda=r^2$ has $M=-I$ and $\Delta'=0$. Yet the real nodeless Pinney envelope $a=1$, from the complex linear carrier $\Phi=e^{iru}$, satisfies
+
+```math
+a_{uu}=-r^2a+r^2a^{-3},\qquad j=r,\qquad k_{\rm EP}=r^2.
+```
+
+It is not a homoclinic separatrix: it is a stationary positive envelope of an oscillatory linear carrier. This explicitly refutes the idea that Pinney positivity alone detects a unique spectral boundary between periodic and hyperbolic dynamics.
+
+## 10. Second exact counterexample: a TRUE non-self-adjoint periodic exceptional point [D,K,V]
+
+Choose the **complex periodic** potential $V_\alpha(u)=\alpha e^{2iu}$, $\alpha>0$, on the fixed interval $u\in[0,2\pi]$, and the periodic domain
+
+```math
+L_\alpha=-\partial_u^2+\alpha e^{2iu},\quad \mathcal D_{\rm per}=\{y\in H^2(0,2\pi):y(2\pi)=y(0),\ y_u(2\pi)=y_u(0)\}.
+```
+
+This operator is **not self-adjoint**, because its potential is nonreal for generic real $u$. It has compact resolvent, so isolated periodic eigenvalues have finite algebraic multiplicity.
+
+Set the complex Bessel argument and order
+
+```math
+z=\sqrt\alpha\,e^{iu},\qquad \nu^2=\lambda.
+```
+
+The spectral equation reduces by exact differentiation to
+
+```math
+z^2Y_{zz}+zY_z+(z^2-\nu^2)Y=0.
+```
+
+Therefore the fundamental solutions are Bessel functions $J_\nu(z),J_{-\nu}(z)$ for noninteger $\nu$; analytic continuation as $u$ increases from $0$ to $2\pi$ rotates $z$ once about zero. The two Floquet multipliers are $e^{\pm2\pi i\nu}$, giving the exact discriminant
+
+```math
+\Delta_\alpha(\lambda)=2\cos(2\pi\sqrt\lambda).
+```
+
+This is the **same discriminant as a free operator on a circle of length $2\pi$**, but the operator eigenvector structure need not agree.
+
+### 10.1 Integer spectral order produces a genuine Jordan block
+
+At every $\lambda_n=n^2$ with $n=1,2,\ldots$, the periodic Bessel function $J_n(z)$ is a genuine eigenfunction. The second integer-order solution $Y_n(z)$ obeys the classical Bessel analytic continuation formula
+
+```math
+Y_n(ze^{2\pi i})=Y_n(z)+4iJ_n(z).
+```
+
+Thus, in the local fundamental basis $(J_n,Y_n)$,
+
+```math
+M_\alpha(n^2)\sim\begin{pmatrix}1&4i\\0&1\end{pmatrix},\qquad M_\alpha(n^2)\ne I,\qquad (M_\alpha(n^2)-I)^2=0.
+```
+
+Meanwhile the characteristic zero is **exactly double**:
+
+```math
+2-\Delta_\alpha(\lambda)=\frac{\pi^2}{n^2}(\lambda-n^2)^2+O((\lambda-n^2)^3).
+```
+
+Since the monodromy's periodic eigenfunction space is one-dimensional but the characteristic algebraic multiplicity is two, the periodic operator has a nontrivial length-two Jordan chain. Its resolvent has a **double pole** at $\lambda_n=n^2$.
+
+**Theorem 10.1 [D,K,V].** The complex exponential Hill potential provides an explicit *true spectral exceptional point* in the specified finite-interval periodic operator, contrasted with the semisimple free operator having the **same** Floquet discriminant. The Bessel branch formula is DLMF §10.11.6; the operator conclusion follows from regular boundary-value characteristic multiplicities.
+
+### 10.2 Even a complex non-self-adjoint potential need not be defective at every double discriminant root
+
+For $\lambda=(n+\tfrac12)^2$, $n\ge0$, the Bessel orders $\nu=n+\tfrac12$ and $-\nu$ are independent. Both acquire multiplier $-1$ under the $2\pi$ continuation, so
+
+```math
+M_\alpha((n+\tfrac12)^2)=-I,\quad\Delta_\alpha=-2,\quad\Delta_\alpha'=0.
+```
+
+The antiperiodic eigenvalue is **semisimple of multiplicity two**, notwithstanding the complex potential. This is an especially sharp reason not to identify the scalar equalities $\Delta=\pm2$, $\Delta'=0$ with a resolvent double pole.
+
+### 10.3 The non-self-adjoint whole-line operator is a different realization
+
+The complex potential is $\pi$-periodic; its extension to a Hill operator on the full real line defines **another** spectral realization, with essential/continuous spectral phenomena. The finite-interval periodic eigenvalue Jordan calculation does not imply that the whole-line operator has an isolated resolvent pole at $n^2$. One must name the operator and domain each time.
+
+## 11. Complex potentials modify the Pinney phase-current equation [D,C]
+
+For a possibly complex $V$ and $\lambda$, write a nonvanishing complex solution $\Phi=a e^{i\theta}$ with $a>0$, real $\theta$, and $j=a^2\theta_u$. Separating the real and imaginary parts of $\Phi_{uu}=(V-\lambda)\Phi$ gives
+
+```math
+a_{uu}=(\mathrm{Re}\,V-\mathrm{Re}\,\lambda)a+j^2a^{-3},\qquad j_u=(\mathrm{Im}\,V-\mathrm{Im}\,\lambda)a^2.
+```
+
+This coupled nonlinear real system is not an ordinary constant-strength EP equation **unless $j_u=0$**. In the complex Bessel example with real $\lambda$,
+
+```math
+j_u=\alpha\sin(2u)a^2.
+```
+
+The current need not be constant, even though the local second-order ODE remains linear and projectivizable. Conversely, one can destroy **Hilbert-domain self-adjointness** using complex Robin boundary conditions while keeping $V$ real; then $j_u=0$ for every real spectral parameter in the interior. Hence:
+
+**Theorem 11.1 [D,C].** EP current conservation is a **local real-coefficient property**, not a sufficient or necessary test for self-adjointness of a chosen global operator realization. Strict positivity of a selected EP amplitude similarly does not imply unbroken self-adjointness, a real discrete spectrum, or a specific Floquet band/gap regime.
+
+## 12. The canonical integer Pöschl–Teller hierarchy remains fully self-adjoint [H100,H299,D]
+
+The archived reflectionless operators are
+
+```math
+h_n=-\partial_u^2-n(n+1)r^2S^2,\qquad n=1,2,\ldots,\qquad \mathrm{Dom}(h_n)=H^2(\mathbb R).
+```
+
+They are self-adjoint real bounded-potential Schrödinger operators with
+
+```math
+\sigma_{\rm disc}(h_n)=\{-j^2r^2:j=1,\ldots,n\},\qquad \sigma_{\rm ac}(h_n)=[0,\infty).
+```
+
+The Crum operator $Q_n$ and odd Lax–Novikov operator $P_n$ satisfy the historically verified identities
+
+```math
+Q_nh_n=h_0Q_n,\qquad P_n^2=-h_n\prod_{j=1}^n(h_n+j^2r^2)^2,\qquad [P_n,h_n]=0.
+```
+
+The auxiliary spectral curve is nodal:
+
+```math
+\nu^2=-E\prod_{j=1}^n(E+j^2r^2)^2.
+```
+
+Its repeated roots $E=-j^2r^2$ record the solitonic degeneration of a higher-order finite-gap **algebraic curve**, not a nonreal exceptional eigenvalue. The normalized spectral curve is rational, its generalized Jacobian has multiplicative gluing coordinates, and the discrete norming constants cannot be reconstructed from the spectral polynomial alone (draft 150).
+
+The polar Darboux map is unitary only on the **absolutely continuous subspace**, leaving the $n$ bound states as an explicit kernel/defect (draft 140). The weighted Fourier–Mellin resolution in the original $x$ coordinate must retain those finitely many discrete terms.
+
+## 13. The one-gap Lamé family has TWO inequivalent nodal limits [D,V,K]
+
+Choose the *selected* real one-gap Lamé family
+
+```math
+L_m=-\partial_u^2+2mr^2\mathrm{sn}^2(ru\mid m)-2mr^2,\qquad 0<m<1,\quad r>0.
+```
+
+The potential's primitive spatial period is $T_m=2K(m)/r$, with $K$ the complete elliptic integral of parameter $m$. Its three explicitly checked Lamé edge functions and energies are
+
+```math
+\mathrm{dn}(ru\mid m):\ E_0=-mr^2,\quad\mathrm{cn}(ru\mid m):\ E_1=(1-2m)r^2,\quad\mathrm{sn}(ru\mid m):\ E_2=(1-m)r^2.
+```
+
+These follow from the Jacobi derivative identities and the three one-gap Lamé eigenvalue equations. For $0<m<1$,
+
+```math
+E_0<E_1<E_2,\qquad \sigma(L_m)=[E_0,E_1]\cup[E_2,\infty).
+```
+
+The **finite forbidden gap** is $(E_1,E_2)$, and the lower *allowed* band is $[E_0,E_1]$. Introduce the spectral cubic with a declared real quadratic twist:
+
+```math
+\Gamma_m:\quad\eta^2=-(E-E_0)(E-E_1)(E-E_2).
+```
+
+It is a **smooth elliptic curve** for $0<m<1$ and has Legendre $j$-invariant
+
+```math
+j_m=256\frac{(1-m+m^2)^3}{m^2(1-m)^2}.
+```
+
+### 13.1 Closing a gap: m tends to zero
+
+The Jacobi function becomes $\mathrm{sn}(ru\mid0)=\sin(ru)$, so $L_m\to-\partial_u^2$ and $T_m\to\pi/r$. The edge values become
+
+```math
+(E_0,E_1,E_2)\longrightarrow(0,r^2,r^2),\qquad \eta^2\longrightarrow -E(E-r^2)^2.
+```
+
+The **open forbidden gap** $(E_1,E_2)$ closes to the point $E=r^2$. Its limiting free monodromy at $E=r^2$ over the period $\pi/r$ is
+
+```math
+M_{\rm free}(r^2)=-I,\qquad\Delta_{\rm free}(r^2)=-2,\qquad\Delta_{\rm free}'(r^2)=0.
+```
+
+This is a **semisimple closed gap** of a self-adjoint periodic operator, even though the cubic acquires a node.
+
+### 13.2 Collapsing an allowed band: m tends to one
+
+The elementary limit $\mathrm{sn}(ru\mid1)=\tanh(ru)$ gives
+
+```math
+L_m\longrightarrow-\partial_u^2-2r^2\mathrm{sech}^2(ru)=h_1,\qquad T_m\longrightarrow\infty.
+```
+
+The edge values instead become
+
+```math
+(E_0,E_1,E_2)\longrightarrow(-r^2,-r^2,0),\qquad \eta^2\longrightarrow -E(E+r^2)^2.
+```
+
+Now the **lower allowed band** $[E_0,E_1]$ collapses to the single bound state $E=-r^2$, while the continuum starts at $E=0$. The forbidden interval between bound state and continuum survives, but the potential ceases to be periodic on a fixed finite spatial cell. The diverging primitive period means there is **no automatic finite-period Floquet transfer matrix at this endpoint** to which one can ascribe a Jordan block.
+
+**Theorem 13.1 [D,V,K] (two distinct nodal mechanisms).** The same smooth genus-one Lamé spectral family has (i) a **gap-closing/free** degeneration at $m\to0$ with semisimple band-edge monodromy, and (ii) an **allowed-band-collapse/reflectionless-soliton** degeneration at $m\to1$ with a spatial period diverging to infinity. Algebraic nodes arise in both but do not encode a universal operator exceptional point.
+
+These two limiting cubics are distinguished by the location of their repeated root relative to the operator's bound/continuum spectrum. The original claim “PT is a closed spectral gap while Riemann has open spectral gaps” requires correction: PT is a **decaying whole-line** operator, not a periodic Floquet spectrum. A Riemann minimal example is a surface, not automatically a periodic Hill operator; selecting a Lamé operator with the same elliptic modulus is an additional explicit construction.
