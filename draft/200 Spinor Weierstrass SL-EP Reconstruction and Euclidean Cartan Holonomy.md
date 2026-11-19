@@ -830,3 +830,140 @@ Integration gives the exact familiar primitive
 where $\operatorname{gd}(s)=2\arctan(e^s)-\pi/2$. Thus the original arctangent/Gudermannian phase is not merely analogous to the spinor geometry: **it is the exact normalized real EP clock and half spherical Gauss-meridian angle of the canonical catenoid**.
 
 **Global boundary.** This half-angle identity does **not** identify the EP clock with the independent Bonnet associate angle, or make a normalized spinor horizontal for the Hopf connection along every two-dimensional path. The angular Hopf potential of §9 remains nonzero; closed-loop Berry holonomy and puncture monodromy require the connection and patch transitions independently.
+
+## 22. Three algebraic curves and THREE DIFFERENT line-bundle degrees [D,H,C]
+
+The proposed single globally canonical spinor bundle must pass a straightforward **degree test** on the compactified symmetric or nonsymmetric Riemann elliptic curve $E_R$.
+
+### 22.1 The spinor, BA, and Hopf bundles are not automatically one line bundle
+
+On a smooth compact elliptic curve $E_R$ the canonical bundle $K_{E_R}$ has degree zero. A spin structure $S$ with $S^{\otimes2}=K_{E_R}$ has
+
+```math
+\deg S=0.
+```
+
+A generic **genus-one Krichever/BA construction** uses a nonspecial divisor $D_{\rm BA}$ of degree one (with its chosen spectral marked point and normalization), giving a corresponding line bundle
+
+```math
+\deg\mathcal O(D_{\rm BA})=1.
+```
+
+The Gauss map $g_R:E_R\to\mathbb{CP}^1$ has degree two. The pulled-back Hopf/tautological complex line (in the standard holomorphic convention) satisfies
+
+```math
+\deg(g_R^*\mathcal O(-1))=-2,\qquad \deg(g_R^*\mathcal O(1))=2.
+```
+
+**Theorem 22.1 [D,K,C] (topological nonidentification).** The bare spin structure, a generic degree-one BA divisor line, and the degree-two Gauss-pulled positive Hopf line have different degrees, so they cannot be mutually isomorphic as holomorphic line bundles **without additional divisor twists, duals or coverings**. There is no automatic globally canonical single line bundle carrying all three constructions.
+
+The WE spinors here are **meromorphic** sections of a spinor bundle with allowed end divisors, so this degree calculation does **not** rule out a carefully constructed *twisted* correspondence. It makes the required twist a concrete, checkable datum rather than an assumed equivalence.
+
+The sign of the Chern number in a unitary Hopf connection convention may be opposite to the holomorphic tautological $c_1$; the invariant point is the absolute degree two and the need to specify the dual/orientation.
+
+### 22.2 A different j-invariant is already attached to the second fundamental form
+
+The historical forms module H421 constructs the **product binary quartic** of the two principal fundamental forms. At a nonumbilic Euclidean minimal point $k_1=-k_2=k\ne0$ it is
+
+```math
+Q_{\rm form}(X,Z)=k(X^4-Z^4).
+```
+
+Its classical invariants are
+
+```math
+I(Q_{\rm form})=-12k^2,\qquad J(Q_{\rm form})=0,\qquad j_{\rm form}=1728.
+```
+
+By contrast, the selected one-gap Lamé spectral curve / Riemann elliptic conformal curve has
+
+```math
+j_{\rm spectral}(m)=256\frac{(1-m+m^2)^3}{m^2(1-m)^2},
+```
+
+which varies with the chosen modulus and equals $1728$ on the positive real family only at the symmetric point $m=1/2$.
+
+**Corollary 22.2 [D,H,C].** The pointwise **binary-quartic elliptic curve of the fundamental forms** and the global **Lamé/Riemann elliptic spectral-conformal curve** are distinct algebro-geometric constructions, even on the same minimal surface. Matching the number $1728$ at a selected modulus does not identify their marked divisors, periods, spin bundles or global immersions.
+
+This is another reason the “entire web encodes one universal canonical spectral/fiber bundle” claim is too strong without a precisely constructed functor between these differently typed objects.
+
+## 23. Full r=2, c-and-mu-preserving regression [D,V]
+
+Set $r=2$ while keeping $c,\mu>0$ explicit. The canonical variables, functions and profile are
+
+```math
+u=\ln(x/c),\quad R=\cosh(2u),\quad S=\mathrm{sech}(2u),\quad W=\tanh(2u),\quad f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)}.
+```
+
+The catenoid WE spinors and their Wronskian are
+
+```math
+p=i e^{-\zeta},\quad q=-i e^\zeta,\quad g=-e^{2\zeta},\quad dh=d\zeta,\quad\mathscr W_\zeta=2.
+```
+
+Their quadratic forms integrate to
+
+```math
+X_C(u,v)=\left(\frac{\cosh(2u)\cos(2v)}2,\frac{\cosh(2u)\sin(2v)}2,u\right),\qquad v\sim v+\pi.
+```
+
+The spinor linear carrier, squared norm and EP equation are
+
+```math
+p_{\zeta\zeta}=p,\quad q_{\zeta\zeta}=q,\quad \rho^2=2\cosh(2u),\quad \rho_{uu}=\rho+4\rho^{-3}.
+```
+
+The canonical $\mu$-normalized envelope instead is
+
+```math
+a=\mu^{1/4}\sqrt{\cosh(2u)},\quad a_{uu}=a+\mu a^{-3},\quad \rho=\sqrt2\,\mu^{-1/4}a.
+```
+
+The induced metric, third form, Hopf differential and Gaussian curvature are
+
+```math
+I=R^2|d\zeta|^2,\qquad III=4S^2|d\zeta|^2,\qquad Q_H=-d\zeta^2,\qquad K_C=-4S^4.
+```
+
+The reciprocal spinor metric/curvature formula gives the same $K_C=-16|\mathscr W_\zeta|^2/\rho^8=-4S^4$ identically. The Hopf and LC curvature forms satisfy
+
+```math
+F_{\rm Hopf}=2S^2\,du\wedge dv,\qquad d\omega_C^{LC}=-4S^2\,du\wedge dv,\qquad F_{\rm Hopf}=-\frac12d\omega_C^{LC}.
+```
+
+The projective real-slice natural-coordinate EP clock is
+
+```math
+\xi=\sqrt2\,u,\qquad\tau=\arctan(e^{2u})=\frac\pi4+\frac12\operatorname{gd}(2u).
+```
+
+The catenoid height loop period is $\oint dh_C=\pi i$; the helicoid Bonnet conjugate has real height period $-\pi$. Both have the same projective Gauss map, spinor norm and local induced metric.
+
+The underlying original weighted SL carrier remains
+
+```math
+U_c\mathcal L_xU_c^{-1}=-\partial_u^2+4,
+```
+
+whereas the surface spinor carrier along $u$ is $-\partial_u^2+1$ at zero energy. This **exact factor-four shift** demonstrates why one must keep the spinor symmetric-square representation distinct from the original weighted carrier.
+
+Finally, at the symmetric Riemann modulus $\lambda_R=1$, the selected **smooth** one-gap Lamé spectral curve has branch energies $(-2,0,2)$ and the affine Gauss coordinate $g_R=-E/2$ (draft 170). Its *local projective surface carrier* is computed in a different natural coordinate $\xi$ and is generally not the same as the real Lamé spatial operator $-\partial_u^2+2mr^2\mathrm{sn}^2(ru|m)-2mr^2$.
+
+## 24. Verification register and source limits
+
+1. **WE spinor algebra [V]:** using $p=i e^{-r\zeta/2}$, $q=-i e^{r\zeta/2}$, SymPy verifies $pq=1$, $g=q/p=-e^{r\zeta}$, $\mathscr W=r$, and $\boldsymbol\Phi=(\sinh r\zeta,-i\cosh r\zeta,1)d\zeta$.
+2. **Schwarzian [V]:** $\{-e^{r\zeta},\zeta\}=-r^2/2$; both half-rate spinors satisfy $\psi_{\zeta\zeta}-r^2\psi/4=0$. For generic $g$, direct differentiation of $g_\xi^{-1/2}$ gives $\psi_{\xi\xi}=-\frac12\{g,\xi\}\psi$.
+3. **Hopf factor [V]:** the canonical WE Hopf normalization is $Q_H=-\Theta/2$, not $-\Theta$; its catenoid value is $Q_H=-r\,d\zeta^2/2$, matching the archived first/second form module.
+4. **Metric identity [V]:** direct expansion of the three spinor bilinears gives $\sum|\phi_j|^2=\frac12(|p|^2+|q|^2)^2$; thus $ds^2=\rho^4|dz|^2/4$.
+5. **Curvature identity [V]:** combining the Gauss spherical derivative $4|g_z|^2/(1+|g|^2)^2$ with $\mathscr W=p^2g_z$ gives $III=4|\mathscr W|^2\rho^{-4}|dz|^2$ and $K=-16|\mathscr W|^2\rho^{-8}$. Independent substitution of $\rho^2=2R$ and $\mathscr W=r$ reproduces $K_C=-r^2S^4$ symbolically.
+6. **EP calibration [V]:** SymPy differentiation gives $\rho_{uu}=(r^2/4)\rho+r^2\rho^{-3}$ for $\rho=\sqrt{2\cosh(ru)}$; scaling by $\rho=\sqrt2\mu^{-1/4}a$ yields the original $\mu$-normalized EP equation exactly.
+7. **Hopf horizontal qualification [V]:** for the explicit normalized spinor, $-i\eta^\dagger d\eta=(rW/2)dv$, so the spinor is not horizontal along generic angular curves. Differentiation gives $F_{\rm Hopf}=r^2S^2du\wedge dv/2=-d\omega_C^{LC}/2$.
+8. **Spin monodromy [D]:** the half-exponential spinors acquire sign $-1$ around the catenoid angular circle, while the projective Gauss map is periodic; thus spin lifting needs an actual spin structure/patch transition.
+9. **Riemann [D,H]:** $dg_R/d\zeta=w_R$, $dh_R/d\zeta=A_R$ imply $\Theta_R=A_Rw_Rd\zeta^2/g_R$, which generally vanishes at finite branch points and makes the natural coordinate branch. Near simple nonzero branch points, $g-g_0\sim(\xi-\xi_0)^{4/3}$ and $\{g,\xi\}\sim-7/[18(\xi-\xi_0)^2]$.
+10. **Circular foliation [D,K]:** direct differentiation of a circle-centered surface shows explicit $\theta$ dependence when centers move. This precludes assuming a global rotational Killing quotient for generic Riemann examples.
+11. **Conformal Jacobi [D,V]:** $B=-\Delta+2K$ becomes $-\Delta_0+2e^{2\omega}K$ after multiplying by $e^{2\omega}$. Direct substitution of WE data yields $2e^{2\omega}K=-8|g_z|^2/(1+|g|^2)^2$; catenoid gives the selected PT potential, while generic Riemann data remain genuinely two-variable.
+12. **Lamé/Riemann [H]:** the affine elliptic isomorphism and complete WE pullbacks are already verified in draft 170; the added identity $\{g_R(E(\xi)),\xi\}=\{E(\xi),\xi\}$ follows from the Schwarzian chain rule for an affine map. It is not a claimed operator conjugation.
+13. **Bonnet obstruction [V]:** $dh\mapsto e^{i\delta}dh$ multiplies the WE spinors by $e^{i\delta/2}$, leaves $g$ and their Hermitian norm unchanged, but rotates real immersion periods. The catenoid/helicoid vertical periods $0$ and $-2\pi/r$ are direct calculations.
+14. **Bundle degrees [D,K]:** elliptic spin bundles have degree zero, a generic genus-one BA divisor line has degree one, and the Gauss-pulled tautological line has degree $-2$; no unqualified holomorphic line bundle isomorphism exists without twisting.
+15. **Binary quartics [H]:** the H421 principal-form product quartic has $J=0$ and pointwise $j=1728$ on every nonumbilic minimal surface, whereas the Riemann/Lamé spectral elliptic $j$ varies with $m$. The two curves are different types.
+16. **Domain and completeness [C]:** no claim here promotes a general complex projective spinor ODE to a self-adjoint real Hilbert SL operator. The WE immersion needs real periods; the spin lift needs separate signs/patches; Krichever requires spectral divisor data; and none of these follows from the existence of a nodal curve alone.
