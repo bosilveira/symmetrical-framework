@@ -409,3 +409,223 @@ Now the **lower allowed band** $[E_0,E_1]$ collapses to the single bound state $
 **Theorem 13.1 [D,V,K] (two distinct nodal mechanisms).** The same smooth genus-one Lamé spectral family has (i) a **gap-closing/free** degeneration at $m\to0$ with semisimple band-edge monodromy, and (ii) an **allowed-band-collapse/reflectionless-soliton** degeneration at $m\to1$ with a spatial period diverging to infinity. Algebraic nodes arise in both but do not encode a universal operator exceptional point.
 
 These two limiting cubics are distinguished by the location of their repeated root relative to the operator's bound/continuum spectrum. The original claim “PT is a closed spectral gap while Riemann has open spectral gaps” requires correction: PT is a **decaying whole-line** operator, not a periodic Floquet spectrum. A Riemann minimal example is a surface, not automatically a periodic Hill operator; selecting a Lamé operator with the same elliptic modulus is an additional explicit construction.
+
+## 14. The Riemann elliptic family has exactly the same modular parameter m, once SELECTED [H466,H469,D]
+
+The historically verified Riemann minimal-example family has meromorphic Gauss coordinate $g_R$ on
+
+```math
+w_R^2=g_R(g_R-\lambda_R)(\lambda_Rg_R+1),\qquad\lambda_R>0.
+```
+
+Write
+
+```math
+k_R=\lambda_R^{-1}-\lambda_R,\qquad D_R=\lambda_R+\lambda_R^{-1}>0,\qquad y_R=w_R/\sqrt{\lambda_R}.
+```
+
+Then
+
+```math
+E_R:\quad y_R^2=g_R^3+k_Rg_R^2-g_R=g_R(g_R-\lambda_R)(g_R+\lambda_R^{-1}).
+```
+
+The three finite branch points, in increasing **real** order, are $-\lambda_R^{-1}<0<\lambda_R$. The corresponding cross-ratio parameter with this ordering is
+
+```math
+m_R=\frac{1}{1+\lambda_R^2}=\frac12\left(1+\frac{k_R}{\sqrt{k_R^2+4}}\right)\in(0,1).
+```
+
+This formula and the associated modular invariant are recorded in the archival H466/H469 audit:
+
+```math
+j(E_R)=256\frac{(k_R^2+3)^3}{k_R^2+4}=256\frac{(1-m_R+m_R^2)^3}{m_R^2(1-m_R)^2}.
+```
+
+The equality $j(E_R)=j(\Gamma_m)$ upon setting $m=m_R$ suggests an elliptic curve isomorphism, but equality of $j$ alone leaves an unspecified algebraic coordinate change, real structure and differential. The next theorem supplies all three.
+
+## 15. Main new bridge: a REAL ISOMORPHISM of Lamé spectral and Riemann elliptic curves [D,V]
+
+Choose the one-gap Lamé family of §13 with the explicit **selected parameter match**
+
+```math
+m=m_R=(1+\lambda_R^2)^{-1},\quad k_R=\lambda_R^{-1}-\lambda_R,\quad D_R=\lambda_R+\lambda_R^{-1},\quad D_R^2=k_R^2+4.
+```
+
+Recall the smooth real spectral model
+
+```math
+\Gamma_m:\quad\eta^2=-(E-E_0)(E-E_1)(E-E_2),\quad E_0=-mr^2,\quad E_1=(1-2m)r^2,\quad E_2=(1-m)r^2.
+```
+
+**Theorem 15.1 [D,V] (explicit all-modulus elliptic isomorphism).** The affine formulas
+
+```math
+g_R=-k_R-\frac{D_R}{r^2}E,\qquad y_R=\frac{D_R^{3/2}}{r^3}\eta
+```
+
+define a real algebraic isomorphism of smooth affine elliptic curves (extending over their projective points at infinity) from $\Gamma_m$ to the normalized Riemann elliptic curve
+
+```math
+E_R:\quad y_R^2=g_R^3+k_Rg_R^2-g_R.
+```
+
+They carry the three spectral branch points to the three Riemann branch points **in the declared order**:
+
+```math
+E_0\mapsto g_R=\lambda_R,\qquad E_1\mapsto g_R=0,\qquad E_2\mapsto g_R=-\lambda_R^{-1}.
+```
+
+**Proof with all factors visible.** The affine slope is $a_E=-D_R/r^2<0$, so
+
+```math
+g_R-\lambda_R=a_E(E-E_0),\quad g_R=a_E(E-E_1),\quad g_R+\lambda_R^{-1}=a_E(E-E_2).
+```
+
+Multiply and use $a_E^3=-D_R^3/r^6$:
+
+```math
+g_R(g_R-\lambda_R)(g_R+\lambda_R^{-1})=-\frac{D_R^3}{r^6}(E-E_0)(E-E_1)(E-E_2)=\frac{D_R^3}{r^6}\eta^2=y_R^2.
+```
+
+The map has explicit inverse $E=-(r^2/D_R)(g_R+k_R)$ and $\eta=(r^3/D_R^{3/2})y_R$. Both coefficients are real and nonzero for $\lambda_R,r>0$, so it is an **isomorphism of real** smooth elliptic curves. The degree is **one**, not the degree-two isogeny of the centered Pinney energy curve in drafts 150–160.
+
+**Independent exact verification [V]:** The polynomial residual in $(E,r,\lambda_R)$ vanishes identically in SymPy, the three branch-image identities simplify to $(\lambda_R,0,-1/\lambda_R)$, and the two rational $j$ expressions simplify to exactly the same rational function of $\lambda_R$.
+
+### 15.1 Why the negative spectral cubic sign matters
+
+The chosen spectral curve has $\eta^2=-\prod(E-E_j)$ rather than $+\prod(E-E_j)$. Because the branch-point map reverses real order, that minus sign is precisely what permits the isomorphism **over the reals** using the positive scale $D_R^{3/2}/r^3$. Using the opposite sign gives a complex quadratic twist: an isomorphism then requires an additional factor $i$ in the fiber coordinate, and the real-period interpretation changes.
+
+In commuting-operator conventions the Burchnall–Chaundy spectral equation naturally carries a minus sign (as in the archived $P_n^2=-h_n\prod(h_n+j^2r^2)^2$), so the chosen real form is also consistent with the solitonic endpoint.
+
+## 16. The complete marked holomorphic differential and Hodge correspondence [D,V]
+
+The normalized Riemann holomorphic differential is $\omega_R=dg_R/y_R$. Differentiate the affine map of §15:
+
+```math
+dg_R=-\frac{D_R}{r^2}dE,\qquad \frac{dg_R}{y_R}=-\frac{r}{\sqrt{D_R}}\frac{dE}{\eta}.
+```
+
+**Theorem 16.1 [D,V] (marked differential scaling).** The map transports the distinguished holomorphic differential exactly:
+
+```math
+\Phi_m^*\omega_R=-\frac{r}{\sqrt{D_R}}\omega_{\rm sp},\qquad\omega_{\rm sp}=\frac{dE}{\eta}.
+```
+
+The original **physical Riemann** holomorphic height form is $dg_R/w_R$, where $w_R=\sqrt{\lambda_R}y_R$. Its pullback simplifies further:
+
+```math
+\Phi_m^*\left(\frac{dg_R}{w_R}\right)=-\frac{r}{\sqrt{\lambda_RD_R}}\frac{dE}{\eta}=-r\sqrt m\,\frac{dE}{\eta}.
+```
+
+Here the exact identity $\lambda_RD_R=1+\lambda_R^2=1/m$ has been used. No factor of $r$, the immersion modulus, or the square root has been suppressed.
+
+### 16.1 Hodge metric: a genuine degree-one isometric scaling
+
+For a smooth compact elliptic curve and holomorphic one-form, use
+
+```math
+\|\omega\|_{\rm Hodge}^2=\frac{i}{2}\int_E\omega\wedge\bar\omega.
+```
+
+Because the map $\Phi_m$ has **degree one**, its pulled-back Hodge integral gives
+
+```math
+\|\omega_R\|_{\rm Hodge}^2=\frac{r^2}{D_R}\|\omega_{\rm sp}\|_{\rm Hodge}^2,\qquad\left\|\frac{dg_R}{w_R}\right\|_{\rm Hodge}^2=r^2m\|\omega_{\rm sp}\|_{\rm Hodge}^2.
+```
+
+These are exact **metric glue on spaces of holomorphic differentials**, with the correct degree and normalization. They are *not yet* an intertwining map from the original scalar weighted Hilbert space $L^2((0,\infty),x\,dx)$ to the elliptic Hodge space: such a map would require an additional operator/measure construction.
+
+## 17. The full Weierstrass immersion triple is transported for EVERY real Riemann modulus [D,V,H466]
+
+The archived Weierstrass one-forms, with the convention and scale used in H466, are
+
+```math
+\boldsymbol\Phi_R=\left(\frac{A_R}{2}(g_R^{-1}-g_R),\frac{iA_R}{2}(g_R^{-1}+g_R),A_R\right)\frac{dg_R}{w_R},\qquad A_R>0.
+```
+
+Let the **affine spectral marking** be the explicit function
+
+```math
+g(E)=-k_R-\frac{D_R}{r^2}E.
+```
+
+**Theorem 17.1 [D,V] (entire marked Weierstrass triple).** On the smooth Lamé spectral curve $\Gamma_m$, the real elliptic isomorphism of §15 pulls back all three meromorphic immersion differentials as
+
+```math
+\Phi_m^*\boldsymbol\Phi_R=-A_Rr\sqrt m\left(\frac12(g(E)^{-1}-g(E)),\frac i2(g(E)^{-1}+g(E)),1\right)\frac{dE}{\eta}.
+```
+
+**Proof.** Pull back the Gauss-coordinate multiplier by $g_R=g(E)$ and the common height factor by $\Phi_m^*(dg_R/w_R)=-r\sqrt m\,dE/\eta$. The meromorphic factors are well-defined away from the two planar-end punctures $g=0,\infty$; their polar structures are preserved by the algebraic isomorphism.
+
+This result **improves the earlier centered $j=1728$ comparison**: it is an explicit differential-preserving isomorphism for the entire **selected** smooth real family $\lambda_R>0$, not just the point $\lambda_R=1$. But it does not say that an arbitrary SL–EP equation canonically selects the Riemann family, or that a Lamé wave function itself is a surface immersion.
+
+### 17.1 Reduction to exactly two spectral periods
+
+The historical exactness identity is
+
+```math
+d(w_R/g_R)=\frac{\lambda_R}{2}(g_R+g_R^{-1})\frac{dg_R}{w_R}.
+```
+
+Therefore
+
+```math
+\Phi_{R2}=\frac{iA_R}{\lambda_R}d(w_R/g_R),\quad \Phi_{R1}=\frac{A_R}{\lambda_R}d(w_R/g_R)-A_Rg_R\frac{dg_R}{w_R},\quad \Phi_{R3}=A_R\frac{dg_R}{w_R}.
+```
+
+For any marked closed cycle $\gamma_{\rm sp}$ on $\Gamma_m$ let
+
+```math
+I_0(\gamma_{\rm sp})=\oint_{\gamma_{\rm sp}}\frac{dE}{\eta},\qquad I_1(\gamma_{\rm sp})=\oint_{\gamma_{\rm sp}}\frac{E\,dE}{\eta}.
+```
+
+The image cycle $\gamma_R=\Phi_{m*}\gamma_{\rm sp}$ has periods
+
+```math
+\Omega_R(\gamma_R)=\oint_{\gamma_R}\frac{dg_R}{w_R}=-r\sqrt m\,I_0(\gamma_{\rm sp}).
+```
+
+```math
+N_R(\gamma_R)=\oint_{\gamma_R}g_R\frac{dg_R}{w_R}=r\sqrt m\left(k_RI_0(\gamma_{\rm sp})+\frac{D_R}{r^2}I_1(\gamma_{\rm sp})\right).
+```
+
+Hence the complete complex immersion-period vector is
+
+```math
+\oint_{\gamma_R}\boldsymbol\Phi_R=A_R\left(-N_R(\gamma_R),\,0,\,\Omega_R(\gamma_R)\right).
+```
+
+This is an exact **spectral-period to immersion-period formula**. It preserves the whole two-dimensional de Rham period span; closing in $\mathbb R^3$ requires separately checking the real parts of these periods against the desired translation lattice.
+
+### 17.2 Which spectral intervals map to which Riemann cycles?
+
+The real branch-point order of §15 reverses the spectral energy order:
+
+```math
+[E_0,E_1]\longmapsto[g_R=\lambda_R,\,g_R=0],\qquad [E_1,E_2]\longmapsto[g_R=0,\,g_R=-\lambda_R^{-1}].
+```
+
+Thus the **lower allowed Lamé spectral band** maps to the Riemann $\alpha$-type branch cut, and the **finite forbidden Lamé spectral gap** maps to its $\beta$-type cut (up to orientations and standard doubled-cycle conventions). The archive's real Riemann translation and flux periods can therefore be written directly as integrals of $dE/\eta$ and $E\,dE/\eta$ along the correspondingly marked Lamé cycles.
+
+This is a precise, new **marked real-cycle dictionary**. It does *not* say that the Floquet spectral quasimomentum equals $dg_R/w_R$; the quasimomentum is a **specific normalized meromorphic differential of the second kind**, whose normalization and asymptotics must be imposed separately.
+
+## 18. Quasimomentum, spectral energy, and geometric height have different normalizations [D,K,C]
+
+On a smooth one-gap spectral elliptic curve, a finite-gap Bloch/Floquet **quasimomentum differential** $dp_{\rm qm}$ is defined by its prescribed singular principal part at the point over $E=\infty$ and a chosen cycle normalization (e.g. zero $a$-period). Its cohomology class lies in the span of
+
+```math
+\omega_0=dE/\eta,\qquad\omega_1=E\,dE/\eta,
+```
+
+but the actual coefficients and cycle normalization depend on the spectral convention. The pullback in §17 identifies the Riemann holomorphic height form with $\omega_0$ and its horizontal period with a specific linear combination of $\omega_0,\omega_1$.
+
+The existence of this common two-dimensional differential span is a **real algebro-geometric interface**. The further assertion
+
+```math
+dp_{\rm qm}=\mathrm{constant}\cdot\Phi^*(dg_R/w_R)
+```
+
+does **not** follow: the quasimomentum generally has a second-kind pole at spectral infinity while the Riemann height form is holomorphic on its compact elliptic curve. Their pole divisors differ, so they cannot be equal as meromorphic differentials unless the defining normalization is radically changed. This is an explicit obstruction to collapsing the spectral and geometric periods into one untyped scalar.
+
+A smooth real isomorphism of spectral and Riemann elliptic curves is not the same thing as equality of the **chosen Schrödinger operator**, a surface **Jacobi operator**, their Hilbert domains, or global minimal-surface embeddedness.
