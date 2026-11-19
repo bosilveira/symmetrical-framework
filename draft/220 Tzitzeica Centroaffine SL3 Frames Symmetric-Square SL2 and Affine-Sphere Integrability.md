@@ -853,3 +853,110 @@ Q=r^2/4,\quad R=2\cosh(ru),\quad \rho=\sqrt{2\cosh(ru)},\quad \rho_{uu}=\frac{r^
 This is exactly the spinor–WE–EP theorem of draft 200, including $\rho=\sqrt2\,\mu^{-1/4}a$ for $a=\mu^{1/4}\sqrt{\cosh(ru)}$. Its Sym² Tzitzéica invariant is **zero** because $Q_u=0$; the valid WE–EP reconstruction does not make the catenoid a nonzero-torsion Tzitzéica curve.
 
 For the independently selected Airy carrier $Q(s)=as+b$ with $a\ne0$, the same Gram construction instead gives a **positive EP solution and a genuine nonzero Tzitzéica symmetric-square curve simultaneously**. The Airy, catenoid and Lamé cases are therefore exactly classified by the same general algebra, without asserting they are the same geometric immersion.
+
+## 24. Full r=2 and c-preserving calibration [D,V,H]
+
+The original Symmetrical Framework retains
+
+```math
+u=\ln(x/c),\quad r=2,\quad c,\mu>0,\quad S=\mathrm{sech}(2u),\quad W=\tanh(2u),\quad f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)}.
+```
+
+### 24.1 Three different second-order carriers
+
+The *original* weighted free carrier has transformed Schrödinger potential $Q_{\rm free}=r^2=4$. Its Sym² 3D curve has $\alpha_{\rm free}=2Q_u=0$, and is not Tzitzéica with nonzero torsion/distance constant.
+
+The *catenoid WE spinor* carrier has $Q_{\rm spin}=r^2/4=1$ and real basis $\psi_\pm=e^{\pm u}$; its Sym² invariant is likewise zero, but the positive Gram EP envelope and induced catenoid metric remain exact:
+
+```math
+\rho^2=e^{-2u}+e^{2u}=2\cosh(2u),\quad \rho_{uu}=\rho+\frac4{\rho^3},\quad ds_C^2=\cosh^2(2u)(du^2+dv^2).
+```
+
+The *reflectionless PT spectral carrier* with $V=-8S^2$ has
+
+```math
+\alpha_{\rm PT}=2V_u=64\,\mathrm{sech}^2(2u)\tanh(2u),
+```
+
+which vanishes at $u=0$ and varies elsewhere. The *one-gap Lamé* carrier at $m=1/2$,
+
+```math
+V_m=4\mathrm{sn}^2(2u\mid 1/2)-4,
+```
+
+has
+
+```math
+\alpha_{\rm Lame}=32\,\mathrm{sn}(2u\mid 1/2)\mathrm{cn}(2u\mid 1/2)\mathrm{dn}(2u\mid 1/2).
+```
+
+These equations are exactly of the same rank-three Drach type, but they do not satisfy the *stronger* nonzero-constant Tzitzéica invariant.
+
+### 24.2 A selected Airy carrier with the same resolution parameter
+
+Choose an ADDITIONAL carrier potential $Q_{\rm Airy}(s)=r^3s+r^2$, which at $r=2$ is
+
+```math
+Q_{\rm Airy}(s)=8s+4,\qquad \psi_1=\mathrm{Ai}(2s+1),\quad\psi_2=\mathrm{Bi}(2s+1).
+```
+
+The corresponding Wronskian is $2/\pi$, and
+
+```math
+\frac{\tau_Y}{d_Y^2}=\pi^3,\quad\frac{\tau_X}{d_X^2}=16\qquad(\det(X,X_s,X_{ss})=1).
+```
+
+Thus an Airy carrier at this **selected** resolution simultaneously admits positive Gram EP solutions and a symmetric-square Tzitzéica curve. This is a new **chosen equation** linked by the dictionary, not a claim that the canonical PT potential suddenly becomes affine-linear.
+
+### 24.3 Independent Tzitzéica PDE and symmetric Riemann curve
+
+The affine-sphere PDE $w_{ab}=e^w-e^{-2w}$ contains **no** inherited $r,c,\mu$ until an explicit coordinate/field scaling is chosen. Its 1D reduction has energy $\varepsilon_T$ and cubic $y^2=2v^3+\varepsilon_Tv^2+1$. At $\varepsilon_T=-\sqrt[3]{54}$ it has $j=1728$ and is real-isomorphic by §18 to the **separately selected** Riemann/Lamé symmetric elliptic curve at $\lambda_R=1,m=1/2$.
+
+In that comparison the original center $c$ merely locates $u=0$ on the multiplicative $x$ chart, and the original Duffing normalization $\mu$ rescales the canonical field. Neither is a Tzitzéica curve's origin in Euclidean 3-space, an affine sphere's Blaschke mean curvature, nor the new Tzitzéica cubic energy $\varepsilon_T$.
+
+## 25. Verification ledger and mathematical sources
+
+### 25.1 Direct calculations checked
+
+1. **Torsion/distance cancellation [V].** Substitute the Euclidean Frenet expressions for torsion and the osculating-plane distance; the squared cross-product norm cancels and yields the determinant ratio of §2.
+2. **Centra-affine reparameterization [D].** Under $s=s(t)$, $\det(X,X_t,X_{tt})=(ds/dt)^3\det(X,X_s,X_{ss})$; signed cube-root integration sets this determinant to one.
+3. **Companion SL3 [V].** Differentiating the determinant-one condition forces the $X_{ss}$ coefficient of $X_{sss}$ to vanish; matrix multiplication gives the explicit trace-zero companion.
+4. **Wilczyński/symmetric-square [V].** In Laguerre–Forsyth gauge the cubic obstruction $\alpha-\beta'/2$ vanishes exactly for $\beta=4Q,\alpha=2Q'$; the resulting solution module is the three-dimensional symmetric square of the rank-two carrier.
+5. **3×3 Wronskians [V].** SymPy, treating $\psi_1,\psi_2$ and their first derivatives as independent variables, gave $\det(Y,Y',Y'')=2W^3$ and $\det(Y',Y'',Y''')=4Q'W^3$ identically, with ZERO polynomial residual.
+6. **Airy [D,K].** The variable $\xi=(as+b)/a^{2/3}$ transforms Airy's equation into $\psi''=(as+b)\psi$; the standard Airy Wronskian is $a^{1/3}/\pi$, making $\tau/d^2=\pi^3$ for the raw Sym² curve and $2a$ after centro-affine determinant normalization.
+7. **Free/PT/Lamé criterion [V,H136].** Derivatives of $V_{\rm PT}=-2r^2S^2$ and $V_m=2mr^2\mathrm{sn}^2-2mr^2$ give the exact nonconstant centro-affine coefficients in §7; the third-order Drach equation is the squared-eigenfunction equation already investigated in H136 and draft 210.
+8. **Genuine rank-three example [V].** For $Y=(e^s,e^{2s},e^{-3s})$, SymPy returned $\det(Y,Y',Y'')=20$, $\det(Y',Y'',Y''')=-120$. The normalized curve has $\alpha=-6$, $\beta=7$, Wilczyński cubic $-6$, and lies on $xyz=1$ before the scalar normalization.
+9. **Affine sphere graph [V].** For $h=1/(xy)$, symbolic Hessian determinant is $3/(x^4y^4)$ and $h-xh_x-yh_y=3/(xy)$, giving $K_G/d_{\rm tan}^4=1/27$.
+10. **Cylindrical Riccati [V].** For $X(t)=(\cos t,\sin t,f(t))$, the two determinants simplify EXACTLY to $D=f+f''$ and $D'=f'+f'''$, yielding the classical forced oscillator after integrating $D'=\alpha D^2$.
+11. **Graph Monge–Ampère [D].** Direct division of $K_G=\det D^2h/(1+|\nabla h|^2)^2$ by $d_{\rm tan}^4=(h-xh_x-yh_y)^4/(1+|\nabla h|^2)^2$ gives the surface equation.
+12. **Catenoid no-go [V].** Its normal satisfies $X\cdot N=-1/r+uW$ and curvature $K=-r^2S^4$; $K/d_{\rm tan}^4$ is nonconstant and undefined at a finite zero of the support function.
+13. **2D SL3 Lax zero curvature [V,K].** Independently expanded $-A_b+B_a+[A,B]$ for the exact matrices of §14; it equals diag$(-\mathcal E_T,\mathcal E_T,0)$ with every off-diagonal entry ZERO.
+14. **Tzitzéica 1D first integral [V].** $h''=e^h-e^{-2h}$ integrates to $h'^2=2e^h+e^{-2h}+\varepsilon_T$; $v=e^h$ gives the cubic. Algebraic discriminant is $-4(\varepsilon_T^3+27)$, $j=-16\varepsilon_T^6/(\varepsilon_T^3+27)$.
+15. **Nodal Riccati [V].** At $\varepsilon_T=-3$ the cubic factors $(v-1)^2(2v+1)$; with $Z=\sqrt{2v+1}$ the first-order equation is $Z_s=\pm(Z^2-3)/2$ on monotone branches.
+16. **Special elliptic isomorphism [V].** At $\varepsilon_T^3=-54$, the Tzitzéica reduction cubic has $g_3=0$. The scaling $(X_T,Y_T)=(\sigma^2X_R,\sigma^3Y_R)$, $\sigma^4=g_{2,T}/4$, carries the symmetric Riemann model $(g_2,g_3)=(4,0)$ to the Tzitzéica model and rescales $dX/Y$ by $\sigma^{-1}$.
+17. **Projective Riccati [V].** Differentiating $p=\psi_s/\psi$, $q=\psi_{ss}/\psi$ gives $p_s=q-p^2$, $q_s=\alpha+\beta p-pq$ and eliminates to $p''+3pp'+p^3-\beta p-\alpha=0$.
+18. **EP Gram/Drach [V].** SymPy expansion for $R=A\psi_1^2+2B\psi_1\psi_2+C\psi_2^2$ yielded EXACT zero for the residual $2RR''-R'^2-4QR^2-4(AC-B^2)W^2$. The EP equation and linear symmetric-square equation follow by differentiation.
+19. **Group and spin [D,K].** Sym²(SL2) preserves the discriminant of binary quadratics and has kernel ±I; the rank-three conic frame loses the selected two-torsion spin sign as documented independently in draft 210.
+20. **Parameter audit [D].** The framework's $(r,c,\mu,u)$, Tzitzéica curve's $(s,\alpha,\beta)$, surface PDE's $(a,b,w,\lambda_T)$, and elliptic energy $\varepsilon_T$ are distinguished in every corresponding formula.
+
+### 25.2 Historical Symmetrical Framework ZIP sources
+
+- Follow-up on Sato Grassmannian, H136: the selected **linear squared-eigenfunction Drach equation**, stationary KdV/one-gap Lamé Lax operator, and distinction between Lax operator and variational Hessian. The present work identifies the Sym² SL3 frame and computes its Tzitzéica invariant; it does not change H136's status.
+- Follow-up on fundamental forms/Willmore/Hopf, H421–H428: actual Euclidean catenoid/helicoid $I,II,III$, pointwise binary quartic $(I,J)$ and Gauss–Codazzi. The present affine surface equations are **different** from those Euclidean fundamental-form identities.
+- Follow-up on Riemann marked periods, H466–H470, and drafts 170, 200, 210: marked elliptic WE forms, Gauss–Manin, spin two-torsion and an exact selected Lamé/Riemann isomorphism. No canonical connection-preserving SL3/Tzitzéica identification follows from those archival facts.
+- Foundational paper v0.3, H153–H155: Ramanujan/Chazy/Darboux–Halphen and the elliptic Weierstrass roots. Historical projective Halphen and these modular Darboux–Halphen variables have not been assumed identical.
+- Draft 190: fiber-holonomy-aware reconstruction loses information when spin/charges/connections are discarded; the $\mathbb Z_2$ kernel of Sym² is a new exact instance.
+
+### 25.3 Independent external mathematical sources
+
+- N. V. Bîlă, *On a Side Condition for Wronskian-Involving Differential Equations*, Applied Mathematics E-Notes 23 (2023), 300–308. Exact curve determinant characterization and Airy examples: https://arxiv.org/abs/2206.05673 ; https://www.math.nthu.edu.tw/~amen/2023/AMEN-220619.pdf .
+- M. Crâşmăreanu, *Tzitzéica Cylindrical Curves*, especially the forced harmonic oscillator derivation: https://www.math.uaic.ro/~mcrasm/depozit/l23.pdf .
+- *Tzitzeica Curves and Surfaces*, The Mathematica Journal (2010). Curve and surface invariants, graph $z=1/(xy)$, centro-affine invariance: https://www.mathematica-journal.com/2010/09/20/tzitzeica-curves-and-surfaces/ .
+- Chuu-Lian Terng, *Geometries and Symmetries of Soliton Equations*, affine-sphere SL3 Lax, flatness and harmonic maps into SL3/SO(2,1): https://www.math.uci.edu/~cterng/Tokyo.pdf .
+- Ovsienko and Tabachnikov, *Projective Differential Geometry Old and New*, Cambridge University Press, introduction and projective linear differential operators: https://www.cambridge.org/core/books/abs/projective-differential-geometry-old-and-new/introduction/94EE138BA5914FA8422D09DA75C3B645 .
+- A peer-reviewed account of Wilczyński third-order/projective curvature: https://www.jstage.jst.go.jp/article/kyushujm/65/1/65_1_55/_pdf .
+- Classical affine-sphere/Tzitzéica PDE and twisted loop-group reconstruction: https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=2105 .
+- Affine Toda relation of the Tzitzéica/Bullough–Dodd equation to $A_2^{(2)}$: https://www.sciencedirect.com/science/article/pii/S0550321314001904 .
+- NIST DLMF, Airy functions and their Wronskians (chapter 9), and elliptic/Weierstrass functions (chapter 23): https://dlmf.nist.gov/9 ; https://dlmf.nist.gov/23 .
+
+**Scope.** The classical names and results are attributed; exact parameter-scaled formulas and the cross-dictionary are derived here. No claim of physical Yang–Mills, quantization, spectral self-adjointness or a universal complete global affine-sphere reconstruction follows from a formally flat one-dimensional frame.
