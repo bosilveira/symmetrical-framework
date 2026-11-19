@@ -335,3 +335,179 @@ Only the two marked periods of $\omega_R=dg_R/y_R$ and $\eta_R=g_Rdg_R/y_R$ cont
 ```
 
 This formula holds on cycles avoiding the punctures; the exact derivative has no closed periods. The pullback makes the two relevant Pinney quartic differentials *explicit*, but a real-period closing test still needs a chosen homology basis, the real slice and the immersion translation lattice.
+
+## 11. Marked homology and an exact Hodge-metric glue for the two smooth elliptic curves [D,V,K]
+
+Let $\omega_{\mathcal P}=da/Y$ on the smooth Pinney quartic, and $\omega_R=dg_R/y_R$ on $E_0$. The isogeny has degree two and satisfies
+
+```math
+\Phi^*\omega_R=q\,\omega_{\mathcal P},\qquad q=r\mu^{1/4}.
+```
+
+For any holomorphic one-form $\omega$ on a smooth compact complex curve, define the positive Hodge pairing
+
+```math
+\|\omega\|_{\mathrm{Hodge}}^2=\frac i2\int_E\omega\wedge\overline\omega.
+```
+
+**Theorem 11.1 [D,V] (degree-weighted Hodge isometry formula).**
+
+```math
+r^2\sqrt\mu\,\|\omega_{\mathcal P}\|_{\mathrm{Hodge}}^2=2\|\omega_R\|_{\mathrm{Hodge}}^2.
+```
+
+**Proof.** Pullback and complex conjugation commute, so
+
+```math
+\int_{\mathcal P}\Phi^*(\omega_R\wedge\overline{\omega_R})=q\bar q\int_{\mathcal P}\omega_{\mathcal P}\wedge\overline{\omega_{\mathcal P}}.
+```
+
+Because $\Phi$ is an unramified degree-two map between compact oriented surfaces, the left integral is twice the corresponding integral over $E_0$. This yields the displayed identity with $|q|^2=r^2\sqrt\mu$.
+
+**This is a literal geometric metric identity, not a scalar coincidence of numerical norms.** It joins the Hodge $L^2$ spaces of *two smooth elliptic curves* through an explicitly given degree-two map. It is **not** yet an isometry from the original weighted scalar Sturm–Liouville Hilbert space $L^2((0,\infty),x\,dx)$ to either compact Hodge space; that additional functional-analytic intertwiner has not been constructed.
+
+### 11.1 The homology marking has index two
+
+Choose integer symplectic cycle bases $\delta_1,\delta_2$ for the Pinney quartic and $\gamma_1,\gamma_2$ for $E_0$. For some integer matrix $M$,
+
+```math
+\Phi_*\binom{\delta_1}{\delta_2}=M\binom{\gamma_1}{\gamma_2},\qquad |\det M|=2.
+```
+
+The periods obey
+
+```math
+q\binom{\oint_{\delta_1}\omega_{\mathcal P}}{\oint_{\delta_2}\omega_{\mathcal P}}=M\binom{\oint_{\gamma_1}\omega_R}{\oint_{\gamma_2}\omega_R}.
+```
+
+The determinant-two constraint follows because a degree-two unramified covering identifies a sublattice of index two in $H_1(E_0,\mathbb Z)$. **The specific entries of $M$ require a cycle marking**, not merely an affine equation or equality of $j$ values. A numerical or symbolic period comparison that omits $M$ is insufficient to claim an immersion-period correspondence.
+
+## 12. The canonical positive Pinney trajectory parametrizes a real Riemann elliptic arc [D,V]
+
+On the positive real centered Pinney orbit,
+
+```math
+a(u)=\mu^{1/4}\sqrt{\cosh(ru)},\qquad Y(u)=a a_u=\frac{r\sqrt\mu}{2}\sinh(ru).
+```
+
+Under the isogeny of §9, these give the remarkably simple real Riemann-curve coordinates
+
+```math
+g_R(u)=\cosh(ru),\qquad y_R(u)=\sqrt{\cosh(ru)}\sinh(ru).
+```
+
+They satisfy $y_R^2=g_R^3-g_R$ identically. For $u>0$ the branch has $g_R\ge1$, $y_R\ge0$; the sign of $y_R$ reverses on $u<0$. At the turning point $u=0$, $g_R=1$ and $y_R=0$.
+
+**Theorem 12.1 [D,V] (exact holomorphic period density).** Along this real arc, the Riemann holomorphic differential is
+
+```math
+\frac{dg_R}{y_R}=\frac{r\,du}{\sqrt{\cosh(ru)}}.
+```
+
+**Proof.** Differentiate $g_R=\cosh(ru)$ and divide by $y_R=\sinh(ru)\sqrt{\cosh(ru)}$ for $u>0$. At the endpoint the expression extends regularly in a local square-root uniformizer.
+
+The interval $u\in[0,\infty)$ maps to the elliptic arc $g_R\in[1,\infty)$, and its integral is **finite**:
+
+```math
+\int_1^\infty\frac{dg_R}{\sqrt{g_R^3-g_R}}=\int_0^\infty\frac{r\,du}{\sqrt{\cosh(ru)}}=\frac12B\left(\frac14,\frac12\right).
+```
+
+Substitute $t=ru$, then $z=\tanh t$ and $w=z^2$ to obtain the beta integral; it is independent of $r$ and $\mu$ because the elliptic fiber itself was normalized.
+
+Numerically, the value of the open arc is
+
+```math
+\frac12B(1/4,1/2)=2.62205755429211981046\ldots.
+```
+
+The archived real Riemann period at $\lambda_R=1$ is $\Omega_\beta=4K(1/2)/\sqrt2=B(1/4,1/2)$, **twice** this arc integral with the compatible standard cycle orientation.
+
+### 12.1 What the height forms actually do at the ends
+
+The Riemann vertical height differential pulls back to
+
+```math
+\Phi^*\Phi_{R3}=A_R\frac{r\,du}{\sqrt{\cosh(ru)}}.
+```
+
+Along the real arc from the branch point to the planar end, its real height increment is finite:
+
+```math
+\Delta X_{R3}= \frac{A_R}{2}B(1/4,1/2).
+```
+
+The catenoid height form along its real meridian is instead $dh_C=du$, giving an **infinite** height interval as $u\to+\infty$. Therefore the exact Pinney-to-Riemann elliptic *curve map* does **not** identify the catenoid and Riemann minimal surfaces as isometric immersions. In particular, the parameter $u$ is **not** an affine/arc-length parameter for the elliptic differential: the density $r/\sqrt{\cosh(ru)}$ matters.
+
+The second-kind form $g_R\,dg_R/y_R$ behaves along this open arc as $r\sqrt{\cosh(ru)}\,du$ and its primitive diverges at the planar end. That is compatible with horizontal planar-end behavior and explains why comparing only the finite holomorphic period would omit immersion data.
+
+## 13. The unique real j=1728 fiber, and a precise boundary on the isogeny claim [D,V,C]
+
+For $k_R\in\mathbb R$ the Riemann $j$ invariant satisfies the exact identity
+
+```math
+j_R(k_R)-1728=\frac{64k_R^2(2k_R^2+9)^2}{k_R^2+4}.
+```
+
+**Theorem 13.1 [D,V].** On the **real** Riemann modulus line, $j_R(k_R)=1728$ if and only if $k_R=0$, equivalently $\lambda_R=1$.
+
+**Proof.** Factor the numerator as shown. For real $k_R$, the denominator and the factor $(2k_R^2+9)^2$ are strictly positive, so the right-hand side vanishes exactly at zero. Solve $\lambda_R^{-1}-\lambda_R=0$ for $\lambda_R>0$.
+
+The centered Pinney mechanical curve remains $j=1728$ for all $r,\mu>0$, so merely varying $r$ or $\mu$ **cannot** reproduce the full real nonconstant $j_R(k_R)$ family by the same direct curve identification. The explicitly derived degree-two formulas in §9 land on the *symmetric* fiber only.
+
+**Qualification:** This does *not* rule out other isogenies between the fixed $j=1728$ curve and isolated nonsymmetric Riemann fibers (complex multiplication isogeny classes contain curves with different $j$ values). It rules out claiming that the **same explicit marked degree-two formula** automatically identifies every Riemann fiber, and shows that equality of $j$ values on the real family is isolated.
+
+### 13.1 Complex multiplication weights distinguish the two marked forms
+
+On the symmetric elliptic curve $E_0:y_R^2=g_R^3-g_R$, the automorphism
+
+```math
+\rho(g_R,y_R)=(-g_R,i y_R)
+```
+
+has order four. Its action on the two marked differential types is
+
+```math
+\rho^*(dg_R/y_R)=i\,dg_R/y_R,\qquad \rho^*(g_R\,dg_R/y_R)=-i\,g_R\,dg_R/y_R.
+```
+
+**Proof.** Substitute $g_R\mapsto-g_R$, $y_R\mapsto i y_R$ and differentiate. The two differential types belong to *opposite* $i$-eigenspaces of this automorphism. The holomorphic period and the meromorphic horizontal/flux period are therefore **not interchangeable** even at the symmetric complex-multiplication point.
+
+This provides an additional invariant check on any proposed surface-period-preserving map: matching $dg_R/y_R$ does not automatically match the independent meromorphic differential $g_R\,dg_R/y_R$ or its real period-closing conditions.
+
+## 14. The archived Gauss–Manin system is a second SL/projective mechanism, with a DIFFERENT independent variable [H,K,D]
+
+For the complete Riemann family, the historical source derives the marked periods
+
+```math
+\Omega(k_R)=\oint\frac{dg_R}{y_R},\qquad N(k_R)=\oint\frac{g_R\,dg_R}{y_R}.
+```
+
+Their Gauss–Manin evolution in the *modulus* $k_R$ is
+
+```math
+\frac{d}{dk_R}\binom{\Omega}{N}=\frac1{k_R^2+4}\begin{pmatrix}-k_R/2&-1\\-1&k_R/2\end{pmatrix}\binom{\Omega}{N}.
+```
+
+The holomorphic period satisfies the scalar Picard–Fuchs ODE
+
+```math
+(k_R^2+4)\Omega_{k_Rk_R}+2k_R\Omega_{k_R}+\frac14\Omega=0.
+```
+
+This is a traceless $2\times2$ first-order carrier, just as the SL–Riccati linear system is traceless. It has its own projectivization and Schwarzian:
+
+```math
+\left\{\frac{\Omega_1}{\Omega_2},k_R\right\}=\frac{k_R^2-12}{2(k_R^2+4)^2}.
+```
+
+**Dictionary boundary:** The *independent variable* here is $k_R$, moving across different elliptic fibers, while the scattering SL/EP carrier evolves in $u=\ln(x/c)$ along one differential equation. The entries $(\Omega,N)$ are marked *periods*, while $(\phi,\phi_u)$ are a function and its spatial derivative. Their matrix Lie algebra and projective constructions can be formally compared, but neither the chosen parameter nor the Hilbert space, polarization, period lattice or monodromy should be identified without an actual gauge/reparametrization intertwiner.
+
+### 14.1 Determinant conservation is common; its meaning differs
+
+The Gauss–Manin matrix has trace zero, so the determinant of any fundamental period matrix is constant. The archived symplectic period determinant is
+
+```math
+\Omega_\alpha N_\beta-\Omega_\beta N_\alpha=-8\pi i.
+```
+
+In a real SL carrier, the conserved Wronskian is likewise a determinant. In EP the square of that Wronskian multiplies the Gram determinant to yield the Pinney strength. Those facts are **structurally analogous and algebraically exact**, but the *objects whose determinants are preserved* are different. The fixed $-8\pi i$ comes from the Riemann family and its marked cycles, not from the original $L^2(xdx)$ norm or a universal Pinney constant.
