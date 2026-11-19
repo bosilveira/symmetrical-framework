@@ -689,3 +689,161 @@ The period/flux determinant then agrees exactly with the archival formula:
 **Meaning:** Even after choosing the Riemann immersion scale so that its *vertical flux* matches the catenoid's marked flux, the Riemann immersion has a **nonzero horizontal translation period**. It is not a globally closed catenoid, and no equality of inverse-scattering spectral curves, Hodge norms, or Pinney amplitudes can erase this additional immersion-period datum.
 
 The Riemann minimal example may be considered in its own singly periodic translation quotient. That global quotient is a separate geometric object from the simply periodic angular catenoid.
+
+## 18. The Hilbert-metric and period dictionaries remain distinct [D,C]
+
+The canonical original Sturm–Liouville form is defined on the *weighted scalar* Hilbert space
+
+```math
+\mathcal H_x=L^2((0,\infty),x\,dx),\quad (U_cf)(u)=xf(ce^u),\quad U_c\tau_xU_c^{-1}=-\partial_u^2+r^2.
+```
+
+It supplies the exact weighted norm
+
+```math
+\mathcal N=\|f_\mu\|_{\mathcal H_x}^2=\frac1{2r\mu}
+```
+
+and isometrically identifies the weighted Mellin/Fourier transform with the ordinary Fourier transform of $xf(x)$. The original profile's closed Mellin transform and Fourier profile are documented and checked in draft 130.
+
+By contrast, there are now three quite different period/invariant pairings:
+
+| Pairing | Space | Preserved object | Essential extra data |
+|---|---|---|---|
+| Scalar SL Plancherel | $\mathcal H_x=L^2(xdx)$ | weighted norm and self-adjoint spectral decomposition | interval and operator domain |
+| Scattering inverse map | reflectionless Schrödinger solution space | $\kappa_j$ and complete right norming data | laboratory origin and norming convention |
+| Catenoid marked period | punctured normalization $\mathbb P^1\setminus\{\pm r\}$ | residues and vertical logarithmic height period | Gauss map, real period condition and angular quotient |
+| Pinney–Riemann isogeny | two smooth elliptic curves | pullback of meromorphic 1-forms and degree-two Hodge pairing | elliptic origins, marked homology and immersion data |
+| Riemann period closing | punctured elliptic Riemann fiber | real parts of three Weierstrass periods, modulo translation lattice | $\lambda_R,A_R$, cycles, period lattice |
+
+A direct **numerical calibration** exists after choosing the canonical catenoid scale:
+
+```math
+F_{C,3}=\frac{2\pi}{r}=4\pi\mu\|f_\mu\|_{\mathcal H_x}^2.
+```
+
+It follows by substituting the two explicit formulas. This relates two positive numbers with a specified normalization but is **not** by itself an isometric map, a pullback of an immersion 1-form, or an equality of Hilbert operators. The rigorous metric glue between the two **elliptic holomorphic-form** Hodge spaces is instead Theorem 11.1; the rigorous metric glue for the original scalar SL space is the logarithmic Liouville unitary map.
+
+### 18.1 A commutative diagram and a missing arrow
+
+The exact *rational spectral-node* branch is
+
+```math
+(\Lambda,\nu)\ \longleftarrow\ s\ \longmapsto\ t=\frac{s-r}{s+r}\ \longmapsto\ (g_C=-t,\ dh_C=d\log t/r)\ \longmapsto\ (X_C,X_H).
+```
+
+The exact but **separate smooth elliptic** branch is
+
+```math
+(a,Y)\in\mathcal P_{r,\mu}\ \overset{\Phi}{\longmapsto}\ (g_R,y_R)\in E_0\ \longmapsto\ (\Phi_{R1},\Phi_{R2},\Phi_{R3})\ \longmapsto\ \mathrm{Riemann\ periods}.
+```
+
+The two branches have the same canonical $u$ and elementary hyperbolic functions after a *chosen* parameterization, but there is no nonconstant morphism from the first rational normalization to the second elliptic fiber (§8). Accordingly there is no general commutative square identifying their entire marked period lattices. The **local algebraic mechanisms** can agree without implying a global period-preserving geometric equivalence.
+
+## 19. Full r=2 check with every original scale retained [D,V]
+
+Set **resolution $r=2$** but retain $c,\mu>0$. Then the original function and canonical fields are
+
+```math
+u=\ln(x/c),\quad S_2=\frac{2c^2x^2}{x^4+c^4},\quad W_2=\frac{x^4-c^4}{x^4+c^4},\quad f_\mu(x;2,c)=\frac{c^2x}{\sqrt\mu(x^4+c^4)}.
+```
+
+The order-one spectral normalization is
+
+```math
+\nu^2=-\Lambda(\Lambda+4)^2,\quad\Lambda=-s_2^2,\quad\nu=s_2(4-s_2^2),\quad t_2=\frac{s_2-2}{s_2+2}=(x/c)^2e^{2iv_{\rm ang}}.
+```
+
+Its catenoid Gauss map, height form, flux, and helicoid associate period are
+
+```math
+g_{C,2}=-t_2,\qquad dh_{C,2}=\frac12\,d\log t_2=\frac{2\,ds_2}{s_2^2-4}.
+```
+
+```math
+\oint dh_{C,2}=\pi i,\quad F_{C,3}=\pi,\quad \mathrm{Re}\oint i\,dh_{C,2}=-\pi.
+```
+
+The *different* original primitive form on the same marked spectral sphere is
+
+```math
+f_\mu(x;2,c)\,dx=\frac{ds_2}{\sqrt\mu(s_2^2+4)}.
+```
+
+Its poles are at $s_2=\pm2i$, not at the spectral-node preimages $s_2=\pm2$, and its two half-integrals are
+
+```math
+\int_0^c f_\mu\,dx=\int_c^\infty f_\mu\,dx=\frac{\pi}{8\sqrt\mu}.
+```
+
+If the resolution is doubled **again** from $2$ to $4$, the marked normalization undergoes the Joukowski map
+
+```math
+s_4=s_2+\frac4{s_2},\qquad (t_2\mapsto t_2^2)^*dh_{C,4}=dh_{C,2}.
+```
+
+For the **different smooth elliptic Pinney curve**, the symmetric Riemann isogeny is
+
+```math
+Y^2=a^4-\mu,\qquad g_R=\frac{a^2}{\sqrt\mu},\qquad y_R=\frac{aY}{\mu^{3/4}},\qquad \Phi^*(dg_R/y_R)=2\mu^{1/4}da/Y.
+```
+
+The positive real orbit gives $g_R=\cosh(2u)$, $y_R=\sinh(2u)\sqrt{\cosh(2u)}$. Its finite elliptic arc remains $\tfrac12B(1/4,1/2)$, whereas its catenoid height along $u\to\infty$ diverges. Under the extra choice of matched Riemann vertical flux $\pi$, the **horizontal Riemann translation** is still
+
+```math
+(T_R)_1=\frac{\pi^2}{2K(1/2)^2}=1.43554002209225999564\ldots>0.
+```
+
+These formulas give a complete **whole-system resolution test**: $r=2$ changes the rational kernel, spectral node location, Joukowski branching, catenoid neck/flux, and Riemann pullback scaling, without changing the distinguished symmetric Riemann **modulus** $\lambda_R=1$ or conflating the roles of $c$ and $\mu$.
+
+## 20. Independent verification and evidence limits
+
+The following checks were made against the actual source equations rather than inferred from matching terminology.
+
+1. **Marked spectral node:** substitute $t=(s-r)/(s+r)$ and compute $d\log t$ exactly; its poles and residues agree with the catenoid height form.
+2. **Full Weierstrass triple:** with $g_C=-t$, $dh_C=dt/(rt)$, symbolic differentiation verifies $\Phi_1=d[(t+t^{-1})/(2r)]$, $\Phi_2=d[-i(t-t^{-1})/(2r)]$, and $\Phi_3=dt/(rt)$. Integration yields the catenoid immersion/metric and period $(0,0,2\pi i/r)$.
+3. **Helicoid real period:** multiplying the period by $e^{i\delta}$ gives $-2\pi\sin\delta/r$ real translation, checked independently at $\delta=0,\pi/2$.
+4. **Multiple nodes:** for $\kappa_\ell\ne\kappa_j$, the two paired values of $t_j$ are reciprocal and generally distinct, obstructing Gauss-map descent through other nodes.
+5. **Smooth-curve obstruction:** Riemann–Hurwitz on the rational normalization gives $-2=\deg\mathrm{Ram}\ge0$ for a hypothetical nonconstant map to an elliptic curve, contradiction.
+6. **Pinney isogeny:** substituting $g_R=a^2/\sqrt\mu$, $y_R=2aY/(r\mu^{3/4})$ in $y_R^2=g_R^3-g_R$ gives zero polynomial residual on the quartic; the holomorphic differential scales by $r\mu^{1/4}$.
+7. **All Riemann forms:** the pullbacks of $(g_R^{-1}\pm g_R)\,dg_R/y_R$ were independently simplified to the formulas of §10. The derivative of $y_R/g_R$ is exactly $(g_R+g_R^{-1})dg_R/(2y_R)$.
+8. **Hodge pairing:** the degree-two integral identity follows from the covering degree and the exactly computed differential scale; it does not invoke a numerical guess.
+9. **Elliptic real arc:** $g_R=\cosh(ru)$, $y_R=\sqrt{\cosh(ru)}\sinh(ru)$ and $dg_R/y_R=r\,du/\sqrt{\cosh(ru)}$ were checked by substitution; the beta integral agrees numerically to more than 20 decimal digits.
+10. **Real CM fiber:** factorization gives $j_R(k_R)-1728=64k_R^2(2k_R^2+9)^2/(k_R^2+4)$. The two marked differential eigencharacters under $(g_R,y_R)\mapsto(-g_R,iy_R)$ were checked directly.
+11. **Resolution doubling:** the exact identity $s_{2r}=s_r+r^2/s_r$, its ramification derivative and the pullback equality of marked height forms were checked in SymPy.
+12. **Original primitive:** the Möbius calculation yields $f_\mu dx=ds_r/[\sqrt\mu(s_r^2+r^2)]$; its rational half-integrals and poles were evaluated exactly.
+13. **Marked real/flux comparison:** at $\lambda_R=1$, the archived real-period formulas and Legendre relation produce $T_{R1}=\pi^2/(rK(1/2)^2)$ after matching vertical flux. Numerically at $r=2$, the value is $1.43554002209225999564\ldots$.
+14. **Parameter domains:** all claims about real $x,u$ and $\lambda_R>0$ were kept separate from analytic continuation in $s$, elliptic curve compactification, and scattering $\Lambda$.
+
+**Limits of these checks:** Exact normalization identities do not establish a smooth finite-gap deformation linking the nodal spectral model to the Riemann family; no genus-zero-to-genus-one morphism exists in that direction. The explicit Pinney isogeny belongs to a **different elliptic curve**, and it is demonstrated only at the symmetric Riemann fiber by the displayed formula. An equality of Hodge metrics under that map does not give a unitary intertwiner of scalar Sturm–Liouville operators, nor establish global embeddedness of a minimal immersion. The original historical monodromy and period values retain their own numerical/error certification flags.
+
+## 21. Open mathematical questions and proposed consolidation
+
+1. **Generalized-Jacobian to Weierstrass:** classify the admissible meromorphic Gauss maps on the rational normalization with all $n$ node-pair residue constraints, and determine which descend to globally closed minimal immersions on selected punctured quotients. Do not equate the generalized Jacobian $(\mathbb C^\times)^n$ with a smooth Jacobian.
+2. **Inverse-data-to-geometry map:** prove an injectivity statement for the complete marked tuple $(\kappa_j,\beta_j^2,c_{\rm ref})$ into a chosen family of normalized immersion data, including the effect of changing the logarithmic origin; identify its geometry-dependent gauge equivalences.
+3. **Differential-respecting smoothing:** exhibit a family of smooth genus-one curves degenerating to the depth-one nodal spectral model, specifying a family of relative dualizing/third-kind forms that converges to $d\log t$ and records real/imaginary periods. Compare with the nondegenerate Riemann symmetric fiber only through a separately constructed family/correspondence.
+4. **Riemann isogeny cycle matrix:** choose explicit oriented cycles on the centered Pinney quartic and the Riemann $E_0$ fiber; compute the exact integer matrix $M$ with $|\det M|=2$ and verify the full pullback of the height and horizontal meromorphic periods numerically and algebraically.
+5. **Riemann modulus motion:** test whether any *family* of Pinney mechanical energy quartics with additional independent energy/shift parameters admits a genuinely nonconstant period-map correspondence with the $k_R$-Gauss–Manin system. The fixed centered $j=1728$ curve cannot do this by itself.
+6. **Global helicoid/catenoid quotient:** formalize the associated-family period lattice for arbitrary associate angle, describing immersion in $\mathbb R^3$ versus immersion modulo screw/translation.
+7. **Resolution-multiplication hierarchy:** determine the induced maps on normalized spectral line bundles and node gluing parameters under $t\mapsto t^M$, not only on the rational coordinate and marked height differential. Distinguish ramification from preservation of spectral eigenvalues.
+8. **Hodge versus Fourier–Mellin:** attempt a natural map of *operators* or quadratic forms between the original weighted scalar Hilbert space and the selected compact elliptic Hodge space. A mere equality of scalar norms after normalization is insufficient.
+9. **Berry/Milne/scattering phases:** identify the separate residues, one-cycles and two-cycles required for phase comparison; test whether any connection-preserving pullback relates the arctangent primitive to a Hopf connection without identifying it with the catenoid height loop.
+10. **Finite-gap higher levels:** examine the Lamé-to-Pöschl–Teller degeneration with both the spectral differential and Weierstrass height differential marked. Check exactly which parameter maps preserve periods and which only preserve local ODEs.
+
+**Consolidation recommendation:** Treat §§4–6 (marked node/catenoid/helicoid periods), §§8–10 (nodal-versus-elliptic obstruction and complete Riemann pullback), §§11–12 (Hodge and beta periods), §§15–17 (Joukowski doubling, original integral as rational spectral differential, matched flux obstruction) as separate candidate foundational propositions. Keep all provisional until the operator domains and period markings are independently reviewed. Do not merge the distinct spectral energy, Pinney energy, and Riemann immersion curves.
+
+## 22. Sources and bibliographic audit
+
+**Exact project sources reopened.** Live drafts 130 and 140; draft 150 (inverse-Marchenko norming/divisor and centered Pinney quartic isogeny, existing but incomplete at the time of this review); the historical November 18 ZIP, particularly the verified Riemann marked period/Gauss–Manin module and its H466–H470 claims. The historic source defines $w_R^2=g_R(g_R-\lambda_R)(\lambda_Rg_R+1)$, derives the exactness of $d(w_R/g_R)$, the two periods $\Omega,N$, the elliptic $j_R$ function and their Gauss–Manin ODE; those are not claimed as newly discovered in this draft. The archive's verified H100/H299 finite Lax–Novikov hierarchy supplies the nodal spectral curves; the rational marked-node identification to catenoid forms is the **new provisional construction** developed here.
+
+**External mathematical sources checked:**
+
+- O. Chodosh, *Introduction to Minimal Surfaces* (Stanford lecture notes), catenoid $g=z$, $dh=dz/z$, helicoid associate, meromorphic Weierstrass data: https://web.stanford.edu/~ochodosh/Math286-min-surf.pdf .
+- M. Weber, *A Survey of Minimal Surfaces* (Clay Mathematics Institute lecture material), punctured catenoid period versus helicoid real period: https://www.claymath.org/wp-content/uploads/2022/03/cmip02.pdf .
+- Meeks, Pérez and Ros, *The Riemann Minimal Examples* (2016), the actual periodic and elliptic Weierstrass geometry: https://arxiv.org/abs/1609.05660 .
+- Meeks and Rosenberg et al., *Shapes of embedded minimal surfaces* (2006), catenoid/helicoid limits of Riemann examples: https://pmc.ncbi.nlm.nih.gov/articles/PMC1544050/ .
+- NIST DLMF, elliptical integrals and their differential/Legendre relationships: https://dlmf.nist.gov/19 and https://dlmf.nist.gov/23 .
+- Finite-gap/inverse scattering distinction and spectral divisor degeneration: https://doi.org/10.1088/1751-8121/adcc6d .
+- For the precise degree-two Hodge identity and the nodal genus no-go, the proofs are included in §§8,11 rather than inferred from literature titles. The general inputs are standard Riemann–Hurwitz, degree of covering maps on differential integrals, and the normalization/dualizing sheaf theory of nodal curves.
+
+**Final boundary.** The Symmetrical Framework possesses a genuine algebraic-geometric *web* rather than one untyped closure. A marked **rational spectral normalization** carries the catenoid/helicoid residue and real-period mechanics; a **different smooth elliptic Pinney curve** maps by a degree-two isogeny to the **symmetric Riemann elliptic fiber** and transports its entire meromorphic Weierstrass triple. Both constructions use canonical hyperbolic data and explicit projective maps, but a Riemann–Hurwitz obstruction prevents direct identification of the two underlying curve types. The newly explicit Joukowski and original-primitive differential formulas demonstrate how resolution $r$, center $c$, and amplitude $\mu$ propagate through the system without forcing an interpretation in physics.
