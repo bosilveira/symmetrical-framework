@@ -157,3 +157,207 @@ L^2(\mathbb R,du)=\mathrm{span}\{\varphi_{n,1},\ldots,\varphi_{n,n}\}\oplus\math
 ```
 
 This is a **genuine spectral correspondence** rather than a mere coincidence of potential formulas: the continuous part is unitary to the free operator, while the discrete finite-dimensional defect is explicitly retained.
+
+## 6. Normalized Jost waves reconstruct exact positive Pinney envelopes [D,V,K]
+
+For real $k>0$ define the two distinct products
+
+```math
+\mathcal D_n(k)=\prod_{j=1}^n(jr-ik),\qquad D_n(k^2)=|\mathcal D_n(k)|^2=\prod_{j=1}^n(k^2+j^2r^2).
+```
+
+The normalized right Jost solution is obtained by applying the **adjoint Darboux chain** to the free plane wave:
+
+```math
+\Psi_{n,k}(u)=\frac{Q_n^\dagger e^{iku}}{\mathcal D_n(k)}.
+```
+
+It solves
+
+```math
+h_n\Psi_{n,k}=k^2\Psi_{n,k},\qquad \Psi_{n,k}(u)\sim e^{iku}\quad(u\to+\infty).
+```
+
+Since $W\to-1$ as $u\to-\infty$, the same solution has left asymptotic
+
+```math
+\Psi_{n,k}(u)\sim \mathcal D_n(k)^{-1}\prod_{j=1}^n(-jr-ik)e^{iku}\quad(u\to-\infty).
+```
+
+No $e^{-iku}$ component appears: **the reflection coefficient is identically zero**. The unit-modulus transmission amplitude is
+
+```math
+T_n(k)=\prod_{j=1}^n\frac{k+ijr}{k-ijr},\qquad |T_n(k)|=1,\qquad k>0.
+```
+
+This is the classical integer reflectionless Pöschl–Teller scattering formula; the present proof is simply the explicit Darboux action and its asymptotics. Its phase is a *scattering phase*, not a Berry holonomy.
+
+### 6.1 Wronskian normalization fixes the Pinney strength
+
+Let $\Psi_{n,k}=a_{n,k}e^{i\theta_{n,k}}$, with the positive modulus $a_{n,k}=|\Psi_{n,k}|$. Its current is
+
+```math
+j_{n,k}=\mathrm{Im}(\bar\Psi_{n,k}\Psi_{n,k,u})=a_{n,k}^2\theta_{n,k,u}.
+```
+
+The potential and $k^2$ are real, so $j_{n,k}$ is constant. At $u\to+\infty$, $\Psi_{n,k}\sim e^{iku}$, hence **exactly**
+
+```math
+j_{n,k}=k,\qquad \theta_{n,k,u}=\frac{k}{a_{n,k}^2}.
+```
+
+The real part of the complex carrier equation therefore proves
+
+```math
+a_{n,k,uu}=(V_n-k^2)a_{n,k}+k^2a_{n,k}^{-3},\qquad V_n=-n(n+1)r^2S^2.
+```
+
+**Theorem 6.1 [D,V].** Every integer Pöschl–Teller reflectionless scattering wave at $k>0$ determines a **globally positive Ermakov–Pinney amplitude** with a universal *scattering-normalized* Pinney strength $k_{\rm EP}=k^2$, independently of the depth $n$ and the original Master amplitude parameter $\mu$.
+
+The coefficient $k^2$ is not a universal law for arbitrary normalizations: multiplying the scattering wave by a constant $\alpha$ changes the current by $|\alpha|^2$ and the Pinney strength by $|\alpha|^4$. It is precisely the **unit incident-wave normalization** that fixes $k_{\rm EP}=k^2$.
+
+## 7. The squared Jost modulus is the Gel'fand–Dikii polynomial [D,V]
+
+Let the unnormalized Darboux wave be
+
+```math
+Q_n^\dagger e^{iku}=e^{iku}B_n(k,W),\qquad B_n(k,W)=e^{-iku}Q_n^\dagger e^{iku}.
+```
+
+Since the Darboux coefficients are real, for real $k,W$ the product
+
+```math
+F_n(k^2,u)=B_n(k,W)\overline{B_n(k,W)}
+```
+
+is a real polynomial in $k^2$ and $W$. For $n=1,2$, the direct calculations are exactly the squared-eigenfunction polynomials of draft 130. The equality for general integer $n$ follows from the Darboux recursion and normalization at infinity, up to the chosen leading coefficient.
+
+The normalized scattering amplitude becomes
+
+```math
+a_{n,k}^2=\frac{F_n(k^2,u)}{D_n(k^2)}.
+```
+
+The unnormalized Gel'fand–Dikii invariant is
+
+```math
+\mathscr R_n(k^2)=-4k^2D_n(k^2)^2.
+```
+
+Dividing $F_n$ by the positive constant $D_n$ converts the invariant to
+
+```math
+2(a_{n,k}^2)(a_{n,k}^2)_{uu}-[(a_{n,k}^2)_u]^2-4(V_n-k^2)(a_{n,k}^2)^2=4k^2.
+```
+
+Thus the **same** positive Pinney strength can be read as (i) squared normalized scattering current, (ii) normalized Gram/Wronskian determinant, or (iii) the rescaled Gel'fand–Dikii polynomial. These are different descriptions of one *specified* spectral solution, not invariants of unrelated physical applications.
+
+## 8. Closed order-one Jost and Milne formulas [D,V]
+
+For $n=1$, one Darboux step gives
+
+```math
+B_1(k,W)=rW-ik,\qquad F_1(k^2,u)=k^2+r^2W^2.
+```
+
+The normalized wave and envelope are
+
+```math
+\Psi_{1,k}=\frac{rW-ik}{r-ik}e^{iku},\qquad a_{1,k}^2=\frac{k^2+r^2W^2}{k^2+r^2}.
+```
+
+The **exact Pinney equation** and phase velocity are
+
+```math
+a_{1,k,uu}=(-2r^2S^2-k^2)a_{1,k}+k^2a_{1,k}^{-3}.
+```
+
+```math
+\theta_{1,k,u}=k\frac{k^2+r^2}{k^2+r^2W^2}.
+```
+
+This is a localized deformation of the free amplitude $a=1$: it tends to $1$ at both ends, while the phase velocity differs from $k$ in the interior. Notice that this scattering-normalized Pinney family is **not** the centered unbounded canonical envelope $a=\mu^{1/4}\sqrt{\cosh(ru)}$ of the half-rate carrier; they solve different carrier equations and occupy different invariant levels.
+
+## 9. Closed order-two Jost and Milne formulas [D,V]
+
+For $n=2$, apply $A_2^\dagger A_1^\dagger$ to $e^{iku}$. Exact differentiation gives
+
+```math
+B_2(k,W)=r^2(3W^2-1)-k^2-3ikrW.
+```
+
+Its squared modulus is the polynomial of draft 130:
+
+```math
+F_2(k^2,u)=k^4+r^2(3W^2+2)k^2+r^4(3W^2-1)^2.
+```
+
+The normalization denominator is
+
+```math
+D_2(k^2)=(k^2+r^2)(k^2+4r^2).
+```
+
+Consequently
+
+```math
+\Psi_{2,k}=\frac{B_2(k,W)e^{iku}}{(r-ik)(2r-ik)},\qquad a_{2,k}^2=\frac{F_2(k^2,u)}{(k^2+r^2)(k^2+4r^2)}.
+```
+
+The exact nonlinear and phase equations are
+
+```math
+a_{2,k,uu}=(-6r^2S^2-k^2)a_{2,k}+k^2a_{2,k}^{-3}.
+```
+
+```math
+\theta_{2,k,u}=k\frac{(k^2+r^2)(k^2+4r^2)}{k^4+r^2(3W^2+2)k^2+r^4(3W^2-1)^2}.
+```
+
+For $k>0$ the denominator is strictly positive. The same real $u$-dependent profile that gives the **Master Hessian** therefore also supports an entire positive *scattering* Pinney family, with spectral parameter-dependent current but no claim of non-self-adjointness.
+
+## 10. The Milne excess phase is exactly the transmission phase [D,V,K]
+
+A continuous unwrapped phase may be chosen so that $\theta_{n,k}(u)-ku\to0$ as $u\to+\infty$. The Jost asymptotics then imply
+
+```math
+\int_{-\infty}^{\infty}\left[\theta_{n,k,u}-k\right]du=\mathrm{arg}\,T_n(k)
+```
+
+with a continuous branch matched to the scattering normalization. Since
+
+```math
+T_n(k)=\prod_{j=1}^n\frac{k+ijr}{k-ijr},
+```
+
+its unwrapped phase is
+
+```math
+\delta_n(k)=2\sum_{j=1}^n\arctan\left(\frac{jr}{k}\right),\qquad k>0.
+```
+
+**Theorem 10.1 [D,V] (scattering phase as Pinney excess phase).**
+
+```math
+\int_{-\infty}^{\infty}k\left[\frac{D_n(k^2)}{F_n(k^2,u)}-1\right]du=2\sum_{j=1}^n\arctan\left(\frac{jr}{k}\right).
+```
+
+This is an exact **integral identity** combining the nonlinear Pinney amplitude, the spectral polynomial and the linear scattering transmission amplitude. It is a useful new consolidated theorem in the framework, distinct from the canonical arctangent primitive of the original Symmetrical Function.
+
+### 10.1 Direct elementary check for n=1
+
+For the first well,
+
+```math
+\theta_{1,k,u}-k=\frac{kr^2S^2}{k^2+r^2W^2}.
+```
+
+Set $w=W(u)$, $dw=rS^2du$. Then
+
+```math
+\int_{\mathbb R}(\theta_{1,k,u}-k)du=kr\int_{-1}^{1}\frac{dw}{k^2+r^2w^2}=2\arctan(r/k).
+```
+
+This independently confirms the phase formula without invoking an abstract scattering theorem.
+
+**Endpoint caveat:** As $k\downarrow0$, the unwrapped phase tends to $n\pi$; at a bound-state or threshold spectral value the normalized positive-amplitude formula can degenerate. The scattering phase is not an automatically quantized Berry phase or a topological Chern integral.
