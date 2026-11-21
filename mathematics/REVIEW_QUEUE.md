@@ -20,3 +20,9 @@ Freeze the current `main` commit; open the exact primary source and its errata; 
 ## Important collisions
 
 The paper shorthand `u=ln(x)` needs a reference unit and a center, while our canonical `u=log(x/c)` is dimensionless. Older ZIP sources also used `u=x^q f` for a **dependent field** (later clarified to `U_q`). The cubic energies `epsilon_N`, `epsilon_H` and `epsilon_U` have different conventions. The norm-power family differs from the intrinsic level family unless its shape rate and amplitude are converted. The canonical-surface Maurer–Cartan, Levi-Civita and Weitzenböck connections are not the same connection.
+
+## Latest mathematical review targets
+
+- **Algebraic closure and named oscillators:** [§00.07](00-foundations/00-07-differential-algebra-oscillator-hierarchy.md), including the general normalized incomplete-beta cumulative `Q_q` and its recurrence (proof-bearing direct calculus).
+- **Master at arbitrary energy:** [§01.04](01-master-equation/01-04-log-derivative-companion.md), including the logarithmic-derivative Duffing equation, its energy relationship, sign/zero restrictions and the degree-two quotient's time differential (foundational paper Proposition 9.7(a)).
+- **Parameter ID review:** name clashes of `Q` among cumulative, spectral potential, charge, quartic and logarithmic slope must be resolved with **scope** before a new stable ID is assigned. Do not treat all external correspondences or entire source chapters as automatically approved.

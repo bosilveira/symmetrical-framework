@@ -15,3 +15,5 @@ Read [operator and conserved energy](01-01-operator-energy.md), [Classification 
 The theorem and proof originate in the directly inspected **foundational-paper-draft-v0.3.md**, §§3–4 (Theorems 4.1, 4.2, Proposition 4.4, and 4.5), and the corrected [reference §3.5](../../reference/algebra-geometry/03-differential-structure/03-05-linear-annihilator.md). The complete paper is currently a ChatGPT Project source, with its edition recorded in the [source snapshot](../../research/source-snapshots/2026-11-21/README.md); this new chapter is a transparent editorial consolidation of its stated results, not an independent novelty claim.
 
 Norms are a central hypothesis: see [chapter 02](../02-calculus-norms/02-03-norms.md).
+
+**All-energy companion:** [§01.04](01-04-log-derivative-companion.md) records the logarithmic derivative `v=-y_u/y` on nonvanishing Master intervals, its **energy-preserving differential relation** to the polynomial kink oscillator, and the source paper's generic degree-two elliptic quotient. It distinguishes the distinguished separatrix from general nonzero-energy orbits and documents the restricted inverse and the general-`q` correction.

@@ -20,6 +20,7 @@
         "mathematics/00-foundations/00-04-pullbacks-transformations.md",
         "mathematics/00-foundations/00-05-identities.md",
         "mathematics/00-foundations/00-06-variable-parameter-derivatives.md",
+        "mathematics/00-foundations/00-07-differential-algebra-oscillator-hierarchy.md",
         "mathematics/00-foundations/README.md"
       ],
       "review_gate": "not yet declared chapter-wide reviewed"
@@ -35,6 +36,7 @@
         "mathematics/01-master-equation/01-01-operator-energy.md",
         "mathematics/01-master-equation/01-02-classification.md",
         "mathematics/01-master-equation/01-03-general-levels.md",
+        "mathematics/01-master-equation/01-04-log-derivative-companion.md",
         "mathematics/01-master-equation/README.md"
       ],
       "review_gate": "not yet declared chapter-wide reviewed"
@@ -135,6 +137,6 @@
   "shared_claim_registry": "reference/CLAIM_REGISTRY.md",
   "notes": "This JSON describes navigation and review states, not mathematical equivalence, scientific novelty, or model validation.",
   "review_queue": "mathematics/REVIEW_QUEUE.md",
-  "new_file_count": 36,
-  "last_index_update": "2026-11-21: active parameter and Gudermannian chart derivatives; shared registry remains in reference/atlas/"
+  "new_file_count": 38,
+  "last_index_update": "2026-11-21: exact differential-algebraic closure, beta-cumulative recursion, and all-energy logarithmic-derivative Master correspondence"
 }

@@ -13,3 +13,5 @@ The functions $`f,S,W,R,b,P`$ and their algebraic or first-derivative identities
 **Evidence:** [Foundation 010](../../reference/foundations/010%20Variables%20and%20Normalizations.md), [Foundation 020](../../reference/foundations/020%20The%20Linear%20Exponential%20Backbone.md), revised [Part I Chapters 1–2](../../reference/algebra-geometry/README.md), and Complete Reference v2 §F.1–F.4.
 
 **Active parameters:** $`r`$ and $`c`$ may be differentiation variables. The [multivariable calculus and Gudermannian charts](00-06-variable-parameter-derivatives.md) record the held-fixed coordinate, parameter and Jacobian conventions.
+
+**Differential closure and oscillator hierarchy:** [§00.07](00-07-differential-algebra-oscillator-hierarchy.md) derives the exact second-order equations of `S,W,R,b,P,B,J_0,J_G` from the common exponential differential field, the continuous `H_q=S^q` separatrix ladder and the beta-normalized cumulatives `Q_q=I_P(q,q)`. This is an algebraic hierarchy; all-energy Master orbits are discussed separately in [§01.04](../01-master-equation/01-04-log-derivative-companion.md).

@@ -18,3 +18,9 @@
 **Anti-identities (important):** half-splitting is not uniqueness; the first-order zero-energy constraint is not the complete second-order Master; the generic Gram reciprocal is not the cubic Master; the same symbol $`q`$ does not identify three different exponents/nomes; and a curvature formula does not select an immersion uniquely.
 
 **Next:** [Master equation](../01-master-equation/README.md), then [norms](../02-calculus-norms/02-03-norms.md).
+
+## Differential-algebraic hierarchy and scoped Q variables
+
+See [§00.07](00-07-differential-algebra-oscillator-hierarchy.md) for the proof that `D=rT,d/dT` generates the $`S,W,R,b,P,J_0,J_G`$ systems, that `H_q=S^q` solves the normalized intrinsic-level equation, and that `Q_q=I_P(q,q)` is the normalized squared-profile cumulative with a beta-function recurrence.
+
+**Distinguish three source uses of Q:** `q_0=J_0'/J_0` is a *logarithmic slope*; `Q_2=3P^2-2P^3` is a *cumulative*; and `V_y=2mu r^2y^2` is a *squared-amplitude potential* on a generic Master orbit. The latter has an energy-dependent forcing term. The nonvanishing-orbit log-derivative companion is reviewed in [§01.04](../01-master-equation/01-04-log-derivative-companion.md).

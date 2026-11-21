@@ -48,3 +48,13 @@ New entries must record assumptions, energy, domains, source of proof, external 
 | **SF-R-020** | Generic smooth Master quartic's degree-two quotient preserves the **specified** time differential $`dX/Y=dz/p`$ while forgetting a preimage marking | [Atlas quotient contract SF-M-011](atlas/contracts.json) and [§3.9](algebra-geometry/03-differential-structure/03-09-jacobi-elliptic-solutions.md) |
 
 The first three follow from the displayed algebra and coordinate Jacobians, not a general theorem asserting every group action preserves every equation. The fourth is specific to the explicitly given quotient map, and is not a claim about arbitrary elliptic isogenies.
+
+## Algebraic oscillator closure and all-energy logarithmic-derivative checks
+
+| Catalog ID | Scope and exact identity | Primary checked statement |
+|---|---|---|
+| **SF-R-021** | At fixed `r,c>0`, `D_u=rT,d/dT` closes on rational functions of `T=(x/c)^r`; `H_q=S^q` obeys `H_q''=q^2r^2H_q-q(q+1)r^2H_q^{1+2/q}` for `q>0`. | [Differential hierarchy §00.07](../mathematics/00-foundations/00-07-differential-algebra-oscillator-hierarchy.md), exact chain-rule proof |
+| **SF-R-022** | The normalized squared-profile cumulative `Q_q=I_P(q,q)` satisfies `Q_{q+1}=Q_q+W(1-W^2)^q/[2qB(1/2,q)]` for `q>0`. | [Beta cumulative §00.07](../mathematics/00-foundations/00-07-differential-algebra-oscillator-hierarchy.md), beta integration and numerical tests |
+| **SF-R-023** | For nonvanishing cubic-Master solution `y`, `v=-y'/y` obeys `v''=2v^3-2r^2v` and `v'^2-(v^2-r^2)^2=4mu r^2arepsilon_N`. A restricted inverse requires `v'-v^2+r^2>0`. | [All-energy companion §01.04](../mathematics/01-master-equation/01-04-log-derivative-companion.md); foundational paper Proposition 9.7(a), exact proof plus independent tests |
+
+**Evidence scope:** these entries track formula-level derivations and direct checks, not independent peer review, priority or novelty. The degree-two isogeny for generic smooth elliptic orbits is **source-reported**, with its explicit map and preserved evolution differential displayed in §01.04; degenerations and global markings remain separately qualified.
