@@ -76,14 +76,16 @@ Here $`-1<t<1`$ for the canonical real branch. These formulas give an **invertib
 
 The unit-circle-valued scalar
 
+The symbol $`\zeta_{\mathrm{GD}}`$ is a **typed complex unit-circle field**; it is not the Gram cross coefficient $`C`$, nor a claim about the Riemann zeta function. 
+
 ```math
-C(\theta)=S+iW=e^{i\eta}=-i\frac{1+iT}{1-iT}
+\zeta_{\mathrm{GD}}(\theta)=S+iW=e^{i\eta}=-i\frac{1+iT}{1-iT}
 ```
 
 is regular for every real $`\theta`$. Since $`S>0`$ and $`-\pi/2<\eta<\pi/2`$, the **principal** complex logarithm has no branch crossing on the selected real orbit:
 
 ```math
-\mathrm{Log}\,C=i\eta,\qquad \frac{C_\theta}{C}=iS,\qquad \frac{C_u}{C}=irS.
+\mathrm{Log}\,\zeta_{\mathrm{GD}}=i\eta,\qquad \frac{(\zeta_{\mathrm{GD}})_\theta}{\zeta_{\mathrm{GD}}}=iS,\qquad \frac{(\zeta_{\mathrm{GD}})_u}{\zeta_{\mathrm{GD}}}=irS.
 ```
 
 The Cayley expression is a rational function of $`T`$, while its logarithm recovers the transcendental angular coordinate $`\eta`$. The complex-plane poles at $`T=\pm i`$ occur off the positive-real parameter ray and underlie the arctangent logarithm; analytic continuation must specify logarithm branches.
@@ -105,7 +107,7 @@ The following *logarithmic derivatives* all differentiate with respect to $`u`$ 
 | $`R=\cosh\theta`$ | $`R_u/R=rW`$ | $`u\in\mathbb R`$ | $`q_R'+q_R^2=r^2`$ |
 | $`S=\mathrm{sech}\theta`$ | $`S_u/S=-rW`$ | $`u\in\mathbb R`$ | $`q_S'+q_S^2=r^2-2r^2S^2`$ |
 | $`b=\sinh\theta`$ | $`b_u/b=r\coth\theta=r/W`$ | $`u\ne0`$ | $`q_b'+q_b^2=r^2`$ |
-| $`C=S+iW`$ | $`C_u/C=irS`$ | $`u\in\mathbb R`$ | $`(\mathrm{Log}C)_u=irS`$ |
+| $`\zeta_{\mathrm{GD}}=S+iW`$ | $`(\zeta_{\mathrm{GD}})_u/\zeta_{\mathrm{GD}}=irS`$ | $`u\in\mathbb R`$ | $`(\mathrm{Log}\,\zeta_{\mathrm{GD}})_u=irS`$ |
 | $`f=S/(2x)`$ | $`(\log f)_u=-1-rW`$ | $`u\in\mathbb R`$ | Explicit spatial weight $`x^{-1}`$ retained |
 
 Thus the tanh and coth solutions belong to different **nonvanishing intervals** of the same unshifted Riccati equation. The reciprocal branch has a pole at $`u=0`$. Neither should be silently identified with the shifted Gram logarithmic derivative, which has a different equation for generic cross coefficient.
