@@ -17,3 +17,5 @@ A mathematical identity in the source may already be exact; the **claimed equiva
 **Existing proof-bearing starting points:** [Part I §3.10 Pinney](../../reference/algebra-geometry/03-differential-structure/03-10-ermakov-pinney.md), [§3.11 radial criticality](../../reference/algebra-geometry/03-differential-structure/03-11-radial-criticality.md), [§3.12 Miura/KdV](../../reference/algebra-geometry/03-differential-structure/03-12-miura-kdv.md), and foundational paper §§5, 7–10. Their results should be imported **one contract at a time**, not as a wholesale reclassification of the core.
 
 The presence of a physicist's name or a model label does not supply a physical realization. See [applications](../07-applications/README.md).
+
+**Proof-bearing selected models:** [§06.01](06-01-kink-poschl-teller.md) treats the tanh kink's finite-energy completion of squares and the $`\ell=1`$ Pöschl–Teller/Darboux factorization. The variational class, Schrödinger operator domain, and catenoid angular Jacobi mode are **independent inputs**. These exact calculations do not identify a generic Master trajectory with the kink or with a physical field.
