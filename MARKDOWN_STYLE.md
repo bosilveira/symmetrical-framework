@@ -38,7 +38,7 @@ python reference/algebra-geometry/check_markdown_style.py
 python mathematics/_standards/check_tree.py
 ```
 
-The first checker scans `reference/` Markdown (excluding historical Gemini drafts); the second checks `mathematics/` Markdown **and local file links**. Both enforce one-line display-math fences and the dollar-backtick syntax where math delimiters appear. The mathematics checker also rejects `\\operatorname`, `\\boxed`, or dollar signs inside display-math bodies. Root files (`README.md`, `AGENTS.md`, `REFERENCE_INDEX.md` and this guide) are maintained but **not currently covered by these automatic scans**. Review them explicitly when editing.
+The first checker scans `reference/` Markdown (excluding historical Gemini drafts); the second checks `mathematics/` Markdown **and local file links**. Both enforce one-line display-math fences and the dollar-backtick syntax where math delimiters appear. The mathematics checker also rejects `\operatorname`, `\boxed`, or dollar signs inside display-math bodies. Root files (`README.md`, `AGENTS.md`, `REFERENCE_INDEX.md` and this guide) are maintained but **not currently covered by these automatic scans**. Review them explicitly when editing.
 
 These are syntax/link checks, **not mathematical theorem verifiers**. A checker cannot reliably infer whether every ordinary code span should instead be a mathematical expression: authors must review that distinction. Keep unreviewed historical sources unchanged unless an individual edit is justified.
 
