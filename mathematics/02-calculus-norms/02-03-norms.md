@@ -65,11 +65,11 @@ At $`q=1`$ this gives $`1/(2r\mu)`$, agreeing with the cubic norm.
 | Quantity | Underlying measure | Value or convergence |
 |---|---|---|
 | $`\int f\,dx`$ | positive Lebesgue measure | $`\pi/(2r)`$ for every $`r>0`$ |
-| $`\int |f|^2 x\,dx`$ | classification Hilbert measure | $`1/(2r)`$ for every $`r>0`$ |
-| $`\int|f_\mu|^2 x\,dx`$ | same measure, coupled field | $`1/(2r\mu)`$ |
-| $`\int|f|^2dx`$ | ordinary Lebesgue measure | finite only for $`r>1/2`$ |
-| $`\int|S|^2du`$ | log-coordinate Lebesgue measure | $`2/r`$ |
-| $`\int|U_q|^2du`$ | log-coordinate level measure | $`(4\mu)^{-q}B(q,1/2)/r`$ on the distinguished solution |
+| $`\int \lvert f\rvert^2 x\,dx`$ | classification Hilbert measure | $`1/(2r)`$ for every $`r>0`$ |
+| $`\int\lvert f_\mu\rvert^2 x\,dx`$ | same measure, coupled field | $`1/(2r\mu)`$ |
+| $`\int\lvert f\rvert^2dx`$ | ordinary Lebesgue measure | finite only for $`r>1/2`$ |
+| $`\int\lvert S\rvert^2du`$ | log-coordinate Lebesgue measure | $`2/r`$ |
+| $`\int\lvert U_q\rvert^2du`$ | log-coordinate level measure | $`(4\mu)^{-q}B(q,1/2)/r`$ on the distinguished solution |
 
 ## 5. Parseval/Plancherel follows the measure
 
