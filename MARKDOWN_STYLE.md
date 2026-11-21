@@ -1,23 +1,40 @@
-# GitHub mathematical Markdown conventions
+# Mathematical Markdown conventions for GitHub
 
-Apply these conventions to **maintained** Symmetrical Framework files; historical conversational archives are excluded from automatic conversion.
+Apply these rules to maintained Symmetrical Framework documentation. The maintained reference is enforced by a repository checker. Historical Gemini drafts are excluded from compulsory reformatting.
 
-1. **Inline math**: require `$` followed immediately by a backtick and the LaTeX, then a backtick followed immediately by `$`; the literal source example below is authoritative.
-2. **Displayed math**: an unindented ```math` fence, one expression on **one physical source line**, closing fence, with **exactly one blank line** before and after. Do not use double-dollar display delimiters.
-3. **Named functions**: prefer `\mathrm{sech}`, `\mathrm{arctanh}`, `\mathrm{gd}`, `\mathrm{sl}`, `\mathrm{disc}`, `\mathrm{dn}` and `\mathrm{cn}`. Avoid unsupported `\operatorname{...}` and `\boxed`.
-4. **Mathematical fidelity**: formatting must not remove proof steps, signs, parameter domains, integration constants or energy restrictions. Keep the logarithmic coordinate $`u=\log(x/c)`$ and the scale $`c`$ explicit.
-5. **Validation**: the feature branch currently contains a checker at `Part I - Algebra And Geometry/check_markdown_style.py`; it enforces the maintained Part I scope there. This default branch does **not** yet include that checker. Do not claim repository-wide automated validation on main.
+## Inline mathematics: mandatory dollar-backtick syntax
 
-Example source for inline math:
+Use an opening dollar sign immediately followed by a backtick, the LaTeX expression, then a backtick immediately followed by a closing dollar sign. Never use old single-dollar inline delimiters.
 
 ```markdown
-The coordinate is $`u=\log(x/c)`$ and the profile is $`S=\mathrm{sech}(ru)`$.
+The coordinate is $`u=\log(x/c)`$.
+The profile is $`S=\mathrm{sech}(ru)`$, with $`r,c>0`$.
 ```
 
-Example display source:
+This is GitHub's inline-math alternative. Do not place spaces between the dollar signs and their adjacent backticks. Inline mathematical formulas inside prose, lists, and tables must follow the same rule. Use ordinary Markdown code spans for filenames and commands.
+
+## Displayed mathematics
+
+Use unindented fenced code blocks marked `math`, with **exactly one blank line** above and below. The equation inside each block occupies **exactly one source line**; split multi-step proofs into successive blocks, retaining every step.
 
 ```math
-S(u)^2+W(u)^2=1,\qquad u=\log(x/c).
+J^2-(J_u/r)^2=(Ae^{ru}+Be^{-ru})^2-(Ae^{ru}-Be^{-ru})^2=4AB.
 ```
 
-GitHub supports both inline delimiters in general, but this project **requires the dollar-backtick variant** to reduce Markdown interference. See [GitHub's math documentation](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions) and the `REFERENCE_INDEX.md` protocol.
+Never use double-dollar displays or indent fences. If alignment is needed, keep the complete `\begin{aligned}...\end{aligned}` expression on a single source line. No `\boxed` commands.
+
+## Function names and mathematical rigor
+
+Prefer `\mathrm{...}` for function names not reliably recognized by GitHub. Explicitly use `\mathrm{sech}`, `\mathrm{arctanh}`, `\mathrm{gd}`, `\mathrm{sl}`, `\mathrm{disc}`, `\mathrm{dn}`, and `\mathrm{cn}`, not `\operatorname{...}`.
+
+A format revision must not remove algebraic proof steps, change the meaning of a function, omit parameter restrictions, or conflate the original coordinate and the logarithmic one. Canonical definitions remain `u=ln(x/c)` and `r,c>0`, with separate expressions for `x/c` and `ru`.
+
+## Run the checker
+
+```bash
+python "reference/algebra-geometry/check_markdown_style.py"
+```
+
+The checker rejects old bare-dollar inline formulas, invalid math-fence spacing, indented fences and disallowed LaTeX commands in **maintained reference Markdown**. Historical Gemini files are excluded deliberately. The same rules apply to other maintained documentation as it is revised.
+
+**The source notation rule is about Markdown files.** Equations already rendered visually do not need to contain literal delimiter characters.
