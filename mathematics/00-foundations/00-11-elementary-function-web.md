@@ -128,6 +128,17 @@ Equivalently, by analytic continuation in the **argument**,
 
 This is not permission to silently replace the canonical real resolution $`r>0`$ by a complex parameter: argument continuation and parameter variation are different mathematical operations. Literal $`\tan\theta`$ and $`\sec\theta`$ possess real pole sets absent from $`W`$ and $`S`$, and $`\cot\theta,\csc\theta`$ have their own pole sets. Every differentiable chart is restricted to a pole-free interval.
 
+### 6.1. The pole lattice retains both $`r`$ and $`c`$
+
+The real-oscillatory extension has a discrete set of poles in the **original positive spatial coordinate**. For integer $`n\in\mathbb Z`$,
+
+| Literal functions of $`\theta`$ | Excluded arguments | Excluded spatial values when $`r,c`$ are fixed |
+|---|---|---|
+| $`\tan\theta,\sec\theta`$ | $`\theta=\pi/2+n\pi`$ | $`x=c\exp[(\pi/2+n\pi)/r]`$ |
+| $`\cot\theta,\csc\theta`$ | $`\theta=n\pi`$ | $`x=c\exp(n\pi/r)`$ |
+
+These multiplicatively spaced singular points are **not** shared by $`S=\mathrm{sech}\theta`$ or $`W=\tanh\theta`$ on the real line. At every nonsingular point, derivatives still follow the universal pullback rule $`F_x=(r/x)F_\theta`$, $`F_c=-(r/c)F_\theta`$, $`F_r=uF_\theta`$. Thus the common argument unifies differentiation, **not** global domains or analytic behavior.
+
 ## 7. Chebyshev multiplication and the resolution action
 
 For an integer $`n\ge1`$, at **fixed $`x,c`$**, the change $`r\mapsto nr`$ sends $`\theta\mapsto n\theta`$ without changing $`u`$. The classical polynomial identities are
