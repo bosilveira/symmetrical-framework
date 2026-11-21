@@ -3,9 +3,11 @@
 **Current exposition; revised 20 November 2026.** The independent parameters are $r,c>0$; $u=\log(x/c)$ is the logarithmic coordinate. All formulas below are exact [E] unless otherwise marked.
 
 The natural geometric involution is $I_c(x)=c^2/x$. It sends $u\mapsto-u$ and acts by
-$$
+
+```math
 f(I_c(x))=\frac{x^2}{c^2}f(x),\quad S(I_c(x))=S(x),\quad W(I_c(x))=-W(x).
-$$
+```
+
 As **positive measures**, $I_{c*}(f(x)\,dx)=f(x)\,dx$. This does **not** mean that $f(x)\,dx/x$ is invariant.
 
 Joint scaling is $f(\lambda x;r,\lambda c)=\lambda^{-1}f(x;r,c)$, equivalent to $(x\partial_x+c\partial_c)f=-f$. The normalized probability law is closed under inversion $X\mapsto1/X$ with parameter $c\mapsto1/c$, and under the power map $(X/c)^r$ it becomes standard half-Cauchy.
