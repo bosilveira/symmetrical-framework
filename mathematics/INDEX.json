@@ -19,6 +19,7 @@
         "mathematics/00-foundations/00-03-gram-projective.md",
         "mathematics/00-foundations/00-04-pullbacks-transformations.md",
         "mathematics/00-foundations/00-05-identities.md",
+        "mathematics/00-foundations/00-06-variable-parameter-derivatives.md",
         "mathematics/00-foundations/README.md"
       ],
       "review_gate": "not yet declared chapter-wide reviewed"
@@ -134,5 +135,6 @@
   "shared_claim_registry": "reference/CLAIM_REGISTRY.md",
   "notes": "This JSON describes navigation and review states, not mathematical equivalence, scientific novelty, or model validation.",
   "review_queue": "mathematics/REVIEW_QUEUE.md",
-  "new_file_count": 35
+  "new_file_count": 36,
+  "last_index_update": "2026-11-21: active parameter and Gudermannian chart derivatives; shared registry remains in reference/atlas/"
 }

@@ -1222,6 +1222,101 @@
         "A,B,r>0,AB>C^2,delta_u real,c fixed"
       ],
       "verification": "source-27.1-27.3-plus-algebra"
+    },
+    {
+      "map_id": "SF-M-019",
+      "source": {
+        "object_id": "SF-O-001",
+        "independent_variables": [
+          "x",
+          "c",
+          "r"
+        ],
+        "dependent_variables": [
+          "u=log(x/c)",
+          "theta=r*u"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-023",
+        "independent_variables": [
+          "eta",
+          "c",
+          "r"
+        ],
+        "dependent_variables": [
+          "x(eta,c,r)",
+          "S(eta)",
+          "W(eta)",
+          "f(eta,c,r)"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "(x,c,r)",
+          "to": "(eta,c,r)",
+          "forward": "eta=atan(sinh(r*log(x/c))); c_new=c; r_new=r",
+          "inverse": "x=c*exp(asinh(tan eta)/r); c=c_new; r=r_new",
+          "jacobian": "partial eta/partial x|c,r=r*cos eta/x>0; partial x/partial eta|c,r=x*sec eta/r",
+          "condition": "x,c,r>0; eta in (-pi/2,pi/2)"
+        }
+      ],
+      "dependent_map": {
+        "forward": "S=cos eta; W=sin eta; f=cos eta/(2c)*exp(-asinh(tan eta)/r)",
+        "inverse": "f(x;r,c)=sech(r log(x/c))/(2x); eta=gd(r log(x/c))"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-001",
+            "SF-P-002",
+            "SF-P-003",
+            "SF-P-004",
+            "SF-P-006"
+          ],
+          "to": [
+            "SF-P-056",
+            "SF-P-002",
+            "SF-P-003"
+          ],
+          "formula": "eta=gd(r log(x/c)); c and r are carried as independent chart coordinates; not generally held fixed under all partials",
+          "disposition": "coordinate_transport"
+        },
+        {
+          "from": [
+            "SF-P-056"
+          ],
+          "to": [
+            "SF-P-001"
+          ],
+          "formula": "x=c exp(asinh(tan eta)/r), c,r>0",
+          "disposition": "invertible"
+        },
+        {
+          "from": [
+            "SF-P-056"
+          ],
+          "to": [
+            "SF-P-006"
+          ],
+          "formula": "theta=asinh(tan eta)",
+          "disposition": "invertible"
+        }
+      ],
+      "invertibility": {
+        "functions": "diffeomorphism between (0,infinity)^3 in (x,c,r) and (-pi/2,pi/2) x (0,infinity)^2 in (eta,c,r)",
+        "equations": "differential operators transform by chain rule, including parameter derivatives; no equation or operator equivalence is asserted without its own contract",
+        "lost": "nothing on this three-coordinate chart interior; eta by itself does not determine x,c,r; eta=+/-pi/2 are excluded endpoints"
+      },
+      "differential_rule": "d eta=S[r(dx/x-dc/c)+u dr]; partial_x|c,r=(rS/x)*partial_eta|c,r; partial_c|x,r=partial_c|eta,r-(rS/c)*partial_eta|c,r; partial_r|x,c=partial_r|eta,c+uS*partial_eta|c,r",
+      "assumptions": [
+        "c>0",
+        "r>0",
+        "x>0",
+        "eta in (-pi/2,pi/2)",
+        "parameters c,r independent except when an explicit path is specified"
+      ],
+      "verification": "direct chain rules; symbolic and analytic derivations in mathematics/00-foundations/00-06-variable-parameter-derivatives.md"
     }
   ]
 }

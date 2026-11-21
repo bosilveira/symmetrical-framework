@@ -37,3 +37,7 @@ x^2\frac{d^2}{dx^2}g(\log(x/c))=(\partial_u^2-\partial_u)g(u).
 If one changes $`c`$ or $`r`$, the displayed fixed-parameter operator identities **must be re-derived** with the new source and target chart; see [pullbacks](00-04-pullbacks-transformations.md).
 
 **Sources:** [reference notation](../../reference/NOTATION.md); [Atlas scaling actions](../../reference/atlas/SCALING_ACTIONS.md); November 21 [parameter crosswalk](../../reference/atlas/SOURCE_CROSSWALK_2026-11-21.md).
+
+## Parameters as differentiation variables
+
+The labels **independent variable** and **parameter** refer to roles in a specific problem, not prohibitions on differentiation. For the family $`f(x;r,c)`$, both $`r`$ and $`c`$ can vary; $`u=log(x/c)`$ and the Gudermannian angle $`eta_{mathrm{GD}}=mathrm{gd}(ru)`$ are alternative coordinates, not extra independent degrees of freedom. See [§00.06](00-06-variable-parameter-derivatives.md) for explicit Jacobians, partial derivatives at fixed $`x`$ versus fixed $`u`$ or $`eta`$, total derivatives, and the collision between Gudermannian $`eta`$ and the Atlas Gram rapidity $`eta_G`$.

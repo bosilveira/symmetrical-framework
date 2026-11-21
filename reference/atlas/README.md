@@ -65,3 +65,7 @@ The legacy research corpus remains at [research](../../research/README.md), not 
 ## November 21 parameter and energy conversions
 
 The first [cross-source conversion ledger](SOURCE_CROSSWALK_2026-11-21.md) reconciles the latest complete reference with the new ZIP. In particular, it distinguishes logarithmic coordinate `u` from the archive's general-level dependent state `U_q`, tracks the power-family rate conversion and `epsilon_N=4*epsilon_H` at cubic level, separates `mu0`, `mu_det` and nonlinear `mu`, and gives the Tzitzeica PDE variables their own scope. These are source conversions to review, not a blanket promotion of the archive's 683 [V] claims.
+
+## Gudermannian chart and parameter differentiation
+
+The [foundations §00.06](../../mathematics/00-foundations/00-06-variable-parameter-derivatives.md) derive the $`(x,c,r)leftrightarrow(eta,c,r)`$ chart, its Jacobian, and derivatives with respect to all the active coordinates. The Gudermannian angle is registered as `SF-P-056` (scope `gudermannian_chart`) and transformation `SF-M-019`, **distinct from** the preexisting Gram rapidity `SF-P-038` (scope `linear_backbone`).

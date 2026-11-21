@@ -554,6 +554,20 @@
       "domain": "real",
       "meaning": "u->u+delta_u, A->A exp(r delta_u), B->B exp(-r delta_u) with C unchanged",
       "parameter_kind": "transformation_parameter"
+    },
+    {
+      "id": "SF-P-056",
+      "name": "gudermannian_angle",
+      "symbol": "eta",
+      "scope": "gudermannian_chart",
+      "domain": "real eta in (-pi/2,pi/2), with x,c,r>0",
+      "meaning": "eta=gd(r*log(x/c))=atan(sinh(r*log(x/c))); inverse theta=asinh(tan eta)",
+      "warning": "Not SF-P-038 eta=(1/2)log(A/B), which is linear-backbone rapidity; their printed symbols coincide but their mathematical types do not.",
+      "parameter_kind": "coordinate",
+      "aliases": [
+        "eta_GD",
+        "gudermannian eta"
+      ]
     }
   ],
   "objects": [
@@ -1098,6 +1112,35 @@
       "review_state": "source-indexed",
       "formula": "z=1/rho; z_h^2=eps_R^2+Lambda*z^2-z^4",
       "note": "similar local Duffing form; height h and marked periods are independent data"
+    },
+    {
+      "id": "SF-O-023",
+      "key": "gudermannian_chart",
+      "title": "Gudermannian coordinate chart for the canonical kernel",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-001",
+        "SF-P-002",
+        "SF-P-003",
+        "SF-P-004",
+        "SF-P-006",
+        "SF-P-056"
+      ],
+      "depends_on": [
+        "SF-O-001",
+        "SF-O-003"
+      ],
+      "source_sections": [
+        "F.1",
+        "28",
+        "canonical-angle-chart"
+      ],
+      "reference_paths": [
+        "mathematics/00-foundations/00-06-variable-parameter-derivatives.md"
+      ],
+      "review_state": "direct-algebraic-derived",
+      "formula": "eta=atan(sinh(r*log(x/c))); x=c*exp(asinh(tan eta)/r), S=cos eta,W=sin eta",
+      "note": "eta is a coordinate whose parameter derivatives depend on whether x or eta is fixed; not an independent fifth variable."
     }
   ],
   "maps": [
@@ -1417,6 +1460,25 @@
         "reference/foundations/020 The Linear Exponential Backbone.md"
       ],
       "review_state": "source-and-symbolic-algebra"
+    },
+    {
+      "id": "SF-M-019",
+      "key": "gudermannian_variable_parameter_chart",
+      "source_id": "SF-O-001",
+      "target_id": "SF-O-023",
+      "kind": "coordinate_bijection_with_parameter_derivative_lifts",
+      "domain": "x,c,r>0; eta=gd(r log(x/c)) in (-pi/2,pi/2); c,r independent parameters",
+      "formula": "eta=atan(sinh(r log(x/c))); x=c exp(asinh(tan eta)/r); d eta=S[r(dx/x-dc/c)+u dr]",
+      "information_preserved": "theta=ru=asinh(tan eta), original kernel f, and all functions evaluated in new chart with c,r retained",
+      "information_lost_or_required": "none within open real domain if c,r retained; parameter partial derivatives change when held-fixed coordinates differ; eta alone drops x,c,r information",
+      "source_sections": [
+        "00.06",
+        "F.1"
+      ],
+      "reference_paths": [
+        "mathematics/00-foundations/00-06-variable-parameter-derivatives.md"
+      ],
+      "review_state": "direct-algebraic-derived"
     }
   ]
 }

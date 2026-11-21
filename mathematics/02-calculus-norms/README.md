@@ -7,3 +7,5 @@ Read [differentiation](02-01-differentiation.md), [integration and primitives](0
 The canonical variables are $`x,c,r>0`$, $`u=\log(x/c)`$ and $`S=\mathrm{sech}(ru)`$. The chosen positive kernel is $`f=S/(2x)`$; the coupled profile is $`f_\mu=f/\sqrt\mu`$, $`\mu>0`$. For a general Master solution use the separate symbol $`F`$.
 
 **Sources:** foundational paper v0.3 §§2–4; revised [Part I §3.5](../../reference/algebra-geometry/03-differential-structure/03-05-linear-annihilator.md); [legacy integration/norms](../../research/legacy-parts/Part%20II%20-%20Calculus%20and%20Special%20Functions/05-integration-norms/05-00-integration-norms.md). Higher transform theorems live in [chapter 03](../03-transforms-special-functions/README.md).
+
+**Variable-parameter calculus:** [§00.06](../00-foundations/00-06-variable-parameter-derivatives.md) distinguishes $`x`$-, $`u`$- and Gudermannian-angle derivatives, including $`r`$- and $`c`$-differentiation. Norm differentiation also requires tracking the integration measure and which coordinates are held fixed.
