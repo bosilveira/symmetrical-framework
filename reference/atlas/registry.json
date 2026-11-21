@@ -568,6 +568,15 @@
         "eta_GD",
         "gudermannian eta"
       ]
+    },
+    {
+      "id": "SF-P-057",
+      "name": "squared_profile_measure_exponent",
+      "symbol": "q_prob",
+      "scope": "squared_profile_probability",
+      "domain": "real > 0",
+      "meaning": "exponent q>0 in the normalized sech^(2q) logarithmic-density family; may be specialized to q_l but is not automatically the intrinsic ODE level",
+      "parameter_kind": "independent_family_parameter"
     }
   ],
   "objects": [
@@ -1141,6 +1150,111 @@
       "review_state": "direct-algebraic-derived",
       "formula": "eta=atan(sinh(r*log(x/c))); x=c*exp(asinh(tan eta)/r), S=cos eta,W=sin eta",
       "note": "eta is a coordinate whose parameter derivatives depend on whether x or eta is fixed; not an independent fifth variable."
+    },
+    {
+      "id": "SF-O-024",
+      "key": "canonical_squared_profile",
+      "title": "Squared canonical field B_sq = S^2, distinct from Gram B",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-004",
+        "SF-P-006"
+      ],
+      "depends_on": [
+        "SF-O-003"
+      ],
+      "source_sections": [
+        "F.1",
+        "00.08"
+      ],
+      "reference_paths": [
+        "mathematics/00-foundations/00-08-projective-conics-gudermannian.md"
+      ],
+      "review_state": "direct-algebraic-derived",
+      "formula": "B_sq=sech(r*u)^2=1-W^2=4P(1-P)",
+      "note": "The screenshot used B=S^2 locally, and Complete Reference v2 sometimes uses B_0; SF-P-009 is the constant Gram/backbone coefficient B and MUST NOT be identified with B_sq."
+    },
+    {
+      "id": "SF-O-025",
+      "key": "common_projective_conic",
+      "title": "Single projective conic with circle and hyperbola affine charts",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-004",
+        "SF-P-006",
+        "SF-P-007"
+      ],
+      "depends_on": [
+        "SF-O-003",
+        "SF-O-004"
+      ],
+      "source_sections": [
+        "F.1",
+        "profile-web:1",
+        "00.08"
+      ],
+      "reference_paths": [
+        "mathematics/00-foundations/00-08-projective-conics-gudermannian.md"
+      ],
+      "review_state": "direct-algebraic-derived",
+      "formula": "[X:Y:Z]=[R:b:1]=[1:W:S]=[1+T^2:T^2-1:2T], X^2=Y^2+Z^2",
+      "note": "one conic and two affine normalizations; projective correspondence is not an isometry"
+    },
+    {
+      "id": "SF-O-026",
+      "key": "squared_profile_parabola",
+      "title": "Quadratic image parabola in (P,B_sq), invariant-leaf equation",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-004"
+      ],
+      "depends_on": [
+        "SF-O-003",
+        "SF-O-024",
+        "SF-O-025"
+      ],
+      "source_sections": [
+        "F.1",
+        "00.08"
+      ],
+      "reference_paths": [
+        "mathematics/00-foundations/00-08-projective-conics-gudermannian.md"
+      ],
+      "review_state": "direct-algebraic-derived",
+      "formula": "P=(1+W)/2, B_sq=S^2=4P(1-P); P_u=r*B_sq/2, B_sq_u=2*r*B_sq*(1-2P); K=B_sq-4P(1-P) conserved for the free pair",
+      "note": "the full polynomial ODE has shifted-parabola invariant leaves; canonical orbit is K=0; B_sq must not be named unqualified B"
+    },
+    {
+      "id": "SF-O-027",
+      "key": "gudermannian_conic_probability",
+      "title": "Distinct kernel-uniform-angle and squared-profile-beta probability pushforwards",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-002",
+        "SF-P-003",
+        "SF-P-004",
+        "SF-P-056",
+        "SF-P-057"
+      ],
+      "depends_on": [
+        "SF-O-009",
+        "SF-O-023",
+        "SF-O-024",
+        "SF-O-026"
+      ],
+      "source_sections": [
+        "00.08",
+        "04.02"
+      ],
+      "reference_paths": [
+        "mathematics/04-probability-statistics/04-02-gudermannian-conic-laws.md"
+      ],
+      "review_state": "direct-analytic-derived",
+      "formula": "(2r/pi)f(x;r,c)dx=d eta/pi; squared-profile measure dP_q=(r/B(1/2,q))S^(2q)du pushes P to Beta(q,q)",
+      "note": "Original-kernel P is Beta(1/2,1/2), but squared-profile q=1 P is uniform; these are different measures"
     }
   ],
   "maps": [
@@ -1479,6 +1593,82 @@
         "mathematics/00-foundations/00-06-variable-parameter-derivatives.md"
       ],
       "review_state": "direct-algebraic-derived"
+    },
+    {
+      "id": "SF-M-020",
+      "key": "hyperbola_to_circle_projective_rechart",
+      "source_id": "SF-O-004",
+      "target_id": "SF-O-003",
+      "kind": "projective_affine_rechart",
+      "domain": "u real; r>0; centered R=cosh(ru)>0, b=sinh(ru); S=1/R>0",
+      "formula": "[R:b:1]=[1:W:S] on X^2=Y^2+Z^2; S=1/R,W=b/R",
+      "information_preserved": "same real projective point, positivity branch, theta and chosen u-clock when r retained",
+      "information_lost_or_required": "requires S>0 for inverse R=1/S; no Euclidean isometry or shared affine arc length",
+      "source_sections": [
+        "profile-web:1",
+        "00.08"
+      ],
+      "reference_paths": [
+        "mathematics/00-foundations/00-08-projective-conics-gudermannian.md"
+      ],
+      "review_state": "direct-algebraic-derived"
+    },
+    {
+      "id": "SF-M-021",
+      "key": "circle_to_parabola_quadratic_projection",
+      "source_id": "SF-O-003",
+      "target_id": "SF-O-026",
+      "kind": "quadratic_folding_map",
+      "domain": "real circle S^2+W^2=1; P=(1+W)/2; B_sq=S^2; canonical branch S>0",
+      "formula": "(S,W)->(P,B_sq)=((1+W)/2,S^2); B_sq=4P(1-P)",
+      "information_preserved": "W and P, squared amplitude B_sq, canonical branch when S>0",
+      "information_lost_or_required": "sign of S is lost on full circle; inverse only when S>0 or sign retained",
+      "source_sections": [
+        "F.1",
+        "00.08"
+      ],
+      "reference_paths": [
+        "mathematics/00-foundations/00-08-projective-conics-gudermannian.md"
+      ],
+      "review_state": "direct-algebraic-derived"
+    },
+    {
+      "id": "SF-M-022",
+      "key": "kernel_probability_to_uniform_gudermannian",
+      "source_id": "SF-O-009",
+      "target_id": "SF-O-027",
+      "kind": "measure_pushforward",
+      "domain": "x,c,r>0; eta=gd(r log(x/c)) in (-pi/2,pi/2)",
+      "formula": "rho_X dx=(2r/pi) f dx=d eta/pi",
+      "information_preserved": "total mass=1 and pushforward probability law; retains r,c for the inverse x=c exp(asinh(tan eta)/r)",
+      "information_lost_or_required": "eta law alone forgets r,c unless retained as labels; no identification with squared-profile norm measure",
+      "source_sections": [
+        "00.08",
+        "04.02"
+      ],
+      "reference_paths": [
+        "mathematics/04-probability-statistics/04-02-gudermannian-conic-laws.md"
+      ],
+      "review_state": "direct-analytic-derived"
+    },
+    {
+      "id": "SF-M-023",
+      "key": "squared_profile_beta_pushforward",
+      "source_id": "SF-O-024",
+      "target_id": "SF-O-027",
+      "kind": "weighted_measure_pushforward",
+      "domain": "q_prob>0, r>0, u real, P=(1+tanh(ru))/2 in (0,1)",
+      "formula": "(r/B(1/2,q)) sech^(2q)(ru) du -> P^(q-1)*(1-P)^(q-1) dP/B(q,q)",
+      "information_preserved": "total mass=1 and beta cumulative Q_q=I_P(q,q)",
+      "information_lost_or_required": "squared-profile measure is NOT original kernel probability; q_prob must be retained; map to P folds no sign because P strictly increases in u",
+      "source_sections": [
+        "00.07",
+        "04.02"
+      ],
+      "reference_paths": [
+        "mathematics/04-probability-statistics/04-02-gudermannian-conic-laws.md"
+      ],
+      "review_state": "direct-analytic-derived"
     }
   ]
 }

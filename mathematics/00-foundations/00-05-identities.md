@@ -24,3 +24,7 @@
 See [§00.07](00-07-differential-algebra-oscillator-hierarchy.md) for the proof that `D=rT,d/dT` generates the $`S,W,R,b,P,J_0,J_G`$ systems, that `H_q=S^q` solves the normalized intrinsic-level equation, and that `Q_q=I_P(q,q)` is the normalized squared-profile cumulative with a beta-function recurrence.
 
 **Distinguish three source uses of Q:** `q_0=J_0'/J_0` is a *logarithmic slope*; `Q_2=3P^2-2P^3` is a *cumulative*; and `V_y=2mu r^2y^2` is a *squared-amplitude potential* on a generic Master orbit. The latter has an energy-dependent forcing term. The nonvanishing-orbit log-derivative companion is reviewed in [§01.04](../01-master-equation/01-04-log-derivative-companion.md).
+
+## Circle, hyperbola, parabola and the angular clock
+
+The [detailed conic table and Gudermannian atlas](00-08-projective-conics-gudermannian.md) proves $`S^2+W^2=1`$, $`R^2-b^2=1`$ and $`\mathcal B=S^2=4P(1-P)`$ as connected charts/images. In the angular coordinate $`\eta=\mathrm{gd}(ru)`$, $`S,W`$ satisfy linear harmonic equations, while $`R,b`$ satisfy cubic equations; all six fields' equations are tabulated. The symbol $`B`$ remains reserved for the Gram coefficient, not the squared-profile field. [Probability consequences](../04-probability-statistics/04-02-gudermannian-conic-laws.md) use explicitly normalized measures.

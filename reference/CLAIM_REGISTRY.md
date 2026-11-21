@@ -58,3 +58,14 @@ The first three follow from the displayed algebra and coordinate Jacobians, not 
 | **SF-R-023** | For nonvanishing cubic-Master solution `y`, `v=-y'/y` obeys `v''=2v^3-2r^2v` and `v'^2-(v^2-r^2)^2=4mu r^2arepsilon_N`. A restricted inverse requires `v'-v^2+r^2>0`. | [All-energy companion §01.04](../mathematics/01-master-equation/01-04-log-derivative-companion.md); foundational paper Proposition 9.7(a), exact proof plus independent tests |
 
 **Evidence scope:** these entries track formula-level derivations and direct checks, not independent peer review, priority or novelty. The degree-two isogeny for generic smooth elliptic orbits is **source-reported**, with its explicit map and preserved evolution differential displayed in §01.04; degenerations and global markings remain separately qualified.
+
+## Projective conic, Gudermannian-clock and measure-pushforward proofs
+
+| Catalog ID | Exact claim and hypotheses | Primary proof/check |
+|---|---|---|
+| **SF-R-024** | On $`x,c,r>0`$, $`[R:b:1]=[1:W:S]=[1+T^2:T^2-1:2T]`$ lies on $`X^2=Y^2+Z^2`$; circle/hyperbola are two affine charts, not a global isometry. | [§00.08](../mathematics/00-foundations/00-08-projective-conics-gudermannian.md), exact homogeneous algebra, source `profile-web.md` |
+| **SF-R-025** | $`\mathcal B=S^2=4P(1-P)`$ is a quadratic image of the circle; the free polynomial pair conserves $`K_{\rm par}=\mathcal B-4P(1-P)`$. This $`\mathcal B`$ is **not** Gram coefficient $`B`$ (`SF-P-009`). | [§00.08](../mathematics/00-foundations/00-08-projective-conics-gudermannian.md), first integral and off-leaf equations |
+| **SF-R-026** | Under $`\eta=\mathrm{gd}(ru)`$, the selected circle fields satisfy $`S_{\eta\eta}=-S,\ W_{\eta\eta}=-W`$, hyperbola fields satisfy $`R_{\eta\eta}=2R^3-R,\ b_{\eta\eta}=2b^3+2b`$, and $`P,\mathcal B`$ satisfy forced linear equations. | [§00.08](../mathematics/00-foundations/00-08-projective-conics-gudermannian.md), exact Jacobian/chain rule |
+| **SF-R-027** | With original normalized kernel $`(2r/\pi)f(x;r,c)dx`$, $`\eta`$ is uniform on $`(-\pi/2,\pi/2)`$; $`P,\mathcal B`$ have arcsine beta marginals. The normalized $`S^{2q}du`$ family gives $`P\sim\mathrm{Beta}(q,q)`$ and $`\mathcal B\sim\mathrm{Beta}(q,1/2)`$; original law's **logarithmic pushforward** is $`q=1/2`$. | [§04.02](../mathematics/04-probability-statistics/04-02-gudermannian-conic-laws.md), explicit pushforward Jacobians |
+
+All entries are mathematical identities on declared branches and measures. Symbolic spot checks do not establish novelty, peer review, or any physical model.

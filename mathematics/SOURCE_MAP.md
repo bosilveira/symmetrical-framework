@@ -16,3 +16,7 @@ This index tells a reviewer *where to check the existing mathematical work*. It 
 The original *complete reference (2026-11-16 v2)* and *November 21 update ZIP* are user-supplied Project sources; their SHA-256 and scope are recorded in [the snapshot catalog](../research/source-snapshots/2026-11-21/README.md). When reviewing a theorem from an attachment, open the exact internal file and its errata; a link to this source map is not a substitute.
 
 **Never move or overwrite older proof files merely to populate this new tree.** Derive a clean primary page, cite its original, and keep the old text available for audit.
+
+## November 21 conic/Gudermannian consolidation
+
+The four-row source table and its independent parameter/variable conditions are reproduced and audited in [§00.08](00-foundations/00-08-projective-conics-gudermannian.md); its central primary sources are Complete Reference v2 §1/F and the November 21 ZIP files `00-meta/NOTATION.md` and `04-follow-ups/profile-web.md` §§1–3. The exact probability pushforwards are in [§04.02](04-probability-statistics/04-02-gudermannian-conic-laws.md). In particular, **unqualified $`B`$ is reserved for the Gram coefficient**; the screenshot's field $`B=S^2`$ is `\mathcal B=S^2` in the new tree, corresponding to source-local $`B_0`$ in some reference passages.

@@ -1317,6 +1317,274 @@
         "parameters c,r independent except when an explicit path is specified"
       ],
       "verification": "direct chain rules; symbolic and analytic derivations in mathematics/00-foundations/00-06-variable-parameter-derivatives.md"
+    },
+    {
+      "map_id": "SF-M-020",
+      "source": {
+        "object_id": "SF-O-004",
+        "independent_variables": [
+          "R",
+          "b",
+          "r",
+          "c"
+        ],
+        "dependent_variables": [
+          "R^2-b^2=1"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-003",
+        "independent_variables": [
+          "S",
+          "W",
+          "r",
+          "c"
+        ],
+        "dependent_variables": [
+          "S^2+W^2=1"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "R,b,r,c",
+          "to": "S,W,r,c",
+          "forward": "S=1/R,W=b/R",
+          "inverse": "R=1/S,b=W/S",
+          "jacobian": "Jacobian det partial(S,W)/partial(R,b)=-1/R^3 on ambient planes; along conic dW/db=1/R^3>0",
+          "condition": "R>0,R^2-b^2=1; equivalent S>0,S^2+W^2=1"
+        }
+      ],
+      "dependent_map": {
+        "forward": "circle fields from hyperbola",
+        "inverse": "inverse on S>0"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-002",
+            "SF-P-003",
+            "SF-P-004",
+            "SF-P-006"
+          ],
+          "to": [
+            "SF-P-002",
+            "SF-P-003",
+            "SF-P-004",
+            "SF-P-006"
+          ],
+          "formula": "With u=log(x/c), theta=r*u and x,c,r>0, hold c,r fixed for D_u; projective and quadratic dependent-variable charts do not rescale c or r. All derivatives in u are at fixed c,r.",
+          "disposition": "retained_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "bijective between right hyperbola and S>0 semicircle; projective chart points agree",
+        "equations": "Only the displayed map and induced differential identities; do not assume arbitrary full-solution ODE equivalence",
+        "lost": "metric and affine curvature not invariant; endpoint S=0 excluded"
+      },
+      "differential_rule": "S_u=-rSW,W_u=rS^2 from R_u=rb,b_u=rR; under eta clock S_eta=-W,W_eta=S",
+      "assumptions": [
+        "R>0,R^2-b^2=1; equivalent S>0,S^2+W^2=1"
+      ],
+      "verification": "mathematics/00-foundations/00-08-projective-conics-gudermannian.md symbolic check"
+    },
+    {
+      "map_id": "SF-M-021",
+      "source": {
+        "object_id": "SF-O-003",
+        "independent_variables": [
+          "W",
+          "S",
+          "r",
+          "c"
+        ],
+        "dependent_variables": [
+          "S^2+W^2=1"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-026",
+        "independent_variables": [
+          "P",
+          "B_sq",
+          "r",
+          "c"
+        ],
+        "dependent_variables": [
+          "B_sq=4P(1-P)"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "W,S,r,c",
+          "to": "P,B_sq,r,c",
+          "forward": "P=(1+W)/2, B_sq=S^2",
+          "inverse": "W=2P-1,S=+sqrt(B_sq) on positive branch",
+          "jacobian": "det partial(P,B_sq)/partial(W,S)=S; vanishes at S=0",
+          "condition": "real S^2+W^2=1; canonical S>0; r,c>0"
+        }
+      ],
+      "dependent_map": {
+        "forward": "quadratic-folded parabola coordinates",
+        "inverse": "inverse positive branch only"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-002",
+            "SF-P-003",
+            "SF-P-004",
+            "SF-P-006"
+          ],
+          "to": [
+            "SF-P-002",
+            "SF-P-003",
+            "SF-P-004",
+            "SF-P-006"
+          ],
+          "formula": "With u=log(x/c), theta=r*u and x,c,r>0, hold c,r fixed for D_u; projective and quadratic dependent-variable charts do not rescale c or r. All derivatives in u are at fixed c,r.",
+          "disposition": "retained_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "on S>0 inverse is S=sqrt(B_sq),W=2P-1; two-to-one on full circle away from endpoints",
+        "equations": "Only the displayed map and induced differential identities; do not assume arbitrary full-solution ODE equivalence",
+        "lost": "sign(S) on full circle; no affine isometry; endpoints excluded from invertible branch"
+      },
+      "differential_rule": "P_u=r*B_sq/2, B_sq_u=2r*B_sq*(1-2P); K=B_sq-4P(1-P) constant under free first-order system",
+      "assumptions": [
+        "real S^2+W^2=1; canonical S>0; r,c>0"
+      ],
+      "verification": "mathematics/00-foundations/00-08-projective-conics-gudermannian.md symbolic check"
+    },
+    {
+      "map_id": "SF-M-022",
+      "source": {
+        "object_id": "SF-O-009",
+        "independent_variables": [
+          "x",
+          "r",
+          "c"
+        ],
+        "dependent_variables": [
+          "rho_X(x)=2r*f/pi"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-027",
+        "independent_variables": [
+          "eta",
+          "r",
+          "c"
+        ],
+        "dependent_variables": [
+          "rho_eta=1/pi"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "x,r,c",
+          "to": "eta,r,c",
+          "forward": "eta=gd(r log(x/c))",
+          "inverse": "x=c exp(asinh(tan eta)/r)",
+          "jacobian": "deta/dx=r*cos(eta)/x; dx/deta=x/(r*cos eta)",
+          "condition": "x,c,r>0, eta in (-pi/2,pi/2)"
+        }
+      ],
+      "dependent_map": {
+        "forward": "rho_X dx=deta/pi",
+        "inverse": "rho_X=(1/pi)*deta/dx"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-002",
+            "SF-P-003",
+            "SF-P-056"
+          ],
+          "to": [
+            "SF-P-002",
+            "SF-P-003",
+            "SF-P-056"
+          ],
+          "formula": "Parameters explicitly carried unchanged unless transformation description imposes a specialization; numerical r,c retained, Gram coefficient B is separate from B_sq",
+          "disposition": "retained_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "diffeomorphic with parameters c,r retained; eta alone does not determine x",
+        "equations": "Only the displayed map and induced differential identities; do not assume arbitrary full-solution ODE equivalence",
+        "lost": "r,c forgotten by marginal uniform law unless externally retained"
+      },
+      "differential_rule": "f(x)dx=deta/(2r), rho_X(x)dx=deta/pi",
+      "assumptions": [
+        "x,c,r>0, eta in (-pi/2,pi/2)"
+      ],
+      "verification": "mathematics/04-probability-statistics/04-02-gudermannian-conic-laws.md Jacobian proof"
+    },
+    {
+      "map_id": "SF-M-023",
+      "source": {
+        "object_id": "SF-O-024",
+        "independent_variables": [
+          "u",
+          "q_prob",
+          "r"
+        ],
+        "dependent_variables": [
+          "nu_q(u)=r*S^(2q)/Beta(1/2,q)"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-027",
+        "independent_variables": [
+          "P",
+          "q_prob",
+          "r"
+        ],
+        "dependent_variables": [
+          "Beta(q,q) density"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "u,q_prob,r",
+          "to": "P,q_prob,r",
+          "forward": "P=(1+tanh(ru))/2",
+          "inverse": "u=log(P/(1-P))/(2r)",
+          "jacobian": "dP/du=2rP(1-P)=r*S^2/2",
+          "condition": "q_prob>0, r>0,u real, P in (0,1)"
+        }
+      ],
+      "dependent_map": {
+        "forward": "density pushforward nu_q du=P^(q-1)(1-P)^(q-1)dP/Beta(q,q)",
+        "inverse": "nu_q=Beta(q,q) density*dP/du"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-003",
+            "SF-P-004",
+            "SF-P-057"
+          ],
+          "to": [
+            "SF-P-003",
+            "SF-P-004",
+            "SF-P-057"
+          ],
+          "formula": "Parameters explicitly carried unchanged unless transformation description imposes a specialization; numerical r,c retained, Gram coefficient B is separate from B_sq",
+          "disposition": "retained_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "P=(1+tanh(ru))/2 strictly increasing in u, inverse u=log(P/(1-P))/(2r) if r retained",
+        "equations": "Only the displayed map and induced differential identities; do not assume arbitrary full-solution ODE equivalence",
+        "lost": "cannot interchange with original kernel measure unless q=1/2 and source density is re-normalized accordingly"
+      },
+      "differential_rule": "dP/du=2rP(1-P); Beta duplication: Beta(q,q)=2^(1-2q) Beta(1/2,q)",
+      "assumptions": [
+        "q_prob>0, r>0,u real, P in (0,1)"
+      ],
+      "verification": "mathematics/04-probability-statistics/04-02-gudermannian-conic-laws.md beta integration"
     }
   ]
 }

@@ -30,10 +30,10 @@ S''=r^2S-2r^2S^3,\qquad W''=-2r^2W+2r^2W^3.
 
 The second pair gives `R''=r^2R` and `b''=r^2b`. These are **hyperbolic/inverted** linear oscillator equations, not bounded harmonic motions on the real `u` line.
 
-Define `P=(1+W)/2`, `B=S^2=4P(1-P)`. They satisfy
+Define $`P=(1+W)/2`$ and the **squared-profile field** $`\mathcal B=S^2=4P(1-P)`$. Here $`\mathcal B`$ is **not** the constant Gram/backbone coefficient $`B`$ (see [§00.08](00-08-projective-conics-gudermannian.md)). They satisfy
 
 ```math
-P'=2rP(1-P),\quad P''=4r^2P(1-P)(1-2P),\qquad B'=-2rBW,\quad B''=4r^2B-6r^2B^2.
+P'=2rP(1-P),\quad P''=4r^2P(1-P)(1-2P),\qquad \mathcal B'=-2r\mathcal BW,\quad \mathcal B''=4r^2\mathcal B-6r^2\mathcal B^2.
 ```
 
 The logistic trajectory has the additional **zero-energy first integral**
@@ -150,3 +150,5 @@ The **Master logarithmic derivative**, which is distinct again, is treated in [�
 - **Full Master orbits:** may be periodic, constant, homoclinic or sign-changing. Energy and zero-set hypotheses are essential; see [01.04](../01-master-equation/01-04-log-derivative-companion.md).
 - **Sources actually inspected:** `Symmetrical_Framework_Complete_Reference_2026-11-16_v2.md` (§§21,27–28, general-level index); `foundational-paper-draft-v0.3.md` (§§4,7,9.5); ZIP `04-follow-ups/bernoulli-riccati.md`, `sato-grassmannian.md`, `coupled-oscillator-and-modular-clock.md`. Related canonical [Foundations 020](../../reference/foundations/020%20The%20Linear%20Exponential%20Backbone.md).
 - **No novelty assertion:** most of these are standard differential substitutions and consequences already present in the sources; the continuous beta-cumulative recurrence here is an explicitly checked organizational extension.
+
+**Conic and Gudermannian comparison:** [§00.08](00-08-projective-conics-gudermannian.md) supplies the complete four-row table, the shared projective conic, the **quadratic** parabola image, the angular-derivative counterpart, and the exact invariant $`K_{\rm par}=\mathcal B-4P(1-P)`$. The field $`\mathcal B=S^2`$ must never be silently replaced by the constant $`B`$ in $`J_0=Ae^{ru}+Be^{-ru}`$.

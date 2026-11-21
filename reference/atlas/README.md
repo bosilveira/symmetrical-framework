@@ -69,3 +69,7 @@ The first [cross-source conversion ledger](SOURCE_CROSSWALK_2026-11-21.md) recon
 ## Gudermannian chart and parameter differentiation
 
 The [foundations §00.06](../../mathematics/00-foundations/00-06-variable-parameter-derivatives.md) derive the $`(x,c,r)leftrightarrow(eta,c,r)`$ chart, its Jacobian, and derivatives with respect to all the active coordinates. The Gudermannian angle is registered as `SF-P-056` (scope `gudermannian_chart`) and transformation `SF-M-019`, **distinct from** the preexisting Gram rapidity `SF-P-038` (scope `linear_backbone`).
+
+## Scoped conic and Gudermannian objects
+
+The projective-conic and squared-profile dictionary lives in [§00.08](../../mathematics/00-foundations/00-08-projective-conics-gudermannian.md) and is recorded with new stable objects `SF-O-024` through `SF-O-027`. Transform contracts `SF-M-020` through `SF-M-023` explicitly separate the **projective hyperbola/circle rechart**, the **quadratic circle/parabola projection**, and the **two probability-measure pushforwards**. The squared-profile dependent field $`\mathcal B=S^2`$ is not the Gram coefficient $`B`$ (`SF-P-009`), and the normalized squared-profile exponent `SF-P-057` has its own scope.

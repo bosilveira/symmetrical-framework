@@ -10,3 +10,5 @@ These documents govern how new mathematical text is reviewed and promoted; their
 The existing [Foundational Atlas](../../reference/atlas/README.md) remains the stable object/parameter/transformation registry. The [claim registry](../../reference/CLAIM_REGISTRY.md) retains proof statuses. Do **not** create inconsistent copies of either registry.
 
 Follow [MARKDOWN_STYLE.md](../../MARKDOWN_STYLE.md). Historical source files and backup branches remain unchanged.
+
+- [Conic/Gudermannian verification](verify_conic_gudermannian.py): selected SymPy identities for the circle/hyperbola/parabola, the two derivative clocks, invariant leaves and Gram-$`B`$ distinction; mpmath checks for the beta norm and recurrence. This is a **finite check**, not a theorem prover.

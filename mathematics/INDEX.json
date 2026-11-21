@@ -21,6 +21,7 @@
         "mathematics/00-foundations/00-05-identities.md",
         "mathematics/00-foundations/00-06-variable-parameter-derivatives.md",
         "mathematics/00-foundations/00-07-differential-algebra-oscillator-hierarchy.md",
+        "mathematics/00-foundations/00-08-projective-conics-gudermannian.md",
         "mathematics/00-foundations/README.md"
       ],
       "review_gate": "not yet declared chapter-wide reviewed"
@@ -80,6 +81,7 @@
       "entry_point": "mathematics/04-probability-statistics/README.md",
       "files": [
         "mathematics/04-probability-statistics/04-01-distribution.md",
+        "mathematics/04-probability-statistics/04-02-gudermannian-conic-laws.md",
         "mathematics/04-probability-statistics/README.md"
       ],
       "review_gate": "not yet declared chapter-wide reviewed"
@@ -129,7 +131,8 @@
     "mathematics/_standards/REVIEW_WORKFLOW.md",
     "mathematics/_standards/STATEMENT_TEMPLATE.md",
     "mathematics/_standards/TRANSFORMATION_TEMPLATE.md",
-    "mathematics/_standards/check_tree.py"
+    "mathematics/_standards/check_tree.py",
+    "mathematics/_standards/verify_conic_gudermannian.py"
   ],
   "source_map": "mathematics/SOURCE_MAP.md",
   "shared_object_registry": "reference/atlas/registry.json",
@@ -137,6 +140,6 @@
   "shared_claim_registry": "reference/CLAIM_REGISTRY.md",
   "notes": "This JSON describes navigation and review states, not mathematical equivalence, scientific novelty, or model validation.",
   "review_queue": "mathematics/REVIEW_QUEUE.md",
-  "new_file_count": 38,
-  "last_index_update": "2026-11-21: exact differential-algebraic closure, beta-cumulative recursion, and all-energy logarithmic-derivative Master correspondence"
+  "new_file_count": 41,
+  "last_index_update": "2026-11-21: scoped squared-profile field, projective circle/hyperbola, quadratic parabola, Gudermannian clock, and normalized pushforward measures"
 }
