@@ -120,3 +120,55 @@ The ZIP companion notes supply the parametrizations, planes, metrics, conformal 
 The full companion plates, their image files, the GeoGebra instructions, and external bibliographic references remain with the November 21 ZIP in the ChatGPT Project source collection; they were **not imported** into the GitHub mathematical reference. See [the source snapshot record](../../research/source-snapshots/2026-11-21/README.md), [the conic atlas](../00-foundations/00-08-projective-conics-gudermannian.md), and [the targeted verification program](../_standards/verify_field_hessians_hopf.py).
 
 **Separation of structures:** selected torus $`\ne`$ arbitrary immersion, Hopf fibre $`\ne`$ amplitude-varying great circle, stereographic projection $`\ne`$ orthogonal projection $`\ne`$ Hopf quotient, and marked torus modulus $`\ne`$ generic elliptic energy-curve modulus.
+
+## 7. The amplitude-exchange involution and the marked torus
+
+On the same restricted domain $`x>c`$, set $`\theta=ru>0`$ and introduce the **new argument** $`\gamma=\log\coth(\theta/2)>0`$, while retaining the original positive $`r,c`$. Its exponential map is
+
+```math
+e^\gamma=\frac{e^\theta+1}{e^\theta-1},\qquad \mathrm{sech}\gamma=\tanh\theta=W,\qquad \tanh\gamma=\mathrm{sech}\theta=S.
+```
+
+Thus the selected torus amplitudes swap. The corresponding hyperbolic radii and the Gudermannian angle transform as
+
+```math
+(R,b)\longmapsto(R/b,1/b),\qquad \eta\longmapsto\frac\pi2-\eta.
+```
+
+At the unique fixed argument $`\theta_*=\log(1+\sqrt2)`$, one has $`b=1`$, $`S=W=1/\sqrt2`$ and the square Clifford torus. If the torus cycles are **marked in the same ordered convention** after the amplitude swap, the modulus obeys
+
+```math
+\tau_T=ib\longmapsto\tau_T^\vee=\frac i b=-\frac1{\tau_T}.
+```
+
+This is the classical modular $`S`$-change of marking on this selected rectangular torus, **not** evidence that the elliptic curve of a generic Master energy level has the same modulus. The spatial lift at fixed $`r,c`$ is the nonlinear involution $`x^\vee=c[(T+1)/(T-1)]^{1/r}`$ from [§00.11](../00-foundations/00-11-elementary-function-web.md); the resolution parameter is **not** changed.
+
+## 8. The chosen Hopf connection: curvature and Chern number
+
+The torus amplitudes alone do not specify a one-form. For the **standard chosen Hopf connection** on the round unit $`S^3\subset\mathbb C^2`$, define the real one-form
+
+```math
+\mathcal A=\mathrm{Im}(\Psi^\dagger d\Psi)=S^2d\alpha+W^2d\beta,\qquad \delta=\beta-\alpha,\qquad \mathcal A=d\alpha+W^2d\delta.
+```
+
+Here the **phase coordinates are independently chosen**; differentiating them is not the same as differentiating the scalar kernel. With $`S=\cos\eta`$ and $`W=\sin\eta`$,
+
+```math
+\mathcal F=d\mathcal A=d(W^2)\wedge d\delta=2SW\,d\eta\wedge d\delta=\sin(2\eta)\,d\eta\wedge d\delta.
+```
+
+When $`\alpha,\delta`$ are independent of the original $`x,c,r`$ variations, the coordinate pullback is explicitly
+
+```math
+\mathcal F=2WS^2\left[r\left(\frac{dx}{x}-\frac{dc}{c}\right)+u\,dr\right]\wedge d\delta.
+```
+
+The **full Hopf base sphere** is obtained from **one** angular half-chart $`0\le\eta\le\pi/2`$ with $`0\le\delta<2\pi`$, including its degenerate torus endpoints $`W=0`$ and $`S=0`$. The phase chart is not globally regular at those endpoints, but the curvature extends smoothly. With the orientation $`d\eta\wedge d\delta`$,
+
+```math
+\frac1{2\pi}\int_{S^2}\mathcal F=\frac1{2\pi}\int_0^{2\pi}\int_0^{\pi/2}\sin(2\eta)\,d\eta\,d\delta=1.
+```
+
+This is the first Chern number in the stated connection/orientation convention; reversing orientations or bundle-sign conventions changes the reported sign. **Do not integrate over $`-\pi/2\le\eta\le\pi/2`$ as though it were one injective Hopf-base spherical chart:** allowing both signs of $`W`$ duplicates the base with phase identifications and would give a misleading cancellation.
+
+This construction links the same $`S,W`$ functions to a connection and characteristic class **only after specifying the Hopf bundle, its circle action and phases**. It is not a physical gauge-field assertion or a consequence of the Master ODE alone. See the [typed elementary web](../00-foundations/00-11-elementary-function-web.md) and the [verification script](../_standards/verify_elementary_function_web.py).
