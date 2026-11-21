@@ -66,10 +66,11 @@ def main() -> None:
     zero("reciprocal sech x ODE",
          sp.diff(y,x,2)-sp.diff(z,x,2)/zx*sp.diff(y,x)
          -zx**2*(y-2*y**3))
-    yy = sp.sech(r/u)
+    U = sp.symbols("U", real=True, nonzero=True)
+    yy = sp.sech(r/U)
     zero("reciprocal sech u ODE",
-         sp.diff(yy,u,2)+2*sp.diff(yy,u)/u
-         -r**2/u**4*(yy-2*yy**3))
+         sp.diff(yy,U,2)+2*sp.diff(yy,U)/U
+         -r**2/U**4*(yy-2*yy**3))
     q = sp.diff(sp.log(sp.cosh(z)),x)
     zero("reciprocal cosh Riccati pullback",
          sp.diff(q,x)+q**2-sp.diff(z,x,2)/zx*q-zx**2)
