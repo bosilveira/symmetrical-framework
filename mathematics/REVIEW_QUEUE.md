@@ -35,7 +35,7 @@ The source-indexed and directly derived results are consolidated in [§00.08](00
 
 | Review target | Primary mathematical task | Gate |
 |---|---|---|
-| [$`00.09](00-foundations/00-09-second-derivative-charts.md) | Hessian of `$F(r\log(x/c))$`, chart changes, explicit prefactor and log slope | Held-fixed coordinates, mixed partial symmetry, explicit `$r,c` |
-| [$`00.08](00-foundations/00-08-projective-conics-gudermannian.md) | Didactic local `$H:=H_2=S^2=\mathcal B$` oscillator tables | No clash with Gram `$B` or Hamiltonians |
-| [`05.04](05-differential-geometry/05-04-hopf-villarceau-selected-lift.md) | Selected Hopf lift, three projections, Villarceau circles, marked torus modulus | Independent phases, geometry not forced by scalar ODE |
+| [Section 00.09](00-foundations/00-09-second-derivative-charts.md) | Hessian of $`F(r\log(x/c))`$, chart changes, explicit prefactor and log slope | Held-fixed coordinates, mixed partial symmetry, explicit $`r,c`$ |
+| [Section 00.08](00-foundations/00-08-projective-conics-gudermannian.md) | Didactic local $`H:=H_2=S^2=\mathcal B`$ oscillator tables | No clash with Gram $`B`$ or Hamiltonians |
+| [Section 05.04](05-differential-geometry/05-04-hopf-villarceau-selected-lift.md) | Selected Hopf lift, three projections, Villarceau circles, marked torus modulus | Independent phases, geometry not forced by scalar ODE |
 | [verification script](_standards/verify_field_hessians_hopf.py) | Symbolic sample-field Hessians and circle/torus identities | Tests supplement proofs, not topology or physical modeling |
