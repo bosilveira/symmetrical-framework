@@ -35,3 +35,5 @@ They are **not one action with three spellings**. Every transformation requires 
 The involution $`x\mapsto c^2/x`$ is orientation-reversing on $`(0,\infty)`$. Positive measures transform with an absolute Jacobian; one-forms transform with signed derivatives. Consequently an “invariant measure” statement must specify which object it concerns.
 
 **No automatic geometric lift:** a metric pullback needs an immersion or map and a target metric. Such data are introduced explicitly in [chapter 05](../05-differential-geometry/README.md), not deduced from the kernel by name.
+
+**Reciprocal/product argument follow-up:** [§00.12](00-12-extended-argument-atlas.md) supplies $`z=r/\log(x/c)`$, $`z=r/\log(xc/\ell^2)`$, their reciprocal-resolution variants, the transformed second-order equation and the common logarithmic Schwarzian. In particular, these are **local coordinate pullbacks**, not extra solutions of the same autonomous Master with the same global integrability class.
