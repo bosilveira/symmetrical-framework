@@ -31,3 +31,31 @@ Hence scale covariance and inversion covariance are compatible but logically sep
 in its convergence domain. This furnishes a clean, falsifiable dimensional check for every claimed integral identity.
 
 **Derivative conventions.** The Euler vector field $x\partial_x+c\partial_c$ keeps the ratio $x/c$ fixed. It is **not** the same as the operator $D_x=x\partial_x$ with $c$ fixed; the latter equals $\partial_u$ in the logarithmic chart.
+
+## Infinitesimal generators and parameter differentiation
+
+Fix a reference scale $x_*>0$. The dimensionless logarithmic coordinates $\alpha=\log(c/x_*)$ and $y=\log(x/x_*)$ make the distinction between simultaneous scale transport and fixed-center dilation transparent. Their difference is $u=y-\alpha=\log(x/c)$.
+
+At fixed $r$, differentiating the Rosetta Stone identity in $x$ and $c$ separately yields
+
+```math
+x\partial_x\log f=-(1+rW),\qquad c\partial_c\log f=rW.
+```
+
+Adding them gives $(x\partial_x+c\partial_c)\log f=-1$, the logarithmic form of Euler homogeneity. Differentiating in resolution at fixed $x,c$ gives another exact score:
+
+```math
+\partial_r\log f=-uW.
+```
+
+The derivative with respect to $\alpha=\log c$ is a location derivative; the derivative in $r$ is a scale/shape derivative in the logarithmic coordinate. They must not be confused with derivatives taken at fixed $u$.
+
+## Commuting group actions on the coordinate-scale pair
+
+Define $D_\lambda(x,c)=(\lambda x,\lambda c)$ and $I(x,c)=(c^2/x,c)$, where $\lambda>0$. A direct calculation gives
+
+```math
+D_\lambda\circ I=I\circ D_\lambda,\qquad I^2=\mathrm{id},\qquad D_\lambda D_\eta=D_{\lambda\eta}.
+```
+
+The transformations generate an action of the direct product $\mathbb R_{>0}\times C_2$ on the *pair* $(x,c)$. On the normalized coordinate $u=\log(x/c)$, $D_\lambda$ acts trivially and $I$ acts by $u\mapsto-u$. The dependent function transforms by the nontrivial weights specified in §§2.2–2.3; it is **not** invariant pointwise under both generators.

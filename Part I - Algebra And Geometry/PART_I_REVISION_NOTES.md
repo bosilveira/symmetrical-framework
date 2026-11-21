@@ -39,3 +39,16 @@ No pull request or merge has been made as part of this revision.
 ## Chapter 1 consolidation (20 November 2026)
 
 The 912-line `01-architectural-identities/01-gemini.md` was reviewed and its suitable derivations integrated into §§1.1–1.10 and the new [§1.11 on the auxiliary Cauchy–Euler equation](01-architectural-identities/01-11-auxiliary-linearization.md). The source file was removed from the active branch; its original text is preserved in Git history. See the [mathematical integration audit](01-architectural-identities/01-99-notes.md) for accepted, corrected and excluded claims. All other historical archives were left unchanged.
+
+## Chapter 2 extensive investigation (20 November 2026)
+
+The maintained `02-foundational-symmetries` chapter has been extensively expanded. The existing `02-gemini.md` was reviewed for source alignment and **retained unchanged**. Its supported claims are separated from additional investigations in the [Chapter 2 audit](02-foundational-symmetries/02-99-notes.md).
+
+- The center's third derivative $f_{xxx}(c)=3(r^2-1)/c^4$ proves a genuine inflection at $r=\sqrt2$.
+- The normalized family is equivariant under nonzero-power maps and the full affine group in logarithmic coordinates, with resolution $r/|a|$.
+- The exact weighted overlap is $\delta/(2r\sinh\delta)$, $\delta=r\log(c_2/c_1)$. The normalized kernel is strictly positive definite, with Fourier transform $(\pi^2/2)\mathrm{sech}^2(\pi\omega/2)$.
+- The Fisher metric of the normalized family is $ds_F^2=(r^2/2)d\alpha^2+(\pi^2/(8r^2))dr^2$ with constant Gaussian curvature $K_F=-8/\pi^2$.
+- Restricted CDF angle addition is a **partial** associative operation, distinct from the **global** multiplicative group transported to CDF, phase and logistic coordinates.
+- The Darboux partners give a normalized $L^2$ zero mode and an explicit reflectionless scattering solution for the selected Pöschl–Teller Schrödinger operator.
+
+See the [Chapter 2 summary](02-foundational-symmetries/02-00-summary.md), the [detailed verification notes](02-foundational-symmetries/02-99-notes.md) and the reproducible [test script](verify_chapter2.py). No exceptional group or physical realization is inferred from these identities.
