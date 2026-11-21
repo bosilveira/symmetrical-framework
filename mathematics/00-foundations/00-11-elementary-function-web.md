@@ -196,3 +196,5 @@ These are parameter *derivatives of the mapped spatial point*, not derivatives o
 | Hopf–Villarceau | $`S,W,R,b,\eta`$ | Independent phase angles, Hopf map, torus marking | [§05.04](../05-differential-geometry/05-04-hopf-villarceau-selected-lift.md) |
 
 **Interpretation boundary:** the equalities above **do not make the extra structures uniquely determined by the kernel**. The useful mathematics is a typed transformation network that records the new coordinates, retained parameter data, Jacobians, branch restrictions and any lost sign, phase, or marking. The deeper dimension-reduction conjectures remain outside this foundational claim.
+
+**Further coordinate directions:** [§00.12](00-12-extended-argument-atlas.md) classifies product logarithms, argument reciprocals, Möbius logarithmic charts and Wick continuation with full $`x,c,r,\ell`$ bookkeeping. The twelve function names are a finite dictionary, but the local coordinate atlas is not finite; neither the Master solution class nor the norm is automatically preserved under arbitrary reparametrization.
