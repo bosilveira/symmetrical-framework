@@ -255,30 +255,30 @@ No claim of mathematical novelty, independent peer review, or forced geometric/p
 
 ## 11. Comparison of parameter and Gudermannian second derivatives
 
-For any selected argument field `F(\theta)`, set `a=F_\theta` and `d=F_{\theta\theta}`. With `\theta=r\log(x/c)` and `u=\log(x/c)`, the `(x,c,r)` Hessian has
+For any selected argument field $`F(\theta)`$, set $`a=F_\theta`$ and $`d=F_{\theta\theta}`$. With $`\theta=r\log(x/c)`$ and $`u=\log(x/c)`$, the $`(x,c,r)`$ Hessian has
 
 ```math
 F_{rr}=u^2d,\qquad F_{cc}=(r^2d+ra)/c^2,\qquad F_{rc}=-(a+ru\,d)/c.
 ```
 
-| Object | `F_{rr}|_{x,c}` | `F_{cc}|_{x,r}` | `F_{\eta\eta}|_{c,r}` |
+| Object | $`F_{rr}|_{x,c}`$ | $`F_{cc}|_{x,r}`$ | $`F_{\eta\eta}|_{c,r}`$ |
 |---|---|---|---|
-| `S` | `u^2S(2W^2-1)` | `[r^2S(2W^2-1)-rSW]/c^2` | `-S` |
-| `W` | `-2u^2HW` | `[rH-2r^2HW]/c^2` | `-W` |
-| `R` | `u^2R` | `[r^2R+rb]/c^2` | `2R^3-R` |
-| `b` | `u^2b` | `[r^2b+rR]/c^2` | `2b^3+2b` |
-| `P` | `-u^2HW` | `[rH/2-r^2HW]/c^2` | `1/2-P` |
-| `H=S^2` | `u^2(4H-6H^2)` | `[r^2(4H-6H^2)-2rHW]/c^2` | `2-4H` |
-| `\eta=\mathrm{gd}(\theta)` | `-u^2SW` | `[rS-r^2SW]/c^2` | `0` |
+| $`S`$ | $`u^2S(2W^2-1)`$ | $`[r^2S(2W^2-1)-rSW]/c^2`$ | $`-S`$ |
+| $`W`$ | $`-2u^2HW`$ | $`[rH-2r^2HW]/c^2`$ | $`-W`$ |
+| $`R`$ | $`u^2R`$ | $`[r^2R+rb]/c^2`$ | $`2R^3-R`$ |
+| $`b`$ | $`u^2b`$ | $`[r^2b+rR]/c^2`$ | $`2b^3+2b`$ |
+| $`P`$ | $`-u^2HW`$ | $`[rH/2-r^2HW]/c^2`$ | $`1/2-P`$ |
+| $`H=S^2`$ | $`u^2(4H-6H^2)`$ | $`[r^2(4H-6H^2)-2rHW]/c^2`$ | $`2-4H`$ |
+| $`\eta=\mathrm{gd}(\theta)`$ | $`-u^2SW`$ | $`[rS-r^2SW]/c^2`$ | $`0`$ |
 
-Each column specifies what stays fixed. See the [full second-derivative chapter `00.09](00-09-second-derivative-charts.md) for all six Hessian entries, the `f=S/(2x)` prefactor, the cumulative `Q_q`, and the resolution-explicit logarithmic slope `q_0=rW`.
+Each column specifies what stays fixed. See the [full second-derivative chapter §00.09](00-09-second-derivative-charts.md) for all six Hessian entries, the $`f=S/(2x)`$ prefactor, the cumulative $`Q_q`$, and the resolution-explicit logarithmic slope $`q_0=rW`$.
 
 ## 12. Hopf–Villarceau as a companion chosen lift
 
-For `\theta>0`, *independently chosen* phases `\alpha,\beta` define `\Psi=(Se^{i\alpha},We^{i\beta})\in S^3`. Fix `\delta=\beta-\alpha`. Its chosen Hopf quotient is
+For $`\theta>0`$, *independently chosen* phases $`\alpha,\beta`$ define $`\Psi=(Se^{i\alpha},We^{i\beta})\in S^3`$. Fix $`\delta=\beta-\alpha`$. Its chosen Hopf quotient is
 
 ```math
 n=(2SW\cos\delta,2SW\sin\delta,S^2-W^2)=(\sin(2\eta)\cos\delta,\sin(2\eta)\sin\delta,\cos(2\eta)).
 ```
 
-Consequently `n_{\eta\eta}=-4n` at fixed `\delta`. The double-angle dependence follows from the chosen Hopf map; it is **not** a replacement `r\mapsto2r`. See [`05.04 — the selected Hopf–Villarceau construction](../05-differential-geometry/05-04-hopf-villarceau-selected-lift.md) for stereographic versus orthogonal versus Hopf projections, Villarceau circles, and marked modulus. Primary source: ZIP `05-companion/hopf-villarceau-atlas/hopf-villarceau-notes.md`.
+Consequently $`n_{\eta\eta}=-4n`$ at fixed $`\delta`$. The double-angle dependence follows from the chosen Hopf map; it is **not** a replacement $`r\mapsto2r`$. See [§05.04 — the selected Hopf–Villarceau construction](../05-differential-geometry/05-04-hopf-villarceau-selected-lift.md) for stereographic versus orthogonal versus Hopf projections, Villarceau circles, and marked modulus. Primary source: ZIP `05-companion/hopf-villarceau-atlas/hopf-villarceau-notes.md`.
