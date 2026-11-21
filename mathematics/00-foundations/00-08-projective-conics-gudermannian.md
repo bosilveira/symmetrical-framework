@@ -282,3 +282,15 @@ n=(2SW\cos\delta,2SW\sin\delta,S^2-W^2)=(\sin(2\eta)\cos\delta,\sin(2\eta)\sin\d
 ```
 
 Consequently $`n_{\eta\eta}=-4n`$ at fixed $`\delta`$. The double-angle dependence follows from the chosen Hopf map; it is **not** a replacement $`r\mapsto2r`$. See [§05.04 — the selected Hopf–Villarceau construction](../05-differential-geometry/05-04-hopf-villarceau-selected-lift.md) for stereographic versus orthogonal versus Hopf projections, Villarceau circles, and marked modulus. Primary source: ZIP `05-companion/hopf-villarceau-atlas/hopf-villarceau-notes.md`.
+
+## 13. The Lorentz symmetric-square cone behind the conic sections
+
+The catenoid exponential pair $`\psi=(e^{\theta/2},e^{-\theta/2})`$ has symmetric square $`(Y_1,Y_2,Y_3)=(e^\theta,1,e^{-\theta})`$ on the null cone $`Y_1Y_3=Y_2^2`$. In Lorentz coordinates $`X=(Y_1+Y_3)/2`$, $`Y=(Y_1-Y_3)/2`$ and $`Z=Y_2`$,
+
+```math
+X^2-Y^2-Z^2=0,\qquad (X,Y,Z)=(R,b,1),\qquad (1,Y/X,Z/X)=(1,W,S).
+```
+
+This is the rigorous common-cone interpretation of the hyperbola and circle. The cone also has **parabolic null-plane sections**, e.g. $`X-Y=1`$ gives $`X+Y=Z^2`$. However, the section's natural coordinate $`Z/(X-Y)=T=e^\theta`$ is not the canonical logistic coordinate $`W=(T^2-1)/(T^2+1)`$. The canonical parabola $`H=S^2=4P(1-P)`$ remains the **quadratic image of the circle**, not a third invertible affine recharting of the same parametrized point.
+
+See [§00.10](00-10-symmetric-square-lorentz-hessian.md) for all three plane restrictions, the source-local versus canonical Gram discriminants, the projective half-angle map, the universal $`(u,r)`$ Hessian determinant, and the catenoid/Gudermannian operator qualifications.
