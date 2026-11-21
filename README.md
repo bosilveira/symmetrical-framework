@@ -1,6 +1,10 @@
 # The Symmetrical Framework
 *An Investigation into the Geometry of the Multiplicative Line*
 
+**Start here:** [Reference Index and Research Protocol](REFERENCE_INDEX.md) · [Instructions for research assistants](AGENTS.md) · [GitHub mathematical Markdown style](MARKDOWN_STYLE.md).
+
+> **Editorial status:** This README is a historical overview of work at many different stages. Only statements with explicit assumptions, proofs and review evidence should be treated as established. The rigorously revised Part I and its correction ledgers are the better starting point for exact results. Parts II–VIII, the broad identity catalogs and conversational archives require individual review; they have **not** all been verified.
+
 ## 1. The Entry Point: The Symmetrical Function
 
 The framework begins with the **symmetrical function**:
@@ -15,7 +19,7 @@ This function has a **weighted inversion covariance** under $`x \mapsto c^2/x`$ 
 \int_0^c f\ dx \ =\ \int_c^\infty f\ dx \ =\ \frac{\pi}{4r}
 ```
 
-What follows is an extensive, numerically verified catalog of identities derived entirely from this elementary definition.
+What follows is a broad **research catalog**. Some identities are direct algebraic consequences of the kernel; others are conditional constructions, known mathematical correspondences, provisional conjectures, or historical explorations. Their verification status must be checked claim by claim.
 
 ## 2. The Canonical Core: The Rosetta Stone
 
@@ -39,7 +43,7 @@ Defining the canonical phase space $`(S, W) = (sech(ru), \tanh(ru))`$, we obtain
 
 ## 3. Solitonic Factorization
 
-This framework provides an exact parametrization of the **soliton cell of Sato's Universal Grassmannian**, including its degenerate (rational) and complex-continued (oscillating) boundaries. 
+This research investigates a proposed parametrization of the **soliton cell of Sato's Universal Grassmannian**, including its degenerate (rational) and complex-continued (oscillating) boundaries. 
 
 ```math
 \tau_N(x) = \det\left[\delta_{jk} + \frac{2\sqrt{r_j r_k}}{r_j+r_k}\left(\frac{x}{c}\right)^{r_j+r_k}\right]
@@ -122,6 +126,6 @@ The findings are organized into eight parts, cataloging the derivations from ele
 
 ---
 
-*Methodology Note: All numerical identities in this repository are verified in `mpmath` at $`\ge 50`$-digit precision. Symbolic derivations are verified in `SymPy`.*
+*Methodology note: Symbolic and numerical checks have been used for **specific** formulas; their coverage and precision are not uniform across the repository. Consult the verification scripts and the local proof/audit record before asserting that any given statement was checked.*
 
 ---
