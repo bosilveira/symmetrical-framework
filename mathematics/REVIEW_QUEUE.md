@@ -39,3 +39,7 @@ The source-indexed and directly derived results are consolidated in [§00.08](00
 | [Section 00.08](00-foundations/00-08-projective-conics-gudermannian.md) | Didactic local $`H:=H_2=S^2=\mathcal B`$ oscillator tables | No clash with Gram $`B`$ or Hamiltonians |
 | [Section 05.04](05-differential-geometry/05-04-hopf-villarceau-selected-lift.md) | Selected Hopf lift, three projections, Villarceau circles, marked torus modulus | Independent phases, geometry not forced by scalar ODE |
 | [verification script](_standards/verify_field_hessians_hopf.py) | Symbolic sample-field Hessians and circle/torus identities | Tests supplement proofs, not topology or physical modeling |
+
+## Symmetric-square and two-variable Hessian review (November 21, 2026)
+
+[§00.10](00-foundations/00-10-symmetric-square-lorentz-hessian.md) distinguishes the **true affine sections of the Lorentz cone** from the quadratic projection to the canonical logistic parabola. It proves the mixed entry and $`(u,r)`$ Hessian identity $`\det\mathrm{Hess}_{(u,r)}F=-(\theta F_\theta^2)_\theta`$, and records the signature threshold $`\theta\tanh\theta=1/4`$ for $`W`$. It explicitly converts the ZIP's source-local Gram determinant $`A_{\mathrm{src}}C_{\mathrm{src}}-B_{\mathrm{src}}^2`$ before comparing it with canonical $`AB-C^2`$. The catenoid Jacobi modes and the Milne/Gudermannian factor of two require their own operator and normalization data. [Executable checks](_standards/verify_sym2_hessian.py) supplement but do not replace those derivations.
