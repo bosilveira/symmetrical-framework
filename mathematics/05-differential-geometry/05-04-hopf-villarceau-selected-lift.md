@@ -26,7 +26,7 @@ Write $`\Psi=(a+ia_0,z+id)`$, so $`a=S\cos\alpha`$, $`a_0=S\sin\alpha`$, $`z=W\c
 |---|---|---|---|
 | Stereographic $`\sigma_N`$ | $`(a,a_0,z)/(1-d)`$ | Ring torus in $`\mathbb R^3`$ | Conformal diffeomorphism on $`S^3\setminus\{N\}`$; no points of $`T_\theta`$ at $`N`$ |
 | Orthogonal $`\pi_d`$ | $`(a,a_0,z)`$ | Cylinder lateral surface $`\rho=S,\ -W\le z\le W`$ | Generically two preimages; boundary folds |
-| Hopf quotient $`h`$ | $`(2\mathrm{Re}(\bar z_1z_2),2\mathrm{Im}(\bar z_1z_2),|z_1|^2-|z_2|^2)`$ | Latitude circle in $`S^2`$ | Collapses common-phase $`S^1`$ fibres |
+| Hopf quotient $`h`$ | $`(2\mathrm{Re}(\bar z_1z_2),2\mathrm{Im}(\bar z_1z_2),\lvert z_1\rvert^2-\lvert z_2\rvert^2)`$ | Latitude circle in $`S^2`$ | Collapses common-phase $`S^1`$ fibres |
 
 In stereographic coordinates $`(X,Y,Z)`$,
 
