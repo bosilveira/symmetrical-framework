@@ -49,3 +49,9 @@ This is a mature **research program with an explicit evidence protocol**, not a 
 ## Mathematical object and transformation atlas
 
 The [Foundational Atlas](reference/atlas/README.md) is the growing machine-readable dictionary of mathematical objects, **scoped variables and parameters**, and typed transformations extracted from the November 16 complete reference. Each transformation records its source and target coordinates, parameter rules, Jacobian or time-differential rule, domain, invertibility, and information loss. It can be reviewed incrementally without automatically rewriting unrelated proofs.
+
+## New mathematics-first reference structure
+
+A **parallel, non-destructive** organizational tree is being built at **[mathematics/](mathematics/README.md)**. It places foundational objects and transformations first, then the second-order Master/Classification Theorem, calculus and **weighted norms**, special-function transforms, probability, and the differential-geometry dictionary. Secondary theories and applications are explicitly subsequent layers.
+
+For mathematical investigation, use [the new reading order](mathematics/README.md) and [review queue](mathematics/REVIEW_QUEUE.md), then open the linked original source proof. The older reference/, research/, archive/, and backup branches have **not** been moved or replaced. This new tree is seeded for iterative claim-by-claim review, not declared entirely peer-reviewed.

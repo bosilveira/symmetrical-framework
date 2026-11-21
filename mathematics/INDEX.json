@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "project": "Symmetrical Framework",
+  "new_reference_root": "mathematics",
+  "policy": "additive parallel tree: preserve all existing reference/research/archive files and non-main backup branch tips",
+  "source_main_commit_at_creation": "4c9453bac7e6092d38e8d308202a66e8e303febb",
+  "status": "seeded chapter structure; theorem and proof status must be checked claim by claim",
+  "chapters": [
+    {
+      "id": "SF-CH-00",
+      "order": 0,
+      "folder": "00-foundations",
+      "label": "Variables, parameters, functions, pullbacks, transformations, identities",
+      "phase": "foundational-algebra",
+      "entry_point": "mathematics/00-foundations/README.md",
+      "files": [
+        "mathematics/00-foundations/00-01-variables-parameters.md",
+        "mathematics/00-foundations/00-02-functions-conics.md",
+        "mathematics/00-foundations/00-03-gram-projective.md",
+        "mathematics/00-foundations/00-04-pullbacks-transformations.md",
+        "mathematics/00-foundations/00-05-identities.md",
+        "mathematics/00-foundations/README.md"
+      ],
+      "review_gate": "not yet declared chapter-wide reviewed"
+    },
+    {
+      "id": "SF-CH-01",
+      "order": 1,
+      "folder": "01-master-equation",
+      "label": "Second-order Master and Classification Theorems",
+      "phase": "foundational-analysis",
+      "entry_point": "mathematics/01-master-equation/README.md",
+      "files": [
+        "mathematics/01-master-equation/01-01-operator-energy.md",
+        "mathematics/01-master-equation/01-02-classification.md",
+        "mathematics/01-master-equation/01-03-general-levels.md",
+        "mathematics/01-master-equation/README.md"
+      ],
+      "review_gate": "not yet declared chapter-wide reviewed"
+    },
+    {
+      "id": "SF-CH-02",
+      "order": 2,
+      "folder": "02-calculus-norms",
+      "label": "Differentiation, integration, weighted norms, measures, Hilbert spaces",
+      "phase": "foundational-analysis",
+      "entry_point": "mathematics/02-calculus-norms/README.md",
+      "files": [
+        "mathematics/02-calculus-norms/02-01-differentiation.md",
+        "mathematics/02-calculus-norms/02-02-primitives.md",
+        "mathematics/02-calculus-norms/02-03-norms.md",
+        "mathematics/02-calculus-norms/02-04-measure-hilbert.md",
+        "mathematics/02-calculus-norms/README.md"
+      ],
+      "review_gate": "not yet declared chapter-wide reviewed"
+    },
+    {
+      "id": "SF-CH-03",
+      "order": 3,
+      "folder": "03-transforms-special-functions",
+      "label": "Mellin, Fourier, Plancherel, Parseval, Stieltjes, Hilbert, Laplace and others",
+      "phase": "foundational-analysis",
+      "entry_point": "mathematics/03-transforms-special-functions/README.md",
+      "files": [
+        "mathematics/03-transforms-special-functions/03-01-mellin-fourier-plancherel.md",
+        "mathematics/03-transforms-special-functions/03-02-transform-registry.md",
+        "mathematics/03-transforms-special-functions/README.md"
+      ],
+      "review_gate": "not yet declared chapter-wide reviewed"
+    },
+    {
+      "id": "SF-CH-04",
+      "order": 4,
+      "folder": "04-probability-statistics",
+      "label": "Normalized density, moments, distributions and statistical geometry",
+      "phase": "foundational-probability",
+      "entry_point": "mathematics/04-probability-statistics/README.md",
+      "files": [
+        "mathematics/04-probability-statistics/04-01-distribution.md",
+        "mathematics/04-probability-statistics/README.md"
+      ],
+      "review_gate": "not yet declared chapter-wide reviewed"
+    },
+    {
+      "id": "SF-CH-05",
+      "order": 5,
+      "folder": "05-differential-geometry",
+      "label": "Typed metric pullbacks, fundamental forms, connections and geometric operators",
+      "phase": "foundational-geometry",
+      "entry_point": "mathematics/05-differential-geometry/README.md",
+      "files": [
+        "mathematics/05-differential-geometry/05-01-canonical-surface.md",
+        "mathematics/05-differential-geometry/05-02-fundamental-forms.md",
+        "mathematics/05-differential-geometry/05-03-connections-operators.md",
+        "mathematics/05-differential-geometry/README.md"
+      ],
+      "review_gate": "not yet declared chapter-wide reviewed"
+    },
+    {
+      "id": "SF-CH-06",
+      "order": 6,
+      "folder": "06-secondary-theories",
+      "label": "Sturm-Liouville, Pinney, variational and operator theoretic constructions",
+      "phase": "conditional-secondary",
+      "entry_point": "mathematics/06-secondary-theories/README.md",
+      "files": [
+        "mathematics/06-secondary-theories/README.md"
+      ],
+      "review_gate": "not yet declared chapter-wide reviewed"
+    },
+    {
+      "id": "SF-CH-07",
+      "order": 7,
+      "folder": "07-applications",
+      "label": "Applications and external models requiring independent assumptions",
+      "phase": "conditional-application",
+      "entry_point": "mathematics/07-applications/README.md",
+      "files": [
+        "mathematics/07-applications/README.md"
+      ],
+      "review_gate": "not yet declared chapter-wide reviewed"
+    }
+  ],
+  "standards": [
+    "mathematics/_standards/README.md",
+    "mathematics/_standards/REVIEW_WORKFLOW.md",
+    "mathematics/_standards/STATEMENT_TEMPLATE.md",
+    "mathematics/_standards/TRANSFORMATION_TEMPLATE.md",
+    "mathematics/_standards/check_tree.py"
+  ],
+  "source_map": "mathematics/SOURCE_MAP.md",
+  "shared_object_registry": "reference/atlas/registry.json",
+  "shared_transform_contracts": "reference/atlas/contracts.json",
+  "shared_claim_registry": "reference/CLAIM_REGISTRY.md",
+  "notes": "This JSON describes navigation and review states, not mathematical equivalence, scientific novelty, or model validation.",
+  "review_queue": "mathematics/REVIEW_QUEUE.md",
+  "new_file_count": 35
+}

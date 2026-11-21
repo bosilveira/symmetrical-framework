@@ -67,3 +67,9 @@ Read the [Foundational Atlas](reference/atlas/README.md) when the question invol
 ## November 21 source collection — staged mathematical import
 
 The complete November 16 reference and newer November 21 ZIP are cataloged in [Research Source Snapshots](research/source-snapshots/2026-11-21/README.md). Their exact SHA-256 values, directory summary and **selected** executable check results are recorded; the original source bytes still live in the ChatGPT Project attachments, not GitHub. Read the [source-specific parameter crosswalk](reference/atlas/SOURCE_CROSSWALK_2026-11-21.md) before reconciling the ZIP's general-level equations, Gram envelope, energy constants or Tzitzeica variables. Do not interpret [V] in its generated claims ledger as a universal theorem.
+
+## New mathematical organization (foundation first)
+
+The developing primary reading order is now at **[mathematics/](mathematics/README.md)**. Use its [source map](mathematics/SOURCE_MAP.md) and [review queue](mathematics/REVIEW_QUEUE.md) to navigate old files without confusing provisional research with proofs. [00 Foundations](mathematics/00-foundations/README.md) precedes [01 Master/Classification](mathematics/01-master-equation/README.md), then [02 Calculus and Norms](mathematics/02-calculus-norms/README.md), [03 Transforms](mathematics/03-transforms-special-functions/README.md), [04 Probability](mathematics/04-probability-statistics/README.md), [05 Differential Geometry](mathematics/05-differential-geometry/README.md), [06 Secondary Theories](mathematics/06-secondary-theories/README.md) and [07 Applications](mathematics/07-applications/README.md).
+
+The original reference/ remains the evidence-bearing source for already revised proofs; the new mathematics/ files are a non-destructive **reconstruction layer**. All variables, parameter maps, Jacobians, norms and branch restrictions must remain explicit.

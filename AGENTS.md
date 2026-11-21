@@ -43,3 +43,9 @@ Before accepting or composing an arrow between mathematical objects, consult [re
 ## Attached source snapshot ingestion
 
 For questions using the November 16 Complete Reference or the November 21 ZIP, begin with [the source snapshot record](research/source-snapshots/2026-11-21/README.md) and [the notation/parameter crosswalk](reference/atlas/SOURCE_CROSSWALK_2026-11-21.md). Verify the original attachment's SHA-256 and open its exact internal file. **Do not claim to have read the ZIP through GitHub**: only its metadata and first mathematical crosswalk are published there at present. Treat the source's generated `CLAIMS.md`, `ERRATA.md`, `OPEN.md` and `PROOF-STATUS.md` as distinct evidence types. In particular, historical `u=x^q f` is a dependent state and is not the canonical logarithmic coordinate; Tzitzeica's wave coefficient `c=ab` is not the kernel scale `c`.
+
+## Mathematics-first source review
+
+**For new substantive mathematical work, open [mathematics/README.md](mathematics/README.md) before choosing a chapter.** Read the section's [source map](mathematics/SOURCE_MAP.md) and [review protocol](mathematics/_standards/REVIEW_WORKFLOW.md), then open the exact original theorem/derivation. The new tree establishes the desired logical order; it does not automatically certify the entire legacy corpus or replace the stable object registry in reference/atlas/.
+
+Review in order: primitive variables/parameters/functions/pullbacks/identities → second-order Master and global Classification Theorem → differentiation/integration/**norms** → Mellin/Fourier/Plancherel/other transforms → probability → differential geometry dictionary → conditional second-order theories → applications. All transformations must bind source/target coordinates, dependent fields, Jacobians, held-fixed parameters, coupling, energy, measure and information loss. No bulk moves or automated mathematical edits of existing sources.
