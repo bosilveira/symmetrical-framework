@@ -13,6 +13,8 @@ The profile is $`S=\mathrm{sech}(ru)`$, with $`r,c>0`$.
 
 This is GitHub's inline-math alternative. Do not place spaces between the dollar signs and their adjacent backticks. Inline mathematical formulas inside prose, lists, and tables must follow the same rule. Use ordinary Markdown code spans for filenames and commands.
 
+**Markdown-table separator caution:** a literal vertical bar `|` inside an inline mathematical expression is still interpreted as a table-column separator. For instance, avoid a header written as `F_{rr}|_{x,c}` inside inline math. Instead write the column header as `$`F_{rr}`$ (fixed `$`x,c`$)`, or use the LaTeX `\vert` / `\rvert` control sequence when a mathematical restriction bar is essential. Keep table rows on separate source lines and check that every row has the same number of unescaped column separators.
+
 ## Displayed mathematics
 
 Use unindented fenced code blocks marked `math`, with **exactly one blank line** above and below. The equation inside each block occupies **exactly one source line**; split multi-step proofs into successive blocks, retaining every step.
