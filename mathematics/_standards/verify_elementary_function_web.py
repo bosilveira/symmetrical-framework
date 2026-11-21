@@ -38,6 +38,8 @@ def symbolic_checks() -> None:
         ("Cayley complex circle", s+i*w, -i*(1+i*t)/(1-i*t)),
         ("complex log derivative", sp.diff(s+i*w,theta)/(s+i*w), i*s),
         ("Gudermannian arclength", sp.diff(eta,theta), s),
+        ("Gudermannian half-angle", sp.sin(eta)/(1+sp.cos(eta)),
+         sp.sinh(theta)/(sp.cosh(theta)+1)),
         ("projective half angle", sp.tanh(theta/2), (t-1)/(t+1)),
     ]:
         exact(label, lhs, rhs)
