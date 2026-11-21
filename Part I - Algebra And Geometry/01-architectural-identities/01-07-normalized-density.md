@@ -1,91 +1,32 @@
-# 1.7 Normalized Density and the Cumulative Distribution Function (CDF)
+# 1.7 — Probability density, CDF, quantiles, and arcsine coordinate
 
-By introducing an appropriate normalization constant, the function $f(x; r, c)$ can be treated as a probability density function (PDF). This allows for a full probabilistic interpretation of the framework, complete with a cumulative distribution function (CDF).
+Because $f(x)\,dx=\tfrac12S\,du$ and $\int_{\mathbb R}\operatorname{sech}(ru)\,du=\pi/r$, the mass is $\int_0^\infty f\,dx=\pi/(2r)$.
 
-### Normalized Probability Density Function (PDF)
-
-The normalized PDF, denoted by $\rho(x; r, c)$, is defined as:
-
+**[E]** The probability density and CDF are
 $$
-\boxed{ \rho(x; r, c) = \frac{2r}{\pi} f(x; r, c) }
+\rho(x;r,c)=\frac{2r}{\pi}f(x;r,c),\qquad
+F(x;r,c)=\frac2\pi\arctan\!\left((x/c)^r\right).
 $$
-
-This normalization ensures that the total probability mass over the domain $(0, \infty)$ is unity:
-
+The derivative of the displayed CDF equals $\rho$; its limits at $0$ and infinity are $0$ and $1$. Hence the quantile function is
 $$
-\int_{0}^{\infty} \rho(x; r, c) \, \mathrm{d}x = 1
+F^{-1}(v)=c\,\tan^{1/r}\left(\frac{\pi v}{2}\right),\qquad 0<v<1,
 $$
+and the median is $c$. The centered logarithmic variable $U=\log(X/c)$ has density $r\operatorname{sech}(ru)/\pi$ and is symmetric.
 
-### Cumulative Distribution Function (CDF)
-
-The CDF, $F_{\rho}(x)$, which gives the probability that a random variable following this distribution is less than or equal to $x$, has two equivalent forms:
-
-1.  **Power / Arctangent Form:**
-
+The alternative Gudermannian form, with principal $\arctan\in(-\pi/2,\pi/2)$, is
 $$
-\boxed{ F_{\rho}(x;r,c) = \frac{2}{\pi} \arctan\left(\left(\frac{x}{c}\right)^r\right) }
+F(x)=\frac12+\frac1\pi\arctan(\sinh(ru)).
 $$
+No branch jump occurs for real $u$.
 
-3.  **Hyperbolic / Gudermannian Form:**
-
+**Arcsine pushforward [E].** Put $Z=W(X)=\tanh(rU)$. Since $dZ/du=r(1-Z^2)$,
 $$
-\boxed{ F_{\rho}(x;r,c) = \frac{1}{\pi} \left[ \arctan\left(\sinh\left(r\log\left(\frac{x}{c}\right)\right)\right) + \frac{\pi}{2} \right] }
+p_Z(z)=\frac{1}{\pi\sqrt{1-z^2}},\qquad -1<z<1.
 $$
+Equivalently $P=(1+Z)/2\sim\mathrm{Beta}(1/2,1/2)$, not a uniform distribution. Another canonical pushforward, $T=(X/c)^r$, has standard half-Cauchy density $2/[\pi(1+T^2)]$.
 
-### Derivation
-
-#### Derivation of the Normalization Constant
-
-**Step 1:** Recall the total mass integral of the base function $f(x)$ from §3.3:
-
+**Moment domain.** For complex $a$ satisfying $|\Re a|<r$, the power moment is
 $$
-\int_{0}^{\infty} f(x;r,c) \, \mathrm{d}x = \frac{\pi}{2r}
+\mathbb E[X^a]=c^a\sec\!\left(\frac{\pi a}{2r}\right).
 $$
-
-**Step 2:** To normalize the function to have a total integral of 1, we must divide by this constant. The normalization constant is therefore the reciprocal of the total mass:
-
-$$
-\text{Normalization Constant} = \left( \frac{\pi}{2r} \right)^{-1} = \frac{2r}{\pi}
-$$
-
-This directly gives the definition of the normalized density $\rho(x;r,c)$.
-
-#### Derivation of the CDF (Power / Arctangent Form)
-
-**Step 1:** The CDF is found by integrating the PDF $\rho(t; r, c)$ from the lower bound of the domain ($0$) up to a variable $x$.
-
-$$
-F_{\rho}(x) = \int_{0}^{x} \rho(t; r, c) \, \mathrm{d}t = \frac{2r}{\pi} \int_{0}^{x} f(t; r, c) \, \mathrm{d}t
-$$
-
-**Step 2:** Use the exact antiderivative of $f(x)$ established in §3.1: $\int f(t) \mathrm{d}t = \frac{1}{r} \arctan((t/c)^r)$.
-
-$$
-F_{\rho}(x) = \frac{2r}{\pi} \left[ \frac{1}{r} \arctan\left(\left(\frac{t}{c}\right)^r\right) \right]_0^x
-$$
-
-**Step 3:** Evaluate the definite integral:
-
-$$
-F_{\rho}(x) = \frac{2}{\pi} \left( \arctan\left(\left(\frac{x}{c}\right)^r\right) - \arctan(0) \right)
-$$
-
-Since $\arctan(0) = 0$, we arrive at the first form of the CDF.
-
-#### Equivalence of the Two CDF Forms
-
-**Step 1:** The equivalence hinges on a classical identity for the **Gudermannian function**, which relates hyperbolic and trigonometric functions:
-
-$$
-2 \arctan(e^z) = \arctan(\sinh(z)) + \frac{\pi}{2}
-$$
-
-**Step 2:** To show the equivalence, we set the argument to our canonical logarithmic coordinate, $z = r \log(x/c)$. This implies $e^z = (x/c)^r$.
-
-**Step 3:** Substitute this into the Gudermannian identity:
-
-$$
-2 \arctan\left(\left(\frac{x}{c}\right)^r\right) = \arctan\left(\sinh\left(r\log\left(\frac{x}{c}\right)\right)\right) + \frac{\pi}{2}
-$$
-
-**Step 4:** Dividing both sides by $\pi$ exactly recovers the two expressions for $F_{\rho}(x)$, proving their equivalence. The second form is notable for expressing the CDF directly in terms of the canonical coordinate $u = \log(x/c)$.
+Values of the meromorphic continuation outside the strip are **not** probabilistic moments.

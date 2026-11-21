@@ -1,45 +1,38 @@
-# 1.10 The Logarithmic Pushforward Identity
+# 1.10 — Logarithmic measure, Mellin and Fourier transform
 
-This identity provides the exact transformation rule for the differential measure $f(x)\mathrm{d}x$ when moving from the multiplicative spatial coordinate $x$ to the additive logarithmic coordinate $u = \log(x/c)$. It is the primary tool for simplifying integrals.
-
+**Change of variables [E].** Put $x=ce^u$, $dx=x\,du$:
 $$
-\boxed{ f(x;r,c) \mathrm{d}x = \frac{1}{2} \mathrm{sech}(ru) \mathrm{d}u }
+\boxed{f(x;r,c)\,dx=\frac12\operatorname{sech}(ru)\,du}.
 $$
-
-### Exposition
-
-This identity reveals the fundamental geometry of the function's measure. The complex rational measure in $x$-space becomes a simple, symmetric hyperbolic measure in $u$-space. This transformation is exceptionally powerful for integration, as any integral of the form $\int \phi(x) f(x) \mathrm{d}x$ can be converted into a potentially simpler integral $\frac{1}{2}\int \phi(ce^u)\mathrm{sech}(ru)\mathrm{d}u$.
-
-### Derivation
-
-**Step 1: Relate Differentials**
-
-From the coordinate transformation $x = ce^u$, we differentiate to find the relationship between the differential elements:
-
+For every measurable $\phi$ for which either side is absolutely integrable,
 $$
-\frac{\mathrm{d}x}{\mathrm{d}u} = ce^u = x \quad \implies \quad \mathrm{d}x = x\ \mathrm{d}u
+\int_0^\infty \phi(x)f(x;r,c)\,dx
+=\frac12\int_{\mathbb R}\phi(ce^u)\operatorname{sech}(ru)\,du.
+$$
+The half-split follows by evenness:
+$$
+\int_0^c f\,dx=\int_c^\infty f\,dx=\frac{\pi}{4r}.
 $$
 
-**Step 2: Use the Rosetta Stone Identity**
-
-Recall the Rosetta Stone identity from §1.2:
-
+**Mellin transform [E].** For $1-r<\Re s<1+r$,
 $$
-f(x;r,c) = \frac{1}{2x}\mathrm{sech}(r\log(x/c))
+\mathcal M f(s):=\int_0^\infty x^{s-1}f(x)\,dx
+=\frac{\pi c^{s-1}}{2r}\sec\!\left(\frac{\pi(s-1)}{2r}\right).
 $$
-
-**Step 3: Substitute and Simplify**
-
-We construct the measure $f(x)\mathrm{d}x$ by substituting both expressions:
-
+The scale-correct reflection equation is
 $$
-f(x)\mathrm{d}x = \left( \frac{1}{2x}\mathrm{sech}(r\log(x/c)) \right) (x\ \mathrm{d}u)
+\mathcal Mf(s)=c^{2s-2}\mathcal Mf(2-s).
 $$
+This equality extends meromorphically, but the integral defining $\mathcal M$ does not converge outside its strip.
 
-The factor of $x$ in the denominator of $f(x)$ cancels perfectly with the factor of $x$ from the differential element. Substituting $u = \log(x/c)$ gives the final identity:
-
+**Fourier on the central Mellin line [K/E].** With $\widehat{h}(\omega)=\int_{\mathbb R}h(u)e^{-i\omega u}\,du$,
 $$
-f(x)\mathrm{d}x = \frac{1}{2} \mathrm{sech}(ru) \mathrm{d}u
+\widehat S(\omega)=\frac{\pi}{r}\operatorname{sech}\left(\frac{\pi\omega}{2r}\right),\quad
+\mathcal Mf(1+i\omega)=\frac{c^{i\omega}}2\widehat S(-\omega).
 $$
-
-This completes the proof.
+Because $|c^{i\omega}|=1$ for $c>0$, Plancherel yields
+$$
+\frac1{2\pi}\int_{\mathbb R}|\mathcal Mf(1+i\omega)|^2\,d\omega
+=\int_0^\infty xf(x)^2\,dx=\frac1{2r}.
+$$
+This is the precise Mellin–Fourier correspondence, including the factor $x$ and the log-coordinate shift.

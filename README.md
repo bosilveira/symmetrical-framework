@@ -9,7 +9,7 @@ $$
 f(x; r, c) = \frac{c^r\ x^{r-1}}{c^{2r}+x^{2r}}, \qquad r>0, \quad c>0, \quad x\in(0,\infty)
 $$
 
-This function is uniquely characterized by its geometric symmetry under multiplicative inversion $x \mapsto c^2/x$. It strictly half-splits its own improper integral at $x=c$ for all shape parameters $r$:
+This function has a **weighted inversion covariance** under $x \mapsto c^2/x$ and strictly half-splits its own improper integral at $x=c$ for all shape parameters $r$. Inversion symmetry alone does **not** uniquely characterize this kernel (see the revised Part I):
 
 $$
 \int_0^c f\ dx \ =\ \int_c^\infty f\ dx \ =\ \frac{\pi}{4r}
@@ -63,6 +63,9 @@ The findings are organized into eight parts, cataloging the derivations from ele
 *   [`00_Canonical_Linearization.md`](./00_Canonical_Linearization.md) — *The $x$-space to $u$-space translation dictionary.*
 
 ### 📁 Part I: Algebra and Geometry
+
+**[Revised Part I mathematical guide](./Part%20I%20-%20Algebra%20And%20Geometry/README.md)** — corrected proofs, coordinate and measure conventions, the first-/second-order Master distinction, exact inflection classification, and a reproducible verification script.
+
 1. Architectural Identities & Foundational Symmetries
 2. Differential Structure & Ward Identities
 3. Geometric Properties, Arc Lengths, and Elliptic Reduction

@@ -1,64 +1,26 @@
-# 1.6 The Dimensionless Kernel
+# 1.6 — Dimensionless kernel, scaling, and Euler identity
 
-For analytical and computational purposes, it is highly advantageous to separate the function's dependence on its scale parameter $c$ from its dependence on the shape parameter $r$. This is achieved by introducing a dimensionless variable, which recasts the function in terms of a universal, scale-free kernel.
-
-The function $f(x;r,c)$ can be expressed exactly in terms of a dimensionless kernel $k(\xi;r)$ and the scale parameter $c$:
-
+Set $\xi=x/c$ and $k(\xi;r)=\xi^{r-1}/(1+\xi^{2r})$. Then
 $$
-\boxed{ f(x;r,c) = \frac{1}{c} k\left(\frac{x}{c}; r\right), \quad \text{where} \quad k(\xi; r) = \frac{\xi^{r-1}}{1 + \xi^{2r}} }
+\boxed{f(x;r,c)=c^{-1}k(x/c;r)}.
 $$
-
-### Exposition
-
-This decomposition reveals the fundamentally multiplicative nature of the scale parameter $c$. All essential shape characteristics of the function family are encapsulated within the kernel $k(\xi;r)$, which depends only on the dimensionless ratio $\xi = x/c$ and the parameter $r$. Any integral, moment, or transform property derived for the simpler kernel $k(\xi;r)$ can be directly translated back to the full function $f(x;r,c)$ by reintroducing the scale parameter $c$ through simple dimensional analysis. This is equivalent to studying the entire framework with the scale parameter set to unity ($c=1$).
-
-### Derivation
-
-The result is obtained by a direct substitution of the dimensionless variable $\xi = x/c$ into the core algebraic form from §1.1.
-
-**Step 1: Define the Dimensionless Variable**
-
-Let $\xi = x/c$, which implies the inverse substitution $x = c\xi$.
-
-**Step 2: Substitute into the Core Algebraic Form**
-
-Substitute $x = c\xi$ into the definition of $f(x;r,c)$:
-
+This is the exact scale–shape decomposition, valid for arbitrary real $r>0$. Joint scaling gives
 $$
-f(c\xi; r, c) = \frac{c^{r} (c\xi)^{r-1}}{c^{2r} + (c\xi)^{2r}}
+f(\lambda x;r,\lambda c)=\lambda^{-1}f(x;r,c),\quad
+(x\partial_x+c\partial_c)f=-f.
 $$
+It is a homogeneity statement at **fixed $r$**; it is not the claim that $f$ is pointwise independent of $c$.
 
-**Step 3: Simplify the Numerator and Denominator**
-
-We expand the powers and group the terms involving $c$:
-
-*   **Numerator:** $c^r \cdot c^{r-1} \xi^{r-1} = c^{2r-1} \xi^{r-1}$
-*   **Denominator:** $c^{2r} + c^{2r} \xi^{2r} = c^{2r}(1 + \xi^{2r})$
-
-**Step 4: Reassemble the Fraction and Factor**
-
-Substitute the simplified numerator and denominator back into the expression:
-
+For any integrable weight $a$ and power $p>0$,
 $$
-f(c\xi; r, c) = \frac{c^{2r-1} \xi^{r-1}}{c^{2r}(1 + \xi^{2r})}
+\int_0^\infty x^{a-1}f(x;r,c)^p\,dx
+=c^{a-p}\int_0^\infty \xi^{a-1}k(\xi;r)^p\,d\xi,
 $$
+whenever the integral converges. Thus dimensional analysis gives the entire dependence on $c$, while $r$ governs integrability.
 
-The powers of $c$ simplify, yielding an external scaling factor of $1/c$:
-
+**Parameter differentiation.** At fixed $x$ and $c$ with $u=\log(x/c)$,
 $$
-f(c\xi; r, c) = \frac{1}{c} \cdot \frac{\xi^{r-1}}{1 + \xi^{2r}}
+\partial_r f=-uWf,\qquad
+\partial_c f=\frac{rW}{c}f.
 $$
-
-**Step 5: Identify the Kernel**
-
-The remaining expression depends only on $\xi$ and $r$. We define this as the dimensionless kernel $k(\xi; r)$:
-
-$$
-k(\xi; r) := \frac{\xi^{r-1}}{1 + \xi^{2r}}
-$$
-
-Thus, we have shown that $f(x;r,c) = \frac{1}{c}k(x/c; r)$, completing the derivation.
-
-***
-
-This file is now complete. Shall we proceed to **1.7 Normalized Density and the Cumulative Distribution Function (CDF)**?
+At fixed $u$, $\partial_c f(ce^u;r,c)=-f(ce^u;r,c)/c$ instead. The phrase “differentiate at fixed coordinate” must specify which coordinate is held fixed.

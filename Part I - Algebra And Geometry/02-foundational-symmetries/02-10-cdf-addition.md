@@ -1,52 +1,22 @@
-# 2.10 CDF Addition Formula (Sum of Arguments)
+# 2.10 — Restricted arctangent addition of CDF values
 
-The cumulative distribution function (CDF) of the normalized density $\rho(x)$ satisfies a simple addition formula. This identity arises from the underlying `arctan` structure of the CDF.
-
-Let $F(x) \equiv F_\rho(x; r, c)$. For any two points $x_1, x_2 > 0$ such that $x_1^r x_2^r < c^{2r}$:
-
+Let
 $$
-\boxed{ F\left( \left( \frac{x_1^r + x_2^r}{1 - (x_1x_2/c^2)^r} \right)^{1/r} \right) = F(x_1) + F(x_2) }
+F(x)=\frac2\pi\arctan((x/c)^r),\qquad x>0.
 $$
-
-*(Note: This complex form highlights that a simple sum of arguments $F(x_1+x_2)$ is not the natural operation. The natural law is the Product Formula in file 2.11).*
-
-### Exposition
-This identity is the direct translation of the tangent addition formula into the language of the CDF. While algebraically exact, its complex argument shows that simple addition of probabilities ($F_1+F_2$) does not correspond to a simple operation on the spatial variable $x$. This motivates the search for a more natural composition law, which is the product formula.
-
-### Derivation
-
-**Step 1:** Recall the arctangent form of the CDF from §1.7:
-
+For $a=(x_1/c)^r$, $b=(x_2/c)^r$, assume $ab<1$ (equivalently $x_1x_2<c^2$). Then $\arctan a+\arctan b<\pi/2$ and tangent addition has no branch correction:
 $$
-F(x) = \frac{2}{\pi}\arctan\left(\left(\frac{x}{c}\right)^r\right)
+\tan(\arctan a+\arctan b)=\frac{a+b}{1-ab}.
 $$
-
-This implies $\frac{\pi}{2}F(x) = \arctan((x/c)^r)$.
-
-**Step 2:** State the tangent addition formula, which is the inverse of the arctangent addition formula:
-
+Therefore **[E]**
 $$
-\tan(A+B) = \frac{\tan(A)+\tan(B)}{1-\tan(A)\tan(B)}
+\boxed{
+F\left(\left[\frac{x_1^r+x_2^r}
+{1-(x_1x_2/c^2)^r}\right]^{1/r}\right)
+=F(x_1)+F(x_2),\quad x_1x_2<c^2.}
 $$
+The expression inside the brackets has dimensions of $x^r$ and is positive on the stated domain.
 
-Let $A = \frac{\pi}{2}F(x_1)$ and $B = \frac{\pi}{2}F(x_2)$. Then $\tan(A) = (x_1/c)^r$ and $\tan(B) = (x_2/c)^r$.
+**Boundary/branch behavior.** If $x_1x_2=c^2$, the sum of CDF values is exactly $1$, corresponding to the limiting argument $x_{\rm new}\to\infty$. If $x_1x_2>c^2$, the sum exceeds $1$, so it cannot be the CDF at a finite positive argument. Tangent addition still holds as an angle identity but requires the correct $\pi$ branch.
 
-**Step 3:** Apply the formula:
-
-$$
-\tan\left( \frac{\pi}{2}(F(x_1)+F(x_2)) \right) = \frac{(x_1/c)^r + (x_2/c)^r}{1 - (x_1/c)^r(x_2/c)^r} = \frac{(x_1^r+x_2^r)/c^r}{1 - (x_1x_2/c^2)^r}
-$$
-
-**Step 4:** To find the argument of the CDF on the left side, we take the `arctan` and multiply by $2/\pi$:
-
-$$
-F(x_1) + F(x_2) = \frac{2}{\pi} \arctan\left( \frac{(x_1^r+x_2^r)/c^r}{1 - (x_1x_2/c^2)^r} \right)
-$$
-
-The right-hand side has the form $\frac{2}{\pi}\arctan((x_{new}/c)^r)$. By inspection, we can identify $x_{new}$:
-
-$$
-\left(\frac{x_{new}}{c}\right)^r = \frac{(x_1^r+x_2^r)/c^r}{1 - (x_1x_2/c^2)^r} \implies x_{new}^r = \frac{x_1^r+x_2^r}{1 - (x_1x_2/c^2)^r}
-$$
-
-This yields the final boxed identity. The convergence condition $x_1^r x_2^r < c^{2r}$ ensures the denominator is positive.
+This is an algebraic addition law for CDF *values* under a nonlinear composition of their *arguments*, not the distribution of $X_1+X_2$ for independent variables.

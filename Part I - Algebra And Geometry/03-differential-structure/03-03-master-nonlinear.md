@@ -1,73 +1,27 @@
-# 3.3 The Master Nonlinear ODE
+# 3.3 — The first-order circle constraint (NOT the second-order Master)
 
-The function $f(x;r,c)$ is the solution to a specific first-order, nonlinear ordinary differential equation. This "master ODE" serves as a fundamental differential fingerprint for the function family, encoding the relationship between the function, its derivative, and its spatial coordinate.
-
-The identity is:
-
+For the distinguished kernel, the Euler identity $xf_x+f=-rWf$ and circle identity $W^2=1-4x^2f^2$ imply
 $$
-\boxed{ x^2(f')^2 + 2x f f' + (1-r^2)f^2 + 4r^2x^2f^4 = 0 }
+\boxed{\Phi[f]:=x^2f_x^2+2xff_x+(1-r^2)f^2
++4r^2x^2f^4=0.}\tag{E1}
 $$
+Equivalently $(xf_x+f)^2=r^2f^2(1-4x^2f^2)$.
 
-An equivalent factored form is:
-
+**Coupling convention.** For $f_\mu=f/\sqrt\mu$ with $\mu>0$, the exact constraint becomes
 $$
-\boxed{ (xf'+f)^2 - r^2f^2(1 - 4x^2f^2) = 0 }
+\boxed{(xf_{\mu,x}+f_\mu)^2
+=r^2f_\mu^2\bigl(1-4\mu x^2f_\mu^2\bigr).}\tag{E1-}\mu
 $$
-
-### Exposition
-
-This ODE acts as a foundational constraint on the function's geometry. In principle, one could define the function family as the set of solutions to this equation. The derivation reveals that this seemingly complex nonlinear equation is, in fact, an algebraic tautology that arises from combining the Euler-Cauchy identity with the Half-Density Law.
-
-### Derivation
-
-The derivation proceeds by squaring the Euler-Cauchy identity and then eliminating the conformal phase $W$ using the Half-Density Law.
-
-**Step 1: Start with the Euler-Cauchy Identity**
-From §3.2, we have the compact differential relation:
-
+Let $y=2xf_\mu$ and $u=\log(x/c)$. Then $y_u=2x(xf_{\mu,x}+f_\mu)$, and (E1-$\mu$) is precisely
 $$
-xf' + f = -rWf
+y_u^2-r^2y^2+\mu r^2y^4=0.
 $$
+It is the **zero-energy first integral** of the separate second-order equation in §3.5.
 
-**Step 2: Square Both Sides**
-To introduce the necessary quadratic terms in $f$ and $f'$, we square the entire equation:
-
+**A necessary logical caution.** Squaring eliminates the sign of the Euler relation. As a counterexample, the smooth function
 $$
-(xf' + f)^2 = (-rWf)^2 = r^2 W^2 f^2
+f_s(x)=\frac{1}{2\sqrt\mu\,x}
 $$
+satisfies (E1-$\mu$) everywhere but **does not** satisfy the second-order Master: its $y=1/\sqrt\mu$ is constant and $r^2y-2\mu r^2y^3=-r^2/\sqrt\mu\ne0$. Hence (E1) alone cannot be used as a definition of the second-order dynamics. Piecewise $C^1$ plateau solutions create further nonuniqueness unless suitable regularity and the full equation are imposed.
 
-**Step 3: Use the Half-Density Law to Eliminate $W$**
-From §1.5, the Half-Density Law provides an algebraic link between $W^2$ and $f^2$:
-
-$$
-1 - W^2 = 4x^2f^2 \quad \implies \quad W^2 = 1 - 4x^2f^2
-$$
-
-**Step 4: Substitute and Rearrange**
-Substitute this expression for $W^2$ back into the squared equation from Step 2:
-
-$$
-(xf' + f)^2 = r^2 f^2 (1 - 4x^2f^2)
-$$
-
-This is the factored form of the Master ODE. Expanding this expression yields the full form.
-
-**Step 5: Expand the Factored Form**
-Expand the left-hand side and distribute the right-hand side:
-
-$$
-x^2(f')^2 + 2x f f' + f^2 = r^2 f^2 - 4r^2x^2f^4
-$$
-
-**Step 6: Final Rearrangement**
-Move all terms to one side to arrive at the master ODE in its canonical form:
-
-$$
-x^2(f')^2 + 2x f f' + f^2 - r^2 f^2 + 4r^2x^2f^4 = 0
-$$
-
-$$
-x^2(f')^2 + 2x f f' + (1-r^2)f^2 + 4r^2x^2f^4 = 0
-$$
-
-This completes the derivation. The Master ODE is shown to be a direct algebraic consequence of the framework's foundational geometric identities.
+In the original draft both equations were called “Master ODE”; we reserve **Master** for the second-order equation and call this one the **first-order constraint**.

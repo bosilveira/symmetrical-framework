@@ -1,63 +1,27 @@
-# 2.3 Euler Homogeneity (Joint Scaling Symmetry)
+# 2.3 — Euler homogeneity in $x$ and $c$
 
-The function exhibits a joint scaling symmetry with respect to the variable $x$ and the scale parameter $c$. This property is formally captured by Euler's homogeneous function theorem, which provides a compact linear partial differential equation that the function must satisfy.
-
-The identity is:
-
+For fixed $r>0$, $f(x;r,c)=c^{-1}k(x/c;r)$ implies
 $$
-\boxed{ x\,\frac{\partial f}{\partial x} + c\,\frac{\partial f}{\partial c} + f = 0 }
+\boxed{f(\lambda x;r,\lambda c)=\lambda^{-1}f(x;r,c)}
+\qquad(\lambda>0).
 $$
-
-### Exposition
-
-This identity is the differential manifestation of the function's inherent scale invariance. It formally states that the function's structure depends only on the dimensionless ratio $x/c$, a property already leveraged in §1.6 to define the dimensionless kernel. The homogeneity property means that if we simultaneously scale our observation point $x$ and the system's characteristic scale $c$ by the same factor $\lambda$, the function's value simply rescales by a factor of $\lambda^{-1}$.
-
-### Derivation
-
-The derivation proceeds in two main steps. First, we prove by direct substitution that $f(x; r, c)$ is a homogeneous function of degree $-1$ in the variables $(x, c)$. Second, we apply Euler's theorem to this established property.
-
-#### Step 1: Proving Homogeneity of Degree -1
-
-A function $g(v_1, \dots, v_n)$ is defined as homogeneous of degree $k$ if it satisfies the scaling relation $g(\lambda v_1, \dots, \lambda v_n) = \lambda^k g(v_1, \dots, v_n)$ for any scaling factor $\lambda > 0$.
-
-**1.1:** Evaluate the function at the scaled arguments $(\lambda x, \lambda c)$:
-
+Differentiate at $\lambda=1$ to obtain Euler's identity **[E]**:
 $$
-f(\lambda x; r, \lambda c) = \frac{(\lambda c)^r (\lambda x)^{r-1}}{(\lambda c)^{2r} + (\lambda x)^{2r}}
+\boxed{(x\partial_x+c\partial_c+1)f=0.}
 $$
+Conversely, on the connected positive quadrant, a differentiable solution of this PDE has the form $c^{-1}k(x/c)$ for some function $k$, by characteristics. This converse does not select the framework's specific $k$.
 
-**1.2:** Factor out the powers of $\lambda$ from both the numerator and the denominator:
-
+**Commutation with inversion.** Inversions respect joint scaling:
 $$
-f(\lambda x; r, \lambda c) = \frac{\lambda^r c^r \cdot \lambda^{r-1} x^{r-1}}{\lambda^{2r}c^{2r} + \lambda^{2r}x^{2r}} = \frac{\lambda^{r + (r-1)} (c^r x^{r-1})}{\lambda^{2r} (c^{2r} + x^{2r})}
+I_{\lambda c}(\lambda x)=\lambda I_c(x).
 $$
+Hence scale covariance and inversion covariance are compatible but logically separate conditions.
 
-**1.3:** Combine the powers of $\lambda$:
-
+**Scale transport of integrals.** With $x=c\xi$,
 $$
-f(\lambda x; r, \lambda c) = \frac{\lambda^{2r-1}}{\lambda^{2r}} \cdot \frac{c^r x^{r-1}}{c^{2r} + x^{2r}} = \lambda^{-1} f(x; r, c)
+\int_0^\infty x^{a-1}f(x;r,c)^p\,dx
+=c^{a-p} \int_0^\infty \xi^{a-1}k(\xi;r)^p\,d\xi,
 $$
+in its convergence domain. This furnishes a clean, falsifiable dimensional check for every claimed integral identity.
 
-This explicitly proves that $f(x;r,c)$ is a homogeneous function of degree $k=-1$ with respect to the variables $(x, c)$.
-
-#### Step 2: Applying Euler's Homogeneous Function Theorem
-
-Euler's theorem states that if a differentiable function $f(x_1, \dots, x_n)$ is homogeneous of degree $k$, then it satisfies the partial differential equation:
-
-$$
-\sum_{i=1}^n x_i \frac{\partial f}{\partial x_i} = k f
-$$
-
-**2.1:** Apply this theorem to our function $f(x; r, c)$ with variables $(x, c)$ and degree $k=-1$:
-
-$$
-x\,\frac{\partial f}{\partial x} + c\,\frac{\partial f}{\partial c} = (-1) \cdot f
-$$
-
-**2.2:** Rearrange the equation into the canonical form stated in the box:
-
-$$
-x\,\frac{\partial f}{\partial x} + c\,\frac{\partial f}{\partial c} + f = 0
-$$
-
-This completes the derivation.
+**Derivative conventions.** The Euler vector field $x\partial_x+c\partial_c$ keeps the ratio $x/c$ fixed. It is **not** the same as the operator $D_x=x\partial_x$ with $c$ fixed; the latter equals $\partial_u$ in the logarithmic chart.

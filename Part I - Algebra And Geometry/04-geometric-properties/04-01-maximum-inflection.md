@@ -1,102 +1,39 @@
-# 4.1 Maximum and Inflection Points
+# 4.1 — Extrema and the exact inflection-point classification
 
-When the shape parameter satisfies $r>1$, the function's graph possesses a single interior maximum and a pair of inflection points that are symmetric around the maximum on a logarithmic scale. For $r \le 1$, the function is monotonically decreasing on $(0, \infty)$ and has no interior critical points.
-
-### Interior Maximum (for $r>1$)
-
-The unique interior maximum occurs at the point $(x_{\max}, f(x_{\max}))$, where:
-
+The exact derivative formulas are
 $$
-\boxed{ x_{\max} = c\left(\frac{r-1}{r+1}\right)^{1/(2r)} }
+f_x=-\frac{S(1+rW)}{2x^2},\qquad
+f_{xx}=\frac{S}{2x^3}Q_r(W),\qquad
+Q_r(w)=2r^2w^2+3rw+2-r^2.
 $$
 
+**Maximum [E].** For $0<r\le1$, $1+rW>0$ for every finite $x>0$, so $f$ strictly decreases. For $r>1$, its unique interior critical point is a strict maximum:
 $$
-\boxed{ f(x_{\max}) = \frac{r+1}{2rc}\left(\frac{r-1}{r+1}\right)^{(r-1)/(2r)} }
+\boxed{x_{\max}=c\left(\frac{r-1}{r+1}\right)^{1/(2r)},\qquad
+f(x_{\max})=\frac{r+1}{2rc}
+\left(\frac{r-1}{r+1}\right)^{(r-1)/(2r)}.}
 $$
+It lies left of $c$. At $r=1$, the supremum $1/c$ occurs only at the excluded boundary $x\to0^+$.
 
-### Inflection Points (for $r>1$)
-
-The two inflection points, $x_{\pm}$, are found by solving for the positive roots of the following quadratic equation in the transformed variable $w := (x/c)^{2r}$:
-
+**Exact inflection polynomial [E].** Put $z=(x/c)^{2r}>0$, so $W=(z-1)/(z+1)$. The equation $f_{xx}=0$ is
 $$
-\boxed{ (r+1)(2r+1)w^2 - 4r(r-1)w + (r-1)(2r-1) = 0 }
+\boxed{(r+1)(r+2)z^2+(4-6r^2)z+(r-1)(r-2)=0.}\tag{4.1}
 $$
-
----
-### Derivation of the Maximum Point
-
-The maximum is found by locating the critical point where the first derivative, $f'(x)$, is zero.
-
-**Step 1: Compute the First Derivative**
-As derived in §3.1, applying the quotient rule to $f(x)$ yields:
-
+Its discriminant is $\Delta_z=4r^2(8r^2-7)$. Alternatively the phase roots are
 $$
-f'(x) = \frac{c^r x^{r-2} \left[ (r-1)c^{2r} - (r+1)x^{2r} \right]}{\left(c^{2r}+x^{2r}\right)^2}
+\boxed{W_\pm=\frac{-3\pm\sqrt{8r^2-7}}{4r},\qquad
+x_\pm=c\left(\frac{1+W_\pm}{1-W_\pm}\right)^{1/(2r)}}
 $$
+whenever $-1<W_\pm<1$.
 
-**Step 2: Find the Critical Point**
-For $x \in (0, \infty)$, the derivative $f'(x)$ is zero only when the bracketed term in the numerator is zero:
+**Number of genuine inflection points (sign changes of $f_{xx}$):**
 
-$$
-(r-1)c^{2r} - (r+1)x^{2r} = 0
-$$
+| Range of $r$ | Inflection points on $(0,\infty)$ |
+|---|---:|
+| $0<r<\sqrt{7/8}$ | 0 |
+| $r=\sqrt{7/8}$ | 0 (one double zero, no sign change) |
+| $\sqrt{7/8}<r<1$ | 2 |
+| $1\le r\le2$ | 1 |
+| $r>2$ | 2 |
 
-Solving for $x^{2r}$ gives:
-
-$$
-x^{2r} = c^{2r} \frac{r-1}{r+1}
-$$
-
-This has a real, positive solution for $x$ if and only if $r-1 > 0$, i.e., $r>1$. Taking the $(1/2r)$-th power of both sides gives the location of the maximum, $x_{\max}$.
-
-**Step 3: Compute the Value $f(x_{\max})$**
-We substitute the expression for $(x_{\max}/c)^{2r}$ back into the definition of $f(x)$:
-
-$$
-f(x_{\max}) = \frac{c^r x_{\max}^{r-1}}{c^{2r}+x_{\max}^{2r}} = \frac{c^{-r} x_{\max}^{r-1}}{1+(x_{\max}/c)^{2r}}
-$$
-
-The denominator is $1 + \frac{r-1}{r+1} = \frac{r+1+r-1}{r+1} = \frac{2r}{r+1}$.
-
-The numerator is $c^{-r}(x_{\max}^{2r})^{(r-1)/(2r)} = c^{-r} \left(c^{2r}\frac{r-1}{r+1}\right)^{(r-1)/(2r)} = \frac{1}{c}\left(\frac{r-1}{r+1}\right)^{(r-1)/(2r)}$.
-Combining them:
-
-$$
-f(x_{\max}) = \frac{\frac{1}{c}\left(\frac{r-1}{r+1}\right)^{(r-1)/(2r)}}{2r/(r+1)} = \frac{r+1}{2rc}\left(\frac{r-1}{r+1}\right)^{(r-1)/(2r)}
-$$
-
----
-### Derivation of the Inflection Points
-
-The inflection points are located where the second derivative, $f''(x)$, is zero.
-
-**Step 1: Use the Expression for $f''$**
-From the derivative hierarchy in §3.1, we have an exact expression for $f''$ in terms of the canonical objects $S$ and $W$:
-
-$$
-f''(x) = \frac{S\left( (2-r^2) + 3rW + 2r^2 W^2 \right)}{2x^3}
-$$
-
-Setting $f''(x)=0$ requires finding the roots of the quadratic polynomial in $W$ that is inside the parentheses.
-
-**Step 2: Solve the Quadratic in $W$**
-The inflection points occur at values of $W$ that solve:
-
-$$
-2r^2 W^2 + 3rW + (2-r^2) = 0
-$$
-
-**Step 3: Convert to a Quadratic in $w=(x/c)^{2r}$**
-Using the algebraic relation $W = \frac{w-1}{w+1}$, we substitute this into the quadratic equation:
-
-$$
-2r^2\left(\frac{w-1}{w+1}\right)^2 + 3r\left(\frac{w-1}{w+1}\right) + (2-r^2) = 0
-$$
-
-Multiplying the entire equation by $(w+1)^2$ to clear the denominator gives:
-
-$$
-2r^2(w-1)^2 + 3r(w-1)(w+1) + (2-r^2)(w+1)^2 = 0
-$$
-
-Expanding the polynomial terms and collecting by powers of $w$ (a lengthy but straightforward algebraic exercise) yields the final quadratic equation presented in the box. A detailed calculation shows that the discriminant of this quadratic is positive if and only if $r>1$, guaranteeing two distinct real roots for $w$, which correspond to the two inflection points $x_{\pm}$.
+At $r=1$ or $2$ one algebraic root is $W=-1$, which is the excluded boundary $x=0$, leaving just one finite inflection. At $r=\sqrt{7/8}$, $Q_r$ is a square times a positive constant and stays nonnegative. The older polynomial $(r+1)(2r+1)z^2-4r(r-1)z+(r-1)(2r-1)$ is not the expansion of the displayed $f_{xx}$ and must not be used.

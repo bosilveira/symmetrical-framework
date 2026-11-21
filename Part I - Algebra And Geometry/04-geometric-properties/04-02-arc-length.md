@@ -1,50 +1,32 @@
-# 4.2 Arc-Length Element
+# 4.2 — Arc length and dimensional normalization
 
-The fundamental metric quantity of a curve embedded in a Euclidean plane is its arc-length element, $\mathrm{d}s$. This element relates the infinitesimal geometric distance along the curve to the infinitesimal displacement along its parameterizing coordinate.
-
-The differential arc-length along the curve $y = f(x;r,c)$ is given by:
-
+For a graph $(x,F(x))$ in an **abstract Euclidean coordinate plane**, the arc element is
 $$
-\boxed{ \frac{\mathrm{d}s}{\mathrm{d}x} = \sqrt{1 + [f'(x;r,c)]^{2}} }
+ds=\sqrt{1+[F'(x)]^2}\,dx.
 $$
-
-where the exact first derivative is:
-
+Taking $F=f(x;r,c)$ in fixed numerical units yields the historical formula
 $$
-f'(x;r,c) = \frac{c^{r}x^{r-2}\bigl[(r-1)c^{2r}-(r+1)x^{2r}\bigr]}{(c^{2r}+x^{2r})^{2}}
+L_f(a,b)=\int_a^b\sqrt{1+f_x(x;r,c)^2}\,dx,
 $$
-
-### Exposition
-
-This formula provides the local scaling factor between the coordinate distance $\mathrm{d}x$ and the true geometric path length $\mathrm{d}s$. The integral of this element, $L(a,b) = \int_a^b \frac{\mathrm{d}s}{\mathrm{d}x} \mathrm{d}x$, yields the total length of the curve between points $a$ and $b$. Because the expression for $f'(x)$ is a complex rational function, the arc-length integral generally falls into the category of hyperelliptic integrals.
-
-### Derivation
-
-The derivation is a direct application of the Pythagorean theorem in the context of infinitesimal calculus.
-
-**Step 1: The Euclidean Metric in Infinitesimal Form**
-In the two-dimensional Cartesian plane, the infinitesimal distance $\mathrm{d}s$ between two infinitesimally close points $(x, y)$ and $(x+\mathrm{d}x, y+\mathrm{d}y)$ on the curve is given by the Pythagorean theorem:
-
+where
 $$
-(\mathrm{d}s)^2 = (\mathrm{d}x)^2 + (\mathrm{d}y)^2
+f_x=\frac{c^rx^{r-2}\big[(r-1)c^{2r}-(r+1)x^{2r}\big]}
+{(c^{2r}+x^{2r})^2}.
 $$
 
-**Step 2: Parameterize by the Independent Variable $x$**
-To express the arc-length element solely in terms of the independent variable $x$, we factor out $(\mathrm{d}x)^2$:
+**Units matter.** If $x,c$ carry units of length, $f$ carries units $1/\text{length}$, so the pair $(x,f)$ does not by itself define a physical Euclidean length without choosing a scale for the vertical axis. A canonical dimensionally homogeneous option is
+$$
+Y(x)=c^2f(x;r,c),\quad t=x/c,\quad k_r(t)=cf(ct;r,c).
+$$
+Then $(x,Y)=(ct,ck_r(t))$, and its length is
+$$
+\boxed{L_{\rm scaled}(a,b)=c\int_{a/c}^{b/c}
+\sqrt{1+[k'_r(t)]^2}\,dt.}
+$$
+More generally $Y=\alpha f$ is legitimate with an explicit positive vertical magnification $\alpha$ having units of length squared.
 
+**Exact dimensionless slope [E].**
 $$
-(\mathrm{d}s)^2 = (\mathrm{d}x)^2 \left( 1 + \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2 \right)
+k_r'(t)=\frac{t^{r-2}[(r-1)-(r+1)t^{2r}]}{(1+t^{2r})^2}.
 $$
-
-Taking the positive square root (as arc length is non-negative) yields the standard formula for the arc-length element:
-
-$$
-\frac{\mathrm{d}s}{\mathrm{d}x} = \sqrt{1 + \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2} = \sqrt{1 + [f'(x)]^2}
-$$
-
-**Step 3: Substitute the Explicit Derivative**
-The explicit algebraic expression for the first derivative, $f'(x)$, was computed in §3.1 via the quotient rule applied to the core definition of $f(x)$. Substituting this known result completes the specification of the arc-length element:
-
-$$
-f'(x) = \frac{c^{r}x^{r-2}\bigl[(r-1)c^{2r}-(r+1)x^{2r}\bigr]}{(c^{2r}+x^{2r})^{2}}
-$$
+This exact formula supplies the algebraic radicand for the rigorous discussion of genus in §§4.4 and 4.7. No elliptic/hyperelliptic claim follows simply from the presence of a quartic denominator.

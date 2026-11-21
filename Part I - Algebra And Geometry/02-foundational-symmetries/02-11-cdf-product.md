@@ -1,46 +1,28 @@
-# 2.11 CDF Product Formula (Product of Arguments)
+# 2.11 — Global CDF group law induced by multiplication
 
-The cumulative distribution function (CDF), when viewed in the canonical logarithmic coordinate, satisfies a simple and natural product formula. This identity reveals the fundamental group operation for combining probabilities in this framework.
-
-Let $\mathcal{F}(u) = F_\rho(ce^u; r, c)$. For any two log-coordinates $u_1, u_2$:
-
+Define $\mathcal F(u)=F(ce^u)=2\arctan(e^{ru})/\pi$ and the bijection
 $$
-\boxed{ \mathcal{F}(u_1+u_2) = \frac{2}{\pi} \arctan\left[ \tan\left(\frac{\pi}{2}\mathcal{F}(u_1)\right) \tan\left(\frac{\pi}{2}\mathcal{F}(u_2)\right) \right] }
+\Theta(v)=\tan\left(\frac{\pi v}{2}\right):(0,1)\longrightarrow(0,\infty).
 $$
-
-### Exposition
-This identity is the true probabilistic "addition formula" for the framework. It describes how the cumulative probability transforms when the input variables are combined multiplicatively ($x_1, x_2 \to x_1 x_2/c \iff u_1, u_2 \to u_1+u_2$). It is a direct consequence of the exponential relationship between the canonical coordinate and the argument of the `arctan` in the CDF.
-
-### Derivation
-
-**Step 1:** Define the CDF in the linearized coordinate $u = \log(x/c)$:
-
+Then $\Theta(\mathcal F(u))=e^{ru}$. Thus **[E]**
 $$
-\mathcal{F}(u) := F_\rho(ce^u;r,c) = \frac{2}{\pi}\arctan(e^{ru})
+\boxed{\mathcal F(u_1+u_2)
+=\frac2\pi\arctan\bigl(\Theta(\mathcal F(u_1))\,
+\Theta(\mathcal F(u_2))\bigr).}
 $$
 
-**Step 2:** Isolate the exponential term. From the definition of $\mathcal{F}(u)$, we can write:
-
+**Abstract group structure.** On $(0,1)$ define
 $$
-\frac{\pi}{2}\mathcal{F}(u) = \arctan(e^{ru})
+v\odot w=\Theta^{-1}(\Theta(v)\Theta(w)).
 $$
-
-Taking the tangent of both sides gives:
-
+This is an associative, commutative group, because $\Theta$ transports multiplication on $(0,\infty)$. Its identity is $1/2$ and its inverse is $v\mapsto1-v$:
 $$
-\tan\left(\frac{\pi}{2}\mathcal{F}(u)\right) = e^{ru}
+v\odot\tfrac12=v,\qquad v\odot(1-v)=\tfrac12.
 $$
-
-**Step 3:** Evaluate the CDF at the sum of coordinates, $u_1+u_2$. This corresponds to a product of the spatial variables $x_1$ and $x_2$:
-
+The compatible operation in the $x$-coordinate is
 $$
-\mathcal{F}(u_1+u_2) = \frac{2}{\pi}\arctan(e^{r(u_1+u_2)}) = \frac{2}{\pi}\arctan(e^{ru_1} e^{ru_2})
+x_1\star_c x_2=\frac{x_1x_2}{c}.
 $$
+Then $F(x_1\star_c x_2)=F(x_1)\odot F(x_2)$ and $I_c(x)=c^2/x$ is the group inverse.
 
-**Step 4:** Substitute the expressions from Step 2 back into the equation from Step 3:
-
-$$
-\mathcal{F}(u_1+u_2) = \frac{2}{\pi} \arctan\left[ \tan\left(\frac{\pi}{2}\mathcal{F}(u_1)\right) \tan\left(\frac{\pi}{2}\mathcal{F}(u_2)\right) \right]
-$$
-
-This completes the derivation of the natural product formula.
+The group isomorphism depends on the fixed parameters $r,c$ through $F$. It has nothing to do, by itself, with convolutions or the law of products of **independent** random variables.

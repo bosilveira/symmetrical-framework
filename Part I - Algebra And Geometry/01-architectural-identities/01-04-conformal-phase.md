@@ -1,75 +1,26 @@
-# 1.4 The Conformal Phase $W$
+# 1.4 — The hyperbolic phase and logistic coordinate
 
-The hyperbolic tangent function, which is complementary to the hyperbolic secant in the Rosetta Stone identity, serves as the "conformal phase" of the system. It tracks the position within the framework relative to the central point on a logarithmic scale.
-
-In the spatial coordinate $x$:
-
+**[E]** Define
 $$
-\boxed{ W(x;r,c) = \tanh\left(r\log\left(\frac{x}{c}\right)\right) = \frac{(x/c)^{2r} - 1}{(x/c)^{2r} + 1} = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}} }
+W(x;r,c)=\tanh\!\left(r\log\frac{x}{c}\right)
+=\frac{x^{2r}-c^{2r}}{x^{2r}+c^{2r}}.
 $$
-
-In the linearized coordinate $u = \log(x/c)$:
-
+It is strictly increasing from $-1$ to $1$, with $W(c)=0$ and $W(c^2/x)=-W(x)$. Its derivatives are
 $$
-\boxed{ W(u;r) = \tanh(ru) }
+W_u=r(1-W^2)=rS^2,\qquad
+W_x=\frac r x(1-W^2)=4rx f(x)^2.
 $$
+The second identity follows from $S=2xf$, not from a separate dynamical assumption.
 
-### Exposition
-
-The function $W$ acts as an asymmetry or "phase" function. It is a monotonic mapping from the spatial domain $x \in (0, \infty)$ to the interval $(-1, 1)$. Its value provides a dimensionless measure of how far $x$ is from the central scale parameter $c$. Its properties are central to the differential structure of the framework.
-
-### Derivation of the Algebraic Form
-
-The algebraic form in $x$ is derived directly from the definition of the hyperbolic tangent in terms of exponential functions.
-
-**Step 1: Define the Hyperbolic Tangent**
-
-The hyperbolic tangent function, $\tanh(z)$, can be defined as:
-
+Set $P=(1+W)/2$. Then
 $$
-\tanh(z) = \frac{e^{2z} - 1}{e^{2z} + 1}
+P=\frac{(x/c)^{2r}}{1+(x/c)^{2r}},\quad
+P_u=2rP(1-P),\quad S^2=4P(1-P).
 $$
-
-**Step 2: Substitute the Canonical Logarithmic Coordinate**
-
-Let the argument of the function be $z = r\log(x/c)$. The term $e^{2z}$ becomes:
-
+This is the standard logistic equation, with initial condition $P(0)=1/2$. The inverse chart is
 $$
-e^{2z} = \exp\left(2r\log\left(\frac{x}{c}\right)\right) = \left(\frac{x}{c}\right)^{2r}
+u=\frac{1}{2r}\log\frac{P}{1-P}.
 $$
+The name “phase” is descriptive: $W$ is real-valued, not a complex $U(1)$ phase. A circle-valued angle can be introduced by $\sin\phi=W$, $\cos\phi=S$, with $\phi=\operatorname{gd}(ru)\in(-\pi/2,\pi/2)$.
 
-**Step 3: Evaluate the Tangent Function**
-
-Substitute this power-law expression back into the definition of $\tanh(z)$:
-
-$$
-\tanh\left(r\log\left(\frac{x}{c}\right)\right) = \frac{\left(\frac{x}{c}\right)^{2r} - 1}{\left(\frac{x}{c}\right)^{2r} + 1}
-$$
-
-**Step 4: Simplify the Algebraic Expression**
-
-To clear the fractions, we multiply the numerator and the denominator by $c^{2r}$:
-
-$$
-\tanh\left(r\log\left(\frac{x}{c}\right)\right) = \frac{(x^{2r} - c^{2r}) / c^{2r}}{(x^{2r} + c^{2r}) / c^{2r}} = \frac{x^{2r} - c^{2r}}{x^{2r} + c^{2r}}
-$$
-
-This yields the final algebraic form for $W(x;r,c)$.
-
-### Key Properties
-
-*   **Symmetry:** $W(x)$ is anti-symmetric with respect to the Möbius inversion $x \mapsto c^2/x$. This is most easily seen in the linearized coordinate, where $u \mapsto -u$:
-
-$$
-W(-u) = \tanh(-ru) = -\tanh(ru) = -W(u)
-$$
-
-The function is strictly **odd**.
-
-*   **Boundary Values:**
-
-    *   As $x \to 0^+$, $u \to -\infty$, and $W(u) \to -1$.
-    *   As $x \to c$, $u \to 0$, and $W(u) = \tanh(0) = 0$. The phase function is zero at the center of symmetry.
-    *   As $x \to +\infty$, $u \to +\infty$, and $W(u) \to +1$.
-
-*   **Monotonicity:** The derivative $W'(u) = r\,\mathrm{sech}^2(ru)$ is strictly positive for all $u \in \mathbb{R}$. Therefore, $W(u)$ is a strictly increasing function, mapping the real line monotonically to the interval $(-1, 1)$.
+**A projective interpretation [K/E].** The ratio of solutions of $J_{uu}=r^2J$ determines a Möbius coordinate; $W$ is a fractional-linear expression in $e^{2ru}$. The full projective meaning is elaborated in Chapter 3.
