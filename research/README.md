@@ -18,3 +18,7 @@ This folder preserves **mathematical research before complete theorem-by-theorem
 5. Promote a claim to the reference only with an explicit statement, complete proof or cited known theorem, reversible map when an equivalence is claimed, and a stable ID.
 
 All original substantive files were **moved by their exact Git blobs**, not paraphrased. The previous branch tips remain available as immutable provenance points in [MIGRATION.md](../MIGRATION.md).
+
+## Research snapshot awaiting incremental reconciliation
+
+The [November 21 source snapshot](source-snapshots/2026-11-21/README.md) inventories the ZIP and the November 16 v2 reference without automatically importing or endorsing their claims. This snapshot is a separate edition from the older `active-drafts` and `legacy-parts` directories. Do not overwrite those directories by matching filenames, and do not overwrite the canonical GitHub README using the ZIP's empty root README.

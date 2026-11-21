@@ -63,3 +63,7 @@ A fresh chat will not automatically read these files. It needs access to GitHub 
 ## Object and parameter dependency atlas
 
 Read the [Foundational Atlas](reference/atlas/README.md) when the question involves a transformation, reuse of a symbol, a change of normalization, or a dependency. Consult [the transformation review protocol](reference/atlas/REVIEW_PROTOCOL.md), [the scoped registry](reference/atlas/registry.json) and [the transformation contracts](reference/atlas/contracts.json). Every proposed identity must bind its variables and parameters; reusing the same letter is not a mathematical identification. The source document is `Symmetrical_Framework_Complete_Reference_2026-11-16_v2.md` (recorded with its SHA-256 in the Atlas); its complete bytes are not yet copied into this repository.
+
+## November 21 source collection — staged mathematical import
+
+The complete November 16 reference and newer November 21 ZIP are cataloged in [Research Source Snapshots](research/source-snapshots/2026-11-21/README.md). Their exact SHA-256 values, directory summary and **selected** executable check results are recorded; the original source bytes still live in the ChatGPT Project attachments, not GitHub. Read the [source-specific parameter crosswalk](reference/atlas/SOURCE_CROSSWALK_2026-11-21.md) before reconciling the ZIP's general-level equations, Gram envelope, energy constants or Tzitzeica variables. Do not interpret [V] in its generated claims ledger as a universal theorem.

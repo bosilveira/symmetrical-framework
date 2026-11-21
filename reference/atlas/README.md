@@ -61,3 +61,7 @@ An impact report is an **ordered review queue**, not automatic proof invalidatio
 Modify an object or parameter in place only if its definition has unchanged meaning. For an incompatible definition, **create a new ID** and mark the old one superseded rather than silently redefining it. No automated tool should rewrite mathematical source files merely because an upstream registry entry changes.
 
 The legacy research corpus remains at [research](../../research/README.md), not inside the foundational registry.
+
+## November 21 parameter and energy conversions
+
+The first [cross-source conversion ledger](SOURCE_CROSSWALK_2026-11-21.md) reconciles the latest complete reference with the new ZIP. In particular, it distinguishes logarithmic coordinate `u` from the archive's general-level dependent state `U_q`, tracks the power-family rate conversion and `epsilon_N=4*epsilon_H` at cubic level, separates `mu0`, `mu_det` and nonlinear `mu`, and gives the Tzitzeica PDE variables their own scope. These are source conversions to review, not a blanket promotion of the archive's 683 [V] claims.
