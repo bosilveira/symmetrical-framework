@@ -69,3 +69,12 @@ The first three follow from the displayed algebra and coordinate Jacobians, not 
 | **SF-R-027** | With original normalized kernel $`(2r/\pi)f(x;r,c)dx`$, $`\eta`$ is uniform on $`(-\pi/2,\pi/2)`$; $`P,\mathcal B`$ have arcsine beta marginals. The normalized $`S^{2q}du`$ family gives $`P\sim\mathrm{Beta}(q,q)`$ and $`\mathcal B\sim\mathrm{Beta}(q,1/2)`$; original law's **logarithmic pushforward** is $`q=1/2`$. | [§04.02](../mathematics/04-probability-statistics/04-02-gudermannian-conic-laws.md), explicit pushforward Jacobians |
 
 All entries are mathematical identities on declared branches and measures. Symbolic spot checks do not establish novelty, peer review, or any physical model.
+
+## Parameter Hessian and selected Hopf-lift contracts
+
+| Catalog ID | Exact or conditionally selected statement | Source and evidence |
+|---|---|---|
+| **SF-R-028** | For `F(\theta)\in C^2` with `\theta=r\log(x/c)` and `a=F_\theta,\ d=F_{\theta\theta}`, at fixed `(x,c,r)`: `F_{rr}=u^2d`, `F_{cc}=(r^2d+ra)/c^2`, `F_{rc}=-(a+ru\,d)/c`, with `u=\log(x/c)`. Field and chart scopes are mandatory; `H:=H_2=S^2` is a **local alias** only. | [`00.09](../mathematics/00-foundations/00-09-second-derivative-charts.md), direct universal chain-rule proof and symbolic checks. |
+| **SF-R-029** | With independent phases `\alpha,\beta`, the **chosen** Hopf spinor `\Psi=(Se^{i\alpha},We^{i\beta})` has Hopf base `n=(\sin2\eta\cos\delta,\sin2\eta\sin\delta,\cos2\eta)`, `\delta=\beta-\alpha`; hence `n_{\eta\eta}=-4n` for fixed `\delta`. For `x>c` stereographic projection gives the ring torus of radii `R,b` and Villarceau circles as stated. No canonical choice of phases is implied by the kernel. | [`05.04](../mathematics/05-differential-geometry/05-04-hopf-villarceau-selected-lift.md), original ZIP companion notes, direct trigonometric/symbolic checks; topology and external bibliography are separately scoped. |
+
+These entries do not upgrade the wider November 21 ZIP to theorem status. They register a **chain-rule result** and an **explicitly chosen geometric realization**, respectively; the full transformation data and source restrictions remain in their chapters.
