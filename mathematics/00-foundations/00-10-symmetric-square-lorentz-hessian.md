@@ -18,9 +18,9 @@ Introduce *Lorentz coordinates* $`X=(Y_1+Y_3)/2`$, $`Y=(Y_1-Y_3)/2`$ and $`Z=Y_2
 Q(X,Y,Z)=X^2-Y^2-Z^2=0,\qquad (X,Y,Z)=(R,b,1).
 ```
 
-The following are genuine **affine-plane sections of the same cone**. In the table, $`Q|_{\mathrm{dir}}`$ is the restriction of the Lorentz quadratic form to the *translation directions of the affine plane*, with the plane's constant term omitted.
+The following are genuine **affine-plane sections of the same cone**. In the table, $`Q\vert_{\mathrm{dir}}`$ is the restriction of the Lorentz quadratic form to the *translation directions of the affine plane*, with the plane's constant term omitted.
 
-| Plane in $`\mathbb R^{2,1}`$ | Slice equation and affine coordinates | $`Q|_{\mathrm{dir}}`$ | Type |
+| Plane in $`\mathbb R^{2,1}`$ | Slice equation and affine coordinates | $`Q\vert_{\mathrm{dir}}`$ | Type |
 |---|---|---|---|
 | $`Z=1`$ | $`X^2-Y^2=1`$ | $`dX^2-dY^2`$ | Hyperbola; restricted determinant negative |
 | $`X=1`$ | $`Y^2+Z^2=1`$ | $`-dY^2-dZ^2`$ | Circle/ellipse; restricted determinant positive |
