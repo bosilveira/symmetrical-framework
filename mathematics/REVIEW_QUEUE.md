@@ -43,3 +43,14 @@ The source-indexed and directly derived results are consolidated in [§00.08](00
 ## Symmetric-square and two-variable Hessian review (November 21, 2026)
 
 [§00.10](00-foundations/00-10-symmetric-square-lorentz-hessian.md) distinguishes the **true affine sections of the Lorentz cone** from the quadratic projection to the canonical logistic parabola. It proves the mixed entry and $`(u,r)`$ Hessian identity $`\det\mathrm{Hess}_{(u,r)}F=-(\theta F_\theta^2)_\theta`$, and records the signature threshold $`\theta\tanh\theta=1/4`$ for $`W`$. It explicitly converts the ZIP's source-local Gram determinant $`A_{\mathrm{src}}C_{\mathrm{src}}-B_{\mathrm{src}}^2`$ before comparing it with canonical $`AB-C^2`$. The catenoid Jacobi modes and the Milne/Gudermannian factor of two require their own operator and normalization data. [Executable checks](_standards/verify_sym2_hessian.py) supplement but do not replace those derivations.
+
+## Elementary trigonometric–hyperbolic network consolidation
+
+| Primary layer | Audited mathematical extension | Retained conditions |
+|---|---|---|
+| [Foundations §00.11](00-foundations/00-11-elementary-function-web.md) | Twelve-function hyperbolic/Gudermannian table; complex logarithm; Chebyshev multiplication; involution $`T\mapsto(T+1)/(T-1)`$ | $`x,c,r>0`$; pole sets; $`x>c`$ for the involution; original and transformed centers retained |
+| [Transforms §03.03](03-transforms-special-functions/03-03-sech-fourier-langevin.md) | Sech Fourier self-duality and $`Z_D={}_0F_1`$ / Langevin recurrence | Logarithmic Fourier variable, normalization, index $`D>0`$ independently chosen |
+| [Secondary §06.01](06-secondary-theories/06-01-kink-poschl-teller.md) | Kink energy equality and Pöschl–Teller factorization | Boundary class, spectral domain, angular-mode scope |
+| [Geometry §05.04](05-differential-geometry/05-04-hopf-villarceau-selected-lift.md) | Torus amplitude exchange, selected connection, curvature and Hopf Chern number | Independent phases/marking; $`0\le\eta\le\pi/2`$ as one complete Hopf-base half-chart |
+
+**Unpromoted question:** the simultaneous appearance of elementary, spectral, variational and bundle formulas is evidence of common coordinate data, **not** by itself a theorem of universal dimensional reduction or “fibration holography.” Track forward/inverse maps, functional spaces and data loss before making such assertions. [Verification](./_standards/verify_elementary_function_web.py) is a supplement to the proof arguments.
