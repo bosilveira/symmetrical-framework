@@ -38,13 +38,21 @@ Here $`t=(T^2-1)/(T^2+1)`$ is a **degree-two rational function of the original e
 
 ### 1.1. The Gram discriminant needs a declared duality
 
-The source's symmetric Gram matrix $`G=\begin{pmatrix}A&B\\B&C\end{pmatrix}`$ has determinant $`\Delta_G=AC-B^2`$. In Lorentz coordinates $`t_G=(A+C)/2`$, $`v_G=(A-C)/2`$, $`w_G=B`$,
+The ZIP source `04-follow-ups/fibration-holography-gram-poisson.md` uses the **source-local** Gram matrix and determinant
 
 ```math
-\Delta_G=t_G^2-v_G^2-w_G^2.
+G_{\mathrm{src}}=\begin{pmatrix}A_{\mathrm{src}}&B_{\mathrm{src}}\\B_{\mathrm{src}}&C_{\mathrm{src}}\end{pmatrix},\qquad \delta_{\mathrm{src}}=A_{\mathrm{src}}C_{\mathrm{src}}-B_{\mathrm{src}}^2.
 ```
 
-Thus $`\Delta_G>0`$, $`\Delta_G<0`$ and $`\Delta_G=0`$ distinguish timelike, spacelike and null **dual normals**, respectively. When a nonzero-offset plane is defined using the *specified Lorentz polar pairing* with such a normal, its nondegenerate real cone sections have elliptic, hyperbolic and parabolic types in the corresponding order. Do **not** identify the arbitrary coefficients of an affine plane with the source's positive Gram matrix without specifying the dual pairing. The Gram domain $`G>0`$ is the positive timelike sheet up to scale; its hyperbolic metric is extra declared geometry.
+**Do not conflate this notation with the canonical Atlas convention** $`G_{\mathrm{canon}}=\begin{pmatrix}A&C\\C&B\end{pmatrix}`$, $`\Delta_G=AB-C^2`$. The two determinants describe the same kind of quadratic-form discriminant **only after relabeling the coefficients**.
+
+In source-local Lorentz coordinates $`t_G=(A_{\mathrm{src}}+C_{\mathrm{src}})/2`$, $`v_G=(A_{\mathrm{src}}-C_{\mathrm{src}})/2`$ and $`w_G=B_{\mathrm{src}}`$,
+
+```math
+\delta_{\mathrm{src}}=t_G^2-v_G^2-w_G^2.
+```
+
+Thus $`\delta_{\mathrm{src}}>0`$, $`\delta_{\mathrm{src}}<0`$ and $`\delta_{\mathrm{src}}=0`$ classify timelike, spacelike and null **dual normals**. For a nonzero-offset affine plane defined using the *specified Lorentz polar pairing* with one of these normals, the corresponding nondegenerate real cone sections have elliptic, hyperbolic and parabolic types, respectively (where the chosen plane intersects the real cone). Do not identify arbitrary planar coefficients with a positive Gram matrix without this polar pairing. The domain of positive definite Gram matrices is the positive timelike sheet up to scale; its hyperbolic metric is additional declared geometry.
 
 ## 2. Gudermannian half-angle and correctly signed Riccati variables
 
