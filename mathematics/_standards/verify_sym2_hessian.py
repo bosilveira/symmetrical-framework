@@ -42,7 +42,7 @@ def main() -> None:
           ((sp.exp(theta)-1)/(sp.exp(theta)+1) -
            sp.tanh(theta/2)).rewrite(sp.exp))
     check("Gudermannian half-angle",
-          sp.tan(eta/2)-sp.tanh(theta/2))
+          sp.sin(eta)/(1+sp.cos(eta)) - sp.sinh(theta)/(sp.cosh(theta)+1))
     # Last result needs real trig simplification / half angle.
     fields = {"S":S, "W":W, "R":R, "b":b, "H":H, "P":P, "eta":eta}
     specific = {
