@@ -43,7 +43,7 @@ Its *full symmetric Hessian* is
 
 A compact comparison of parameter-only derivatives follows:
 
-| Field | $`F_{rr}|_{x,c}`$ | $`F_{cc}|_{x,r}`$ |
+| Field | $`F_{rr}`$ (fixed $`x,c`$) | $`F_{cc}`$ (fixed $`x,r`$) |
 |---|---|---|
 | $`S`$ | $`u^2S(2W^2-1)`$ | $`[r^2S(2W^2-1)-rSW]/c^2`$ |
 | $`W`$ | $`-2u^2HW`$ | $`[rH-2r^2HW]/c^2`$ |
