@@ -35,3 +35,7 @@ The original focus remains: the rational/power kernel $\to$ logarithmic `sech` n
 - Add independent formal verification for the finite-weighted-norm classification and symbolic calculations covering the entire level hierarchy.
 
 No pull request or merge has been made as part of this revision.
+
+## Chapter 1 consolidation (20 November 2026)
+
+The 912-line `01-architectural-identities/01-gemini.md` was reviewed and its suitable derivations integrated into §§1.1–1.10 and the new [§1.11 on the auxiliary Cauchy–Euler equation](01-architectural-identities/01-11-auxiliary-linearization.md). The source file was removed from the active branch; its original text is preserved in Git history. See the [mathematical integration audit](01-architectural-identities/01-99-notes.md) for accepted, corrected and excluded claims. All other historical archives were left unchanged.

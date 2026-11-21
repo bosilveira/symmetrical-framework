@@ -47,3 +47,35 @@ Thus the functions $f(ce^u)$, $xf(x)$ and $p(u)$ are different, even though they
 ```
 
 This equality is a change-of-measure theorem, and later underlies the finite-norm Master classification.
+
+## The exact Jacobian relation and logarithmic score
+
+The original derivation introduced the direct pullback and the pushforward density separately. Their relationship can be written explicitly without suppressing $c$.
+
+**Step 1.** The probability density of $X$ is $\rho(x;r,c)=(2r/\pi)f(x;r,c)$.
+
+**Step 2.** For $U=\log(X/c)$, the Jacobian of $x=ce^u$ is $dx/du=ce^u=x$. Thus $p(u;r)=x\rho(x;r,c)$ at $x=ce^u$.
+
+**Step 3.** Solve this relation for the *pointwise* pullback $g(u;r,c)=f(ce^u;r,c)$:
+
+```math
+g(u;r,c)=\frac{\pi}{2rce^u}p(u;r)=\frac{\pi}{2rc}e^{-u}p(u;r).
+```
+
+The factor $e^{-u}$ is essential: substituting $f(ce^u)$ without the Jacobian does **not** produce $p(u)$.
+
+**Step 4.** Differentiate the even logarithmic density, using $d\,\mathrm{sech}(ru)/du=-r\,\mathrm{sech}(ru)\tanh(ru)$:
+
+```math
+p_u=-rpW,\qquad W=-\frac{1}{r}\frac{p_u}{p}=-\frac{1}{r}\frac{d}{du}\log p.
+```
+
+The division is valid globally because $p(u;r)>0$ for every real $u$. This identity is a *logarithmic score* of a deterministic function, not evidence of time-dependent probability transport.
+
+**Step 5.** Substitute $S=\pi p/r$ into $S^2+W^2=1$:
+
+```math
+\left(\frac{\pi p}{r}\right)^2+W^2=1,\qquad p=\frac{r}{\pi}\sqrt{1-W^2}.
+```
+
+The sign of $W$ is **not** determined by the value of $p$ alone; its logarithmic derivative restores the sign. The pair $(\pi p/r,W)$ traverses the right half of the unit circle as $u$ increases from $-\infty$ to $\infty$.

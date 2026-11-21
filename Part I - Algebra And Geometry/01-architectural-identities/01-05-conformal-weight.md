@@ -35,3 +35,35 @@ At the endpoints $W(0^+)=-1$, $W(\infty)=1$, hence
 For $f_\mu=f/\sqrt\mu$ the weighted norm is $1/(2r\mu)$.
 
 **Correction.** The older displayed expression involving $(4rx/c^2)f(c^2/x)^2$ is not equal to $W_x$ in general; (1.5b) is the correct formula. Inversion of a measure is handled separately in Chapter 2.
+
+## A second derivation by differentiating the circle constraint
+
+The two “half-density” formulas can be checked independently using the route developed in the earlier notes.
+
+**Step 1.** Differentiate the circle identity in the spatial variable:
+
+```math
+-2WW_x=\frac{d}{dx}(4x^2f^2)=8xf^2+8x^2ff_x.
+```
+
+**Step 2.** Insert the exact phase derivative $W_x=4rxf^2$:
+
+```math
+-8rxWf^2=8xf^2+8x^2ff_x.
+```
+
+**Step 3.** Divide by $8xf$, which is strictly positive on the domain:
+
+```math
+xf_x+f=-rWf.
+```
+
+The equality is the Euler–Cauchy relation of Chapter 3. This is a *consistency derivation*, not an equivalence without hypotheses: the positivity of $f$, the specified $W_x$, and the circle constraint were essential for the division and the conclusion.
+
+As an additional exact integral consequence, integrating $S_u=-rSW$ gives, for $0<a<b$,
+
+```math
+\int_a^b f(x)W(x)\,dx=\frac{S(\log(a/c))-S(\log(b/c))}{2r}.
+```
+
+For the special endpoint pair $(a,b)=(0,\infty)$, the integral vanishes because $S$ tends to zero at both ends. Thus $W$ is an odd observable for the even logarithmic pushforward density.

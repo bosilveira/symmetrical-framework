@@ -88,5 +88,19 @@ area_r1 = 2*mp.pi*mp.quad(
     [0,1,mp.inf])
 assert 0 < area_r1 < mp.inf
 
+
+# Chapter 1 consolidated source: auxiliary Riccati/Cauchy-Euler and density.
+J = (t + 1/t)/2
+q = sp.factor(D(J)/J)
+p = r*S/sp.pi
+exact_zero(D(D(J))-r**2*J, "auxiliary linear Cauchy-Euler")
+exact_zero(q-r*W, "Riccati phase")
+exact_zero(D(q)+q**2-r**2, "Riccati ODE")
+exact_zero(J**2-(D(J)/r)**2-1, "quadratic invariant")
+exact_zero(D(p)+r*p*W, "p logarithmic score")
+exact_zero(D(D(p))-r**2*p+2*sp.pi**2*p**3, "p cubic equation")
+exact_zero(D(p)**2-r**2*p**2+sp.pi**2*p**4, "p zero-energy constraint")
+exact_zero(D(sp.atan(t)/r)/x-f, "arctangent primitive")
+
 print("All representative Part I checks passed.")
 print("r=1 surface area (fixed numerical axes):",mp.nstr(area_r1,15))

@@ -5,15 +5,15 @@
 
 The framework begins with the **symmetrical function**:
 
-```math
+$$
 f(x; r, c) = \frac{c^r\ x^{r-1}}{c^{2r}+x^{2r}}, \qquad r>0, \quad c>0, \quad x\in(0,\infty)
-```
+$$
 
 This function has a **weighted inversion covariance** under $x \mapsto c^2/x$ and strictly half-splits its own improper integral at $x=c$ for all shape parameters $r$. Inversion symmetry alone does **not** uniquely characterize this kernel (see the revised Part I):
 
-```math
+$$
 \int_0^c f\ dx \ =\ \int_c^\infty f\ dx \ =\ \frac{\pi}{4r}
-```
+$$
 
 What follows is an extensive, numerically verified catalog of identities derived entirely from this elementary definition.
 
@@ -21,9 +21,9 @@ What follows is an extensive, numerically verified catalog of identities derived
 
 By analyzing the function in the additive coordinate $u = \log(x/c)$, the framework simplifies into the geometry of a unit circle:
 
-```math
+$$
 f(x; r, c) = \frac{1}{2x} \mathrm{sech}\bigl(r\log(x/c)\bigr)
-```
+$$
 
 Defining the canonical phase space $(S, W) = (sech(ru), \tanh(ru))$, we obtain the identity $S^2 + W^2 = 1$. The identities derived in this framework can be viewed as translations of this underlying hyperbolic geometry:
 
@@ -41,9 +41,9 @@ Defining the canonical phase space $(S, W) = (sech(ru), \tanh(ru))$, we obtain t
 
 This framework provides an exact parametrization of the **soliton cell of Sato's Universal Grassmannian**, including its degenerate (rational) and complex-continued (oscillating) boundaries. 
 
-```math
+$$
 \tau_N(x) = \det\left[\delta_{jk} + \frac{2\sqrt{r_j r_k}}{r_j+r_k}\left(\frac{x}{c}\right)^{r_j+r_k}\right]
-```
+$$
 
 It explicitly captures:
 *   $N$-soliton solutions of the KP hierarchy (KdV, mKdV, NLS, Sine-Gordon).
@@ -64,7 +64,7 @@ The findings are organized into eight parts, cataloging the derivations from ele
 
 ### 📁 Part I: Algebra and Geometry
 
-**[Revised Part I mathematical guide](./Part%20I%20-%20Algebra%20And%20Geometry/README.md)** — corrected proofs, coordinate and measure conventions, the first-/second-order Master distinction, exact inflection classification, and a reproducible verification script. See also [Markdown math conventions](MARKDOWN_STYLE.md).
+**[Revised Part I mathematical guide](./Part%20I%20-%20Algebra%20And%20Geometry/README.md)** — corrected proofs, coordinate and measure conventions, the first-/second-order Master distinction, exact inflection classification, and a reproducible verification script.
 
 1. Architectural Identities & Foundational Symmetries
 2. Differential Structure & Ward Identities

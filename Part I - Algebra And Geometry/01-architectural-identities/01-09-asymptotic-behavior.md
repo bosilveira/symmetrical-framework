@@ -35,3 +35,29 @@ I_p(a)=\frac{c^{a-p}}{2r} B\!\left(\frac p2+\frac{a-p}{2r}, \frac p2-\frac{a-p}{
 ```
 
 For $p=1$ this is the Mellin transform with $a=s$; for $p=2,a=2$ it is the weighted square norm $1/(2r)$.
+
+## Rigorous endpoint-limit proof and a rejected shortcut
+
+The earlier notes obtained the right endpoint classes but sometimes wrote a **limit equal to a nonconstant power of $x$**. Asymptotic equivalence should instead be proved by ratios.
+
+**Step 1: near the origin.** Divide by the proposed leading term:
+
+```math
+\frac{f(x;r,c)}{c^{-r}x^{r-1}}=\frac{1}{1+(x/c)^{2r}}\longrightarrow1\qquad(x\to0^+).
+```
+
+**Step 2: at infinity.** Divide by the right-hand leading term:
+
+```math
+\frac{f(x;r,c)}{c^rx^{-r-1}}=\frac{1}{1+(c/x)^{2r}}\longrightarrow1\qquad(x\to\infty).
+```
+
+**Step 3: take actual limits.** The first ratio, together with the sign of $r-1$, yields
+
+```math
+\lim_{x\to0^+}f(x;r,c)=\begin{cases}+\infty,&0<r<1,\\1/c,&r=1,\\0,&r>1,\end{cases}\qquad \lim_{x\to\infty}f(x;r,c)=0.
+```
+
+**Step 4: infer integrability, not merely boundedness.** The mass integral always converges because the left exponent $r-1>-1$ and the right exponent $-r-1<-1$. By contrast, the $p$-th-power moment with weight $x^{a-1}$ converges only in the strict open strip stated above.
+
+The leading asymptotic may be differentiated for $r\ne1$ using the explicitly convergent power series, but not by a blanket rule for all $r$: at $r=1$ the nominal leading derivative coefficient is zero and the next term must be used.

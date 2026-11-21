@@ -14,8 +14,9 @@ This chapter establishes, in order:
 8. [Schwarzian and projective connection](01-08-schwarzian-derivative.md)
 9. [Endpoint asymptotics and integrability](01-09-asymptotic-behavior.md)
 10. [Logarithmic pushforward, Mellin and Fourier](01-10-logarithmic-pushforward.md)
+11. [Auxiliary Cauchy–Euler linearization and density equations](01-11-auxiliary-linearization.md)
 
-See [chapter summary](01-00-summary.md) and [verification notes](01-99-notes.md). The historical `01-gemini.md` is **an unreviewed archival conversation**, not a substitute for these revised statements. For further claims consult the separate research ledgers.
+See the [chapter summary](01-00-summary.md) and [integration and verification register](01-99-notes.md). The former Gemini notes were reviewed, their suitable results integrated, and the redundant file deleted from this branch; Git history preserves the source.
 
 **Verified central equations**
 

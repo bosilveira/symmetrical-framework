@@ -45,3 +45,35 @@ Because $|c^{i\omega}|=1$ for $c>0$, Plancherel yields
 ```
 
 This is the precise Mellin–Fourier correspondence, including the factor $x$ and the log-coordinate shift.
+
+## Step-by-step proof of the half-splitting integral
+
+The original notes used two equivalent primitives. Both give a concise global proof once the endpoint limits and the orientation of the coordinate change are tracked.
+
+**Step 1.** The logarithmic coordinate is $u=\log(x/c)$, and its ordered limits are $x=0^+\leftrightarrow u=-\infty$, $x=c\leftrightarrow u=0$, and $x=\infty\leftrightarrow u=\infty$.
+
+**Step 2.** Substitute $dx=x\,du$ into $f=S/(2x)$:
+
+```math
+\int_0^\infty f(x;r,c)\,dx=\frac12\int_{-\infty}^{\infty}\mathrm{sech}(ru)\,du.
+```
+
+**Step 3.** Differentiate the real Gudermannian primitive:
+
+```math
+\frac{d}{du}\arctan(\sinh(ru))=r\,\mathrm{sech}(ru).
+```
+
+**Step 4.** Evaluate its upper and lower endpoint values, $\pi/2$ and $-\pi/2$:
+
+```math
+\int_0^\infty f(x;r,c)\,dx=\frac{1}{2r}\left[\arctan(\sinh(ru))\right]_{-\infty}^{\infty}=\frac{\pi}{2r}.
+```
+
+**Step 5.** Evenness of the pushed measure gives identical halves:
+
+```math
+\int_0^c f(x;r,c)\,dx=\frac12\int_{-\infty}^{0}\mathrm{sech}(ru)\,du=\frac{\pi}{4r}=\int_c^\infty f(x;r,c)\,dx.
+```
+
+The equal halves reflect **integration of a positive density**, not a time-dependent conservation law; they are also preserved by the measure involution $x\mapsto c^2/x$ proved in Chapter 2.

@@ -14,7 +14,7 @@ from its exact logarithmic parametrization to its differentiated equations and g
 
 ## Reading path
 
-1. [Chapter 1: Architectural identities](01-architectural-identities/01-00-summary.md) — the exact `sech` chart, pushforward measure, CDF, Mellin and Schwarzian; detailed [chapter index](01-architectural-identities/00-list.md).
+1. [Chapter 1: Architectural identities](01-architectural-identities/01-00-summary.md) — the exact `sech` chart, primitives, logarithmic density, CDF, Mellin, Schwarzian and [auxiliary Cauchy–Euler linearization](01-architectural-identities/01-11-auxiliary-linearization.md); detailed [chapter index](01-architectural-identities/00-list.md).
 2. [Chapter 2: Foundational symmetries](02-foundational-symmetries/02-00-summary.md) — inversion, joint scaling, half-Cauchy map, product identities, and two distinct CDF composition laws.
 3. [Chapter 3: Differential structure](03-differential-structure/03-00-summary.md) — Riccati, the first-order energy-zero constraint, the **second-order** cubic Master, linear reciprocal, and radial Liouville geometry.
 4. [Chapter 4: Geometric properties](04-geometric-properties/04-00-summary.md) — exact maxima/inflections, graph length, algebraic curve genus, inversion of the graph, surfaces of revolution, and the envelope condition.
@@ -59,7 +59,7 @@ For $\mu>0$ the corresponding cubic coefficient is $8\mu r^2$ for $f_\mu$. The n
 - **[C]** Deliberately selected additional structure, such as a metric or curve.
 - **[O]** Unproved connection or question; not an identity.
 
-The historical `*-gemini.md` files and `Part I - Gemini.md` are preserved as **archival material**. They contain conversational source text, may include stronger statements than the revised mathematics supports, and are not independently verified by this rewrite.
+The Chapter 1 Gemini draft was mathematically reviewed, its suitable results integrated into the numbered text, and its redundant file deleted from this branch; see the [integration audit](01-architectural-identities/01-99-notes.md). The **other** chapter-specific Gemini drafts and `Part I - Gemini.md` remain unreviewed historical archives.
 
 ## Reproduction
 
