@@ -52,7 +52,7 @@ python reference/algebra-geometry/check_markdown_style.py
 python mathematics/_standards/check_tree.py
 ```
 
-The first checker covers `reference/`; the second covers `mathematics/` and its local links. These checks validate **formatting and links**, not mathematical proofs; root documentation is reviewed separately, and the provisional `research/` and historical `archive/` trees are not forcibly reformatted.
+The first checker covers `reference/`; the second covers `mathematics/`, top-level Markdown entry points, and their local links. These checks validate **formatting and links**, not mathematical proofs; the provisional `research/` and historical `archive/` trees are not forcibly reformatted.
 
 This is a mature **research program with an explicit evidence protocol**, not a claim that every historical exploration is true, novel, or physically realized. A correspondence with solitons, K3 surfaces, modular forms or other mathematical structures is accepted only after its independent definitions and hypotheses are proved.
 
