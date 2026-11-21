@@ -3,7 +3,8 @@
 
 Run: python mathematics/_standards/check_tree.py
 
-Checks local links, one-line display math, project dollar-backtick inline math.
+Checks local links, one-line display math and project dollar-backtick inline math
+in mathematics/ and top-level Markdown entry-point documents.
 Does not rewrite files or certify mathematical statements.
 """
 from __future__ import annotations
@@ -90,7 +91,7 @@ def check_file(path: Path) -> tuple[list[str], int, int, int]:
 def main() -> int:
     errors: list[str] = []
     inline = display = links = 0
-    files = sorted(ROOT.rglob("*.md"))
+    files = sorted([*ROOT.rglob("*.md"), *REPOSITORY.glob("*.md")])
     for p in files:
         ee, i, d, l = check_file(p)
         errors.extend(ee)
@@ -99,7 +100,7 @@ def main() -> int:
         links += l
     for err in errors:
         print("ERROR:", err)
-    print(f"mathematics/: {len(files)} Markdown files, {inline} inline formulas, "
+    print(f"maintained root + mathematics/: {len(files)} Markdown files, {inline} inline formulas, "
           f"{display} math blocks, {links} local links; {len(errors)} issue(s)")
     return 1 if errors else 0
 
