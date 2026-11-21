@@ -12,3 +12,5 @@ The existing [Foundational Atlas](../../reference/atlas/README.md) remains the s
 Follow [MARKDOWN_STYLE.md](../../MARKDOWN_STYLE.md). Historical source files and backup branches remain unchanged.
 
 - [Conic/Gudermannian verification](verify_conic_gudermannian.py): selected SymPy identities for the circle/hyperbola/parabola, the two derivative clocks, invariant leaves and Gram-$`B`$ distinction; mpmath checks for the beta norm and recurrence. This is a **finite check**, not a theorem prover.
+
+**Elementary web verification:** [verify_elementary_function_web.py](verify_elementary_function_web.py) checks the exact real Gudermannian/Cayley formulas, amplitude-swap involution, Chebyshev polynomials, selected regular Langevin recurrences, and numerical Fourier/kink/Hopf integrals. The cited chapter proofs remain the mathematical basis; the script is a reproducible collection of finite checks.
