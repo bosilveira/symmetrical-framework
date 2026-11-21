@@ -1,6 +1,6 @@
 # Chapter 1 — Architectural identities (revised index)
 
-**Status:** mathematical exposition, revised 20 November 2026. Fix throughout $x,c,r>0$, $u=\log(x/c)$, $T=e^{ru}$, $S=\operatorname{sech}(ru)$, and $W=\tanh(ru)$. A prime on $f$ means $\partial_x$; subscripts $u$ mean differentiation in the logarithmic coordinate.
+**Status:** mathematical exposition, revised 20 November 2026. Fix throughout $x,c,r>0$, $u=\log(x/c)$, $T=e^{ru}$, $S=\mathrm{sech}(ru)$, and $W=\tanh(ru)$. A prime on $f$ means $\partial_x$; subscripts $u$ mean differentiation in the logarithmic coordinate.
 
 This chapter establishes, in order:
 
@@ -19,10 +19,8 @@ See [chapter summary](01-00-summary.md) and [verification notes](01-99-notes.md)
 
 **Verified central equations**
 
-$$
-f=\frac{S}{2x},\quad S^2+W^2=1,\quad
-S_u=-rSW,\quad W_u=rS^2,\quad
-f(x)\,dx=\tfrac12S(u)\,du.
-$$
+```math
+f=\frac{S}{2x},\quad S^2+W^2=1,\quad S_u=-rSW,\quad W_u=rS^2,\quad f(x)\,dx=\tfrac12S(u)\,du.
+```
 
 Status labels: **[E]** exact calculation; **[K]** classical mathematical result; **[C]** conditional construction; **[O]** open. No novelty claim follows from [E].
