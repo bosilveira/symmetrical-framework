@@ -118,6 +118,14 @@ Every one of the six real arguments in §2.1 is an affine or fractional-linear f
 
 This holds wherever the Möbius map $`M(t)=(at+b)/(dt+e)`$ has nonzero determinant $`ae-bd\ne0`$ and finite value. Its coefficients may depend on **held-fixed** $`r,c,\ell`$ but must be constant in $`x`$ for this derivative.
 
+**Converse (local classification).** For any $`C^3`$ real recharting $`z=\psi(u)`$ with $`\psi_u\ne0`$, the Schwarzian chain rule gives
+
+```math
+\{z,x\}=\frac{\{\psi,u\}}{x^2}+\frac1{2x^2}.
+```
+
+Therefore $`\{z,x\}=1/(2x^2)`$ **if and only if** $`\{\psi,u\}=0`$. On each connected interval, the zero-Schwarzian solutions are precisely fractional-linear maps of $`u`$. One elementary proof sets $`p=\psi_{uu}/\psi_u`$, so $`\{\psi,u\}=p_u-\tfrac12p^2`$. Solving $`p_u=\tfrac12p^2`$ and integrating recovers the Möbius family, including affine maps. This is an exact *classification of the shared-Schwarzian class*, not just six illustrative coincidences.
+
 Therefore $`ru`$, $`rv`$, $`r/u`$, $`1/(ru)`$, $`r/v`$, and $`1/(rv)`$ share the exact invariant $`\{z,x\}=1/(2x^2)`$ **on their respective branches**. This is a *projective derivative invariant*, not an assertion that their pulled-back Duffing equations or global norms coincide. It supplies a mathematically precise interface to later Sturm–Liouville/Schwarzian chapters while leaving those extra structures unclaimed.
 
 ## 5. Reciprocal involutions, singularities and norms
@@ -139,6 +147,18 @@ z=\frac r u,\qquad du=-\frac r{z^2}\,dz\quad\text{on each oriented half-line}.
 ```
 
 The singular point becomes an infinite argument endpoint. Consequently, the formula reparametrization is exact locally, while the global Hilbert-space interpretation is not preserved automatically.
+
+### 5.1. Two elementary involutions generate a four-element chart group
+
+On the punctured log line $`u\in\mathbb R\setminus\{0\}`$, the two coordinate involutions
+
+```math
+A(u)=-u,\qquad B(u)=\frac1u,\qquad A^2=B^2=\mathrm{id},\qquad AB(u)=BA(u)=-\frac1u
+```
+
+generate a group isomorphic to the **Klein four-group**. At fixed $`c,r>0`$, $`A`$ is spatial inversion $`x\mapsto c^2/x`$, while $`B`$ is the reciprocal-log spatial map $`x\mapsto c\exp[1/\log(x/c)]`$. For the canonical fields under $`A`$, $`S,R`$ are even and $`W,b,\eta`$ are odd. Under $`B`$, they become $`S(r/u),W(r/u),R(r/u),b(r/u),\mathrm{gd}(r/u)`$ and in general **do not** reduce to simple sign changes or the separately defined Hopf amplitude exchange.
+
+This simple group acts on the **punctured coordinate line**; it should not be conflated with any previously recorded tetrahedral chart $`V_4`$ without an explicit conjugacy of the two group actions.
 
 ## 6. Wick continuation and the Gudermannian branch
 
