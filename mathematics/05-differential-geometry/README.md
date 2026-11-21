@@ -4,6 +4,8 @@
 
 Read [canonical catenoid surface and metric pullback](05-01-canonical-surface.md), [first/second forms and Gauss–Codazzi](05-02-fundamental-forms.md), then [connections and differential operators](05-03-connections-operators.md).
 
+**Chosen Hopf lift:** [§05.04 — Hopf–Villarceau torus, phases, projections and Gudermannian double angle](05-04-hopf-villarceau-selected-lift.md) compares stereographic, orthogonal and Hopf maps. The lift requires two *additional* phase coordinates; its marked conformal modulus is not automatically a period ratio of the Master energy curve. It is a companion to [the conic dictionary](../00-foundations/00-08-projective-conics-gudermannian.md) and [the Hessian atlas](../00-foundations/00-09-second-derivative-charts.md).
+
 ## The mathematical distinction
 
 | Input actually supplied | Construction | Status |
