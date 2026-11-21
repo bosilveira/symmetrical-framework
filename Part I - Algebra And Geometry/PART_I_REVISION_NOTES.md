@@ -1,10 +1,10 @@
 # Part I — Extensive revision log
 
-**Target:** \`feat/part-i-rigorous-revision\`, derived from \`feat/introduction\`. **Date:** 20 November 2026.
+**Target:** `feat/part-i-rigorous-revision`, derived from `feat/introduction`. **Date:** 20 November 2026.
 
 ## Scope of the revision
 
-All **numbered expository documents** of Chapters 1–4, their chapter summaries, and their substantive \`*-99-notes.md\` files have been rewritten or expanded while preserving the original filenames and topical sequence. Two previously empty chapter summaries are now populated. New: the Part I [reader's guide](README.md), this revision log and [verification script](verify_part_i.py). Historical AI-generated conversational archives (\`*-gemini.md\`, \`Part I - Gemini.md\`) have **not** been silently converted into proofs.
+All **numbered expository documents** of Chapters 1–4, their chapter summaries, and their substantive `*-99-notes.md` files have been rewritten or expanded while preserving the original filenames and topical sequence. Two previously empty chapter summaries are now populated. New: the Part I [reader's guide](README.md), this revision log and [verification script](verify_part_i.py). Historical AI-generated conversational archives (`*-gemini.md`, `Part I - Gemini.md`) have **not** been silently converted into proofs.
 
 ## Corrections with mathematical consequences
 
@@ -25,7 +25,7 @@ All **numbered expository documents** of Chapters 1–4, their chapter summaries
 
 ## Retained mathematical architecture
 
-The original focus remains: the rational/power kernel $\to$ logarithmic \`sech\` normalization $\to$ circle/Riccati $\to$ scale and inversion $\to$ first integral, autonomous Master and conic/metric geometry. No outside physics is required for any result in the revised numbered chapters.
+The original focus remains: the rational/power kernel $\to$ logarithmic `sech` normalization $\to$ circle/Riccati $\to$ scale and inversion $\to$ first integral, autonomous Master and conic/metric geometry. No outside physics is required for any result in the revised numbered chapters.
 
 ## Remaining investigation, not asserted as solved
 

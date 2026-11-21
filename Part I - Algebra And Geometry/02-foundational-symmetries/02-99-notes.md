@@ -12,4 +12,4 @@
 
 **Limits of inference.** A simple identity is not a physical interaction or a group action on a new geometric space without an explicit map. Inversion plus scaling alone do not uniquely specify $f$; the classification theorem and its weighted norm are derived in Chapter 3 and in the separate foundational manuscript.
 
-The file \`02-gemini.md\` is retained as **historical, unreviewed source material**; its rhetorical claims should not be used as proven statements without checking the corresponding revised numbered files.
+The file `02-gemini.md` is retained as **historical, unreviewed source material**; its rhetorical claims should not be used as proven statements without checking the corresponding revised numbered files.

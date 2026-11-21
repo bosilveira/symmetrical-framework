@@ -11,6 +11,6 @@
 4. The original Riccati derivation sometimes used $u=r\log(x/c)$ after declaring $u=\log(x/c)$; now $\theta=ru$ is used when needed.
 5. Liouville is an explicit metric identity, not evidence of a physical nonvacuum Ernst solution.
 6. The genuinely linear equation is $J_{uu}=r^2J$ **on the separatrix**; for nonzero $\varepsilon$ the reciprocal has a cubic defect.
-7. The historical \`03-gemini.md\` is preserved as an unreviewed archive and is not part of the current proof register.
+7. The historical `03-gemini.md` is preserved as an unreviewed archive and is not part of the current proof register.
 
 **Reproduction:** checks may be performed by differentiating $S(u)=2e^{ru}/(1+e^{2ru})$, $f=S/(2ce^u)$ and using symbolic simplification under positive $x,c,r,\mu$. Logical completeness of the finite-norm classification is supplied by the separate foundational-paper proof.

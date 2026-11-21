@@ -1,6 +1,6 @@
 # Chapter 1 — Mathematical verification and editorial notes
 
-**Scope:** replaces the earlier working notes as the current Chapter 1 verification record. Historical exploratory material remains in \`01-gemini.md\` for provenance, but its prose, hypotheses and claims have **not** all been audited.
+**Scope:** replaces the earlier working notes as the current Chapter 1 verification record. Historical exploratory material remains in `01-gemini.md` for provenance, but its prose, hypotheses and claims have **not** all been audited.
 
 ## Exact results established here
 - Domain: $x,r,c>0$; $f$ is positive and real-analytic on that domain.

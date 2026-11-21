@@ -1,6 +1,6 @@
 # Chapter 4 — Mathematical audit and correction register
 
-**Status: current verified mathematical exposition; source branch:** \`feat/introduction\`; **revision:** 20 November 2026. The historical \`04 - gemini.md\` remains archival/unreviewed.
+**Status: current verified mathematical exposition; source branch:** `feat/introduction`; **revision:** 20 November 2026. The historical `04 - gemini.md` remains archival/unreviewed.
 
 ## Key exact corrections
 
