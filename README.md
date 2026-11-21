@@ -20,10 +20,13 @@ The center $`x=c`$ exactly half-splits the positive integral:
 
 **Non-uniqueness warning:** a positive continuous function is **not** uniquely characterized by half-splitting alone. Uniqueness statements require additional equations, regularity, normalization or global hypotheses. The canonical logarithmic variable is always $`u=\log(x/c)`$, with $`r`$ and $`c`$ explicit.
 
-## Three repositories of knowledge — one branch
+## Three evidence tiers and a mathematics-first review workspace
+
+The three evidence tiers are `reference/` (proof-bearing sources), `research/` (provisional work), and `archive/` (historical material). The parallel `mathematics/` tree organizes **incremental, claim-by-claim review**; it does not create a fourth authority or automatically certify older statements. All four directories are available on `main`.
 
 | Directory | Editorial role | What to expect |
 |---|---|---|
+| [mathematics/](mathematics/README.md) | **Mathematics-first review workspace** | Ordered foundations, Master/classification, calculus and norms, transforms, probability, geometry, secondary constructions and applications; status remains claim-specific |
 | [reference/](reference/README.md) | **Mathematical reference** | Stable introductory definitions, mathematically revised Chapter 1–4 proofs, notation and a claim registry; status belongs to individual statements |
 | [research/](research/README.md) | **Provisional investigations** | Current numbered mathematical drafts, historical Parts II–VI/VIII, and older identity/theorem compilations to audit |
 | [archive/](archive/README.md) | **Historical or over-interpreted sources** | The former Part VII moonshine/K3/phenomenology collection, preserved intact but not accepted as derived mathematics |
@@ -41,6 +44,15 @@ The [Claim Registry](reference/CLAIM_REGISTRY.md) maps selected formulas to thei
 ## Editorial standard and provenance
 
 Follow [MARKDOWN_STYLE.md](MARKDOWN_STYLE.md) for GitHub-compatible inline dollar-backtick math and unindented, single-line displayed equations. The [migration record](MIGRATION.md) documents old paths, backup commits and the move policy.
+
+For read-only documentation checks, run the existing tools from the repository root:
+
+```bash
+python reference/algebra-geometry/check_markdown_style.py
+python mathematics/_standards/check_tree.py
+```
+
+The first checker covers `reference/`; the second covers `mathematics/` and its local links. These checks validate **formatting and links**, not mathematical proofs; root documentation is reviewed separately, and the provisional `research/` and historical `archive/` trees are not forcibly reformatted.
 
 This is a mature **research program with an explicit evidence protocol**, not a claim that every historical exploration is true, novel, or physically realized. A correspondence with solitons, K3 surfaces, modular forms or other mathematical structures is accepted only after its independent definitions and hypotheses are proved.
 
