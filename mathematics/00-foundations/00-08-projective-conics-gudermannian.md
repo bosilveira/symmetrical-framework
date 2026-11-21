@@ -261,7 +261,7 @@ For any selected argument field $`F(\theta)`$, set $`a=F_\theta`$ and $`d=F_{\th
 F_{rr}=u^2d,\qquad F_{cc}=(r^2d+ra)/c^2,\qquad F_{rc}=-(a+ru\,d)/c.
 ```
 
-| Object | $`F_{rr}|_{x,c}`$ | $`F_{cc}|_{x,r}`$ | $`F_{\eta\eta}|_{c,r}`$ |
+| Object | $`F_{rr}`$ (fixed $`x,c`$) | $`F_{cc}`$ (fixed $`x,r`$) | $`F_{\eta\eta}`$ (fixed $`c,r`$) |
 |---|---|---|---|
 | $`S`$ | $`u^2S(2W^2-1)`$ | $`[r^2S(2W^2-1)-rSW]/c^2`$ | $`-S`$ |
 | $`W`$ | $`-2u^2HW`$ | $`[rH-2r^2HW]/c^2`$ | $`-W`$ |
