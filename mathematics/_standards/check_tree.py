@@ -32,6 +32,8 @@ def check_file(path: Path) -> tuple[list[str], int, int, int]:
                 errors.append(f"{location}: indented fence")
             if not fenced and line == "```math":
                 display_count += 1
+                if i + 1 < len(lines) and any(token in lines[i+1] for token in ("\\\\operatorname{", "\\\\boxed", "$")):
+                    errors.append(f"{location}: prohibited LaTeX command or delimiter inside math block")
                 if not (i >= 2 and lines[i-1] == "" and lines[i-2] != ""
                         and i+4 < len(lines) and lines[i+2] == "```"
                         and lines[i+3] == "" and lines[i+4] != ""):
