@@ -3,8 +3,8 @@
 
 Run: python mathematics/_standards/check_tree.py
 
-Checks local links, one-line display math and project dollar-backtick inline math
-in mathematics/ and top-level Markdown entry-point documents.
+Checks local links, one-line display math, dollar-backtick inline math,
+and Markdown-table column counts in mathematics/ and top-level entry points.
 Does not rewrite files or certify mathematical statements.
 """
 from __future__ import annotations
@@ -26,9 +26,11 @@ def check_file(path: Path) -> tuple[list[str], int, int, int]:
     lines = path.read_text(encoding="utf-8").splitlines()
     fenced = False
     inline_count = display_count = link_count = 0
+    expected_table_separators: int | None = None
     for i, line in enumerate(lines):
         location = f"{path.relative_to(REPOSITORY)}:{i + 1}"
         if line.lstrip().startswith(FENCE):
+            expected_table_separators = None
             if line != line.lstrip():
                 errors.append(f"{location}: indented fence")
             if not fenced and line == "```math":
@@ -44,6 +46,19 @@ def check_file(path: Path) -> tuple[list[str], int, int, int]:
             continue
         if fenced:
             continue
+        # GitHub Markdown sees raw "|" as a column separator even inside $`...`$ math.
+        # The table header establishes the number of unescaped separators in the run.
+        if line.startswith("|"):
+            separators = len(re.findall(r"(?<!\\)\|", line))
+            if expected_table_separators is None:
+                expected_table_separators = separators
+            elif separators != expected_table_separators:
+                errors.append(
+                    f"{location}: table has {separators} column separators; "
+                    f"expected {expected_table_separators}"
+                )
+        else:
+            expected_table_separators = None
         for m in LINK.finditer(line):
             # Markdown-like [f](s) inside math is not a file link.
             if line[:m.start()].count("$") % 2:
