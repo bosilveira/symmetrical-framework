@@ -57,3 +57,23 @@ Evenness of $\mathrm{sech}$ is needed when $a<0$. Converting $V$ back to $Y$ usi
 The pushforward symbol means transport of a positive measure, not composition of scalar functions. For $a=-1,d=1/c$, the map is $Y=1/X$; for $a=-1,d=c$, it is $Y=c^2/X$; for $a=r,d=1$, it gives the half-Cauchy law with $r'=1$.
 
 **Scope.** An arbitrary nonzero power changes $r$ unless $|a|=1$. This is closure **of the whole two-parameter family**, not invariance of an individual function or of its total unnormalized mass.
+
+## Direct half-Cauchy calculation recovered from the draft
+
+The more general power-closure theorem above already implies this result. The source's independent Jacobian calculation is retained because it displays every cancellation.
+
+**Step 1.** Put $t=(x/c)^r$, so $x=ct^{1/r}$ and $dx/dt=(c/r)t^{1/r-1}$.
+
+**Step 2.** Insert $x=ct^{1/r}$ in the normalized density:
+
+```math
+\rho(ct^{1/r};r,c)=\frac{2r}{\pi}\frac{c^r(ct^{1/r})^{r-1}}{c^{2r}+(ct^{1/r})^{2r}}=\frac{2r}{\pi c}\frac{t^{1-1/r}}{1+t^2}.
+```
+
+**Step 3.** Multiply by the Jacobian and cancel the exponents:
+
+```math
+p_T(t)=\rho(ct^{1/r};r,c)\frac c r t^{1/r-1}=\frac{2}{\pi(1+t^2)},\qquad t>0.
+```
+
+The appearance of the half-Cauchy distribution holds for **every** $r,c>0$, without an approximation or a limit. The positive variable $T$ is not a signed full Cauchy variable.

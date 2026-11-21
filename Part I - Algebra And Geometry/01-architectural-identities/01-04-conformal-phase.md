@@ -26,7 +26,7 @@ This is the standard logistic equation, with initial condition $P(0)=1/2$. The i
 u=\frac{1}{2r}\log\frac{P}{1-P}.
 ```
 
-The name “phase” is descriptive: $W$ is real-valued, not a complex $U(1)$ phase. A circle-valued angle can be introduced by $\sin\phi=W$, $\cos\phi=S$, with $\phi=\operatorname{gd}(ru)\in(-\pi/2,\pi/2)$.
+The name “phase” is descriptive: $W$ is real-valued, not a complex $U(1)$ phase. A circle-valued angle can be introduced by $\sin\phi=W$, $\cos\phi=S$, with $\phi=\mathrm{gd}(ru)\in(-\pi/2,\pi/2)$.
 
 **A projective interpretation [K/E].** The ratio of solutions of $J_{uu}=r^2J$ determines a Möbius coordinate; $W$ is a fractional-linear expression in $e^{2ru}$. The full projective meaning is elaborated in Chapter 3.
 

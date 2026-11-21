@@ -7,9 +7,9 @@ These rules apply to maintained Markdown documentation in the Symmetrical Framew
 3. **Whitespace:** insert **exactly one empty line** immediately before and after each displayed mathematical block.
 4. **Physical line length:** write each displayed mathematical expression on **one source-code line**. If alignment is needed, keep the full `\begin{aligned}...\end{aligned}` or equivalent expression on one physical line, or split the derivation into successive displayed blocks.
 5. **Readable mathematics:** do **not** use `\boxed`. Use prose or section labels to distinguish important identities instead.
-6. **GitHub compatibility:** use `\mathrm{sech}` and `\mathrm{arctanh}` for these function names. Avoid their `\operatorname{...}` forms, which do not reliably render in GitHub mathematics.
+6. **GitHub compatibility:** use `\mathrm{...}` rather than `\operatorname{...}` for named functions in maintained math. Examples: `\mathrm{sech}`, `\mathrm{arctanh}`, `\mathrm{gd}`, `\mathrm{sl}`, and `\mathrm{disc}`. Preserve the function arguments and meaning; this is a rendering convention.
 7. **Proof structure:** retain every meaningful step of a step-by-step proof. A formatting revision must not delete algebraic steps, logical hypotheses, boundary conditions, or reasoning.
-8. **Pre-commit validation:** check for unsupported `\operatorname{...}` function names, `\boxed`, and `$` displays in maintained Markdown; ensure math fences remain unindented and single-line.
+8. **Pre-commit validation:** scan all maintained Markdown for `\operatorname{...}`, `\boxed` and double-dollar display math. Use unindented single-line fenced `math` blocks, with exactly one blank line above and below.
 
 ## Example
 

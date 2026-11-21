@@ -59,7 +59,7 @@ For $\mu>0$ the corresponding cubic coefficient is $8\mu r^2$ for $f_\mu$. The n
 - **[C]** Deliberately selected additional structure, such as a metric or curve.
 - **[O]** Unproved connection or question; not an identity.
 
-The Chapter 1 Gemini draft was mathematically reviewed, integrated and removed from the active branch; see the [Chapter 1 audit](01-architectural-identities/01-99-notes.md). The Chapter 2 Gemini draft was inspected and retained as historical source; its supported claims and the new results are distinguished in the [Chapter 2 audit](02-foundational-symmetries/02-99-notes.md). The other Gemini archives remain unreviewed.
+The Chapter 1 Gemini draft was mathematically reviewed, integrated and removed from the active branch; see the [Chapter 1 audit](01-architectural-identities/01-99-notes.md). The Chapter 2 Gemini draft was fully reviewed, integrated where appropriate, and removed from the active branch; its accepted claims and source corrections are documented in the [Chapter 2 audit](02-foundational-symmetries/02-99-notes.md). The other Gemini archives remain unreviewed.
 
 ## Reproduction
 

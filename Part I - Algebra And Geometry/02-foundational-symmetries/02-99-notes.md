@@ -4,7 +4,7 @@
 
 ## Verified source-derived assertions
 
-The historical draft in [02-gemini.md](02-gemini.md) discusses common center jets, Euler homogeneity, fixed-center scaling, reciprocal closure, the half-Cauchy power map and the two-scale product identity. These claims have been checked against the kernel definitions, and their rigorous versions remain in the numbered sections. The source does **not** contain the general log-affine action, weighted overlap formula, positive-definiteness proof, Fisher curvature or Darboux scattering computation; those are explicitly identified below as added mathematical investigations.
+The former 182-line `02-gemini.md` source was fully reviewed before deletion. It covered center jets, joint and fixed-scale homogeneity, reciprocal and half-Cauchy closure, and the two-scale product; each source-supported result is established in the numbered sections, with useful additional algebraic steps preserved. The deleted file remains recoverable from [the preceding Git revision](https://github.com/bosilveira/symmetrical-framework/blob/6312bf40e8e99c84e141cdc96bd83d0e3df05251/Part%20I%20-%20Algebra%20And%20Geometry/02-foundational-symmetries/02-gemini.md). The source does **not** establish the log-affine action, weighted overlap, Fisher geometry, or Darboux scattering; these are independent mathematical extensions, not claims attributed to Gemini.
 
 | Assertion | Status | Location |
 |---|---|---|
@@ -48,3 +48,20 @@ The [Chapter 2 verification script](../verify_chapter2.py) checks representative
 - Compare Fisher, Hellinger and weighted-Hilbert metrics under a single declared coordinate chart; their distinct coefficients must be preserved rather than identified.
 
 No claim of novelty follows merely from recording these exact identities.
+
+## Completed Gemini-source integration and deletion
+
+The discarded draft's internal numbering was “Theorem 4.1–4.6”; those labels have **not** been copied into Chapter 2 because its existing numbering already has a consistent structure. Mathematical source coverage is:
+
+| Draft theorem | Verified outcome and disposition |
+|---|---|
+| 4.1 Center value, slope and “curvature” | Direct quotient rule and Taylor proof retained in [§2.1](02-01-symmetry-point.md); “curvature” corrected to $f_{xx}(c)$, not Euclidean graph curvature |
+| 4.2 Euler homogeneity | Direct factorization and infinitesimal equation retained in [§2.3](02-03-euler-homogeneity.md) |
+| 4.3 Self-similar scaling | Fixed-$c$ argument and the necessary $c\mapsto c/\lambda$ parameter update retained in [§2.3](02-03-euler-homogeneity.md) and [§2.9](02-09-self-scaling.md) |
+| 4.4 Reciprocal closure | Full change-of-variables Jacobian proof retained in [§2.4](02-04-reciprocal-closure.md) |
+| 4.5 Half-Cauchy power transform | Full Jacobian cancellation retained in [§2.5](02-05-power-transformation.md), alongside the stronger all-nonzero-powers theorem |
+| 4.6 Two-scale product | Explicit sum/difference of the two hyperbolic arguments retained in [§2.6](02-06-hyperbolic-double.md); its quoted triple product was already proved in [§2.7](02-07-hyperbolic-triple.md) |
+
+The source's explanatory phrase “multiplicative interaction” has been retained only as a label for ordinary pointwise multiplication, **not** as evidence for a physical coupling. Its unqualified statement that every curve has a common tangency point is valid only **with $c$ fixed**. The draft’s Taylor expansion was made mathematically precise at fixed $r,c$ using big-$O$ remainders. These qualifications and the separate new findings are recorded in this audit, so deleting the redundant working file does not discard the proof trajectory.
+
+**Provenance:** the complete draft is preserved in Git history at the preceding commit. Its deletion is a cleanup of the active mathematical reference, not an assertion that the earlier authoring process supplied novel results.

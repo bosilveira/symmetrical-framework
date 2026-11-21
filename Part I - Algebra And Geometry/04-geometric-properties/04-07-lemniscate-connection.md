@@ -15,7 +15,7 @@ L_2(0,1)=\int_0^1 \frac{\sqrt{(1+t^4)^4+(1-3t^4)^2}}{(1+t^4)^2}\,dt.
 The *lemniscatic curve* $v^2=1-t^4$ is elliptic (nonsingular quartic). On its real branch let
 
 ```math
-s=\int_0^t\frac{d\xi}{\sqrt{1-\xi^4}},\quad t=\operatorname{sl}(s),\quad \varpi=\int_0^1\frac{dt}{\sqrt{1-t^4}}.
+s=\int_0^t\frac{d\xi}{\sqrt{1-\xi^4}},\quad t=\mathrm{sl}(s),\quad \varpi=\int_0^1\frac{dt}{\sqrt{1-t^4}}.
 ```
 
 Then $dt=\sqrt{1-t^4}\,ds$, so the **correct** transformed arc integral is

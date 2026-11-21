@@ -53,3 +53,35 @@ The evenness of $S(u)=2ce^uf(ce^u)$ has a stronger implication than common value
 ```
 
 The first of these yields $f(c)+cf_x(c)=0$; higher ones give polynomial relations among spatial derivatives of successive orders. The statement applies to the normalized even profile $S$, not to the graph $f(x)$ under ordinary reflection $x\mapsto2c-x$.
+
+## Independent algebraic proof recovered from the draft
+
+The original source also calculates the center jets directly from the quotient rather than from the hyperbolic differential system. This supplies an independent verification.
+
+**Step 1.** Let $N=c^rx^{r-1}$ and $D=c^{2r}+x^{2r}$. Differentiate: $N_x=(r-1)c^rx^{r-2}$ and $D_x=2rx^{2r-1}$.
+
+**Step 2.** Combine the two quotient-rule terms and factor:
+
+```math
+f_x=\frac{N_xD-ND_x}{D^2}=\frac{c^rx^{r-2}((r-1)c^{2r}-(r+1)x^{2r})}{(c^{2r}+x^{2r})^2}.
+```
+
+**Step 3.** At $x=c$, this reduces without any assumption on $r$ beyond positivity:
+
+```math
+f_x(c;r,c)=\frac{c^{2r-2}(-2c^{2r})}{4c^{4r}}=-\frac1{2c^2}.
+```
+
+**Step 4.** For the second derivative, set $\varepsilon=h/c$ and use the ordinary Taylor expansions at $\varepsilon=0$:
+
+```math
+u=\log(1+\varepsilon)=\varepsilon-\tfrac12\varepsilon^2+O(\varepsilon^3),\qquad S(u)=1-\tfrac12r^2\varepsilon^2+O(\varepsilon^3).
+```
+
+**Step 5.** Multiply by $1/(2(c+h))=(1/(2c))(1-\varepsilon+\varepsilon^2+O(\varepsilon^3))$:
+
+```math
+f(c+h;r,c)=\frac1{2c}\left(1-\varepsilon+\left(1-\tfrac12r^2\right)\varepsilon^2+O(\varepsilon^3)\right).
+```
+
+Consequently $f_{xx}(c;r,c)=(2-r^2)/(2c^3)$, as above. These asymptotic remainders are for fixed $r,c>0$; they are not asserted uniformly for unbounded $r$. The source's word “curvature” should be read here as **second derivative**, not the signed Euclidean curvature of a numerical graph.

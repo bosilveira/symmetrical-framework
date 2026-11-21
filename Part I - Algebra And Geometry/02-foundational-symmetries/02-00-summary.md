@@ -53,4 +53,4 @@ The superpotential section distinguishes the spatial and logarithmic conventions
 13. [2.13 Weighted overlap and positive-definite kernel](02-13-weighted-overlap.md)
 14. [2.14 Fisher-information geometry](02-14-fisher-information.md)
 
-See the [Chapter 2 verification register](02-99-notes.md), the [Part I guide](../README.md), and [Markdown conventions](../../MARKDOWN_STYLE.md). The earlier Gemini Chapter 2 notes are retained as **historical source material**, not treated as independent proof of the new extensions.
+See the [Chapter 2 verification register](02-99-notes.md), the [Part I guide](../README.md), and [Markdown conventions](../../MARKDOWN_STYLE.md). The earlier Gemini Chapter 2 notes were reviewed, source-supported derivations have been incorporated into the numbered sections, and the redundant `02-gemini.md` has been removed from the active branch. See the [integration audit](02-99-notes.md); Git history preserves the original draft.

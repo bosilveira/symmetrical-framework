@@ -48,7 +48,7 @@ Adding them gives $(x\partial_x+c\partial_c)\log f=-1$, the logarithmic form of 
 \partial_r\log f=-uW.
 ```
 
-The derivative with respect to $\alpha=\log c$ is a location derivative; the derivative in $r$ is a scale/shape derivative in the logarithmic coordinate. They must not be confused with derivatives taken at fixed $u$.
+The derivative with respect to $\alpha=\log(c/x_*)$ is a location derivative; the derivative in $r$ is a scale/shape derivative in the logarithmic coordinate. They must not be confused with derivatives taken at fixed $u$.
 
 ## Commuting group actions on the coordinate-scale pair
 
@@ -59,3 +59,27 @@ D_\lambda\circ I=I\circ D_\lambda,\qquad I^2=\mathrm{id},\qquad D_\lambda D_\eta
 ```
 
 The transformations generate an action of the direct product $\mathbb R_{>0}\times C_2$ on the *pair* $(x,c)$. On the normalized coordinate $u=\log(x/c)$, $D_\lambda$ acts trivially and $I$ acts by $u\mapsto-u$. The dependent function transforms by the nontrivial weights specified in §§2.2–2.3; it is **not** invariant pointwise under both generators.
+
+## Explicit factorization from the source derivation
+
+The original proof verifies the scale law directly in the defining powers, before applying Euler's theorem.
+
+**Step 1.** Substitute $(\lambda x,\lambda c)$ into the defining numerator and denominator:
+
+```math
+f(\lambda x;r,\lambda c)=\frac{\lambda^{2r-1}c^rx^{r-1}}{\lambda^{2r}(c^{2r}+x^{2r})}.
+```
+
+**Step 2.** Cancel $\lambda^{2r}$ and differentiate at $\lambda=1$:
+
+```math
+f(\lambda x;r,\lambda c)=\lambda^{-1}f(x;r,c),\qquad x\partial_xf+c\partial_cf=-f.
+```
+
+**Step 3.** Replace $c$ by $c/\lambda$ in the joint formula:
+
+```math
+f(\lambda x;r,c)=\lambda^{-1}f(x;r,c/\lambda).
+```
+
+The third equality is **not** a fixed-$c$ homogeneity law: it requires the transformed parameter $c/\lambda$. The result agrees with the characteristic argument at the beginning of this section.

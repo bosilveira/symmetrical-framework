@@ -18,5 +18,5 @@ The distinction **[E] exact identity**, **[K] standard theorem with stated assum
 ## Reproducibility pointers
 - Differentiate $f=S/(2x)$ twice; eliminate $W$ by $(z-1)/(z+1)$.
 - Use the endpoint asymptotics from Chapter 1 for integral convergence.
-- Check $\operatorname{disc}_z[(1+z)^4+4z]=-23296\ne0$.
+- Check $\mathrm{disc}_z[(1+z)^4+4z]=-23296\ne0$.
 - Reparametrize graph length under $z=t^2$ or the lemniscatic inverse; include the Jacobian every time.

@@ -119,13 +119,11 @@ local_x=((low1**RR+low2**RR)/(1-(low1*low2/CC**2)**RR))**(1/RR)
 close(F(local_x),F(low1)+F(low2),"restricted CDF addition")
 
 chapter=Path(__file__).resolve().parent/"02-foundational-symmetries"
+assert not (chapter/"02-gemini.md").exists(), "Gemini source should have been consolidated and removed"
 fence=chr(96)*3
 for file in chapter.glob("02-*.md"):
-    if "gemini" in file.name.lower():
-        continue
     raw=file.read_text(encoding="utf-8")
-    assert "\\operatorname{sech}" not in raw, file
-    assert "\\operatorname{arctanh}" not in raw, file
+    assert "\\operatorname{" not in raw, file
     assert "\\boxed" not in raw and "$$" not in raw, file
     lines=raw.splitlines()
     for i,line in enumerate(lines):

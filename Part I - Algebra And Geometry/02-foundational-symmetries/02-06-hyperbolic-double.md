@@ -57,3 +57,27 @@ I_{C*}\bigl(x f(x;r,c_1)f(x;r,c_2)\,dx\bigr)=x f(x;r,c_1)f(x;r,c_2)\,dx.
 ```
 
 The proof follows by multiplying the two covariance factors and the Jacobian; all powers of $x$ and $C$ cancel. Hence the weighted overlap is bisected at $x=C$. Its exact value is computed in [§2.13](02-13-weighted-overlap.md).
+
+## Detailed argument reduction retained from the draft
+
+The equal-resolution proof in the original source makes the separation of the two scale variables explicit.
+
+**Step 1.** Set $A=r\log(x/c_1)$ and $B=r\log(x/c_2)$:
+
+```math
+f(x;r,c_1)f(x;r,c_2)=\frac{\mathrm{sech}A\,\mathrm{sech}B}{4x^2}.
+```
+
+**Step 2.** Compute the symmetric and antisymmetric combinations:
+
+```math
+A+B=2r\log\left(\frac{x}{\sqrt{c_1c_2}}\right),\qquad A-B=r\log(c_2/c_1).
+```
+
+**Step 3.** Apply $\mathrm{sech}A\,\mathrm{sech}B=2/(\cosh(A+B)+\cosh(A-B))$:
+
+```math
+f(x;r,c_1)f(x;r,c_2)=\frac{1}{2x^2\left[\cosh\left(2r\log(x/\sqrt{c_1c_2})\right)+\cosh\left(r\log(c_2/c_1)\right)\right]}.
+```
+
+This identifies the geometric mean as a **reflection center for the paired product**, not necessarily a maximum of either factor. The draft's triple-product formula is already established in [§2.7](02-07-hyperbolic-triple.md) and is not repeated as a separate theorem.

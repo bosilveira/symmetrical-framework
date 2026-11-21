@@ -42,7 +42,7 @@ The 912-line `01-architectural-identities/01-gemini.md` was reviewed and its sui
 
 ## Chapter 2 extensive investigation (20 November 2026)
 
-The maintained `02-foundational-symmetries` chapter has been extensively expanded. The existing `02-gemini.md` was reviewed for source alignment and **retained unchanged**. Its supported claims are separated from additional investigations in the [Chapter 2 audit](02-foundational-symmetries/02-99-notes.md).
+The maintained `02-foundational-symmetries` chapter has been extensively expanded. The former `02-gemini.md` was reviewed in full and deleted from this branch after its relevant theorem proofs were integrated; Git history preserves the source. Its supported claims are separated from additional investigations in the [Chapter 2 audit](02-foundational-symmetries/02-99-notes.md).
 
 - The center's third derivative $f_{xxx}(c)=3(r^2-1)/c^4$ proves a genuine inflection at $r=\sqrt2$.
 - The normalized family is equivariant under nonzero-power maps and the full affine group in logarithmic coordinates, with resolution $r/|a|$.
@@ -52,3 +52,9 @@ The maintained `02-foundational-symmetries` chapter has been extensively expande
 - The Darboux partners give a normalized $L^2$ zero mode and an explicit reflectionless scattering solution for the selected Pöschl–Teller Schrödinger operator.
 
 See the [Chapter 2 summary](02-foundational-symmetries/02-00-summary.md), the [detailed verification notes](02-foundational-symmetries/02-99-notes.md) and the reproducible [test script](verify_chapter2.py). No exceptional group or physical realization is inferred from these identities.
+
+## Chapter 2 Gemini source integration and math-rendering corrections (21 November 2026)
+
+The historical 182-line `02-gemini.md` was audited theorem by theorem, and six source-derived arguments were reconciled with the expanded Chapter 2. The quotient-rule center jets, direct Euler factorization, reciprocal Jacobian, half-Cauchy Jacobian, and the two-scale hyperbolic argument reduction now appear as reproducible step-by-step proofs in their respective numbered sections. Incorrect or imprecise terminology (notably $f_{xx}$ as “curvature,” and broad claims of “interaction”) has been qualified. The redundant file was **deleted** from the active branch; see the [source-to-theorem audit](02-foundational-symmetries/02-99-notes.md).
+
+The Markdown compatibility rule now requires `\mathrm{gd}` for the Gudermannian and `\mathrm{sl}`, `\mathrm{disc}` for the other function labels found in Part I. Unsupported operator-name spellings were replaced without changing the mathematics.
