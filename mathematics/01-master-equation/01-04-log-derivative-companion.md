@@ -23,7 +23,7 @@ If `y` has zeros, this logarithmic-derivative map is only defined on the open no
 The field `v` obeys the **autonomous cubic equation independent of the amplitude/coupling**, together with its first integral:
 
 ```math
-\boxed{v_{uu}=2v^3-2r^2v,\qquad v_u^2-(v^2-r^2)^2=4\mu r^2\varepsilon_N.}
+v_{uu}=2v^3-2r^2v,\qquad v_u^2-(v^2-r^2)^2=4\mu r^2\varepsilon_N.
 ```
 
 **Proof.** Directly divide the Master equation by `y`:
