@@ -22,7 +22,7 @@ Consequently, for every function $`F`$ defined on the specified real argument ra
 
 ## 2. The chart count is not finite
 
-The existing four-row table records a *preferred chain*, not four exhaustive charts. On appropriate domains, the following give valid coordinates of the same **three-dimensional manifold** $`(x,c,r)`$ when paired with retained $`c,r`$ (and fixed $`\ell`$ where used).
+The existing four-row table records **four transitions linking five named coordinate systems** (`x`, `u`, `\theta`, `T`, and `\eta`, with `c,r` retained), not four exhaustive charts. The word *chart* refers to a locally invertible coordinate system, whereas a table row describes a map between charts. On appropriate domains, the following give valid coordinates of the same **three-dimensional manifold** $`(x,c,r)`$ when paired with retained $`c,r`$ (and fixed $`\ell`$ where used).
 
 | Chart coordinate $`z`$ | Inverse for $`x`$ | Range / branch | $`\partial_x z`$ at fixed other parameters |
 |---|---|---|---|
