@@ -133,3 +133,25 @@ At the **evaluation point** $`x=c`$, one has $`u=W=b=0`$, $`S=R=H=1`$ and $`P=1/
 A targeted symbolic check of the $`(x,c,r)`$ Hessian for $`S,W,R,b,P,H,\eta`$, the kernel parameter Hessian, and the Hopf-base clock is recorded separately in [the companion verification program](../_standards/verify_field_hessians_hopf.py).
 
 **Provenance:** Complete Reference v2 §§F.1, 1, 27–28 and November 21 ZIP `00-meta/NOTATION`, `04-follow-ups/profile-web`; earlier [§00.06](00-06-variable-parameter-derivatives.md) gives the first parameter derivatives. The systematic second-order Hessian table is a direct chain-rule extension checked independently here. No literature priority or physical realization is claimed.
+
+## 9. Universal determinant of the $`(u,r)`$ Hessian
+
+The full $`(x,c,r)`$ Hessian of §3 is **not** interchangeable with the smaller, coordinate-dependent Hessian in $`(u,r)`$. At fixed $`c`$, for $`F(u,r)=\phi(ru)`$ with $`a=\phi_\theta`$ and $`d=\phi_{\theta\theta}`$,
+
+```math
+\mathrm{Hess}_{(u,r)}F=\begin{pmatrix}r^2d&a+\theta d\\a+\theta d&u^2d\end{pmatrix},\qquad \det\mathrm{Hess}_{(u,r)}F=-a^2-2\theta ad=-\frac{d}{d\theta}\left(\theta a^2\right).
+```
+
+The mixed entry is $`F_{ur}=a+\theta d=(\theta a)_\theta`$. Notice that $`\theta\partial_\theta`$ generates **dilation in $`\theta`$**, whereas the existing exponential-coordinate differential operator is $`\partial_\theta=T\partial_T`$.
+
+| Field | Determinant of the $`(u,r)`$ Hessian |
+|---|---|
+| $`W=\tanh\theta`$ | $`H^2(4\theta W-1)`$ |
+| $`\eta=\mathrm{gd}\theta`$ | $`H(2\theta W-1)`$ |
+| $`R=\cosh\theta`$ | $`-b^2-2\theta bR`$ |
+| $`S=\mathrm{sech}\theta`$ | $`-HW^2+2\theta HW(2W^2-1)`$ |
+| $`H=S^2`$ | $`-4H^2W^2+8\theta H^2W(2-3H)`$ |
+
+The Hessian determinant of $`W`$ changes sign at the two curves $`ru=\pm\theta_*`$, where $`\theta_*\tanh\theta_*=1/4`$ and $`\theta_*\approx0.5218134478`$; its Hessian is indefinite between the curves, negative definite for $`ru>\theta_*`$ and positive definite for $`ru<-\theta_*`$. This is an exact signature classification. The related source comparison, Lorentz null-cone sections, Gudermannian/Milne phase normalization and catenoid Jacobi **mode restrictions** are proved in [§00.10](00-10-symmetric-square-lorentz-hessian.md).
+
+**Status:** direct chain-rule proof and independent [symbolic checks](../_standards/verify_sym2_hessian.py). The signature of $`\mathrm{Hess}_{(u,r)}\theta`$ is Lorentzian, but that does **not** force the Hessian of every $`F(ru)`$ to remain indefinite, and no ordinary Hessian determinant is claimed invariant under the nonlinear change $`u=\log(x/c)`$.
