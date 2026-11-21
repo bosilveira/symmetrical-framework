@@ -10,27 +10,27 @@ All **numbered expository documents** of Chapters 1–4, their chapter summaries
 
 | Topic | Earlier difficulty | Revised statement / location |
 |---|---|---|
-| Inversion measure | Wrong assertion for $f(x)\,dx/x$ | $f(c^2/x)\,d(c^2/x)=-f(x)\,dx$; [2.2](02-foundational-symmetries/02-02-moebius-symmetry.md) |
-| Uniqueness | Inversion alone described as characterization | Infinite even-$h$ counterfamily; [1.1](01-architectural-identities/01-01-algebraic-form.md), [2.2](02-foundational-symmetries/02-02-moebius-symmetry.md) |
-| Coordinates | $u$ sometimes reused for $r\log(x/c)$ | Everywhere $u=\log(x/c)$, $\theta=ru$; [Part I guide](README.md) |
-| Differential equation | First-order zero-energy relation called “Master ODE”; second-order nonlinear equation called “linear annihilator” | Explicit (E1) vs (M) and counterexample $f_s$; [3.3](03-differential-structure/03-03-master-nonlinear.md), [3.5](03-differential-structure/03-05-linear-annihilator.md) |
-| Reciprocal | Linearization silently generalized | $J_{uu}=r^2J+2\varepsilon J^3$, linear only at $\varepsilon=0$; [3.8](03-differential-structure/03-08-differential-interrelation.md) |
+| Inversion measure | Wrong assertion for $`f(x)\,dx/x`$ | $`f(c^2/x)\,d(c^2/x)=-f(x)\,dx`$; [2.2](02-foundational-symmetries/02-02-moebius-symmetry.md) |
+| Uniqueness | Inversion alone described as characterization | Infinite even-$`h`$ counterfamily; [1.1](01-architectural-identities/01-01-algebraic-form.md), [2.2](02-foundational-symmetries/02-02-moebius-symmetry.md) |
+| Coordinates | $`u`$ sometimes reused for $`r\log(x/c)`$ | Everywhere $`u=\log(x/c)`$, $`\theta=ru`$; [Part I guide](README.md) |
+| Differential equation | First-order zero-energy relation called “Master ODE”; second-order nonlinear equation called “linear annihilator” | Explicit (E1) vs (M) and counterexample $`f_s`$; [3.3](03-differential-structure/03-03-master-nonlinear.md), [3.5](03-differential-structure/03-05-linear-annihilator.md) |
+| Reciprocal | Linearization silently generalized | $`J_{uu}=r^2J+2\varepsilon J^3`$, linear only at $`\varepsilon=0`$; [3.8](03-differential-structure/03-08-differential-interrelation.md) |
 | Ernst/Liouville | Implicit physical equation without stated metric | Exact radial Liouville defect, declared conformal metric, curvature and cone angles; [3.7](03-differential-structure/03-07-ernst-liouville.md) |
-| Inflection points | Wrong quadratic and claimed two for $r>1$ | Exact quadratic and discriminant $4r^2(8r^2-7)$; complete classification; [4.1](04-geometric-properties/04-01-maximum-inflection.md) |
-| Graph arc | Claimed $r=1$ automatically elliptic | Actual direct arc differential on squarefree genus-two curve $Y^2=z((1+z)^4+4z)$; [4.4](04-geometric-properties/04-04-elliptic-reduction.md) |
+| Inflection points | Wrong quadratic and claimed two for $`r>1`$ | Exact quadratic and discriminant $`4r^2(8r^2-7)`$; complete classification; [4.1](04-geometric-properties/04-01-maximum-inflection.md) |
+| Graph arc | Claimed $`r=1`$ automatically elliptic | Actual direct arc differential on squarefree genus-two curve $`Y^2=z((1+z)^4+4z)`$; [4.4](04-geometric-properties/04-04-elliptic-reduction.md) |
 | Lemniscate | Reparametrization taken as elliptic reduction; incorrect extra factor | Correct substitution and explicit non-claim; [4.7](04-geometric-properties/04-07-lemniscate-connection.md) |
-| Revolution surface | Claimed area finite iff $r>1$ | Correct threshold $r\ge1$; exact $r=1$ exception; [4.6](04-geometric-properties/04-06-infinite-tulip.md) |
-| Units | Raw curve $(x,f)$ treated as dimensionally homogeneous | Specify numerical graph or use $(x,c^2f(x))$; [4.2](04-geometric-properties/04-02-arc-length.md) |
+| Revolution surface | Claimed area finite iff $`r>1`$ | Correct threshold $`r\ge1`$; exact $`r=1`$ exception; [4.6](04-geometric-properties/04-06-infinite-tulip.md) |
+| Units | Raw curve $`(x,f)`$ treated as dimensionally homogeneous | Specify numerical graph or use $`(x,c^2f(x))`$; [4.2](04-geometric-properties/04-02-arc-length.md) |
 | CDF operations | Angles and multiplication conflated with probabilistic sums | Two distinct laws and correct branches; [2.10](02-foundational-symmetries/02-10-cdf-addition.md), [2.11](02-foundational-symmetries/02-11-cdf-product.md) |
 
 ## Retained mathematical architecture
 
-The original focus remains: the rational/power kernel $\to$ logarithmic `sech` normalization $\to$ circle/Riccati $\to$ scale and inversion $\to$ first integral, autonomous Master and conic/metric geometry. No outside physics is required for any result in the revised numbered chapters.
+The original focus remains: the rational/power kernel $`\to`$ logarithmic `sech` normalization $`\to`$ circle/Riccati $`\to`$ scale and inversion $`\to`$ first integral, autonomous Master and conic/metric geometry. No outside physics is required for any result in the revised numbered chapters.
 
 ## Remaining investigation, not asserted as solved
 
-- Determine whether the $r=1$ genus-two graph-length differential admits special elliptic quotients; the genus computation alone does not settle all possible reductions.
-- Classify the algebraic curves underlying finite graph length for integer and rational $r$ and for different vertical magnifications.
+- Determine whether the $`r=1`$ genus-two graph-length differential admits special elliptic quotients; the genus computation alone does not settle all possible reductions.
+- Classify the algebraic curves underlying finite graph length for integer and rational $`r`$ and for different vertical magnifications.
 - Establish a full transformation/provenance formalism for nonzero-energy solutions and global geometric completions.
 - Add independent formal verification for the finite-weighted-norm classification and symbolic calculations covering the entire level hierarchy.
 
@@ -44,17 +44,26 @@ The 912-line `01-architectural-identities/01-gemini.md` was reviewed and its sui
 
 The maintained `02-foundational-symmetries` chapter has been extensively expanded. The former `02-gemini.md` was reviewed in full and deleted from this branch after its relevant theorem proofs were integrated; Git history preserves the source. Its supported claims are separated from additional investigations in the [Chapter 2 audit](02-foundational-symmetries/02-99-notes.md).
 
-- The center's third derivative $f_{xxx}(c)=3(r^2-1)/c^4$ proves a genuine inflection at $r=\sqrt2$.
-- The normalized family is equivariant under nonzero-power maps and the full affine group in logarithmic coordinates, with resolution $r/|a|$.
-- The exact weighted overlap is $\delta/(2r\sinh\delta)$, $\delta=r\log(c_2/c_1)$. The normalized kernel is strictly positive definite, with Fourier transform $(\pi^2/2)\mathrm{sech}^2(\pi\omega/2)$.
-- The Fisher metric of the normalized family is $ds_F^2=(r^2/2)d\alpha^2+(\pi^2/(8r^2))dr^2$ with constant Gaussian curvature $K_F=-8/\pi^2$.
+- The center's third derivative $`f_{xxx}(c)=3(r^2-1)/c^4`$ proves a genuine inflection at $`r=\sqrt2`$.
+- The normalized family is equivariant under nonzero-power maps and the full affine group in logarithmic coordinates, with resolution $`r/|a|`$.
+- The exact weighted overlap is $`\delta/(2r\sinh\delta)`$, $`\delta=r\log(c_2/c_1)`$. The normalized kernel is strictly positive definite, with Fourier transform $`(\pi^2/2)\mathrm{sech}^2(\pi\omega/2)`$.
+- The Fisher metric of the normalized family is $`ds_F^2=(r^2/2)d\alpha^2+(\pi^2/(8r^2))dr^2`$ with constant Gaussian curvature $`K_F=-8/\pi^2`$.
 - Restricted CDF angle addition is a **partial** associative operation, distinct from the **global** multiplicative group transported to CDF, phase and logistic coordinates.
-- The Darboux partners give a normalized $L^2$ zero mode and an explicit reflectionless scattering solution for the selected Pöschl–Teller Schrödinger operator.
+- The Darboux partners give a normalized $`L^2`$ zero mode and an explicit reflectionless scattering solution for the selected Pöschl–Teller Schrödinger operator.
 
 See the [Chapter 2 summary](02-foundational-symmetries/02-00-summary.md), the [detailed verification notes](02-foundational-symmetries/02-99-notes.md) and the reproducible [test script](verify_chapter2.py). No exceptional group or physical realization is inferred from these identities.
 
 ## Chapter 2 Gemini source integration and math-rendering corrections (21 November 2026)
 
-The historical 182-line `02-gemini.md` was audited theorem by theorem, and six source-derived arguments were reconciled with the expanded Chapter 2. The quotient-rule center jets, direct Euler factorization, reciprocal Jacobian, half-Cauchy Jacobian, and the two-scale hyperbolic argument reduction now appear as reproducible step-by-step proofs in their respective numbered sections. Incorrect or imprecise terminology (notably $f_{xx}$ as “curvature,” and broad claims of “interaction”) has been qualified. The redundant file was **deleted** from the active branch; see the [source-to-theorem audit](02-foundational-symmetries/02-99-notes.md).
+The historical 182-line `02-gemini.md` was audited theorem by theorem, and six source-derived arguments were reconciled with the expanded Chapter 2. The quotient-rule center jets, direct Euler factorization, reciprocal Jacobian, half-Cauchy Jacobian, and the two-scale hyperbolic argument reduction now appear as reproducible step-by-step proofs in their respective numbered sections. Incorrect or imprecise terminology (notably $`f_{xx}`$ as “curvature,” and broad claims of “interaction”) has been qualified. The redundant file was **deleted** from the active branch; see the [source-to-theorem audit](02-foundational-symmetries/02-99-notes.md).
 
 The Markdown compatibility rule now requires `\mathrm{gd}` for the Gudermannian and `\mathrm{sl}`, `\mathrm{disc}` for the other function labels found in Part I. Unsupported operator-name spellings were replaced without changing the mathematics.
+
+## Chapter 3 differential investigation and GitHub math migration (21 November 2026)
+
+The maintained third chapter was extensively expanded, preserving its established distinction between the first-order constraint and the nonlinear second-order Master. The additions give a complete finite-weighted-norm proof, variational and Noether interpretation, exact Jacobi dn/cn energy families, singular quartic energy levels, Ermakov–Pinney envelope and nonzero-energy defects, a four-dimensional radial Hardy–cubic and Kelvin transformation, and the stationary Miura/KdV polynomial. See the [expanded Chapter 3 index](03-differential-structure/03-00-summary.md) and [mathematical audit](03-differential-structure/03-99-notes.md). The source file 03-gemini.md was consulted and retained unchanged.
+
+The GitHub math convention now uses a dollar sign with backticks immediately inside for **all inline mathematics**, while one-line unindented math fences remain mandatory for displayed equations. The [code conventions](../MARKDOWN_STYLE.md) and [style checker](check_markdown_style.py) document and enforce the rules. Existing maintained Markdown across Chapters 1–4 and the project introductions was migrated without altering mathematical expressions. The new [Chapter 3 regression script](verify_chapter3.py) covers representative symbolic identities and Jacobi numerical checks.
+
+No claim of a novel elliptic classification, forced gravity model, or physical instanton is made; these are specific mathematical reductions and classical identifications.
+

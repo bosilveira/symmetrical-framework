@@ -9,7 +9,7 @@ The framework begins with the **symmetrical function**:
 f(x; r, c) = \frac{c^r\ x^{r-1}}{c^{2r}+x^{2r}}, \qquad r>0, \quad c>0, \quad x\in(0,\infty)
 ```
 
-This function has a **weighted inversion covariance** under $x \mapsto c^2/x$ and strictly half-splits its own improper integral at $x=c$ for all shape parameters $r$. Inversion symmetry alone does **not** uniquely characterize this kernel (see the revised Part I):
+This function has a **weighted inversion covariance** under $`x \mapsto c^2/x`$ and strictly half-splits its own improper integral at $`x=c`$ for all shape parameters $`r`$. Inversion symmetry alone does **not** uniquely characterize this kernel (see the revised Part I):
 
 ```math
 \int_0^c f\ dx \ =\ \int_c^\infty f\ dx \ =\ \frac{\pi}{4r}
@@ -19,23 +19,23 @@ What follows is an extensive, numerically verified catalog of identities derived
 
 ## 2. The Canonical Core: The Rosetta Stone
 
-By analyzing the function in the additive coordinate $u = \log(x/c)$, the framework simplifies into the geometry of a unit circle:
+By analyzing the function in the additive coordinate $`u = \log(x/c)`$, the framework simplifies into the geometry of a unit circle:
 
 ```math
 f(x; r, c) = \frac{1}{2x} \mathrm{sech}\bigl(r\log(x/c)\bigr)
 ```
 
-Defining the canonical phase space $(S, W) = (sech(ru), \tanh(ru))$, we obtain the identity $S^2 + W^2 = 1$. The identities derived in this framework can be viewed as translations of this underlying hyperbolic geometry:
+Defining the canonical phase space $`(S, W) = (sech(ru), \tanh(ru))`$, we obtain the identity $`S^2 + W^2 = 1`$. The identities derived in this framework can be viewed as translations of this underlying hyperbolic geometry:
 
-| Domain | Translation under $u = \log(x/c)$ |
+| Domain | Translation under $`u = \log(x/c)`$ |
 | :--- | :--- |
-| **Möbius Inversion** | Parity reflection $u \mapsto -u$ of $\mathrm{sech}$ |
-| **Mellin Transform** | Fourier transform of $\mathrm{sech}$ is $\mathrm{sech}$ (Self-duality) |
-| **Statistics (Cumulants)**| Maclaurin series of $\log\sec(t)$ yields Tangent numbers |
-| **Information Theory** | Shannon Entropy is the differential entropy of $\mathrm{sech}$ + log Jacobian |
-| **Integrable Systems** | The fundamental derivative $(\mathrm{sech})' = -sech\tanh$ |
-| **Quantum Mechanics** | Reflectionless Pöschl–Teller potential $-r^{2}\mathrm{sech}^{2}(ru)$ |
-| **Mock Modular Forms** | Standard $\mathrm{sech}$ contour (Eichler) integral on $\mathbb{R}$ |
+| **Möbius Inversion** | Parity reflection $`u \mapsto -u`$ of $`\mathrm{sech}`$ |
+| **Mellin Transform** | Fourier transform of $`\mathrm{sech}`$ is $`\mathrm{sech}`$ (Self-duality) |
+| **Statistics (Cumulants)**| Maclaurin series of $`\log\sec(t)`$ yields Tangent numbers |
+| **Information Theory** | Shannon Entropy is the differential entropy of $`\mathrm{sech}`$ + log Jacobian |
+| **Integrable Systems** | The fundamental derivative $`(\mathrm{sech})' = -sech\tanh`$ |
+| **Quantum Mechanics** | Reflectionless Pöschl–Teller potential $`-r^{2}\mathrm{sech}^{2}(ru)`$ |
+| **Mock Modular Forms** | Standard $`\mathrm{sech}`$ contour (Eichler) integral on $`\mathbb{R}`$ |
 
 ## 3. Solitonic Factorization
 
@@ -46,7 +46,7 @@ This framework provides an exact parametrization of the **soliton cell of Sato's
 ```
 
 It explicitly captures:
-*   $N$-soliton solutions of the KP hierarchy (KdV, mKdV, NLS, Sine-Gordon).
+*   $`N`$-soliton solutions of the KP hierarchy (KdV, mKdV, NLS, Sine-Gordon).
 *   Rational/lump solutions via double-scaling coalescence limits.
 *   Fermi-Dirac quantum statistics, the Fox H-Function, and the exact geometric representation of Dirichlet L-functions.
 
@@ -60,7 +60,7 @@ The findings are organized into eight parts, cataloging the derivations from ele
 
 *   [`00_Undergraduate_Core.md`](./00_Undergraduate_Core.md) — *The foundational properties and proofs.*
 *   [`00_The_Torus_and_Three_Circles.md`](./00_The_Torus_and_Three_Circles.md) — *The underlying topology and dualities.*
-*   [`00_Canonical_Linearization.md`](./00_Canonical_Linearization.md) — *The $x$-space to $u$-space translation dictionary.*
+*   [`00_Canonical_Linearization.md`](./00_Canonical_Linearization.md) — *The $`x`$-space to $`u`$-space translation dictionary.*
 
 ### 📁 Part I: Algebra and Geometry
 
@@ -72,7 +72,7 @@ The findings are organized into eight parts, cataloging the derivations from ele
 4. Ernst Equation & Liouville Defect
 
 ### 📁 Part II: Calculus and Special Functions
-5. Integration, $L^n$ Norms, and Incomplete Betas
+5. Integration, $`L^n`$ Norms, and Incomplete Betas
 6. The Fox H-Function Representation & Meijer G
 7. The Mellin Transform (Analytic Structure & Operational Rules)
 8. Fourier Analysis & Plancherel/Parseval Lines
@@ -87,7 +87,7 @@ The findings are organized into eight parts, cataloging the derivations from ele
 
 ### 📁 Part IV: Quantum Mechanics and Supersymmetry
 15. The Pöschl-Teller Ground State & Superpotential
-16. Bosonic SUSY & the $w$-Deformed Algebra
+16. Bosonic SUSY & the $`w`$-Deformed Algebra
 17. SUSY Partner Potentials & Darboux Chains
 18. Virial Theorem & Variational Master Functionals
 
@@ -103,7 +103,7 @@ The findings are organized into eight parts, cataloging the derivations from ele
 25. Dirichlet Sums and Riemann Zeros
 26. Log-Cumulants, Tangent Numbers, and Zeta
 27. Euler/Bernoulli Rotations & Beta Factorizations
-28. The Parametric Rotation of the Riemann $s$-Plane
+28. The Parametric Rotation of the Riemann $`s`$-Plane
 29. Hitchin Moduli & Poincaré Polynomials
 
 ### 📁 Part VII: Moonshine, K3, and Equivariant Geometry
@@ -122,6 +122,6 @@ The findings are organized into eight parts, cataloging the derivations from ele
 
 ---
 
-*Methodology Note: All numerical identities in this repository are verified in `mpmath` at $\ge 50$-digit precision. Symbolic derivations are verified in `SymPy`.*
+*Methodology Note: All numerical identities in this repository are verified in `mpmath` at $`\ge 50`$-digit precision. Symbolic derivations are verified in `SymPy`.*
 
 ---

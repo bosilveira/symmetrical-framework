@@ -1,22 +1,40 @@
-# Markdown mathematical formatting standards
+# Mathematical Markdown conventions for GitHub
 
-These rules apply to maintained Markdown documentation in the Symmetrical Framework, including the revised Part I chapters. Historical archive files are retained without compulsory retroactive reformatting.
+Apply these rules to maintained Symmetrical Framework documentation. Part I is enforced by a repository checker. Historical Gemini drafts are excluded from compulsory reformatting.
 
-1. **Inline mathematics:** use single dollar delimiters, as in `$u=\log(x/c)$`. Do not use display-math delimiters for inline equations.
-2. **Displayed mathematics:** use a fenced `math` block. Open and close the fence at column 1, with **no indentation**.
-3. **Whitespace:** insert **exactly one empty line** immediately before and after each displayed mathematical block.
-4. **Physical line length:** write each displayed mathematical expression on **one source-code line**. If alignment is needed, keep the full `\begin{aligned}...\end{aligned}` or equivalent expression on one physical line, or split the derivation into successive displayed blocks.
-5. **Readable mathematics:** do **not** use `\boxed`. Use prose or section labels to distinguish important identities instead.
-6. **GitHub compatibility:** use `\mathrm{...}` rather than `\operatorname{...}` for named functions in maintained math. Examples: `\mathrm{sech}`, `\mathrm{arctanh}`, `\mathrm{gd}`, `\mathrm{sl}`, and `\mathrm{disc}`. Preserve the function arguments and meaning; this is a rendering convention.
-7. **Proof structure:** retain every meaningful step of a step-by-step proof. A formatting revision must not delete algebraic steps, logical hypotheses, boundary conditions, or reasoning.
-8. **Pre-commit validation:** scan all maintained Markdown for `\operatorname{...}`, `\boxed` and double-dollar display math. Use unindented single-line fenced `math` blocks, with exactly one blank line above and below.
+## Inline mathematics: mandatory dollar-backtick syntax
 
-## Example
+Use an opening dollar sign immediately followed by a backtick, the LaTeX expression, then a backtick immediately followed by a closing dollar sign. Never use old single-dollar inline delimiters.
 
-```math
-J^2-(J'/r)^2=(Ae^{ru}+Be^{-ru})^2-(Ae^{ru}-Be^{-ru})^2=4AB.
+```markdown
+The coordinate is $`u=\log(x/c)`$.
+The profile is $`S=\mathrm{sech}(ru)`$, with $`r,c>0`$.
 ```
 
-Use ordinary prose between derivation steps, with one display block per mathematical step where that improves clarity. All code fences must start in column 1.
+This is GitHub's inline-math alternative. Do not place spaces between the dollar signs and their adjacent backticks. Inline mathematical formulas inside prose, lists, and tables must follow the same rule. Use ordinary Markdown code spans for filenames and commands.
 
-**Scope note:** this is a Markdown rendering convention, not a change to the definitions of $f$, $S$, $W$, $r$, $c$, or $u=\log(x/c)$.
+## Displayed mathematics
+
+Use unindented fenced code blocks marked `math`, with **exactly one blank line** above and below. The equation inside each block occupies **exactly one source line**; split multi-step proofs into successive blocks, retaining every step.
+
+```math
+J^2-(J_u/r)^2=(Ae^{ru}+Be^{-ru})^2-(Ae^{ru}-Be^{-ru})^2=4AB.
+```
+
+Never use double-dollar displays or indent fences. If alignment is needed, keep the complete `\begin{aligned}...\end{aligned}` expression on a single source line. No `\boxed` commands.
+
+## Function names and mathematical rigor
+
+Prefer `\mathrm{...}` for function names not reliably recognized by GitHub. Explicitly use `\mathrm{sech}`, `\mathrm{arctanh}`, `\mathrm{gd}`, `\mathrm{sl}`, `\mathrm{disc}`, `\mathrm{dn}`, and `\mathrm{cn}`, not `\operatorname{...}`.
+
+A format revision must not remove algebraic proof steps, change the meaning of a function, omit parameter restrictions, or conflate the original coordinate and the logarithmic one. Canonical definitions remain `u=ln(x/c)` and `r,c>0`, with separate expressions for `x/c` and `ru`.
+
+## Run the checker
+
+```bash
+python "Part I - Algebra And Geometry/check_markdown_style.py"
+```
+
+The checker rejects old bare-dollar inline formulas, invalid math-fence spacing, indented fences and disallowed LaTeX commands in **maintained Part I Markdown**. Historical Gemini files are excluded deliberately. The same rules apply to other maintained documentation as it is revised.
+
+**The source notation rule is about Markdown files.** Equations already rendered visually do not need to contain literal delimiter characters.

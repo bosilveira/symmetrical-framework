@@ -1,8 +1,8 @@
 # Part I — Algebra and Geometry
 
-**Revised edition · 20 November 2026**
+**Revised edition · 21 November 2026**
 
-All current Part I documents follow the repository [Markdown math conventions](../MARKDOWN_STYLE.md); historical archive files are retained unchanged.
+All maintained Part I documents follow the repository [GitHub mathematical Markdown conventions](../MARKDOWN_STYLE.md), including the required dollar-backtick inline syntax. Remaining historical conversational archives are left untouched.
 
 This part develops the two-parameter kernel
 
@@ -16,7 +16,7 @@ from its exact logarithmic parametrization to its differentiated equations and g
 
 1. [Chapter 1: Architectural identities](01-architectural-identities/01-00-summary.md) — the exact `sech` chart, primitives, logarithmic density, CDF, Mellin, Schwarzian and [auxiliary Cauchy–Euler linearization](01-architectural-identities/01-11-auxiliary-linearization.md); detailed [chapter index](01-architectural-identities/00-list.md).
 2. [Chapter 2: Foundational symmetries](02-foundational-symmetries/02-00-summary.md) — inversion and log-affine closure, hyperbolic products, partial and global CDF laws, Darboux partners, [exact weighted overlaps](02-foundational-symmetries/02-13-weighted-overlap.md), and the [Fisher hyperbolic metric](02-foundational-symmetries/02-14-fisher-information.md).
-3. [Chapter 3: Differential structure](03-differential-structure/03-00-summary.md) — Riccati, the first-order energy-zero constraint, the **second-order** cubic Master, linear reciprocal, and radial Liouville geometry.
+3. [Chapter 3: Differential structure](03-differential-structure/03-00-summary.md) — rigorous separation of the first-order energy constraint and **second-order** Master, full finite-norm proof, [elliptic energy families](03-differential-structure/03-09-jacobi-elliptic-solutions.md), [Ermakov–Pinney](03-differential-structure/03-10-ermakov-pinney.md), [4D Kelvin symmetry](03-differential-structure/03-11-radial-criticality.md), and [stationary KdV](03-differential-structure/03-12-miura-kdv.md).
 4. [Chapter 4: Geometric properties](04-geometric-properties/04-00-summary.md) — exact maxima/inflections, graph length, algebraic curve genus, inversion of the graph, surfaces of revolution, and the envelope condition.
 
 Each chapter has a numbered `*-99-notes.md` containing the local verification and correction register. [Cross-chapter corrections](PART_I_REVISION_NOTES.md) summarize the material changes. A reproducibility script is available as [verify_part_i.py](verify_part_i.py).
@@ -25,22 +25,22 @@ Each chapter has a numbered `*-99-notes.md` containing the local verification an
 
 | Symbol | Meaning |
 |---|---|
-| $x,c,r>0$ | positive coordinate, scale and resolution |
-| $u=\log(x/c)$ | canonical logarithmic coordinate; **not** $x/c$ or $r\log(x/c)$ |
-| $\theta=ru$ | hyperbolic argument |
-| $S=2xf=\mathrm{sech}\theta$ | positive symmetric profile |
-| $W=\tanh\theta$ | odd phase / Riccati coordinate |
-| $D=x\partial_x=\partial_u$ | at fixed $c$ |
-| $\rho=2rf/\pi$ | normalized density relative to $dx$ |
-| $p(u)=rS/\pi$ | pushforward density relative to $du$ |
-| $y=2xf_\mu$, $f_\mu=f/\sqrt\mu$ | normalized Master amplitude for $\mu>0$ |
-| $\varepsilon=y_u^2-r^2y^2+\mu r^2y^4$ | conserved nonlinear energy |
+| $`x,c,r>0`$ | positive coordinate, scale and resolution |
+| $`u=\log(x/c)`$ | canonical logarithmic coordinate; **not** $`x/c`$ or $`r\log(x/c)`$ |
+| $`\theta=ru`$ | hyperbolic argument |
+| $`S=2xf=\mathrm{sech}\theta`$ | positive symmetric profile |
+| $`W=\tanh\theta`$ | odd phase / Riccati coordinate |
+| $`D=x\partial_x=\partial_u`$ | at fixed $`c`$ |
+| $`\rho=2rf/\pi`$ | normalized density relative to $`dx`$ |
+| $`p(u)=rS/\pi`$ | pushforward density relative to $`du`$ |
+| $`y=2xf_\mu`$, $`f_\mu=f/\sqrt\mu`$ | normalized Master amplitude for $`\mu>0`$ |
+| $`\varepsilon=y_u^2-r^2y^2+\mu r^2y^4`$ | conserved nonlinear energy |
 
-A prime on $f$ is $d/dx$; subscripts $u$ denote the other derivative. The $c$ parameter must remain explicit in coordinate transformations even when an autonomous ODE no longer contains it.
+A prime on $`f`$ is $`d/dx`$; subscripts $`u`$ denote the other derivative. The $`c`$ parameter must remain explicit in coordinate transformations even when an autonomous ODE no longer contains it.
 
 ## Logical architecture
 
-The kernel $f$ *implies* the circle system and the two equations below, but those equations alone do not all determine $f$:
+The kernel $`f`$ *implies* the circle system and the two equations below, but those equations alone do not all determine $`f`$:
 
 ```math
 \underbrace{(xf'+f)^2-r^2f^2(1-4x^2f^2)=0}_{\text{first-order separatrix constraint}}
@@ -50,7 +50,7 @@ The kernel $f$ *implies* the circle system and the two equations below, but thos
 \underbrace{x^2f''+3xf'+(1-r^2)f+8r^2x^2f^3=0}_{\text{second-order Master, }\mu=1}.
 ```
 
-For $\mu>0$ the corresponding cubic coefficient is $8\mu r^2$ for $f_\mu$. The nonlinear Master has periodic, equilibrium and zero solutions besides its localized `sech` solution. The rigorous finite-weighted-norm classification adds a **global** hypothesis; the first-order constraint without the second-order equation admits extraneous solutions.
+For $`\mu>0`$ the corresponding cubic coefficient is $`8\mu r^2`$ for $`f_\mu`$. The nonlinear Master has periodic, equilibrium and zero solutions besides its localized `sech` solution. The rigorous finite-weighted-norm classification adds a **global** hypothesis; the first-order constraint without the second-order equation admits extraneous solutions.
 
 ## Evidence / scope protocol
 
@@ -66,3 +66,5 @@ The Chapter 1 Gemini draft was mathematically reviewed, integrated and removed f
 Run `python "Part I - Algebra And Geometry/verify_part_i.py"` from the repository root after installing `sympy` and `mpmath`. This checks representative algebraic identities, correct derivatives, the revised discriminant/genus computation, and numerical integral values. A passing script is evidence for these **specific checks**, not a formal proof of every result in the chapter.
 
 For the extended Chapter 2 results, run `python "Part I - Algebra And Geometry/verify_chapter2.py"`. This checks representative symbolic identities, power-transform closure, two-scale overlaps, the Fourier spectrum, Fisher integrals, CDF group laws and the maintained chapter's Markdown formatting.
+
+For the extended Chapter 3, run `python "Part I - Algebra And Geometry/verify_chapter3.py"` (SymPy and mpmath). For the GitHub rendering rules, run `python "Part I - Algebra And Geometry/check_markdown_style.py"` (standard library only). The Markdown checker enforces the dollar-backtick inline delimiters and one-line, unindented display blocks in the maintained Part I files.
