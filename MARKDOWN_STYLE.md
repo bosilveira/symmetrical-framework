@@ -1,6 +1,6 @@
 # Mathematical Markdown conventions for GitHub
 
-Apply these rules to maintained Symmetrical Framework documentation. The maintained reference is enforced by a repository checker. Historical Gemini drafts are excluded from compulsory reformatting.
+Apply these rules to actively maintained Symmetrical Framework documentation. The maintained `reference/` tree and the new `mathematics/` tree have **separate read-only checkers**. Historical sources in `research/` and `archive/` are not subject to compulsory bulk reformatting; preserve their provenance.
 
 ## Inline mathematics: mandatory dollar-backtick syntax
 
@@ -29,12 +29,17 @@ Prefer `\mathrm{...}` for function names not reliably recognized by GitHub. Expl
 
 A format revision must not remove algebraic proof steps, change the meaning of a function, omit parameter restrictions, or conflate the original coordinate and the logarithmic one. Canonical definitions remain `u=ln(x/c)` and `r,c>0`, with separate expressions for `x/c` and `ru`.
 
-## Run the checker
+## Run both maintained-tree checkers
+
+From the repository root:
 
 ```bash
-python "reference/algebra-geometry/check_markdown_style.py"
+python reference/algebra-geometry/check_markdown_style.py
+python mathematics/_standards/check_tree.py
 ```
 
-The checker rejects old bare-dollar inline formulas, invalid math-fence spacing, indented fences and disallowed LaTeX commands in **maintained reference Markdown**. Historical Gemini files are excluded deliberately. The same rules apply to other maintained documentation as it is revised.
+The first checker scans `reference/` Markdown (excluding historical Gemini drafts); the second checks `mathematics/` Markdown **and local file links**. Both enforce one-line display-math fences and the dollar-backtick syntax where math delimiters appear. The mathematics checker also rejects `\\operatorname`, `\\boxed`, or dollar signs inside display-math bodies. Root files (`README.md`, `AGENTS.md`, `REFERENCE_INDEX.md` and this guide) are maintained but **not currently covered by these automatic scans**. Review them explicitly when editing.
+
+These are syntax/link checks, **not mathematical theorem verifiers**. A checker cannot reliably infer whether every ordinary code span should instead be a mathematical expression: authors must review that distinction. Keep unreviewed historical sources unchanged unless an individual edit is justified.
 
 **The source notation rule is about Markdown files.** Equations already rendered visually do not need to contain literal delimiter characters.
