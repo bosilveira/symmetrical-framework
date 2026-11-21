@@ -1,6 +1,6 @@
 # Mathematical Markdown conventions for GitHub
 
-Apply these rules to actively maintained Symmetrical Framework documentation. The maintained `reference/` tree and the new `mathematics/` tree have **separate read-only checkers**. Historical sources in `research/` and `archive/` are not subject to compulsory bulk reformatting; preserve their provenance.
+Apply these rules to actively maintained Symmetrical Framework documentation. The maintained `reference/` tree and the new `mathematics/` tree (including top-level Markdown entry points) have **separate read-only checkers**. Historical sources in `research/` and `archive/` are not subject to compulsory bulk reformatting; preserve their provenance.
 
 ## Inline mathematics: mandatory dollar-backtick syntax
 
@@ -38,7 +38,7 @@ python reference/algebra-geometry/check_markdown_style.py
 python mathematics/_standards/check_tree.py
 ```
 
-The first checker scans `reference/` Markdown (excluding historical Gemini drafts); the second checks `mathematics/` Markdown **and local file links**. Both enforce one-line display-math fences and the dollar-backtick syntax where math delimiters appear. The mathematics checker also rejects `\operatorname`, `\boxed`, or dollar signs inside display-math bodies. Root files (`README.md`, `AGENTS.md`, `REFERENCE_INDEX.md` and this guide) are maintained but **not currently covered by these automatic scans**. Review them explicitly when editing.
+The first checker scans `reference/` Markdown (excluding historical Gemini drafts); the second checks `mathematics/` and top-level Markdown documents **and local file links**. Both enforce one-line display-math fences and the dollar-backtick syntax where math delimiters appear. The mathematics checker also rejects `\operatorname`, `\boxed`, or dollar signs inside display-math bodies. Root Markdown files (`README.md`, `AGENTS.md`, `REFERENCE_INDEX.md`, `MIGRATION.md` and this guide) are **included in the second scan**. Review mathematical meanings separately: syntax and link checks cannot certify proofs.
 
 These are syntax/link checks, **not mathematical theorem verifiers**. A checker cannot reliably infer whether every ordinary code span should instead be a mathematical expression: authors must review that distinction. Keep unreviewed historical sources unchanged unless an individual edit is justified.
 
