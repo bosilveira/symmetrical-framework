@@ -1,0 +1,1227 @@
+{
+  "schema_version": 1,
+  "source_registry": "registry.json",
+  "purpose": "Coordinate/parameter/field transform contracts; these are not automatically equivalences of differential equations or geometric objects.",
+  "contracts": [
+    {
+      "map_id": "SF-M-001",
+      "source": {
+        "object_id": "SF-O-001",
+        "independent_variables": [
+          "x"
+        ],
+        "dependent_variables": [
+          "f(x;r,c)"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-001",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "f(c*exp(u);r,c)"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "x",
+          "to": "u",
+          "forward": "u=log(x/c)",
+          "inverse": "x=c*exp(u)",
+          "jacobian": "du/dx=1/x; dx/du=x",
+          "condition": "x,c>0; c fixed"
+        }
+      ],
+      "dependent_map": {
+        "forward": "F(u)=f(c*exp(u);r,c)",
+        "inverse": "f(x)=F(log(x/c))"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-001",
+            "SF-P-002"
+          ],
+          "to": [
+            "SF-P-004"
+          ],
+          "formula": "u=log(x/c); x=c exp(u)",
+          "disposition": "preserved_or_derived"
+        },
+        {
+          "from": [
+            "SF-P-003"
+          ],
+          "to": [
+            "SF-P-003"
+          ],
+          "formula": "r is held fixed",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "bijective when c is retained",
+        "equations": "coordinate-conjugacy with derivative D=x*d/dx",
+        "lost": "c is lost if only u is recorded without its defining scale"
+      },
+      "differential_rule": "dx=x du; (d/dx)=(1/x)(d/du); D=x*d/dx=d/du",
+      "assumptions": [
+        "x,c,r>0"
+      ],
+      "verification": "source-and-direct-chain-rule"
+    },
+    {
+      "map_id": "SF-M-002",
+      "source": {
+        "object_id": "SF-O-002",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "f"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-003",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "S",
+          "W"
+        ]
+      },
+      "coordinate_map": [],
+      "dependent_map": {
+        "forward": "S=2*x*f; W=tanh(r*u); S=sech(r*u)",
+        "inverse": "u=atanh(W)/r; x=c exp(u); f=S/(2x) (r,c required)"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-001",
+            "SF-P-002",
+            "SF-P-003"
+          ],
+          "to": [
+            "SF-P-004",
+            "SF-P-006"
+          ],
+          "formula": "u=log(x/c); theta=r*u",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "injective for the pair (S,W) with r,c fixed",
+        "equations": "the circle S^2+W^2=1 alone has many solutions",
+        "lost": "S alone loses sign of W (branch)"
+      },
+      "differential_rule": "S_u=-r S W; W_u=r S^2; dW/du=r(1-W^2)",
+      "assumptions": [
+        "x,c,r>0; S>0; -1<W<1"
+      ],
+      "verification": "source-and-hyperbolic-algebra"
+    },
+    {
+      "map_id": "SF-M-003",
+      "source": {
+        "object_id": "SF-O-005",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J0"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-008",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "q0"
+        ]
+      },
+      "coordinate_map": [],
+      "dependent_map": {
+        "forward": "q0=J0_u/J0",
+        "inverse": "J0=lambda*exp(integral(q0 du)), lambda>0 remains arbitrary"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-008",
+            "SF-P-009"
+          ],
+          "to": [
+            "SF-P-037"
+          ],
+          "formula": "q0 determined by ratio B/A, not common amplitude",
+          "disposition": "preserved_or_derived"
+        },
+        {
+          "from": [
+            "SF-P-011"
+          ],
+          "to": [],
+          "formula": "mu0=4AB rescales by lambda^2 under J0->lambda J0",
+          "disposition": "forgotten",
+          "assumptions": "amplitude is not preserved"
+        }
+      ],
+      "invertibility": {
+        "functions": "projectivization, noninjective under J0->lambda J0",
+        "equations": "q0_u+q0^2=r^2; reconstruction needs integration constant",
+        "lost": "overall amplitude and mu0 unless additional norm specified"
+      },
+      "differential_rule": "q0_u=(J0_uu/J0)-(J0_u/J0)^2; q0_u+q0^2=r^2",
+      "assumptions": [
+        "J0>0, r>0, A,B>0"
+      ],
+      "verification": "source-and-differentiation"
+    },
+    {
+      "map_id": "SF-M-004",
+      "source": {
+        "object_id": "SF-O-006",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "A",
+          "B",
+          "C",
+          "G"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-007",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J_G"
+        ]
+      },
+      "coordinate_map": [],
+      "dependent_map": {
+        "forward": "J_G=h^T G h=A exp(r u)+2C+B exp(-r u)",
+        "inverse": "P=J_G,uu/r^2; D=J_G,u/r; A=(P+D)exp(-r u)/2; B=(P-D)exp(r u)/2; C=(J_G-P)/2"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-008",
+            "SF-P-009",
+            "SF-P-010"
+          ],
+          "to": [
+            "SF-P-012"
+          ],
+          "formula": "Delta_G=AB-C^2; J_G known with its two derivatives at a fixed u recovers coefficients",
+          "disposition": "preserved_or_derived"
+        },
+        {
+          "from": [
+            "SF-P-003"
+          ],
+          "to": [
+            "SF-P-003"
+          ],
+          "formula": "r fixed in jet recovery",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "injective at fixed known r,u via 2-jet",
+        "equations": "J_G,uuu=r^2 J_G,u alone omits the three integration constants",
+        "lost": "none at full-function level; A,B,C forgotten if only the differential equation is retained"
+      },
+      "differential_rule": "J_G,uu=r^2(J_G-2C); J_G,uuu=r^2 J_G,u; J_G,u^2=r^2(J_G^2-4C J_G-4 Delta_G)",
+      "assumptions": [
+        "r>0; known u and c; positive G when positive square root is later used"
+      ],
+      "verification": "source-and-SymPy"
+    },
+    {
+      "map_id": "SF-M-005",
+      "source": {
+        "object_id": "SF-O-007",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J_G"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-013",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "Y"
+        ]
+      },
+      "coordinate_map": [],
+      "dependent_map": {
+        "forward": "Y=sqrt(J_G) taking Y>0",
+        "inverse": "J_G=Y^2"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-012"
+          ],
+          "to": [
+            "SF-P-012"
+          ],
+          "formula": "Pinney coefficient r^2 Delta_G",
+          "disposition": "preserved_or_derived"
+        },
+        {
+          "from": [
+            "SF-P-010",
+            "SF-P-003"
+          ],
+          "to": [
+            "SF-P-024"
+          ],
+          "formula": "E_Y=-r^2*C; E_Y is a first integral, not the source coefficient C",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "bijective between positive J_G and positive Y",
+        "equations": "Pinney coefficient Delta_G alone does not determine C or A,B; retain E_Y and initial data",
+        "lost": "positive branch chosen; equations without initial conditions forget individual G coefficients"
+      },
+      "differential_rule": "Y_uu=r^2 Y/4+r^2 Delta_G Y^(-3); E_Y=Y_u^2-r^2 Y^2/4+r^2 Delta_G Y^(-2)=-r^2 C",
+      "assumptions": [
+        "r>0, J_G>0, Delta_G=AB-C^2; Y positive"
+      ],
+      "verification": "source-and-SymPy"
+    },
+    {
+      "map_id": "SF-M-006",
+      "source": {
+        "object_id": "SF-O-007",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J_G"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-014",
+        "independent_variables": [
+          "s"
+        ],
+        "dependent_variables": [
+          "F"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "u",
+          "to": "s",
+          "forward": "s=r*(u-u0)",
+          "inverse": "u=u0+s/r",
+          "jacobian": "ds/du=r",
+          "condition": "u0=log(B/A)/(2r)"
+        }
+      ],
+      "dependent_map": {
+        "forward": "F=sqrt(mu0)/J_G=1/(cosh(s)+chi)",
+        "inverse": "J_G=sqrt(mu0)/F(s); u=u0+s/r; reconstruct A,B,C from mu0,u0,chi"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-008",
+            "SF-P-009"
+          ],
+          "to": [
+            "SF-P-011",
+            "SF-P-034",
+            "SF-P-033"
+          ],
+          "formula": "mu0=4AB; u0=log(B/A)/(2r); c_eff=c exp(u0)",
+          "disposition": "preserved_or_derived"
+        },
+        {
+          "from": [
+            "SF-P-010",
+            "SF-P-011"
+          ],
+          "to": [
+            "SF-P-032"
+          ],
+          "formula": "chi=C/sqrt(AB)",
+          "disposition": "preserved_or_derived"
+        },
+        {
+          "from": [
+            "SF-P-012",
+            "SF-P-011",
+            "SF-P-032"
+          ],
+          "to": [
+            "SF-P-013"
+          ],
+          "formula": "mu_det=mu0*(1-chi^2)",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "normalization is not injective unless mu0 and u0 are retained",
+        "equations": "norm-angle ODE depends on chi, not the full A,B,C",
+        "lost": "common amplitude scale and absolute center in F(s) alone"
+      },
+      "differential_rule": "d/du=r*d/ds; F_ss=F-3chi F^2-2(1-chi^2)F^3",
+      "assumptions": [
+        "A,B>0; |chi|<1 for G>0; c,r>0"
+      ],
+      "verification": "source-section-27.6"
+    },
+    {
+      "map_id": "SF-M-007",
+      "source": {
+        "object_id": "SF-O-010",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "y"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-012",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J_M"
+        ]
+      },
+      "coordinate_map": [],
+      "dependent_map": {
+        "forward": "J_M=1/y",
+        "inverse": "y=1/J_M on the same nonzero interval"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-014",
+            "SF-P-015"
+          ],
+          "to": [
+            "SF-P-014",
+            "SF-P-015"
+          ],
+          "formula": "mu and epsilon remain fixed; epsilon appears as new cubic defect",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "involution for nonvanishing functions",
+        "equations": "reciprocal equation requires the first-integral constraint to select the original energy",
+        "lost": "cannot extend through zeros of y as a finite real reciprocal"
+      },
+      "differential_rule": "J_M,u=-y_u/y^2; J_M,uu=r^2 J_M+2epsilon J_M^3; J_M,u^2=r^2 J_M^2-mu r^2+epsilon J_M^4",
+      "assumptions": [
+        "r,mu>0; y C^2 and nonzero on interval"
+      ],
+      "verification": "source-and-SymPy"
+    },
+    {
+      "map_id": "SF-M-008",
+      "source": {
+        "object_id": "SF-O-012",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J_M"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-005",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J0"
+        ]
+      },
+      "coordinate_map": [],
+      "dependent_map": {
+        "forward": "if epsilon=0, J_M,uu=r^2 J_M and J_M^2-J_M,u^2/r^2=mu",
+        "inverse": "y=1/J0 with mu=4AB; both ODE and quadratic constraint mandatory"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-015"
+          ],
+          "to": [
+            "SF-P-015"
+          ],
+          "formula": "specialize epsilon to zero, not generic",
+          "disposition": "preserved_or_derived"
+        },
+        {
+          "from": [
+            "SF-P-014"
+          ],
+          "to": [
+            "SF-P-011"
+          ],
+          "formula": "mu=mu0=4AB only on unshifted reciprocal branch",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "identity on selected branch and norm",
+        "equations": "linear ODE alone has free integration constants; quadratic condition fixes their product",
+        "lost": "generic nonzero-energy trajectories are excluded"
+      },
+      "differential_rule": "J_M,uu=r^2 J_M; J_M^2-(J_M,u/r)^2=mu",
+      "assumptions": [
+        "epsilon=0; mu>0; J_M>0 to obtain A,B>0"
+      ],
+      "verification": "source-and-first-integral"
+    },
+    {
+      "map_id": "SF-M-009",
+      "source": {
+        "object_id": "SF-O-005",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J0"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-011",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "y"
+        ]
+      },
+      "coordinate_map": [],
+      "dependent_map": {
+        "forward": "y=1/J0; u0=log(B/A)/(2r)",
+        "inverse": "J0=1/y; A=(sqrt(mu)/2)exp(-r u0), B=(sqrt(mu)/2)exp(r u0)"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-011"
+          ],
+          "to": [
+            "SF-P-014"
+          ],
+          "formula": "mu=mu0=4AB when C=0",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "one-to-one if mu and center u0 are recorded",
+        "equations": "zero-energy separatrix, not arbitrary Master orbit",
+        "lost": "if only shape sech is retained, amplitude and center are not fixed"
+      },
+      "differential_rule": "y=sech(r(u-u0))/sqrt(mu); epsilon=0; x0=c exp(u0)",
+      "assumptions": [
+        "A,B>0; C=0; mu=4AB; r,c>0"
+      ],
+      "verification": "source-and-direct-ODE"
+    },
+    {
+      "map_id": "SF-M-010",
+      "source": {
+        "object_id": "SF-O-010",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "y",
+          "y_u"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-016",
+        "independent_variables": [
+          "theta"
+        ],
+        "dependent_variables": [
+          "z",
+          "p"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "u",
+          "to": "theta",
+          "forward": "theta=r*u",
+          "inverse": "u=theta/r",
+          "jacobian": "dtheta/du=r",
+          "condition": "r>0"
+        }
+      ],
+      "dependent_map": {
+        "forward": "z=sqrt(mu)*y; p=dz/dtheta=(sqrt(mu)/r)*y_u",
+        "inverse": "y=z/sqrt(mu); y_u=(r/sqrt(mu))*p"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-015",
+            "SF-P-014",
+            "SF-P-003"
+          ],
+          "to": [
+            "SF-P-016"
+          ],
+          "formula": "e=mu*epsilon/r^2",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "invertible on phase variables if r,mu retained",
+        "equations": "energy curve alone omits the choice of time differential and real branch",
+        "lost": "the algebraic curve without theta and the differential forgets time parametrization and phase/orbit"
+      },
+      "differential_rule": "dtheta=dz/p on non-turning charts; p^2=e+z^2-z^4",
+      "assumptions": [
+        "r,mu>0; real C^2 solutions; p=0 turning points require curve-based interpretation"
+      ],
+      "verification": "source-and-SymPy"
+    },
+    {
+      "map_id": "SF-M-011",
+      "source": {
+        "object_id": "SF-O-016",
+        "independent_variables": [
+          "z"
+        ],
+        "dependent_variables": [
+          "p"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-017",
+        "independent_variables": [
+          "X"
+        ],
+        "dependent_variables": [
+          "Y"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "z",
+          "to": "X",
+          "forward": "X=-z^2",
+          "inverse": "z=+/-sqrt(-X) after choosing branch",
+          "jacobian": "dX/dz=-2z",
+          "condition": "z may be complex; inverse branched at z=0"
+        }
+      ],
+      "dependent_map": {
+        "forward": "X=-z^2; Y=-2z*p",
+        "inverse": "z=+/-sqrt(-X); p=-Y/(2z) away from z=0"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-016"
+          ],
+          "to": [
+            "SF-P-016"
+          ],
+          "formula": "same energy e",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "degree two map of generic smooth genus-one curves after choosing origins",
+        "equations": "isogeny after origins; not an isomorphism, marked 2-torsion branch must be tracked",
+        "lost": "preimage sign/marking; map alone does not identify arbitrary external periods"
+      },
+      "differential_rule": "pullback(dX/Y)=dz/p=dtheta; at z=0 interpret equality by regular continuation on the smooth curves",
+      "assumptions": [
+        "e not in {0,-1/4}; source and target smooth projective normalizations; origins chosen for isogeny language"
+      ],
+      "verification": "source-and-SymPy-differential"
+    },
+    {
+      "map_id": "SF-M-012",
+      "source": {
+        "object_id": "SF-O-010",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "z"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-018",
+        "independent_variables": [
+          "u",
+          "v"
+        ],
+        "dependent_variables": [
+          "I",
+          "II_delta"
+        ]
+      },
+      "coordinate_map": [],
+      "dependent_map": {
+        "forward": "I=z(u)^(-2)*(du^2+dv^2); II_delta=r*Re(exp(i delta)*(du+i dv)^2)",
+        "inverse": "I alone recovers |z| on chosen positive chart, not entire ambient immersion"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-016",
+            "SF-P-003"
+          ],
+          "to": [
+            "SF-P-027"
+          ],
+          "formula": "kappa=-r^2*e",
+          "disposition": "preserved_or_derived"
+        },
+        {
+          "from": [],
+          "to": [
+            "SF-P-025",
+            "SF-P-026"
+          ],
+          "formula": "introduce independent surface coordinate v and chosen Hopf phase delta",
+          "disposition": "preserved_or_derived",
+          "assumptions": "additional independent construction"
+        }
+      ],
+      "invertibility": {
+        "functions": "nonunique surface construction due to v and delta choices",
+        "equations": "local Gauss-Codazzi only; no global surface classification",
+        "lost": "ambient embedding, global periods, completeness and pitch/closing data"
+      },
+      "differential_rule": "K_I=-r^2*(z^4+e); det(I^-1 II_delta)=-r^2*z^4; K_I-det=-r^2*e",
+      "assumptions": [
+        "z(u)>0; z solves normalized cubic; chosen delta and local simply connected surface patch"
+      ],
+      "verification": "source-section-F.5"
+    },
+    {
+      "map_id": "SF-M-013",
+      "source": {
+        "object_id": "SF-O-010",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "y_m"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-019",
+        "independent_variables": [
+          "zeta"
+        ],
+        "dependent_variables": [
+          "phi",
+          "L_m"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "u",
+          "to": "zeta",
+          "forward": "zeta=r*(u-u0)/sqrt(2-m)",
+          "inverse": "u=u0+sqrt(2-m)*zeta/r",
+          "jacobian": "dzeta/du=r/sqrt(2-m)",
+          "condition": "dn profile; 0<m<1"
+        }
+      ],
+      "dependent_map": {
+        "forward": "L=-d_u^2+r^2-6mu r^2*y_m^2; L/(r^2/(2-m))=-d_zeta^2+6m sn(zeta|m)^2-(4+m)",
+        "inverse": "operator obtained only after choosing background y_m and base parameter m"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-003",
+            "SF-P-014",
+            "SF-P-019"
+          ],
+          "to": [
+            "SF-P-003",
+            "SF-P-019",
+            "SF-P-030"
+          ],
+          "formula": "n=2 (Lamé shape index), independent of intrinsic ell=3",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "linearized operator forgets nonlinear trajectory beyond chosen background",
+        "equations": "spectral genus two is not nonlinear energy-curve genus one",
+        "lost": "nonlinear phase-space initial data; spectral boundary conditions remain necessary"
+      },
+      "differential_rule": "delta y_uu=(r^2-6mu r^2*y_m^2)*delta y; d_u=(r/sqrt(2-m))*d_zeta",
+      "assumptions": [
+        "0<m<1; periodic dn profile fixed; spectral boundary data specified separately"
+      ],
+      "verification": "source-plus-algebraic-reduction"
+    },
+    {
+      "map_id": "SF-M-014",
+      "source": {
+        "object_id": "SF-O-006",
+        "independent_variables": [],
+        "dependent_variables": [
+          "A",
+          "B",
+          "C",
+          "G"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-020",
+        "independent_variables": [],
+        "dependent_variables": [
+          "tau_G"
+        ]
+      },
+      "coordinate_map": [],
+      "dependent_map": {
+        "forward": "tau_G=(C+i sqrt(AB-C^2))/A",
+        "inverse": "given tau_G in H and any A>0, C=A Re(tau_G), B=A |tau_G|^2"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-008",
+            "SF-P-009",
+            "SF-P-010"
+          ],
+          "to": [
+            "SF-P-021"
+          ],
+          "formula": "tau_G is a Gram shape, not automatically elliptic period tau_J",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "quotient by positive scalar multiples G->lambda G",
+        "equations": "shape coordinate alone does not specify determinant magnitude",
+        "lost": "positive overall scale A; recover only if A supplied"
+      },
+      "differential_rule": "under diagonal boost A->A exp(s),B->B exp(-s),C fixed: tau_G->exp(-s) tau_G",
+      "assumptions": [
+        "A>0,AB>C^2; no identification with Master elliptic periods"
+      ],
+      "verification": "source-and-direct-algebra"
+    },
+    {
+      "map_id": "SF-M-015",
+      "source": {
+        "object_id": "SF-O-022",
+        "independent_variables": [
+          "h"
+        ],
+        "dependent_variables": [
+          "rho",
+          "z_R"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-010",
+        "independent_variables": [
+          "theta"
+        ],
+        "dependent_variables": [
+          "Z",
+          "p"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "h",
+          "to": "theta",
+          "forward": "theta=sqrt(Lambda)*(h-h0)",
+          "inverse": "h=h0+theta/sqrt(Lambda)",
+          "jacobian": "dtheta/dh=sqrt(Lambda)",
+          "condition": "Lambda>0"
+        }
+      ],
+      "dependent_map": {
+        "forward": "z_R=1/rho; Z=z_R/sqrt(Lambda); Z_theta^2=e_R+Z^2-Z^4",
+        "inverse": "z_R=sqrt(Lambda) Z; rho=1/z_R; h=h0+theta/sqrt(Lambda)"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-035",
+            "SF-P-036"
+          ],
+          "to": [
+            "SF-P-016"
+          ],
+          "formula": "e_R=epsilon_R^2/Lambda^2; if compared to cubic Master set e=e_R and theta=r*u",
+          "disposition": "preserved_or_derived"
+        },
+        {
+          "from": [
+            "SF-P-003"
+          ],
+          "to": [
+            "SF-P-003"
+          ],
+          "formula": "r belongs to chosen Master rescaling, not physical Riemann height",
+          "disposition": "preserved_or_derived"
+        }
+      ],
+      "invertibility": {
+        "functions": "local normalized ODE match for Lambda>0 only",
+        "equations": "no equivalence between complete Riemann minimal surfaces and entire Master solution space",
+        "lost": "horizontal center a(h), period/flux/closing data and geometry"
+      },
+      "differential_rule": "z_R,h^2=epsilon_R^2+Lambda z_R^2-z_R^4; Z_theta^2=epsilon_R^2/Lambda^2+Z^2-Z^4",
+      "assumptions": [
+        "rho>0, Lambda>0, h on local circular foliation; independent Riemann geometric reconstruction"
+      ],
+      "verification": "source-and-direct-rescaling"
+    },
+    {
+      "map_id": "SF-M-016",
+      "source": {
+        "object_id": "SF-O-010",
+        "independent_variables": [
+          "u",
+          "x=c exp(u)"
+        ],
+        "dependent_variables": [
+          "y(u)",
+          "f(x)=y(u)/(2x)"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-010",
+        "independent_variables": [
+          "u_new=u/s_res",
+          "x_new=c exp(u_new)"
+        ],
+        "dependent_variables": [
+          "y_new(u_new)",
+          "f_new(x_new)"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "u",
+          "to": "u_new",
+          "forward": "u_new=u/s_res",
+          "inverse": "u=s_res*u_new",
+          "jacobian": "du_new/du=1/s_res",
+          "condition": "s_res>0"
+        },
+        {
+          "from": "x",
+          "to": "x_new",
+          "forward": "x_new=c*(x/c)^(1/s_res)",
+          "inverse": "x=c*(x_new/c)^s_res",
+          "jacobian": "dx_new/dx=x_new/(s_res*x)",
+          "condition": "x,c,s_res>0"
+        }
+      ],
+      "dependent_map": {
+        "forward": "r_new=s_res*r; mu_new=mu; y_new(u_new)=y(s_res*u_new); f_new(x_new)=(x/x_new)f(x)",
+        "inverse": "u=s_res*u_new; r=r_new/s_res; y(u)=y_new(u/s_res); f(x)=(x_new/x)f_new(x_new)"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-003",
+            "SF-P-053"
+          ],
+          "to": [
+            "SF-P-003"
+          ],
+          "formula": "r_new=s_res*r",
+          "disposition": "rescaled"
+        },
+        {
+          "from": [
+            "SF-P-015",
+            "SF-P-053"
+          ],
+          "to": [
+            "SF-P-015"
+          ],
+          "formula": "epsilon_new=s_res^2*epsilon",
+          "disposition": "rescaled"
+        },
+        {
+          "from": [
+            "SF-P-016"
+          ],
+          "to": [
+            "SF-P-016"
+          ],
+          "formula": "e_new=mu*epsilon_new/r_new^2=e",
+          "disposition": "preserved"
+        },
+        {
+          "from": [
+            "SF-P-014"
+          ],
+          "to": [
+            "SF-P-014"
+          ],
+          "formula": "mu_new=mu",
+          "disposition": "preserved"
+        },
+        {
+          "from": [
+            "SF-P-002"
+          ],
+          "to": [
+            "SF-P-002"
+          ],
+          "formula": "c is held fixed while x is nonlinear transported",
+          "disposition": "fixed"
+        }
+      ],
+      "invertibility": {
+        "functions": "bijection if s_res,r,c and the original variable chart are retained",
+        "equations": "cubic Master covariant; energy rescales quadratically and normalized dimensionless energy e stays fixed",
+        "lost": "discarding s_res or r would forget physical-resolution scaling; f dx changes by 1/s_res but rho dx is preserved for the selected normalized profile"
+      },
+      "differential_rule": "d/du_new=s_res*d/du; d^2/du_new^2=s_res^2*d^2/du^2; theta_new=r_new*u_new=theta; f_new dx_new=(1/s_res)*f dx; rho_new dx_new=rho dx",
+      "assumptions": [
+        "s_res>0, c,r,mu>0; y is C^2; for rho require selected positive normalized kernel"
+      ],
+      "verification": "source-weight-table-plus-algebra"
+    },
+    {
+      "map_id": "SF-M-017",
+      "source": {
+        "object_id": "SF-O-002",
+        "independent_variables": [
+          "x",
+          "c"
+        ],
+        "dependent_variables": [
+          "f(x;r,c)"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-002",
+        "independent_variables": [
+          "x_new",
+          "c_new"
+        ],
+        "dependent_variables": [
+          "f(x_new;r,c_new)"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "(x,c)",
+          "to": "(x_new,c_new)",
+          "forward": "(x_new,c_new)=(lambda*x,lambda*c)",
+          "inverse": "(x,c)=(x_new/lambda,c_new/lambda)",
+          "jacobian": "dx_new/dx=lambda; log(x_new/c_new)=log(x/c)",
+          "condition": "lambda>0"
+        }
+      ],
+      "dependent_map": {
+        "forward": "f(x_new;r,c_new)=lambda^(-1)*f(x;r,c)",
+        "inverse": "f(x;r,c)=lambda*f(x_new;r,c_new)"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-001",
+            "SF-P-002",
+            "SF-P-054"
+          ],
+          "to": [
+            "SF-P-001",
+            "SF-P-002"
+          ],
+          "formula": "x_new=lambda*x,c_new=lambda*c",
+          "disposition": "rescaled"
+        },
+        {
+          "from": [
+            "SF-P-003"
+          ],
+          "to": [
+            "SF-P-003"
+          ],
+          "formula": "r_new=r",
+          "disposition": "preserved"
+        },
+        {
+          "from": [
+            "SF-P-004",
+            "SF-P-006"
+          ],
+          "to": [
+            "SF-P-004",
+            "SF-P-006"
+          ],
+          "formula": "u_new=u,theta_new=theta",
+          "disposition": "preserved"
+        }
+      ],
+      "invertibility": {
+        "functions": "invertible global coordinate/scale covariance for lambda>0",
+        "equations": "kernel shape and normalized log-density invariant under simultaneous spatial dilation",
+        "lost": "x/c remains fixed but f has spatial density weight -1; do not confuse this operation with resolution transport SF-M-016"
+      },
+      "differential_rule": "dx_new=lambda dx; f_new dx_new=f dx; rho_new dx_new=rho dx",
+      "assumptions": [
+        "lambda>0; x,c,r>0"
+      ],
+      "verification": "source-35.1-plus-direct-factorization"
+    },
+    {
+      "map_id": "SF-M-018",
+      "source": {
+        "object_id": "SF-O-007",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J_G(u)"
+        ],
+        "parameters": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "target": {
+        "object_id": "SF-O-007",
+        "independent_variables": [
+          "u"
+        ],
+        "dependent_variables": [
+          "J_G_new(u)"
+        ],
+        "parameters": [
+          "A_new",
+          "B_new",
+          "C_new"
+        ]
+      },
+      "coordinate_map": [
+        {
+          "from": "u",
+          "to": "u_plus_delta",
+          "forward": "u_plus_delta=u+delta_u",
+          "inverse": "u=u_plus_delta-delta_u",
+          "jacobian": "du_plus_delta/du=1",
+          "condition": "r fixed; delta_u real"
+        }
+      ],
+      "dependent_map": {
+        "forward": "A_new=A exp(r delta_u), B_new=B exp(-r delta_u), C_new=C; J_G_new(u)=J_G(u+delta_u)",
+        "inverse": "A=A_new exp(-r delta_u), B=B_new exp(r delta_u), C=C_new; J_G(u)=J_G_new(u-delta_u)"
+      },
+      "parameter_rules": [
+        {
+          "from": [
+            "SF-P-008",
+            "SF-P-009",
+            "SF-P-055"
+          ],
+          "to": [
+            "SF-P-008",
+            "SF-P-009"
+          ],
+          "formula": "A_new=A exp(r delta_u), B_new=B exp(-r delta_u)",
+          "disposition": "rescaled"
+        },
+        {
+          "from": [
+            "SF-P-010"
+          ],
+          "to": [
+            "SF-P-010"
+          ],
+          "formula": "C_new=C",
+          "disposition": "preserved"
+        },
+        {
+          "from": [
+            "SF-P-011",
+            "SF-P-012",
+            "SF-P-013"
+          ],
+          "to": [
+            "SF-P-011",
+            "SF-P-012",
+            "SF-P-013"
+          ],
+          "formula": "mu0,Delta_G,mu_det preserved",
+          "disposition": "preserved"
+        },
+        {
+          "from": [
+            "SF-P-032"
+          ],
+          "to": [
+            "SF-P-032"
+          ],
+          "formula": "chi_new=chi",
+          "disposition": "preserved"
+        },
+        {
+          "from": [
+            "SF-P-021"
+          ],
+          "to": [
+            "SF-P-021"
+          ],
+          "formula": "tau_G_new=exp(-r delta_u)*tau_G",
+          "disposition": "transformed"
+        },
+        {
+          "from": [
+            "SF-P-034",
+            "SF-P-033"
+          ],
+          "to": [
+            "SF-P-034",
+            "SF-P-033"
+          ],
+          "formula": "u0_new=u0-delta_u; c_eff_new=c_eff exp(-delta_u)",
+          "disposition": "transformed"
+        }
+      ],
+      "invertibility": {
+        "functions": "one-parameter invertible action, inverse delta_u -> -delta_u",
+        "equations": "restricted diagonal-boost symmetry of Gram envelope, not arbitrary SL2 congruence",
+        "lost": "no loss if delta_u and c are recorded; if center data are dropped the coefficient ratio is not recoverable"
+      },
+      "differential_rule": "J_G_new(u)=J_G(u+delta_u); dJ_G_new/du=J_G,u(u+delta_u); tau_G_new=exp(-r delta_u)tau_G",
+      "assumptions": [
+        "A,B,r>0,AB>C^2,delta_u real,c fixed"
+      ],
+      "verification": "source-27.1-27.3-plus-algebra"
+    }
+  ]
+}

@@ -59,3 +59,7 @@ When adding or revising material, keep:
 Ask for the **exact branch and source** to be opened, beginning at `REFERENCE_INDEX.md` and `AGENTS.md`. Search by claim ID, canonical formula and related topic; read the full relevant theorem and its local proof-audit notes. Report checked identities, corrections, open questions, and only then extend the algebra. Retain $`r`$ and $`c`$ explicitly, and cite the commit SHA for reproducibility.
 
 A fresh chat will not automatically read these files. It needs access to GitHub through the available tools or a supplied file; the path and protocol provide the handoff, not a hidden shared memory.
+
+## Object and parameter dependency atlas
+
+Read the [Foundational Atlas](reference/atlas/README.md) when the question involves a transformation, reuse of a symbol, a change of normalization, or a dependency. Consult [the transformation review protocol](reference/atlas/REVIEW_PROTOCOL.md), [the scoped registry](reference/atlas/registry.json) and [the transformation contracts](reference/atlas/contracts.json). Every proposed identity must bind its variables and parameters; reusing the same letter is not a mathematical identification. The source document is `Symmetrical_Framework_Complete_Reference_2026-11-16_v2.md` (recorded with its SHA-256 in the Atlas); its complete bytes are not yet copied into this repository.

@@ -37,3 +37,14 @@ The old label `[C]` is **ambiguous across source families**: it has denoted *con
 New entries must record assumptions, energy, domains, source of proof, external references where applicable, and the precise converse restrictions. IDs should be retained when statements are corrected; superseded versions require explicit errata rather than deletion.
 
 **Verification note:** these selected links were checked against the relocated repository tree, but their inclusion is not a blanket assertion of independent peer review or uniformly successful execution of every verification script.
+
+## Coordinate, parameter and marked-differential checks
+
+| Catalog ID | Scope and exact identity | Derivation |
+|---|---|---|
+| **SF-R-017** | Simultaneous dilation $`(x,c)\mapsto(\lambda x,\lambda c)`$, $`\lambda>0`$, fixes $`u=\log(x/c)`$ and preserves the positive measure $`f\,dx`$ | [Scaling Actions §1](atlas/SCALING_ACTIONS.md) |
+| **SF-R-018** | Resolution transport $`u_{\mathrm{new}}=u/s`$, $`r_{\mathrm{new}}=sr`$, $`s>0`$ preserves $`e=\mu\varepsilon/r^2`$; $`\varepsilon_{\mathrm{new}}=s^2\varepsilon`$ | [Scaling Actions §2](atlas/SCALING_ACTIONS.md) |
+| **SF-R-019** | Restricted Gram boost preserves $`AB`$, $`AB-C^2`$, $`\chi=C/\sqrt{AB}`$ but transforms $`\tau_G`$ and the effective center | [Scaling Actions §3](atlas/SCALING_ACTIONS.md) |
+| **SF-R-020** | Generic smooth Master quartic's degree-two quotient preserves the **specified** time differential $`dX/Y=dz/p`$ while forgetting a preimage marking | [Atlas quotient contract SF-M-011](atlas/contracts.json) and [§3.9](algebra-geometry/03-differential-structure/03-09-jacobi-elliptic-solutions.md) |
+
+The first three follow from the displayed algebra and coordinate Jacobians, not a general theorem asserting every group action preserves every equation. The fourth is specific to the explicitly given quotient map, and is not a claim about arbitrary elliptic isogenies.

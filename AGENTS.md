@@ -35,3 +35,7 @@
 Follow [MARKDOWN_STYLE.md](MARKDOWN_STYLE.md). Inline mathematics requires the dollar-backtick form; display equations require unindented, single-line `math` fences with exactly one blank line above/below. Use `\mathrm{sech}`, `\mathrm{gd}`, etc., not unsupported `\operatorname{...}`, and avoid `\boxed`.
 
 **Access limitation:** placing this file in GitHub does not automatically expose it to every ChatGPT chat. A new conversation must explicitly open this repository via a GitHub connection or provided file.
+
+## Transformation and variable binding (mandatory)
+
+Before accepting or composing an arrow between mathematical objects, consult [reference/atlas/](reference/atlas/README.md). Bind every independent and dependent variable to its coordinate chart and scope; bind every constant to its stable parameter ID. Record the forward/inverse coordinate map, Jacobian, parameter rescaling or specialization, branch and energy conditions, changed differential operator/time form, invariant, and information lost. Use [contracts.json](reference/atlas/contracts.json) as the initial examples and [validate_registry.py](reference/atlas/validate_registry.py) to construct read-only downstream review queues. Do not treat an impact report as permission to rewrite dependent claims. In particular, do not conflate Gram `C` with scale `c`, `mu0` with `mu_det` or generic Master `mu`, intrinsic level `ell` with spectral shape index `ell_H`, or Jacobi nome with modular Fourier variable.

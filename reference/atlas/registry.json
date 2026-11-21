@@ -1,0 +1,1422 @@
+{
+  "schema_version": 2,
+  "registry_status": "source-extracted-not-independent-recertification",
+  "source": {
+    "filename": "Symmetrical_Framework_Complete_Reference_2026-11-16_v2.md",
+    "edition": "2026-11-16 v2",
+    "sha256": "a5b7c2bd0212e3bc402397380ea7aef22c49f54756ac237fe17249f147f0c414",
+    "bytes": 765869,
+    "location": "conversation attachment (not yet copied into repository)",
+    "note": "Indexes selected data from Atlas F, parameter section 0, sections 27-28, 35-36, and Appendix C; source E/K/C/O/X labels are not independent peer review."
+  },
+  "editorial_rules": {
+    "dependencies": "Only hard derivational dependencies; analogy and conditional correspondences are represented in maps and must not create downstream dependency edges.",
+    "review_state": "proof-in-reference means a local proof-bearing source exists; source-indexed means only extracted/located in v2, not independently recertified.",
+    "ids": "SF-O, SF-P and SF-M IDs are persistent; reuse them when revising values and create successors for incompatible definitions.",
+    "parameter_scope": "Symbols are typed by stable parameter IDs; the same printed symbol in another scope is not the same variable. Derived quantities and integration constants must not be conflated.",
+    "transformations": "Every SF-M contract has coordinate, dependent-variable, parameter, inverse, derivative/time, invariants and information-loss records in contracts.json. An unfilled field is marked not_audited, not guessed."
+  },
+  "parameters": [
+    {
+      "id": "SF-P-001",
+      "name": "spatial_coordinate",
+      "symbol": "x",
+      "scope": "kernel",
+      "domain": "real > 0",
+      "meaning": "original independent coordinate",
+      "parameter_kind": "coordinate"
+    },
+    {
+      "id": "SF-P-002",
+      "name": "reference_scale",
+      "symbol": "c",
+      "scope": "kernel",
+      "domain": "real > 0",
+      "meaning": "center/scale used in u=log(x/c)",
+      "warning": "not the Gram cross coefficient C or central charge",
+      "parameter_kind": "external_or_family_parameter"
+    },
+    {
+      "id": "SF-P-003",
+      "name": "resolution",
+      "symbol": "r",
+      "scope": "global",
+      "domain": "real > 0",
+      "meaning": "positive inverse-width/resolution",
+      "parameter_kind": "external_or_family_parameter"
+    },
+    {
+      "id": "SF-P-004",
+      "name": "log_coordinate",
+      "symbol": "u",
+      "scope": "kernel",
+      "domain": "real",
+      "meaning": "log(x/c)",
+      "warning": "never x/c",
+      "parameter_kind": "coordinate"
+    },
+    {
+      "id": "SF-P-005",
+      "name": "dimensionless_ratio",
+      "symbol": "xi",
+      "scope": "kernel",
+      "domain": "real > 0",
+      "meaning": "x/c",
+      "warning": "The symbol xi also denotes log(c/c_ref) in the Fisher chart of the source; use stable ID, or xi_x and xi_F in cross-chart formulas.",
+      "parameter_kind": "coordinate",
+      "aliases": [
+        "xi_x",
+        "kernel_ratio_xi"
+      ]
+    },
+    {
+      "id": "SF-P-006",
+      "name": "scaled_argument",
+      "symbol": "theta",
+      "scope": "kernel",
+      "domain": "real",
+      "meaning": "r*u",
+      "warning": "not an independent parameter",
+      "parameter_kind": "coordinate",
+      "aliases": [
+        "t (only if explicitly declared as ru in the source)"
+      ]
+    },
+    {
+      "id": "SF-P-007",
+      "name": "exponential_coordinate",
+      "symbol": "T",
+      "scope": "kernel",
+      "domain": "real > 0",
+      "meaning": "exp(theta) = (x/c)^r",
+      "parameter_kind": "coordinate",
+      "aliases": [
+        "exp(t) when t=ru"
+      ]
+    },
+    {
+      "id": "SF-P-008",
+      "name": "gram_A",
+      "symbol": "A",
+      "scope": "gram",
+      "domain": "real > 0 in positive Gram sector",
+      "meaning": "coefficient of exp(r*u) in J",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-009",
+      "name": "gram_B",
+      "symbol": "B",
+      "scope": "gram",
+      "domain": "real > 0 in positive Gram sector",
+      "meaning": "coefficient of exp(-r*u) in J",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-010",
+      "name": "gram_cross",
+      "symbol": "C",
+      "scope": "gram",
+      "domain": "real; |C| < sqrt(A*B) for positive definite G",
+      "meaning": "constant term of the Gram envelope is 2C",
+      "warning": "not the scale c",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-011",
+      "name": "unshifted_product",
+      "symbol": "mu0",
+      "scope": "linear_backbone",
+      "domain": "real > 0 for A,B > 0",
+      "meaning": "4*A*B",
+      "warning": "not SL2-invariant under unrestricted congruence",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-012",
+      "name": "gram_determinant",
+      "symbol": "Delta_G",
+      "scope": "gram",
+      "domain": "real > 0 for positive definite G",
+      "meaning": "A*B-C^2",
+      "warning": "different from AB",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-013",
+      "name": "gram_determinant_normalization",
+      "symbol": "mu_det",
+      "scope": "gram",
+      "domain": "real > 0 for positive definite G",
+      "meaning": "4*Delta_G",
+      "warning": "equals mu0 only if C=0",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-014",
+      "name": "master_coupling",
+      "symbol": "mu",
+      "scope": "master",
+      "domain": "real > 0",
+      "meaning": "coupling in y_uu=r^2*y-2*mu*r^2*y^3",
+      "warning": "identifies with mu0 only on C=0 reciprocal separatrix",
+      "parameter_kind": "external_or_family_parameter"
+    },
+    {
+      "id": "SF-P-015",
+      "name": "master_energy",
+      "symbol": "epsilon",
+      "scope": "master",
+      "domain": "real >= -r^2/(4*mu)",
+      "meaning": "y_u^2-r^2*y^2+mu*r^2*y^4",
+      "warning": "initial-data dependent",
+      "parameter_kind": "integration_constant_or_first_integral"
+    },
+    {
+      "id": "SF-P-016",
+      "name": "dimensionless_energy",
+      "symbol": "e",
+      "scope": "master",
+      "domain": "real >= -1/4",
+      "meaning": "mu*epsilon/r^2",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-017",
+      "name": "master_level",
+      "symbol": "ell",
+      "scope": "level_hierarchy",
+      "domain": "real > 1 (as defined for q_l>0)",
+      "meaning": "intrinsic Master level",
+      "warning": "distinct from Pöschl-Teller shape index",
+      "parameter_kind": "external_or_family_parameter"
+    },
+    {
+      "id": "SF-P-018",
+      "name": "level_exponent",
+      "symbol": "q_l",
+      "scope": "level_hierarchy",
+      "domain": "real > 0",
+      "meaning": "(ell-1)/2",
+      "warning": "not the modular nome q",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-019",
+      "name": "jacobi_parameter",
+      "symbol": "m_e",
+      "scope": "elliptic",
+      "domain": "usually 0 <= m_e < 1 for real dn branch",
+      "meaning": "Jacobi parameter k_e^2",
+      "warning": "some sources call the modulus k_e",
+      "parameter_kind": "external_or_family_parameter",
+      "aliases": [
+        "k_e^2"
+      ]
+    },
+    {
+      "id": "SF-P-020",
+      "name": "modular_nome",
+      "symbol": "q_mod",
+      "scope": "modular",
+      "domain": "complex, |q_mod|<1 when Im(tau)>0",
+      "meaning": "exp(2*pi*i*tau_mod), not the Jacobi nome q_J",
+      "warning": "not level exponent q_l",
+      "parameter_kind": "derived_or_coefficient",
+      "aliases": [
+        "q"
+      ]
+    },
+    {
+      "id": "SF-P-021",
+      "name": "gram_shape",
+      "symbol": "tau_G",
+      "scope": "gram",
+      "domain": "upper half-plane for G positive definite",
+      "meaning": "(C+i*sqrt(Delta_G))/A",
+      "warning": "Gram shape, not Master quartic period automatically",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-022",
+      "name": "mellin_variable",
+      "symbol": "s",
+      "scope": "integral_transform",
+      "domain": "complex in declared convergence strip",
+      "meaning": "complex Mellin exponent",
+      "warning": "independent of oscillator coordinate",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-023",
+      "name": "surface_height",
+      "symbol": "h",
+      "scope": "riemann_minimal",
+      "domain": "real on local surface chart",
+      "meaning": "vertical height for Riemann examples",
+      "warning": "not u=log(x/c)",
+      "parameter_kind": "coordinate"
+    },
+    {
+      "id": "SF-P-024",
+      "name": "pinney_energy",
+      "symbol": "E_Y",
+      "scope": "pinney",
+      "domain": "real from Gram envelope",
+      "meaning": "Y_u^2-(r^2/4)*Y^2+r^2*Delta_G*Y^(-2) = -r^2*C, derived from Gram cross coefficient",
+      "warning": "This is not the Gram cross coefficient C, nor the cubic Master energy epsilon",
+      "parameter_kind": "integration_constant_or_first_integral"
+    },
+    {
+      "id": "SF-P-025",
+      "name": "surface_second_coordinate",
+      "symbol": "v",
+      "scope": "surface",
+      "domain": "real local chart coordinate",
+      "meaning": "independent second coordinate in (u,v) local surface chart",
+      "parameter_kind": "coordinate"
+    },
+    {
+      "id": "SF-P-026",
+      "name": "surface_hopf_phase",
+      "symbol": "delta",
+      "scope": "surface",
+      "domain": "real modulo 2pi",
+      "meaning": "chosen phase in II_delta",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-027",
+      "name": "ambient_curvature",
+      "symbol": "kappa",
+      "scope": "surface",
+      "domain": "real, constrained by e",
+      "meaning": "kappa=-r^2*e for the prescribed Gauss-Codazzi ansatz",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-028",
+      "name": "jacobi_period_ratio",
+      "symbol": "tau_J",
+      "scope": "elliptic",
+      "domain": "upper half-plane for real 0<m_e<1",
+      "meaning": "i*K(1-m_e)/K(m_e) in parameter convention",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-029",
+      "name": "jacobi_nome",
+      "symbol": "q_J",
+      "scope": "elliptic",
+      "domain": "real 0<q_J<1 when tau_J is positive imaginary",
+      "meaning": "exp(i*pi*tau_J); not q_mod=exp(2*pi*i*tau)",
+      "parameter_kind": "external_or_family_parameter",
+      "aliases": [
+        "q_J",
+        "exp(i*pi*tau_J)"
+      ]
+    },
+    {
+      "id": "SF-P-030",
+      "name": "spectral_shape_index",
+      "symbol": "ell_H",
+      "scope": "spectral",
+      "domain": "nonnegative real or integer under shape-invariant ladder",
+      "meaning": "Pöschl–Teller/Lamé index independent from intrinsic level ell",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-031",
+      "name": "fisher_log_location",
+      "symbol": "xi",
+      "scope": "fisher",
+      "domain": "real",
+      "meaning": "log(c/c_ref), c_ref>0 fixed; independent chart name",
+      "warning": "symbol xi is reused for x/c in kernel scope; do not combine without renaming",
+      "parameter_kind": "coordinate",
+      "aliases": [
+        "xi_F",
+        "fisher_xi"
+      ]
+    },
+    {
+      "id": "SF-P-032",
+      "name": "gram_norm_angle",
+      "symbol": "chi",
+      "scope": "gram",
+      "domain": "real in (-1,1) for positive definite G",
+      "meaning": "C/sqrt(A*B)",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-033",
+      "name": "effective_center",
+      "symbol": "c_eff",
+      "scope": "linear_backbone",
+      "domain": "real >0",
+      "meaning": "c*exp(u0), u0=(log(B/A))/(2r)",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-034",
+      "name": "backbone_center_shift",
+      "symbol": "u0",
+      "scope": "linear_backbone",
+      "domain": "real",
+      "meaning": "log(B/A)/(2r)",
+      "parameter_kind": "integration_constant_or_first_integral"
+    },
+    {
+      "id": "SF-P-035",
+      "name": "riemann_energy_parameter",
+      "symbol": "epsilon_R",
+      "scope": "riemann_minimal",
+      "domain": "real",
+      "meaning": "integration constant for Riemann-circle radius reduction",
+      "parameter_kind": "integration_constant_or_first_integral"
+    },
+    {
+      "id": "SF-P-036",
+      "name": "riemann_quadratic_coefficient",
+      "symbol": "Lambda",
+      "scope": "riemann_minimal",
+      "domain": "real; >0 for direct normalized Duffing match",
+      "meaning": "coefficient in z_h^2=epsilon_R^2+Lambda*z^2-z^4",
+      "parameter_kind": "external_or_family_parameter"
+    },
+    {
+      "id": "SF-P-037",
+      "name": "pinney_q",
+      "symbol": "q_p",
+      "scope": "projective",
+      "domain": "real when J0>0",
+      "meaning": "J0_u/J0; not intrinsic exponent q_l",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-038",
+      "name": "log_phase_rapidity",
+      "symbol": "eta",
+      "scope": "linear_backbone",
+      "domain": "real",
+      "meaning": "(1/2)*log(A/B)=-r*u0",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-039",
+      "name": "elliptic_modulus",
+      "symbol": "k_e",
+      "scope": "elliptic",
+      "domain": "real 0<=k_e<1",
+      "meaning": "sqrt(m_e), separate from m_e parameter",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-040",
+      "name": "modular_tau",
+      "symbol": "tau_mod",
+      "scope": "modular",
+      "domain": "complex upper half-plane",
+      "meaning": "independent modular argument for q_mod",
+      "parameter_kind": "external_or_family_parameter"
+    },
+    {
+      "id": "SF-P-041",
+      "name": "periodization_scale",
+      "symbol": "a_period",
+      "scope": "periodization",
+      "domain": "positive real, locally specified",
+      "meaning": "scaling in periodized lattice sums; not Gram A",
+      "parameter_kind": "external_or_family_parameter"
+    },
+    {
+      "id": "SF-P-042",
+      "name": "fisher_reference_scale",
+      "symbol": "c_ref",
+      "scope": "fisher",
+      "domain": "positive real",
+      "meaning": "unit/reference in xi_F=log(c/c_ref)",
+      "parameter_kind": "derived_or_coefficient"
+    },
+    {
+      "id": "SF-P-043",
+      "name": "norm_angle_argument",
+      "symbol": "s",
+      "scope": "norm_angle",
+      "domain": "real",
+      "meaning": "s=r*(u-u0)",
+      "parameter_kind": "coordinate"
+    },
+    {
+      "id": "SF-P-044",
+      "name": "normalized_master_state",
+      "symbol": "z",
+      "scope": "master_normalized",
+      "domain": "real",
+      "meaning": "z=sqrt(mu)*y",
+      "parameter_kind": "dependent_variable"
+    },
+    {
+      "id": "SF-P-045",
+      "name": "quartic_momentum",
+      "symbol": "p",
+      "scope": "master_quartic",
+      "domain": "real or complex on curve",
+      "meaning": "p=dz/dtheta on a real orbit",
+      "parameter_kind": "dependent_variable"
+    },
+    {
+      "id": "SF-P-046",
+      "name": "elliptic_quotient_X",
+      "symbol": "X",
+      "scope": "elliptic_quotient",
+      "domain": "complex curve coordinate",
+      "meaning": "X=-z^2",
+      "parameter_kind": "dependent_variable"
+    },
+    {
+      "id": "SF-P-047",
+      "name": "elliptic_quotient_Y",
+      "symbol": "Y",
+      "scope": "elliptic_quotient",
+      "domain": "complex curve coordinate",
+      "meaning": "Y=-2*z*p; not Pinney Y",
+      "parameter_kind": "dependent_variable"
+    },
+    {
+      "id": "SF-P-048",
+      "name": "lame_scaled_coordinate",
+      "symbol": "zeta",
+      "scope": "lame",
+      "domain": "real",
+      "meaning": "zeta=r*(u-u0)/sqrt(2-m_e) on dn branch",
+      "parameter_kind": "coordinate"
+    },
+    {
+      "id": "SF-P-049",
+      "name": "riemann_inverse_radius",
+      "symbol": "z_R",
+      "scope": "riemann_minimal",
+      "domain": "positive real local chart",
+      "meaning": "z_R=1/rho(h)",
+      "parameter_kind": "dependent_variable"
+    },
+    {
+      "id": "SF-P-050",
+      "name": "riemann_scaled_state",
+      "symbol": "Z_R",
+      "scope": "riemann_minimal",
+      "domain": "positive real local chart for Lambda>0",
+      "meaning": "Z_R=z_R/sqrt(Lambda)",
+      "parameter_kind": "dependent_variable"
+    },
+    {
+      "id": "SF-P-051",
+      "name": "riemann_height_origin",
+      "symbol": "h0",
+      "scope": "riemann_minimal",
+      "domain": "real",
+      "meaning": "arbitrary height translation in theta=sqrt(Lambda)*(h-h0)",
+      "parameter_kind": "integration_constant_or_first_integral"
+    },
+    {
+      "id": "SF-P-052",
+      "name": "variational_perturbation",
+      "symbol": "phi",
+      "scope": "lame",
+      "domain": "sufficiently smooth function of zeta",
+      "meaning": "perturbation used in linearized operator, not modular phi",
+      "parameter_kind": "dependent_variable"
+    },
+    {
+      "id": "SF-P-053",
+      "name": "resolution_chart_scaling",
+      "symbol": "s_res",
+      "scope": "coordinate_transport",
+      "domain": "real >0",
+      "meaning": "u_prime=u/s_res, r_prime=s_res*r with theta and e invariant",
+      "parameter_kind": "transformation_parameter"
+    },
+    {
+      "id": "SF-P-054",
+      "name": "simultaneous_spatial_scale",
+      "symbol": "lambda",
+      "scope": "spatial_dilation",
+      "domain": "real >0",
+      "meaning": "x_prime=lambda*x, c_prime=lambda*c at fixed r",
+      "parameter_kind": "transformation_parameter"
+    },
+    {
+      "id": "SF-P-055",
+      "name": "gram_log_shift",
+      "symbol": "delta_u",
+      "scope": "gram_boost",
+      "domain": "real",
+      "meaning": "u->u+delta_u, A->A exp(r delta_u), B->B exp(-r delta_u) with C unchanged",
+      "parameter_kind": "transformation_parameter"
+    }
+  ],
+  "objects": [
+    {
+      "id": "SF-O-001",
+      "key": "coordinate_chart",
+      "title": "Multiplicative/logarithmic coordinate chart",
+      "layer": "primitive",
+      "parameters": [
+        "SF-P-001",
+        "SF-P-002",
+        "SF-P-003",
+        "SF-P-004",
+        "SF-P-005",
+        "SF-P-006",
+        "SF-P-007"
+      ],
+      "depends_on": [],
+      "source_sections": [
+        "F.1",
+        "0",
+        "36.1.1"
+      ],
+      "reference_paths": [
+        "reference/NOTATION.md"
+      ],
+      "review_state": "defined",
+      "formula": "u=log(x/c); theta=r*u; T=exp(theta)"
+    },
+    {
+      "id": "SF-O-002",
+      "key": "original_kernel",
+      "title": "Original symmetrical kernel",
+      "layer": "primitive",
+      "parameters": [
+        "SF-P-001",
+        "SF-P-002",
+        "SF-P-003"
+      ],
+      "depends_on": [
+        "SF-O-001"
+      ],
+      "source_sections": [
+        "F.1",
+        "1"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/01-architectural-identities/01-02-rosetta-stone.md"
+      ],
+      "review_state": "proof-in-reference",
+      "formula": "f=c^r*x^(r-1)/(c^(2r)+x^(2r))"
+    },
+    {
+      "id": "SF-O-003",
+      "key": "hyperbolic_phase",
+      "title": "Circle fields S and W",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-004",
+        "SF-P-006"
+      ],
+      "depends_on": [
+        "SF-O-002"
+      ],
+      "source_sections": [
+        "F.1",
+        "1",
+        "28"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/01-architectural-identities/01-04-conformal-phase.md"
+      ],
+      "review_state": "proof-in-reference",
+      "formula": "S=sech(theta); W=tanh(theta); S^2+W^2=1"
+    },
+    {
+      "id": "SF-O-004",
+      "key": "unit_linear_pair",
+      "title": "Centered linear pair R and b",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-004",
+        "SF-P-006"
+      ],
+      "depends_on": [
+        "SF-O-003"
+      ],
+      "source_sections": [
+        "F.1",
+        "28"
+      ],
+      "reference_paths": [
+        "reference/foundations/020 The Linear Exponential Backbone.md"
+      ],
+      "review_state": "source-indexed",
+      "formula": "R=cosh(theta), b=sinh(theta), R^2-b^2=1"
+    },
+    {
+      "id": "SF-O-005",
+      "key": "unshifted_envelope",
+      "title": "Unshifted exponential envelope J0",
+      "layer": "primitive",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-004",
+        "SF-P-008",
+        "SF-P-009",
+        "SF-P-011"
+      ],
+      "depends_on": [
+        "SF-O-001"
+      ],
+      "source_sections": [
+        "F.2.1",
+        "27.1"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-04-riccati-coupled.md"
+      ],
+      "review_state": "proof-in-reference",
+      "formula": "J0=A*exp(r*u)+B*exp(-r*u); mu0=4AB"
+    },
+    {
+      "id": "SF-O-006",
+      "key": "gram_matrix",
+      "title": "Symmetric Gram coefficient matrix G",
+      "layer": "primitive",
+      "parameters": [
+        "SF-P-008",
+        "SF-P-009",
+        "SF-P-010",
+        "SF-P-012",
+        "SF-P-013"
+      ],
+      "depends_on": [],
+      "source_sections": [
+        "F.2.2",
+        "27.2"
+      ],
+      "reference_paths": [
+        "reference/foundations/020 The Linear Exponential Backbone.md"
+      ],
+      "review_state": "source-indexed",
+      "formula": "G=[[A,C],[C,B]]; Delta_G=AB-C^2"
+    },
+    {
+      "id": "SF-O-007",
+      "key": "gram_envelope",
+      "title": "General symmetric-square envelope J_G",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-004",
+        "SF-P-008",
+        "SF-P-009",
+        "SF-P-010"
+      ],
+      "depends_on": [
+        "SF-O-001",
+        "SF-O-006"
+      ],
+      "source_sections": [
+        "F.2.2",
+        "27.2"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-10-ermakov-pinney.md"
+      ],
+      "review_state": "source-indexed",
+      "formula": "J_G=A*exp(r*u)+2*C+B*exp(-r*u)",
+      "note": "not the same object as J0 unless C=0"
+    },
+    {
+      "id": "SF-O-008",
+      "key": "backbone_riccati",
+      "title": "Projective logarithmic derivative q0",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-004"
+      ],
+      "depends_on": [
+        "SF-O-005"
+      ],
+      "source_sections": [
+        "F.1",
+        "27.7",
+        "28"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-04-riccati-coupled.md"
+      ],
+      "review_state": "proof-in-reference",
+      "formula": "q0=J0_u/J0; q0_u+q0^2=r^2",
+      "note": "for J_G with C!=0, J_G_u/J_G does not obey this same Riccati equation"
+    },
+    {
+      "id": "SF-O-009",
+      "key": "normalized_density",
+      "title": "Normalized positive probability density",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-001",
+        "SF-P-002",
+        "SF-P-003"
+      ],
+      "depends_on": [
+        "SF-O-002"
+      ],
+      "source_sections": [
+        "1",
+        "5"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/01-architectural-identities/01-07-normalized-density.md"
+      ],
+      "review_state": "proof-in-reference",
+      "formula": "rho=(2*r/pi)*f"
+    },
+    {
+      "id": "SF-O-010",
+      "key": "cubic_master",
+      "title": "General cubic Master dynamical system",
+      "layer": "primitive",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-014",
+        "SF-P-015"
+      ],
+      "depends_on": [
+        "SF-O-001"
+      ],
+      "source_sections": [
+        "F.3",
+        "2",
+        "36.1.2"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-05-linear-annihilator.md"
+      ],
+      "review_state": "proof-in-reference",
+      "formula": "y_uu=r^2*y-2*mu*r^2*y^3; epsilon=y_u^2-r^2*y^2+mu*r^2*y^4"
+    },
+    {
+      "id": "SF-O-011",
+      "key": "master_separatrix",
+      "title": "Selected zero-energy localized orbit",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-014",
+        "SF-P-015"
+      ],
+      "depends_on": [
+        "SF-O-010",
+        "SF-O-003"
+      ],
+      "source_sections": [
+        "F.3",
+        "2",
+        "28"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-05-linear-annihilator.md"
+      ],
+      "review_state": "proof-in-reference",
+      "formula": "y=+/-sech(r*(u-u0))/sqrt(mu); epsilon=0",
+      "note": "sign and translation are solution data; fixing u0=0 is a specialization"
+    },
+    {
+      "id": "SF-O-012",
+      "key": "master_reciprocal",
+      "title": "Reciprocal of a nonzero Master solution",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-014",
+        "SF-P-015"
+      ],
+      "depends_on": [
+        "SF-O-010"
+      ],
+      "source_sections": [
+        "F.3",
+        "2",
+        "28",
+        "35.2"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-08-differential-interrelation.md"
+      ],
+      "review_state": "proof-in-reference",
+      "formula": "J_M=1/y; J_M_uu=r^2*J_M+2*epsilon*J_M^3",
+      "note": "requires y != 0; not J0 at arbitrary energy"
+    },
+    {
+      "id": "SF-O-013",
+      "key": "pinney_envelope",
+      "title": "Positive Ermakov-Pinney amplitude Y",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-012",
+        "SF-P-010",
+        "SF-P-024"
+      ],
+      "depends_on": [
+        "SF-O-007"
+      ],
+      "source_sections": [
+        "F.2",
+        "27.4"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-10-ermakov-pinney.md"
+      ],
+      "review_state": "source-indexed",
+      "formula": "Y=sqrt(J_G); Y_uu=r^2/4*Y+r^2*Delta_G*Y^(-3)",
+      "note": "valid for J_G>0; Pinney energy is -r^2*C"
+    },
+    {
+      "id": "SF-O-014",
+      "key": "norm_angle",
+      "title": "Gram norm-angle deformation",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-010",
+        "SF-P-011",
+        "SF-P-012",
+        "SF-P-032",
+        "SF-P-033",
+        "SF-P-034",
+        "SF-P-043"
+      ],
+      "depends_on": [
+        "SF-O-007"
+      ],
+      "source_sections": [
+        "F.4",
+        "27.6"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-10-ermakov-pinney.md"
+      ],
+      "review_state": "source-indexed",
+      "formula": "s=r*(u-u0); u0=log(B/A)/(2*r); chi=C/sqrt(A*B); F=1/(cosh(s)+chi)",
+      "note": "not a single intrinsic ell-family when chi varies"
+    },
+    {
+      "id": "SF-O-015",
+      "key": "intrinsic_levels",
+      "title": "Intrinsic homogeneous Master level hierarchy",
+      "layer": "constructed",
+      "parameters": [
+        "SF-P-017",
+        "SF-P-018"
+      ],
+      "depends_on": [
+        "SF-O-001"
+      ],
+      "source_sections": [
+        "F.4",
+        "36.1.3"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed",
+      "formula": "q_l=(ell-1)/2; A_q,theta theta=q_l^2*A_q-q_l*(q_l+1)*A_q^(1+2/q_l)",
+      "note": "separate from the norm-angle deformation and spectral shape index"
+    },
+    {
+      "id": "SF-O-016",
+      "key": "master_energy_curve",
+      "title": "Generic cubic Master quartic energy curve",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-016",
+        "SF-P-044",
+        "SF-P-045"
+      ],
+      "depends_on": [
+        "SF-O-010"
+      ],
+      "source_sections": [
+        "F.7",
+        "7",
+        "35.3"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-09-jacobi-elliptic-solutions.md"
+      ],
+      "review_state": "proof-in-reference",
+      "formula": "C_e: p^2=e+z^2-z^4; z=sqrt(mu)*y",
+      "note": "smooth genus one only e != 0 and e != -1/4"
+    },
+    {
+      "id": "SF-O-017",
+      "key": "elliptic_quotient",
+      "title": "Marked degree-two quotient of Master quartic",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-016",
+        "SF-P-046",
+        "SF-P-047"
+      ],
+      "depends_on": [
+        "SF-O-016"
+      ],
+      "source_sections": [
+        "F.7",
+        "33",
+        "35.4"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed",
+      "formula": "(z,p)->(X,Y)=(-z^2,-2*z*p); Y^2=4X(X^2+X-e)",
+      "note": "elliptic isogeny not an isomorphism of marked dynamical flows"
+    },
+    {
+      "id": "SF-O-018",
+      "key": "surface_forms",
+      "title": "Chosen first/second fundamental forms of local minimal surface",
+      "layer": "constructed",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-016",
+        "SF-P-025",
+        "SF-P-026",
+        "SF-P-027"
+      ],
+      "depends_on": [
+        "SF-O-010"
+      ],
+      "source_sections": [
+        "F.5",
+        "29",
+        "35.5"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-07-ernst-liouville.md"
+      ],
+      "review_state": "source-indexed",
+      "formula": "I=z^(-2)*(du^2+dv^2); II_delta=r*Re(exp(i delta)*(du+i dv)^2)",
+      "note": "local Gauss-Codazzi; global periods and immersion closing are extra"
+    },
+    {
+      "id": "SF-O-019",
+      "key": "lame_spectral",
+      "title": "Lamé spectral curve from linearizing periodic Master",
+      "layer": "constructed",
+      "parameters": [
+        "SF-P-003",
+        "SF-P-019",
+        "SF-P-030",
+        "SF-P-048",
+        "SF-P-052"
+      ],
+      "depends_on": [
+        "SF-O-010"
+      ],
+      "source_sections": [
+        "F.7",
+        "32",
+        "36.1.5"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-12-miura-kdv.md"
+      ],
+      "review_state": "source-indexed",
+      "formula": "periodic ell=3 linearization gives n=2 Lame spectral genus two",
+      "note": "distinct from nonlinear energy genus-one and intrinsic ell=9 genus-two curves"
+    },
+    {
+      "id": "SF-O-020",
+      "key": "gram_shape",
+      "title": "Gram upper-half-plane shape coordinate",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-008",
+        "SF-P-009",
+        "SF-P-010",
+        "SF-P-012",
+        "SF-P-021"
+      ],
+      "depends_on": [
+        "SF-O-006"
+      ],
+      "source_sections": [
+        "F.2",
+        "27.3",
+        "36.1.10"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed",
+      "formula": "tau_G=(C+i*sqrt(Delta_G))/A",
+      "note": "chi=0 alone does not imply tau_G=i; balanced unit legs needed"
+    },
+    {
+      "id": "SF-O-021",
+      "key": "mellin_transform",
+      "title": "Mellin transform of the original kernel",
+      "layer": "derived",
+      "parameters": [
+        "SF-P-002",
+        "SF-P-003",
+        "SF-P-022"
+      ],
+      "depends_on": [
+        "SF-O-002"
+      ],
+      "source_sections": [
+        "F.8",
+        "4"
+      ],
+      "reference_paths": [
+        "research/legacy-parts/Part II - Calculus and Special Functions/06-mellin-transform/06-01-mellin-hub.md"
+      ],
+      "review_state": "source-indexed",
+      "formula": "M[f](s)=(pi*c^(s-1)/(2*r))*sec(pi*(s-1)/(2*r))",
+      "note": "original strip 1-r<Re(s)<1+r"
+    },
+    {
+      "id": "SF-O-022",
+      "key": "riemann_minimal",
+      "title": "Riemann minimal surface circle-radius reduction",
+      "layer": "constructed",
+      "parameters": [
+        "SF-P-023",
+        "SF-P-035",
+        "SF-P-036",
+        "SF-P-049",
+        "SF-P-050",
+        "SF-P-051"
+      ],
+      "depends_on": [],
+      "source_sections": [
+        "F.6",
+        "30"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed",
+      "formula": "z=1/rho; z_h^2=eps_R^2+Lambda*z^2-z^4",
+      "note": "similar local Duffing form; height h and marked periods are independent data"
+    }
+  ],
+  "maps": [
+    {
+      "id": "SF-M-001",
+      "key": "log_coordinate",
+      "source_id": "SF-O-001",
+      "target_id": "SF-O-001",
+      "kind": "coordinate_bijection",
+      "domain": "x,c>0, c fixed",
+      "formula": "u=log(x/c); x=c exp(u)",
+      "information_preserved": "positive half-line -> real line",
+      "information_lost_or_required": "must retain c to reconstruct x",
+      "source_sections": [
+        "F.1",
+        "35.1"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-002",
+      "key": "kernel_to_circle",
+      "source_id": "SF-O-002",
+      "target_id": "SF-O-003",
+      "kind": "defined_derived_map",
+      "domain": "x,c,r>0",
+      "formula": "S=2xf; W=tanh(r log(x/c))",
+      "information_preserved": "S^2+W^2=1",
+      "information_lost_or_required": "W sign depends on x/c; S alone leaves two W branches",
+      "source_sections": [
+        "F.1",
+        "1"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-003",
+      "key": "backbone_riccati",
+      "source_id": "SF-O-005",
+      "target_id": "SF-O-008",
+      "kind": "projectivization",
+      "domain": "J0 !=0; r>0",
+      "formula": "q0=J0_u/J0",
+      "information_preserved": "Riccati flow",
+      "information_lost_or_required": "overall scale of J0; not invertible without initial amplitude",
+      "source_sections": [
+        "27.7",
+        "28",
+        "Appendix C:R1"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-004",
+      "key": "gram_to_envelope",
+      "source_id": "SF-O-006",
+      "target_id": "SF-O-007",
+      "kind": "evaluation_at_linear_flow",
+      "domain": "A,B>0, Delta_G>0, r>0",
+      "formula": "J_G=h^T G h",
+      "information_preserved": "Delta_G; 3rd-order symmetric-square ODE",
+      "information_lost_or_required": "on full functions with fixed u/r, coefficient jets recover G; equation alone does not record G",
+      "source_sections": [
+        "27.2",
+        "Appendix C:S2"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-005",
+      "key": "gram_to_pinney",
+      "source_id": "SF-O-007",
+      "target_id": "SF-O-013",
+      "kind": "positive_square_root",
+      "domain": "J_G>0, Delta_G>0",
+      "formula": "Y=sqrt(J_G)",
+      "information_preserved": "Pinney coefficient r^2 Delta_G",
+      "information_lost_or_required": "pointwise Y>0 inversion J_G=Y^2; induced equation forgets independent A,B except through solution initial conditions",
+      "source_sections": [
+        "27.4",
+        "Appendix C:R4"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-006",
+      "key": "gram_to_norm_angle",
+      "source_id": "SF-O-007",
+      "target_id": "SF-O-014",
+      "kind": "center_and_normalize",
+      "domain": "A,B>0; -1<chi=C/sqrt(AB)<1",
+      "formula": "F=1/(cosh(s)+chi)",
+      "information_preserved": "chi and translated center under declared normalization",
+      "information_lost_or_required": "amplitude scale removed; not intrinsic ell at generic chi",
+      "source_sections": [
+        "F.4",
+        "27.6"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-007",
+      "key": "master_to_reciprocal",
+      "source_id": "SF-O-010",
+      "target_id": "SF-O-012",
+      "kind": "partial_pointwise_involution",
+      "domain": "y!=0 on interval",
+      "formula": "J_M=1/y",
+      "information_preserved": "local solution data under inversion",
+      "information_lost_or_required": "reciprocal cubic defect 2 epsilon J_M^3, singular at y=0",
+      "source_sections": [
+        "35.2",
+        "Appendix C"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-008",
+      "key": "reciprocal_zero_energy_linearization",
+      "source_id": "SF-O-012",
+      "target_id": "SF-O-005",
+      "kind": "conditional_equation_reduction",
+      "domain": "epsilon=0, y!=0, mu>0; J_M^2-J_M_u^2/r^2=mu",
+      "formula": "J_M_uu=r^2 J_M",
+      "information_preserved": "mu via quadratic first integral",
+      "information_lost_or_required": "not true at epsilon!=0; equation alone does not determine A/B or amplitude",
+      "source_sections": [
+        "F.3",
+        "28",
+        "35.2"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-009",
+      "key": "unshifted_to_master_sep",
+      "source_id": "SF-O-005",
+      "target_id": "SF-O-011",
+      "kind": "conditional_correspondence",
+      "domain": "A,B>0,C=0, mu=4AB",
+      "formula": "y=1/J0",
+      "information_preserved": "zero-energy Master trajectory",
+      "information_lost_or_required": "center/u0 must be tracked; mu0=mu only on this branch",
+      "source_sections": [
+        "F.2",
+        "27.4"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-010",
+      "key": "master_to_energy_curve",
+      "source_id": "SF-O-010",
+      "target_id": "SF-O-016",
+      "kind": "algebraic_first_integral",
+      "domain": "mu,r>0, e=mu epsilon/r^2",
+      "formula": "z=sqrt(mu)*y; p=z_theta; p^2=e+z^2-z^4",
+      "information_preserved": "energy level",
+      "information_lost_or_required": "curve does not encode time differential or phase/initial condition by itself",
+      "source_sections": [
+        "F.7",
+        "35.3"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-011",
+      "key": "master_quartic_quotient",
+      "source_id": "SF-O-016",
+      "target_id": "SF-O-017",
+      "kind": "finite_degree_map",
+      "domain": "generic smooth e not 0,-1/4",
+      "formula": "X=-z^2; Y=-2 z p",
+      "information_preserved": "elliptic isogeny class",
+      "information_lost_or_required": "2-torsion marking/differential must be tracked; not global flow equivalence",
+      "source_sections": [
+        "F.7",
+        "35.4"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-012",
+      "key": "master_to_surface_forms",
+      "source_id": "SF-O-010",
+      "target_id": "SF-O-018",
+      "kind": "chosen_geometric_construction",
+      "domain": "z(u)>0 smooth; specified II_delta",
+      "formula": "I=z^(-2)(du^2+dv^2), II_delta=r Re(e^(i delta)(du+i dv)^2)",
+      "information_preserved": "local Gauss-Codazzi with ambient kappa=-r^2 e",
+      "information_lost_or_required": "global closing, periods, completeness and embeddedness not determined",
+      "source_sections": [
+        "F.5",
+        "29",
+        "35.5"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-013",
+      "key": "linearize_master_to_lame",
+      "source_id": "SF-O-010",
+      "target_id": "SF-O-019",
+      "kind": "variational_linearization",
+      "domain": "selected periodic ell=3 solution; Jacobi parameter specified",
+      "formula": "linearization about periodic dn/cn trajectory",
+      "information_preserved": "variational Hessian",
+      "information_lost_or_required": "does not identify spectral genus with nonlinear-energy genus",
+      "source_sections": [
+        "F.7",
+        "32",
+        "36.1.5"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-014",
+      "key": "gram_shape_projection",
+      "source_id": "SF-O-006",
+      "target_id": "SF-O-020",
+      "kind": "quotient_by_positive_scale",
+      "domain": "G>0",
+      "formula": "tau_G=(C+i sqrt(Delta_G))/A",
+      "information_preserved": "positive Gram shape up to scalar",
+      "information_lost_or_required": "determinant magnitude and total scale; tau_G not automatically a Master elliptic period",
+      "source_sections": [
+        "27.3",
+        "36.1.10"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-015",
+      "key": "riemann_duffing_match",
+      "source_id": "SF-O-022",
+      "target_id": "SF-O-010",
+      "kind": "local_ODE_rescaling_only",
+      "domain": "Riemann height h; positive Lambda; independent rescalings",
+      "formula": "z_h^2=eps_R^2+Lambda z^2-z^4",
+      "information_preserved": "local oscillator polynomial form",
+      "information_lost_or_required": "immersed surface, flux, cycles, and global period conditions do not follow",
+      "source_sections": [
+        "F.6",
+        "30"
+      ],
+      "reference_paths": [],
+      "review_state": "source-indexed"
+    },
+    {
+      "id": "SF-M-016",
+      "key": "resolution_chart_transport",
+      "source_id": "SF-O-010",
+      "target_id": "SF-O-010",
+      "kind": "invertible_coordinate_parameter_transport",
+      "domain": "s_res>0, r>0, mu>0, fixed c; global C^2 solution y",
+      "formula": "u_new=u/s_res, r_new=s_res*r, y_new(u_new)=y(s_res*u_new), epsilon_new=s_res^2*epsilon, e_new=e",
+      "information_preserved": "theta, e, mu, phase portrait; normalized probability pushforward for selected kernel",
+      "information_lost_or_required": "x_new=c*(x/c)^(1/s_res); f_new=(x/x_new)f; unnormalized f dx acquires factor 1/s_res",
+      "source_sections": [
+        "Appendix C:weights",
+        "36.1.1"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/03-differential-structure/03-05-linear-annihilator.md"
+      ],
+      "review_state": "source-and-symbolic-algebra"
+    },
+    {
+      "id": "SF-M-017",
+      "key": "simultaneous_spatial_dilation",
+      "source_id": "SF-O-002",
+      "target_id": "SF-O-002",
+      "kind": "global_dilation_covariance",
+      "domain": "lambda>0, x,c,r>0",
+      "formula": "x_new=lambda*x, c_new=lambda*c, r_new=r, f_new(x_new)=lambda^(-1)f(x)",
+      "information_preserved": "u,theta,r and positive mass f dx and rho dx",
+      "information_lost_or_required": "coordinate units and density scale change; not u->u/s_res",
+      "source_sections": [
+        "35.1",
+        "Appendix C:weights"
+      ],
+      "reference_paths": [
+        "reference/algebra-geometry/02-foundational-symmetries/02-03-euler-homogeneity.md"
+      ],
+      "review_state": "source-and-symbolic-algebra"
+    },
+    {
+      "id": "SF-M-018",
+      "key": "gram_diagonal_boost",
+      "source_id": "SF-O-007",
+      "target_id": "SF-O-007",
+      "kind": "one_parameter_subgroup",
+      "domain": "A,B>0, Delta_G>0, r>0; delta_u real",
+      "formula": "A_new=A exp(r delta_u), B_new=B exp(-r delta_u), C_new=C, J_new(u)=J(u+delta_u)",
+      "information_preserved": "AB, Delta_G, mu0, mu_det, chi and tau_G geodesic angle",
+      "information_lost_or_required": "u0_new=u0-delta_u, c_eff_new=c_eff exp(-delta_u), tau_G_new=exp(-r delta_u)tau_G; not general SL2 congruence",
+      "source_sections": [
+        "27.1",
+        "27.2",
+        "27.3"
+      ],
+      "reference_paths": [
+        "reference/foundations/020 The Linear Exponential Backbone.md"
+      ],
+      "review_state": "source-and-symbolic-algebra"
+    }
+  ]
+}

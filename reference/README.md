@@ -37,3 +37,7 @@ The moved Part I includes `verify_part_i.py`, `verify_chapter2.py`, `verify_chap
 For material that has **not** been reviewed claim by claim, use [Research](../research/README.md); for legacy interpretations that should not be treated as valid deductions, use [Archive](../archive/README.md).
 
 **No forced interpretations:** a geometric realization, physical analogy or modular construction requires independent definitions and hypotheses; an elementary kernel does not determine all such structures uniquely.
+
+## Dependency-based recursive review
+
+The [Foundational Atlas](atlas/README.md) supplies a versioned object/parameter dictionary and typed transformation contracts. The [review protocol](atlas/REVIEW_PROTOCOL.md) and [read-only impact checker](atlas/validate_registry.py) permit iterative correction: inspect one definition, evaluate the downstream dependency graph, recheck only affected contracts and proofs, then update the claim registry. This atlas is an initial source extraction and is not a substitute for the numbered proofs.

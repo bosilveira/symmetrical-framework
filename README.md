@@ -45,3 +45,7 @@ Follow [MARKDOWN_STYLE.md](MARKDOWN_STYLE.md) for GitHub-compatible inline dolla
 This is a mature **research program with an explicit evidence protocol**, not a claim that every historical exploration is true, novel, or physically realized. A correspondence with solitons, K3 surfaces, modular forms or other mathematical structures is accepted only after its independent definitions and hypotheses are proved.
 
 **New ChatGPT conversation?** Provide this repository URL and ask the assistant to read `REFERENCE_INDEX.md` and `AGENTS.md` on `main` first. The files do not automatically enter a new conversation unless the assistant can access the repository.
+
+## Mathematical object and transformation atlas
+
+The [Foundational Atlas](reference/atlas/README.md) is the growing machine-readable dictionary of mathematical objects, **scoped variables and parameters**, and typed transformations extracted from the November 16 complete reference. Each transformation records its source and target coordinates, parameter rules, Jacobian or time-differential rule, domain, invertibility, and information loss. It can be reviewed incrementally without automatically rewriting unrelated proofs.

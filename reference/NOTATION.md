@@ -27,7 +27,7 @@ S(u)=2xf(x;r,c)=\mathrm{sech}(ru),\qquad W(u)=\tanh(ru),\qquad S^2+W^2=1.
 \rho(x;r,c)=\frac{2r}{\pi}f(x;r,c),\qquad f(x;r,c)\,dx=\frac12S(u)\,du.
 ```
 
-The **positive measure** associated with $`f(x)\,dx` is invariant under $`x\mapsto c^2/x`$. The oriented differential form changes sign. Do not substitute the distinct Haar measure $`dx/x`$ into this invariance claim.
+The **positive measure** associated with $`f(x)\,dx`$ is invariant under $`x\mapsto c^2/x`$. The oriented differential form changes sign. Do not substitute the distinct Haar measure $`dx/x`$ into this invariance claim.
 
 ## The cubic Master and its energy
 
@@ -50,3 +50,17 @@ Jacobi $`\mathrm{dn}(z\mid m)`$, $`\mathrm{cn}(z\mid m)`$, and $`K(m)`$ use the 
 A physical or geometric variable named $`c`$, $`J`$ or $`r`$ in an outside source must be mapped explicitly to the framework dictionary. A numerical coincidence or shared symbol does not establish an isomorphism.
 
 See [MARKDOWN_STYLE.md](../MARKDOWN_STYLE.md) for GitHub math delimiters.
+
+## Scoped variables and parameter identities
+
+The [Foundational Atlas](atlas/README.md) uses permanent parameter IDs with **explicit mathematical scopes** instead of identifying a quantity by its printed letter. Thus the November 16 source's Fisher log-location `xi_F=log(c/c_ref)` is distinct from the kernel ratio `xi_x=x/c`. Likewise, `q_l=(ell-1)/2` is the intrinsic level exponent, `q_J=exp(i*pi*tau_J)` is the Jacobi nome, and `q_mod=exp(2*pi*i*tau_mod)` is a modular Fourier parameter. The Lamé spectral shape index `ell_H` is independent of intrinsic Master level `ell`.
+
+The three coupling-related quantities require explicit labels:
+
+```math
+\mu_0=4AB,\qquad \Delta_G=AB-C^2,\qquad \mu_{\det}=4\Delta_G.
+```
+
+The cubic Master coupling `mu` can be identified with `mu0` **only** on the unshifted reciprocal separatrix with Gram cross coefficient `C=0`. A generic Gram reciprocal obeys an additional quadratic term; the [transformation contracts](atlas/contracts.json) track when parameter identifications are legal.
+
+Three different scaling operations are proved separately in [SCALING_ACTIONS.md](atlas/SCALING_ACTIONS.md), with coordinate maps and Jacobians. These distinctions matter whenever a transformation changes a resolution parameter, a reference scale, or an integration constant.
