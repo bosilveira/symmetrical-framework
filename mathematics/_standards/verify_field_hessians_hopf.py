@@ -47,7 +47,7 @@ def verify_hessians():
             "rr": u*u*d,
         }
         for indices, rhs in expected.items():
-            zero(name + "_" + indices, sp.diff(f, *indices)-rhs)
+            zero(name + "_" + indices, sp.diff(f, *[{"x": x, "c": c, "r": r}[ch] for ch in indices])-rhs)
     s = sp.sech(theta)
     w = sp.tanh(theta)
     f = s/(2*x)
